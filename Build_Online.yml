@@ -1,0 +1,14 @@
+# Es wird kein Compiler.Zip benötigt, es wird per VS Code der Compiler heruntergeladen und upgedated
+trigger: 
+- none
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: Template/Yaml-PipelineTemplate
+
+extends:
+    template: Build_Online.yml@templates
+    parameters:
+      BuildVersion: $(BuildVersion)
