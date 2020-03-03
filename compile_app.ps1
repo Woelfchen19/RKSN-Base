@@ -228,7 +228,7 @@ function Save-WithBitsTransfer {
 
 function DownloadAndInstall-VSCode() {
     ## test ##
-    $installerPath = [System.IO.Path]::Combine($tmpdir, 'vscode-install.exe')
+    $installerPath = [System.IO.Path]::Combine($env:TEMP, 'vscode-install.exe')
     $appname = 'Visual Studio Code'
     $fileuri = 'https://vscode-update.azurewebsites.net/latest/win32-x64/stable'
 
