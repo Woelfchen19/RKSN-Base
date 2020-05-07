@@ -1,1 +1,4 @@
 **/launch.json
+**/rad.json
+**/*.app
+!**/.alpackages/*.app
