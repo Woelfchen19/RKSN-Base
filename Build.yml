@@ -1,6 +1,6 @@
 # Es wird kein Compiler.Zip benötigt, es wird per VS Code der Compiler heruntergeladen und upgedated
 trigger: 
-- none
+- master
 
 resources:
   repositories:
