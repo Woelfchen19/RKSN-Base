@@ -3,7 +3,7 @@
     "CRS.ObjectNameSuffix": "NVX",
     "al.enableCodeAnalysis": true,
     "al.codeAnalyzers": [
-        "${PerTenantExtensionCop}"
+        "${PerTenantExtensionCop}", "${CodeCop}"
     ],
     "al.ruleSetPath": ".vscode\\ruleset.json"
 }
