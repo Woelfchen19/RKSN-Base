@@ -1,6 +1,12 @@
-# Es wird kein Compiler.Zip benötigt, es wird per VS Code der Compiler heruntergeladen und upgedated
 trigger: 
-- master
+  branches:
+    include:
+    - master
+  paths:
+   include:
+     - app/*
+   exclude:
+     - app/app.json
 
 resources:
   repositories:
