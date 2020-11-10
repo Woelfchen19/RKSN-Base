@@ -1,6 +1,9 @@
 {
     "CRS.ObjectNamePrefix": NAMENSPREFIX,
     "CRS.ObjectNameSuffix": "NVX",
+    "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectType>.al",
+    "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectType>.al",
+    "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectType>.al",
     "al.enableCodeAnalysis": true,
     "al.codeAnalyzers": [
         "${PerTenantExtensionCop}", "${CodeCop}"
