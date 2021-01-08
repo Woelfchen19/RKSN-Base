@@ -4,3 +4,4 @@
 !**/.alpackages/*.app
 **/.alcache/*.json
 **/.altemplates/*.json
+**/.snapshots
