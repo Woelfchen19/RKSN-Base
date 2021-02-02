@@ -1,12 +1,15 @@
 {
     "CRS.ObjectNamePrefix": NAMENSPREFIX,
     "CRS.ObjectNameSuffix": "NVX",
-    "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectType>.al",
-    "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectType>.al",
-    "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectType>.al",
+    "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
     "al.enableCodeAnalysis": true,
     "al.codeAnalyzers": [
-        "${PerTenantExtensionCop}", "${CodeCop}"
+        "${CodeCop}",
+        "${AppSourceCop}",
+        "${UICop}",
+        "${PerTenantExtensionCop}"
     ],
     "al.ruleSetPath": ".vscode\\ruleset.json"
 }
