@@ -1,5 +1,5 @@
 {
-    "CRS.ObjectNamePrefix": NAMENSPREFIX,
+    // "CRS.ObjectNamePrefix": "RKS",
     "CRS.ObjectNameSuffix": "NVX",
     "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
     "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",

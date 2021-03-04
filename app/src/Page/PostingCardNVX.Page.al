@@ -1,0 +1,110 @@
+page 50014 PostingCardNVX
+{
+    PageType = Card;
+    SourceTable = PostingsNVX;
+    InsertAllowed = false;
+    DeleteAllowed = false;
+    Editable = false;
+    layout
+    {
+        area(content)
+        {
+            group(General)
+            {
+                field("Posting GUID"; "Posting GUID")
+                {
+                    ApplicationArea = All;
+                }
+                // field("Posting Date";"Posting Date")
+                // {
+                //     ApplicationArea = All;
+                //     Editable = false;
+                // }
+                // field("Document No.";"Document No.")
+                // {
+                //     ApplicationArea = All;
+                //     Editable = false;
+                // }           
+                field("Source Journal Line"; "Source Journal Line")
+                {
+                    ApplicationArea = All;
+                }
+                field("Date"; "Date")
+                {
+                    ApplicationArea = All;
+                }
+                field("User ID"; "User ID")
+                {
+                    ApplicationArea = All;
+                }
+            }
+            //GL Parts
+            part(GLOrigin; GenJnlLineArchiveOriginNVX)
+            {
+                Caption = 'Origin', comment = 'DEA="Ursprung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = GLVisible;
+            }
+            part(GLSummary; GenJnlLineArchiveSummaryNVX)
+            {
+                Caption = 'Summary', comment = 'DEA="Zusammenfassung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = GLVisible;
+            }
+            part(GLPreparation; GenJnlLineArchivePrepNVX)
+            {
+                Caption = 'Preparation', comment = 'DEA="Vorbereitung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = GLVisible;
+            }
+            part(GLComplete; GenJnlArchiveCompleteNVX)
+            {
+                Caption = 'Complete', comment = 'DEA="Vollständig"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = GLVisible;
+            }
+
+            //FA Parts
+            part(FAOrigin; FAJnlLineArchiveOriginNVX)
+            {
+                Caption = 'Origin', comment = 'DEA="Ursprung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = FAVisible;
+            }
+            part(FASummary; FAJnlLineArchiveSummaryNVX)
+            {
+                Caption = 'Summary', comment = 'DEA="Zusammenfassung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = FAVisible;
+            }
+            part(FAPreparation; FAJnlLineArchivePrepNVX)
+            {
+                Caption = 'Preparation', comment = 'DEA="Vorbereitung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = FAVisible;
+            }
+            part(FAComplete; FAJnlLineArchiveCompleteNVX)
+            {
+                Caption = 'Complete', comment = 'DEA="Vollständig"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = FAVisible;
+            }
+        }
+    }
+
+    trigger OnOpenPage();
+    begin
+        CurrPage.Editable(false);
+    end;
+
+    trigger OnAfterGetRecord();
+    begin
+        GLVisible := "Source Journal Line" = "Source Journal Line"::GenJnlLine;
+        FAVisible := "Source Journal Line" = "Source Journal Line"::FAJnlLine;
+    end;
+
+    var
+        GLVisible: Boolean;
+        FAVisible: Boolean;
+
+}
