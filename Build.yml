@@ -15,6 +15,6 @@ resources:
       name: Template/Yaml-PipelineTemplate
 
 extends:
-    template: Build_Online.yml@templates
+    template: Build_OnPremise.yml@templates
     parameters:
       BuildVersion: $(BuildVersion)
