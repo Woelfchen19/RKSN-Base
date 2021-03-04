@@ -5,7 +5,6 @@ trigger:
   paths:
    include:
      - app/*
-     - app/RKST Base.de-AT.g.xlf
    exclude:
      - app/app.json
 
