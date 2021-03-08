@@ -137,15 +137,13 @@ page 50002 DimVATAllocNVX
                         AllFieldsFilled := false;
             end;//of case
 
-            PercentSum += "Allocation %";
-
             until DimVATAlloc.next = 0;
 
         If not AllFieldsFilled then
             Error(SetupIncomplete);
 
-        If PercentSum <> 100 then
-            Error(PercentageIncomplete);
+        // If PercentSum <> 100 then //TODO RKSN-42 WorkItem 5348
+        //     Error(PercentageIncomplete);
 
         exit(true);
     end;
