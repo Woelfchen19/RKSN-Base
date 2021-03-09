@@ -11,7 +11,13 @@ pageextension 50035 FAGLJournalNVX extends "Fixed Asset G/L Journal"
                 TableRelation = AllocationCodeNVX.Code;
                 trigger OnValidate();
                 begin
-                    GenJnlLineNVX.Modify();
+                    IF not GenJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
+                        GenJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
+                        GenJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
+                        GenJnlLineNVX."Line No." := Rec."Line No.";
+                        GenJnlLineNVX.Insert();
+                    end else
+                        GenJnlLineNVX.Modify();
                 end;            
             }
         }

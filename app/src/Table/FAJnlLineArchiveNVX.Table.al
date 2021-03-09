@@ -337,7 +337,7 @@ table 50024 FAJnlLineArchiveNVX
 
     keys
     {
-        key(Key1; "Journal Template Name", "Journal Batch Name", "Line No.")
+        key(Key1; "Posting GUID", "Posting Type", "Line No.")
         {
             Clustered = true;
         }

@@ -96,22 +96,22 @@ page 50023 FAJnlLineArchiveCompleteNVX
                 field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
                 }
-                field("Shortcut Dimension 3 Code"; "Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 3 Code"; "Shortcut Dimension 3 Code")
                 {
                 }
-                field("Shortcut Dimension 4 Code"; "Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 4 Code"; "Shortcut Dimension 4 Code")
                 {
                 }
-                field("Shortcut Dimension 5 Code"; "Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 5 Code"; "Shortcut Dimension 5 Code")
                 {
                 }
-                field("Shortcut Dimension 6 Code"; "Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 6 Code"; "Shortcut Dimension 6 Code")
                 {
                 }
-                field("Shortcut Dimension 7 Code"; "Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 7 Code"; "Shortcut Dimension 7 Code")
                 {
                 }
-                field("Shortcut Dimension 8 Code"; "Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 8 Code"; "Shortcut Dimension 8 Code")
                 {
                 }
                 field("Insurance No."; "Insurance No.")

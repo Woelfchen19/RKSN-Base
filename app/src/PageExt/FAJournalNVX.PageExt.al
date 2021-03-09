@@ -13,18 +13,27 @@ pageextension 50037 FAJournal extends "Fixed Asset Journal"
                     AllocationCode: Record AllocationCodeNVX;
                     WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
-                begin
-                    If FAJnlLineNVX."Allocation Code" <> '' then
+                begin                 
+
+                        If FAJnlLineNVX."Allocation Code" <> '' then
                         If Rec."Shortcut Dimension 2 Code" = '' then begin
                             AllocationCode.Get(FAJnlLineNVX."Allocation Code");
                             Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
-                            Rec.Modify();
+                            If Rec."Line No." > 0 then
+                                Rec.Modify();
                         end else begin
                             AllocationCode.Get(FAJnlLineNVX."Allocation Code");
                             IF Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                                 Error(WrongDimErr);
                         end;
-                    FAJnlLineNVX.Modify();
+
+                    IF not FAJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
+                        FAJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
+                        FAJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
+                        FAJnlLineNVX."Line No." := Rec."Line No.";
+                        FAJnlLineNVX.Insert();
+                    end else
+                        FAJnlLineNVX.Modify();
                 end;
             }
         }
@@ -63,7 +72,9 @@ pageextension 50037 FAJournal extends "Fixed Asset Journal"
     trigger OnAfterGetRecord()
     begin
         IF not FAJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
-            FAJnlLineNVX.Init();
+
+            IF FAJnlLineNVX."Allocation Code" = '' then
+                FAJnlLineNVX.Init();
             FAJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
             FAJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
             FAJnlLineNVX."Line No." := Rec."Line No.";
