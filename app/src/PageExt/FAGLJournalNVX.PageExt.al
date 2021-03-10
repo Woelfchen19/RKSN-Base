@@ -4,21 +4,44 @@ pageextension 50035 FAGLJournalNVX extends "Fixed Asset G/L Journal"
     {
         addlast(Control1)
         {
-            field("Allocation Code";GenJnlLineNVX."Allocation Code")
+            field("Allocation Code"; AllocationCodeVar)
             {
                 ApplicationArea = All;
                 Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
                 TableRelation = AllocationCodeNVX.Code;
                 trigger OnValidate();
+                var
+                    AllocationCode: Record AllocationCodeNVX;
+                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
+                        comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
                 begin
-                    IF not GenJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
-                        GenJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
-                        GenJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
-                        GenJnlLineNVX."Line No." := Rec."Line No.";
-                        GenJnlLineNVX.Insert();
-                    end else
-                        GenJnlLineNVX.Modify();
-                end;            
+
+                    IF Rec."Line No." > 0 then
+                        IF not GenJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
+                            GenJnlLineNVX.Init();
+                            GenJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
+                            GenJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
+                            GenJnlLineNVX."Line No." := Rec."Line No.";
+                            GenJnlLineNVX."Allocation Code" := AllocationCodeVar;
+                            GenJnlLineNVX.Insert();
+                        end else begin
+                            GenJnlLineNVX."Allocation Code" := AllocationCodeVar;
+                            GenJnlLineNVX.Modify();
+                        end;
+
+
+                    If AllocationCodeVar <> '' then
+                        If Rec."Shortcut Dimension 2 Code" = '' then begin
+                            AllocationCode.Get(AllocationCodeVar);
+                            Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
+                            If Rec."Line No." > 0 then
+                                Rec.Modify();
+                        end else begin
+                            AllocationCode.Get(AllocationCodeVar);
+                            IF Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+                                Error(WrongDimErr);
+                        end;
+                end;
             }
         }
     }
@@ -31,6 +54,9 @@ pageextension 50035 FAGLJournalNVX extends "Fixed Asset G/L Journal"
             {
                 Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
                 Image = PreviewChecks;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
                 trigger OnAction();
                 var
                     DistrGenJnlLine: Record DistrGenJnlLineNVX;
@@ -46,9 +72,7 @@ pageextension 50035 FAGLJournalNVX extends "Fixed Asset G/L Journal"
             }
         }
     }
-
-    var
-        GenJnlLineNVX: Record GenJnlLineNVX;
+        
 
     trigger OnAfterGetRecord()
     begin
@@ -58,8 +82,36 @@ pageextension 50035 FAGLJournalNVX extends "Fixed Asset G/L Journal"
             GenJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
             GenJnlLineNVX."Line No." := Rec."Line No.";
             GenJnlLineNVX.Insert();
-        end;
+            Clear(AllocationCodeVar);
+        end else
+            AllocationCodeVar := GenJnlLineNVX."Allocation Code";
     end;
+
+    trigger OnNewRecord(BelowxRec: Boolean);
+    begin
+        Clear(AllocationCodeVar);
+    end;
+
+    trigger OnInsertRecord(BelowxRec: Boolean): Boolean;
+    var
+        BelowLineNo: Integer;
+        AboveLineNo: Integer;
+    begin
+        If AllocationCodeVar <> '' then begin
+            GenJnlLineNVX.Init();
+            GenJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
+            GenJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
+            GenJnlLineNVX."Line No." := Rec."Line No.";
+            GenJnlLineNVX."Allocation Code" := AllocationCodeVar;
+            GenJnlLineNVX.Insert();
+        end;
+        exit(true);
+    end;
+
+    var
+        GenJnlLineNVX: Record GenJnlLineNVX;
+        AllocationCodeVar: Code[20];
+
 
     [IntegrationEvent(false,false)]
     local procedure OnPreviewDimDistribution(var GenJnlLine: Record "Gen. Journal Line")

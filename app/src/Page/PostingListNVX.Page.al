@@ -30,6 +30,10 @@ page 50013 PostingListNVX
                 {
                     ApplicationArea = All;
                 }
+                field("Time"; "Time")
+                {
+                    ApplicationArea = All;
+                }
                 field("User ID";"User ID")
                 {
                     ApplicationArea = All;

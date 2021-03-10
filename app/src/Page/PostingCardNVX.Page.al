@@ -33,6 +33,10 @@ page 50014 PostingCardNVX
                 {
                     ApplicationArea = All;
                 }
+                field("Time"; "Time")
+                {
+                    ApplicationArea = All;
+                }
                 field("User ID"; "User ID")
                 {
                     ApplicationArea = All;
