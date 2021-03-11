@@ -374,8 +374,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
         </trans-unit>
         <trans-unit id="Page 2774688430 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posting List</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Buchungsliste"</note>
+          <source>Backup dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sicherung dim.Verteilungen Modul AnBu"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page - Page</note>
         </trans-unit>
         <trans-unit id="Page 2611948638 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
@@ -916,6 +916,11 @@
         <trans-unit id="PageExtension 4221297843 - Control 3306788903 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 3 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4221297843 - Control 3654491448 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Activation</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Aktivierung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
         </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 2662501360 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
@@ -4518,14 +4523,24 @@
           <note from="Developer" annotates="general" priority="2">DEA="Lager KSt."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
+        <trans-unit id="Table 513384087 - Field 568743302 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Artikelnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 513384087 - Field 245901840 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Activation</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Aktivierung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
         <trans-unit id="Table 3647664017 - Field 883711285 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry No.</source>
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 2449826669 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Postings</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Buchungen"</note>
+          <source>Backup dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sicherung dim.Verteilungen Modul AnBu"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Table</note>
         </trans-unit>
         <trans-unit id="Table 2449826669 - Field 4039995681 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">

@@ -38,8 +38,19 @@ pageextension 50001 ItemCardNVX extends "Item Card"
                 ApplicationArea = All;
                 Editable = false;
             }
+        }
+        addlast(Planning)
+        {
+            field(ActivationNVX; ItemNVX.Activation)
+            {
+                ApplicationArea = All;
+                Caption = 'Activation', comment = 'DEA="Aktivierung"';
+                trigger OnValidate();
+                begin
+                    ItemNVX.Modify();
+                end;
+            }
             
-
         }
         modify("VAT Prod. Posting Group")
         {
@@ -51,9 +62,11 @@ pageextension 50001 ItemCardNVX extends "Item Card"
 
     var
         GLSetup: Record "General Ledger Setup";
+        ItemNVX: Record ItemNVX;
         DimMgt: Codeunit DimensionManagement;
         GLSetupRead: Boolean;
         GlobalDimension3Code: Code[20];
+
 
     trigger OnAfterGetRecord();
     var
@@ -65,6 +78,12 @@ pageextension 50001 ItemCardNVX extends "Item Card"
         DefaultDim.SetRange("Dimension Code", GLSetup."Shortcut Dimension 3 Code");
         IF DefaultDim.FindFirst then
             GlobalDimension3Code := DefaultDim."Dimension Value Code";
+
+        IF not ItemNVX.Get("No.") then begin
+            ItemNVX.Init();
+            ItemNVX."Item No." := "No.";
+            ItemNVX.Insert();
+        end;
     end;
 
 
