@@ -1,7 +1,7 @@
 table 50021 PostingsNVX
 {
     DataClassification = CustomerContent;
-    Caption = 'Postings', comment = 'DEA="Buchungen"';
+    Caption = 'Backup dimensional distribution', comment = 'DEA="Sicherung dim.Verteilungen Modul AnBu"';
 
     fields
     {
@@ -35,7 +35,7 @@ table 50021 PostingsNVX
             Caption = 'User ID', comment = 'DEA="Benutzer-ID"';
             DataClassification = CustomerContent;
         }
-        field(20; Time; Time)
+        field(20; "Time"; Time)
         {
             Caption = 'Time', comment = 'DEA="Uhrzeit"';
             DataClassification = CustomerContent;
@@ -47,6 +47,10 @@ table 50021 PostingsNVX
         key(PK; "Posting GUID")
         {
             Clustered = true;
+        }
+        key(SortKey; "Date", "Time")
+        {
+            Clustered = false;
         }
     }
 }

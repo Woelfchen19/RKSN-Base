@@ -1,6 +1,6 @@
 page 50013 PostingListNVX
 {
-    Caption = 'Posting List', comment = 'DEA="Buchungsliste"';
+    Caption = 'Backup dimensional distribution', comment = 'DEA="Sicherung dim.Verteilungen Modul AnBu"';
     PageType = List;
     UsageCategory = Lists;
     ApplicationArea = All;
@@ -42,5 +42,8 @@ page 50013 PostingListNVX
             }
         }
     }
-    
+    trigger OnOpenPage();
+    begin
+        SetCurrentKey("Date", "Time");
+    end;
 }
