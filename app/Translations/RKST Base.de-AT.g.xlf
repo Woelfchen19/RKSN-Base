@@ -447,11 +447,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
           <target>Vollständig</target>
         </trans-unit>
-        <trans-unit id="Page 2774688430 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Backup dimensional distribution</source>
+        <trans-unit id="Page 3966859399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Backup dimensional distribution Fixed Asset</source>
           <note from="Developer" annotates="general" priority="2">DEA="Sicherung dim.Verteilungen Modul AnBu"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page - Page</note>
           <target>Sicherung dim.Verteilungen Modul AnBu</target>
+        </trans-unit>
+        <trans-unit id="Page 3293877867 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Backup dimensional distribution General Ledger</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sicherung dim.Verteilungen Modul FiBu"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Page</note>
+          <target>Sicherung dim.Verteilungen Modul FiBu</target>
         </trans-unit>
         <trans-unit id="Page 2611948638 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Preview dimensional distribution</source>
@@ -861,6 +867,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Action</note>
           <target>Vorschau dimensionaler Verteilungsprozess</target>
         </trans-unit>
+        <trans-unit id="PageExtension 3834539042 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
         <trans-unit id="PageExtension 3834539042 - Method 2126772001 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
@@ -973,6 +985,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Sie müssen für die Geschäftsbuchungsgruppe %1 alle Ust.-Buchungsarten definieren!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
           <target>Sie müssen für die Geschäftsbuchungsgruppe %1 alle Ust.-Buchungsarten definieren!</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1795213297 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+          <target>Verteilungscode</target>
         </trans-unit>
         <trans-unit id="PageExtension 1795213297 - Method 2126772001 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
