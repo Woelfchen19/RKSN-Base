@@ -986,6 +986,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
           <target>Sie müssen für die Geschäftsbuchungsgruppe %1 alle Ust.-Buchungsarten definieren!</target>
         </trans-unit>
+        <trans-unit id="PageExtension 192283119 - Control 903330829 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="dim.Verteilungsprozess wiederk. deaktiviert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+          <target>dim.Verteilungsprozess wiederk. deaktiviert</target>
+        </trans-unit>
         <trans-unit id="PageExtension 1795213297 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
@@ -1123,6 +1129,24 @@
           <note from="Developer" annotates="general" priority="2">DEA="Aktivierung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
           <target>Aktivierung</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1200957402 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1200957402 - Method 2126772001 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1200957402 - Action 1234645204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Preview dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Action</note>
+          <target>Vorschau dimensionaler Verteilungsprozess</target>
         </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 2662501360 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allow Item Prod.Post.Group Change</source>
@@ -5283,6 +5307,24 @@
           <source>Line No.</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1283864707 - Field 3684440170 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal Template Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Buch.-Blattvorlagenname"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Buch.-Blattvorlagenname</target>
+        </trans-unit>
+        <trans-unit id="Table 1283864707 - Field 2961552353 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Name"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Name</target>
+        </trans-unit>
+        <trans-unit id="Table 1283864707 - Field 63042765 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="dim.Verteilungsprozess wiederk. deaktiviert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>dim.Verteilungsprozess wiederk. deaktiviert</target>
         </trans-unit>
         <trans-unit id="Table 3896373660 - Field 3004954119 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
