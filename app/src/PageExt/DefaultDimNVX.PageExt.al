@@ -26,6 +26,9 @@ pageextension 50039 DefaultDimNVX extends "Default Dimensions"
         InvValueErr: Label 'This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., ',
                                 comment = 'DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"';
     begin
+        IF Rec."Table ID" <> 27 then
+            exit(true);
+
         GLSetup.Get();
         InvSetupNVX.Get();
         Item.Get(Rec."No.");

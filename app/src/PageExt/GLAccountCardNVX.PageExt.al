@@ -41,6 +41,7 @@ pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
             {
                 ApplicationArea = All;
                 Caption = 'Discount Dimension Detection', comment = 'DEA="Skonto-Dim.Findung"';
+                Editable = PageEditable;
                 trigger OnValidate();
                 begin
                     GLAccountNVX.Modify();
@@ -49,6 +50,7 @@ pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
             field("No dim distribution"; GLAccountNVX."No dim distribution")
             {
                 ApplicationArea = All;
+                Editable = PageEditable;
                 Caption = 'No dimensional distribution', comment = 'DEA="Dim.Aufbereitung nicht erlaubt"';
                 trigger OnValidate();
                 begin
@@ -61,6 +63,7 @@ pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
 
     var
         GLAccountNVX: Record GLAccountNVX;
+        PageEditable: Boolean;
 
     trigger OnAfterGetRecord();
     begin
@@ -69,5 +72,6 @@ pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
             GLAccountNVX."G/L Account No." := "No.";
             GLAccountNVX.Insert();
         end;
+        PageEditable := CurrPage.Editable();
     end;
 }

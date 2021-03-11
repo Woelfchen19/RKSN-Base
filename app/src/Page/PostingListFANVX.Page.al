@@ -1,6 +1,6 @@
-page 50013 PostingListNVX
+page 50013 PostingListFANVX
 {
-    Caption = 'Backup dimensional distribution', comment = 'DEA="Sicherung dim.Verteilungen Modul AnBu"';
+    Caption = 'Backup dimensional distribution Fixed Asset', comment = 'DEA="Sicherung dim.Verteilungen Modul AnBu"';
     PageType = List;
     UsageCategory = Lists;
     ApplicationArea = All;
@@ -34,16 +34,17 @@ page 50013 PostingListNVX
                 {
                     ApplicationArea = All;
                 }
-                field("User ID";"User ID")
+                field("User ID"; "User ID")
                 {
                     ApplicationArea = All;
                 }
-                
+
             }
         }
     }
     trigger OnOpenPage();
     begin
         SetCurrentKey("Date", "Time");
+        SetRange("Source Journal Line", "Source Journal Line"::FAJnlLine);
     end;
 }

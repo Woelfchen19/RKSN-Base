@@ -7,6 +7,7 @@ pageextension 50037 FAJournal extends "Fixed Asset Journal"
             field("Allocation Code"; AllocationCodeVar)
             {
                 ApplicationArea = All;
+                Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
                 TableRelation = AllocationCodeNVX.Code;
                 trigger OnValidate();
                 var
