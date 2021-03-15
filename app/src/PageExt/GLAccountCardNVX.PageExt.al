@@ -57,7 +57,17 @@ pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
                     GLAccountNVX.Modify();
                 end;
             }
-
+            field("Gen. Bsn. Posting Group Type"; GLAccountNVX."Gen. Bsn. Posting Group Type")
+            {
+                ApplicationArea = All;
+                Editable = PageEditable;
+                Caption = 'Gen. Bsn. Posting Group Type', comment = 'DEA="Art Steuerschlüssel"';
+                OptionCaption = 'Standard,Exchange', comment = 'DEA="Standard,Wechsel Steuerschlüssel"';
+                trigger OnValidate();
+                begin
+                    GLAccountNVX.Modify();
+                end;
+            }
         }
     }
 
