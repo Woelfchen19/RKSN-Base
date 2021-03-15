@@ -17,6 +17,13 @@ table 50014 GLAccountNVX
             DataClassification = CustomerContent;
             Caption = 'No dimensional distribution', comment = 'DEA="Dim.Aufbereitung nicht erlaubt"';
         }
+        field(20; "Gen. Bsn. Posting Group Type"; Option)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Gen. Bsn. Posting Group Type', comment = 'DEA="Art Steuerschlüssel"';
+            OptionMembers = Standard, Exchange;
+            OptionCaption = 'Standard,Exchange', comment = 'DEA="Standard,Wechsel Steuerschlüssel"';
+        }
     }
 
     keys

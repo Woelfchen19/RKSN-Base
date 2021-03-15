@@ -1034,6 +1034,18 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
           <target>Dim.Aufbereitung nicht erlaubt</target>
         </trans-unit>
+        <trans-unit id="PageExtension 989769378 - Control 1158273136 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Bsn. Posting Group Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Art Steuerschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+          <target>Art Steuerschlüssel</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 989769378 - Control 1158273136 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Standard,Exchange</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Standard,Wechsel Steuerschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+          <target>Standard,Wechsel Steuerschlüssel</target>
+        </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 2185944783 - Property 1295455071" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."</note>
@@ -5360,6 +5372,18 @@
           <note from="Developer" annotates="general" priority="2">DEA="Dim.Aufbereitung nicht erlaubt"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
           <target>Dim.Aufbereitung nicht erlaubt</target>
+        </trans-unit>
+        <trans-unit id="Table 1715217982 - Field 1158273136 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Bsn. Posting Group Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Art Steuerschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Art Steuerschlüssel</target>
+        </trans-unit>
+        <trans-unit id="Table 1715217982 - Field 1158273136 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Standard,Exchange</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Standard,Wechsel Steuerschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Standard,Wechsel Steuerschlüssel</target>
         </trans-unit>
         <trans-unit id="Table 2583571545 - Field 883711285 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry No.</source>
