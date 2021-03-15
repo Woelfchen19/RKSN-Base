@@ -38,7 +38,11 @@ page 50013 PostingListFANVX
                 {
                     ApplicationArea = All;
                 }
-
+                field(Open;Open)
+                {
+                    ApplicationArea = All;
+                }
+                
             }
         }
     }

@@ -498,6 +498,76 @@
           <note from="Developer" annotates="general" priority="2">DEA="%-Anteil"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
         </trans-unit>
+        <trans-unit id="Page 841801498 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Preview dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Page</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 3938188970 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Account / Fixed Asset</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sachkto./Anlage"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 3422405017 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PC</source>
+          <note from="Developer" annotates="general" priority="2">DEA="PC"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KSt</source>
+          <note from="Developer" annotates="general" priority="2">DEA="KSt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sparte</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sparte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 2347351067 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 1274966946 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Center Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kostenstelle Name"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 517066103 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 1628668361 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuerschlüssel (Gesch.Bu.Grp.)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 1264228252 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Bus. Posting Group Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Name Steuerschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 2777694911 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Percentage</source>
+          <note from="Developer" annotates="general" priority="2">DEA="%-Anteil"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 636392376 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Betrag BRUTTO"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 1108276017 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Betrag Ust."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
+        <trans-unit id="Page 841801498 - Control 953833239 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Base Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Betrag NETTO"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page - Control</note>
+        </trans-unit>
         <trans-unit id="Page 18325704 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Matrix General Business Posting Group_VAT Posting Type</source>
           <note from="Developer" annotates="general" priority="2">DEA="Matrix Geschäftsbuchungsgruppe_USt Buchungsart"</note>
@@ -1007,6 +1077,21 @@
           <source>Interim Gen. Bus. Posting Group</source>
           <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 19653963 - Action 1234645204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Preview dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Action</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Method 2126772001 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
         </trans-unit>
         <trans-unit id="PageExtension 710399418 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
@@ -2953,6 +3038,1056 @@
           <note from="Developer" annotates="general" priority="2">DEA="Geschäftsbuchungsgruppe Beschreibung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
+        <trans-unit id="Table 3278362078 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Line</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einkaufszeile"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Table</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2363328873 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Belegart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2363328873 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote,Order,Invoice,Credit Memo,Blanket Order,Return Order</source>
+          <note from="Developer" annotates="general" priority="2" />
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3792369418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Vendor No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Eink. von Kred.-Nr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 486908828 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Belegnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3320823955 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1878130204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Art"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1878130204 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,G/L Account,Item,,Fixed Asset,Charge (Item)</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Sachkonto,Artikel,,WG/Anlage,Zu-/Abschlag (Artikel)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4200184881 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2161572060 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lagerortcode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1915851633 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Buchungsgruppe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3469770434 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Expected Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Erwartetes Wareneingangsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3461834954 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 47657272 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description 2</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Beschreibung 2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1920046521 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Measure</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einheit"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2704404533 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 184790795 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstanding Quantity</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Restbestellungsmenge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2330918820 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. to Invoice</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge akt. Rechnung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 714568894 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. to Receive</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge akt. Lieferung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4187992892 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direct Unit Cost</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 68186622 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Cost (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einstandspreis (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1246077090 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt. %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2702998682 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Discount %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenrabatt %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1206454073 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Discount Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenrabattbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 636392376 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1650118938 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount Including VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Betrag inkl. MwSt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1708449288 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Price (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VK-Preis (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3222158277 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allow Invoice Disc.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rech.-Rabatt zulassen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4239513174 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gross Weight</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bruttogewicht"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3088522385 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Net Weight</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nettogewicht"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1631894181 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Units per Parcel</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Anzahl pro Paket"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4034345114 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Volume</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Volumen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3244334840 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Appl.-to Item Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Ausgleich mit Artikelposten"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1577567912 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1003760969 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1908272084 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Projektnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3299657368 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Indirect Cost %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Indirekte Kosten %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4032031579 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recalculate Invoice Disc.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rechnungsrabatt neu berechnen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3134116370 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstanding Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Restbestellbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2995013107 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. Rcd. Not Invoiced</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lief. nicht fakt. Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4263906807 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amt. Rcd. Not Invoiced</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nicht fakt. Lieferbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3122616504 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity Received</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bereits gelief. Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 61616130 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity Invoiced</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bereits berech. Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2253333645 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipt No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Wareneingangsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 114117879 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipt Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Wareneingangszeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 309263357 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profit %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="DB %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3941277175 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Vendor No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zahlung an Kred.-Nr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 907522666 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inv. Discount Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rechnungsrabattbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2903269170 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Item No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred.-Artikelnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1475490283 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkaufsauftragsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3254456809 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkaufsauftragszeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 121744499 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Drop Shipment</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Direktlieferung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 633819257 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsbuchungsgruppe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2139693550 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Produktbuchungsgruppe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2971014054 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Calculation Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Berechnungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2971014054 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Normal VAT,Reverse Charge VAT,Full VAT,Sales Tax</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Normale MwSt.,Erwerbsbesteuerung,Nur MwSt.,Verkaufssteuer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3773776616 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Art des Geschäftes"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3193866272 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transport Method</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkehrszweig"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 22371452 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attached to Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gehört zu Zeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 451703052 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry Point</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Entladehafen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3532935625 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bestimmungsregion"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1267997203 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Specification</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verfahren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 305562489 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Area Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuergebietscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 53839102 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Liable</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuerpflichtig"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2552458873 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Group Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuergruppencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3144071522 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use Tax</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verbrauchssteuer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1844012642 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Geschäftsbuchungsgruppe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 236064653 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Produktbuchungsgruppe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4198939294 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Währungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2115107059 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstanding Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Restbestellbetrag (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3126635406 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amt. Rcd. Not Invoiced (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nicht fakt. Lieferbetrag (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2562415929 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reserved Quantity</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Reservierte Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3299467854 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Blanket Order No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rahmenbestellungsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 763268384 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Blanket Order Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rahmenbestellungszeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 904390814 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Base Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Bemessungsgrundlage"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 381961415 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Cost</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einstandspreis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2283884360 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>System-Created Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Systembuchung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3582421358 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2992823416 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Difference</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Differenz"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2637790950 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inv. Disc. Amount to Invoice</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rech.-Rabattbetrag akt. Rech."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2534656220 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Identifier</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Kennzeichen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 5458013 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IC Partner Ref. Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="IC-Partnerref.-Art"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 5458013 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,G/L Account,Item,,,Charge (Item),Cross Reference,Common Item No.,Vendor Item No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Sachkonto,Artikel,,,Zu-/Abschlag (Artikel),Referenz,Gemeinsame Artikelnr.,Kred.-Artikelnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1303275385 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IC Partner Reference</source>
+          <note from="Developer" annotates="general" priority="2">DEA="IC-Partnerreferenz"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3146932276 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorauszahlung %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3323470030 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Line Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorauszahlungszeilenbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3151799915 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Amt. Inv.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Fakt. Vorauszahlungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1288631853 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Amt. Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorauszahlungsbetrag einschl. MwSt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3455951699 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorauszahlungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1924681756 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. VAT Base Amt.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Bemessungsgrundlage Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4263597205 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment VAT %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt % Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1617055028 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. VAT Calc. Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Berechnungsart Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1617055028 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Normal VAT,Reverse Charge VAT,Full VAT,Sales Tax</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Normale MwSt.,Erwerbsbesteuerung,Nur MwSt.,Verkaufssteuer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1182561071 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment VAT Identifier</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt-Kennzeichen Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3175819934 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Tax Area Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuergebietscode Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3379095377 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Tax Liable</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuerpflichtige Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1027779382 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Tax Group Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuergruppencode Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 926363878 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt Amt to Deduct</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abzuziehender Vorauszahlungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 444604356 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt Amt Deducted</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abgezogener Vorauszahlungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 156963205 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Line</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorauszahlungszeile"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4030617242 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Amount Inv. Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Fakt. Vorauszahlungsbetrag einschl. MwSt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3600738024 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Amount Inv. (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Fakt. Vorauszahlungsbetrag (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1329258699 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IC Partner Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="IC-Partnercode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3856459353 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. VAT Amount Inv. (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Fakt. MwSt.-Vorauszahlungsbetrag (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3021212419 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment VAT Difference</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Differenz Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3647441606 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt VAT Diff. to Deduct</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abzuziehende MwSt.-Differenz Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3381947492 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt VAT Diff. Deducted</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abgezogene MwSt.-Differenz Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2638439341 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstanding Amt. Ex. VAT (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Restauftragsbetrag ohne MwSt. (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4054334107 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A. Rcd. Not Inv. Ex. VAT (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nicht fakt. Lieferbetrag ohne MwSt. (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3322554545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Set ID</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dimensionssatz-ID"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 561421623 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Task No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Projektaufgabennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2522987627 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Line Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Projektzeilenart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2522987627 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Budget,Billable,Both Budget and Billable</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Budget,Fakturierbar,Budget und Fakturierbar"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 441038976 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VK-Preis Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 948809140 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Total Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkaufsbetrag Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3685049847 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Line Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenbetrag Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 407950420 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Line Discount Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenrabattbetrag Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1187581963 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Line Discount %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenrabatt % Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3405998085 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Unit Price (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VK-Preis Projekt (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2099049425 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Total Price (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkaufsbetrag Projekt (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4131160974 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Line Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenbetrag Projekt (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3380111771 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Line Disc. Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenrabattbetrag Projekt (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 140183103 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Currency Factor</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Währungsfaktor Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 345735751 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Currency Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Währungscode Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4214889165 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Planning Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Projektplanzeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3798661507 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Remaining Qty.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verbleibend für Projekt - Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 862348287 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Remaining Qty. (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verbleibend für Projekt - Menge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 866715734 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deferral Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abgrenzungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3073984862 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Returns Deferral Start Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gibt Abgrenzungsstartdatum zurück"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 851830778 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prod. Order No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="FA-Nr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3450651614 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Variant Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Variantencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2814799924 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bin Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lagerplatzcode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 806193894 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. per Unit of Measure</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge pro Einheit"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2385270358 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Measure Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einheitencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3179217921 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1262283408 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstanding Qty. (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Restbestellungsmenge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2175328136 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. to Invoice (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge akt. Rechnung (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2773485362 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. to Receive (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge akt. Lieferung (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1961536527 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. Rcd. Not Invoiced (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lief. nicht fakt. Menge(Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 710552291 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. Received (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bereits gelief. Menge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2637242189 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. Invoiced (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bereits berech. Menge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2915692886 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reserved Qty. (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Reservierte Menge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3942279885 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA Posting Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Anlagedatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1877866625 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA Posting Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Anlagenbuchungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1877866625 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Acquisition Cost,Maintenance,,Appreciation</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Anschaffung,Wartung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2223214263 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Depreciation Book Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="AfA Buchcode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 567541820 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Salvage Value</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Restwert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3389861232 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Depr. until FA Posting Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="AfA bis Anlagedatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3484353417 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Depr. Acquisition Cost</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rückw. AfA-Korr. b. Anschaff."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2422551700 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maintenance Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Wartungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1647068831 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Insurance No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Versicherungsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2006341288 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budgeted FA No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Plananlagennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2385065524 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Duplicate in Depreciation Book</source>
+          <note from="Developer" annotates="general" priority="2">DEA="In AfA-Buch kopieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 607461957 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use Duplication List</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kopiervorgang aktivieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2247850105 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Responsibility Center</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zuständigkeitseinheitencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2168672665 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cross-Reference No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Referenznr.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4033886233 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Measure (Cross Ref.)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einheit (Referenz)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 606076036 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cross-Reference Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Referenzart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 606076036 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Customer,Vendor,Bar Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Debitor,Kreditor,Barcode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4031263561 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cross-Reference Type No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Referenzartennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1037119892 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Category Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Artikelkategoriencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1986218713 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Catalog</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Katalogartikel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1161320773 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchasing Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einkaufscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4011591569 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Special Order</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Spezialauftrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1291409940 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Special Order Sales No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Spezialauftrag-Auftragsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 196236138 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Special Order Sales Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Spezialauftrag-Verk.-Zeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 35923301 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Whse. Outstanding Qty. (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lagerrestbestellmenge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 337474445 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Completely Received</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Komplettlieferung (Eingang)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1602222300 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Requested Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gewünschtes Wareneingangsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 429198581 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Promised Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zugesagtes Wareneingangsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1009775796 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lead Time Calculation</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Beschaffungszeit"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3111468436 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inbound Whse. Handling Time</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Eingeh. Lagerdurchlaufzeit"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1623058472 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Planned Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geplantes Wareneingangsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2632124822 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bestelldatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 65364031 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allow Item Charge Assignment</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Artikel Zu-/Abschlagszuw. zul."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2205552060 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. to Assign</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge für Zuweisung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2607956334 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. Assigned</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zugewiesene Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 860837355 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Qty. to Ship</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklieferungsmenge zu liefern"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 158817543 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Qty. to Ship (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklief.-Mge. zu lief.(Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2085498783 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Qty. Shipped Not Invd.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklief.-Menge Lief. n. fakt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 464995662 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ret. Qty. Shpd Not Invd.(Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rückl.-Mge. Lief.n.fak.(Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2353187087 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Shpd. Not Invd.</source>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3548501702 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Shpd. Not Invd. (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lief. n. fakt. Rückl.-Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4156722757 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Qty. Shipped</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklieferungsmenge geliefert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3656948401 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Qty. Shipped (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklief.-Menge gelief.(Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2938954207 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Shipment No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklieferungsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3899450453 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Shipment Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklieferzeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1576505637 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Reason Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Reklamationsgrundcode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1761304904 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subtype</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Unterart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1761304904 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Item - Inventory,Item - Service,Comment</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Artikel - Lagerbestand,Artikel - Dienstleistung,Kommentar"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2848188607 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copied From Posted Doc.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Copied From Posted Doc."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2202932243 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Auftragsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 176518433 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Auftragszeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3123169861 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Routing No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Arbeitsplannr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3162383302 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operation No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Arbeitsgangnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4065966391 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Work Center No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Arbeitsplatzgruppennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 293070022 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Finished</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Beendet"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2138704244 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prod. Order Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="FA-Zeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2115629424 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overhead Rate</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gemeinkostensatz"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1216535604 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MPS Order</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Prod.-Programmplanungsauftrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 751190652 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Planning Flexibility</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Planungsflexibilität"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 751190652 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unlimited,None</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Unbeschränkt,Keine"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3802096367 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Safety Lead Time</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sicherh.-Zuschl. Beschaff.-Zt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2542071172 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Routing Reference No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Arbeitsplanref.-Nr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1364463381 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Posting Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2777694911 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilung %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 474480784 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Startdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 1453814930 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionsname 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 3941489899 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Bus. Posting Group Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsbuchungsgruppe Beschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
         <trans-unit id="Table 2056450994 - Field 1651921640 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales,Purchase</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verkauf,Einkauf"</note>
@@ -4619,7 +5754,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 2449826669 - Field 2781878022 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Gen. Journal Line,FA Journal Line</source>
+          <source>Gen. Journal Line,FA Journal Line,Purchase Line</source>
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
@@ -4641,6 +5776,11 @@
         <trans-unit id="Table 2449826669 - Field 1230148255 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Time</source>
           <note from="Developer" annotates="general" priority="2">DEA="Uhrzeit"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2449826669 - Field 4259830144 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Offen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 4083901735 - Field 1651921640 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
@@ -4681,6 +5821,1116 @@
         <trans-unit id="Table 4083901735 - Field 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Interim Gen. Bus. Posting Group</source>
           <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3220818943 - Field 2363328873 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Type</source>
+          <note from="Developer" annotates="general" priority="2" />
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3220818943 - Field 486908828 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2" />
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3220818943 - Field 3320823955 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2" />
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3220818943 - Field 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Line</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einkaufszeile"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Table</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2363328873 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Belegart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2363328873 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote,Order,Invoice,Credit Memo,Blanket Order,Return Order</source>
+          <note from="Developer" annotates="general" priority="2" />
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3792369418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Vendor No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Eink. von Kred.-Nr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 486908828 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Belegnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3320823955 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1878130204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Art"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1878130204 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,G/L Account,Item,,Fixed Asset,Charge (Item)</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Sachkonto,Artikel,,WG/Anlage,Zu-/Abschlag (Artikel)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4200184881 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2161572060 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lagerortcode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1915851633 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Buchungsgruppe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3469770434 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Expected Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Erwartetes Wareneingangsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3461834954 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 47657272 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description 2</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Beschreibung 2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1920046521 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Measure</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einheit"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2704404533 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 184790795 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstanding Quantity</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Restbestellungsmenge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2330918820 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. to Invoice</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge akt. Rechnung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 714568894 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. to Receive</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge akt. Lieferung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4187992892 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direct Unit Cost</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 68186622 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Cost (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einstandspreis (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1246077090 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt. %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2702998682 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Discount %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenrabatt %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1206454073 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Discount Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenrabattbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 636392376 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1650118938 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount Including VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Betrag inkl. MwSt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1708449288 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Price (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VK-Preis (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3222158277 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allow Invoice Disc.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rech.-Rabatt zulassen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4239513174 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gross Weight</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bruttogewicht"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3088522385 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Net Weight</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nettogewicht"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1631894181 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Units per Parcel</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Anzahl pro Paket"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4034345114 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Volume</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Volumen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3244334840 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Appl.-to Item Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Ausgleich mit Artikelposten"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1577567912 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1003760969 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1908272084 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Projektnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3299657368 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Indirect Cost %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Indirekte Kosten %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4032031579 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recalculate Invoice Disc.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rechnungsrabatt neu berechnen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3134116370 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstanding Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Restbestellbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2995013107 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. Rcd. Not Invoiced</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lief. nicht fakt. Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4263906807 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amt. Rcd. Not Invoiced</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nicht fakt. Lieferbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3122616504 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity Received</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bereits gelief. Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 61616130 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity Invoiced</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bereits berech. Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2253333645 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipt No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Wareneingangsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 114117879 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipt Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Wareneingangszeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 309263357 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profit %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="DB %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3941277175 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Vendor No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zahlung an Kred.-Nr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 907522666 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inv. Discount Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rechnungsrabattbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2903269170 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Item No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred.-Artikelnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1475490283 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkaufsauftragsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3254456809 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkaufsauftragszeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 121744499 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Drop Shipment</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Direktlieferung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 633819257 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsbuchungsgruppe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2139693550 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Produktbuchungsgruppe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2971014054 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Calculation Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Berechnungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2971014054 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Normal VAT,Reverse Charge VAT,Full VAT,Sales Tax</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Normale MwSt.,Erwerbsbesteuerung,Nur MwSt.,Verkaufssteuer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3773776616 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Art des Geschäftes"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3193866272 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transport Method</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkehrszweig"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 22371452 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attached to Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gehört zu Zeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 451703052 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry Point</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Entladehafen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3532935625 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bestimmungsregion"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1267997203 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Specification</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verfahren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 305562489 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Area Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuergebietscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 53839102 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Liable</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuerpflichtig"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2552458873 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Group Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuergruppencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3144071522 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use Tax</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verbrauchssteuer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1844012642 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Geschäftsbuchungsgruppe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 236064653 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Produktbuchungsgruppe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4198939294 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Währungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2115107059 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstanding Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Restbestellbetrag (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3126635406 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amt. Rcd. Not Invoiced (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nicht fakt. Lieferbetrag (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2562415929 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reserved Quantity</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Reservierte Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3299467854 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Blanket Order No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rahmenbestellungsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 763268384 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Blanket Order Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rahmenbestellungszeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 904390814 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Base Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Bemessungsgrundlage"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 381961415 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Cost</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einstandspreis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2283884360 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>System-Created Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Systembuchung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3582421358 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2992823416 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Difference</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Differenz"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2637790950 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inv. Disc. Amount to Invoice</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rech.-Rabattbetrag akt. Rech."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2534656220 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Identifier</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Kennzeichen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 5458013 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IC Partner Ref. Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="IC-Partnerref.-Art"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 5458013 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,G/L Account,Item,,,Charge (Item),Cross Reference,Common Item No.,Vendor Item No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Sachkonto,Artikel,,,Zu-/Abschlag (Artikel),Referenz,Gemeinsame Artikelnr.,Kred.-Artikelnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1303275385 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IC Partner Reference</source>
+          <note from="Developer" annotates="general" priority="2">DEA="IC-Partnerreferenz"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3146932276 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorauszahlung %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3323470030 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Line Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorauszahlungszeilenbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3151799915 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Amt. Inv.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Fakt. Vorauszahlungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1288631853 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Amt. Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorauszahlungsbetrag einschl. MwSt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3455951699 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorauszahlungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1924681756 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. VAT Base Amt.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Bemessungsgrundlage Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4263597205 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment VAT %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt % Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1617055028 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. VAT Calc. Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Berechnungsart Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1617055028 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Normal VAT,Reverse Charge VAT,Full VAT,Sales Tax</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Normale MwSt.,Erwerbsbesteuerung,Nur MwSt.,Verkaufssteuer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1182561071 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment VAT Identifier</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt-Kennzeichen Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3175819934 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Tax Area Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuergebietscode Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3379095377 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Tax Liable</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuerpflichtige Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1027779382 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Tax Group Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuergruppencode Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 926363878 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt Amt to Deduct</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abzuziehender Vorauszahlungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 444604356 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt Amt Deducted</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abgezogener Vorauszahlungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 156963205 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Line</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorauszahlungszeile"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4030617242 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Amount Inv. Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Fakt. Vorauszahlungsbetrag einschl. MwSt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3600738024 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Amount Inv. (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Fakt. Vorauszahlungsbetrag (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1329258699 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IC Partner Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="IC-Partnercode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3856459353 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. VAT Amount Inv. (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Fakt. MwSt.-Vorauszahlungsbetrag (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3021212419 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment VAT Difference</source>
+          <note from="Developer" annotates="general" priority="2">DEA="MwSt.-Differenz Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3647441606 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt VAT Diff. to Deduct</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abzuziehende MwSt.-Differenz Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3381947492 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt VAT Diff. Deducted</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abgezogene MwSt.-Differenz Vorauszahlung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2638439341 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstanding Amt. Ex. VAT (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Restauftragsbetrag ohne MwSt. (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4054334107 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A. Rcd. Not Inv. Ex. VAT (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nicht fakt. Lieferbetrag ohne MwSt. (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3322554545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Set ID</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dimensionssatz-ID"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 561421623 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Task No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Projektaufgabennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2522987627 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Line Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Projektzeilenart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2522987627 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Budget,Billable,Both Budget and Billable</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Budget,Fakturierbar,Budget und Fakturierbar"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 441038976 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VK-Preis Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 948809140 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Total Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkaufsbetrag Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3685049847 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Line Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenbetrag Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 407950420 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Line Discount Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenrabattbetrag Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1187581963 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Line Discount %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenrabatt % Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3405998085 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Unit Price (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VK-Preis Projekt (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2099049425 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Total Price (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkaufsbetrag Projekt (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4131160974 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Line Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenbetrag Projekt (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3380111771 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Line Disc. Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeilenrabattbetrag Projekt (MW)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 140183103 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Currency Factor</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Währungsfaktor Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 345735751 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Currency Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Währungscode Projekt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4214889165 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Planning Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Projektplanzeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3798661507 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Remaining Qty.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verbleibend für Projekt - Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 862348287 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Remaining Qty. (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verbleibend für Projekt - Menge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 866715734 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deferral Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abgrenzungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3073984862 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Returns Deferral Start Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gibt Abgrenzungsstartdatum zurück"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 851830778 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prod. Order No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="FA-Nr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3450651614 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Variant Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Variantencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2814799924 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bin Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lagerplatzcode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 806193894 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. per Unit of Measure</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge pro Einheit"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2385270358 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Measure Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einheitencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3179217921 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1262283408 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstanding Qty. (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Restbestellungsmenge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2175328136 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. to Invoice (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge akt. Rechnung (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2773485362 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. to Receive (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge akt. Lieferung (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1961536527 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. Rcd. Not Invoiced (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lief. nicht fakt. Menge(Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 710552291 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. Received (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bereits gelief. Menge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2637242189 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. Invoiced (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bereits berech. Menge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2915692886 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reserved Qty. (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Reservierte Menge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3942279885 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA Posting Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Anlagedatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1877866625 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA Posting Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Anlagenbuchungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1877866625 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Acquisition Cost,Maintenance,,Appreciation</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Anschaffung,Wartung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2223214263 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Depreciation Book Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="AfA Buchcode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 567541820 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Salvage Value</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Restwert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3389861232 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Depr. until FA Posting Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="AfA bis Anlagedatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3484353417 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Depr. Acquisition Cost</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rückw. AfA-Korr. b. Anschaff."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2422551700 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maintenance Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Wartungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1647068831 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Insurance No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Versicherungsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2006341288 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budgeted FA No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Plananlagennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2385065524 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Duplicate in Depreciation Book</source>
+          <note from="Developer" annotates="general" priority="2">DEA="In AfA-Buch kopieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 607461957 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use Duplication List</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kopiervorgang aktivieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2247850105 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Responsibility Center</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zuständigkeitseinheitencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2168672665 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cross-Reference No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Referenznr.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4033886233 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Measure (Cross Ref.)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einheit (Referenz)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 606076036 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cross-Reference Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Referenzart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 606076036 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Customer,Vendor,Bar Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Debitor,Kreditor,Barcode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4031263561 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cross-Reference Type No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Referenzartennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1037119892 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Category Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Artikelkategoriencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1986218713 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Catalog</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Katalogartikel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1161320773 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchasing Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einkaufscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4011591569 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Special Order</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Spezialauftrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1291409940 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Special Order Sales No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Spezialauftrag-Auftragsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 196236138 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Special Order Sales Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Spezialauftrag-Verk.-Zeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 35923301 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Whse. Outstanding Qty. (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lagerrestbestellmenge (Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 337474445 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Completely Received</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Komplettlieferung (Eingang)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1602222300 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Requested Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gewünschtes Wareneingangsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 429198581 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Promised Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zugesagtes Wareneingangsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1009775796 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lead Time Calculation</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Beschaffungszeit"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3111468436 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inbound Whse. Handling Time</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Eingeh. Lagerdurchlaufzeit"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1623058472 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Planned Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geplantes Wareneingangsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2632124822 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bestelldatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 65364031 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allow Item Charge Assignment</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Artikel Zu-/Abschlagszuw. zul."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2205552060 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. to Assign</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Menge für Zuweisung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2607956334 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. Assigned</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zugewiesene Menge"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 860837355 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Qty. to Ship</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklieferungsmenge zu liefern"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 158817543 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Qty. to Ship (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklief.-Mge. zu lief.(Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2085498783 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Qty. Shipped Not Invd.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklief.-Menge Lief. n. fakt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 464995662 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ret. Qty. Shpd Not Invd.(Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rückl.-Mge. Lief.n.fak.(Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2353187087 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Shpd. Not Invd.</source>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3548501702 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Shpd. Not Invd. (LCY)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lief. n. fakt. Rückl.-Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4156722757 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Qty. Shipped</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklieferungsmenge geliefert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3656948401 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Qty. Shipped (Base)</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklief.-Menge gelief.(Basis)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2938954207 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Shipment No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklieferungsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3899450453 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Shipment Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rücklieferzeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1576505637 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Reason Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Reklamationsgrundcode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1761304904 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subtype</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Unterart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1761304904 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Item - Inventory,Item - Service,Comment</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Artikel - Lagerbestand,Artikel - Dienstleistung,Kommentar"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2848188607 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copied From Posted Doc.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Copied From Posted Doc."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2202932243 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Auftragsnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 176518433 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Auftragszeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3123169861 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Routing No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Arbeitsplannr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3162383302 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operation No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Arbeitsgangnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4065966391 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Work Center No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Arbeitsplatzgruppennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 293070022 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Finished</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Beendet"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2138704244 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prod. Order Line No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="FA-Zeilennr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2115629424 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overhead Rate</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gemeinkostensatz"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1216535604 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MPS Order</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Prod.-Programmplanungsauftrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 751190652 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Planning Flexibility</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Planungsflexibilität"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 751190652 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unlimited,None</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Unbeschränkt,Keine"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3802096367 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Safety Lead Time</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sicherh.-Zuschl. Beschaff.-Zt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2542071172 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Routing Reference No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Arbeitsplanref.-Nr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1364463381 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Posting Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2777694911 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilung %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 474480784 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Startdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1453814930 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionsname 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 781257514 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2711388939 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 4 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 4"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 405681708 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 5"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4126842061 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 6"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2765633070 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 7 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 7"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 785667711 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 8 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 8"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 3941489899 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Bus. Posting Group Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsbuchungsgruppe Beschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 4039995681 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting GUID</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Buchungs-GUID"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1877729964 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Buchungsart"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 1224611290 - Field 2708250016 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
