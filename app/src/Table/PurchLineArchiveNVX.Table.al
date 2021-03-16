@@ -1186,11 +1186,6 @@ table 50030 PurchLineArchiveNVX
         {
             Caption = 'Overhead Rate', comment = 'DEA="Gemeinkostensatz"';
             DecimalPlaces = 0 : 5;
-
-            trigger OnValidate()
-            begin
-                Validate("Indirect Cost %");
-            end;
         }
         field(99000756; "MPS Order"; Boolean)
         {
@@ -1333,6 +1328,16 @@ table 50030 PurchLineArchiveNVX
             FieldClass = FlowField;
             CalcFormula = lookup ("Gen. Business Posting Group".Description where (Code = field("Gen. Bus. Posting Group")));
         }
+        field(50030;"Posting Date";Date)
+        {
+            Caption = 'Posting Date', comment = 'DEA="Buchungsdatum"';
+            DataClassification = CustomerContent;
+        }
+        field(50031;"External Document No.";Code[35])
+        {
+            Caption = 'External Document No.', comment = 'DEA="Externe Belegnummer"';
+            DataClassification = ToBeClassified;
+        }
         field(60000; "Posting GUID"; Guid)
         {
             Caption = 'Posting GUID', comment = 'DEA="Buchungs-GUID"';
@@ -1348,7 +1353,7 @@ table 50030 PurchLineArchiveNVX
 
     keys
     {
-        key(Key1; "Document Type", "Document No.", "Line No.")
+        key(Key1; "Posting GUID", "Posting Type", "Line No.")
         {
             Clustered = true;
         }
