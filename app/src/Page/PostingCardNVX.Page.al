@@ -93,6 +93,32 @@ page 50014 PostingCardNVX
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = FAVisible;
             }
+            
+            //Purchase Line parts
+            part(PurchOrigin; PurchLineArchiveOriginNVX)
+            {
+                Caption = 'Origin', comment = 'DEA="Ursprung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = FAVisible;
+            }
+            part(PurchSummary; PurchLineArchiveSummaryNVX)
+            {
+                Caption = 'Summary', comment = 'DEA="Zusammenfassung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = FAVisible;
+            }
+            part(PurchPreparation; PurchLineArchivePrepNVX)
+            {
+                Caption = 'Preparation', comment = 'DEA="Vorbereitung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = FAVisible;
+            }
+            part(PurchComplete; PurchLineArchiveCompleteNVX)
+            {
+                Caption = 'Complete', comment = 'DEA="Vollständig"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = FAVisible;
+            }        
         }
     }
 
@@ -105,10 +131,14 @@ page 50014 PostingCardNVX
     begin
         GLVisible := "Source Journal Line" = "Source Journal Line"::GenJnlLine;
         FAVisible := "Source Journal Line" = "Source Journal Line"::FAJnlLine;
+        PurchVisible := "Source Journal Line" = "Source Journal Line"::PurchaseLine;
+        SalesVisible := "Source Journal Line" = "Source Journal Line"::SalesLine;
     end;
 
     var
         GLVisible: Boolean;
         FAVisible: Boolean;
+        PurchVisible: Boolean;
+        SalesVisible: Boolean;
 
 }

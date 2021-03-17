@@ -67,6 +67,33 @@ pageextension 50015 PCrMemoNVX extends "Purchase Credit Memo"
         }
     }
 
+    actions
+    {
+        addlast(Processing)
+        {
+            action(PreviewDimDistribution)
+            {
+                Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
+                Image = PreviewChecks;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                trigger OnAction();
+                var
+                    DistrPurchLine: Record DistrPurchLineNVX;
+                    PreviewPurchDimDistrPage: Page PreviewPurchDimDistrNVX;
+                begin
+                    OnPreviewDimDistribution(Rec);
+                    DistrPurchLine.SetRange("Document Type",Rec."Document Type");
+                    DistrPurchLine.SetRange("Document No.",Rec."No.");
+                    PreviewPurchDimDistrPage.SetRecord(DistrPurchLine);
+                    PreviewPurchDimDistrPage.SetTableView(DistrPurchLine);
+                    PreviewPurchDimDistrPage.Run();
+                end;
+            }
+        }
+    }
+
     var
         DocInfoNVX: Record DocInfoNVX;
         PageEditable: Boolean;
@@ -86,5 +113,10 @@ pageextension 50015 PCrMemoNVX extends "Purchase Credit Memo"
     trigger OnOpenPage();
     begin
         PageEditable := CurrPage.Editable;
+    end;
+
+    [IntegrationEvent(false,false)]
+    local procedure OnPreviewDimDistribution(var PurchaseHeader: Record "Purchase Header")
+    begin
     end;
 }

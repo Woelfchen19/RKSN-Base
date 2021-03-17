@@ -59,20 +59,4 @@ codeunit 50010 Codeunit90HookNVX
             PstdDocInfo.Insert();
         end;
     end;
-
-    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterPostInvPostBuffer', '', false, false)]
-    // local procedure InsertRecInAccompaniedLedgerTable(PurchHeader : Record "Purchase Header";GLEntryNo : Integer)
-    // var
-    //     DocInfo: Record DocInfoNVX;
-    //     GLEntryNVX: Record GLEntryNVX;
-    // begin
-    //     IF DocInfo.get(DocInfo.Department::Purchase, PurchHeader."Document Type", PurchHeader."No.") then begin
-    //         GLEntryNVX.Init();
-    //         GLEntryNVX."Entry No." := GLEntryNo;
-    //         GLEntryNVX."PShortcut Dimension 1 Code" := DocInfo."Shortcut Dimension 1 Code";
-    //         GLEntryNVX."PShortcut Dimension 3 Code" := DocInfo."Shortcut Dimension 3 Code";
-    //         GLEntryNVX."Interim Gen.Bus.Posting Group" := DocInfo."Interim Gen.Bus.Posting Group";
-    //         GLEntryNVX.Insert();
-    //     end;
-    // end;
 }

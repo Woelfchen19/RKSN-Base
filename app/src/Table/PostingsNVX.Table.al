@@ -22,8 +22,8 @@ table 50021 PostingsNVX
         field(5; "Source Journal Line"; Option)
         {
             DataClassification = CustomerContent;
-            OptionMembers = GenJnlLine, FAJnlLine;
-            OptionCaption = 'Gen. Journal Line,FA Journal Line';
+            OptionMembers = GenJnlLine, FAJnlLine, PurchaseLine, SalesLine;
+            OptionCaption = 'Gen. Journal Line,FA Journal Line,Purchase Line,Sales Line';
         }
         field(10; "Date"; Date)
         {
@@ -38,6 +38,11 @@ table 50021 PostingsNVX
         field(20; "Time"; Time)
         {
             Caption = 'Time', comment = 'DEA="Uhrzeit"';
+            DataClassification = CustomerContent;
+        }
+        field(25; Open; Boolean)
+        {
+            Caption = 'Open', comment = 'DEA="Offen"';
             DataClassification = CustomerContent;
         }
     }

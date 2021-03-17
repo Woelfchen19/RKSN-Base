@@ -21,6 +21,11 @@ table 50020 GenJnlLineNVX
             Caption = 'Allocation Code', comment = 'Verteilungscode"';
             DataClassification = CustomerContent;
         }
+        field(15;"VAT Posting Type";Code[10])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
+        }
     }
 
     keys
