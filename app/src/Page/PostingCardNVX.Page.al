@@ -118,7 +118,27 @@ page 50014 PostingCardNVX
                 Caption = 'Complete', comment = 'DEA="Vollständig"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = FAVisible;
-            }        
+            }
+
+            //Sales Line Parts
+            part(SalesOrigin; SalesLineArchiveOriginNVX)
+            {
+                Caption = 'Origin', comment = 'DEA="Ursprung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = FAVisible;
+            }
+            part(SalesSummary; SalesLineArchiveSummaryNVX)
+            {
+                Caption = 'Summary', comment = 'DEA="Zusammenfassung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = FAVisible;
+            }
+            part(SalesPreparation; SalesLineArchivePrepNVX)
+            {
+                Caption = 'Preparation', comment = 'DEA="Vorbereitung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = FAVisible;
+            }            
         }
     }
 
