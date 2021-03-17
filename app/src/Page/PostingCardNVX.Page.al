@@ -118,8 +118,7 @@ page 50014 PostingCardNVX
                 Caption = 'Complete', comment = 'DEA="Vollständig"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = FAVisible;
-            }
-
+            }        
         }
     }
 
@@ -133,11 +132,13 @@ page 50014 PostingCardNVX
         GLVisible := "Source Journal Line" = "Source Journal Line"::GenJnlLine;
         FAVisible := "Source Journal Line" = "Source Journal Line"::FAJnlLine;
         PurchVisible := "Source Journal Line" = "Source Journal Line"::PurchaseLine;
+        SalesVisible := "Source Journal Line" = "Source Journal Line"::SalesLine;
     end;
 
     var
         GLVisible: Boolean;
         FAVisible: Boolean;
         PurchVisible: Boolean;
+        SalesVisible: Boolean;
 
 }

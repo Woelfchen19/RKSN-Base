@@ -59,46 +59,4 @@ codeunit 50010 Codeunit90HookNVX
             PstdDocInfo.Insert();
         end;
     end;
-
-    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterPostInvPostBuffer', '', false, false)]
-    // local procedure InsertRecInAccompaniedLedgerTable(PurchHeader : Record "Purchase Header";GLEntryNo : Integer)
-    // var
-    //     DocInfo: Record DocInfoNVX;
-    //     GLEntryNVX: Record GLEntryNVX;
-    // begin
-    //     IF DocInfo.get(DocInfo.Department::Purchase, PurchHeader."Document Type", PurchHeader."No.") then begin
-    //         GLEntryNVX.Init();
-    //         GLEntryNVX."Entry No." := GLEntryNo;
-    //         GLEntryNVX."PShortcut Dimension 1 Code" := DocInfo."Shortcut Dimension 1 Code";
-    //         GLEntryNVX."PShortcut Dimension 3 Code" := DocInfo."Shortcut Dimension 3 Code";
-    //         GLEntryNVX."Interim Gen.Bus.Posting Group" := DocInfo."Interim Gen.Bus.Posting Group";
-    //         GLEntryNVX.Insert();
-    //     end;
-    // end;
-
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterPurchInvLineInsert', '', false, false)]
-    local procedure TransferRecToPstdAccompaniedTableInvLines(VAR PurchInvLine : Record "Purch. Inv. Line";PurchLine : Record "Purchase Line")
-    var
-        PurchaseLineNVX: Record PurchaseLineNVX;
-        PurchInvLineNVX: Record PurchInvLineNVX;
-    begin
-        If PurchaseLineNVX.Get(PurchLine."Document Type",PurchLine."Document No.",PurchLine."Line No.") then begin
-            PurchInvLineNVX.Init();
-            PurchInvLineNVX.TransferFields(PurchaseLineNVX);
-            PurchInvLineNVX.Insert();
-        end;
-    end;
-
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterPurchCrMemoLineInsert', '', false, false)]
-    local procedure TransferRecToPstdAccompaniedTableCrMemoLines(VAR PurchCrMemoLine : Record "Purch. Cr. Memo Line";VAR PurchLine : Record "Purchase Line")
-    var
-        PurchaseLineNVX: Record PurchaseLineNVX;
-        PurchCrMemoLineNVX: Record PurchCrMemoLineNVX;
-    begin
-        If PurchaseLineNVX.Get(PurchLine."Document Type",PurchLine."Document No.",PurchLine."Line No.") then begin
-            PurchCrMemoLineNVX.Init();
-            PurchCrMemoLineNVX.TransferFields(PurchaseLineNVX);
-            PurchCrMemoLineNVX.Insert();
-        end;
-    end;
 }
