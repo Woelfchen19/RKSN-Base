@@ -68,6 +68,33 @@ pageextension 50007 SQuoteNVX extends "Sales Quote"
         }
     }
 
+    actions
+    {
+        addlast(Processing)
+        {
+            action(PreviewDimDistribution)
+            {
+                Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
+                Image = PreviewChecks;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                trigger OnAction();
+                var
+                    DistrSalesLine: Record DistrSalesLineNVX;
+                    PreviewSalesDimDistrPage: Page PreviewSalesDimDistrNVX;
+                begin
+                    OnPreviewDimDistribution(Rec);
+                    DistrSalesLine.SetRange("Document Type",Rec."Document Type");
+                    DistrSalesLine.SetRange("Document No.",Rec."No.");
+                    PreviewSalesDimDistrPage.SetRecord(DistrSalesLine);
+                    PreviewSalesDimDistrPage.SetTableView(DistrSalesLine);
+                    PreviewSalesDimDistrPage.Run();
+                end;
+            }
+        }
+    }
+
     var
         DocInfoNVX: Record DocInfoNVX;
         PageEditable: Boolean;
@@ -87,5 +114,10 @@ pageextension 50007 SQuoteNVX extends "Sales Quote"
     trigger OnOpenPage();
     begin
         PageEditable := CurrPage.Editable;
+    end;
+
+    [IntegrationEvent(false,false)]
+    local procedure OnPreviewDimDistribution(var SalesHeader: Record "Sales Header")
+    begin
     end;
 }

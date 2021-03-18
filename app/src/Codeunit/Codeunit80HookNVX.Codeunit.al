@@ -91,12 +91,21 @@ codeunit 50009 Codeunit80HookNVX
                     GLEntry.SetRange("Document Type",GLEntry."Document Type"::Invoice);
                     GLEntry.SetRange("Document No.",SalesInvHdrNo);
                     IF GLEntry.FindSet then repeat
-                        GLEntryNVX.Init();
-                        GLEntryNVX."Entry No." := GLEntry."Entry No.";
-                        GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
-                        GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
-                        GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
-                        GLEntryNVX.Insert();
+
+                        If not GLEntryNVX.get(GLEntry."Entry No.") then begin
+                            GLEntryNVX.Init();
+                            GLEntryNVX."Entry No." := GLEntry."Entry No.";
+                            GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
+                            GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
+                            GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
+                            GLEntryNVX.Insert();
+                        end else begin
+                            GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
+                            GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
+                            GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
+                            GLEntryNVX.Modify();
+                        end;
+
                     until GLEntry.Next = 0;
                 end;
             end;
@@ -106,14 +115,23 @@ codeunit 50009 Codeunit80HookNVX
                 IF PstdDocInfo.get(PstdDocInfo.Department::Sales, PstdDocInfo."Document Type"::"Credit Memo", SalesCrMemoHdrNo) then begin
                     GLEntry.SetRange("Document Type",GLEntry."Document Type"::"Credit Memo");
                     GLEntry.SetRange("Document No.",SalesCrMemoHdrNo);
-                    IF GLEntry.FindSet then repeat
-                        GLEntryNVX.Init();
-                        GLEntryNVX."Entry No." := GLEntry."Entry No.";
-                        GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
-                        GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
-                        GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
-                        GLEntryNVX.Insert();
-                    until GLEntry.Next = 0;
+                    IF GLEntry.FindSet() then repeat
+
+                        If not GLEntryNVX.get(GLEntry."Entry No.") then begin
+                            GLEntryNVX.Init();
+                            GLEntryNVX."Entry No." := GLEntry."Entry No.";
+                            GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
+                            GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
+                            GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
+                            GLEntryNVX.Insert();
+                        end else begin
+                            GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
+                            GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
+                            GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
+                            GLEntryNVX.Modify();
+                        end;
+
+                    until GLEntry.Next = 0;                    
                 end;
             end;
             
@@ -122,9 +140,8 @@ codeunit 50009 Codeunit80HookNVX
 
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforeTestGBPG', '', false, false)]
-    //TODO RKSN-41 --> TODOOOOoooOOOooOOOoo
-    local procedure MyProcedure()
+    local procedure SkipGBPGTestfield(var IsHandled: Boolean)
     begin
-        
+        IsHandled := true;
     end;
 }

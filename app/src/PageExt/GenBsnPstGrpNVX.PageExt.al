@@ -185,7 +185,7 @@ pageextension 50003 GenBsnPstGrpNVX extends "Gen. Business Posting Groups"
             BsnPstGrpVATPstTypeNVX.SetFilter(BsnPstGrpVATPstTypeNVX."VAT Posting Type", '<>%1', '');
             BsnPstGrpVATPstTypeNVX.SetFilter("Gen. Bus. Posting Group2", '<>%1', '');
             if BsnPstGrpVATPstTypeNVX.count() <> NoOfTypes then
-                error(MissingTypeErr, GenBusinessPostingGroup.code); //TODO wieder einkommentieren...
+                error(MissingTypeErr, GenBusinessPostingGroup.code);
             until GenBusinessPostingGroup.Next() = 0;
         exit(true);
     end;

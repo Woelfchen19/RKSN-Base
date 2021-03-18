@@ -744,13 +744,13 @@ table 50035 DistrSalesLineNVX
             Caption = 'Job Contract Entry No.', comment = 'DEA="Projektvertragspostennr."';
             Editable = false;
         }
-        field(1300; "Posting Date"; Date)
-        {
-            CalcFormula = Lookup ("Sales Header"."Posting Date" WHERE("Document Type" = FIELD("Document Type"),
-                                                                      "No." = FIELD("Document No.")));
-            Caption = 'Posting Date', comment = 'DEA="Buchungsdatum"';
-            FieldClass = FlowField;
-        }
+        // field(1300; "Posting Date"; Date)
+        // {
+        //     CalcFormula = Lookup ("Sales Header"."Posting Date" WHERE("Document Type" = FIELD("Document Type"),
+        //                                                               "No." = FIELD("Document No.")));
+        //     Caption = 'Posting Date', comment = 'DEA="Buchungsdatum"';
+        //     FieldClass = FlowField;
+        // }
         field(1700; "Deferral Code"; Code[10])
         {
             Caption = 'Deferral Code', comment = 'DEA="Abgrenzungscode"';
@@ -951,14 +951,14 @@ table 50035 DistrSalesLineNVX
             Caption = 'Purchasing Code', comment = 'DEA="Einkaufscode"';
             TableRelation = Purchasing;
         }
-        field(5712; "Product Group Code"; Code[10])
-        {
-            Caption = 'Product Group Code', comment = 'DEA="Produktgruppencode"';
-            ObsoleteReason = 'Product Groups became first level children of Item Categories.';
-            ObsoleteState = Obsolete;
-            TableRelation = "Product Group".Code WHERE("Item Category Code" = FIELD("Item Category Code"));
-            ValidateTableRelation = false;
-        }
+        // field(5712; "Product Group Code"; Code[10])
+        // {
+        //     Caption = 'Product Group Code', comment = 'DEA="Produktgruppencode"';
+        //     ObsoleteReason = 'Product Groups became first level children of Item Categories.';
+        //     ObsoleteState = Obsolete;
+        //     TableRelation = "Product Group".Code WHERE("Item Category Code" = FIELD("Item Category Code"));
+        //     ValidateTableRelation = false;
+        // }
         field(5713; "Special Order"; Boolean)
         {
             AccessByPermission = TableData "Drop Shpt. Post. Buffer" = R;
@@ -1313,8 +1313,12 @@ table 50035 DistrSalesLineNVX
         field(50031;"External Document No.";Code[35])
         {
             Caption = 'External Document No.', comment = 'DEA="Externe Belegnummer"';
-            DataClassification = ToBeClassified;
-        }        
+            DataClassification = CustomerContent;
+        }     
+        field(50050;"Origin Line No.";Integer)
+        {
+            DataClassification = CustomerContent;
+        }   
     }
 
     keys

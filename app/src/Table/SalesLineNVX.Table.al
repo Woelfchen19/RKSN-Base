@@ -22,6 +22,20 @@ table 50036 SalesLineNVX
             Caption = 'Allocation Code', comment = 'Verteilungscode"';
             DataClassification = CustomerContent;
         }
+        field(100; "Allocation Amount"; Integer)
+        {
+            Caption = 'Allocation Amount';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = sum (DistrSalesLineNVX.Amount where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No."), "Origin Line No." = field ("Line No.")));
+        }
+        field(101; "Allocation Amount Incl. VAT"; Integer)
+        {
+            Caption = 'Allocation Amount Incl. VAT';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = sum (DistrSalesLineNVX."Line Amount" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No."), "Origin Line No." = field ("Line No.")));
+        }
     }
 
     keys
