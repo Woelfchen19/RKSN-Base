@@ -1,11 +1,8 @@
 page 50030 PurchLineArchiveCompleteNVX
 {
-    
-    ApplicationArea = All;
     Caption = 'Purchase Line Archive Complete', comment = 'DEA="Einkaufszeilenarchiv vollständig"';
     PageType = ListPart;
     SourceTable = PurchLineArchiveNVX;
-    UsageCategory = History;
     
     layout
     {

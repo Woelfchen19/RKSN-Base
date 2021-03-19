@@ -64,6 +64,24 @@ pageextension 50008 SOrderNVX extends "Sales Order"
                     DocInfoNVX.Modify();
                 end;
             }
+            field("Allocation Amount"; DocInfoNVX."Allocation Amount")
+            {
+                Caption = 'Allocation Amount', comment = 'DEA="Verteilungsbetrag"';
+                ApplicationArea = All;
+                Editable = false;
+            }
+            field("Allocation Amount Incl. VAT"; DocInfoNVX."Allocation Amount Incl. VAT")
+            {
+                Caption = 'Allocation Amount', comment = 'DEA="Verteilungsbetrag"';
+                ApplicationArea = All;
+                Editable = false;
+            }
+            field("VAT Sum";DocInfoNVX."Allocation Amount Incl. VAT" - DocInfoNVX."Allocation Amount")
+            {
+                Caption = 'VAT Sum', comment = 'DEA="Summe USt."';
+                ApplicationArea = All;
+                Editable = false;
+            }                    
         }
     }
 

@@ -88,6 +88,18 @@ pageextension 50024 SCrMemoSubSubNVX extends "Sales Cr. Memo Subform"
                         end;
                 end;
             }
+            field("Allocation Amount"; SalesLineNVX."Allocation Amount")
+            {
+                Caption = 'Allocation Amount', comment = 'DEA="Verteilungsbetrag"';
+                ApplicationArea = All;
+                Editable = false;
+            }
+            field("Allocation Amount Incl. VAT"; SalesLineNVX."Allocation Amount Incl. VAT")
+            {
+                Caption = 'Allocation Amount', comment = 'DEA="Verteilungsbetrag"';
+                ApplicationArea = All;
+                Editable = false;
+            }     
         }
     }
     

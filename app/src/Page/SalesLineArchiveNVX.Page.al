@@ -1,17 +1,16 @@
-page 50029 PurchLineArchiveNVX
+page 50037 SalesLineArchiveNVX
 {
-    
-    ApplicationArea = All;
-    Caption = 'Purchase Line Archive', comment = 'DEA="Einkaufszeilenarchiv"';
     PageType = List;
-    SourceTable = PurchLineArchiveNVX;
+    SourceTable = "SalesLineArchiveNVX";
+    ApplicationArea = All;
     UsageCategory = History;
-    
+    Caption = 'Sales Line Archive', comment = 'DEA="Verkaufszeilenarchiv"';    
+
     layout
     {
         area(content)
         {
-            repeater(General)
+            repeater(Group)
             {
                 field("Posting GUID"; "Posting GUID")
                 {
@@ -24,7 +23,7 @@ page 50029 PurchLineArchiveNVX
                 field("Document Type"; "Document Type")
                 {
                 }
-                field("Buy-from Vendor No."; "Buy-from Vendor No.")
+                field("Sell-to Customer No."; "Sell-to Customer No.")
                 {
                 }
                 field("Document No."; "Document No.")
@@ -45,7 +44,7 @@ page 50029 PurchLineArchiveNVX
                 field("Posting Group"; "Posting Group")
                 {
                 }
-                field("Expected Receipt Date"; "Expected Receipt Date")
+                field("Shipment Date"; "Shipment Date")
                 {
                 }
                 field(Description; Description)
@@ -66,10 +65,10 @@ page 50029 PurchLineArchiveNVX
                 field("Qty. to Invoice"; "Qty. to Invoice")
                 {
                 }
-                field("Qty. to Receive"; "Qty. to Receive")
+                field("Qty. to Ship"; "Qty. to Ship")
                 {
                 }
-                field("Direct Unit Cost"; "Direct Unit Cost")
+                field("Unit Price"; "Unit Price")
                 {
                 }
                 field("Unit Cost (LCY)"; "Unit Cost (LCY)")
@@ -88,9 +87,6 @@ page 50029 PurchLineArchiveNVX
                 {
                 }
                 field("Amount Including VAT"; "Amount Including VAT")
-                {
-                }
-                field("Unit Price (LCY)"; "Unit Price (LCY)")
                 {
                 }
                 field("Allow Invoice Disc."; "Allow Invoice Disc.")
@@ -117,10 +113,13 @@ page 50029 PurchLineArchiveNVX
                 field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
                 }
+                field("Customer Price Group"; "Customer Price Group")
+                {
+                }
                 field("Job No."; "Job No.")
                 {
                 }
-                field("Indirect Cost %"; "Indirect Cost %")
+                field("Work Type Code"; "Work Type Code")
                 {
                 }
                 field("Recalculate Invoice Disc."; "Recalculate Invoice Disc.")
@@ -129,40 +128,37 @@ page 50029 PurchLineArchiveNVX
                 field("Outstanding Amount"; "Outstanding Amount")
                 {
                 }
-                field("Qty. Rcd. Not Invoiced"; "Qty. Rcd. Not Invoiced")
+                field("Qty. Shipped Not Invoiced"; "Qty. Shipped Not Invoiced")
                 {
                 }
-                field("Amt. Rcd. Not Invoiced"; "Amt. Rcd. Not Invoiced")
+                field("Shipped Not Invoiced"; "Shipped Not Invoiced")
                 {
                 }
-                field("Quantity Received"; "Quantity Received")
+                field("Quantity Shipped"; "Quantity Shipped")
                 {
                 }
                 field("Quantity Invoiced"; "Quantity Invoiced")
                 {
                 }
-                field("Receipt No."; "Receipt No.")
+                field("Shipment No."; "Shipment No.")
                 {
                 }
-                field("Receipt Line No."; "Receipt Line No.")
+                field("Shipment Line No."; "Shipment Line No.")
                 {
                 }
                 field("Profit %"; "Profit %")
                 {
                 }
-                field("Pay-to Vendor No."; "Pay-to Vendor No.")
+                field("Bill-to Customer No."; "Bill-to Customer No.")
                 {
                 }
                 field("Inv. Discount Amount"; "Inv. Discount Amount")
                 {
                 }
-                field("Vendor Item No."; "Vendor Item No.")
+                field("Purchase Order No."; "Purchase Order No.")
                 {
                 }
-                field("Sales Order No."; "Sales Order No.")
-                {
-                }
-                field("Sales Order Line No."; "Sales Order Line No.")
+                field("Purch. Order Line No."; "Purch. Order Line No.")
                 {
                 }
                 field("Drop Shipment"; "Drop Shipment")
@@ -186,13 +182,16 @@ page 50029 PurchLineArchiveNVX
                 field("Attached to Line No."; "Attached to Line No.")
                 {
                 }
-                field("Entry Point"; "Entry Point")
+                field("Exit Point"; "Exit Point")
                 {
                 }
                 field("Area"; Area)
                 {
                 }
                 field("Transaction Specification"; "Transaction Specification")
+                {
+                }
+                field("Tax Category"; "Tax Category")
                 {
                 }
                 field("Tax Area Code"; "Tax Area Code")
@@ -204,7 +203,7 @@ page 50029 PurchLineArchiveNVX
                 field("Tax Group Code"; "Tax Group Code")
                 {
                 }
-                field("Use Tax"; "Use Tax")
+                field("VAT Clause Code"; "VAT Clause Code")
                 {
                 }
                 field("VAT Bus. Posting Group"; "VAT Bus. Posting Group")
@@ -219,10 +218,16 @@ page 50029 PurchLineArchiveNVX
                 field("Outstanding Amount (LCY)"; "Outstanding Amount (LCY)")
                 {
                 }
-                field("Amt. Rcd. Not Invoiced (LCY)"; "Amt. Rcd. Not Invoiced (LCY)")
+                field("Shipped Not Invoiced (LCY)"; "Shipped Not Invoiced (LCY)")
+                {
+                }
+                field("Shipped Not Inv. (LCY) No VAT"; "Shipped Not Inv. (LCY) No VAT")
                 {
                 }
                 field("Reserved Quantity"; "Reserved Quantity")
+                {
+                }
+                field(Reserve; Reserve)
                 {
                 }
                 field("Blanket Order No."; "Blanket Order No.")
@@ -324,70 +329,37 @@ page 50029 PurchLineArchiveNVX
                 field("Prepmt VAT Diff. Deducted"; "Prepmt VAT Diff. Deducted")
                 {
                 }
-                field("Outstanding Amt. Ex. VAT (LCY)"; "Outstanding Amt. Ex. VAT (LCY)")
-                {
-                }
-                field("A. Rcd. Not Inv. Ex. VAT (LCY)"; "A. Rcd. Not Inv. Ex. VAT (LCY)")
+                field("Line Discount Calculation"; "Line Discount Calculation")
                 {
                 }
                 field("Dimension Set ID"; "Dimension Set ID")
                 {
                 }
+                field("Qty. to Assemble to Order"; "Qty. to Assemble to Order")
+                {
+                }
+                field("Qty. to Asm. to Order (Base)"; "Qty. to Asm. to Order (Base)")
+                {
+                }
+                field("ATO Whse. Outstanding Qty."; "ATO Whse. Outstanding Qty.")
+                {
+                }
+                field("ATO Whse. Outstd. Qty. (Base)"; "ATO Whse. Outstd. Qty. (Base)")
+                {
+                }
                 field("Job Task No."; "Job Task No.")
                 {
                 }
-                field("Job Line Type"; "Job Line Type")
+                field("Job Contract Entry No."; "Job Contract Entry No.")
                 {
                 }
-                field("Job Unit Price"; "Job Unit Price")
-                {
-                }
-                field("Job Total Price"; "Job Total Price")
-                {
-                }
-                field("Job Line Amount"; "Job Line Amount")
-                {
-                }
-                field("Job Line Discount Amount"; "Job Line Discount Amount")
-                {
-                }
-                field("Job Line Discount %"; "Job Line Discount %")
-                {
-                }
-                field("Job Unit Price (LCY)"; "Job Unit Price (LCY)")
-                {
-                }
-                field("Job Total Price (LCY)"; "Job Total Price (LCY)")
-                {
-                }
-                field("Job Line Amount (LCY)"; "Job Line Amount (LCY)")
-                {
-                }
-                field("Job Line Disc. Amount (LCY)"; "Job Line Disc. Amount (LCY)")
-                {
-                }
-                field("Job Currency Factor"; "Job Currency Factor")
-                {
-                }
-                field("Job Currency Code"; "Job Currency Code")
-                {
-                }
-                field("Job Planning Line No."; "Job Planning Line No.")
-                {
-                }
-                field("Job Remaining Qty."; "Job Remaining Qty.")
-                {
-                }
-                field("Job Remaining Qty. (Base)"; "Job Remaining Qty. (Base)")
+                field("Posting Date"; "Posting Date")
                 {
                 }
                 field("Deferral Code"; "Deferral Code")
                 {
                 }
                 field("Returns Deferral Start Date"; "Returns Deferral Start Date")
-                {
-                }
-                field("Prod. Order No."; "Prod. Order No.")
                 {
                 }
                 field("Variant Code"; "Variant Code")
@@ -397,6 +369,9 @@ page 50029 PurchLineArchiveNVX
                 {
                 }
                 field("Qty. per Unit of Measure"; "Qty. per Unit of Measure")
+                {
+                }
+                field(Planned; Planned)
                 {
                 }
                 field("Unit of Measure Code"; "Unit of Measure Code")
@@ -411,13 +386,13 @@ page 50029 PurchLineArchiveNVX
                 field("Qty. to Invoice (Base)"; "Qty. to Invoice (Base)")
                 {
                 }
-                field("Qty. to Receive (Base)"; "Qty. to Receive (Base)")
+                field("Qty. to Ship (Base)"; "Qty. to Ship (Base)")
                 {
                 }
-                field("Qty. Rcd. Not Invoiced (Base)"; "Qty. Rcd. Not Invoiced (Base)")
+                field("Qty. Shipped Not Invd. (Base)"; "Qty. Shipped Not Invd. (Base)")
                 {
                 }
-                field("Qty. Received (Base)"; "Qty. Received (Base)")
+                field("Qty. Shipped (Base)"; "Qty. Shipped (Base)")
                 {
                 }
                 field("Qty. Invoiced (Base)"; "Qty. Invoiced (Base)")
@@ -429,28 +404,10 @@ page 50029 PurchLineArchiveNVX
                 field("FA Posting Date"; "FA Posting Date")
                 {
                 }
-                field("FA Posting Type"; "FA Posting Type")
-                {
-                }
                 field("Depreciation Book Code"; "Depreciation Book Code")
                 {
                 }
-                field("Salvage Value"; "Salvage Value")
-                {
-                }
                 field("Depr. until FA Posting Date"; "Depr. until FA Posting Date")
-                {
-                }
-                field("Depr. Acquisition Cost"; "Depr. Acquisition Cost")
-                {
-                }
-                field("Maintenance Code"; "Maintenance Code")
-                {
-                }
-                field("Insurance No."; "Insurance No.")
-                {
-                }
-                field("Budgeted FA No."; "Budgeted FA No.")
                 {
                 }
                 field("Duplicate in Depreciation Book"; "Duplicate in Depreciation Book")
@@ -460,6 +417,18 @@ page 50029 PurchLineArchiveNVX
                 {
                 }
                 field("Responsibility Center"; "Responsibility Center")
+                {
+                }
+                field("Out-of-Stock Substitution"; "Out-of-Stock Substitution")
+                {
+                }
+                field("Substitution Available"; "Substitution Available")
+                {
+                }
+                field("Originally Ordered No."; "Originally Ordered No.")
+                {
+                }
+                field("Originally Ordered Var. Code"; "Originally Ordered Var. Code")
                 {
                 }
                 field("Cross-Reference No."; "Cross-Reference No.")
@@ -489,34 +458,43 @@ page 50029 PurchLineArchiveNVX
                 field("Special Order"; "Special Order")
                 {
                 }
-                field("Special Order Sales No."; "Special Order Sales No.")
+                field("Special Order Purchase No."; "Special Order Purchase No.")
                 {
                 }
-                field("Special Order Sales Line No."; "Special Order Sales Line No.")
+                field("Special Order Purch. Line No."; "Special Order Purch. Line No.")
+                {
+                }
+                field("Whse. Outstanding Qty."; "Whse. Outstanding Qty.")
                 {
                 }
                 field("Whse. Outstanding Qty. (Base)"; "Whse. Outstanding Qty. (Base)")
                 {
                 }
-                field("Completely Received"; "Completely Received")
+                field("Completely Shipped"; "Completely Shipped")
                 {
                 }
-                field("Requested Receipt Date"; "Requested Receipt Date")
+                field("Requested Delivery Date"; "Requested Delivery Date")
                 {
                 }
-                field("Promised Receipt Date"; "Promised Receipt Date")
+                field("Promised Delivery Date"; "Promised Delivery Date")
                 {
                 }
-                field("Lead Time Calculation"; "Lead Time Calculation")
+                field("Shipping Time"; "Shipping Time")
                 {
                 }
-                field("Inbound Whse. Handling Time"; "Inbound Whse. Handling Time")
+                field("Outbound Whse. Handling Time"; "Outbound Whse. Handling Time")
                 {
                 }
-                field("Planned Receipt Date"; "Planned Receipt Date")
+                field("Planned Delivery Date"; "Planned Delivery Date")
                 {
                 }
-                field("Order Date"; "Order Date")
+                field("Planned Shipment Date"; "Planned Shipment Date")
+                {
+                }
+                field("Shipping Agent Code"; "Shipping Agent Code")
+                {
+                }
+                field("Shipping Agent Service Code"; "Shipping Agent Service Code")
                 {
                 }
                 field("Allow Item Charge Assignment"; "Allow Item Charge Assignment")
@@ -528,79 +506,58 @@ page 50029 PurchLineArchiveNVX
                 field("Qty. Assigned"; "Qty. Assigned")
                 {
                 }
-                field("Return Qty. to Ship"; "Return Qty. to Ship")
+                field("Return Qty. to Receive"; "Return Qty. to Receive")
                 {
                 }
-                field("Return Qty. to Ship (Base)"; "Return Qty. to Ship (Base)")
+                field("Return Qty. to Receive (Base)"; "Return Qty. to Receive (Base)")
                 {
                 }
-                field("Return Qty. Shipped Not Invd."; "Return Qty. Shipped Not Invd.")
+                field("Return Qty. Rcd. Not Invd."; "Return Qty. Rcd. Not Invd.")
                 {
                 }
-                field("Ret. Qty. Shpd Not Invd.(Base)"; "Ret. Qty. Shpd Not Invd.(Base)")
+                field("Ret. Qty. Rcd. Not Invd.(Base)"; "Ret. Qty. Rcd. Not Invd.(Base)")
                 {
                 }
-                field("Return Shpd. Not Invd."; "Return Shpd. Not Invd.")
+                field("Return Rcd. Not Invd."; "Return Rcd. Not Invd.")
                 {
                 }
-                field("Return Shpd. Not Invd. (LCY)"; "Return Shpd. Not Invd. (LCY)")
+                field("Return Rcd. Not Invd. (LCY)"; "Return Rcd. Not Invd. (LCY)")
                 {
                 }
-                field("Return Qty. Shipped"; "Return Qty. Shipped")
+                field("Return Qty. Received"; "Return Qty. Received")
                 {
                 }
-                field("Return Qty. Shipped (Base)"; "Return Qty. Shipped (Base)")
+                field("Return Qty. Received (Base)"; "Return Qty. Received (Base)")
                 {
                 }
-                field("Return Shipment No."; "Return Shipment No.")
+                field("Appl.-from Item Entry"; "Appl.-from Item Entry")
                 {
                 }
-                field("Return Shipment Line No."; "Return Shipment Line No.")
+                field("BOM Item No."; "BOM Item No.")
+                {
+                }
+                field("Return Receipt No."; "Return Receipt No.")
+                {
+                }
+                field("Return Receipt Line No."; "Return Receipt Line No.")
                 {
                 }
                 field("Return Reason Code"; "Return Reason Code")
                 {
                 }
-                field(Subtype; Subtype)
-                {
-                }
                 field("Copied From Posted Doc."; "Copied From Posted Doc.")
                 {
                 }
-                field("Order No."; "Order No.")
+                field("Allow Line Disc."; "Allow Line Disc.")
                 {
                 }
-                field("Order Line No."; "Order Line No.")
+                field("Customer Disc. Group"; "Customer Disc. Group")
                 {
                 }
-                field("Routing No."; "Routing No.")
+                field(Subtype; Subtype)
                 {
                 }
-                field("Operation No."; "Operation No.")
-                {
-                }
-                field("Work Center No."; "Work Center No.")
-                {
-                }
-                field(Finished; Finished)
-                {
-                }
-                field("Prod. Order Line No."; "Prod. Order Line No.")
-                {
-                }
-                field("Overhead Rate"; "Overhead Rate")
-                {
-                }
-                field("MPS Order"; "MPS Order")
-                {
-                }
-                field("Planning Flexibility"; "Planning Flexibility")
-                {
-                }
-                field("Safety Lead Time"; "Safety Lead Time")
-                {
-                }
-                field("Routing Reference No."; "Routing Reference No.")
+                field("Price description"; "Price description")
                 {
                 }
                 field("VAT Posting Type"; "VAT Posting Type")
@@ -614,9 +571,13 @@ page 50029 PurchLineArchiveNVX
                 }
                 field("Start Date"; "Start Date")
                 {
-                }
+                }                
             }
         }
     }
-    
+
+    actions
+    {
+    }
 }
+

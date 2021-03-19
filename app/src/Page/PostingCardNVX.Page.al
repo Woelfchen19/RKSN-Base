@@ -138,7 +138,14 @@ page 50014 PostingCardNVX
                 Caption = 'Preparation', comment = 'DEA="Vorbereitung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = SalesVisible;
-            }            
+            }       
+            part(SalesComplete; SalesLineArchiveCompleteNVX)
+            {
+                Caption = 'Complete', comment = 'DEA="Vollständig"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = PurchVisible;
+            }
+
         }
     }
 
