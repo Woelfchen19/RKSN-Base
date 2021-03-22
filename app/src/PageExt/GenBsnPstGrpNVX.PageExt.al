@@ -163,30 +163,28 @@ pageextension 50003 GenBsnPstGrpNVX extends "Gen. Business Posting Groups"
 
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean;
-    begin
-        IF CloseAction = CloseAction::OK then
-            exit(CheckVATPostingType());
-    end;
-
-    local procedure CheckVATPostingType(): Boolean;
-    var
+        var
         VATPostingType: Record VATPostingTypeNVX;
         BsnPstGrpVATPstTypeNVX: Record BsnPstGrpVATPstTypeNVX;
         GenBusinessPostingGroup: Record "Gen. Business Posting Group";
         NoOfTypes: Integer;
         MissingTypeErr: Label 'You must specify all VAT Posting Groups for Gen. Business Posting Group %1', comment = 'DEA="Sie müssen für die Geschäftsbuchungsgruppe %1 alle Ust.-Buchungsarten definieren!"';
     begin
-        VATPostingType.Reset();
-        NoOfTypes := VATPostingType.Count();
-        GenBusinessPostingGroup.Reset();
-        if GenBusinessPostingGroup.FindSet() then
-            repeat
-                BsnPstGrpVATPstTypeNVX.SetRange("Gen. Bus. Posting Group", GenBusinessPostingGroup.Code);
-            BsnPstGrpVATPstTypeNVX.SetFilter(BsnPstGrpVATPstTypeNVX."VAT Posting Type", '<>%1', '');
-            BsnPstGrpVATPstTypeNVX.SetFilter("Gen. Bus. Posting Group2", '<>%1', '');
-            if BsnPstGrpVATPstTypeNVX.count() <> NoOfTypes then
-                error(MissingTypeErr, GenBusinessPostingGroup.code);
-            until GenBusinessPostingGroup.Next() = 0;
+        IF LookupMode then
+            exit(true);
+        IF CloseAction = CloseAction::OK then begin
+            VATPostingType.Reset();
+            NoOfTypes := VATPostingType.Count();
+            GenBusinessPostingGroup.Reset();
+            if GenBusinessPostingGroup.FindSet() then
+                repeat
+                    BsnPstGrpVATPstTypeNVX.SetRange("Gen. Bus. Posting Group", GenBusinessPostingGroup.Code);
+                    BsnPstGrpVATPstTypeNVX.SetFilter(BsnPstGrpVATPstTypeNVX."VAT Posting Type", '<>%1', '');
+                    BsnPstGrpVATPstTypeNVX.SetFilter("Gen. Bus. Posting Group2", '<>%1', '');
+                    if BsnPstGrpVATPstTypeNVX.count() <> NoOfTypes then
+                        error(MissingTypeErr, GenBusinessPostingGroup.code);
+                until GenBusinessPostingGroup.Next() = 0;
         exit(true);
+        end;
     end;
 }

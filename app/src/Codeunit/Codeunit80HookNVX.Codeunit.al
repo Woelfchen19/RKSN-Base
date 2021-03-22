@@ -95,13 +95,13 @@ codeunit 50009 Codeunit80HookNVX
                         If not GLEntryNVX.get(GLEntry."Entry No.") then begin
                             GLEntryNVX.Init();
                             GLEntryNVX."Entry No." := GLEntry."Entry No.";
-                            GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
-                            GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
+                            // GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
+                            // GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
                             GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
                             GLEntryNVX.Insert();
                         end else begin
-                            GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
-                            GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
+                            // GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
+                            // GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
                             GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
                             GLEntryNVX.Modify();
                         end;
@@ -120,13 +120,13 @@ codeunit 50009 Codeunit80HookNVX
                         If not GLEntryNVX.get(GLEntry."Entry No.") then begin
                             GLEntryNVX.Init();
                             GLEntryNVX."Entry No." := GLEntry."Entry No.";
-                            GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
-                            GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
+                            // GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
+                            // GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
                             GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
                             GLEntryNVX.Insert();
                         end else begin
-                            GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
-                            GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
+                            // GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
+                            // GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
                             GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
                             GLEntryNVX.Modify();
                         end;

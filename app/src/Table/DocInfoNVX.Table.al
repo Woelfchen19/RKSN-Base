@@ -51,14 +51,14 @@ table 50007 DocInfoNVX
             Caption = 'Allocation Amount', comment = 'DEA="Verteilungsbetrag"';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum (DistrSalesLineNVX.Amount where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No.")));
+            CalcFormula = sum (DistrSalesLineNVX."VAT Base Amount" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No.")));
         }
         field(101; "Allocation Amount Incl. VAT"; Decimal)
         {
             Caption = 'Allocation Amount Incl. VAT', comment = 'DEA="Verteilungsbetrag inl. USt."';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum (DistrSalesLineNVX."Line Amount" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No.")));
+            CalcFormula = sum (DistrSalesLineNVX."Amount Including VAT" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No.")));
         }
     }
 
