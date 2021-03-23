@@ -143,7 +143,7 @@ page 50014 PostingCardNVX
             {
                 Caption = 'Complete', comment = 'DEA="Vollständig"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
-                Visible = PurchVisible;
+                Visible = SalesVisible;
             }
 
         }
