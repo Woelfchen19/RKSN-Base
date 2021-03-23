@@ -59,4 +59,6 @@ codeunit 50010 Codeunit90HookNVX
             PstdDocInfo.Insert();
         end;
     end;
+
+    //TODO Posted Doc Info in GL Entry mitnehmen --> siehe cu80 hook InsertRecInAccompaniedLedgerTable
 }

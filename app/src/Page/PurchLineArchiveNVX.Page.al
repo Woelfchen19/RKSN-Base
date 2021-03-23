@@ -21,621 +21,95 @@ page 50029 PurchLineArchiveNVX
                 {
                     ApplicationArea = All;
                 }
-                field("A. Rcd. Not Inv. Ex. VAT (LCY)"; Rec."A. Rcd. Not Inv. Ex. VAT (LCY)")
+                field("Document Type"; "Document Type")
                 {
-                    ApplicationArea = All;
                 }
-                field("Allow Invoice Disc."; Rec."Allow Invoice Disc.")
+                field("Buy-from Vendor No."; "Buy-from Vendor No.")
                 {
-                    ApplicationArea = All;
                 }
-                field("Allow Item Charge Assignment"; Rec."Allow Item Charge Assignment")
+                field("Document No."; "Document No.")
                 {
-                    ApplicationArea = All;
                 }
-                field("Amount Including VAT"; Rec."Amount Including VAT")
+                field("Line No."; "Line No.")
                 {
-                    ApplicationArea = All;
                 }
-                field("Amt. Rcd. Not Invoiced (LCY)"; Rec."Amt. Rcd. Not Invoiced (LCY)")
+                field(Type; Type)
                 {
-                    ApplicationArea = All;
                 }
-                field("Amt. Rcd. Not Invoiced"; Rec."Amt. Rcd. Not Invoiced")
+                field("No."; "No.")
                 {
-                    ApplicationArea = All;
                 }
-                field("Appl.-to Item Entry"; Rec."Appl.-to Item Entry")
+                field("Location Code"; "Location Code")
                 {
-                    ApplicationArea = All;
                 }
-                field("Area"; Rec.Area)
+                field("Posting Group"; "Posting Group")
                 {
-                    ApplicationArea = All;
                 }
-                field("Attached to Line No."; Rec."Attached to Line No.")
+                field("Expected Receipt Date"; "Expected Receipt Date")
                 {
-                    ApplicationArea = All;
                 }
-                field("Bin Code"; Rec."Bin Code")
+                field(Description; Description)
                 {
-                    ApplicationArea = All;
                 }
-                field("Blanket Order Line No."; Rec."Blanket Order Line No.")
+                field("Description 2"; "Description 2")
                 {
-                    ApplicationArea = All;
                 }
-                field("Blanket Order No."; Rec."Blanket Order No.")
+                field("Unit of Measure"; "Unit of Measure")
                 {
-                    ApplicationArea = All;
                 }
-                field("Budgeted FA No."; Rec."Budgeted FA No.")
+                field(Quantity; Quantity)
                 {
-                    ApplicationArea = All;
                 }
-                field("Buy-from Vendor No."; Rec."Buy-from Vendor No.")
+                field("Outstanding Quantity"; "Outstanding Quantity")
                 {
-                    ApplicationArea = All;
                 }
-                field("Completely Received"; Rec."Completely Received")
+                field("Qty. to Invoice"; "Qty. to Invoice")
                 {
-                    ApplicationArea = All;
                 }
-                field("Copied From Posted Doc."; Rec."Copied From Posted Doc.")
+                field("Qty. to Receive"; "Qty. to Receive")
                 {
-                    ApplicationArea = All;
                 }
-                field("Cross-Reference No."; Rec."Cross-Reference No.")
+                field("Direct Unit Cost"; "Direct Unit Cost")
                 {
-                    ApplicationArea = All;
                 }
-                field("Cross-Reference Type No."; Rec."Cross-Reference Type No.")
+                field("Unit Cost (LCY)"; "Unit Cost (LCY)")
                 {
-                    ApplicationArea = All;
                 }
-                field("Cross-Reference Type"; Rec."Cross-Reference Type")
+                field("VAT %"; "VAT %")
                 {
-                    ApplicationArea = All;
                 }
-                field("Currency Code"; Rec."Currency Code")
+                field("Line Discount %"; "Line Discount %")
                 {
-                    ApplicationArea = All;
                 }
-                field("Deferral Code"; Rec."Deferral Code")
+                field("Line Discount Amount"; "Line Discount Amount")
                 {
-                    ApplicationArea = All;
                 }
-                field("Depr. Acquisition Cost"; Rec."Depr. Acquisition Cost")
+                field(Amount; Amount)
                 {
-                    ApplicationArea = All;
                 }
-                field("Depr. until FA Posting Date"; Rec."Depr. until FA Posting Date")
+                field("Amount Including VAT"; "Amount Including VAT")
                 {
-                    ApplicationArea = All;
                 }
-                field("Depreciation Book Code"; Rec."Depreciation Book Code")
+                field("Unit Price (LCY)"; "Unit Price (LCY)")
                 {
-                    ApplicationArea = All;
                 }
-                field("Description 2"; Rec."Description 2")
+                field("Allow Invoice Disc."; "Allow Invoice Disc.")
                 {
-                    ApplicationArea = All;
                 }
-                field("Dimension Set ID"; Rec."Dimension Set ID")
+                field("Gross Weight"; "Gross Weight")
                 {
-                    ApplicationArea = All;
                 }
-                field("Direct Unit Cost"; Rec."Direct Unit Cost")
+                field("Net Weight"; "Net Weight")
                 {
-                    ApplicationArea = All;
                 }
-                field("Document No."; Rec."Document No.")
+                field("Units per Parcel"; "Units per Parcel")
                 {
-                    ApplicationArea = All;
                 }
-                field("Document Type"; Rec."Document Type")
+                field("Unit Volume"; "Unit Volume")
                 {
-                    ApplicationArea = All;
                 }
-                field("Drop Shipment"; Rec."Drop Shipment")
+                field("Appl.-to Item Entry"; "Appl.-to Item Entry")
                 {
-                    ApplicationArea = All;
-                }
-                field("Duplicate in Depreciation Book"; Rec."Duplicate in Depreciation Book")
-                {
-                    ApplicationArea = All;
-                }
-                field("Entry Point"; Rec."Entry Point")
-                {
-                    ApplicationArea = All;
-                }
-                field("Expected Receipt Date"; Rec."Expected Receipt Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("FA Posting Date"; Rec."FA Posting Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("FA Posting Type"; Rec."FA Posting Type")
-                {
-                    ApplicationArea = All;
-                }
-                field("Gen. Bus. Posting Group"; Rec."Gen. Bus. Posting Group")
-                {
-                    ApplicationArea = All;
-                }
-                field("Gen. Prod. Posting Group"; Rec."Gen. Prod. Posting Group")
-                {
-                    ApplicationArea = All;
-                }
-                field("Gross Weight"; Rec."Gross Weight")
-                {
-                    ApplicationArea = All;
-                }
-                field("IC Partner Code"; Rec."IC Partner Code")
-                {
-                    ApplicationArea = All;
-                }
-                field("IC Partner Ref. Type"; Rec."IC Partner Ref. Type")
-                {
-                    ApplicationArea = All;
-                }
-                field("IC Partner Reference"; Rec."IC Partner Reference")
-                {
-                    ApplicationArea = All;
-                }
-                field("Inbound Whse. Handling Time"; Rec."Inbound Whse. Handling Time")
-                {
-                    ApplicationArea = All;
-                }
-                field("Indirect Cost %"; Rec."Indirect Cost %")
-                {
-                    ApplicationArea = All;
-                }
-                field("Insurance No."; Rec."Insurance No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Inv. Disc. Amount to Invoice"; Rec."Inv. Disc. Amount to Invoice")
-                {
-                    ApplicationArea = All;
-                }
-                field("Inv. Discount Amount"; Rec."Inv. Discount Amount")
-                {
-                    ApplicationArea = All;
-                }
-                field("Item Category Code"; Rec."Item Category Code")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Currency Code"; Rec."Job Currency Code")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Currency Factor"; Rec."Job Currency Factor")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Line Amount (LCY)"; Rec."Job Line Amount (LCY)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Line Amount"; Rec."Job Line Amount")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Line Disc. Amount (LCY)"; Rec."Job Line Disc. Amount (LCY)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Line Discount %"; Rec."Job Line Discount %")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Line Discount Amount"; Rec."Job Line Discount Amount")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Line Type"; Rec."Job Line Type")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job No."; Rec."Job No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Planning Line No."; Rec."Job Planning Line No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Remaining Qty. (Base)"; Rec."Job Remaining Qty. (Base)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Remaining Qty."; Rec."Job Remaining Qty.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Task No."; Rec."Job Task No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Total Price (LCY)"; Rec."Job Total Price (LCY)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Total Price"; Rec."Job Total Price")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Unit Price (LCY)"; Rec."Job Unit Price (LCY)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Job Unit Price"; Rec."Job Unit Price")
-                {
-                    ApplicationArea = All;
-                }
-                field("Lead Time Calculation"; Rec."Lead Time Calculation")
-                {
-                    ApplicationArea = All;
-                }
-                field("Line Amount"; Rec."Line Amount")
-                {
-                    ApplicationArea = All;
-                }
-                field("Line Discount %"; Rec."Line Discount %")
-                {
-                    ApplicationArea = All;
-                }
-                field("Line Discount Amount"; Rec."Line Discount Amount")
-                {
-                    ApplicationArea = All;
-                }
-                field("Line No."; Rec."Line No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Location Code"; Rec."Location Code")
-                {
-                    ApplicationArea = All;
-                }
-                field("Maintenance Code"; Rec."Maintenance Code")
-                {
-                    ApplicationArea = All;
-                }
-                field("MPS Order"; Rec."MPS Order")
-                {
-                    ApplicationArea = All;
-                }
-                field("Net Weight"; Rec."Net Weight")
-                {
-                    ApplicationArea = All;
-                }
-                field("No."; Rec."No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Operation No."; Rec."Operation No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Order Date"; Rec."Order Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Order Line No."; Rec."Order Line No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Order No."; Rec."Order No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Outstanding Amount (LCY)"; Rec."Outstanding Amount (LCY)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Outstanding Amount"; Rec."Outstanding Amount")
-                {
-                    ApplicationArea = All;
-                }
-                field("Outstanding Amt. Ex. VAT (LCY)"; Rec."Outstanding Amt. Ex. VAT (LCY)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Outstanding Qty. (Base)"; Rec."Outstanding Qty. (Base)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Outstanding Quantity"; Rec."Outstanding Quantity")
-                {
-                    ApplicationArea = All;
-                }
-                field("Overhead Rate"; Rec."Overhead Rate")
-                {
-                    ApplicationArea = All;
-                }
-                field("Pay-to Vendor No."; Rec."Pay-to Vendor No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Planned Receipt Date"; Rec."Planned Receipt Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Planning Flexibility"; Rec."Planning Flexibility")
-                {
-                    ApplicationArea = All;
-                }
-                field("Posting Group"; Rec."Posting Group")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepayment %"; Rec."Prepayment %")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepayment Amount"; Rec."Prepayment Amount")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepayment Line"; Rec."Prepayment Line")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepayment Tax Area Code"; Rec."Prepayment Tax Area Code")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepayment Tax Group Code"; Rec."Prepayment Tax Group Code")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepayment Tax Liable"; Rec."Prepayment Tax Liable")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepayment VAT %"; Rec."Prepayment VAT %")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepayment VAT Difference"; Rec."Prepayment VAT Difference")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepayment VAT Identifier"; Rec."Prepayment VAT Identifier")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepmt Amt Deducted"; Rec."Prepmt Amt Deducted")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepmt Amt to Deduct"; Rec."Prepmt Amt to Deduct")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepmt VAT Diff. Deducted"; Rec."Prepmt VAT Diff. Deducted")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepmt VAT Diff. to Deduct"; Rec."Prepmt VAT Diff. to Deduct")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepmt. Amount Inv. (LCY)"; Rec."Prepmt. Amount Inv. (LCY)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepmt. Amount Inv. Incl. VAT"; Rec."Prepmt. Amount Inv. Incl. VAT")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepmt. Amt. Incl. VAT"; Rec."Prepmt. Amt. Incl. VAT")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepmt. Amt. Inv."; Rec."Prepmt. Amt. Inv.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepmt. Line Amount"; Rec."Prepmt. Line Amount")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepmt. VAT Amount Inv. (LCY)"; Rec."Prepmt. VAT Amount Inv. (LCY)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepmt. VAT Base Amt."; Rec."Prepmt. VAT Base Amt.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prepmt. VAT Calc. Type"; Rec."Prepmt. VAT Calc. Type")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prod. Order Line No."; Rec."Prod. Order Line No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Prod. Order No."; Rec."Prod. Order No.")
-                {
-                    ApplicationArea = All;
-                }
-                // field("Product Group Code"; Rec."Product Group Code")
-                // {
-                //     ApplicationArea = All;
-                // }
-                field("Profit %"; Rec."Profit %")
-                {
-                    ApplicationArea = All;
-                }
-                field("Promised Receipt Date"; Rec."Promised Receipt Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Purchasing Code"; Rec."Purchasing Code")
-                {
-                    ApplicationArea = All;
-                }
-                field("Qty. Assigned"; Rec."Qty. Assigned")
-                {
-                    ApplicationArea = All;
-                }
-                field("Qty. Invoiced (Base)"; Rec."Qty. Invoiced (Base)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Qty. per Unit of Measure"; Rec."Qty. per Unit of Measure")
-                {
-                    ApplicationArea = All;
-                }
-                field("Qty. Rcd. Not Invoiced (Base)"; Rec."Qty. Rcd. Not Invoiced (Base)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Qty. Rcd. Not Invoiced"; Rec."Qty. Rcd. Not Invoiced")
-                {
-                    ApplicationArea = All;
-                }
-                field("Qty. Received (Base)"; Rec."Qty. Received (Base)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Qty. to Assign"; Rec."Qty. to Assign")
-                {
-                    ApplicationArea = All;
-                }
-                field("Qty. to Invoice (Base)"; Rec."Qty. to Invoice (Base)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Qty. to Invoice"; Rec."Qty. to Invoice")
-                {
-                    ApplicationArea = All;
-                }
-                field("Qty. to Receive (Base)"; Rec."Qty. to Receive (Base)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Qty. to Receive"; Rec."Qty. to Receive")
-                {
-                    ApplicationArea = All;
-                }
-                field("Quantity (Base)"; Rec."Quantity (Base)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Quantity Invoiced"; Rec."Quantity Invoiced")
-                {
-                    ApplicationArea = All;
-                }
-                field("Quantity Received"; Rec."Quantity Received")
-                {
-                    ApplicationArea = All;
-                }
-                field("Recalculate Invoice Disc."; Rec."Recalculate Invoice Disc.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Receipt Line No."; Rec."Receipt Line No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Receipt No."; Rec."Receipt No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Requested Receipt Date"; Rec."Requested Receipt Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Reserved Qty. (Base)"; Rec."Reserved Qty. (Base)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Reserved Quantity"; Rec."Reserved Quantity")
-                {
-                    ApplicationArea = All;
-                }
-                field("Responsibility Center"; Rec."Responsibility Center")
-                {
-                    ApplicationArea = All;
-                }
-                field("Ret. Qty. Shpd Not Invd.(Base)"; Rec."Ret. Qty. Shpd Not Invd.(Base)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Return Qty. Shipped (Base)"; Rec."Return Qty. Shipped (Base)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Return Qty. Shipped Not Invd."; Rec."Return Qty. Shipped Not Invd.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Return Qty. Shipped"; Rec."Return Qty. Shipped")
-                {
-                    ApplicationArea = All;
-                }
-                field("Return Qty. to Ship (Base)"; Rec."Return Qty. to Ship (Base)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Return Qty. to Ship"; Rec."Return Qty. to Ship")
-                {
-                    ApplicationArea = All;
-                }
-                field("Return Reason Code"; Rec."Return Reason Code")
-                {
-                    ApplicationArea = All;
-                }
-                field("Return Shipment Line No."; Rec."Return Shipment Line No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Return Shipment No."; Rec."Return Shipment No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Return Shpd. Not Invd. (LCY)"; Rec."Return Shpd. Not Invd. (LCY)")
-                {
-                    ApplicationArea = All;
-                }
-                field("Return Shpd. Not Invd."; Rec."Return Shpd. Not Invd.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Returns Deferral Start Date"; Rec."Returns Deferral Start Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Routing No."; Rec."Routing No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Routing Reference No."; Rec."Routing Reference No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Safety Lead Time"; Rec."Safety Lead Time")
-                {
-                    ApplicationArea = All;
-                }
-                field("Sales Order Line No."; Rec."Sales Order Line No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Sales Order No."; Rec."Sales Order No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Salvage Value"; Rec."Salvage Value")
-                {
-                    ApplicationArea = All;
                 }
                 field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
                 {
@@ -643,175 +117,491 @@ page 50029 PurchLineArchiveNVX
                 field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
                 }
-                field("Shortcut Dimension 3 Code"; "Shortcut Dimension 1 Code")
+                field("Job No."; "Job No.")
                 {
                 }
-                field("Shortcut Dimension 4 Code"; "Shortcut Dimension 2 Code")
+                field("Indirect Cost %"; "Indirect Cost %")
                 {
                 }
-                field("Shortcut Dimension 5 Code"; "Shortcut Dimension 1 Code")
+                field("Recalculate Invoice Disc."; "Recalculate Invoice Disc.")
                 {
                 }
-                field("Shortcut Dimension 6 Code"; "Shortcut Dimension 2 Code")
+                field("Outstanding Amount"; "Outstanding Amount")
                 {
                 }
-                field("Shortcut Dimension 7 Code"; "Shortcut Dimension 1 Code")
+                field("Qty. Rcd. Not Invoiced"; "Qty. Rcd. Not Invoiced")
                 {
                 }
-                field("Shortcut Dimension 8 Code"; "Shortcut Dimension 2 Code")
+                field("Amt. Rcd. Not Invoiced"; "Amt. Rcd. Not Invoiced")
                 {
                 }
-                field("Special Order Sales Line No."; Rec."Special Order Sales Line No.")
+                field("Quantity Received"; "Quantity Received")
                 {
-                    ApplicationArea = All;
                 }
-                field("Special Order Sales No."; Rec."Special Order Sales No.")
+                field("Quantity Invoiced"; "Quantity Invoiced")
                 {
-                    ApplicationArea = All;
                 }
-                field("Special Order"; Rec."Special Order")
+                field("Receipt No."; "Receipt No.")
                 {
-                    ApplicationArea = All;
                 }
-                field("System-Created Entry"; Rec."System-Created Entry")
+                field("Receipt Line No."; "Receipt Line No.")
                 {
-                    ApplicationArea = All;
                 }
-                field("Tax Area Code"; Rec."Tax Area Code")
+                field("Profit %"; "Profit %")
                 {
-                    ApplicationArea = All;
                 }
-                field("Tax Group Code"; Rec."Tax Group Code")
+                field("Pay-to Vendor No."; "Pay-to Vendor No.")
                 {
-                    ApplicationArea = All;
                 }
-                field("Tax Liable"; Rec."Tax Liable")
+                field("Inv. Discount Amount"; "Inv. Discount Amount")
                 {
-                    ApplicationArea = All;
                 }
-                field("Transaction Specification"; Rec."Transaction Specification")
+                field("Vendor Item No."; "Vendor Item No.")
                 {
-                    ApplicationArea = All;
                 }
-                field("Transaction Type"; Rec."Transaction Type")
+                field("Sales Order No."; "Sales Order No.")
                 {
-                    ApplicationArea = All;
                 }
-                field("Transport Method"; Rec."Transport Method")
+                field("Sales Order Line No."; "Sales Order Line No.")
                 {
-                    ApplicationArea = All;
                 }
-                field("Unit Cost (LCY)"; Rec."Unit Cost (LCY)")
+                field("Drop Shipment"; "Drop Shipment")
                 {
-                    ApplicationArea = All;
                 }
-                field("Unit Cost"; Rec."Unit Cost")
+                field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
                 {
-                    ApplicationArea = All;
                 }
-                field("Unit of Measure (Cross Ref.)"; Rec."Unit of Measure (Cross Ref.)")
+                field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
                 {
-                    ApplicationArea = All;
                 }
-                field("Unit of Measure Code"; Rec."Unit of Measure Code")
+                field("VAT Calculation Type"; "VAT Calculation Type")
                 {
-                    ApplicationArea = All;
                 }
-                field("Unit of Measure"; Rec."Unit of Measure")
+                field("Transaction Type"; "Transaction Type")
                 {
-                    ApplicationArea = All;
                 }
-                field("Unit Price (LCY)"; Rec."Unit Price (LCY)")
+                field("Transport Method"; "Transport Method")
                 {
-                    ApplicationArea = All;
                 }
-                field("Unit Volume"; Rec."Unit Volume")
+                field("Attached to Line No."; "Attached to Line No.")
                 {
-                    ApplicationArea = All;
                 }
-                field("Units per Parcel"; Rec."Units per Parcel")
+                field("Entry Point"; "Entry Point")
                 {
-                    ApplicationArea = All;
                 }
-                field("Use Duplication List"; Rec."Use Duplication List")
+                field("Area"; Area)
                 {
-                    ApplicationArea = All;
                 }
-                field("Use Tax"; Rec."Use Tax")
+                field("Transaction Specification"; "Transaction Specification")
                 {
-                    ApplicationArea = All;
                 }
-                field("Variant Code"; Rec."Variant Code")
+                field("Tax Area Code"; "Tax Area Code")
                 {
-                    ApplicationArea = All;
                 }
-                field("VAT %"; Rec."VAT %")
+                field("Tax Liable"; "Tax Liable")
                 {
-                    ApplicationArea = All;
                 }
-                field("VAT Base Amount"; Rec."VAT Base Amount")
+                field("Tax Group Code"; "Tax Group Code")
                 {
-                    ApplicationArea = All;
                 }
-                field("VAT Bus. Posting Group"; Rec."VAT Bus. Posting Group")
+                field("Use Tax"; "Use Tax")
                 {
-                    ApplicationArea = All;
                 }
-                field("VAT Calculation Type"; Rec."VAT Calculation Type")
+                field("VAT Bus. Posting Group"; "VAT Bus. Posting Group")
                 {
-                    ApplicationArea = All;
                 }
-                field("VAT Difference"; Rec."VAT Difference")
+                field("VAT Prod. Posting Group"; "VAT Prod. Posting Group")
                 {
-                    ApplicationArea = All;
                 }
-                field("VAT Identifier"; Rec."VAT Identifier")
+                field("Currency Code"; "Currency Code")
                 {
-                    ApplicationArea = All;
                 }
-                field("VAT Prod. Posting Group"; Rec."VAT Prod. Posting Group")
+                field("Outstanding Amount (LCY)"; "Outstanding Amount (LCY)")
                 {
-                    ApplicationArea = All;
                 }
-                field("Vendor Item No."; Rec."Vendor Item No.")
+                field("Amt. Rcd. Not Invoiced (LCY)"; "Amt. Rcd. Not Invoiced (LCY)")
                 {
-                    ApplicationArea = All;
                 }
-                field("Whse. Outstanding Qty. (Base)"; Rec."Whse. Outstanding Qty. (Base)")
+                field("Reserved Quantity"; "Reserved Quantity")
                 {
-                    ApplicationArea = All;
                 }
-                field("Work Center No."; Rec."Work Center No.")
+                field("Blanket Order No."; "Blanket Order No.")
                 {
-                    ApplicationArea = All;
                 }
-                field(Amount; Rec.Amount)
+                field("Blanket Order Line No."; "Blanket Order Line No.")
                 {
-                    ApplicationArea = All;
                 }
-                field(Description; Rec.Description)
+                field("VAT Base Amount"; "VAT Base Amount")
                 {
-                    ApplicationArea = All;
                 }
-                field(Finished; Rec.Finished)
+                field("Unit Cost"; "Unit Cost")
                 {
-                    ApplicationArea = All;
                 }
-                field(Nonstock; Rec.Nonstock)
+                field("System-Created Entry"; "System-Created Entry")
                 {
-                    ApplicationArea = All;
                 }
-                field(Quantity; Rec.Quantity)
+                field("Line Amount"; "Line Amount")
                 {
-                    ApplicationArea = All;
                 }
-                field(Subtype; Rec.Subtype)
+                field("VAT Difference"; "VAT Difference")
                 {
-                    ApplicationArea = All;
                 }
-                field(Type; Rec.Type)
+                field("Inv. Disc. Amount to Invoice"; "Inv. Disc. Amount to Invoice")
                 {
-                    ApplicationArea = All;
+                }
+                field("VAT Identifier"; "VAT Identifier")
+                {
+                }
+                field("IC Partner Ref. Type"; "IC Partner Ref. Type")
+                {
+                }
+                field("IC Partner Reference"; "IC Partner Reference")
+                {
+                }
+                field("Prepayment %"; "Prepayment %")
+                {
+                }
+                field("Prepmt. Line Amount"; "Prepmt. Line Amount")
+                {
+                }
+                field("Prepmt. Amt. Inv."; "Prepmt. Amt. Inv.")
+                {
+                }
+                field("Prepmt. Amt. Incl. VAT"; "Prepmt. Amt. Incl. VAT")
+                {
+                }
+                field("Prepayment Amount"; "Prepayment Amount")
+                {
+                }
+                field("Prepmt. VAT Base Amt."; "Prepmt. VAT Base Amt.")
+                {
+                }
+                field("Prepayment VAT %"; "Prepayment VAT %")
+                {
+                }
+                field("Prepmt. VAT Calc. Type"; "Prepmt. VAT Calc. Type")
+                {
+                }
+                field("Prepayment VAT Identifier"; "Prepayment VAT Identifier")
+                {
+                }
+                field("Prepayment Tax Area Code"; "Prepayment Tax Area Code")
+                {
+                }
+                field("Prepayment Tax Liable"; "Prepayment Tax Liable")
+                {
+                }
+                field("Prepayment Tax Group Code"; "Prepayment Tax Group Code")
+                {
+                }
+                field("Prepmt Amt to Deduct"; "Prepmt Amt to Deduct")
+                {
+                }
+                field("Prepmt Amt Deducted"; "Prepmt Amt Deducted")
+                {
+                }
+                field("Prepayment Line"; "Prepayment Line")
+                {
+                }
+                field("Prepmt. Amount Inv. Incl. VAT"; "Prepmt. Amount Inv. Incl. VAT")
+                {
+                }
+                field("Prepmt. Amount Inv. (LCY)"; "Prepmt. Amount Inv. (LCY)")
+                {
+                }
+                field("IC Partner Code"; "IC Partner Code")
+                {
+                }
+                field("Prepmt. VAT Amount Inv. (LCY)"; "Prepmt. VAT Amount Inv. (LCY)")
+                {
+                }
+                field("Prepayment VAT Difference"; "Prepayment VAT Difference")
+                {
+                }
+                field("Prepmt VAT Diff. to Deduct"; "Prepmt VAT Diff. to Deduct")
+                {
+                }
+                field("Prepmt VAT Diff. Deducted"; "Prepmt VAT Diff. Deducted")
+                {
+                }
+                field("Outstanding Amt. Ex. VAT (LCY)"; "Outstanding Amt. Ex. VAT (LCY)")
+                {
+                }
+                field("A. Rcd. Not Inv. Ex. VAT (LCY)"; "A. Rcd. Not Inv. Ex. VAT (LCY)")
+                {
+                }
+                field("Dimension Set ID"; "Dimension Set ID")
+                {
+                }
+                field("Job Task No."; "Job Task No.")
+                {
+                }
+                field("Job Line Type"; "Job Line Type")
+                {
+                }
+                field("Job Unit Price"; "Job Unit Price")
+                {
+                }
+                field("Job Total Price"; "Job Total Price")
+                {
+                }
+                field("Job Line Amount"; "Job Line Amount")
+                {
+                }
+                field("Job Line Discount Amount"; "Job Line Discount Amount")
+                {
+                }
+                field("Job Line Discount %"; "Job Line Discount %")
+                {
+                }
+                field("Job Unit Price (LCY)"; "Job Unit Price (LCY)")
+                {
+                }
+                field("Job Total Price (LCY)"; "Job Total Price (LCY)")
+                {
+                }
+                field("Job Line Amount (LCY)"; "Job Line Amount (LCY)")
+                {
+                }
+                field("Job Line Disc. Amount (LCY)"; "Job Line Disc. Amount (LCY)")
+                {
+                }
+                field("Job Currency Factor"; "Job Currency Factor")
+                {
+                }
+                field("Job Currency Code"; "Job Currency Code")
+                {
+                }
+                field("Job Planning Line No."; "Job Planning Line No.")
+                {
+                }
+                field("Job Remaining Qty."; "Job Remaining Qty.")
+                {
+                }
+                field("Job Remaining Qty. (Base)"; "Job Remaining Qty. (Base)")
+                {
+                }
+                field("Deferral Code"; "Deferral Code")
+                {
+                }
+                field("Returns Deferral Start Date"; "Returns Deferral Start Date")
+                {
+                }
+                field("Prod. Order No."; "Prod. Order No.")
+                {
+                }
+                field("Variant Code"; "Variant Code")
+                {
+                }
+                field("Bin Code"; "Bin Code")
+                {
+                }
+                field("Qty. per Unit of Measure"; "Qty. per Unit of Measure")
+                {
+                }
+                field("Unit of Measure Code"; "Unit of Measure Code")
+                {
+                }
+                field("Quantity (Base)"; "Quantity (Base)")
+                {
+                }
+                field("Outstanding Qty. (Base)"; "Outstanding Qty. (Base)")
+                {
+                }
+                field("Qty. to Invoice (Base)"; "Qty. to Invoice (Base)")
+                {
+                }
+                field("Qty. to Receive (Base)"; "Qty. to Receive (Base)")
+                {
+                }
+                field("Qty. Rcd. Not Invoiced (Base)"; "Qty. Rcd. Not Invoiced (Base)")
+                {
+                }
+                field("Qty. Received (Base)"; "Qty. Received (Base)")
+                {
+                }
+                field("Qty. Invoiced (Base)"; "Qty. Invoiced (Base)")
+                {
+                }
+                field("Reserved Qty. (Base)"; "Reserved Qty. (Base)")
+                {
+                }
+                field("FA Posting Date"; "FA Posting Date")
+                {
+                }
+                field("FA Posting Type"; "FA Posting Type")
+                {
+                }
+                field("Depreciation Book Code"; "Depreciation Book Code")
+                {
+                }
+                field("Salvage Value"; "Salvage Value")
+                {
+                }
+                field("Depr. until FA Posting Date"; "Depr. until FA Posting Date")
+                {
+                }
+                field("Depr. Acquisition Cost"; "Depr. Acquisition Cost")
+                {
+                }
+                field("Maintenance Code"; "Maintenance Code")
+                {
+                }
+                field("Insurance No."; "Insurance No.")
+                {
+                }
+                field("Budgeted FA No."; "Budgeted FA No.")
+                {
+                }
+                field("Duplicate in Depreciation Book"; "Duplicate in Depreciation Book")
+                {
+                }
+                field("Use Duplication List"; "Use Duplication List")
+                {
+                }
+                field("Responsibility Center"; "Responsibility Center")
+                {
+                }
+                field("Cross-Reference No."; "Cross-Reference No.")
+                {
+                }
+                field("Unit of Measure (Cross Ref.)"; "Unit of Measure (Cross Ref.)")
+                {
+                }
+                field("Cross-Reference Type"; "Cross-Reference Type")
+                {
+                }
+                field("Cross-Reference Type No."; "Cross-Reference Type No.")
+                {
+                }
+                field("Item Category Code"; "Item Category Code")
+                {
+                }
+                field(Nonstock; Nonstock)
+                {
+                }
+                field("Purchasing Code"; "Purchasing Code")
+                {
+                }
+                // field("Product Group Code"; "Product Group Code")
+                // {
+                // }
+                field("Special Order"; "Special Order")
+                {
+                }
+                field("Special Order Sales No."; "Special Order Sales No.")
+                {
+                }
+                field("Special Order Sales Line No."; "Special Order Sales Line No.")
+                {
+                }
+                field("Whse. Outstanding Qty. (Base)"; "Whse. Outstanding Qty. (Base)")
+                {
+                }
+                field("Completely Received"; "Completely Received")
+                {
+                }
+                field("Requested Receipt Date"; "Requested Receipt Date")
+                {
+                }
+                field("Promised Receipt Date"; "Promised Receipt Date")
+                {
+                }
+                field("Lead Time Calculation"; "Lead Time Calculation")
+                {
+                }
+                field("Inbound Whse. Handling Time"; "Inbound Whse. Handling Time")
+                {
+                }
+                field("Planned Receipt Date"; "Planned Receipt Date")
+                {
+                }
+                field("Order Date"; "Order Date")
+                {
+                }
+                field("Allow Item Charge Assignment"; "Allow Item Charge Assignment")
+                {
+                }
+                field("Qty. to Assign"; "Qty. to Assign")
+                {
+                }
+                field("Qty. Assigned"; "Qty. Assigned")
+                {
+                }
+                field("Return Qty. to Ship"; "Return Qty. to Ship")
+                {
+                }
+                field("Return Qty. to Ship (Base)"; "Return Qty. to Ship (Base)")
+                {
+                }
+                field("Return Qty. Shipped Not Invd."; "Return Qty. Shipped Not Invd.")
+                {
+                }
+                field("Ret. Qty. Shpd Not Invd.(Base)"; "Ret. Qty. Shpd Not Invd.(Base)")
+                {
+                }
+                field("Return Shpd. Not Invd."; "Return Shpd. Not Invd.")
+                {
+                }
+                field("Return Shpd. Not Invd. (LCY)"; "Return Shpd. Not Invd. (LCY)")
+                {
+                }
+                field("Return Qty. Shipped"; "Return Qty. Shipped")
+                {
+                }
+                field("Return Qty. Shipped (Base)"; "Return Qty. Shipped (Base)")
+                {
+                }
+                field("Return Shipment No."; "Return Shipment No.")
+                {
+                }
+                field("Return Shipment Line No."; "Return Shipment Line No.")
+                {
+                }
+                field("Return Reason Code"; "Return Reason Code")
+                {
+                }
+                field(Subtype; Subtype)
+                {
+                }
+                field("Copied From Posted Doc."; "Copied From Posted Doc.")
+                {
+                }
+                field("Order No."; "Order No.")
+                {
+                }
+                field("Order Line No."; "Order Line No.")
+                {
+                }
+                field("Routing No."; "Routing No.")
+                {
+                }
+                field("Operation No."; "Operation No.")
+                {
+                }
+                field("Work Center No."; "Work Center No.")
+                {
+                }
+                field(Finished; Finished)
+                {
+                }
+                field("Prod. Order Line No."; "Prod. Order Line No.")
+                {
+                }
+                field("Overhead Rate"; "Overhead Rate")
+                {
+                }
+                field("MPS Order"; "MPS Order")
+                {
+                }
+                field("Planning Flexibility"; "Planning Flexibility")
+                {
+                }
+                field("Safety Lead Time"; "Safety Lead Time")
+                {
+                }
+                field("Routing Reference No."; "Routing Reference No.")
+                {
                 }
                 field("VAT Posting Type"; "VAT Posting Type")
                 {

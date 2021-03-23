@@ -99,26 +99,53 @@ page 50014 PostingCardNVX
             {
                 Caption = 'Origin', comment = 'DEA="Ursprung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
-                Visible = FAVisible;
+                Visible = PurchVisible;
             }
             part(PurchSummary; PurchLineArchiveSummaryNVX)
             {
                 Caption = 'Summary', comment = 'DEA="Zusammenfassung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
-                Visible = FAVisible;
+                Visible = PurchVisible;
             }
             part(PurchPreparation; PurchLineArchivePrepNVX)
             {
                 Caption = 'Preparation', comment = 'DEA="Vorbereitung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
-                Visible = FAVisible;
+                Visible = PurchVisible;
             }
             part(PurchComplete; PurchLineArchiveCompleteNVX)
             {
                 Caption = 'Complete', comment = 'DEA="Vollständig"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
-                Visible = FAVisible;
-            }        
+                Visible = PurchVisible;
+            }
+
+            //Sales Line Parts
+            part(SalesOrigin; SalesLineArchiveOriginNVX)
+            {
+                Caption = 'Origin', comment = 'DEA="Ursprung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = SalesVisible;
+            }
+            part(SalesSummary; SalesLineArchiveSummaryNVX)
+            {
+                Caption = 'Summary', comment = 'DEA="Zusammenfassung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = SalesVisible;
+            }
+            part(SalesPreparation; SalesLineArchivePrepNVX)
+            {
+                Caption = 'Preparation', comment = 'DEA="Vorbereitung"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = SalesVisible;
+            }       
+            part(SalesComplete; SalesLineArchiveCompleteNVX)
+            {
+                Caption = 'Complete', comment = 'DEA="Vollständig"';
+                SubPageLink = "Posting GUID" = field ("Posting GUID");
+                Visible = SalesVisible;
+            }
+
         }
     }
 
