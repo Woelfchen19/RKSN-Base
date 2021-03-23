@@ -46,19 +46,33 @@ table 50007 DocInfoNVX
             TableRelation = "Gen. Business Posting Group".Code;
         }
 
-        field(100; "Allocation Amount"; Decimal)
+        field(100; "Allocation Amount Sales"; Decimal)
         {
             Caption = 'Allocation Amount', comment = 'DEA="Verteilungsbetrag"';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = sum (DistrSalesLineNVX."VAT Base Amount" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No.")));
         }
-        field(101; "Allocation Amount Incl. VAT"; Decimal)
+        field(101; "Allocation Amount Incl. VAT Sales"; Decimal)
         {
-            Caption = 'Allocation Amount Incl. VAT', comment = 'DEA="Verteilungsbetrag inl. USt."';
+            Caption = 'Allocation Amount Incl. VAT', comment = 'DEA="Verteilungsbetrag inkl. USt."';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = sum (DistrSalesLineNVX."Amount Including VAT" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No.")));
+        }
+        field(102; "Allocation Amount Purchase"; Decimal)
+        {
+            Caption = 'Allocation Amount', comment = 'DEA="Verteilungsbetrag"';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = sum (DistrPurchLineNVX."VAT Base Amount" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No.")));
+        }
+        field(103; "Allocation Amount Incl. VAT Purchase"; Decimal)
+        {
+            Caption = 'Allocation Amount Incl. VAT', comment = 'DEA="Verteilungsbetrag inkl. USt."';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = sum (DistrPurchLineNVX."Amount Including VAT" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No.")));
         }
     }
 
