@@ -60,5 +60,65 @@ codeunit 50010 Codeunit90HookNVX
         end;
     end;
 
-    //TODO Posted Doc Info in GL Entry mitnehmen --> siehe cu80 hook InsertRecInAccompaniedLedgerTable
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterPostPurchaseDoc', '', false, false)]
+    local procedure InsertRecInAccompaniedLedgerTable(VAR PurchaseHeader : Record "Purchase Header";PurchInvHdrNo : Code[20];PurchCrMemoHdrNo : Code[20])
+    var
+        PstdDocInfo: Record PstdDocInfoNVX;
+        GLEntryNVX: Record GLEntryNVX;
+        GLEntry: Record "G/L Entry";
+    begin
+        case true of
+
+            (PurchInvHdrNo <> ''):
+            begin
+                IF PstdDocInfo.get(PstdDocInfo.Department::Sales, PstdDocInfo."Document Type"::Invoice, PurchInvHdrNo) then begin
+                    GLEntry.SetRange("Document Type",GLEntry."Document Type"::Invoice);
+                    GLEntry.SetRange("Document No.",PurchInvHdrNo);
+                    IF GLEntry.FindSet then repeat
+
+                        If not GLEntryNVX.get(GLEntry."Entry No.") then begin
+                            GLEntryNVX.Init();
+                            GLEntryNVX."Entry No." := GLEntry."Entry No.";
+                            // GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
+                            // GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
+                            GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
+                            GLEntryNVX.Insert();
+                        end else begin
+                            // GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
+                            // GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
+                            GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
+                            GLEntryNVX.Modify();
+                        end;
+
+                    until GLEntry.Next = 0;
+                end;
+            end;
+
+            (PurchCrMemoHdrNo <> ''):
+            begin
+                IF PstdDocInfo.get(PstdDocInfo.Department::Sales, PstdDocInfo."Document Type"::"Credit Memo", PurchCrMemoHdrNo) then begin
+                    GLEntry.SetRange("Document Type",GLEntry."Document Type"::"Credit Memo");
+                    GLEntry.SetRange("Document No.",PurchCrMemoHdrNo);
+                    IF GLEntry.FindSet() then repeat
+
+                        If not GLEntryNVX.get(GLEntry."Entry No.") then begin
+                            GLEntryNVX.Init();
+                            GLEntryNVX."Entry No." := GLEntry."Entry No.";
+                            // GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
+                            // GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
+                            GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
+                            GLEntryNVX.Insert();
+                        end else begin
+                            // GLEntryNVX."SShortcut Dimension 1 Code" := PstdDocInfo."Shortcut Dimension 1 Code";
+                            // GLEntryNVX."SShortcut Dimension 3 Code" := PstdDocInfo."Shortcut Dimension 3 Code";
+                            GLEntryNVX."Interim Gen.Bus.Posting Group" := PstdDocInfo."Interim Gen.Bus.Posting Group";
+                            GLEntryNVX.Modify();
+                        end;
+
+                    until GLEntry.Next = 0;                    
+                end;
+            end;
+            
+        end; //of case
+    end;
 }

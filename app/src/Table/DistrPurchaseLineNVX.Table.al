@@ -1243,7 +1243,27 @@ table 50029 DistrPurchLineNVX
             Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Geschäftsbuchungsgruppe Beschreibung"';
             FieldClass = FlowField;
             CalcFormula = lookup ("Gen. Business Posting Group".Description where (Code = field("Gen. Bus. Posting Group")));
+        }        
+        field(50025;"Purchase Shortcut Dimension 1 Code";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));       
+            // CaptionClass = '1338,1'; = Sales + Dim Name
+            // CaptionClass = '1339,1'; = Purchase + Dim Name
         }
+        field(50026;"Purchase Shortcut Dimension 3 Code";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
+            // CaptionClass = '1338,3'; = Sales + Dim Name
+            // CaptionClass = '1339,3'; = Purchase + Dim Name            
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
+        }  
+        field(50050;"Origin Line No.";Integer)
+        {
+            DataClassification = CustomerContent;
+        }  
     }
 
     keys
