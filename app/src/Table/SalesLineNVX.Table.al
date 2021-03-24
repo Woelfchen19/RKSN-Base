@@ -39,6 +39,18 @@ table 50036 SalesLineNVX
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
         }
+        field(30; "Cust. Unit Price"; Decimal)
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Cust. Unit Price', comment = 'DEA="Deb. VK-Preis"';
+        }
+
+        field(31; "Cust. Amount"; Decimal)
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Cust. Amount', comment = 'DEA="Deb. Betrag"';
+            Editable = false;
+        }
         field(100; "Allocation Amount"; Decimal)
         {
             Caption = 'Allocation Amount';
@@ -62,4 +74,66 @@ table 50036 SalesLineNVX
             Clustered = true;
         }
     }
+
+    procedure UpdateCustAmount(ActSalesLine: record "Sales Line");
+    begin
+        "Cust. Amount" := round(ActSalesLine.Quantity * "Cust. Unit Price", 0.01);
+        modify;
+    end;
+
+    procedure UpdateSalesLine(var ActSalesLine: record "Sales Line")
+    var
+        VATPostingSetup: record "VAT Posting Setup";
+        SalesHeader: record "Sales Header";
+        VatPercent: Decimal;
+        NetUnitPrice: Decimal;
+    begin
+        if not SalesHeader.get(ActSalesLine."Document Type",ActSalesLine."Document No.") then
+            exit;
+
+        UpdateCustAmount(ActSalesLine);
+        if not SalesHeader."Prices Including VAT" then begin 
+            if VATPostingSetup.get(actsalesline."VAT Bus. Posting Group", actSalesLine."VAT Prod. Posting Group") then;
+            if VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT" then
+                VatPercent := VATPostingSetup."VAT %";
+        end;
+        NetUnitPrice := round("Cust. Unit Price" / (100 + VatPercent) * 100, 0.01);
+        actSalesLine.Validate("Unit Price", NetUnitPrice);
+    end;
+
+    procedure HandleVATDifferenceNVX(SalesHeader: Record "Sales Header")
+    var
+        SalesLineNVX: record SalesLineNVX;
+        VATDifference: Decimal;
+        SalesLine: record "Sales Line";
+        TempVATAmountLine: Record "VAT Amount Line" temporary;
+    begin
+
+        SalesHeader.TestField(Status, SalesHeader.Status::Released);
+        SalesHeader.CalcFields("Amount Including VAT");
+
+        SalesLineNVX.reset;
+        SalesLineNVX.SetRange("Document Type", SalesHeader."Document Type");
+        SalesLineNVX.SetRange("Document No.", SalesHeader."No.");
+        SalesLineNVX.CalcSums("Cust. Amount");
+        if SalesLineNVX."Cust. Amount" = 0 then
+            exit;
+
+        VATDifference := SalesHeader."Amount Including VAT" - SalesLineNVX."Cust. Amount";
+
+        if VATDifference <> 0 then begin
+
+            clear(salesline);
+            SalesLine.SetSalesHeader(SalesHeader);
+            SalesLine.CalcVATAmountLines(0, SalesHeader, SalesLine, TempVATAmountLine);
+            TempVATAmountLine.SetFilter("VAT Amount", '<>0');
+            TempVATAmountLine.findfirst;
+            TempVATAmountLine.Validate("VAT Amount", TempVATAmountLine."VAT Amount" - VATDifference);
+            TempVATAmountLine.CheckVATDifference(SalesHeader."Currency Code", true);
+            TempVATAmountLine.modify;
+            SalesLine.UpdateVATOnLines(0, SalesHeader, SalesLine, TempVATAmountLine);
+
+        end;
+
+    end;
 }

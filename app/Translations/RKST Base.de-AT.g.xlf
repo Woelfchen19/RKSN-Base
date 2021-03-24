@@ -1568,7 +1568,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Action</note>
           <target>Hebt alle Filter auf.</target>
         </trans-unit>
-        <trans-unit id="PageExtension 338499675 - Method 435037423 - NamedType 906389811" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 338499675 - Method 4177352842 - NamedType 906389811" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must specify all VAT Posting Groups for Gen. Business Posting Group %1</source>
           <note from="Developer" annotates="general" priority="2">DEA="Sie müssen für die Geschäftsbuchungsgruppe %1 alle Ust.-Buchungsarten definieren!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
@@ -1640,25 +1640,25 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
           <target>Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist.</target>
         </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 3687298449 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 2583571545 - Control 309067248 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
           <target>Shortcutdimensionscode 1</target>
         </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 124554191 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 2583571545 - Control 3455931954 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 3 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
           <target>Shortcutdimensionscode 3</target>
         </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 2634642800 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 2583571545 - Control 2910532361 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
           <target>Shortcutdimensionscode 1</target>
         </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1486540210 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 2583571545 - Control 4225832391 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 3 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
@@ -1759,534 +1759,6 @@
           <note from="Developer" annotates="general" priority="2">DEA="TODO"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
           <target>TODO</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1589426501 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 1</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1589426501 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 3</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1589426501 - Control 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Interim Steuerschlüssel</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1589426501 - Action 1234645204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Preview dimensional distribution</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Action</note>
-          <target>Vorschau dimensionaler Verteilungsprozess</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2490751801 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2490751801 - Method 2126772001 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 19653963 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 1</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 19653963 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 3</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 19653963 - Control 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Interim Steuerschlüssel</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 19653963 - Action 1234645204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Preview dimensional distribution</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Action</note>
-          <target>Vorschau dimensionaler Verteilungsprozess</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 3297823951 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 3297823951 - Method 2126772001 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 710399418 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 1</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 710399418 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 3</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 710399418 - Control 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Interim Steuerschlüssel</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 710399418 - Action 1234645204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Preview dimensional distribution</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Action</note>
-          <target>Vorschau dimensionaler Verteilungsprozess</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 4160108222 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 4160108222 - Method 2126772001 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 999994734 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 1</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 999994734 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 3</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 999994734 - Control 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Interim Steuerschlüssel</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 999994734 - Action 1234645204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Preview dimensional distribution</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Action</note>
-          <target>Vorschau dimensionaler Verteilungsprozess</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 3449731914 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 3449731914 - Method 2126772001 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2088431752 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 1</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2088431752 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 3</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2088431752 - Control 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Interim Steuerschlüssel</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 351098856 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 351098856 - Control 1364463381 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Posting Type</source>
-          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>USt.-Buchungsart</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2545028622 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 1</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2545028622 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 3</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2545028622 - Control 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Interim Steuerschlüssel</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 591510762 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 591510762 - Control 1364463381 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Posting Type</source>
-          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>USt.-Buchungsart</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1426333277 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 1</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1426333277 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 3</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1426333277 - Control 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Interim Steuerschlüssel</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1435976241 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1435976241 - Control 1364463381 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Posting Type</source>
-          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>USt.-Buchungsart</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1330255251 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 1</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1330255251 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 3</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1330255251 - Control 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Interim Steuerschlüssel</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2219355255 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2219355255 - Control 1364463381 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Posting Type</source>
-          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>USt.-Buchungsart</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2820744100 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 1</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2820744100 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 3</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2820744100 - Control 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Interim Steuerschlüssel</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2820744100 - Control 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2820744100 - Control 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2820744100 - Control 2335553668 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Sum</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Summe USt."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Summe USt.</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 2820744100 - Action 1234645204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Preview dimensional distribution</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Action</note>
-          <target>Vorschau dimensionaler Verteilungsprozess</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 3253974948 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 3253974948 - Method 2126772001 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 3253974948 - Control 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 3253974948 - Control 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1452187718 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 1</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1452187718 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 3</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1452187718 - Control 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Interim Steuerschlüssel</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1452187718 - Control 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1452187718 - Control 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1452187718 - Control 2335553668 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Sum</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Summe USt."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Summe USt.</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1452187718 - Action 1234645204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Preview dimensional distribution</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Action</note>
-          <target>Vorschau dimensionaler Verteilungsprozess</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 4060436578 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 4060436578 - Method 2126772001 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 4060436578 - Control 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 4060436578 - Control 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 392986559 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 1</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 392986559 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 3</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 392986559 - Control 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Interim Steuerschlüssel</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 392986559 - Control 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 392986559 - Control 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 392986559 - Control 2335553668 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Sum</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Summe USt."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Summe USt.</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 392986559 - Action 1234645204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Preview dimensional distribution</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Action</note>
-          <target>Vorschau dimensionaler Verteilungsprozess</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 3332211147 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 3332211147 - Method 2126772001 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 3332211147 - Control 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 3332211147 - Control 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1020021939 - Control 3132932824 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 1</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1020021939 - Control 1240035418 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Shortcutdimensionscode 3</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1020021939 - Control 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Interim Steuerschlüssel</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1020021939 - Control 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1020021939 - Control 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1020021939 - Control 2335553668 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Sum</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Summe USt."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Summe USt.</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1020021939 - Action 1234645204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Preview dimensional distribution</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Action</note>
-          <target>Vorschau dimensionaler Verteilungsprozess</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1410842371 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1410842371 - Method 2126772001 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1410842371 - Control 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1410842371 - Control 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
-          <target>Verteilungsbetrag</target>
         </trans-unit>
         <trans-unit id="Report 1150330740 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Copy</source>
@@ -5676,6 +5148,23 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
           <target>Geschäftsbuchungsgruppe Beschreibung</target>
         </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 2910532361 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4225832391 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4034965439 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Origin Line No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
         <trans-unit id="Table 82374090 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales Line</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verkaufszeile</note>
@@ -6870,6 +6359,18 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
           <target>Geschäftsbuchungsgruppe Beschreibung</target>
         </trans-unit>
+        <trans-unit id="Table 82374090 - Field 309067248 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="Table 82374090 - Field 3455931954 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
         <trans-unit id="Table 82374090 - Field 1527563463 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>External Document No.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Externe Belegnummer"</note>
@@ -6929,17 +6430,29 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
           <target>Interim Steuerschlüssel</target>
         </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2056450994 - Field 1204855280 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Amount</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
           <target>Verteilungsbetrag</target>
         </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2056450994 - Field 2335800995 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Amount Incl. VAT</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inl. USt."</note>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-          <target>Verteilungsbetrag inl. USt.</target>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="Table 2056450994 - Field 3022418233 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="Table 2056450994 - Field 2149205334 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
         </trans-unit>
         <trans-unit id="Table 2919565053 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Journal Line Archive</source>
@@ -8766,25 +8279,25 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
-        <trans-unit id="Table 2583571545 - Field 3687298449 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2583571545 - Field 309067248 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
           <target>Shortcutdimensionscode 1</target>
         </trans-unit>
-        <trans-unit id="Table 2583571545 - Field 124554191 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2583571545 - Field 3455931954 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 3 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
           <target>Shortcutdimensionscode 3</target>
         </trans-unit>
-        <trans-unit id="Table 2583571545 - Field 2634642800 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2583571545 - Field 2910532361 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
           <target>Shortcutdimensionscode 1</target>
         </trans-unit>
-        <trans-unit id="Table 2583571545 - Field 1486540210 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2583571545 - Field 4225832391 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 3 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
@@ -8894,6 +8407,30 @@
           <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
           <target>USt.-Buchungsart</target>
+        </trans-unit>
+        <trans-unit id="Table 3642273339 - Field 309067248 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="Table 3642273339 - Field 3455931954 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="Table 3642273339 - Field 2910532361 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="Table 3642273339 - Field 4225832391 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Shortcutdimensionscode 3</target>
         </trans-unit>
         <trans-unit id="Table 2780653954 - Field 1663593181 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
@@ -9048,6 +8585,40 @@
         </trans-unit>
         <trans-unit id="Table 3220818943 - Field 3320823955 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3220818943 - Field 1577567912 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="Table 3220818943 - Field 781257514 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="Table 3220818943 - Field 2758397104 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vend. Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred. VK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Kred. VK-Preis</target>
+        </trans-unit>
+        <trans-unit id="Table 3220818943 - Field 4048762053 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vend. Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred. Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Kred. Betrag</target>
+        </trans-unit>
+        <trans-unit id="Table 3220818943 - Field 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3220818943 - Field 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Amount Incl. VAT</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
@@ -11684,6 +11255,30 @@
           <source>Line No.</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3976302498 - Field 1577567912 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="Table 3976302498 - Field 781257514 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="Table 3976302498 - Field 4195771768 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cust. Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Deb. VK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Deb. VK-Preis</target>
+        </trans-unit>
+        <trans-unit id="Table 3976302498 - Field 397428269 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cust. Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Deb. Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Deb. Betrag</target>
         </trans-unit>
         <trans-unit id="Table 3976302498 - Field 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Amount</source>
