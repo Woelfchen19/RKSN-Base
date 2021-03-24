@@ -7243,6 +7243,16 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
+        <trans-unit id="Table 3220818943 - Field 2758397104 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vend. Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred. VK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3220818943 - Field 4048762053 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vend. Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred. Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
         <trans-unit id="Table 3220818943 - Field 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Amount</source>
           <note from="Developer" annotates="general" priority="2" />
@@ -9481,6 +9491,16 @@
         <trans-unit id="Table 3976302498 - Field 781257514 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 3 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3976302498 - Field 4195771768 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cust. Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Deb. VK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3976302498 - Field 397428269 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cust. Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Deb. Betrag"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 3976302498 - Field 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
