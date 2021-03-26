@@ -78,6 +78,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit - Label</note>
         </trans-unit>
+        <trans-unit id="Codeunit 4200806882 - Method 916722513 - NamedType 3781244733" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only Entry Type "Positive Adjmt.", "Negative Adjmt" and "Transfer" are allowed!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nur die Postenarten Zugang, Abgang, Umlagerung sind erlaubt!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit - Label</note>
+        </trans-unit>
         <trans-unit id="Page 3992821448 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Card</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungskarte"</note>
