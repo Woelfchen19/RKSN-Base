@@ -1448,6 +1448,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Aktivierung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
         </trans-unit>
+        <trans-unit id="PageExtension 4221297843 - Control 3550963010 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deactivate balance line - Inventory Value Zero</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Entlastungszeile ohne Wertefluss deaktiviert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1200957402 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
@@ -7131,6 +7136,11 @@
         <trans-unit id="Table 513384087 - Field 245901840 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Activation</source>
           <note from="Developer" annotates="general" priority="2">DEA="Aktivierung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 513384087 - Field 3550963010 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deactivate balance line - Inventory Value Zero</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Entlastungszeile ohne Wertefluss deaktiviert"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 3647664017 - Field 883711285 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">

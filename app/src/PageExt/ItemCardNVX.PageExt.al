@@ -4,21 +4,20 @@ pageextension 50001 ItemCardNVX extends "Item Card"
     {
         addlast(InventoryGrp)
         {
-            field(InventoryValueZeroNVX; "Inventory Value Zero")
-            //RKSN-36
+            field(InventoryValueZeroNVX; Rec."Inventory Value Zero")
             {
                 ApplicationArea = All;
                 Editable = false;
-            }
+            }           
         }
 
         addlast("Posting Details")
         {
-            field(GlobalDimension1Code; "Global Dimension 1 Code")
+            field(GlobalDimension1Code; Rec."Global Dimension 1 Code")
             {
                 ApplicationArea = All;
             }
-            field(GlobalDimension2Code; "Global Dimension 2 Code")
+            field(GlobalDimension2Code; Rec."Global Dimension 2 Code")
             {
                 ApplicationArea = All;
             }
@@ -33,7 +32,7 @@ pageextension 50001 ItemCardNVX extends "Item Card"
                     DimMgt.SaveDefaultDim(Database::Item, Rec."No.", 3, GlobalDimension3Code);
                 end;
             }
-            field("VAT Prod. Posting Group NVX"; "VAT Prod. Posting Group")
+            field("VAT Prod. Posting Group NVX"; Rec."VAT Prod. Posting Group")
             {
                 ApplicationArea = All;
                 Editable = false;
@@ -47,6 +46,17 @@ pageextension 50001 ItemCardNVX extends "Item Card"
                 Caption = 'Activation', comment = 'DEA="Aktivierung"';
                 trigger OnValidate();
                 begin
+                    ItemNVX.Modify();
+                end;
+            }
+            field("Deactivate balance line - Inventory Value Zero";ItemNVX."Deactivate balance line - Inventory Value Zero")
+            {
+                ApplicationArea = All;
+                Caption = 'Deactivate balance line - Inventory Value Zero', comment = 'DEA="Entlastungszeile ohne Wertefluss deaktiviert"';
+                trigger OnValidate();
+                begin
+                    IF ItemNVX."Deactivate balance line - Inventory Value Zero" then
+                        Rec.TestField("Inventory Value Zero",true);
                     ItemNVX.Modify();
                 end;
             }

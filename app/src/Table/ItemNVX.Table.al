@@ -14,6 +14,11 @@ table 50026 ItemNVX
             Caption = 'Activation', comment = 'DEA="Aktivierung"';
             DataClassification = CustomerContent;
         }
+        field(15;"Deactivate balance line - Inventory Value Zero";Boolean)
+        {
+            Caption = 'Deactivate balance line - Inventory Value Zero', comment = 'DEA="Entlastungszeile ohne Wertefluss deaktiviert"';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys
