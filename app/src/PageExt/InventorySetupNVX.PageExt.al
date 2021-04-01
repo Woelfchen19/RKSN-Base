@@ -48,10 +48,17 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
                     InvSetupNVX.Modify();
                 end;                
             }
-            
-            
-        }
-        
+            field("Purchase Gen. Bus. Posting Group Fixed";InvSetupNVX."Purchase Gen. Bus. Posting Group Fixed")
+            {
+                ApplicationArea = All;
+                Caption = 'Purchase Gen. Bus. Posting Group Fixed', comment = 'DEA="Zukauf Steuerschlüssel FIX"';
+                TableRelation = "Gen. Business Posting Group".Code;
+                trigger OnValidate();
+                begin
+                    InvSetupNVX.Modify();
+                end;           
+            }                     
+        }        
     }
     
     var

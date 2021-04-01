@@ -60,6 +60,16 @@ pageextension 50001 ItemCardNVX extends "Item Card"
                     ItemNVX.Modify();
                 end;
             }
+            field("Deactivate Inventory Gen. Bus. Posting Group";ItemNVX."Deactivate Inventory Gen. Bus. Posting Group")
+            {
+                Caption = 'Deactivate Inventory Gen. Bus. Posting Group', comment = 'DEA=""Steuerschlüssel Lager Einr.deaktivieren""';
+                ApplicationArea = All;
+                trigger OnValidate();
+                begin
+                    ItemNVX.Modify();
+                end;                
+            }
+            
             
         }
         modify("VAT Prod. Posting Group")

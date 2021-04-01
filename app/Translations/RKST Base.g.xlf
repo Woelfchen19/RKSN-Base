@@ -43,6 +43,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Sie haben keine ausreichende Menge des Artikels %1 auf Lager."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit - Label</note>
         </trans-unit>
+        <trans-unit id="Codeunit 754220121 - Method 2562927728 - NamedType 353338979" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Business Posting Group can not be changed. Check Item Master Data where required.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Steuerschlüssel kann nicht geändert werden. Überprüfen Sie gegebenenfalls die Stammdaten des Artikels!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit - Label</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3690295394 - Method 3579618997 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Überprüfen Sie bitte das Setup."</note>
@@ -1438,6 +1443,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Lager KSt."</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 430931662 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Gen. Bus. Posting Group Fixed</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zukauf Steuerschlüssel FIX"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
         <trans-unit id="PageExtension 4221297843 - Control 3306788903 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 3 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
@@ -1451,6 +1461,11 @@
         <trans-unit id="PageExtension 4221297843 - Control 3550963010 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deactivate balance line - Inventory Value Zero</source>
           <note from="Developer" annotates="general" priority="2">DEA="Entlastungszeile ohne Wertefluss deaktiviert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4221297843 - Control 3745911519 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deactivate Inventory Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA=""Steuerschlüssel Lager Einr.deaktivieren""</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
         </trans-unit>
         <trans-unit id="PageExtension 1200957402 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
@@ -7128,6 +7143,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Lager KSt."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 430931662 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Gen. Bus. Posting Group Fixed</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zukauf Steuerschlüssel FIX"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
         <trans-unit id="Table 513384087 - Field 568743302 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item No.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Artikelnr."</note>
@@ -7141,6 +7161,11 @@
         <trans-unit id="Table 513384087 - Field 3550963010 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deactivate balance line - Inventory Value Zero</source>
           <note from="Developer" annotates="general" priority="2">DEA="Entlastungszeile ohne Wertefluss deaktiviert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 513384087 - Field 3745911519 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deactivate Inventory Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA=""Steuerschlüssel Lager Einr.deaktivieren""</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 3647664017 - Field 883711285 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
