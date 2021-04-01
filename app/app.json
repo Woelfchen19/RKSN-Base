@@ -21,12 +21,11 @@
                     ],
     "platform":  "11.0.0.0",
     "application":  "11.0.0.0",
-    "idRanges":  [
+    "idRange":  
                      {
                          "from":  50000,
                          "to":  50100
-                     }
-                 ],
+                     },
     "contextSensitiveHelpUrl":  "https://www.navax.com/",
     "showMyCode":  true,
     "features":  "TranslationFile"

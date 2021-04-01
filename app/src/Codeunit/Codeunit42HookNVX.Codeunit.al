@@ -57,92 +57,92 @@ codeunit 50012 Codeunit42HookNVX
         IF CaptionArea = '1338' then begin //Return Sales Dimension Name
             GLSetup.get();
             case CaptionRef of
-        '1' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 1 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
-            end;
-'2' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 2 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
-            end;
-'3' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 3 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
-            end;
-'4' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 4 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
-            end;
-'5' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 5 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
-            end;
-'6' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 6 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
-            end;
-'7' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 7 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
-            end;
-'8' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 8 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
-            end;
+                '1' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 1 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
+                    end;
+                '2' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 2 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
+                    end;
+                '3' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 3 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
+                    end;
+                '4' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 4 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
+                    end;
+                '5' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 5 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
+                    end;
+                '6' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 6 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
+                    end;
+                '7' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 7 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
+                    end;
+                '8' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 8 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', SalesLbl, Dim.GetMLName(Language));
+                    end;
             end; // of case
         end;
 
         IF CaptionArea = '1339' then begin //Return Purchase Dimension Name
             GLSetup.get();
             case CaptionRef of
-'1' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 1 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
-            end;
-'2' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 2 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
-            end;
-'3' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 3 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
-            end;
-'4' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 4 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
-            end;
-'5' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 5 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
-            end;
-'6' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 6 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
-            end;
-'7' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 7 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
-            end;
-'8' :
-            begin
-                if Dim.Get(GLSetup."Shortcut Dimension 8 Code") then;
-                CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
-            end;
+                '1' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 1 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
+                    end;
+                '2' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 2 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
+                    end;
+                '3' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 3 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
+                    end;
+                '4' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 4 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
+                    end;
+                '5' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 5 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
+                    end;
+                '6' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 6 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
+                    end;
+                '7' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 7 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
+                    end;
+                '8' :
+                    begin
+                        if Dim.Get(GLSetup."Shortcut Dimension 8 Code") then;
+                        CaptionExpr := StrSubstNo('%1 %2', PurchaseLbl, Dim.GetMLName(Language));
+                    end;
             end; // of case
         end;
 
