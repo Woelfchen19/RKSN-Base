@@ -48,6 +48,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Der Steuerschlüssel kann nicht geändert werden. Überprüfen Sie gegebenenfalls die Stammdaten des Artikels!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit - Label</note>
         </trans-unit>
+        <trans-unit id="Codeunit 754220121 - Method 1662205653 - NamedType 1602948993" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., </source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit - Label</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3690295394 - Method 3579618997 - NamedType 1252526162" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Überprüfen Sie bitte das Setup."</note>
@@ -1467,6 +1472,11 @@
           <source>Deactivate Inventory Gen. Bus. Posting Group</source>
           <note from="Developer" annotates="general" priority="2">DEA=""Steuerschlüssel Lager Einr.deaktivieren""</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4221297843 - Method 2126772001 - NamedType 3575781400" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot change this field if there are posted item entries</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Diese Einrichtung ist nur solange änderbar als es zum betreffenden Artikel noch keine Bewegungsposten gibt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Label</note>
         </trans-unit>
         <trans-unit id="PageExtension 1200957402 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Code</source>

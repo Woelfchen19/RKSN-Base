@@ -65,7 +65,13 @@ pageextension 50001 ItemCardNVX extends "Item Card"
                 Caption = 'Deactivate Inventory Gen. Bus. Posting Group', comment = 'DEA=""Steuerschlüssel Lager Einr.deaktivieren""';
                 ApplicationArea = All;
                 trigger OnValidate();
+                var
+                    ItemEntry: Record "Item Ledger Entry";
+                    ItemEntryNotEmptyErr: Label 'You cannot change this field if there are posted item entries', comment = 'DEA="Diese Einrichtung ist nur solange änderbar als es zum betreffenden Artikel noch keine Bewegungsposten gibt"';
                 begin
+                    ItemEntry.SetRange("Item No.",Rec."No.");
+                    IF not ItemEntry.IsEmpty() then
+                        Error(ItemEntryNotEmptyErr);
                     ItemNVX.Modify();
                 end;                
             }

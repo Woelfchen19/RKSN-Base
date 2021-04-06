@@ -66,7 +66,28 @@ codeunit 50006 Table39HookNVX
             InvSetupNVX.Get();
             IF Rec."Gen. Bus. Posting Group" <> InvSetupNVX."Purchase Gen. Bus. Posting Group Fixed" then
                 Error(WrongGenBusPostingGroupErr);
-        end;
-        
+        end;        
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnAfterValidateEvent', 'Dimension Set ID', false, false)]
+    local procedure CheckForInventorySetupDimensions(Rec: Record "Purchase Line")
+    var
+        InvSetupNVX: Record InvSetupNVX;
+        Item: Record Item;
+        DimMgt: Codeunit DimensionManagement;
+        ShortcutDims: Array[8] of Code[20];
+        InvValueErr: Label 'This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., ',
+                                comment = 'DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"';
+    begin
+        IF Rec.Type <> Rec.Type::Item then
+            exit;
+        IF Item.Get(Rec."No.") and Item."Inventory Value Zero" then
+            exit;
+        DimMgt.GetShortcutDimensions(Rec."Dimension Set ID",ShortcutDims);
+        InvSetupNVX.Get();
+        IF ShortcutDims[1] <> InvSetupNVX."Inventory Cost Center" then
+            Error(InvValueErr);
+        IF ShortcutDims[3] <> InvSetupNVX."Inventory Section" then
+            Error(InvValueErr);
     end;
 }

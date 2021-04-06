@@ -64,7 +64,7 @@ pageextension 50039 DefaultDimNVX extends "Default Dimensions"
 
             until DefaultDim.Next = 0;
 
-        IF(not Dim1Present) OR(not Dim3Present) then
+        IF (not Dim1Present) OR (not Dim3Present) then
             case Item."Inventory Value Zero" of
                 true :
                     Error(InvValueZeroErr);
