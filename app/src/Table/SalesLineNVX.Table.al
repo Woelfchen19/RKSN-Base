@@ -75,31 +75,31 @@ table 50036 SalesLineNVX
         }
     }
 
-    procedure UpdateCustAmount(ActSalesLine: record "Sales Line");
-    begin
-        "Cust. Amount" := round(ActSalesLine.Quantity * "Cust. Unit Price", 0.01);
-        modify;
-    end;
+    // procedure UpdateCustAmount(ActSalesLine: record "Sales Line");
+    // begin
+    //     "Cust. Amount" := round(ActSalesLine.Quantity * "Cust. Unit Price", 0.01);
+    //     modify;
+    // end;
 
-    procedure UpdateSalesLine(var ActSalesLine: record "Sales Line")
-    var
-        VATPostingSetup: record "VAT Posting Setup";
-        SalesHeader: record "Sales Header";
-        VatPercent: Decimal;
-        NetUnitPrice: Decimal;
-    begin
-        if not SalesHeader.get(ActSalesLine."Document Type",ActSalesLine."Document No.") then
-            exit;
+    // procedure UpdateSalesLine(var ActSalesLine: record "Sales Line")
+    // var
+    //     VATPostingSetup: record "VAT Posting Setup";
+    //     SalesHeader: record "Sales Header";
+    //     VatPercent: Decimal;
+    //     NetUnitPrice: Decimal;
+    // begin
+    //     if not SalesHeader.get(ActSalesLine."Document Type",ActSalesLine."Document No.") then
+    //         exit;
 
-        UpdateCustAmount(ActSalesLine);
-        if not SalesHeader."Prices Including VAT" then begin 
-            if VATPostingSetup.get(actsalesline."VAT Bus. Posting Group", actSalesLine."VAT Prod. Posting Group") then;
-            if VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT" then
-                VatPercent := VATPostingSetup."VAT %";
-        end;
-        NetUnitPrice := round("Cust. Unit Price" / (100 + VatPercent) * 100, 0.01);
-        actSalesLine.Validate("Unit Price", NetUnitPrice);
-    end;
+    //     UpdateCustAmount(ActSalesLine);
+    //     if not SalesHeader."Prices Including VAT" then begin 
+    //         if VATPostingSetup.get(actsalesline."VAT Bus. Posting Group", actSalesLine."VAT Prod. Posting Group") then;
+    //         if VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT" then
+    //             VatPercent := VATPostingSetup."VAT %";
+    //     end;
+    //     NetUnitPrice := round("Cust. Unit Price" / (100 + VatPercent) * 100, 0.01);
+    //     actSalesLine.Validate("Unit Price", NetUnitPrice);
+    // end;
 
     procedure HandleVATDifferenceNVX(SalesHeader: Record "Sales Header")
     var
