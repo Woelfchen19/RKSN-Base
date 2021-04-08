@@ -30,46 +30,46 @@ pageextension 50039 DefaultDimNVX extends "Default Dimensions"
                 case DefaultDim."Dimension Code" of
 
                     GLSetup."Global Dimension 1 Code" :
-            begin
+                        begin
 
-                Dim1Present := true;
+                            Dim1Present := true;
 
-                case Item."Inventory Value Zero" of
-                    true :
-                        IF DefaultDim."Dimension Value Code" = InvSetupNVX."Inventory Cost Center" then
-                    Error(InvValueZeroErr);
-false :
-                        IF DefaultDim."Dimension Value Code" <> InvSetupNVX."Inventory Cost Center" then
-                    Error(InvValueErr);
-                end; //of case
-            end;
+                            case Item."Inventory Value Zero" of
+                                true :
+                                    IF DefaultDim."Dimension Value Code" = InvSetupNVX."Inventory Cost Center" then
+                                        Error(InvValueZeroErr);
+                                false :
+                                    IF DefaultDim."Dimension Value Code" <> InvSetupNVX."Inventory Cost Center" then
+                                        Error(InvValueErr);
+                            end; //of case
+                        end;
 
-            GLSetup."Shortcut Dimension 3 Code" :
-            begin
+                    GLSetup."Shortcut Dimension 3 Code" :
+                        begin
 
-                Dim3Present := true;
+                            Dim3Present := true;
 
-                case Item."Inventory Value Zero" of
-                    true :
-                        IF DefaultDim."Dimension Value Code" = InvSetupNVX."Inventory Section" then
-                    Error(InvValueZeroErr);
-false :
-                        IF DefaultDim."Dimension Value Code" <> InvSetupNVX."Inventory Section" then
-                    Error(InvValueErr);
-                end; // of case
-            end;
+                            case Item."Inventory Value Zero" of
+                                true :
+                                    IF DefaultDim."Dimension Value Code" = InvSetupNVX."Inventory Section" then
+                                        Error(InvValueZeroErr);
+                                false :
+                                    IF DefaultDim."Dimension Value Code" <> InvSetupNVX."Inventory Section" then
+                                        Error(InvValueErr);
+                            end; // of case
+                        end;
 
             end; //of case
 
 
             until DefaultDim.Next = 0;
 
-        IF(not Dim1Present) OR(not Dim3Present) then
+        IF (not Dim1Present) OR (not Dim3Present) then
             case Item."Inventory Value Zero" of
-            true :
-                Error(InvValueZeroErr);
-            false :
-                Error(InvValueErr);
+                true :
+                    Error(InvValueZeroErr);
+                false :
+                    Error(InvValueErr);
             end; // of case
 
 

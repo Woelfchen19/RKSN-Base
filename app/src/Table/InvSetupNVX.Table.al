@@ -33,7 +33,12 @@ table 50002 InvSetupNVX
             Caption = 'Inventory Cost Center', comment = 'DEA="Lager KSt."'; //TODO CaptionClass einrichten in Codeunit42HookNVX
             TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(1));
         }
-
+        field(25;"Purchase Gen. Bus. Posting Group Fixed";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Purchase Gen. Bus. Posting Group Fixed', comment = 'DEA="Zukauf Steuerschlüssel FIX"';
+            TableRelation = "Gen. Business Posting Group".Code;
+        }
     }
 
     keys

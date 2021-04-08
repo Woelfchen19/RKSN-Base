@@ -19,6 +19,12 @@ table 50026 ItemNVX
             Caption = 'Deactivate balance line - Inventory Value Zero', comment = 'DEA="Entlastungszeile ohne Wertefluss deaktiviert"';
             DataClassification = CustomerContent;
         }
+        field(20;"Deactivate Inventory Gen. Bus. Posting Group";Boolean)
+        {
+            Caption = 'Deactivate Inventory Gen. Bus. Posting Group', comment = 'DEA=""Steuerschlüssel Lager Einr.deaktivieren""';
+            DataClassification = CustomerContent;
+        }
+
     }
 
     keys
