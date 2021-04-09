@@ -7,6 +7,13 @@ pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
             Visible = false;
             Enabled = false;
         }
+        modify("Gen. Posting Type")
+        {
+            trigger OnAfterValidate();
+            begin
+                CurrPage.Update();
+            end;
+        }
         addafter("Gen. Posting Type")
         {
             field(GenBsnPstGrpNVX; "Gen. Bus. Posting Group")
