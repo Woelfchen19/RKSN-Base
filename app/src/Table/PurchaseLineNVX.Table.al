@@ -75,25 +75,25 @@ table 50028 PurchaseLineNVX
         }
     }
 
-    procedure UpdateVendAmount(ActPurchaseLine: record "Purchase Line");
-    begin
-        "Vend. Amount" := round(ActPurchaseLine.Quantity * "Vend. Unit Price", 0.01);
-        modify;
-    end;
+    // procedure UpdateVendAmount(ActPurchaseLine: record "Purchase Line");
+    // begin
+    //     "Vend. Amount" := round(ActPurchaseLine.Quantity * "Vend. Unit Price", 0.01);
+    //     modify;
+    // end;
     
-    procedure UpdatePurchaseLine(var ActPurchaseLine: record "Purchase Line")
-    var
-        VATPostingSetup: record "VAT Posting Setup";
-        VatPercent: Decimal;
-        NetUnitPrice: Decimal;
-    begin        
-        UpdateVendAmount(ActPurchaseLine);
-        if VATPostingSetup.get(actPurchaseline."VAT Bus. Posting Group", actPurchaseLine."VAT Prod. Posting Group") then;
-        if VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT" then
-            VatPercent := VATPostingSetup."VAT %";
-        NetUnitPrice := round("Vend. Unit Price" / (100 + VatPercent) * 100, 0.01);
-        actPurchaseLine.Validate("Direct Unit Cost", NetUnitPrice);
-    end;
+    // procedure UpdatePurchaseLine(var ActPurchaseLine: record "Purchase Line")
+    // var
+    //     VATPostingSetup: record "VAT Posting Setup";
+    //     VatPercent: Decimal;
+    //     NetUnitPrice: Decimal;
+    // begin        
+    //     UpdateVendAmount(ActPurchaseLine);
+    //     if VATPostingSetup.get(actPurchaseline."VAT Bus. Posting Group", actPurchaseLine."VAT Prod. Posting Group") then;
+    //     if VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT" then
+    //         VatPercent := VATPostingSetup."VAT %";
+    //     NetUnitPrice := round("Vend. Unit Price" / (100 + VatPercent) * 100, 0.01);
+    //     actPurchaseLine.Validate("Direct Unit Cost", NetUnitPrice);
+    // end;
 
     procedure HandleVATDifferenceNVX(PurchaseHeader: Record "Purchase Header")
     var
