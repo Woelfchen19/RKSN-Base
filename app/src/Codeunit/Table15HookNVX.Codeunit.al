@@ -13,4 +13,21 @@ codeunit 50002 Table15HookNVX
                 Error(WrongPrdPstGrpErr);
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"G/L Account", 'OnAfterValidateEvent', 'Gen. Posting Type', false, false)]
+    local procedure SetGenBsnPostingGroupType(Rec: Record "G/L Account")
+    var
+        GLAccountNVX: Record GLAccountNVX;
+    begin
+        IF (Rec."No." = '') OR Rec.IsTemporary then
+            exit;
+        IF not GLAccountNVX.Get(Rec."No.") then begin
+            GLAccountNVX.Init();
+            GLAccountNVX."G/L Account No." := Rec."No.";
+            GLAccountNVX.Insert();
+        end;
+        IF Rec."Gen. Posting Type" = Rec."Gen. Posting Type"::Sale then begin
+            GLAccountNVX."Gen. Bsn. Posting Group Type" := GLAccountNVX."Gen. Bsn. Posting Group Type"::Standard;
+            GLAccountNVX.Modify();
+        end;
+    end;
 }
