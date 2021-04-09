@@ -1,7 +1,7 @@
 trigger: 
   branches:
     include:
-    - master
+    - Release12.04
   paths:
    include:
      - app/*
