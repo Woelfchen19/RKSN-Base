@@ -1736,6 +1736,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
           <target>Lager KSt.</target>
         </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 2584118089 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Section - Inventory Value Zero</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EK und VK nicht lagerbewertet Sparte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+          <target>EK und VK nicht lagerbewertet Sparte</target>
+        </trans-unit>
         <trans-unit id="PageExtension 3395455879 - Control 430931662 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase Gen. Bus. Posting Group Fixed</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zukauf Steuerschlüssel FIX"</note>
@@ -2246,23 +2252,11 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table - Table</note>
           <target>Verteilungskopf</target>
         </trans-unit>
-        <trans-unit id="Table 4083095369 - Field 1385866247 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation ID</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungs-ID"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-          <target>Verteilungs-ID</target>
-        </trans-unit>
         <trans-unit id="Table 4083095369 - Field 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
           <target>Verteilungscode</target>
-        </trans-unit>
-        <trans-unit id="Table 4083095369 - Field 3461834954 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-          <target>Beschreibung</target>
         </trans-unit>
         <trans-unit id="Table 4083095369 - Field 474480784 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Start Date</source>
@@ -2270,17 +2264,29 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
           <target>Startdatum</target>
         </trans-unit>
+        <trans-unit id="Table 4083095369 - Field 3461834954 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Beschreibung</target>
+        </trans-unit>
         <trans-unit id="Table 1916964282 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Line</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungszeile"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Table</note>
           <target>Verteilungszeile</target>
         </trans-unit>
-        <trans-unit id="Table 1916964282 - Field 1385866247 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation ID</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungs-ID"</note>
+        <trans-unit id="Table 1916964282 - Field 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-          <target>Verteilungs-ID</target>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="Table 1916964282 - Field 474480784 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Startdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>Startdatum</target>
         </trans-unit>
         <trans-unit id="Table 1916964282 - Field 3320823955 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
@@ -8503,6 +8509,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Lager KSt."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
           <target>Lager KSt.</target>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 2584118089 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Section - Inventory Value Zero</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EK und VK nicht lagerbewertet Sparte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+          <target>EK und VK nicht lagerbewertet Sparte</target>
         </trans-unit>
         <trans-unit id="Table 2780653954 - Field 430931662 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase Gen. Bus. Posting Group Fixed</source>

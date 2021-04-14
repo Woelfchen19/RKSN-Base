@@ -53,6 +53,11 @@ table 50016 GLEntryNVX
             DataClassification = CustomerContent;
             Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
         }
+        field(35;"Deactivate dimensional distribution";Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Deactivate dimensional distribution', comment = 'DEA="Verteilung deaktiviert"';
+        }
     }
 
     keys

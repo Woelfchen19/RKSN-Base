@@ -54,6 +54,11 @@ pageextension 50005 GLEntryNVX extends "General Ledger Entries"
                 ApplicationArea = All;
                 Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
             }
+            field("Deactivate dimensional distribution"; GLEntryNVX."Deactivate dimensional distribution")
+            {
+                ApplicationArea = All;
+                Caption = 'Deactivate dimensional distribution', comment = 'DEA="Verteilung deaktiviert"';
+            }
         }
     }
     var

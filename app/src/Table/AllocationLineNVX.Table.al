@@ -5,12 +5,18 @@ table 50013 AllocationLineNVX
     
     fields
     {
-        field(1;"Allocation ID";Guid)
+        field(1;"Allocation Code";Code[10])
         {
             DataClassification = CustomerContent;
-            Caption = 'Allocation ID', comment = 'DEA="Verteilungs-ID"';
+            Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
+            TableRelation = AllocationCodeNVX.Code;
         }
-        field(2;"Line No.";Integer)
+        field(2;"Start Date";Date)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Start Date', comment = 'DEA="Startdatum"';
+        }
+        field(3;"Line No.";Integer)
         {
             DataClassification = CustomerContent;
             Caption = 'Line No.', comment = 'DEA="Zeilennr."';
@@ -60,7 +66,7 @@ table 50013 AllocationLineNVX
 
     keys
     {
-        key(PK;"Allocation ID","Line No.")
+        key(PK;"Allocation Code","Start Date","Line No.")
         {
             Clustered = true;
         }

@@ -48,6 +48,17 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
                     InvSetupNVX.Modify();
                 end;                
             }
+            field("Section - Inventory Value Zero";InvSetupNVX."Section - Inventory Value Zero")
+            {
+                ApplicationArea = All;
+                Caption = 'Section - Inventory Value Zero', comment = 'DEA="EK und VK nicht lagerbewertet Sparte"';
+                TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(3));
+                trigger OnValidate();
+                begin
+                    InvSetupNVX.Modify();
+                end;     
+            }
+            
             field("Purchase Gen. Bus. Posting Group Fixed";InvSetupNVX."Purchase Gen. Bus. Posting Group Fixed")
             {
                 ApplicationArea = All;

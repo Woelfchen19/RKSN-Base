@@ -1331,7 +1331,12 @@ table 50035 DistrSalesLineNVX
         {
             Caption = 'External Document No.', comment = 'DEA="Externe Belegnummer"';
             DataClassification = CustomerContent;
-        }     
+        }
+        field(50035;"Deactivate dimensional distribution";Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Deactivate dimensional distribution', comment = 'DEA="Verteilung deaktiviert"';
+        }
         field(50050;"Origin Line No.";Integer)
         {
             DataClassification = CustomerContent;

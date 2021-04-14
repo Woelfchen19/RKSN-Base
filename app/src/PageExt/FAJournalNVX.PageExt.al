@@ -107,8 +107,8 @@ pageextension 50037 FAJournal extends "Fixed Asset Journal"
     end;
 
     var
-        AllocationCodeVar: Code[20];
         FAJnlLineNVX: Record FAJnlLineNVX;
+        AllocationCodeVar: Code[20];
 
     [IntegrationEvent(false, false)]
     local procedure OnPreviewDimDistribution(var FAJnlLine: Record "FA Journal Line")

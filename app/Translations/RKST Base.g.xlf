@@ -1418,6 +1418,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 4215196433 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deactivate dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilung deaktiviert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3395455879 - Control 2890226425 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allow Negative Inventory for Items with Stock Value</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zu lagerbewerteten Artikeln negative Lagerbestände zulassen"</note>
@@ -1446,6 +1451,11 @@
         <trans-unit id="PageExtension 3395455879 - Control 3136067094 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory Cost Center</source>
           <note from="Developer" annotates="general" priority="2">DEA="Lager KSt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 2584118089 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Section - Inventory Value Zero</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EK und VK nicht lagerbewertet Sparte"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
         </trans-unit>
         <trans-unit id="PageExtension 3395455879 - Control 430931662 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
@@ -1878,19 +1888,9 @@
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungskopf"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Table</note>
         </trans-unit>
-        <trans-unit id="Table 4083095369 - Field 1385866247 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation ID</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungs-ID"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
         <trans-unit id="Table 4083095369 - Field 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 4083095369 - Field 3461834954 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 4083095369 - Field 474480784 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
@@ -1898,14 +1898,24 @@
           <note from="Developer" annotates="general" priority="2">DEA="Startdatum"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
+        <trans-unit id="Table 4083095369 - Field 3461834954 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
         <trans-unit id="Table 1916964282 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Line</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungszeile"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Table</note>
         </trans-unit>
-        <trans-unit id="Table 1916964282 - Field 1385866247 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation ID</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungs-ID"</note>
+        <trans-unit id="Table 1916964282 - Field 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1916964282 - Field 474480784 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Startdatum"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 1916964282 - Field 3320823955 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
@@ -4358,6 +4368,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
+        <trans-unit id="Table 3278362078 - Field 4215196433 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deactivate dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilung deaktiviert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
         <trans-unit id="Table 3278362078 - Field 4034965439 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Origin Line No.</source>
           <note from="Developer" annotates="general" priority="2" />
@@ -5376,6 +5391,11 @@
         <trans-unit id="Table 82374090 - Field 1527563463 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>External Document No.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Externe Belegnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 82374090 - Field 4215196433 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deactivate dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilung deaktiviert"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 82374090 - Field 4034965439 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
@@ -7023,6 +7043,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
+        <trans-unit id="Table 2583571545 - Field 4215196433 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deactivate dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilung deaktiviert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
         <trans-unit id="Table 3642273339 - Field 1878130204 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Type</source>
           <note from="Developer" annotates="general" priority="2" />
@@ -7128,6 +7153,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
+        <trans-unit id="Table 3642273339 - Field 4215196433 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deactivate dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilung deaktiviert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
         <trans-unit id="Table 2780653954 - Field 1663593181 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
           <note from="Developer" annotates="general" priority="2">DEA="Primärschlüssel"</note>
@@ -7151,6 +7181,11 @@
         <trans-unit id="Table 2780653954 - Field 4016834630 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory Cost Center</source>
           <note from="Developer" annotates="general" priority="2">DEA="Lager KSt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 2584118089 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Section - Inventory Value Zero</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EK und VK nicht lagerbewertet Sparte"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 2780653954 - Field 430931662 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">

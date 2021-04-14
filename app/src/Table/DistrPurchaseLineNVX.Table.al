@@ -1259,7 +1259,12 @@ table 50029 DistrPurchLineNVX
             // CaptionClass = '1338,3'; = Sales + Dim Name
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
-        }  
+        }
+        field(50035;"Deactivate dimensional distribution";Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Deactivate dimensional distribution', comment = 'DEA="Verteilung deaktiviert"';
+        }
         field(50050;"Origin Line No.";Integer)
         {
             DataClassification = CustomerContent;

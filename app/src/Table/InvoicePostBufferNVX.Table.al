@@ -130,6 +130,11 @@ table 50033 InvoicePostBufferNVX
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
         }
+        field(50040;"Deactivate dimensional distribution";Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Deactivate dimensional distribution', comment = 'DEA="Verteilung deaktiviert"';
+        }
     }
       
     keys

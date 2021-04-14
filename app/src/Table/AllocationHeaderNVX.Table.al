@@ -7,12 +7,7 @@ table 50012 AllocationHeaderNVX
 
     fields
     {
-        field(1;"Allocation ID";Guid)
-        {
-            DataClassification = CustomerContent;
-            Caption = 'Allocation ID', comment = 'DEA="Verteilungs-ID"';
-        }
-        field(5;"Allocation Code";Code[10])
+        field(1;"Allocation Code";Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
@@ -27,27 +22,23 @@ table 50012 AllocationHeaderNVX
                 end;
             end;
         }
+        field(2;"Start Date";Date)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Start Date', comment = 'DEA="Startdatum"';
+        }
         field(10;Description;Text[250])
         {
             DataClassification = CustomerContent;
             Caption = 'Description', comment = 'DEA="Beschreibung"';
         }
-        field(15;"Start Date";Date)
-        {
-            DataClassification = CustomerContent;
-            Caption = 'Start Date', comment = 'DEA="Startdatum"';
-        }
     }
 
     keys
     {
-        key(PK;"Allocation ID")
+        key(PK;"Allocation Code","Start Date")
         {
             Clustered = true;
-        }
-        key(SortingKey; "Allocation Code","Start Date")
-        {
-            
         }
     }
     
@@ -66,7 +57,7 @@ table 50012 AllocationHeaderNVX
     var
         AllocationLine: Record AllocationLineNVX;
     begin
-        AllocationLine.SetRange("Allocation ID","Allocation ID");
+        AllocationLine.SetRange("Allocation Code","Allocation Code");
         AllocationLine.DeleteAll();
     end;
 

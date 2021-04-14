@@ -4,7 +4,6 @@ page 50006 AllocationSubPageNVX
     PageType = ListPart;
     SourceTable = AllocationLineNVX;
     AutoSplitKey = true;
-    MultipleNewLines = true;
     DelayedInsert = true;
     layout
     {
@@ -51,10 +50,8 @@ page 50006 AllocationSubPageNVX
     trigger OnNewRecord(BelowxRec: Boolean);
     var
         AllocationCode: Record AllocationCodeNVX;
-        AllocationHeader: Record AllocationHeaderNVX;
     begin
-        AllocationHeader.Get("Allocation ID");
-        AllocationCode.Get(AllocationHeader."Allocation Code");
+        AllocationCode.Get(Rec."Allocation Code");
         "Shortcut Dimension 2 Code" := AllocationCode."Shortcut Dimension 2 Code";
     end;
 }

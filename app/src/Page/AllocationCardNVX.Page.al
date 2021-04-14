@@ -4,7 +4,6 @@ page 50004 AllocationCardNVX
     SourceTable = AllocationHeaderNVX;
     // UsageCategory = Administration;
     Caption = 'Allocation Card', comment = 'DEA="Verteilungskarte"';
-    AutoSplitKey = true;
     layout
     {
         area(content)
@@ -27,24 +26,8 @@ page 50004 AllocationCardNVX
             }
             part(Lines;AllocationSubPageNVX)
             {
-                SubPageLink = "Allocation ID" = field("Allocation ID");
+                SubPageLink = "Allocation Code"= field("Allocation Code"),"Start Date" = field("Start Date");
             }
         }
     }
-
-    // actions
-    // {
-    //     area(processing)
-    //     {
-    //         action(ActionName)
-    //         {
-    //             trigger OnAction();
-    //             begin
-    //             end;
-    //         }
-    //     }
-    // }
-    
-    var
-        myInt : Integer;
 }
