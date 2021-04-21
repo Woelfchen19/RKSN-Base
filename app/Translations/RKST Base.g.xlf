@@ -1198,6 +1198,16 @@
           <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart Beschreibung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1555680109 - Control 2534804345 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1555680109 - Control 2995684568 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
         <trans-unit id="PageExtension 106444741 - Control 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
@@ -1461,6 +1471,66 @@
         <trans-unit id="PageExtension 3395455879 - Control 430931662 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase Gen. Bus. Posting Group Fixed</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zukauf Steuerschlüssel FIX"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 2467183980 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition and Sales</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassungen und Verkäufe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 1627907312 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Customer</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Debitor"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 477320555 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Gen. Bus. Posting Group Fixed</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel FIX"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 1600317658 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Gen. Bus. Posting Group WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel WES"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 148380339 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Section - Inventory Value Zero</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung nicht lagerbewertete Sparte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 162341820 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Bal. WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Entl. WES"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 842692498 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Journal Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Buchblattname"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 150120065 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Journal Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Buchblattbeschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 3702505114 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Journal Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkauf Buchblattname"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 1871638089 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Journal Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkauf Buchblattbeschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 1193251709 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Bal. Return</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkauf Entl. Erlöse"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 4222943972 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Bal. WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkauf Entl. WES"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension - Control</note>
         </trans-unit>
         <trans-unit id="PageExtension 4221297843 - Control 3306788903 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
@@ -2006,6 +2076,16 @@
         <trans-unit id="Table 1555680109 - Field 605891830 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Posting Type Description</source>
           <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart Beschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1555680109 - Field 1577567912 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1555680109 - Field 1003760969 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 2"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 3618441594 - Field 1577567912 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
@@ -5403,66 +5483,6 @@
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 1651921640 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales,Purchase</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verkauf,Einkauf"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 1651921640 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Department</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Modul"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 2363328873 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quote,Order,Invoice,Credit Memo,Blanket Order",Return Order</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Quote,Order,Invoice,Credit Memo,Blanket Order,Return Order"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 2363328873 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Document Type</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Belegart"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 486908828 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Document No.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Belegnr."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 1577567912 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 781257514 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 1204855280 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 2335800995 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount Incl. VAT</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 3022418233 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 2056450994 - Field 2149205334 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allocation Amount Incl. VAT</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
         <trans-unit id="Table 2919565053 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Journal Line Archive</source>
           <note from="Developer" annotates="general" priority="2">DEA="Anlagen Buch.-Blattzeilenarchiv"</note>
@@ -7193,6 +7213,61 @@
           <note from="Developer" annotates="general" priority="2">DEA="Zukauf Steuerschlüssel FIX"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 1627907312 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Customer</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Debitor"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 477320555 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Gen. Bus. Posting Group Fixed</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel FIX"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 1600317658 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Gen. Bus. Posting Group WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel WES"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 148380339 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Section - Inventory Value Zero</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung nicht lagerbewertete Sparte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 162341820 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Bal. WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Entl. WES"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 842692498 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Journal Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Buchblattname"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 150120065 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Journal Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Buchblattbeschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 3702505114 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Journal Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkauf Buchblattname"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 1871638089 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Journal Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkauf Buchblattbeschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 1193251709 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Bal. Return</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkauf Entl. Erlöse"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 4222943972 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Bal. WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkauf Entl. WES"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
         <trans-unit id="Table 513384087 - Field 568743302 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item No.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Artikelnr."</note>
@@ -7258,44 +7333,24 @@
           <note from="Developer" annotates="general" priority="2">DEA="Offen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
-        <trans-unit id="Table 4083901735 - Field 1651921640 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales,Purchase</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verkauf,Einkauf"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 4083901735 - Field 1651921640 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Department</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Modul"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 4083901735 - Field 2363328873 - Property 62802879" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quote,Order,Invoice,Credit Memo,Blanket Order",Return Order</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Quote,Order,Invoice,Credit Memo,Blanket Order,Return Order"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 4083901735 - Field 2363328873 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3229844528 - Field 2363328873 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document Type</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Belegart"</note>
+          <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
-        <trans-unit id="Table 4083901735 - Field 486908828 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Document No.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Belegnr."</note>
+        <trans-unit id="Table 3229844528 - Field 4200184881 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
-        <trans-unit id="Table 4083901735 - Field 1577567912 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+        <trans-unit id="Table 3229844528 - Field 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
-        <trans-unit id="Table 4083901735 - Field 781257514 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
-        </trans-unit>
-        <trans-unit id="Table 4083901735 - Field 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
+        <trans-unit id="Table 3229844528 - Field 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 3220818943 - Field 2363328873 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
@@ -8488,6 +8543,31 @@
           <note from="Developer" annotates="general" priority="2">DEA="Buchungsart"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
+        <trans-unit id="Table 1119121856 - Field 4200184881 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2" />
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1119121856 - Field 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Allocation</source>
+          <note from="Developer" annotates="general" priority="2">Abfassung Verteilung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1119121856 - Field 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Interim Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1119121856 - Field 781257514 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Section</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Sparte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1119121856 - Field 1600317658 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Gen. Bus. Posting Group WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel WES"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
         <trans-unit id="Table 169155759 - Field 486908828 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document No.</source>
           <note from="Developer" annotates="general" priority="2" />
@@ -8506,6 +8586,71 @@
         <trans-unit id="Table 169155759 - Field 1364463381 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Posting Type</source>
           <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1733794865 - Field 2363328873 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Type</source>
+          <note from="Developer" annotates="general" priority="2" />
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1733794865 - Field 4200184881 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2" />
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1733794865 - Field 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Allocation</source>
+          <note from="Developer" annotates="general" priority="2">Abfassung Verteilung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1733794865 - Field 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Interim Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1733794865 - Field 781257514 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Section</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Sparte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1733794865 - Field 1600317658 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Gen. Bus. Posting Group WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel WES"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1733794865 - Field 3780637336 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 1733794865 - Field 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2343142090 - Field 4200184881 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2" />
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2343142090 - Field 1152423399 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Allocation</source>
+          <note from="Developer" annotates="general" priority="2">Abfassung Verteilung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2343142090 - Field 2045127545 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Interim Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2343142090 - Field 781257514 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Section</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Sparte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 2343142090 - Field 1600317658 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Gen. Bus. Posting Group WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel WES"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 3657852281 - Field 486908828 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
@@ -9596,6 +9741,11 @@
         <trans-unit id="Table 3976302498 - Field 2768683595 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Amount Incl. VAT</source>
           <note from="Developer" annotates="general" priority="2" />
+          <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
+        </trans-unit>
+        <trans-unit id="Table 3976302498 - Field 1600317658 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Composition Gen. Bus. Posting Group WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel WES"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table - Field</note>
         </trans-unit>
         <trans-unit id="Table 1224611290 - Field 2708250016 - Property 2879900210" maxWidth="999" size-unit="char" translate="yes" xml:space="preserve">

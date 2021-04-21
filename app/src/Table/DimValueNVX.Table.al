@@ -27,6 +27,20 @@ table 50009 DimValueNVX
             FieldClass = FlowField;
             CalcFormula = lookup(VATPostingTypeNVX.Description where (Code=field("VAT Posting Type")));
         }
+        field(20;"Shortcut Dimension 1 Code";Code[20])
+        {
+            DataClassification = CustomerContent;
+            CaptionClass = '1,2,1';
+            Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));       
+        }
+        field(21;"Shortcut Dimension 2 Code";Code[20])
+        {
+            DataClassification = CustomerContent;
+            CaptionClass = '1,2,2';
+            Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+        }
     }
 
     keys

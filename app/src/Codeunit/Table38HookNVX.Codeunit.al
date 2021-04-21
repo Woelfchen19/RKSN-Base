@@ -21,21 +21,21 @@ codeunit 50008 Table38HookNVX
     [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnBeforeDeleteEvent', '', false, false)]
     local procedure DeleteRecordInAccompaniedTable(Rec: Record "Purchase Header")
     var
-        DocInfo: Record DocInfoNVX;
+        PurchaseHeaderNVX: Record PurchaseHeaderNVX;
     begin
-        IF DocInfo.Get(DocInfo.Department::Purchase,Rec."Document Type",Rec."No.") then
-            DocInfo.Delete();
+        IF PurchaseHeaderNVX.Get(Rec."Document Type",Rec."No.") then
+            PurchaseHeaderNVX.Delete();
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnAfterRenameEvent', '', false, false)]
     local procedure RenameRecordInAccompaniedTable(Rec: Record "Purchase Header"; xRec: Record "Purchase Header")
     var
-        DocInfo: Record DocInfoNVX;
+        PurchaseHeaderNVX: Record PurchaseHeaderNVX;
     begin
-        IF not DocInfo.Get(DocInfo.Department::Purchase,Rec."Document Type",xRec."No.") then
+        IF not PurchaseHeaderNVX.Get(Rec."Document Type",xRec."No.") then
             exit;
 
-        DocInfo."Document No." := Rec."No.";
-        DocInfo.Modify();
+        PurchaseHeaderNVX."No." := Rec."No.";
+        PurchaseHeaderNVX.Modify();
     end;
 }

@@ -46,6 +46,74 @@ table 50002 InvSetupNVX
             TableRelation = "Gen. Business Posting Group".Code;
         }
 
+        field(100;"Composition Customer";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Composition Customer', comment = 'DEA="Abfassung Debitor"';
+            TableRelation = Customer."No.";
+        }
+        field(101;"Composition Gen. Bus. Posting Group Fixed";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Composition Gen. Bus. Posting Group Fixed', comment = 'DEA="Abfassung Steuerschlüssel FIX"';
+            TableRelation = "Gen. Business Posting Group".Code;
+        }
+        field(102;"Composition Gen. Bus. Posting Group WES";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Composition Gen. Bus. Posting Group WES', comment = 'DEA="Abfassung Steuerschlüssel WES"';
+            TableRelation = "Gen. Business Posting Group".Code;
+        }
+        field(103;"Composition Section - Iventory Value Zero";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Composition Section - Inventory Value Zero', comment = 'DEA="Abfassung nicht lagerbewertete Sparte"';
+            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(3));
+        }
+        field(104;"Composition Bal. WES";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Composition Bal. WES', comment = 'DEA="Abfassung Entl. WES"';
+            TableRelation = "G/L Account"."No.";
+        }
+        field(105;"Composition Journal Name";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Composition Journal Name', comment = 'DEA="Abfassung Buchblattname"';
+            TableRelation = "Gen. Journal Batch".Name where ("Journal Template Name" = const ('Verkauf'));
+        }
+        field(106;"Composition Journal Description";Text[50])
+        {
+            Caption = 'Composition Journal Description', comment = 'DEA="Abfassung Buchblattbeschreibung"';
+            FieldClass = FlowField;
+            CalcFormula = lookup ("Gen. Journal Batch".Description where (Name = field("Composition Journal Name"),"Journal Template Name" = const ('VERKAUF')));
+            Editable = false;
+        }
+        field(107;"Sales Journal Name";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Sales Journal Name', comment = 'DEA="Verkauf Buchblattname"';
+            TableRelation = "Gen. Journal Batch".Name where ("Journal Template Name" = const ('Verkauf'));
+        }
+        field(108;"Sales Journal Description";Text[50])
+        {
+            Caption = 'Sales Journal Description', comment = 'DEA="Verkauf Buchblattbeschreibung"';
+            FieldClass = FlowField;
+            CalcFormula = lookup ("Gen. Journal Batch".Description where (Name = field("Sales Journal Name"),"Journal Template Name" = const ('VERKAUF')));
+            Editable = false;
+        }
+        field(109;"Sales Bal. Return";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Sales Bal. Return', comment = 'DEA="Verkauf Entl. Erlöse"';
+            TableRelation = "G/L Account"."No.";
+        }
+        field(110;"Sales Bal. WES";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Sales Bal. WES', comment = 'DEA="Verkauf Entl. WES"';
+            TableRelation = "G/L Account"."No.";
+        }
     }
 
     keys

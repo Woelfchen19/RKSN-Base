@@ -3,21 +3,21 @@ codeunit 50007 Table36HookNVX
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnBeforeDeleteEvent', '', false, false)]
     local procedure DeleteRecordInAccompaniedTable(Rec: Record "Sales Header")
     var
-        DocInfo: Record DocInfoNVX;
+        SalesHeaderNVX: Record SalesHeaderNVX;
     begin
-        IF DocInfo.Get(DocInfo.Department::Sales,Rec."Document Type",Rec."No.") then
-            DocInfo.Delete();
+        IF SalesHeaderNVX.Get(Rec."Document Type",Rec."No.") then
+            SalesHeaderNVX.Delete();
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterRenameEvent', '', false, false)]
     local procedure RenameRecordInAccompaniedTable(Rec: Record "Sales Header"; xRec: Record "Sales Header")
     var
-        DocInfo: Record DocInfoNVX;
+        SalesHeaderNVX: Record SalesHeaderNVX;
     begin
-        IF not DocInfo.Get(DocInfo.Department::Sales,Rec."Document Type",xRec."No.") then
+        IF not SalesHeaderNVX.Get(Rec."Document Type",xRec."No.") then
             exit;
 
-        DocInfo."Document No." := Rec."No.";
-        DocInfo.Modify();
+        SalesHeaderNVX."No." := Rec."No.";
+        SalesHeaderNVX.Modify();
     end;
 }

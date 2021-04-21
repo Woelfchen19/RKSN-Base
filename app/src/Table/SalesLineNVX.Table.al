@@ -65,6 +65,12 @@ table 50036 SalesLineNVX
             FieldClass = FlowField;
             CalcFormula = sum (DistrSalesLineNVX."Amount Including VAT" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No."), "Origin Line No." = field ("Line No.")));
         }
+        field(102;"Composition Gen. Bus. Posting Group WES";Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Composition Gen. Bus. Posting Group WES', comment = 'DEA="Abfassung Steuerschlüssel WES"';
+            TableRelation = "Gen. Business Posting Group".Code;
+        }   
     }
 
     keys

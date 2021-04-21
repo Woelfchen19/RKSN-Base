@@ -23,7 +23,22 @@ pageextension 50027 DimValueNVX extends "Dimension Values"
                 ApplicationArea = All;
                 Editable = false;
             }
-            
+            field("DimValueNVX Shortcut Dimension 1 Code";DimValueNVX."Shortcut Dimension 1 Code")
+            {
+                ApplicationArea = All;
+                CaptionClass = '1,2,1';
+                Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
+                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));  
+                Visible = IsOE;
+            }
+            field("DimValueNVX Shortcut Dimension 2 Code";DimValueNVX."Shortcut Dimension 2 Code")
+            {
+                ApplicationArea = All;
+                CaptionClass = '1,2,2';
+                Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
+                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+                Visible = IsOE;
+            }
             
         }
     }
@@ -33,23 +48,36 @@ pageextension 50027 DimValueNVX extends "Dimension Values"
         GLSetup: Record "General Ledger Setup";
         PostingTypeVisible: Boolean;        
         GLSetupRead: Boolean;
+        IsOE: Boolean;
 
     trigger OnAfterGetRecord();
     begin
-        GetGLSetup();
-        IF GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 3 Code" then
-            PostingTypeVisible := true
-        else begin
-            PostingTypeVisible := false;
+        IF (not PostingTypeVisible) and (not IsOE) then
             exit;
-        end;
+
         If not DimValueNVX.GET("Dimension Code",Code) then begin
             DimValueNVX.Init();
             DimValueNVX."Dimension Code" := "Dimension Code";
             DimValueNVX.Code := Code;
             DimValueNVX.Insert();
-        end;       
-        DimValueNVX.CalcFields("VAT Posting Type Desc");
+        end;
+        IF PostingTypeVisible then
+            DimValueNVX.CalcFields("VAT Posting Type Desc");
+    end;
+
+    trigger OnOpenPage();
+    begin
+        GetGLSetup();
+
+        IF GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 3 Code" then
+            PostingTypeVisible := true
+        else
+            PostingTypeVisible := false;
+
+        IF GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 6 Code" then
+            IsOE := true
+        else
+            IsOE := false;
     end;
 
     local procedure GetGLSetup();
@@ -59,4 +87,6 @@ pageextension 50027 DimValueNVX extends "Dimension Values"
           GLSetupRead := true;
         end;
     end;
+
+    
 }
