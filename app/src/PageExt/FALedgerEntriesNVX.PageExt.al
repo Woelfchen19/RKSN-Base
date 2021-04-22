@@ -1,10 +1,10 @@
-pageextension 50034 FALedgerEntries extends "FA Ledger Entries"
+pageextension 50034 "FALedgerEntriesNVX" extends "FA Ledger Entries"
 {
     layout
     {
         addlast(Control1)
         {
-            field("Allocation Code"; FALedgerEntryNVX."Allocation Code")
+            field("Allocation CodeNVX"; FALedgerEntryNVX."Allocation Code")
             {
                 ApplicationArea = All;
                 Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';

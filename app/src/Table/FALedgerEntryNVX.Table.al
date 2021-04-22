@@ -1,14 +1,14 @@
-table 50017 FALedgerEntryNVX
+table 50017 "FALedgerEntryNVX"
 {
     DataClassification = CustomerContent;
     
     fields
     {
-        field(1;"Entry No.";Integer)
+        field(1; "Entry No."; Integer)
         {
             DataClassification = CustomerContent;
         }
-        field(20;"Allocation Code";Code[10])
+        field(20; "Allocation Code"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';

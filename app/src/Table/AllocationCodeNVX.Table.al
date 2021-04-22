@@ -1,4 +1,4 @@
-table 50010 AllocationCodeNVX
+table 50010 "AllocationCodeNVX"
 {
     DataClassification = CustomerContent;
     Caption = 'Allocation Code', comment = 'Verteilungscode"';
@@ -6,12 +6,12 @@ table 50010 AllocationCodeNVX
     DrillDownPageId = 50003;
     fields
     {
-        field(1;Code;Code[10])
+        field(1; "Code"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'Code', comment = 'DEA="Code"';
         }
-        field(2;Description;Text[50])
+        field(2; Description; Text[50])
         {
             DataClassification = CustomerContent;
             Caption = 'Description', comment = 'DEA="Beschreibung"';
@@ -24,7 +24,7 @@ table 50010 AllocationCodeNVX
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
             CaptionClass = '1,2,2';
         }
-        field(10;"Resp. Center";Code[10])
+        field(10; "Resp. Center"; Code[10])
         {
             Caption = 'Responsibility Center', comment = 'DEA="Zuständigkeitseinheitencode"';
             FieldClass = FlowField;
@@ -41,17 +41,6 @@ table 50010 AllocationCodeNVX
         }
     }
     
-    var
-        myInt : Integer;
-
-    trigger OnInsert();
-    begin
-    end;
-
-    trigger OnModify();
-    begin
-    end;
-
     trigger OnDelete();
     begin
         //TODO OnDeleteTrigger 
@@ -65,9 +54,4 @@ table 50010 AllocationCodeNVX
         // AllocHistory.DELETEALL;
 
     end;
-
-    trigger OnRename();
-    begin
-    end;
-
 }

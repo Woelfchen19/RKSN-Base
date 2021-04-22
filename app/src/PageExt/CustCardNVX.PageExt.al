@@ -1,4 +1,4 @@
-pageextension 50006 CustCardNVX extends "Customer Card"
+pageextension 50006 "CustCardNVX" extends "Customer Card"
 {
     layout
     {
@@ -8,10 +8,10 @@ pageextension 50006 CustCardNVX extends "Customer Card"
         }
         addfirst(PostingDetails)
         {
-            field(GenBsnPstGrpNVX;"Gen. Bus. Posting Group")
+            field(GenBsnPstGrpNVX; "Gen. Bus. Posting Group")
             {
                 ApplicationArea = All;
-                trigger OnLookup(Text : Text) : Boolean;
+                trigger OnLookup(var Text: Text) : Boolean;
                 var
                     GBPGRec: Record "Gen. Business Posting Group";
                     GenBsnPstGrpNVX: Record GenBsnPstGrpNVX;

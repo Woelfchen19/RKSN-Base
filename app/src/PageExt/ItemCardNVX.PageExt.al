@@ -1,4 +1,4 @@
-pageextension 50001 ItemCardNVX extends "Item Card"
+pageextension 50001 "ItemCardNVX" extends "Item Card"
 {
     layout
     {
@@ -13,15 +13,15 @@ pageextension 50001 ItemCardNVX extends "Item Card"
 
         addlast("Posting Details")
         {
-            field(GlobalDimension1Code; Rec."Global Dimension 1 Code")
+            field(GlobalDimension1CodeNVX; Rec."Global Dimension 1 Code")
             {
                 ApplicationArea = All;
             }
-            field(GlobalDimension2Code; Rec."Global Dimension 2 Code")
+            field(GlobalDimension2CodeNVX; Rec."Global Dimension 2 Code")
             {
                 ApplicationArea = All;
             }
-            field(GlobalDimension3Code; GlobalDimension3Code)
+            field(GlobalDimension3CodeNVX; GlobalDimension3Code)
             {
                 ApplicationArea = All;
                 Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
@@ -49,20 +49,20 @@ pageextension 50001 ItemCardNVX extends "Item Card"
                     ItemNVX.Modify();
                 end;
             }
-            field("Deactivate balance line - Inventory Value Zero";ItemNVX."Deactivate balance line - Inventory Value Zero")
+            field("Deactivate balance line - Inventory Value ZeroNVX"; ItemNVX."No bal line - Inv Value Zero")
             {
                 ApplicationArea = All;
                 Caption = 'Deactivate balance line - Inventory Value Zero', comment = 'DEA="Entlastungszeile ohne Wertefluss deaktiviert"';
                 trigger OnValidate();
                 begin
-                    IF ItemNVX."Deactivate balance line - Inventory Value Zero" then
+                    IF ItemNVX."No bal line - Inv Value Zero" then
                         Rec.TestField("Inventory Value Zero",true);
                     ItemNVX.Modify();
                 end;
             }
-            field("Deactivate Inventory Gen. Bus. Posting Group";ItemNVX."Deactivate Inventory Gen. Bus. Posting Group")
+            field("Deactivate Inventory Gen. Bus. Posting GroupNVX"; ItemNVX."No Inv Gen. Bus. Posting Group")
             {
-                Caption = 'Deactivate Inventory Gen. Bus. Posting Group', comment = 'DEA=""Steuerschlüssel Lager Einr.deaktivieren""';
+                Caption = 'Deactivate Inventory Gen. Bus. Posting Group', comment = 'DEA="Steuerschlüssel Lager Einr.deaktivieren"';
                 ApplicationArea = All;
                 trigger OnValidate();
                 var
@@ -102,7 +102,7 @@ pageextension 50001 ItemCardNVX extends "Item Card"
         DefaultDim.SetRange("Table ID", Database::Item);
         DefaultDim.SetRange("No.", Rec."No.");
         DefaultDim.SetRange("Dimension Code", GLSetup."Shortcut Dimension 3 Code");
-        IF DefaultDim.FindFirst then
+        IF DefaultDim.FindFirst() then
             GlobalDimension3Code := DefaultDim."Dimension Value Code";
 
         IF not ItemNVX.Get("No.") then begin

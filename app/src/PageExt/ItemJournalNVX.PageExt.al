@@ -1,4 +1,4 @@
-pageextension 50017 ItemJournalNVX extends "Item Journal"
+pageextension 50017 "ItemJournalNVX" extends "Item Journal"
 {
     layout
     {
@@ -9,10 +9,10 @@ pageextension 50017 ItemJournalNVX extends "Item Journal"
         }   
         addbefore("Gen. Prod. Posting Group")
         {
-            field(GenBsnPstGrpNVX;"Gen. Bus. Posting Group")
+            field(GenBsnPstGrpNVX; "Gen. Bus. Posting Group")
             {
                 ApplicationArea = All;
-                trigger OnLookup(Text : Text) : Boolean;
+                trigger OnLookup(var Text: Text) : Boolean;
                 var
                     GBPGRec: Record "Gen. Business Posting Group";
                     GenBsnPstGrpNVX: Record GenBsnPstGrpNVX;

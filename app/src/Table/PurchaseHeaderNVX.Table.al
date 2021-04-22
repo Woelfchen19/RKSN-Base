@@ -1,19 +1,19 @@
-table 50040 PurchaseHeaderNVX
+table 50040 "PurchaseHeaderNVX"
 {
     DataClassification = CustomerContent;
     
     fields
     {
-        field(1;"Document Type";Option)
+        field(1; "Document Type"; Option)
         {
             DataClassification = CustomerContent;
             OptionMembers = Quote,Order,Invoice,"Credit Memo","Blanket Order","Return Order";
         }
-        field(3;"No.";Code[20])
+        field(3; "No."; Code[20])
         {
             DataClassification = CustomerContent;
         }
-        // field(15;"Interim Gen.Bus.Posting Group";Code[20])
+        // field(15; "Interim Gen.Bus.Posting Group"; Code[20])
         // {
         //     DataClassification = CustomerContent;
         //     Caption = 'Interim Gen. Bus. Posting Group', comment = 'DEA="Interim Steuerschlüssel"';

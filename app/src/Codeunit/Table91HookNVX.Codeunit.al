@@ -1,4 +1,4 @@
-codeunit 50003 Table91HookNVX
+codeunit 50003 "Table91HookNVX"
 {
 [EventSubscriber(ObjectType::Table, Database::"User Setup", 'OnAfterInsertEvent', '', false, false)]
 local procedure InsertRecordInAccompaniedTable(var Rec: Record "User Setup")

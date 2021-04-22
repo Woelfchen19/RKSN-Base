@@ -1,4 +1,4 @@
-page 50026 PurchLineArchiveOriginNVX
+page 50026 "PurchLineArchiveOriginNVX"
 {
     Caption = 'Purchase Line Archive Origin', comment = 'DEA="Einkaufszeilenarchiv Ursprung"';
     PageType = ListPart;
@@ -10,33 +10,33 @@ page 50026 PurchLineArchiveOriginNVX
         {
             repeater(Group)
             {
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Document Type";"Document Type")
+                field("Document Type"; "Document Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                     ApplicationArea = All;
                 }
-                field("External Document No.";"External Document No.")
+                field("External Document No."; "External Document No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Type";"Type")
+                field(Type; "Type")
                 {
                     Caption = 'Account Type', comment = 'DEA="Kontoart"';
                     ApplicationArea = All;
                 }
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Caption = 'Account No.', comment = 'DEA="Kontonr."';
                     ApplicationArea = All;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     ApplicationArea = All;
                 }
@@ -52,29 +52,29 @@ page 50026 PurchLineArchiveOriginNVX
                 {
                     ApplicationArea = All;
                 }
-                field("Allocation Code";"Allocation Code")
+                field("Allocation Code"; "Allocation Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Amount";"Amount")
+                field(Amount; "Amount")
                 {
                     ApplicationArea = All;
                 }
-                field("Gen. Bus. Posting Group";"Gen. Bus. Posting Group")
+                field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
                 {
                     ApplicationArea = All;
                 }
-                field("Bal. Account Type";BalAccountTypeLbl)
+                field("Bal. Account Type"; BalAccountTypeLbl)
                 {
                     ApplicationArea = All;
                     Caption = 'Bal. Account Type', comment = 'DEA="Gegenkontoart"';
                 }
-                field("Bal. Account No.";"Buy-from Vendor No.")
+                field("Bal. Account No."; "Buy-from Vendor No.")
                 {
                     Caption = 'Bal. Account No.', comment = 'DEA="Gegenkontonr."';
                     ApplicationArea = All;
                 }
-                field(BusinessCase;BusinessCase)
+                field(BusinessCase; BusinessCase)
                 {
                     ApplicationArea = All;
                     Caption = 'Business Case', comment = 'DEA="Geschäftsfall"';

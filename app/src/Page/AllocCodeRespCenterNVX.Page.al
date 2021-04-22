@@ -1,4 +1,4 @@
-page 50005 AllocCodeRespCenterNVX
+page 50005 "AllocCodeRespCenterNVX"
 {
     Caption = 'Allocation Codes/ Resp. Center', comment = 'DEA="Verteilungscodes/ Zuständigkeitseinh."';
     PageType = List;
@@ -16,11 +16,11 @@ page 50005 AllocCodeRespCenterNVX
                 {
                     ApplicationArea = All;
                 }
-                field("Allocation Code Description";Rec."Allocation Code Description")
+                field("Allocation Code Description"; Rec."Allocation Code Description")
                 {
                     ApplicationArea = All;
                 }
-                field("Resp. Center";Rec."Resp. Center")
+                field("Resp. Center"; Rec."Resp. Center")
                 {
                     ApplicationArea = All;
                 }

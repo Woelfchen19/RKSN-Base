@@ -1,10 +1,10 @@
-pageextension 50037 FAJournal extends "Fixed Asset Journal"
+pageextension 50037 "FAJournalNVX" extends "Fixed Asset Journal"
 {
     layout
     {
         addlast(Control1)
         {
-            field("Allocation Code"; AllocationCodeVar)
+            field("Allocation CodeNVX"; AllocationCodeVar)
             {
                 ApplicationArea = All;
                 Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
@@ -50,8 +50,9 @@ pageextension 50037 FAJournal extends "Fixed Asset Journal"
     {
         addlast(Processing)
         {
-            action(PreviewDimDistribution)
+            action(PreviewDimDistributionNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
                 Image = PreviewChecks;
                 Promoted = true;
@@ -62,7 +63,7 @@ pageextension 50037 FAJournal extends "Fixed Asset Journal"
                     DistrFAJnlLine: Record DistrFAJnlLineNVX;
                     PreviewFADimDistrPage: Page PreviewFADimDistrNVX;
                 begin
-                    OnPreviewDimDistribution(Rec);
+                    OnPreviewDimDistributionNVX(Rec);
                     DistrFAJnlLine.SetRange("Journal Template Name", Rec."Journal Template Name");
                     DistrFAJnlLine.SetRange("Journal Batch Name", Rec."Journal Batch Name");
                     PreviewFADimDistrPage.SetRecord(DistrFAJnlLine);
@@ -108,10 +109,10 @@ pageextension 50037 FAJournal extends "Fixed Asset Journal"
 
     var
         FAJnlLineNVX: Record FAJnlLineNVX;
-        AllocationCodeVar: Code[20];
+        AllocationCodeVar: Code[10];
 
     [IntegrationEvent(false, false)]
-    local procedure OnPreviewDimDistribution(var FAJnlLine: Record "FA Journal Line")
+    local procedure OnPreviewDimDistributionNVX(var FAJnlLine: Record "FA Journal Line")
     begin
     end;
 }

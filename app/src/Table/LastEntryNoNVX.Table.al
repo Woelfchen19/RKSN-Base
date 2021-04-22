@@ -1,4 +1,4 @@
-table 50025 LastEntryNoNVX
+table 50025 "LastEntryNoNVX"
 {
     DataClassification = CustomerContent;
 

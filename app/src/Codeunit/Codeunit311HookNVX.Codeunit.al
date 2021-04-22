@@ -1,11 +1,11 @@
-codeunit 50017 Codeunit311HookNVX
+codeunit 50017 "Codeunit311HookNVX"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item-Check Avail.", 'OnBeforeShowWarningForThisItem', '', false, false)]
     local procedure HandleStockOutWarning(Item: record Item; var ShowWarning: Boolean; var IsHandled: Boolean)
     var
-        ItemCheckCU: Codeunit "Item-Check Avail.";
         MyNotifications: Record "My Notifications";
         InvSetupNVX: Record InvSetupNVX;
+        ItemCheckCU: Codeunit "Item-Check Avail.";
     begin
         IsHandled := true;
 
@@ -14,7 +14,7 @@ codeunit 50017 Codeunit311HookNVX
             exit;
         end;
 
-        IF NOT MyNotifications.IsEnabledForRecord(ItemCheckCU.GetItemAvailabilityNotificationId, Item) THEN begin
+        IF NOT MyNotifications.IsEnabledForRecord(ItemCheckCU.GetItemAvailabilityNotificationId(), Item) THEN begin
             ShowWarning := false;
             exit;
         end;

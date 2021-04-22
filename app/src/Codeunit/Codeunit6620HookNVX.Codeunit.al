@@ -1,4 +1,4 @@
-codeunit 50013 Codeunit6620HookNVX
+codeunit 50013 "Codeunit6620HookNVX"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Copy Document Mgt.", 'OnCopySalesDocWithHeader', '', false, false)]
     local procedure CopyDocInfoSales(FromDocType: Option; FromDocNo: Code[20]; VAR ToSalesHeader: Record "Sales Header")
@@ -20,7 +20,7 @@ codeunit 50013 Codeunit6620HookNVX
         SalesDocType::Invoice,
         SalesDocType::"Return Order",
         SalesDocType::"Credit Memo" :
-        BEGIN
+        
             IF SalesHeaderNVX.get(CopyDocMgt.SalesHeaderDocType(FromDocType), FromDocNo) then begin
                 NewSalesHeaderNVX.Init();
                 NewSalesHeaderNVX.TransferFields(SalesHeaderNVX);
@@ -28,7 +28,7 @@ codeunit 50013 Codeunit6620HookNVX
                 NewSalesHeaderNVX."No." := ToSalesHeader."No.";
                 NewSalesHeaderNVX.Insert();
             end;
-        END;
+        
         // SalesDocType::"Posted Shipment" :
         // BEGIN
         //     IF PstdDocInfo.get(PstdDocInfo.Department::Sales, PstdDocInfo."Document Type"::Shipment, FromDocNo) then begin
@@ -40,7 +40,7 @@ codeunit 50013 Codeunit6620HookNVX
         //     end;
         // END;
         SalesDocType::"Posted Invoice" :
-        BEGIN
+        
             IF SalesInvoiceHeaderNVX.get(FromDocNo) then begin
                 NewSalesHeaderNVX.Init();
                 NewSalesHeaderNVX.TransferFields(SalesInvoiceHeaderNVX);
@@ -48,7 +48,7 @@ codeunit 50013 Codeunit6620HookNVX
                 NewSalesHeaderNVX."No." := ToSalesHeader."No.";
                 NewSalesHeaderNVX.Insert();
             end;
-        END;
+        
         // SalesDocType::"Posted Return Receipt" :
         // BEGIN
         //     IF PstdDocInfo.get(PstdDocInfo.Department::Sales, PstdDocInfo."Document Type"::"Return Receipt", FromDocNo) then begin
@@ -60,7 +60,7 @@ codeunit 50013 Codeunit6620HookNVX
         //     end;
         // END;
         SalesDocType::"Posted Credit Memo" :
-        BEGIN
+        
             IF SalesCrMemoHeaderNVX.get(FromDocNo) then begin
                 NewSalesHeaderNVX.Init();
                 NewSalesHeaderNVX.TransferFields(SalesCrMemoHeaderNVX);
@@ -68,7 +68,7 @@ codeunit 50013 Codeunit6620HookNVX
                 NewSalesHeaderNVX."No." := ToSalesHeader."No.";
                 NewSalesHeaderNVX.Insert();
             end;
-        END;
+        
 
         END;
     end;

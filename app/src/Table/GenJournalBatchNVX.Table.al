@@ -1,4 +1,4 @@
-table 50027 GenJournalBatchNVX
+table 50027 "GenJournalBatchNVX"
 {
     DataClassification = CustomerContent;
 

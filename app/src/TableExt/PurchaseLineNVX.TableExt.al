@@ -1,6 +1,6 @@
-tableextension 50002 PurchaseLineNVX extends "Purchase Line"
+tableextension 50002 "PurchaseLineNVX" extends "Purchase Line"
 {
-    procedure UpdatePurchaseLine(VendUnitPrice: Decimal)
+    procedure UpdatePurchaseLineNVX(VendUnitPrice: Decimal)
     var
         VATPostingSetup: Record "VAT Posting Setup";
         PurchaseHeader: Record "Purchase Header";

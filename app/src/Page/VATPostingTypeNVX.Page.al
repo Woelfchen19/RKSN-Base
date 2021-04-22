@@ -1,4 +1,4 @@
-page 50000 VATPostingTypeNVX
+page 50000 "VATPostingTypeNVX"
 {
     
     ApplicationArea = All;
@@ -14,7 +14,7 @@ page 50000 VATPostingTypeNVX
         {
             repeater(General)
             {
-                field(Code; Code)
+                field("Code"; Code)
                 {
                     ApplicationArea = All;
                 }

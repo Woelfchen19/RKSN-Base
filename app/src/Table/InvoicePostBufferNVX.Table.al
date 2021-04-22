@@ -1,4 +1,4 @@
-table 50033 InvoicePostBufferNVX
+table 50033 "InvoicePostBufferNVX"
 {
     fields
     {
@@ -87,18 +87,18 @@ table 50033 InvoicePostBufferNVX
             DataClassification = SystemMetadata;
         }        
         //Fields to save for later
-        field(50000;"Allocation Code";Code[10])
+        field(50000; "Allocation Code"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
             TableRelation = AllocationCodeNVX.Code;
         }
-        field(50001;"VAT Posting Type";Code[10])
+        field(50001; "VAT Posting Type"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
         }
-        field(50025;"Sales Shortcut Dimension 1 Code";Code[20])
+        field(50025; "Sales Shortcut Dimension 1"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
@@ -106,7 +106,7 @@ table 50033 InvoicePostBufferNVX
             // CaptionClass = '1338,1'; = Sales + Dim Name
             // CaptionClass = '1339,1'; = Purchase + Dim Name
         }
-        field(50026;"Sales Shortcut Dimension 3 Code";Code[20])
+        field(50026; "Sales Shortcut Dimension 3"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
@@ -114,7 +114,7 @@ table 50033 InvoicePostBufferNVX
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
         }
-        field(50035;"Purchase Shortcut Dimension 1 Code";Code[20])
+        field(50035; "Purchase Shortcut Dimension 1"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
@@ -122,7 +122,7 @@ table 50033 InvoicePostBufferNVX
             // CaptionClass = '1338,1'; = Sales + Dim Name
             // CaptionClass = '1339,1'; = Purchase + Dim Name
         }
-        field(50036;"Purchase Shortcut Dimension 3 Code";Code[20])
+        field(50036; "Purchase Shortcut Dimension 3"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
@@ -130,7 +130,7 @@ table 50033 InvoicePostBufferNVX
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
         }
-        field(50040;"Deactivate dimensional distribution";Boolean)
+        field(50040; "Deactivate dimensional distr"; Boolean)
         {
             DataClassification = CustomerContent;
             Caption = 'Deactivate dimensional distribution', comment = 'DEA="Verteilung deaktiviert"';
@@ -144,24 +144,4 @@ table 50033 InvoicePostBufferNVX
             Clustered = true;
         }
     }
-    
-    var
-        myInt : Integer;
-
-    trigger OnInsert();
-    begin
-    end;
-
-    trigger OnModify();
-    begin
-    end;
-
-    trigger OnDelete();
-    begin
-    end;
-
-    trigger OnRename();
-    begin
-    end;
-
 }

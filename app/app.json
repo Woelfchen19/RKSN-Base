@@ -10,22 +10,22 @@
     "help":  "https://www.navax.com/",
     "url":  "https://www.navax.com/",
     "logo":  "logo/navax_schwarz.png",
-    "capabilities":  [
-
-                     ],
     "dependencies":  [
 
                      ],
     "screenshots":  [
 
                     ],
-    "platform":  "11.0.0.0",
-    "application":  "11.0.0.0",
-    "idRange":  {
+    "platform":  "14.0.0.0",
+    "application":  "14.0.0.0",
+    "idRanges": [
+            {
                     "from":  50000,
                     "to":  50100
-                },
+            }
+    ],
     "contextSensitiveHelpUrl":  "https://www.navax.com/",
     "showMyCode":  true,
-    "features":  "TranslationFile"
+    "features":  ["TranslationFile"],
+    "runtime": "3.2"
 }

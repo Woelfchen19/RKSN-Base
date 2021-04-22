@@ -1,4 +1,4 @@
-page 50004 AllocationCardNVX
+page 50004 "AllocationCardNVX"
 {
     PageType = Card;
     SourceTable = AllocationHeaderNVX;
@@ -15,18 +15,19 @@ page 50004 AllocationCardNVX
                 {
                     ApplicationArea = All;
                 }
-                field("Description"; "Description")
+                field(Description; "Description")
                 {
                     ApplicationArea = All;
                 }                
-                field("Start Date";"Start Date")
+                field("Start Date"; "Start Date")
                 {
                     ApplicationArea = All;
                 }                
             }
             part(Lines;AllocationSubPageNVX)
             {
-                SubPageLink = "Allocation Code"= field("Allocation Code"),"Start Date" = field("Start Date");
+                ApplicationArea = All;
+                SubPageLink = "Allocation Code"= field("Allocation Code"),"Start Date" = FIELD("Start Date");
             }
         }
     }

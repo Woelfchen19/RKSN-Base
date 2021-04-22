@@ -1,4 +1,4 @@
-page 50017 PreviewFADimDistrNVX
+page 50017 "PreviewFADimDistrNVX"
 {
     Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
     PageType = List;
@@ -46,7 +46,7 @@ page 50017 PreviewFADimDistrNVX
                     //     DimValueRec.SetRange("Dimension Code",GLSetup."Shortcut Dimension 3 Code");
                     //     DimValuesPage.SetRecord(DimValueRec);
                     //     DimValuesPage.SetTableView(DimValueRec);
-                    //     DimValuesPage.Run;
+                    //     DimValuesPage.Run();
                     // end;
                 }
                 // field("Shortcut Dimension 3 Name NVX"; "Shortcut Dimension 3 Name")
@@ -81,11 +81,11 @@ page 50017 PreviewFADimDistrNVX
                     ApplicationArea = All;
                     Caption = 'Percentage', comment = 'DEA="%-Anteil"';
                 }
-                field("Amount";"Amount")
+                field(Amount; "Amount")
                 {
                     ApplicationArea = All;
                 }
-                field("Start Date";"Start Date")
+                field("Start Date"; "Start Date")
                 {
                     ApplicationArea = All;
                 }                
@@ -100,7 +100,7 @@ page 50017 PreviewFADimDistrNVX
 
     trigger OnOpenPage()
     begin
-        SetDimensionsVisibility;
+        SetDimensionsVisibility();
     end;
 
     var
@@ -134,7 +134,7 @@ page 50017 PreviewFADimDistrNVX
 
         local procedure UseShortcutDims(VAR DimVisible1 : Boolean;VAR DimVisible2 : Boolean;VAR DimVisible3 : Boolean;VAR DimVisible4 : Boolean;VAR DimVisible5 : Boolean;VAR DimVisible6 : Boolean;VAR DimVisible7 : Boolean;VAR DimVisible8 : Boolean);
         begin
-            GLSetup.GET;
+            GLSetup.Get();
             DimVisible1 := GLSetup."Shortcut Dimension 1 Code" <> '';
             DimVisible2 := GLSetup."Shortcut Dimension 2 Code" <> '';
             DimVisible3 := GLSetup."Shortcut Dimension 3 Code" <> '';

@@ -9,6 +9,16 @@
             "justification": "AppSourceCop Rule - Logo must have a value in the manifest files. - temporary action:Error -> action:None"
         },
         {
+            "id": "AS0013",
+            "action": "None",
+            "justification": "AppSourceCop Rule - The field identifier must be within the allowed range and outside the range allocated to per-tenant customizations. - action:Error -> action:None"
+        },
+        {
+            "id": "AS0016",
+            "action": "None",
+            "justification": "AppSourceCop Rule - Fields of field class 'Normal' must use the DataClassification property and its value should be different from ToBeClassified. - action:Error -> action:None"
+        },
+        {
             "id": "AS0084",
             "action": "None",
             "justification": "AppSourceCop Rule - The ID range assigned to the extension must be within the allowed range for App Source Apps. - action:Error -> action:None"
@@ -25,12 +35,12 @@
         },
         {
             "id": "AA0218",
-            "action": "Error",
+            "action": "None",
             "justification": "CodeCop Rule - You must write a tooltip in the Tooltip property for all controls of type Action and Field that exist on page objects. - action:Warning -> action:Error"
         },
         {
             "id": "AA0220",
-            "action": "Error",
+            "action": "None",
             "justification": "CodeCop Rule - The value of the Tooltip property of Fields must be filled. - action:Warning -> action:Error"
         },
         {

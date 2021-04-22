@@ -1,4 +1,4 @@
-page 50021 FAJnlLineArchiveSummaryNVX
+page 50021 "FAJnlLineArchiveSummaryNVX"
 {
     Caption = 'FA Journal Line Archive Summary', comment = 'DEA="Anlagen Buch.-Blattzeilenarchiv Zusammenfassung"';
     PageType = ListPart;
@@ -44,7 +44,7 @@ page 50021 FAJnlLineArchiveSummaryNVX
                     //     DimValueRec.SetRange("Dimension Code",GLSetup."Shortcut Dimension 3 Code");
                     //     DimValuesPage.SetRecord(DimValueRec);
                     //     DimValuesPage.SetTableView(DimValueRec);
-                    //     DimValuesPage.Run;
+                    //     DimValuesPage.Run();
                     // end;
                 }
                 // field("Shortcut Dimension 3 Name NVX"; "Shortcut Dimension 3 Name")
@@ -79,11 +79,11 @@ page 50021 FAJnlLineArchiveSummaryNVX
                     ApplicationArea = All;
                     Caption = 'Percentage', comment = 'DEA="%-Anteil"';
                 }
-                field("Amount";"Amount")
+                field(Amount; "Amount")
                 {
                     ApplicationArea = All;
                 }
-                field("Start Date";"Start Date")
+                field("Start Date"; "Start Date")
                 {
                     ApplicationArea = All;
                 }                

@@ -1,24 +1,24 @@
-table 50031 PurchInvLineNVX
+table 50031 "PurchInvLineNVX"
 {
     DataClassification = CustomerContent;
     
     fields
     {
-        field(3;"Document No.";Code[20])
+        field(3; "Document No."; Code[20])
         {
             DataClassification = CustomerContent;
         }
-        field(4;"Line No.";Integer)
+        field(4; "Line No."; Integer)
         {
             DataClassification = CustomerContent;
         }
-        field(20;"Allocation Code";Code[10])
+        field(20; "Allocation Code"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
             TableRelation = AllocationCodeNVX.Code;
         }
-        field(25;"VAT Posting Type";Code[10])
+        field(25; "VAT Posting Type"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';

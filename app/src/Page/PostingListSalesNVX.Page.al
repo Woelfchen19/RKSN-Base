@@ -1,4 +1,4 @@
-page 50032 PostingListSalesNVX
+page 50032 "PostingListSalesNVX"
 {
     Caption = 'Backup dimensional distribution Sales', comment = 'DEA="Sicherung dim.Verteilungen Modul Verkauf"';
     PageType = List;
@@ -22,7 +22,7 @@ page 50032 PostingListSalesNVX
                 // {
                 //     ApplicationArea = All;
                 // }
-                // field("Document No.";"Document No.")
+                // field("Document No."; "Document No.")
                 // {
                 //     ApplicationArea = All;
                 // }
@@ -38,7 +38,7 @@ page 50032 PostingListSalesNVX
                 {
                     ApplicationArea = All;
                 }
-                field(Open;Open)
+                field(Open; Open)
                 {
                     ApplicationArea = All;
                 }

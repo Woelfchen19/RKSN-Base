@@ -1,4 +1,4 @@
-codeunit 50006 Table39HookNVX
+codeunit 50006 "Table39HookNVX"
 {
     [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnBeforeValidateEvent', 'Gen. Bus. Posting Group', false, false)]
     local procedure SetStatusCheckSuspended(var Rec: Record "Purchase Line")
@@ -42,10 +42,10 @@ codeunit 50006 Table39HookNVX
             Item.Get(Rec."No.");
             IF Item."Inventory Value Zero" then
                 exit;
-            IF ItemNVX.Get(Rec."No.") and ItemNVX."Deactivate Inventory Gen. Bus. Posting Group" then
+            IF ItemNVX.Get(Rec."No.") and ItemNVX."No Inv Gen. Bus. Posting Group" then
                 exit;
             InvSetupNVX.Get();
-            Rec.Validate("Gen. Bus. Posting Group",InvSetupNVX."Purchase Gen. Bus. Posting Group Fixed");
+            Rec.Validate("Gen. Bus. Posting Group",InvSetupNVX."Purch Gen. Bus. Pst Grp Fixed");
         end;
     end;
 
@@ -61,10 +61,10 @@ codeunit 50006 Table39HookNVX
             Item.Get(Rec."No.");
             IF Item."Inventory Value Zero" then
                 exit;
-            IF ItemNVX.Get(Rec."No.") and ItemNVX."Deactivate Inventory Gen. Bus. Posting Group" then
+            IF ItemNVX.Get(Rec."No.") and ItemNVX."No Inv Gen. Bus. Posting Group" then
                 exit;
             InvSetupNVX.Get();
-            IF Rec."Gen. Bus. Posting Group" <> InvSetupNVX."Purchase Gen. Bus. Posting Group Fixed" then
+            IF Rec."Gen. Bus. Posting Group" <> InvSetupNVX."Purch Gen. Bus. Pst Grp Fixed" then
                 Error(WrongGenBusPostingGroupErr);
         end;        
     end;

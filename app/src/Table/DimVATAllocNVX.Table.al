@@ -1,4 +1,4 @@
-table 50006 DimVATAllocNVX
+table 50006 "DimVATAllocNVX"
 {
     DataClassification = CustomerContent;
     fields
@@ -50,7 +50,7 @@ table 50006 DimVATAllocNVX
                 IF not DimValueNVX.Get(GLSetup."Shortcut Dimension 3 Code","Shortcut Dimension 3 Code") then
                     DimValueNVX.Init();
 
-                IF(DimValueNVX."VAT Posting Type" <> '') AND(DimValueNVX."VAT Posting Type" <> "VAT Posting Type") then
+                IF(DimValueNVX."VAT Posting Type" <> '') AND (DimValueNVX."VAT Posting Type" <> "VAT Posting Type") then
                     Message(PstTypeInfoMsg);
             end;
         }

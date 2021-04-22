@@ -1,6 +1,6 @@
-tableextension 50003 SalesLineNVX extends "Sales Line"
+tableextension 50003 "SalesLineNVX" extends "Sales Line"
 {
-    procedure UpdateSalesLine(CustUnitPrice: Decimal)
+    procedure UpdateSalesLineNVX(CustUnitPrice: Decimal)
     var
         VATPostingSetup: Record "VAT Posting Setup";
         SalesHeader: Record "Sales Header";

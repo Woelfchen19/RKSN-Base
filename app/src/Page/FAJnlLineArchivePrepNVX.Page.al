@@ -1,4 +1,4 @@
-page 50020 FAJnlLineArchivePrepNVX
+page 50020 "FAJnlLineArchivePrepNVX"
 {
     Caption = 'FA Journal Line Archive Preparation', comment = 'DEA="Anlagen Buch.-Blattzeilenarchiv Vorbereitung"';
     PageType = ListPart;
@@ -10,27 +10,27 @@ page 50020 FAJnlLineArchivePrepNVX
         {
             repeater(Group)
             {
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Document Type";"Document Type")
+                field("Document Type"; "Document Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                     ApplicationArea = All;
                 }
-                field("External Document No.";"External Document No.")
+                field("External Document No."; "External Document No.")
                 {
                     ApplicationArea = All;
                 }
-                field("FA No.";"FA No.")
+                field("FA No."; "FA No.")
                 {
                     ApplicationArea = All;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     ApplicationArea = All;
                 }
@@ -46,15 +46,15 @@ page 50020 FAJnlLineArchivePrepNVX
                 {
                     ApplicationArea = All;
                 }
-                field("Allocation Code";"Allocation Code")
+                field("Allocation Code"; "Allocation Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Amount";"Amount")
+                field(Amount; "Amount")
                 {
                     ApplicationArea = All;
                 }
-                field(BusinessCase;BusinessCase)
+                field(BusinessCase; BusinessCase)
                 {
                     ApplicationArea = All;
                     Caption = 'Business Case', comment = 'DEA="Geschäftsfall"';

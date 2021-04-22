@@ -1,4 +1,4 @@
-report 50000 ItemCopyNVX
+report 50000 "ItemCopyNVX"
 {
     // version NAVDACH11.00.00.24742
 
@@ -33,7 +33,7 @@ report 50000 ItemCopyNVX
                         ToolTip = 'Specifies the number of the item that you want to copy the data from.',
                                     comment = 'DEA="Gibt die Nummer des Artikels an, aus dem die Daten kopiert werden sollen."';
                     }
-                    field(TargetItemNo;InItem."No.")
+                    field(TargetItemNo; InItem."No.")
                     {
                         ApplicationArea = Basic,Suite;
                         Caption = 'Target Item No.',
@@ -42,12 +42,12 @@ report 50000 ItemCopyNVX
                         ToolTip = 'Specifies the number of the item that you want to copy the data to.',
                                     comment = 'DEA="Gibt die Nummer des Artikels an, in den die Daten kopiert werden sollen."';
 
-                        trigger OnLookup(Text : Text) : Boolean;
+                        trigger OnLookup(var Text: Text) : Boolean;
                         begin
                             IF PAGE.RUNMODAL(PAGE::"Item List",InItem,InItem."No.") = ACTION::LookupOK THEN;
                         end;
                     }
-                    field(NewNoSeries;NewNoSeries)
+                    field(NewNoSeries; NewNoSeries)
                     {
                         ApplicationArea = Basic,Suite;
                         AssistEdit = true;
@@ -59,7 +59,7 @@ report 50000 ItemCopyNVX
 
                         trigger OnAssistEdit();
                         begin
-                            ItemSetup.GET;
+                            ItemSetup.Get();
                             ItemSetup.TESTFIELD("Item Nos.");
                             NoSeriesMgt.SelectSeries(ItemSetup."Item Nos.",Item."No. Series",NewNoSeries);
                         end;
@@ -68,7 +68,7 @@ report 50000 ItemCopyNVX
                     {
                         Caption = 'General',
                                     comment = 'DEA="Allgemein"';
-                        field(GeneralItemInformation;CopyGenItemInfo)
+                        field(GeneralItemInformation; CopyGenItemInfo)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'General Item Information',
@@ -76,7 +76,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(Comments;CopyComments)
+                        field(Comments; CopyComments)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Comments',
@@ -84,7 +84,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(CopyPic;CopyPic)
+                        field(CopyPic; CopyPic)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Picture',
@@ -97,7 +97,7 @@ report 50000 ItemCopyNVX
                     {
                         Caption = 'Sale',
                                     comment = 'DEA="Verkauf"';
-                        field(SalesPrices;CopySalesPrices)
+                        field(SalesPrices; CopySalesPrices)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Sales Prices',
@@ -105,7 +105,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(SalesLineDisc;CopySalesLineDisc)
+                        field(SalesLineDisc; CopySalesLineDisc)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Sales Line Disc.',
@@ -118,7 +118,7 @@ report 50000 ItemCopyNVX
                     {
                         Caption = 'Purchase',
                                     comment = 'DEA="Einkauf"';
-                        field(PurchasePrices;CopyPurchPrices)
+                        field(PurchasePrices; CopyPurchPrices)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Purchase Prices',
@@ -126,7 +126,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(PurchaseLineDisc;CopyPurchLineDisc)
+                        field(PurchaseLineDisc; CopyPurchLineDisc)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Purchase Line Disc.',
@@ -139,7 +139,7 @@ report 50000 ItemCopyNVX
                     {
                         Caption = 'Service',
                                     comment = 'DEA="Service"';
-                        field(Troubleshooting;CopyTroubleshooting)
+                        field(Troubleshooting; CopyTroubleshooting)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Troubleshooting',
@@ -147,7 +147,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(ResourceSkills;CopyResourceSkills)
+                        field(ResourceSkills; CopyResourceSkills)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Resource Skills',
@@ -160,7 +160,7 @@ report 50000 ItemCopyNVX
                     {
                         Caption = 'Extended',
                                     comment = 'DEA="Erweitert"';
-                        field(UnitsOfMeasure;CopyUnitOfMeasure)
+                        field(UnitsOfMeasure; CopyUnitOfMeasure)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Units of measure',
@@ -168,7 +168,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(ItemVariants;CopyVariants)
+                        field(ItemVariants; CopyVariants)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Item Variants',
@@ -176,7 +176,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(Translations;CopyTranslations)
+                        field(Translations; CopyTranslations)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Translations',
@@ -184,7 +184,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(ExtendedTexts;CopyExtTxt)
+                        field(ExtendedTexts; CopyExtTxt)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Extended Texts',
@@ -192,7 +192,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(BOMComponents;CopyBOM)
+                        field(BOMComponents; CopyBOM)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'BOM Components',
@@ -200,7 +200,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(CopyItemVendor;CopyItemVendor)
+                        field(CopyItemVendor; CopyItemVendor)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Item Vendors',
@@ -208,7 +208,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(Attributes;CopyAttributes)
+                        field(Attributes; CopyAttributes)
                         {
                             ApplicationArea = Basic,Suite;
                             Caption = 'Attributes',
@@ -328,7 +328,7 @@ report 50000 ItemCopyNVX
         IF (_InItemNo = '') AND (NOT CopyGenItemInfo) THEN
           ERROR(Text008);
 
-        ItemSetup.GET;
+        ItemSetup.Get();
 
         IF CopyGenItemInfo THEN
           InsertTargetItem(_InItemNo)
@@ -339,7 +339,7 @@ report 50000 ItemCopyNVX
 
         IF NOT (CopySalesLineDisc OR CopyPurchLineDisc) THEN BEGIN
           InItem."Item Disc. Group" := '"';
-          InItem.MODIFY;
+          InItem.Modify();
         END;
 
         CopyItemPicture(Item,InItem);
@@ -429,7 +429,7 @@ report 50000 ItemCopyNVX
           "No. Series" := TempItemNoSeries;
           "Last Date Modified" := TODAY;
           "Created From Nonstock Item" := FALSE;
-          INSERT;
+          INSERT();
         END;
         EndDialog;
     end;
@@ -438,10 +438,10 @@ report 50000 ItemCopyNVX
     begin
         IF CopyPic THEN BEGIN
           ToItem.Picture := FromItem.Picture;
-          ToItem.MODIFY;
+          ToItem.Modify();
         END ELSE BEGIN
           CLEAR(ToItem.Picture);
-          ToItem.MODIFY;
+          ToItem.Modify();
         END;
     end;
 
@@ -458,10 +458,10 @@ report 50000 ItemCopyNVX
           InitDialog(Text013);
           REPEAT
             CommentLine."No." := ToItemNo;
-            CommentLine.INSERT;
+            CommentLine.INSERT();
             CommentLine."No." := FromItemNo;
             UpdateDialog;
-          UNTIL CommentLine.NEXT = 0;
+          UNTIL CommentLine.Next() = 0;
           EndDialog;
         END;
     end;
@@ -476,10 +476,10 @@ report 50000 ItemCopyNVX
             InitDialog(Text014);
             REPEAT
               ItemUnitOfMeasure."Item No." := ToItem."No.";
-              ItemUnitOfMeasure.INSERT;
+              ItemUnitOfMeasure.INSERT();
               ItemUnitOfMeasure."Item No." := FromItem."No.";
               UpdateDialog;
-            UNTIL ItemUnitOfMeasure.NEXT = 0;
+            UNTIL ItemUnitOfMeasure.Next() = 0;
             EndDialog;
           END;
         END ELSE
@@ -488,7 +488,7 @@ report 50000 ItemCopyNVX
             ToItem."Sales Unit of Measure" := '"';
             ToItem."Purch. Unit of Measure" := '"';
             ToItem."Put-away Unit of Measure Code" := '"';
-            ToItem.MODIFY;
+            ToItem.Modify();
           END;
     end;
 
@@ -504,10 +504,10 @@ report 50000 ItemCopyNVX
           InitDialog(Text015);
           REPEAT
             ItemVariant."Item No." := ToItemNo;
-            ItemVariant.INSERT;
+            ItemVariant.INSERT();
             ItemVariant."Item No." := FromItemNo;
             UpdateDialog;
-          UNTIL ItemVariant.NEXT = 0;
+          UNTIL ItemVariant.Next() = 0;
           EndDialog;
         END;
     end;
@@ -524,10 +524,10 @@ report 50000 ItemCopyNVX
           InitDialog(Text016);
           REPEAT
             ItemTranslation."Item No." := ToItemNo;
-            ItemTranslation.INSERT;
+            ItemTranslation.INSERT();
             ItemTranslation."Item No." := FromItemNo;
             UpdateDialog;
-          UNTIL ItemTranslation.NEXT = 0;
+          UNTIL ItemTranslation.Next() = 0;
           EndDialog;
         END;
     end;
@@ -552,15 +552,15 @@ report 50000 ItemCopyNVX
             IF ExtendedTextLine.FINDSET THEN
               REPEAT
                 ExtendedTextLine."No." := ToItemNo;
-                ExtendedTextLine.INSERT;
+                ExtendedTextLine.INSERT();
                 ExtendedTextLine."No." := FromItemNo;
-              UNTIL ExtendedTextLine.NEXT = 0;
+              UNTIL ExtendedTextLine.Next() = 0;
 
             ExtendedTextHeader."No." := ToItemNo;
-            ExtendedTextHeader.INSERT;
+            ExtendedTextHeader.INSERT();
             ExtendedTextHeader."No." := FromItemNo;
             UpdateDialog;
-          UNTIL ExtendedTextHeader.NEXT = 0;
+          UNTIL ExtendedTextHeader.Next() = 0;
           EndDialog;
         END;
     end;
@@ -577,10 +577,10 @@ report 50000 ItemCopyNVX
           InitDialog(Text018);
           REPEAT
             BOMComponent."Parent Item No." := ToItemNo;
-            BOMComponent.INSERT;
+            BOMComponent.INSERT();
             BOMComponent."Parent Item No." := FromItemNo;
             UpdateDialog;
-          UNTIL BOMComponent.NEXT = 0;
+          UNTIL BOMComponent.Next() = 0;
           EndDialog;
         END;
     end;
@@ -597,10 +597,10 @@ report 50000 ItemCopyNVX
           InitDialog(Text021);
           REPEAT
             ItemVendor."Item No." := ToItemNo;
-            ItemVendor.INSERT;
+            ItemVendor.INSERT();
             ItemVendor."Item No." := FromItemNo;
             UpdateDialog;
-          UNTIL ItemVendor.NEXT = 0;
+          UNTIL ItemVendor.Next() = 0;
           EndDialog;
         END;
     end;
@@ -618,10 +618,10 @@ report 50000 ItemCopyNVX
           InitDialog(Text028);
           REPEAT
             TroubleshootingSetup."No." := ToItemNo;
-            TroubleshootingSetup.INSERT;
+            TroubleshootingSetup.INSERT();
             TroubleshootingSetup."No." := FromItemNo;
             UpdateDialog;
-          UNTIL TroubleshootingSetup.NEXT = 0;
+          UNTIL TroubleshootingSetup.Next() = 0;
           EndDialog;
         END;
     end;
@@ -639,10 +639,10 @@ report 50000 ItemCopyNVX
           InitDialog(Text026);
           REPEAT
             ResourceSkill."No." := ToItemNo;
-            ResourceSkill.INSERT;
+            ResourceSkill.INSERT();
             ResourceSkill."No." := FromItemNo;
             UpdateDialog;
-          UNTIL ResourceSkill.NEXT = 0;
+          UNTIL ResourceSkill.Next() = 0;
           EndDialog;
         END;
     end;
@@ -659,10 +659,10 @@ report 50000 ItemCopyNVX
           InitDialog(Text029);
           REPEAT
             SalesPrice."Item No." := ToItemNo;
-            SalesPrice.INSERT;
+            SalesPrice.INSERT();
             SalesPrice."Item No." := FromItemNo;
             UpdateDialog;
-          UNTIL SalesPrice.NEXT = 0;
+          UNTIL SalesPrice.Next() = 0;
         END;
     end;
 
@@ -679,10 +679,10 @@ report 50000 ItemCopyNVX
           InitDialog(Text030);
           REPEAT
             SalesLineDiscount.Code := ToItemNo;
-            SalesLineDiscount.INSERT;
+            SalesLineDiscount.INSERT();
             SalesLineDiscount.Code := FromItemNo;
             UpdateDialog;
-          UNTIL SalesLineDiscount.NEXT = 0;
+          UNTIL SalesLineDiscount.Next() = 0;
         END;
     end;
 
@@ -698,10 +698,10 @@ report 50000 ItemCopyNVX
           InitDialog(Text031);
           REPEAT
             PurchasePrice."Item No." := ToItemNo;
-            PurchasePrice.INSERT;
+            PurchasePrice.INSERT();
             PurchasePrice."Item No." := FromItemNo;
             UpdateDialog;
-          UNTIL PurchasePrice.NEXT = 0;
+          UNTIL PurchasePrice.Next() = 0;
         END;
     end;
 
@@ -717,10 +717,10 @@ report 50000 ItemCopyNVX
           InitDialog(Text032);
           REPEAT
             PurchLineDiscount."Item No." := ToItemNo;
-            PurchLineDiscount.INSERT;
+            PurchLineDiscount.INSERT();
             PurchLineDiscount."Item No." := FromItemNo;
             UpdateDialog;
-          UNTIL PurchLineDiscount.NEXT = 0;
+          UNTIL PurchLineDiscount.Next() = 0;
         END;
     end;
 
@@ -738,8 +738,8 @@ report 50000 ItemCopyNVX
           REPEAT
             NewItemAttributeValueMapping := ItemAttributeValueMapping;
             NewItemAttributeValueMapping."No." := ToItemNo;
-            NewItemAttributeValueMapping.INSERT;
-          UNTIL ItemAttributeValueMapping.NEXT = 0;
+            NewItemAttributeValueMapping.INSERT();
+          UNTIL ItemAttributeValueMapping.Next() = 0;
     end;
 }
 

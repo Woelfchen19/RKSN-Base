@@ -1,29 +1,29 @@
-table 50036 SalesLineNVX
+table 50036 "SalesLineNVX"
 {
     DataClassification = CustomerContent;
     
     fields
     {
-        field(1;"Document Type";Option)
+        field(1; "Document Type"; Option)
         {
             DataClassification = CustomerContent;
             OptionMembers = Quote,Order,Invoice,"Credit Memo","Blanket Order","Return Order";
         }
-        field(3;"Document No.";Code[20])
+        field(3; "Document No."; Code[20])
         {
             DataClassification = CustomerContent;
         }
-        field(4;"Line No.";Integer)
+        field(4; "Line No."; Integer)
         {
             DataClassification = CustomerContent;            
         }
-        field(10;"Allocation Code";Code[10])
+        field(10; "Allocation Code"; Code[10])
         {
             Caption = 'Allocation Code', comment = 'Verteilungscode"';
             DataClassification = CustomerContent;
         }
 
-        field(20;"Shortcut Dimension 1 Code";Code[20])
+        field(20; "Shortcut Dimension 1 Code"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
@@ -31,7 +31,7 @@ table 50036 SalesLineNVX
             // CaptionClass = '1338,1'; = Sales + Dim Name
             // CaptionClass = '1339,1'; = Purchase + Dim Name
         }
-        field(21;"Shortcut Dimension 3 Code";Code[20])
+        field(21; "Shortcut Dimension 3 Code"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
@@ -65,7 +65,7 @@ table 50036 SalesLineNVX
             FieldClass = FlowField;
             CalcFormula = sum (DistrSalesLineNVX."Amount Including VAT" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No."), "Origin Line No." = field ("Line No.")));
         }
-        field(102;"Composition Gen. Bus. Posting Group WES";Code[20])
+        field(102; "Comp Gen. Bus. Pst Grp WES"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Composition Gen. Bus. Posting Group WES', comment = 'DEA="Abfassung Steuerschlüssel WES"';
@@ -84,7 +84,7 @@ table 50036 SalesLineNVX
     // procedure UpdateCustAmount(ActSalesLine: record "Sales Line");
     // begin
     //     "Cust. Amount" := round(ActSalesLine.Quantity * "Cust. Unit Price", 0.01);
-    //     modify;
+    //     Modify();
     // end;
 
     // procedure UpdateSalesLine(var ActSalesLine: record "Sales Line")
@@ -110,15 +110,15 @@ table 50036 SalesLineNVX
     procedure HandleVATDifferenceNVX(SalesHeader: Record "Sales Header")
     var
         SalesLineNVX: record SalesLineNVX;
-        VATDifference: Decimal;
         SalesLine: record "Sales Line";
         TempVATAmountLine: Record "VAT Amount Line" temporary;
+        VATDifference: Decimal;
     begin
 
         SalesHeader.TestField(Status, SalesHeader.Status::Released);
         SalesHeader.CalcFields("Amount Including VAT");
 
-        SalesLineNVX.reset;
+        SalesLineNVX.reset();
         SalesLineNVX.SetRange("Document Type", SalesHeader."Document Type");
         SalesLineNVX.SetRange("Document No.", SalesHeader."No.");
         SalesLineNVX.CalcSums("Cust. Amount");
@@ -133,10 +133,10 @@ table 50036 SalesLineNVX
             SalesLine.SetSalesHeader(SalesHeader);
             SalesLine.CalcVATAmountLines(0, SalesHeader, SalesLine, TempVATAmountLine);
             TempVATAmountLine.SetFilter("VAT Amount", '<>0');
-            TempVATAmountLine.findfirst;
+            TempVATAmountLine.findfirst();
             TempVATAmountLine.Validate("VAT Amount", TempVATAmountLine."VAT Amount" - VATDifference);
             TempVATAmountLine.CheckVATDifference(SalesHeader."Currency Code", true);
-            TempVATAmountLine.modify;
+            TempVATAmountLine.Modify();
             SalesLine.UpdateVATOnLines(0, SalesHeader, SalesLine, TempVATAmountLine);
 
         end;

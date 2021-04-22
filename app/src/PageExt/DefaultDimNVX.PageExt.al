@@ -1,4 +1,4 @@
-pageextension 50039 DefaultDimNVX extends "Default Dimensions"
+pageextension 50039 "DefaultDimNVX" extends "Default Dimensions"
 {
     trigger OnQueryClosePage(CloseAction: Action): Boolean;
     var
@@ -62,7 +62,7 @@ pageextension 50039 DefaultDimNVX extends "Default Dimensions"
             end; //of case
 
 
-            until DefaultDim.Next = 0;
+            until DefaultDim.Next() = 0;
 
         IF (not Dim1Present) OR (not Dim3Present) then
             case Item."Inventory Value Zero" of

@@ -1,22 +1,22 @@
-table 50013 AllocationLineNVX
+table 50013 "AllocationLineNVX"
 {
     DataClassification = CustomerContent;
     Caption = 'Allocation Line', comment = 'DEA="Verteilungszeile"';
     
     fields
     {
-        field(1;"Allocation Code";Code[10])
+        field(1; "Allocation Code"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
             TableRelation = AllocationCodeNVX.Code;
         }
-        field(2;"Start Date";Date)
+        field(2; "Start Date"; Date)
         {
             DataClassification = CustomerContent;
             Caption = 'Start Date', comment = 'DEA="Startdatum"';
         }
-        field(3;"Line No.";Integer)
+        field(3; "Line No."; Integer)
         {
             DataClassification = CustomerContent;
             Caption = 'Line No.', comment = 'DEA="Zeilennr."';
@@ -52,7 +52,7 @@ table 50013 AllocationLineNVX
             CalcFormula = lookup ("Dimension Value".Name WHERE("Global Dimension No." = const(2), Code = field("Shortcut Dimension 2 Code")));
             CaptionClass = '1337,2';
         }
-        field(20;"Allocation Quantity";Decimal)
+        field(20; "Allocation Quantity"; Decimal)
         {
             DataClassification = CustomerContent;
             Caption = 'Allocation Quantity', comment = 'DEA="Anzahl Verteilungen"';

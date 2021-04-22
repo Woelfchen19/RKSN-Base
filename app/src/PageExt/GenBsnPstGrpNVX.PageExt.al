@@ -1,4 +1,4 @@
-pageextension 50003 GenBsnPstGrpNVX extends "Gen. Business Posting Groups"
+pageextension 50003 "GenBsnPstGrpNVX" extends "Gen. Business Posting Groups"
 {
     layout
     {

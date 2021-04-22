@@ -1,4 +1,4 @@
-table 50021 PostingsNVX
+table 50021 "PostingsNVX"
 {
     DataClassification = CustomerContent;
     Caption = 'Backup dimensional distribution', comment = 'DEA="Sicherung dim.Verteilungen Modul AnBu"';

@@ -1,4 +1,4 @@
-codeunit 50008 Table38HookNVX
+codeunit 50008 "Table38HookNVX"
 {
     
     // Problematic because of the possibility of multiple inserts in one write transaction

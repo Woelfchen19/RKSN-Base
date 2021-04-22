@@ -1,4 +1,4 @@
-table 50034 SalesLineArchiveNVX
+table 50034 "SalesLineArchiveNVX"
 {
     Caption = 'Sales Line Archive', comment = 'DEA="Verkaufszeilenarchiv"';
     DrillDownPageID = "Sales Lines";
@@ -1187,12 +1187,12 @@ table 50034 SalesLineArchiveNVX
         //     FieldClass = FlowField;
         //     InitValue = 0;
         // }
-        field(50000;"VAT Posting Type";Code[10])
+        field(50000; "VAT Posting Type"; Code[10])
         {
             Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
             DataClassification = CustomerContent;
         }
-        field(50001;"Allocation Code";Code[10])
+        field(50001; "Allocation Code"; Code[10])
         {
             Caption = 'Allocation Code', comment = 'Verteilungscode"';
             DataClassification = CustomerContent;
@@ -1202,7 +1202,7 @@ table 50034 SalesLineArchiveNVX
             Caption = 'Allocation %', comment = 'DEA="Verteilung %"';
             DataClassification = CustomerContent;
         }
-        field(50003;"Start Date";Date)
+        field(50003; "Start Date"; Date)
         {
             Caption = 'Start Date', comment = 'DEA="Startdatum"';
             DataClassification = CustomerContent;
@@ -1304,18 +1304,18 @@ table 50034 SalesLineArchiveNVX
         //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (8), Code = field ("Shortcut Dimension 8 Code")));
         //     CaptionClass = '1337,8';
         // }
-        field(50020;"Gen. Bus. Posting Group Description";Text[50])
+        field(50020; "Gen. Bus. Posting Group Desc"; Text[100])
         {
             Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Geschäftsbuchungsgruppe Beschreibung"';
             FieldClass = FlowField;
             CalcFormula = lookup ("Gen. Business Posting Group".Description where (Code = field("Gen. Bus. Posting Group")));
         }
-        field(50030;"Posting Date";Date)
+        field(50030; "Posting Date"; Date)
         {
             Caption = 'Posting Date', comment = 'DEA="Buchungsdatum"';
             DataClassification = CustomerContent;
         }
-        field(50031;"External Document No.";Code[35])
+        field(50031; "External Document No."; Code[35])
         {
             Caption = 'External Document No.', comment = 'DEA="Externe Belegnummer"';
             DataClassification = ToBeClassified;

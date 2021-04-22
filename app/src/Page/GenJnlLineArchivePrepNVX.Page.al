@@ -1,4 +1,4 @@
-page 50016 GenJnlLineArchivePrepNVX
+page 50016 "GenJnlLineArchivePrepNVX"
 {
     Caption = 'Gen. Journal Line Archive Preparation', comment = 'DEA="Fibu Buch.-Blattzeilenarchiv Vorbereitung"';
     PageType = ListPart;
@@ -10,31 +10,31 @@ page 50016 GenJnlLineArchivePrepNVX
         {
             repeater(Group)
             {
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Document Type";"Document Type")
+                field("Document Type"; "Document Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                     ApplicationArea = All;
                 }
-                field("External Document No.";"External Document No.")
+                field("External Document No."; "External Document No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Account Type";"Account Type")
+                field("Account Type"; "Account Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Account No.";"Account No.")
+                field("Account No."; "Account No.")
                 {
                     ApplicationArea = All;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     ApplicationArea = All;
                 }
@@ -50,7 +50,7 @@ page 50016 GenJnlLineArchivePrepNVX
                 {
                     ApplicationArea = All;
                 }
-                field("Allocation Code";"Allocation Code")
+                field("Allocation Code"; "Allocation Code")
                 {
                     ApplicationArea = All;
                 }
@@ -58,19 +58,19 @@ page 50016 GenJnlLineArchivePrepNVX
                 {
                     ApplicationArea = All;
                 }
-                field("Gen. Bus. Posting Group";"Gen. Bus. Posting Group")
+                field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
                 {
                     ApplicationArea = All;
                 }
-                field("Bal. Account Type";"Bal. Account Type")
+                field("Bal. Account Type"; "Bal. Account Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Bal. Account No.";"Bal. Account No.")
+                field("Bal. Account No."; "Bal. Account No.")
                 {
                     ApplicationArea = All;
                 }
-                field(BusinessCase;BusinessCase)
+                field(BusinessCase; BusinessCase)
                 {
                     ApplicationArea = All;
                     Caption = 'Business Case', comment = 'DEA="Geschäftsfall"';

@@ -1,10 +1,10 @@
-table 50003 GenBsnPstGrpNVX
+table 50003 "GenBsnPstGrpNVX"
 {
     DataClassification = CustomerContent;
 
     fields
     {
-        field(1; Code; Code[20])
+        field(1; "Code"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Code', comment = 'DEA="Code"';

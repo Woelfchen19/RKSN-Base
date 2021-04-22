@@ -1,4 +1,4 @@
-pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
+pageextension 50028 "GLAccountCardNVX" extends "G/L Account Card"
 {
     layout
     {
@@ -19,7 +19,7 @@ pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
             field(GenBsnPstGrpNVX; "Gen. Bus. Posting Group")
             {
                 ApplicationArea = All;
-                trigger OnLookup(Text: Text): Boolean;
+                trigger OnLookup(var Text: Text): Boolean;
                 var
                     GBPGRec: Record "Gen. Business Posting Group";
                     GenBsnPstGrpNVX: Record GenBsnPstGrpNVX;
@@ -44,7 +44,7 @@ pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
         }
         addlast(General)
         {
-            field("Disc. Dim. Detection"; GLAccountNVX."Disc. Dim. Detection")
+            field("Disc. Dim. DetectionNVX"; GLAccountNVX."Disc. Dim. Detection")
             {
                 ApplicationArea = All;
                 Caption = 'Discount Dimension Detection', comment = 'DEA="Skonto-Dim.Findung"';
@@ -54,7 +54,7 @@ pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
                     GLAccountNVX.Modify();
                 end;
             }
-            field("No dim distribution"; GLAccountNVX."No dim distribution")
+            field("No dim distributionNVX"; GLAccountNVX."No dim distribution")
             {
                 ApplicationArea = All;
                 Editable = PageEditable;
@@ -64,7 +64,7 @@ pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
                     GLAccountNVX.Modify();
                 end;
             }
-            field("Gen. Bsn. Posting Group Type"; GLAccountNVX."Gen. Bsn. Posting Group Type")
+            field("Gen. Bsn. Posting Group TypeNVX"; GLAccountNVX."Gen. Bsn. Posting Group Type")
             {
                 ApplicationArea = All;
                 Editable = PageEditable;

@@ -1,4 +1,4 @@
-table 50000 GenPrdPstGrpNVX
+table 50000 "GenPrdPstGrpNVX"
 {
     DataClassification = CustomerContent;
     

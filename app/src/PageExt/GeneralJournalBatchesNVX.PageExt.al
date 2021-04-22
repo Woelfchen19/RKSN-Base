@@ -1,10 +1,10 @@
-pageextension 50040 GeneralJournalBatchesNVX extends "General Journal Batches"
+pageextension 50040 "GeneralJournalBatchesNVX" extends "General Journal Batches"
 {
     layout
     {
         addlast(Control1)
         {
-            field(NoDimDistribution; GenJournalBatchNVX."No Dim Distribution")
+            field(NoDimDistributionNVX; GenJournalBatchNVX."No Dim Distribution")
             {
                 Caption = 'No dimensional distribution', comment = 'DEA="dim.Verteilungsprozess wiederk. deaktiviert"';
                 ApplicationArea = All;

@@ -1,4 +1,4 @@
-page 50014 PostingCardNVX
+page 50014 "PostingCardNVX"
 {
     PageType = Card;
     SourceTable = PostingsNVX;
@@ -15,12 +15,12 @@ page 50014 PostingCardNVX
                 {
                     ApplicationArea = All;
                 }
-                // field("Posting Date";"Posting Date")
+                // field("Posting Date"; "Posting Date")
                 // {
                 //     ApplicationArea = All;
                 //     Editable = false;
                 // }
-                // field("Document No.";"Document No.")
+                // field("Document No."; "Document No.")
                 // {
                 //     ApplicationArea = All;
                 //     Editable = false;
@@ -45,106 +45,122 @@ page 50014 PostingCardNVX
             //GL Parts
             part(GLOrigin; GenJnlLineArchiveOriginNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Origin', comment = 'DEA="Ursprung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = GLVisible;
             }
             part(GLSummary; GenJnlLineArchiveSummaryNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Summary', comment = 'DEA="Zusammenfassung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = GLVisible;
             }
             part(GLPreparation; GenJnlLineArchivePrepNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Preparation', comment = 'DEA="Vorbereitung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = GLVisible;
             }
-            part(GLComplete; GenJnlArchiveCompleteNVX)
-            {
-                Caption = 'Complete', comment = 'DEA="Vollständig"';
-                SubPageLink = "Posting GUID" = field ("Posting GUID");
-                Visible = GLVisible;
-            }
+            // part(GLComplete; GenJnlArchiveCompleteNVX)
+            // {
+            //     ApplicationArea = All;
+            //     Caption = 'Complete', comment = 'DEA="Vollständig"';
+            //     SubPageLink = "Posting GUID" = field ("Posting GUID");
+            //     Visible = GLVisible;
+            // }
 
             //FA Parts
             part(FAOrigin; FAJnlLineArchiveOriginNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Origin', comment = 'DEA="Ursprung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = FAVisible;
             }
             part(FASummary; FAJnlLineArchiveSummaryNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Summary', comment = 'DEA="Zusammenfassung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = FAVisible;
             }
             part(FAPreparation; FAJnlLineArchivePrepNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Preparation', comment = 'DEA="Vorbereitung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = FAVisible;
             }
-            part(FAComplete; FAJnlLineArchiveCompleteNVX)
-            {
-                Caption = 'Complete', comment = 'DEA="Vollständig"';
-                SubPageLink = "Posting GUID" = field ("Posting GUID");
-                Visible = FAVisible;
-            }
+            // part(FAComplete; FAJnlLineArchiveCompleteNVX)
+            // {
+            //     ApplicationArea = All;
+            //     Caption = 'Complete', comment = 'DEA="Vollständig"';
+            //     SubPageLink = "Posting GUID" = field ("Posting GUID");
+            //     Visible = FAVisible;
+            // }
             
             //Purchase Line parts
             part(PurchOrigin; PurchLineArchiveOriginNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Origin', comment = 'DEA="Ursprung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = PurchVisible;
             }
             part(PurchSummary; PurchLineArchiveSummaryNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Summary', comment = 'DEA="Zusammenfassung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = PurchVisible;
             }
             part(PurchPreparation; PurchLineArchivePrepNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Preparation', comment = 'DEA="Vorbereitung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = PurchVisible;
             }
-            part(PurchComplete; PurchLineArchiveCompleteNVX)
-            {
-                Caption = 'Complete', comment = 'DEA="Vollständig"';
-                SubPageLink = "Posting GUID" = field ("Posting GUID");
-                Visible = PurchVisible;
-            }
+            // part(PurchComplete; PurchLineArchiveCompleteNVX)
+            // {
+            //     ApplicationArea = All;
+            //     Caption = 'Complete', comment = 'DEA="Vollständig"';
+            //     SubPageLink = "Posting GUID" = field ("Posting GUID");
+            //     Visible = PurchVisible;
+            // }
 
             //Sales Line Parts
             part(SalesOrigin; SalesLineArchiveOriginNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Origin', comment = 'DEA="Ursprung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = SalesVisible;
             }
             part(SalesSummary; SalesLineArchiveSummaryNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Summary', comment = 'DEA="Zusammenfassung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = SalesVisible;
             }
             part(SalesPreparation; SalesLineArchivePrepNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Preparation', comment = 'DEA="Vorbereitung"';
                 SubPageLink = "Posting GUID" = field ("Posting GUID");
                 Visible = SalesVisible;
             }       
-            part(SalesComplete; SalesLineArchiveCompleteNVX)
-            {
-                Caption = 'Complete', comment = 'DEA="Vollständig"';
-                SubPageLink = "Posting GUID" = field ("Posting GUID");
-                Visible = SalesVisible;
-            }
+            // part(SalesComplete; SalesLineArchiveCompleteNVX)
+            // {
+            //     ApplicationArea = All;
+            //     Caption = 'Complete', comment = 'DEA="Vollständig"';
+            //     SubPageLink = "Posting GUID" = field ("Posting GUID");
+            //     Visible = SalesVisible;
+            // }
 
         }
     }

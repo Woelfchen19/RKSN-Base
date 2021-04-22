@@ -1,4 +1,4 @@
-table 50019 GenJnlLineArchiveNVX
+table 50019 "GenJnlLineArchiveNVX"
 {
     Caption = 'Gen. Journal Line Archive', comment = 'DEA="Sicherung dim.Verteilungen Modul Fibu"';
     Permissions = TableData "Sales Invoice Header" = r,
@@ -1128,7 +1128,7 @@ table 50019 GenJnlLineArchiveNVX
         //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (8), Code = field ("Shortcut Dimension 8 Code")));
         //     CaptionClass = '1337,8';
         // }
-        field(50020; "Gen. Bus. Posting Group Description"; Text[50])
+        field(50020; "Gen. Bus. Posting Group Desc"; Text[100])
         {
             Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Geschäftsbuchungsgruppe Beschreibung"';
             FieldClass = FlowField;

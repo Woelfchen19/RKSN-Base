@@ -1,4 +1,4 @@
-page 50024 PostingListGLNVX
+page 50024 "PostingListGLNVX"
 {
     Caption = 'Backup dimensional distribution General Ledger', comment = 'DEA="Sicherung dim.Verteilungen Modul FiBu"';
     PageType = List;
@@ -22,7 +22,7 @@ page 50024 PostingListGLNVX
                 // {
                 //     ApplicationArea = All;
                 // }
-                // field("Document No.";"Document No.")
+                // field("Document No."; "Document No.")
                 // {
                 //     ApplicationArea = All;
                 // }

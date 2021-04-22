@@ -90,7 +90,7 @@
 //                             GLEntryNVX.Modify();
 //                         end;
 
-//                     until GLEntry.Next = 0;
+//                     until GLEntry.Next() = 0;
 //                 end;
 //             end;
 
@@ -115,7 +115,7 @@
 //                             GLEntryNVX.Modify();
 //                         end;
 
-//                     until GLEntry.Next = 0;                    
+//                     until GLEntry.Next() = 0;                    
 //                 end;
 //             end;
             

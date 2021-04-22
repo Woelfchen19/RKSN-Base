@@ -1,4 +1,4 @@
-pageextension 50004 InventorySetupNVX extends "Inventory Setup"
+pageextension 50004 "InventorySetupNVX" extends "Inventory Setup"
 {
     layout
     {
@@ -44,7 +44,7 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
                     InvSetupNVX.Modify();
                 end;                
             }
-            field("Section - Inventory Value Zero";InvSetupNVX."Section - Inventory Value Zero")
+            field("Section - Inventory Value ZeroNVX"; InvSetupNVX."Section - Inventory Value Zero")
             {
                 ApplicationArea = All;
                 Caption = 'Section - Inventory Value Zero', comment = 'DEA="EK und VK nicht lagerbewertet Sparte"';
@@ -55,7 +55,7 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
                 end;     
             }
             
-            field("Purchase Gen. Bus. Posting Group Fixed";InvSetupNVX."Purchase Gen. Bus. Posting Group Fixed")
+            field("Purchase Gen. Bus. Posting Group FixedNVX"; InvSetupNVX."Purch Gen. Bus. Pst Grp Fixed")
             {
                 ApplicationArea = All;
                 Caption = 'Purchase Gen. Bus. Posting Group Fixed', comment = 'DEA="Zukauf Steuerschlüssel FIX"';
@@ -68,11 +68,12 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
         }
         addlast(Content)
         {
-            group(Composition)
+            group(CompositionNVX)
             {
                 Caption = 'Composition and Sales', comment = 'DEA="Abfassungen und Verkäufe"';
-                field("Composition Customer";InvSetupNVX."Composition Customer")
+                field("Composition CustomerNVX"; InvSetupNVX."Composition Customer")
                 {
+                    ApplicationArea = All;
                     Caption = 'Composition Customer', comment = 'DEA="Abfassung Debitor"';
                     TableRelation = Customer."No.";
                     trigger OnValidate();
@@ -80,8 +81,9 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
                         InvSetupNVX.Modify();
                     end;
                 }
-                field("Composition Gen. Bus. Posting Group Fixed";InvSetupNVX."Composition Gen. Bus. Posting Group Fixed")
+                field("Composition Gen. Bus. Posting Group FixedNVX"; InvSetupNVX."Comp Gen. Bus. Pst Grp Fixed")
                 {
+                    ApplicationArea = All;
                     Caption = 'Composition Gen. Bus. Posting Group Fixed', comment = 'DEA="Abfassung Steuerschlüssel FIX"';
                     TableRelation = "Gen. Business Posting Group".Code;
                     trigger OnValidate();
@@ -89,8 +91,9 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
                         InvSetupNVX.Modify();
                     end;
                 }
-                field("Composition Gen. Bus. Posting Group WES";InvSetupNVX."Composition Gen. Bus. Posting Group WES")
+                field("Composition Gen. Bus. Posting Group WESNVX"; InvSetupNVX."Comp Gen. Bus. Pst Grp WES")
                 {
+                    ApplicationArea = All;
                     Caption = 'Composition Gen. Bus. Posting Group WES', comment = 'DEA="Abfassung Steuerschlüssel WES"';
                     TableRelation = "Gen. Business Posting Group".Code;
                     trigger OnValidate();
@@ -98,8 +101,9 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
                         InvSetupNVX.Modify();
                     end;
                 }
-                field("Composition Section - Iventory Value Zero";InvSetupNVX."Composition Section - Iventory Value Zero")
+                field("Composition Section - Iventory Value ZeroNVX"; InvSetupNVX."Comp Sect - Inv Value Zero")
                 {
+                    ApplicationArea = All;
                     Caption = 'Composition Section - Inventory Value Zero', comment = 'DEA="Abfassung nicht lagerbewertete Sparte"';
                     TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(3));
                     trigger OnValidate();
@@ -107,8 +111,9 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
                         InvSetupNVX.Modify();
                     end;
                 }
-                field("Composition Bal. WES";InvSetupNVX."Composition Bal. WES")
+                field("Composition Bal. WESNVX"; InvSetupNVX."Composition Bal. WES")
                 {
+                    ApplicationArea = All;
                     Caption = 'Composition Bal. WES', comment = 'DEA="Abfassung Entl. WES"';
                     TableRelation = "G/L Account"."No.";
                     trigger OnValidate();
@@ -116,40 +121,45 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
                         InvSetupNVX.Modify();
                     end;
                 }
-                field("Composition Journal Name";InvSetupNVX."Composition Journal Name")
+                field("Composition Journal NameNVX"; InvSetupNVX."Composition Journal Name")
                 {
+                    ApplicationArea = All;
                     Caption = 'Composition Journal Name', comment = 'DEA="Abfassung Buchblattname"';
                     TableRelation = "Gen. Journal Batch".Name where ("Journal Template Name" = const ('Verkauf'));
                     trigger OnValidate();
                     begin
                         InvSetupNVX.Modify();
-                        InvSetupNVX.CalcFields("Composition Journal Description");
+                        InvSetupNVX.CalcFields("Comp Journal Description");
                         CurrPage.Update();
                     end;
                 }
-                field("Composition Journal Description";InvSetupNVX."Composition Journal Description")
+                field("Composition Journal DescriptionNVX"; InvSetupNVX."Comp Journal Description")
                 {
+                    ApplicationArea = All;
                     Caption = 'Composition Journal Description', comment = 'DEA="Abfassung Buchblattbeschreibung"';
                     Editable = false;
                 }
-                field("Sales Journal Name";InvSetupNVX."Sales Journal Name")
+                field("Sales Journal NameNVX"; InvSetupNVX."Sales Journal Name")
                 {
+                    ApplicationArea = All;
                     Caption = 'Sales Journal Name', comment = 'DEA="Verkauf Buchblattname"';
                     TableRelation = "Gen. Journal Batch".Name where ("Journal Template Name" = const ('Verkauf'));
                     trigger OnValidate();
                     begin
                         InvSetupNVX.Modify();
-                        InvSetupNVX.CalcFields("Composition Journal Description");
+                        InvSetupNVX.CalcFields("Sales Journal Description");
                         CurrPage.Update();
                     end;
                 }
-                field("Sales Journal Description";InvSetupNVX."Sales Journal Description")
+                field("Sales Journal DescriptionNVX"; InvSetupNVX."Sales Journal Description")
                 {
+                    ApplicationArea = All;
                     Caption = 'Sales Journal Description', comment = 'DEA="Verkauf Buchblattbeschreibung"';
                     Editable = false;
                 }
-                field("Sales Bal. Return";InvSetupNVX."Sales Bal. Return")
+                field("Sales Bal. ReturnNVX"; InvSetupNVX."Sales Bal. Return")
                 {
+                    ApplicationArea = All;
                     Caption = 'Sales Bal. Return', comment = 'DEA="Verkauf Entl. Erlöse"';
                     TableRelation = "G/L Account"."No.";
                     trigger OnValidate();
@@ -157,8 +167,9 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
                         InvSetupNVX.Modify();
                     end;
                 }
-                field("Sales Bal. WES";InvSetupNVX."Sales Bal. WES")
+                field("Sales Bal. WESNVX"; InvSetupNVX."Sales Bal. WES")
                 {
+                    ApplicationArea = All;
                     Caption = 'Sales Bal. WES', comment = 'DEA="Verkauf Entl. WES"';
                     TableRelation = "G/L Account"."No.";
                     trigger OnValidate();
@@ -180,7 +191,7 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
             InvSetupNVX.Init();
             InvSetupNVX.Insert();
         end;
-        InvSetupNVX.CalcFields("Composition Journal Description","Sales Journal Description");
+        InvSetupNVX.CalcFields("Comp Journal Description","Sales Journal Description");
     end;
 
 

@@ -1,10 +1,10 @@
-pageextension 50045 ResponsibilityCenterCardNVX extends "Responsibility Center Card"
+pageextension 50045 "ResponsibilityCenterCardNVX" extends "Responsibility Center Card"
 {
     layout
     {
         addafter("Global Dimension 2 Code")
         {
-            field("Shortcut Dimension 3 Code"; ShortcutDimCode3)
+            field("Shortcut Dimension 3 CodeNVX"; ShortcutDimCode3)
             {
                 ApplicationArea = All;
                 TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(3));

@@ -1,4 +1,4 @@
-pageextension 50038 GLAccountListNVX extends "G/L Account List"
+pageextension 50038 "GLAccountListNVX" extends "G/L Account List"
 {
     layout
     {
@@ -12,7 +12,7 @@ pageextension 50038 GLAccountListNVX extends "G/L Account List"
             field(GenBsnPstGrpNVX; "Gen. Bus. Posting Group")
             {
                 ApplicationArea = All;
-                trigger OnLookup(Text: Text): Boolean;
+                trigger OnLookup(var Text: Text): Boolean;
                 var
                     GBPGRec: Record "Gen. Business Posting Group";
                     GenBsnPstGrpNVX: Record GenBsnPstGrpNVX;

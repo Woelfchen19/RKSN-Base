@@ -1,4 +1,4 @@
-page 50001 PstTypeMatrixNVX
+page 50001 "PstTypeMatrixNVX"
 {
     PageType = ListPart;
     SourceTable = "Gen. Business Posting Group";
@@ -12,12 +12,12 @@ page 50001 PstTypeMatrixNVX
             repeater(Group)
             {
                 ShowCaption = false;
-                field(Code;Code)
+                field("Code"; Code)
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Editable = false;
                     ApplicationArea = All;
@@ -638,7 +638,7 @@ page 50001 PstTypeMatrixNVX
 
     var 
         MATRIX_CellData: array[32] of Code[20];
-        MATRIX_CellDesc:  array[32] of Text[50];
+        MATRIX_CellDesc:  array[32] of Text[100];
         MATRIX_CaptionSet: array[32] of Text[80];
         Field1Visible: Boolean;
         Field2Visible: Boolean;

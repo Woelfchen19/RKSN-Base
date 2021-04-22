@@ -1,4 +1,4 @@
-page 50002 DimVATAllocNVX
+page 50002 "DimVATAllocNVX"
 {
 
     ApplicationArea = All;
@@ -34,7 +34,7 @@ page 50002 DimVATAllocNVX
                         DimValueRec.SetRange("Dimension Code", GLSetup."Shortcut Dimension 1 Code");
                         DimValuesPage.SetRecord(DimValueRec);
                         DimValuesPage.SetTableView(DimValueRec);
-                        DimValuesPage.Run;
+                        DimValuesPage.Run();
                     end;
                 }
                 field("Shortcut Dimension 1 Name NVX"; "Shortcut Dimension 1 Name")
@@ -54,7 +54,7 @@ page 50002 DimVATAllocNVX
                         DimValueRec.SetRange("Dimension Code", GLSetup."Shortcut Dimension 2 Code");
                         DimValuesPage.SetRecord(DimValueRec);
                         DimValuesPage.SetTableView(DimValueRec);
-                        DimValuesPage.Run;
+                        DimValuesPage.Run();
                     end;
                 }
                 field("Shortcut Dimension 2 Name NVX"; "Shortcut Dimension 2 Name")
@@ -74,7 +74,7 @@ page 50002 DimVATAllocNVX
                         DimValueRec.SetRange("Dimension Code", GLSetup."Shortcut Dimension 3 Code");
                         DimValuesPage.SetRecord(DimValueRec);
                         DimValuesPage.SetTableView(DimValueRec);
-                        DimValuesPage.Run;
+                        DimValuesPage.Run();
                     end;
                 }
                 field("Shortcut Dimension 3 Name NVX"; "Shortcut Dimension 3 Name")
@@ -94,7 +94,7 @@ page 50002 DimVATAllocNVX
                         DimValueRec.SetRange("Dimension Code", GLSetup."Shortcut Dimension 4 Code");
                         DimValuesPage.SetRecord(DimValueRec);
                         DimValuesPage.SetTableView(DimValueRec);
-                        DimValuesPage.Run;
+                        DimValuesPage.Run();
                     end;
                 }
                 field("Shortcut Dimension 4 Name NVX"; "Shortcut Dimension 4 Name")
@@ -114,9 +114,9 @@ page 50002 DimVATAllocNVX
     var
         DimVATAlloc: Record DimVATAllocNVX;
         AllFieldsFilled: Boolean;
-        PercentSum: Decimal;
-        SetupIncomplete: Label 'Setup is incomplete', comment = 'DEA="Die Einrichtung ist nicht vollständig!"';
-        PercentageIncomplete: Label 'Percentage distribution is not complete!', comment = 'DEA="Die %-Verteilung ist noch nicht vollständig abgeschlossen!"';
+        // PercentSum: Decimal;
+        SetupIncompleteErr: Label 'Setup is incomplete', comment = 'DEA="Die Einrichtung ist nicht vollständig!"';
+        // PercentageIncomplete: Label 'Percentage distribution is not complete!', comment = 'DEA="Die %-Verteilung ist noch nicht vollständig abgeschlossen!"';
     begin
 
         AllFieldsFilled := true;
@@ -127,20 +127,20 @@ page 50002 DimVATAllocNVX
                 case true of
                     "Shortcut Dimension 1 Code" = '' :
                         AllFieldsFilled := false;
-            "Shortcut Dimension 2 Code" = '' :
+                    "Shortcut Dimension 2 Code" = '' :
                         AllFieldsFilled := false;
-            "Shortcut Dimension 3 Code" = '' :
+                    "Shortcut Dimension 3 Code" = '' :
                         AllFieldsFilled := false;
-            "VAT Posting Type" = '' :
+                    "VAT Posting Type" = '' :
                         AllFieldsFilled := false;
-            "Start Date" = 0D :
+                    "Start Date" = 0D :
                         AllFieldsFilled := false;
             end;//of case
 
-            until DimVATAlloc.next = 0;
+            until DimVATAlloc.Next() = 0;
 
         If not AllFieldsFilled then
-            Error(SetupIncomplete);
+            Error(SetupIncompleteErr);
 
         // If PercentSum <> 100 then //TODO RKSN-42 WorkItem 5348
         //     Error(PercentageIncomplete);

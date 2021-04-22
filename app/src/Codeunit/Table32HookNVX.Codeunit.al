@@ -1,4 +1,4 @@
-codeunit 50005 Table32HookNVX
+codeunit 50005 "Table32HookNVX"
 {
     [EventSubscriber(ObjectType::Table, Database::"Item Ledger Entry", 'OnBeforeVerifyOnInventory', '', false, false)]
     local procedure VerifyOnInventory(var ItemLedgerEntry: Record "Item Ledger Entry"; var IsHandled: Boolean)
@@ -8,21 +8,21 @@ codeunit 50005 Table32HookNVX
         IsNotOnInventoryErr: Label 'You have insufficient quantity of Item %1 on inventory.', comment = 'DEA="Sie haben keine ausreichende Menge des Artikels %1 auf Lager."';
     begin
         IsHandled := true;
-        with ItemLedgerEntry do begin
-            IF NOT Open THEN
+        // with ItemLedgerEntry do begin
+            IF NOT ItemLedgerEntry.Open THEN
                 EXIT;
-            IF Quantity >= 0 THEN
+            IF ItemLedgerEntry.Quantity >= 0 THEN
                 EXIT;
             
-            CASE "Entry Type" OF
-                "Entry Type"::Consumption,"Entry Type"::"Assembly Consumption","Entry Type"::Transfer:
-                    ERROR(IsNotOnInventoryErr,"Item No.");
+            CASE ItemLedgerEntry."Entry Type" OF
+                ItemLedgerEntry."Entry Type"::Consumption,ItemLedgerEntry."Entry Type"::"Assembly Consumption",ItemLedgerEntry."Entry Type"::Transfer:
+                    ERROR(IsNotOnInventoryErr,ItemLedgerEntry."Item No.");
             ELSE 
                 BEGIN
-                    Item.GET("Item No.");
+                    Item.GET(ItemLedgerEntry."Item No.");
                     CASE Item."Prevent Negative Inventory" OF
                         Item."Prevent Negative Inventory"::Yes:
-                            ERROR(IsNotOnInventoryErr,"Item No.");
+                            ERROR(IsNotOnInventoryErr,ItemLedgerEntry."Item No.");
                         Item."Prevent Negative Inventory"::No:
                             EXIT;
                         Item."Prevent Negative Inventory"::Default:
@@ -30,14 +30,14 @@ codeunit 50005 Table32HookNVX
                                 InvSetupNVX.GET();
                                 Case true of
                                     Item."Inventory Value Zero" AND (NOT InvSetupNVX."Allow Neg. Inv. no Stock Value"):
-                                        ERROR(IsNotOnInventoryErr,"Item No.");
+                                        ERROR(IsNotOnInventoryErr,ItemLedgerEntry."Item No.");
                                     (NOT Item."Inventory Value Zero") AND (NOT InvSetupNVX."Allow Neg. Inv. Stock Value"):
-                                        ERROR(IsNotOnInventoryErr,"Item No.");
+                                        ERROR(IsNotOnInventoryErr,ItemLedgerEntry."Item No.");
                                 end;
                             END;
                 END;
             END;
-        end;
+        // end;
     END;
     end;
 }

@@ -1,4 +1,4 @@
-page 50007 AllocationListNVX
+page 50007 "AllocationListNVX"
 {
     Caption = 'Allocations', comment = 'DEA="Verteilungen"';
     PageType = List;

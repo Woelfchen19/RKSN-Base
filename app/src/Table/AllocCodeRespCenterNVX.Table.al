@@ -1,4 +1,4 @@
-table 50011 AllocCodeRespCenterNVX
+table 50011 "AllocCodeRespCenterNVX"
 {
     DataClassification = CustomerContent;
     DrillDownPageId = AllocCodeRespCenterNVX;
@@ -6,20 +6,20 @@ table 50011 AllocCodeRespCenterNVX
     
     fields
     {
-        field(1;"Allocation Code";Code[10])
+        field(1; "Allocation Code"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
             TableRelation = AllocationCodeNVX;
         }
-        field(2;"Allocation Code Description";Text[50])
+        field(2; "Allocation Code Description"; Text[50])
         {
             Caption = 'Allocation Code Description', comment = 'DEA="Verteilungscodebeschreibung"';
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup(AllocationCodeNVX.Description where(Code = field("Allocation Code")));
         }
-        field(5;"Resp. Center";Code[10])
+        field(5; "Resp. Center"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'Responsibility Center', comment = 'DEA="Zuständigkeitseinheitencode"';
@@ -41,7 +41,7 @@ var
     RespCenterList: Page "Responsibility Center List";
 begin
     RespCenterList.LookupMode(true);
-    IF RespCenterList.RunModal = "Action"::LookupOK then begin
+    IF RespCenterList.RunModal() = "Action"::LookupOK then begin
         RespCenterList.SetSelectionFilter(RespCenter);
         IF RespCenter.FindSet() then
             repeat
@@ -51,7 +51,7 @@ begin
                 "Resp. Center" := RespCenter.Code;
                 Insert();
             end;
-            until RespCenter.Next = 0;
+            until RespCenter.Next() = 0;
     end;
 end;
 }

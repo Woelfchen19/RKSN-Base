@@ -1,4 +1,4 @@
-pageextension 50027 DimValueNVX extends "Dimension Values"
+pageextension 50027 "DimValueNVX" extends "Dimension Values"
 {
     layout
     {
@@ -23,7 +23,7 @@ pageextension 50027 DimValueNVX extends "Dimension Values"
                 ApplicationArea = All;
                 Editable = false;
             }
-            field("DimValueNVX Shortcut Dimension 1 Code";DimValueNVX."Shortcut Dimension 1 Code")
+            field("DimValueNVX Shortcut Dimension 1 CodeNVX"; DimValueNVX."Shortcut Dimension 1 Code")
             {
                 ApplicationArea = All;
                 CaptionClass = '1,2,1';
@@ -31,7 +31,7 @@ pageextension 50027 DimValueNVX extends "Dimension Values"
                 TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));  
                 Visible = IsOE;
             }
-            field("DimValueNVX Shortcut Dimension 2 Code";DimValueNVX."Shortcut Dimension 2 Code")
+            field("DimValueNVX Shortcut Dimension 2 CodeNVX"; DimValueNVX."Shortcut Dimension 2 Code")
             {
                 ApplicationArea = All;
                 CaptionClass = '1,2,2';
@@ -83,7 +83,7 @@ pageextension 50027 DimValueNVX extends "Dimension Values"
     local procedure GetGLSetup();
     begin
         if not GLSetupRead then begin
-          GLSetup.get;
+          GLSetup.Get();
           GLSetupRead := true;
         end;
     end;

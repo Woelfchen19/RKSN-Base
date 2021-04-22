@@ -1,4 +1,4 @@
-codeunit 50018 Table81HookNVX
+codeunit 50018 "Table81HookNVX"
 {
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterDeleteEvent', '', false, false)]
     local procedure DeleteRecordInAccompaniedTable(Rec: Record "Gen. Journal Line"; RunTrigger: Boolean)
@@ -28,7 +28,7 @@ codeunit 50018 Table81HookNVX
         IF Rec.IsTemporary then
             exit;
         If Rec."Account Type" = Rec."Account Type"::"Fixed Asset" then
-            IF FixedAssetNVX.Get(Rec."Account No.") AND(FixedAssetNVX."Allocation Code" <> '') then
+            IF FixedAssetNVX.Get(Rec."Account No.") AND (FixedAssetNVX."Allocation Code" <> '') then
                 IF not GenJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
                     GenJnlLineNVX.Init();
                     GenJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
@@ -40,7 +40,7 @@ codeunit 50018 Table81HookNVX
                     AllocationCode.Get(FixedAssetNVX."Allocation Code");
                     IF Rec."Shortcut Dimension 2 Code" = '' then begin
                         Rec.Validate("Shortcut Dimension 2 Code",AllocationCode."Shortcut Dimension 2 Code");
-                        Rec.Modify;
+                        Rec.Modify();
                     end else
                         if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                             Error(WrongDimErr);
@@ -69,7 +69,7 @@ codeunit 50018 Table81HookNVX
 
             IF Rec."Shortcut Dimension 2 Code" = '' then begin
                 Rec.Validate("Shortcut Dimension 2 Code",AllocationCode."Shortcut Dimension 2 Code");
-                IF Rec.Modify then; //in case rec is not inserted yet
+                IF Rec.Modify() then; //in case rec is not inserted yet
 
             end else
 
@@ -106,7 +106,7 @@ codeunit 50018 Table81HookNVX
         IF ((Rec."Account Type" in [Rec."Account Type"::"Fixed Asset",Rec."Account Type"::"G/L Account"]) AND (Rec."Account No." <> '')) 
         OR ((Rec."Bal. Account Type" in [Rec."Bal. Account Type"::"Fixed Asset",Rec."Bal. Account Type"::"G/L Account"]) AND (Rec."Account No." <> '')) then 
             
-            IF GenJnlLineNVX.Get(Rec."Journal Template Name",Rec."Journal Batch Name",Rec."Line No.") AND (GenJnlLineNVX."Allocation Code" <>'') then begin
+            IF GenJnlLineNVX.Get(Rec."Journal Template Name",Rec."Journal Batch Name",Rec."Line No.") AND (GenJnlLineNVX."Allocation Code" <> '') then begin
                 AllocationCode.Get(GenJnlLineNVX."Allocation Code");
                 IF Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                     Error(WrongDimErr);

@@ -1,4 +1,4 @@
-codeunit 50000 Table27HookNVX
+codeunit 50000 "Table27HookNVX"
 {
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterValidateEvent', 'Gen. Prod. Posting Group', false, false)]
     //RKSN-36
@@ -12,16 +12,15 @@ codeunit 50000 Table27HookNVX
                                 comment = 'DEA="Es gibt zum Artikel bereits gebuchte Posten! Sie haben keine Rechte, um nachträglich die zugeordnete Produktbuchungsgruppe zu ändern."';
     begin
 
-        with GenPrdPstGrp do
-            If Get(Rec."Gen. Prod. Posting Group") then
-                case "Inventory Value Zero" of
-                    "Inventory Value Zero"::"No Item":
-                        error(NoItemErr);
-                    "Inventory Value Zero"::Yes:
-                        Rec.Validate("Inventory Value Zero",true);
-                    "Inventory Value Zero"::"No":
-                        Rec.Validate("Inventory Value Zero",false);        
-                end;
+        If GenPrdPstGrp.Get(Rec."Gen. Prod. Posting Group") then
+            case GenPrdPstGrp."Inventory Value Zero" of
+                GenPrdPstGrp."Inventory Value Zero"::"No Item":
+                    error(NoItemErr);
+                GenPrdPstGrp."Inventory Value Zero"::Yes:
+                    Rec.Validate("Inventory Value Zero",true);
+                GenPrdPstGrp."Inventory Value Zero"::"No":
+                    Rec.Validate("Inventory Value Zero",false);        
+            end;
 
         UserSetupNVX.Get(UserId());
         ItemLedgerEntry.SetCurrentKey("Item No.");
@@ -100,7 +99,7 @@ codeunit 50000 Table27HookNVX
             DimensionValue.Validate("Dimension Code",GLSetup."Shortcut Dimension 8 Code");
             DimensionValue.Validate(Code,Rec."No.");
             If Rec.Description <> '' then
-                DimensionValue.Name := Rec.Description;
+                DimensionValue.Name := Copystr(Rec.Description,1,50);
             DimensionValue.Insert(true);
         END;        
 
@@ -129,7 +128,7 @@ codeunit 50000 Table27HookNVX
             GLSetup.Get();
 
             IF DimensionValue.get(GLSetup."Shortcut Dimension 8 Code",Rec."No.") then begin
-                DimensionValue.Name := Rec.Description;
+                DimensionValue.Name := Copystr(Rec.Description,1,50);
                 DimensionValue.Modify(true);
             end;        
     end;

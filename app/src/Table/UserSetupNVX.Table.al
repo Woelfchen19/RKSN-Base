@@ -1,15 +1,15 @@
-table 50001 UserSetupNVX
+table 50001 "UserSetupNVX"
 {
     DataClassification = CustomerContent;
     
     fields
     {
-        field(1;"User ID";Code[50])
+        field(1; "User ID"; Code[50])
         {
             DataClassification = CustomerContent;
             Caption = 'User ID', comment = 'DEA="Benutzer-ID"';
         }
-        field(10;"Allow Item Prod.Pst.Grp Change";Boolean)
+        field(10; "Allow Item Prod.Pst.Grp Change"; Boolean)
         //RKSN-37
         {
             DataClassification = CustomerContent;

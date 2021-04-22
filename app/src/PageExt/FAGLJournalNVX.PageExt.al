@@ -1,10 +1,10 @@
-pageextension 50035 FAGLJournalNVX extends "Fixed Asset G/L Journal"
+pageextension 50035 "FAGLJournalNVX" extends "Fixed Asset G/L Journal"
 {
     layout
     {
         addlast(Control1)
         {
-            field("Allocation Code"; AllocationCodeVar)
+            field("Allocation CodeNVX"; AllocationCodeVar)
             {
                 ApplicationArea = All;
                 Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
@@ -50,8 +50,9 @@ pageextension 50035 FAGLJournalNVX extends "Fixed Asset G/L Journal"
     {
         addlast(Processing)
         {
-            action(PreviewDimDistribution)
+            action(PreviewDimDistributionNVX)
             {
+                ApplicationArea = All;
                 Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
                 Image = PreviewChecks;
                 Promoted = true;
@@ -62,7 +63,7 @@ pageextension 50035 FAGLJournalNVX extends "Fixed Asset G/L Journal"
                     DistrGenJnlLine: Record DistrGenJnlLineNVX;
                     PreviewDimDistrPage: Page PreviewDimDistrNVX;
                 begin
-                    OnPreviewDimDistribution(Rec);
+                    OnPreviewDimDistributionNVX(Rec);
                     DistrGenJnlLine.SetRange("Journal Template Name",Rec."Journal Template Name");
                     DistrGenJnlLine.SetRange("Journal Batch Name",Rec."Journal Batch Name");
                     PreviewDimDistrPage.SetRecord(DistrGenJnlLine);
@@ -93,9 +94,6 @@ pageextension 50035 FAGLJournalNVX extends "Fixed Asset G/L Journal"
     end;
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean;
-    var
-        BelowLineNo: Integer;
-        AboveLineNo: Integer;
     begin
         If AllocationCodeVar <> '' then begin
             GenJnlLineNVX.Init();
@@ -110,11 +108,9 @@ pageextension 50035 FAGLJournalNVX extends "Fixed Asset G/L Journal"
 
     var
         GenJnlLineNVX: Record GenJnlLineNVX;
-        AllocationCodeVar: Code[20];
-
-
+        AllocationCodeVar: Code[10];
     [IntegrationEvent(false,false)]
-    local procedure OnPreviewDimDistribution(var GenJnlLine: Record "Gen. Journal Line")
+    local procedure OnPreviewDimDistributionNVX(var GenJnlLine: Record "Gen. Journal Line")
     begin
     end;
 }

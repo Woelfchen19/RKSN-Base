@@ -1,18 +1,18 @@
-table 50014 GLAccountNVX
+table 50014 "GLAccountNVX"
 {
     DataClassification = CustomerContent;  
     fields
     {
-        field(1;"G/L Account No.";Code[20])
+        field(1; "G/L Account No."; Code[20])
         {
             DataClassification = CustomerContent;
         }
-        field(10;"Disc. Dim. Detection";Boolean)
+        field(10; "Disc. Dim. Detection"; Boolean)
         {
             DataClassification = CustomerContent;
             Caption = 'Discount Dimension Detection', comment = 'DEA="Skonto-Dim.Findung"';
         }
-        field(15;"No dim distribution";Boolean)
+        field(15; "No dim distribution"; Boolean)
         {
             DataClassification = CustomerContent;
             Caption = 'No dimensional distribution', comment = 'DEA="Dim.Aufbereitung nicht erlaubt"';
@@ -33,24 +33,4 @@ table 50014 GLAccountNVX
             Clustered = true;
         }
     }
-    
-    var
-        myInt : Integer;
-
-    trigger OnInsert();
-    begin
-    end;
-
-    trigger OnModify();
-    begin
-    end;
-
-    trigger OnDelete();
-    begin
-    end;
-
-    trigger OnRename();
-    begin
-    end;
-
 }

@@ -1,4 +1,4 @@
-table 50012 AllocationHeaderNVX
+table 50012 "AllocationHeaderNVX"
 {
     DataClassification = CustomerContent;
     Caption = 'Allocation Header', comment = 'DEA="Verteilungskopf"';
@@ -7,7 +7,7 @@ table 50012 AllocationHeaderNVX
 
     fields
     {
-        field(1;"Allocation Code";Code[10])
+        field(1; "Allocation Code"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
@@ -22,12 +22,12 @@ table 50012 AllocationHeaderNVX
                 end;
             end;
         }
-        field(2;"Start Date";Date)
+        field(2; "Start Date"; Date)
         {
             DataClassification = CustomerContent;
             Caption = 'Start Date', comment = 'DEA="Startdatum"';
         }
-        field(10;Description;Text[250])
+        field(10; Description; Text[250])
         {
             DataClassification = CustomerContent;
             Caption = 'Description', comment = 'DEA="Beschreibung"';
@@ -41,17 +41,6 @@ table 50012 AllocationHeaderNVX
             Clustered = true;
         }
     }
-    
-    var
-        myInt : Integer;
-
-    trigger OnInsert();
-    begin
-    end;
-
-    trigger OnModify();
-    begin
-    end;
 
     trigger OnDelete();
     var
@@ -59,10 +48,6 @@ table 50012 AllocationHeaderNVX
     begin
         AllocationLine.SetRange("Allocation Code","Allocation Code");
         AllocationLine.DeleteAll();
-    end;
-
-    trigger OnRename();
-    begin
     end;
 
 }

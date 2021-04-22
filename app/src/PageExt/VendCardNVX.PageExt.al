@@ -1,4 +1,4 @@
-pageextension 50011 VendCardNVX extends "Vendor Card"
+pageextension 50011 "VendCardNVX" extends "Vendor Card"
 {
     layout
     {
@@ -9,10 +9,10 @@ pageextension 50011 VendCardNVX extends "Vendor Card"
         
         addfirst("Posting Details")
         {
-            field(GenBsnPstGrpNVX;"Gen. Bus. Posting Group")
+            field(GenBsnPstGrpNVX; "Gen. Bus. Posting Group")
             {
                 ApplicationArea = All;
-                trigger OnLookup(Text : Text) : Boolean;
+                trigger OnLookup(var Text: Text) : Boolean;
                 var
                     GBPGRec: Record "Gen. Business Posting Group";
                     GenBsnPstGrpNVX: Record GenBsnPstGrpNVX;

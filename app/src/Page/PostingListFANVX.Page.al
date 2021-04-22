@@ -1,4 +1,4 @@
-page 50013 PostingListFANVX
+page 50013 "PostingListFANVX"
 {
     Caption = 'Backup dimensional distribution Fixed Asset', comment = 'DEA="Sicherung dim.Verteilungen Modul AnBu"';
     PageType = List;
@@ -22,7 +22,7 @@ page 50013 PostingListFANVX
                 // {
                 //     ApplicationArea = All;
                 // }
-                // field("Document No.";"Document No.")
+                // field("Document No."; "Document No.")
                 // {
                 //     ApplicationArea = All;
                 // }
@@ -38,7 +38,7 @@ page 50013 PostingListFANVX
                 {
                     ApplicationArea = All;
                 }
-                field(Open;Open)
+                field(Open; Open)
                 {
                     ApplicationArea = All;
                 }

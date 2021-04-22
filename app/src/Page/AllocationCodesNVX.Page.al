@@ -1,4 +1,4 @@
-page 50003 AllocationCodesNVX
+page 50003 "AllocationCodesNVX"
 {
     PageType = List;
     SourceTable = AllocationCodeNVX;
@@ -11,7 +11,7 @@ page 50003 AllocationCodesNVX
         {
             repeater(Group)
             {
-                field(Code; Rec.Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
                 }
@@ -40,6 +40,7 @@ page 50003 AllocationCodesNVX
         {
             action(Allocations)
             {
+                ApplicationArea = All;
                 Caption = 'Allocations', comment = 'DEA="Verteilungen"';
                 RunObject = page AllocationListNVX;
                 RunPageLink = "Allocation Code" = field(Code);
@@ -47,6 +48,7 @@ page 50003 AllocationCodesNVX
             }
             action(ResponsibilityCenter)
             {
+                ApplicationArea = All;
                 Caption = 'Allocation Code / Responsibility Center', comment = 'DEA="Zuordnung Zuständigkeitseinheiten"';
                 RunObject = page AllocCodeRespCenterNVX;
                 RunPageLink = "Allocation Code" = field(Code);

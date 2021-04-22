@@ -1,4 +1,4 @@
-codeunit 50009 Codeunit80HookNVX
+codeunit 50009 "Codeunit80HookNVX"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterSalesInvHeaderInsert', '', false, false)]
     local procedure TransferRecToPstdAccompaniedTableInvoice(SalesInvHeader: Record "Sales Invoice Header"; SalesHeader: Record "Sales Header")
@@ -104,7 +104,7 @@ codeunit 50009 Codeunit80HookNVX
     //                         GLEntryNVX.Modify();
     //                     end;
 
-    //                 until GLEntry.Next = 0;
+    //                 until GLEntry.Next() = 0;
     //             end;
     //         end;
 
@@ -129,7 +129,7 @@ codeunit 50009 Codeunit80HookNVX
     //                         GLEntryNVX.Modify();
     //                     end;
 
-    //                 until GLEntry.Next = 0;                    
+    //                 until GLEntry.Next() = 0;                    
     //             end;
     //         end;
             

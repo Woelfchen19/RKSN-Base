@@ -1,4 +1,4 @@
-pageextension 50000 GenPrdPstGrpNVX extends "Gen. Product Posting Groups"
+pageextension 50000 "GenPrdPstGrpNVX" extends "Gen. Product Posting Groups"
 {
     layout
     {
@@ -12,7 +12,7 @@ pageextension 50000 GenPrdPstGrpNVX extends "Gen. Product Posting Groups"
                 ToolTip = 'Specifies if the product posting group must be excluded from inventory valuation.', comment = 'DEA="Gibt an ob die Produktbuchungsgruppe Lagerbewertet ist, d.h. keinen Wertefluss hat."';
                 trigger OnValidate();
                 begin
-                    If not GenPrdPstGrp.Modify then;
+                    If not GenPrdPstGrp.Modify() then;
 
                     If not GenPrdPstGrp.Get(Code) then begin
                         // GenPrdPstGrp.Init();

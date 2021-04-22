@@ -1,4 +1,4 @@
-codeunit 50004 Table251HookNVX
+codeunit 50004 "Table251HookNVX"
 {
     // [EventSubscriber(ObjectType::Table, Database::"Gen. Product Posting Group", 'OnAfterInsertEvent', '', false, false)]
     // local procedure InsertRecordInAccompaniedTable(var Rec: Record "Gen. Product Posting Group")

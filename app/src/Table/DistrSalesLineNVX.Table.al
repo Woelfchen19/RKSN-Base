@@ -1,4 +1,4 @@
-table 50035 DistrSalesLineNVX
+table 50035 "DistrSalesLineNVX"
 {
     Caption = 'Sales Line', comment = 'DEA="Verkaufszeile';
     DrillDownPageID = "Sales Lines";
@@ -1187,12 +1187,12 @@ table 50035 DistrSalesLineNVX
         //     FieldClass = FlowField;
         //     InitValue = 0;
         // }
-        field(50000;"VAT Posting Type";Code[10])
+        field(50000; "VAT Posting Type"; Code[10])
         {
             Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
             DataClassification = CustomerContent;
         }
-        field(50001;"Allocation Code";Code[10])
+        field(50001; "Allocation Code"; Code[10])
         {
             Caption = 'Allocation Code', comment = 'Verteilungscode"';
             DataClassification = CustomerContent;
@@ -1202,7 +1202,7 @@ table 50035 DistrSalesLineNVX
             Caption = 'Allocation %', comment = 'DEA="Verteilung %"';
             DataClassification = CustomerContent;
         }
-        field(50003;"Start Date";Date)
+        field(50003; "Start Date"; Date)
         {
             Caption = 'Start Date', comment = 'DEA="Startdatum"';
             DataClassification = CustomerContent;
@@ -1305,13 +1305,13 @@ table 50035 DistrSalesLineNVX
         //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (8), Code = field ("Shortcut Dimension 8 Code")));
         //     CaptionClass = '1337,8';
         // }
-        field(50020;"Gen. Bus. Posting Group Description";Text[50])
+        field(50020; "Gen. Bus. Posting Group Desc"; Text[100])
         {
             Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Geschäftsbuchungsgruppe Beschreibung"';
             FieldClass = FlowField;
             CalcFormula = lookup ("Gen. Business Posting Group".Description where (Code = field("Gen. Bus. Posting Group")));
         }
-        field(50025;"Sales Shortcut Dimension 1 Code";Code[20])
+        field(50025; "Sales Shortcut Dimension 1"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
@@ -1319,7 +1319,7 @@ table 50035 DistrSalesLineNVX
             // CaptionClass = '1338,1'; = Sales + Dim Name
             // CaptionClass = '1339,1'; = Purchase + Dim Name
         }
-        field(50026;"Sales Shortcut Dimension 3 Code";Code[20])
+        field(50026; "Sales Shortcut Dimension 3"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
@@ -1327,17 +1327,17 @@ table 50035 DistrSalesLineNVX
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
         }        
-        field(50031;"External Document No.";Code[35])
+        field(50031; "External Document No."; Code[35])
         {
             Caption = 'External Document No.', comment = 'DEA="Externe Belegnummer"';
             DataClassification = CustomerContent;
         }
-        field(50035;"Deactivate dimensional distribution";Boolean)
+        field(50035; "Deactivate dimensional distr"; Boolean)
         {
             DataClassification = CustomerContent;
             Caption = 'Deactivate dimensional distribution', comment = 'DEA="Verteilung deaktiviert"';
         }
-        field(50050;"Origin Line No.";Integer)
+        field(50050; "Origin Line No."; Integer)
         {
             DataClassification = CustomerContent;
         }   
