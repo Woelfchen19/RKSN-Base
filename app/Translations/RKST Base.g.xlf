@@ -5,7 +5,7 @@
       <group id="body">
         <trans-unit id="Table 2334602911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">Verteilungscode"</note>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table AllocationCodeNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2334602911 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

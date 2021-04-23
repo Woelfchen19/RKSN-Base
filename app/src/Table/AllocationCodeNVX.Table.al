@@ -1,7 +1,7 @@
 table 50010 "AllocationCodeNVX"
 {
     DataClassification = CustomerContent;
-    Caption = 'Allocation Code', comment = 'Verteilungscode"';
+    Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
     LookupPageId = 50003;
     DrillDownPageId = 50003;
     fields
