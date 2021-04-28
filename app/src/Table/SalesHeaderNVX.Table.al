@@ -15,8 +15,9 @@ table 50039 "SalesHeaderNVX"
         }
         field(10; "Allocation Code"; Code[10])
         {
-            Caption = 'Composition Allocation', comment = 'Abfassung Verteilung"';
             DataClassification = CustomerContent;
+            Caption = 'Composition Allocation', comment = 'Abfassung Verteilung"';
+            TableRelation = AllocationCodeNVX.Code;
         }
         field(15; "Interim Gen.Bus.Posting Group"; Code[20])
         {

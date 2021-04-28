@@ -30,7 +30,7 @@ pageextension 50016 "ChartOfAccountsNVX" extends "Chart of Accounts"
                     GBPGPage.LookupMode(true);
                     if GBPGPage.RunModal() = "Action"::LookupOK then begin
                         GBPGPage.GetRecord(GBPGRec);
-                        "Gen. Bus. Posting Group" := GBPGRec.Code;
+                        Rec.Validate("Gen. Bus. Posting Group",GBPGRec.Code);
                     end;
                 end;
             }

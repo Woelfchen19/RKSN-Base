@@ -37,7 +37,7 @@ pageextension 50028 "GLAccountCardNVX" extends "G/L Account Card"
                     GBPGPage.LookupMode(true);
                     if GBPGPage.RunModal() = "Action"::LookupOK then begin
                         GBPGPage.GetRecord(GBPGRec);
-                        "Gen. Bus. Posting Group" := GBPGRec.Code;
+                        Rec.Validate("Gen. Bus. Posting Group",GBPGRec.Code);
                     end;
                 end;
             }

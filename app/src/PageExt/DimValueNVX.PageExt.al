@@ -30,6 +30,10 @@ pageextension 50027 "DimValueNVX" extends "Dimension Values"
                 Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
                 TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));  
                 Visible = IsOE;
+                trigger OnValidate();
+                begin
+                    DimValueNVX.Modify();
+                end;          
             }
             field("DimValueNVX Shortcut Dimension 2 CodeNVX"; DimValueNVX."Shortcut Dimension 2 Code")
             {
@@ -38,6 +42,10 @@ pageextension 50027 "DimValueNVX" extends "Dimension Values"
                 Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
                 TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
                 Visible = IsOE;
+                trigger OnValidate();
+                begin
+                    DimValueNVX.Modify();
+                end;          
             }
             
         }

@@ -7887,6 +7887,931 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesCrMemoLineNVX - Field VAT Posting Type - Property Caption</note>
           <target>USt.-Buchungsart</target>
         </trans-unit>
+        <trans-unit id="Table 2115371455 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Header</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1002060992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allow Line Disc.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Allow Line Disc. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1650118938 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount Including VAT</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Amount Including VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 825498697 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount Shipped Not Invoiced (LCY) Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Amt. Ship. Not Inv. (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 54586942 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount Shipped Not Invoiced (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Amt. Ship. Not Inv. (LCY) Base - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2899774127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Applies-to Doc. No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Applies-to Doc. No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2865137134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Applies-to Doc. Type</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Applies-to Doc. Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2865137134 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Payment,Invoice,Credit Memo,Finance Charge Memo,Reminder,Refund</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Applies-to Doc. Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3093642907 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Applies-to ID</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Applies-to ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3532935625 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Area - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3294270728 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Assigned User ID</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Assigned User ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1891586249 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bal. Account No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bal. Account No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 824028820 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bal. Account Type</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bal. Account Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 824028820 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Account,Bank Account</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bal. Account Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 831017837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Address</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 460968363 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Address 2</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to Address 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3869539606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to City</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4064815791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Contact</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3363652926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Contact No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to Contact No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2096911897 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Country/Region Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3882955433 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to County</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to County - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2965034906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4188801408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Customer Template Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to Customer Template Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 337907440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to IC Partner Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to IC Partner Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 240204966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Name</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2627792820 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Name 2</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to Name 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 675862156 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Post Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Bill-to Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3048556483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Campaign No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Campaign No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4231739422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Combine Shipments</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Combine Shipments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comment</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Comment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3136438825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Completely Shipped</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Completely Shipped - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1188370733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Compress Prepayment</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Compress Prepayment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3083748138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correction</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Correction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4198939294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Currency Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2324056710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Factor</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Currency Factor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 273731812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Disc. Group</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Customer Disc. Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 410940989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Customer Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2725149570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Price Group</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Customer Price Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 995090288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date Filter</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Date Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3322554545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Set ID</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Dimension Set ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4182352612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direct Debit Mandate ID</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Direct Debit Mandate ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3302998458 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Doc. No. Occurrence</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Doc. No. Occurrence - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 580412389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Document Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2363328873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Type</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Document Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2363328873 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote,Order,Invoice,Credit Memo,Blanket Order,Return Order</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Document Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4085727052 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Due Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3348534314 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EU 3-Party Trade</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field EU 3-Party Trade - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2923940816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exit Point</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Exit Point - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1527563463 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Document No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field External Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 633819257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Gen. Bus. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2549898851 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Shipment Used</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Get Shipment Used - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3880270913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IC Direction</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field IC Direction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3880270913 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outgoing,Incoming</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field IC Direction - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3742506738 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IC Status</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field IC Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3742506738 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Pending,Sent</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field IC Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 415504711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Id</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 596789822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Incoming Document Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Incoming Document Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 821689635 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Invoice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2095078121 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Disc. Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Invoice Disc. Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3104584724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Discount Amount</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Invoice Discount Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1375627687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Discount Calculation</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Invoice Discount Calculation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1375627687 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>None,%,Amount</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Invoice Discount Calculation - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2950595025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Discount Value</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Invoice Discount Value - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2309682616 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IsTest</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field IsTest - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3983787601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Queue Entry ID</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Job Queue Entry ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3423211158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Queue Status</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Job Queue Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3423211158 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Scheduled for Posting,Error,Posting</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Job Queue Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2273653569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Language Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Language Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2581242952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Email Notif Cleared</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Last Email Notif Cleared - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3664326274 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Email Sent Status</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Last Email Sent Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3664326274 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not Sent,In Process,Finished,Error</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Last Email Sent Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3915166473 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Email Sent Time</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Last Email Sent Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2900014119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Posting No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Last Posting No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2475402940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Prepayment No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Last Prepayment No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2487216036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Prepmt. Cr. Memo No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Last Prepmt. Cr. Memo No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2980287237 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Return Receipt No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Last Return Receipt No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1184503898 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Shipment Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Last Shipment Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3273726513 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Shipping No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Last Shipping No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2372120452 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Late Order Shipping</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Late Order Shipping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2161572060 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Location Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4277715959 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Filter</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Location Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1935647251 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. of Archived Versions</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field No. of Archived Versions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2682724073 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Printed</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field No. Printed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 926489874 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>On Hold</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field On Hold - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3616132794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Opportunity No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Opportunity No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2628907868 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order Class</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Order Class - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2632124822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Order Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1562764323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outbound Whse. Handling Time</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Outbound Whse. Handling Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1115434830 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Tracking No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Package Tracking No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 235293238 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Discount %</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Payment Discount % - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3034499648 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Instructions Id</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Payment Instructions Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3855271124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Method Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Payment Method Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4262379652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Service Set ID</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Payment Service Set ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 966740350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Terms Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Payment Terms Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1636953138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pmt. Discount Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Pmt. Discount Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Posting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3268709882 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Description</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Posting Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2315465834 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting from Whse. Ref.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Posting from Whse. Ref. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 514695969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Posting No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 103924864 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting No. Series</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Posting No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3146932276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment %</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Prepayment % - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1082343711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Due Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Prepayment Due Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3242835718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Prepayment No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1884352235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment No. Series</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Prepayment No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1073904446 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Cr. Memo No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Prepmt. Cr. Memo No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2111505651 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Cr. Memo No. Series</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Prepmt. Cr. Memo No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2461369302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Payment Discount %</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Prepmt. Payment Discount % - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2039872094 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Payment Terms Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Prepmt. Payment Terms Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1066815506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Pmt. Discount Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Prepmt. Pmt. Discount Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3005495898 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Posting Description</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Prepmt. Posting Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 304272296 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prices Including VAT</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Prices Including VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3812333472 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Posted Documents</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Print Posted Documents - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 436997413 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Promised Delivery Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Promised Delivery Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 581560053 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote Accepted</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Quote Accepted - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3388162209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote Accepted Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Quote Accepted Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1786097247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Quote No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1241899467 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote Sent to Customer</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Quote Sent to Customer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1045623542 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote Valid To Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Quote Valid Until Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1908046867 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reason Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Reason Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4032031579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recalculate Invoice Disc.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Recalculate Invoice Disc. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1084347373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receive</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Receive - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 135600996 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Requested Delivery Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Requested Delivery Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 825293260 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reserve</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Reserve - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 825293260 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Never,Optional,Always</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Reserve - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2247850105 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Responsibility Center</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Responsibility Center - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4250745339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Receipt No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Return Receipt No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3767518718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return Receipt No. Series</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Return Receipt No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 553464652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Salesperson Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Salesperson Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3606264650 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Address</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 469609400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Address 2</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to Address 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1281923305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to City</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1006519668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Contact</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3128777977 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Contact No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to Contact No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3434865006 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Country/Region Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2131962646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to County</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to County - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1474036805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Customer Name</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to Customer Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2958825091 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Customer Name 2</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to Customer Name 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1225278069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3633006955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Customer Template Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to Customer Template Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3229552059 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to E-Mail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4022171795 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to IC Partner Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to IC Partner Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3875774453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to Phone No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 709296807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Post Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sell-to Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2829869699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send IC Document</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Send IC Document - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2811254766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sent as Email</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Sent as Email - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4180147670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Ship - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1187003046 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Address</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Ship-to Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1417792948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Address 2</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Ship-to Address 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1981213637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to City</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Ship-to City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 993414011 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Ship-to Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 929198632 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Contact</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Ship-to Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3354576322 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Country/Region Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Ship-to Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 187607738 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to County</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Ship-to County - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2743501653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Name</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Ship-to Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3261344115 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Name 2</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Ship-to Name 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3172878019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Post Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Ship-to Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4112852368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Date</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shipment Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2205104606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Method Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shipment Method Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1090071933 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipped</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shipped - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3226323109 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipped Not Invoiced</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shipped Not Invoiced - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3744117490 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Advice</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shipping Advice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3744117490 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Partial,Complete</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shipping Advice - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 4045368290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Agent Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shipping Agent Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2730811709 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Agent Service Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shipping Agent Service Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 392726567 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shipping No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 2595085546 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping No. Series</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shipping No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1913523417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Time</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shipping Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shortcut Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Shortcut Dimension 2 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open,Released,Pending Approval,Pending Prepayment</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 305562489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Area Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Tax Area Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 53839102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Liable</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Tax Liable - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1267997203 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Specification</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Transaction Specification - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3773776616 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Type</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Transaction Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3193866272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transport Method</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Transport Method - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3063361898 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Base Discount %</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field VAT Base Discount % - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 1844012642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field VAT Bus. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 572122291 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Country/Region Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field VAT Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 617267791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Registration No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field VAT Registration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 22244033 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Work Description</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Work Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2115371455 - Field 3001618318 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your Reference</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderArchiveNVX - Field Your Reference - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1733794865 - Field 3780637336 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Amount</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
@@ -10984,6 +11909,30 @@
           <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension DefaultDimNVX - Method OnQueryClosePage - NamedType InvValueErr</note>
           <target>Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 122744579 - Control 3265622169 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3073920339">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimValueListNVX - Control DimValueNVX Shortcut Dimension 1 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 122744579 - Control 4277615072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3073920339">
+          <source>Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimValueListNVX - Control DimValueNVX Shortcut Dimension 2 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 2</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 122744579 - Control 99642758 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3073920339">
+          <source>VAT Posting Type Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart Beschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimValueListNVX - Control VAT Posting Type Desc NVX - Property Caption</note>
+          <target>USt.-Buchungsart Beschreibung</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 122744579 - Control 3165293413 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3073920339">
+          <source>VAT Posting Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimValueListNVX - Control VAT Posting Type NVX - Property Caption</note>
+          <target>USt.-Buchungsart</target>
         </trans-unit>
         <trans-unit id="PageExtension 1555680109 - Control 3265622169 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
           <source>Shortcut Dimension 1 Code</source>

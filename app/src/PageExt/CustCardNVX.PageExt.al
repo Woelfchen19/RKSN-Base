@@ -29,7 +29,7 @@ pageextension 50006 "CustCardNVX" extends "Customer Card"
                     GBPGPage.LookupMode(true);
                     if GBPGPage.RunModal() = "Action"::LookupOK then begin
                         GBPGPage.GetRecord(GBPGRec);
-                        "Gen. Bus. Posting Group" := GBPGRec.Code;
+                        Rec.Validate("Gen. Bus. Posting Group",GBPGRec.Code);
                     end;
                 end;
             }
