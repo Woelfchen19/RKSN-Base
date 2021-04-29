@@ -1,5 +1,7 @@
 pageextension 50007 "DimValueListNVX" extends "Dimension Value List"
 {
+    
+    Editable = false;
     layout
     {
         addlast(Control1)
@@ -9,7 +11,8 @@ pageextension 50007 "DimValueListNVX" extends "Dimension Value List"
                 ApplicationArea = All;
                 Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
                 TableRelation = VATPostingTypeNVX.Code;
-                Visible = PostingTypeVisible;                 
+                Visible = PostingTypeVisible;
+                Editable = false;
             }
             field("VAT Posting Type Desc NVX"; DimValueNVX."VAT Posting Type Desc")
             {
@@ -24,7 +27,8 @@ pageextension 50007 "DimValueListNVX" extends "Dimension Value List"
                 CaptionClass = '1,2,1';
                 Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
                 TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));  
-                Visible = IsOE;     
+                Visible = IsOE;
+                Editable = false;
             }
             field("DimValueNVX Shortcut Dimension 2 CodeNVX"; DimValueNVX."Shortcut Dimension 2 Code")
             {
@@ -32,7 +36,8 @@ pageextension 50007 "DimValueListNVX" extends "Dimension Value List"
                 CaptionClass = '1,2,2';
                 Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
                 TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
-                Visible = IsOE;      
+                Visible = IsOE;
+                Editable = false;      
             }
             
         }

@@ -1320,6 +1320,22 @@ table 50034 "SalesLineArchiveNVX"
             Caption = 'External Document No.', comment = 'DEA="Externe Belegnummer"';
             DataClassification = ToBeClassified;
         }  
+        field(50040; "Sales Shortcut Dimension 1"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));       
+            // CaptionClass = '1338,1'; = Sales + Dim Name
+            // CaptionClass = '1339,1'; = Purchase + Dim Name
+        }
+        field(50041; "Sales Shortcut Dimension 3"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
+            // CaptionClass = '1338,3'; = Sales + Dim Name
+            // CaptionClass = '1339,3'; = Purchase + Dim Name            
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
+        }
         field(60000; "Posting GUID"; Guid)
         {
             Caption = 'Posting GUID', comment = 'DEA="Buchungs-GUID"';

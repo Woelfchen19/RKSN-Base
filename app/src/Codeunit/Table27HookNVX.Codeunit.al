@@ -39,6 +39,8 @@ codeunit 50000 "Table27HookNVX"
         DefaultDimension: Record "Default Dimension";
         InvSetupNVX: Record InvSetupNVX;
     begin
+        If Rec.IsTemporary then
+            exit;
         GLSetup.Get();
         GLSetup.TestField("Shortcut Dimension 8 Code");
         
@@ -68,13 +70,15 @@ codeunit 50000 "Table27HookNVX"
             IF InvSetupNVX."Inventory Cost Center" <> '' then
                 Rec.Validate("Global Dimension 1 Code",InvSetupNVX."Inventory Cost Center");
             IF InvSetupNVX."Inventory Section" <> '' then begin
-                DefaultDimension.Init();
-                DefaultDimension.Validate("Table ID",Database::Item);
-                DefaultDimension.Validate("No.",Rec."No.");
-                DefaultDimension.Validate("Dimension Code",GLSetup."Shortcut Dimension 3 Code");
-                DefaultDimension.Validate("Dimension Value Code",InvSetupNVX."Inventory Section");
-                // DefaultDimension.Validate("Value Posting",DefaultDimension."Value Posting"::"Same Code");
-                DefaultDimension.Insert(true);
+                If not DefaultDimension.Get(Database::item,Rec."No.",GLSetup."Shortcut Dimension 3 Code") then begin
+                    DefaultDimension.Init();
+                    DefaultDimension.Validate("Table ID",Database::Item);
+                    DefaultDimension.Validate("No.",Rec."No.");
+                    DefaultDimension.Validate("Dimension Code",GLSetup."Shortcut Dimension 3 Code");
+                    DefaultDimension.Validate("Dimension Value Code",InvSetupNVX."Inventory Section");
+                    // DefaultDimension.Validate("Value Posting",DefaultDimension."Value Posting"::"Same Code");
+                    DefaultDimension.Insert(true);
+                end;
             end;
         end;
     end;

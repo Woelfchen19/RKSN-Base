@@ -26,6 +26,14 @@ table 50020 "GenJnlLineNVX"
             DataClassification = CustomerContent;
             Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
         }
+        field(30; DoNotSplit; Boolean)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(31; FixedGBPG; Code[20])
+        {
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

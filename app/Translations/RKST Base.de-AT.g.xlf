@@ -5975,6 +5975,16 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineArchiveNVX - Field VAT Registration No. - Property Caption</note>
           <target>USt-IdNr.</target>
         </trans-unit>
+        <trans-unit id="Table 623263038 - Field 2859055696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DoNotSplit</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineNVX - Field DoNotSplit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 623263038 - Field 2809715952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FixedGBPG</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineNVX - Field FixedGBPG - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 623263038 - Field 2704330142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Journal Batch Name</source>
           <note from="Developer" annotates="general" priority="2"/>
@@ -9761,6 +9771,18 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesLineArchiveNVX - Field Returns Deferral Start Date - Property Caption</note>
           <target>Gibt Abgrenzungsstartdatum zurück</target>
         </trans-unit>
+        <trans-unit id="Table 2087446872 - Field 2452334187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesLineArchiveNVX - Field Sales Shortcut Dimension 1 - Property Caption</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="Table 2087446872 - Field 3727727421 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesLineArchiveNVX - Field Sales Shortcut Dimension 3 - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
         <trans-unit id="Table 2087446872 - Field 1225278069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sell-to Customer No.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verk. an Deb.-Nr."</note>
@@ -12393,6 +12415,24 @@
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension RecurringGeneralJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2986613219 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1727838235">
+          <source>Preview dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SalesJournalNVX - Action PreviewDimDistributionNVX - Property Caption</note>
+          <target>Vorschau dimensionaler Verteilungsprozess</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2986613219 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1727838235">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SalesJournalNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2986613219 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2986613219">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SalesJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 2662501360 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
