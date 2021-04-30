@@ -148,7 +148,7 @@ codeunit 50001 "Table37HookNVX"
             DimMgt.ValidateShortcutDimValues(3,SalesLineNVX."Shortcut Dimension 3 Code",Rec."Dimension Set ID");
 
         IF not Item."Inventory Value Zero" then begin
-            IF (SalesLineNVX."Shortcut Dimension 3 Code" = '') then
+            IF (SalesLineNVX."Shortcut Dimension 1 Code" = '') then
                 SalesLineNVX."Allocation Code" := SalesHeaderNVX."Allocation Code";
             SalesLineNVX."Comp Gen. Bus. Pst Grp WES" := SalesHeaderNVX."Comp Gen. Bus. Pst Grp WES";
         end;
