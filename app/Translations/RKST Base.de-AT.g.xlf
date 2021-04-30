@@ -10246,6 +10246,18 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table32HookNVX - Method VerifyOnInventory - NamedType IsNotOnInventoryErr</note>
           <target>Sie haben keine ausreichende Menge des Artikels %1 auf Lager.</target>
         </trans-unit>
+        <trans-unit id="Codeunit 4009923459 - Method 1826875482 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only the types 'Item' or 'Comment' are allowed.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckType - NamedType WrongTypeErr</note>
+          <target>In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 4009923459 - Method 1617669554 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only the types 'Item' or 'Comment' are allowed.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CompositionSetValuesOnAfterInsertSalesLine - NamedType WrongTypeErr</note>
+          <target>In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen</target>
+        </trans-unit>
         <trans-unit id="Codeunit 754220121 - Method 2562927728 - NamedType 353338979" size-unit="char" translate="yes" xml:space="preserve">
           <source>Gen. Business Posting Group can not be changed. Check Item Master Data where required.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Steuerschlüssel kann nicht geändert werden. Überprüfen Sie gegebenenfalls die Stammdaten des Artikels!"</note>

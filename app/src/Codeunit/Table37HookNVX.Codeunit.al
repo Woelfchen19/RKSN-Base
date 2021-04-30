@@ -39,6 +39,7 @@ codeunit 50001 "Table37HookNVX"
         DimSetEntry: Record "Dimension Set Entry";
         Item: Record Item;
         DimMgt: Codeunit DimensionManagement;
+        WrongTypeErr: Label 'Only the types ''Item'' or ''Comment'' are allowed.', comment = 'DEA="In einer Abfassung können sie nur Art ''Artikel'' oder ''leer'' wählen"';
     begin
         IF Rec.IsTemporary or (Rec."Document Type" <> Rec."Document Type"::Order) or (Rec.Type <> Rec.Type::Item) or (Rec."Line No." = 0) then
             exit;
@@ -46,6 +47,10 @@ codeunit 50001 "Table37HookNVX"
         IF InvSetupNVX.Get() then;
         if SalesHeader."Sell-to Customer No." <> InvSetupNVX."Composition Customer" then
             exit; //is normal sales exit here
+        
+        IF not (Rec.Type in [Rec.Type::Item,Rec.Type::" "]) then
+            Error(WrongTypeErr);
+        
         If not Item.get(Rec."No.") then
             exit;
         If not SalesHeaderNVX.Get(Rec."Document Type",Rec."Document No.") then begin
@@ -149,5 +154,23 @@ codeunit 50001 "Table37HookNVX"
         end;
         Rec.Validate("Gen. Bus. Posting Group",InvSetupNVX."Comp Gen. Bus. Pst Grp Fixed");
         SalesLineNVX.Modify();
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Type', false, false)]
+    local procedure CheckType(Rec: Record "Sales Line")
+    var
+        SalesHeader: Record "Sales Header";
+        InvSetupNVX: Record InvSetupNVX;
+        WrongTypeErr: Label 'Only the types ''Item'' or ''Comment'' are allowed.', comment = 'DEA="In einer Abfassung können sie nur Art ''Artikel'' oder ''leer'' wählen"';
+    begin
+        IF Rec.IsTemporary or (Rec."Document Type" <> Rec."Document Type"::Order) or (Rec."Line No." = 0) then
+            exit;
+        SalesHeader.Get(Rec."Document Type",Rec."Document No.");
+        IF InvSetupNVX.Get() then;
+        if SalesHeader."Sell-to Customer No." <> InvSetupNVX."Composition Customer" then
+            exit; //is normal sales exit here
+        
+        IF not (Rec.Type in [Rec.Type::Item,Rec.Type::" "]) then
+            Error(WrongTypeErr);
     end;
 }
