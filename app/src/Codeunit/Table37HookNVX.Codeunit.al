@@ -45,14 +45,12 @@ codeunit 50001 "Table37HookNVX"
             exit;
         SalesHeader.Get(Rec."Document Type",Rec."Document No.");
         IF InvSetupNVX.Get() then;
-        if SalesHeader."Sell-to Customer No." <> InvSetupNVX."Composition Customer" then
-            exit; //is normal sales exit here
-        
-        IF not (Rec.Type in [Rec.Type::Item,Rec.Type::" "]) then
-            Error(WrongTypeErr);
-        
+        if (SalesHeader."Sell-to Customer No." = InvSetupNVX."Composition Customer") then
+            IF not (Rec.Type in [Rec.Type::Item,Rec.Type::" "]) then
+                Error(WrongTypeErr);        
         If not Item.get(Rec."No.") then
             exit;
+
         If not SalesHeaderNVX.Get(Rec."Document Type",Rec."Document No.") then begin
             SalesHeaderNVX.Init();
             SalesHeaderNVX."Document Type" := Rec."Document Type";
@@ -77,15 +75,17 @@ codeunit 50001 "Table37HookNVX"
                 Rec.Validate("Shortcut Dimension 1 Code",DimValueNVX."Shortcut Dimension 1 Code");
         end;
         //Get Dims from Header
-        IF SalesHeaderNVX."Shortcut Dimension 3 Code" <> '' then
-            SalesLineNVX."Shortcut Dimension 3 Code" := SalesHeaderNVX."Shortcut Dimension 3 Code"
-        else
-            IF Item."Inventory Value Zero" then
-                SalesLineNVX."Shortcut Dimension 3 Code" := InvSetupNVX."Comp Sect - Inv Value Zero";
+        if (SalesHeader."Sell-to Customer No." = InvSetupNVX."Composition Customer") then
+            IF SalesHeaderNVX."Shortcut Dimension 3 Code" <> '' then
+                SalesLineNVX."Shortcut Dimension 3 Code" := SalesHeaderNVX."Shortcut Dimension 3 Code"
+            else
+                IF Item."Inventory Value Zero" then
+                    SalesLineNVX."Shortcut Dimension 3 Code" := InvSetupNVX."Comp Sect - Inv Value Zero";
+
         IF Item."Inventory Value Zero" then
             DimMgt.ValidateShortcutDimValues(3,SalesLineNVX."Shortcut Dimension 3 Code",Rec."Dimension Set ID");
 
-        IF not Item."Inventory Value Zero" then begin
+        IF (not Item."Inventory Value Zero") and (SalesHeader."Sell-to Customer No." = InvSetupNVX."Composition Customer") then begin
             IF (SalesLineNVX."Shortcut Dimension 3 Code" = '') then
                 SalesLineNVX."Allocation Code" := SalesHeaderNVX."Allocation Code";
             SalesLineNVX."Comp Gen. Bus. Pst Grp WES" := SalesHeaderNVX."Comp Gen. Bus. Pst Grp WES";
@@ -111,8 +111,7 @@ codeunit 50001 "Table37HookNVX"
             exit;
         SalesHeader.Get(Rec."Document Type",Rec."Document No.");
         IF InvSetupNVX.Get() then;
-        if SalesHeader."Sell-to Customer No." <> InvSetupNVX."Composition Customer" then
-            exit; //is normal sales exit here
+
         If not Item.get(Rec."No.") then
             exit;
         If not SalesHeaderNVX.Get(Rec."Document Type",Rec."Document No.") then begin
@@ -139,20 +138,22 @@ codeunit 50001 "Table37HookNVX"
                 Rec.Validate("Shortcut Dimension 1 Code",DimValueNVX."Shortcut Dimension 1 Code");
         end;
         //Get Dims from Header
-        IF SalesHeaderNVX."Shortcut Dimension 3 Code" <> '' then
-            SalesLineNVX."Shortcut Dimension 3 Code" := SalesHeaderNVX."Shortcut Dimension 3 Code"
+        if (SalesHeader."Sell-to Customer No." = InvSetupNVX."Composition Customer") then
+            IF SalesHeaderNVX."Shortcut Dimension 3 Code" <> '' then
+                SalesLineNVX."Shortcut Dimension 3 Code" := SalesHeaderNVX."Shortcut Dimension 3 Code"
         else
             IF Item."Inventory Value Zero" then
                 SalesLineNVX."Shortcut Dimension 3 Code" := InvSetupNVX."Comp Sect - Inv Value Zero";
+
         IF Item."Inventory Value Zero" then
             DimMgt.ValidateShortcutDimValues(3,SalesLineNVX."Shortcut Dimension 3 Code",Rec."Dimension Set ID");
 
-        IF not Item."Inventory Value Zero" then begin
+        IF not Item."Inventory Value Zero" and (SalesHeader."Sell-to Customer No." = InvSetupNVX."Composition Customer") then begin
             IF (SalesLineNVX."Shortcut Dimension 1 Code" = '') then
                 SalesLineNVX."Allocation Code" := SalesHeaderNVX."Allocation Code";
             SalesLineNVX."Comp Gen. Bus. Pst Grp WES" := SalesHeaderNVX."Comp Gen. Bus. Pst Grp WES";
+            Rec.Validate("Gen. Bus. Posting Group",InvSetupNVX."Comp Gen. Bus. Pst Grp Fixed");
         end;
-        Rec.Validate("Gen. Bus. Posting Group",InvSetupNVX."Comp Gen. Bus. Pst Grp Fixed");
         SalesLineNVX.Modify();
     end;
 

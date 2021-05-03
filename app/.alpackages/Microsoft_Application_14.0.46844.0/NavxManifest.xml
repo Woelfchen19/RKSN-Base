@@ -1,9 +1,0 @@
-<Package xmlns="http://schemas.microsoft.com/navx/2015/manifest">
-  <App Id="84a3893f-929a-463a-af85-7db060bc22a0" Name="Application" Publisher="Microsoft" Brief="" Description="Application" Version="14.0.46844.0" CompatibilityId="3.0.6.19771" PrivacyStatement="" EULA="" Help="" HelpBaseUrl="" ContextSensitiveHelpUrl="" Url="" Logo="" Platform="1.0.0.0" Runtime="3.2" Target="Extension" ShowMyCode="False" />
-  <IdRanges>
-    <IdRange MinObjectId="1" MaxObjectId="2147483647" />
-  </IdRanges>
-  <Dependencies />
-  <ScreenShots />
-  <SupportedLocales />
-</Package>
