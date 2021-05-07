@@ -44,6 +44,16 @@ table 50039 "SalesHeaderNVX"
             Caption = 'Composition Gen. Bus. Posting Group WES', comment = 'DEA="Abfassung Steuerschlüssel WES"';
             TableRelation = "Gen. Business Posting Group".Code;
         }
+        field(30; "Transaction No."; Integer)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Transaction No.', comment = 'DEA="Transaktionsnummer"';
+        }
+        field(31; DoNotSplit; Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'No dimensional distribution', comment = 'DEA="Keine dimensionale Verteilung"';
+        }
         field(100; "Allocation Amount"; Decimal)
         {
             Caption = 'Allocation Amount', comment = 'DEA="Verteilungsbetrag"';

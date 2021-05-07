@@ -1190,6 +1190,11 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table DistrGenJnlLineNVX - Field Inv. Discount (LCY) - Property Caption</note>
           <target>Rechnungsrabatt (MW)</target>
         </trans-unit>
+        <trans-unit id="Table 4041820150 - Field 1386712063 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IsRetrospectPosting</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table DistrGenJnlLineNVX - Field IsRetrospectPosting - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4041820150 - Field 345735751 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Job Currency Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Währungscode Projekt"</note>
@@ -1501,6 +1506,24 @@
           <note from="Developer" annotates="general" priority="2">DEA="Umkehrbuchung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table DistrGenJnlLineNVX - Field Reversing Entry - Property Caption</note>
           <target>Umkehrbuchung</target>
+        </trans-unit>
+        <trans-unit id="Table 4041820150 - Field 1971121789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Restrospect Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="NACHGELAGERT Modul Verkauf"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table DistrGenJnlLineNVX - Field Sales Retrospect EntryNVX - Property Caption</note>
+          <target>NACHGELAGERT Modul Verkauf</target>
+        </trans-unit>
+        <trans-unit id="Table 4041820150 - Field 3905601987 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Source Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="QUELLPOSTEN Modul Verkauf"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table DistrGenJnlLineNVX - Field Sales Source EntryNVX - Property Caption</note>
+          <target>QUELLPOSTEN Modul Verkauf</target>
+        </trans-unit>
+        <trans-unit id="Table 4041820150 - Field 2281252205 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VERKAUF Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table DistrGenJnlLineNVX - Field Sales Transaction No.NVX - Property Caption</note>
+          <target>VERKAUF Transaktionsnummer</target>
         </trans-unit>
         <trans-unit id="Table 4041820150 - Field 3393883294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales/Purch. (LCY)</source>
@@ -5985,6 +6008,11 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineNVX - Field FixedGBPG - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 623263038 - Field 1386712063 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IsRetrospectPosting</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineNVX - Field IsRetrospectPosting - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 623263038 - Field 2704330142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Journal Batch Name</source>
           <note from="Developer" annotates="general" priority="2"/>
@@ -6183,6 +6211,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table InvoicePostBufferNVX - Field Purchase Shortcut Dimension 3 - Property Caption</note>
           <target>Shortcutdimensionscode 3</target>
         </trans-unit>
+        <trans-unit id="Table 3642273339 - Field 1971121789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Restrospect Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="NACHGELAGERT Modul Verkauf"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table InvoicePostBufferNVX - Field Sales Retrospect EntryNVX - Property Caption</note>
+          <target>NACHGELAGERT Modul Verkauf</target>
+        </trans-unit>
         <trans-unit id="Table 3642273339 - Field 2452334187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
@@ -6194,6 +6228,18 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table InvoicePostBufferNVX - Field Sales Shortcut Dimension 3 - Property Caption</note>
           <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="Table 3642273339 - Field 3905601987 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Source Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="QUELLPOSTEN Modul Verkauf"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table InvoicePostBufferNVX - Field Sales Source EntryNVX - Property Caption</note>
+          <target>QUELLPOSTEN Modul Verkauf</target>
+        </trans-unit>
+        <trans-unit id="Table 3642273339 - Field 2281252205 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VERKAUF Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table InvoicePostBufferNVX - Field Sales Transaction No.NVX - Property Caption</note>
+          <target>VERKAUF Transaktionsnummer</target>
         </trans-unit>
         <trans-unit id="Table 3642273339 - Field 305562489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tax Area Code</source>
@@ -8845,6 +8891,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderNVX - Field Document Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1733794865 - Field 2859055696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Keine dimensionale Verteilung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderNVX - Field DoNotSplit - Property Caption</note>
+          <target>Keine dimensionale Verteilung</target>
+        </trans-unit>
         <trans-unit id="Table 1733794865 - Field 2045127545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Interim Gen. Bus. Posting Group</source>
           <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
@@ -8861,6 +8913,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Abfassung Sparte"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderNVX - Field Shortcut Dimension 3 Code - Property Caption</note>
           <target>Abfassung Sparte</target>
+        </trans-unit>
+        <trans-unit id="Table 1733794865 - Field 3319631365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesHeaderNVX - Field Transaction No. - Property Caption</note>
+          <target>Transaktionsnummer</target>
         </trans-unit>
         <trans-unit id="Table 2343142090 - Field 2269940222 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Composition Gen. Bus. Posting Group WES</source>
@@ -8884,6 +8942,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Abfassung Sparte"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesInvoiceHeaderNVX - Field Shortcut Dimension 3 Code - Property Caption</note>
           <target>Abfassung Sparte</target>
+        </trans-unit>
+        <trans-unit id="Table 2343142090 - Field 3319631365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesInvoiceHeaderNVX - Field Transaction No. - Property Caption</note>
+          <target>Transaktionsnummer</target>
         </trans-unit>
         <trans-unit id="Table 3657852281 - Field 1152423399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Code</source>
@@ -12237,6 +12301,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Purchase Shortcut Dimension 3 CodeNVX - Property Caption</note>
           <target>Shortcutdimensionscode 3</target>
         </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 1971121789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Sales Restrospect Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="NACHGELAGERT Modul Verkauf"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Retrospect EntryNVX - Property Caption</note>
+          <target>NACHGELAGERT Modul Verkauf</target>
+        </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 568336664 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Shortcut Dimension 1 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
@@ -12248,6 +12318,18 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Shortcut Dimension 3 CodeNVX - Property Caption</note>
           <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 3905601987 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Sales Source Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="QUELLPOSTEN Modul Verkauf"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Source EntryNVX - Property Caption</note>
+          <target>QUELLPOSTEN Modul Verkauf</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 2281252205 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Sales Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VERKAUF Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Transaction No.NVX - Property Caption</note>
+          <target>VERKAUF Transaktionsnummer</target>
         </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 2185944783 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.</source>
@@ -12458,6 +12540,24 @@
           <note from="Developer" annotates="general" priority="2">DEA="Änderung Prod.Bu.Grp. Artikelkarte"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control Allow Item Prod.Post.Group Change NVX - Property Caption</note>
           <target>Änderung Prod.Bu.Grp. Artikelkarte</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 2583571545 - Field 1971121789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Sales Restrospect Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="NACHGELAGERT Modul Verkauf"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Sales Retrospect EntryNVX - Property Caption</note>
+          <target>NACHGELAGERT Modul Verkauf</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 2583571545 - Field 3905601987 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Sales Source Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="QUELLPOSTEN Modul Verkauf"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Sales Source EntryNVX - Property Caption</note>
+          <target>QUELLPOSTEN Modul Verkauf</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 2583571545 - Field 2281252205 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Sales Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VERKAUF Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Sales Transaction No.NVX - Property Caption</note>
+          <target>VERKAUF Transaktionsnummer</target>
         </trans-unit>
         <trans-unit id="TableExtension 2583571545 - Field 2185944783 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
           <source>Shortcut Dimension 8 Code</source>

@@ -76,7 +76,7 @@ table 50002 "InvSetupNVX"
             Caption = 'Composition Bal. WES', comment = 'DEA="Abfassung Entl. WES"';
             TableRelation = "G/L Account"."No.";
         }
-        field(105; "Composition Journal Name"; Code[20])
+        field(105; "Composition Journal Name"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'Composition Journal Name', comment = 'DEA="Abfassung Buchblattname"';
@@ -89,7 +89,7 @@ table 50002 "InvSetupNVX"
             CalcFormula = lookup ("Gen. Journal Batch".Description where (Name = field("Composition Journal Name"),"Journal Template Name" = const ('VERKAUF')));
             Editable = false;
         }
-        field(107; "Sales Journal Name"; Code[20])
+        field(107; "Sales Journal Name"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'Sales Journal Name', comment = 'DEA="Verkauf Buchblattname"';

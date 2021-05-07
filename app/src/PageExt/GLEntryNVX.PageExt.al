@@ -68,6 +68,27 @@ pageextension 50005 "GLEntryNVX" extends "General Ledger Entries"
                 Editable = false;
                 Caption = 'Deactivate dimensional distribution', comment = 'DEA="Verteilung deaktiviert"';
             }
+            field("Sales Transaction No.NVX"; "Sales Transaction No.NVX")
+            {
+                ApplicationArea = All;
+                Editable = false;
+                Caption = 'Sales Transaction No.', comment = 'DEA="VERKAUF Transaktionsnummer"';
+            }
+            field("Sales Source EntryNVX"; "Sales Source EntryNVX")
+            {
+                ApplicationArea = All;
+                Editable = false;
+                Caption = 'Sales Source Entry', comment = 'DEA="QUELLPOSTEN Modul Verkauf"';
+            }
+            field("Sales Retrospect EntryNVX"; "Sales Retrospect EntryNVX")
+            {
+                ApplicationArea = All;
+                Caption = 'Sales Restrospect Entry', comment = 'DEA="NACHGELAGERT Modul Verkauf"';
+            }
+            field("Transaction No.NVX"; Rec."Transaction No.")
+            {
+                ApplicationArea = All;
+            }
         }
     }
     var

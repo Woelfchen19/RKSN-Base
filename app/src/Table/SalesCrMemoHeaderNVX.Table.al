@@ -4,7 +4,7 @@ table 50042 "SalesCrMemoHeaderNVX"
     
     fields
     {
-        field(1; "No."; Code[20])
+        field(3; "No."; Code[20])
         {
             DataClassification = CustomerContent;
         }
@@ -37,7 +37,12 @@ table 50042 "SalesCrMemoHeaderNVX"
             DataClassification = CustomerContent;
             Caption = 'Composition Gen. Bus. Posting Group WES', comment = 'DEA="Abfassung Steuerschlüssel WES"';
             TableRelation = "Gen. Business Posting Group".Code;
-        }        
+        }
+        field(30; "Transaction No."; Integer)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Transaction No.', comment = 'DEA="Transaktionsnummer"';
+        }     
     }
 
     keys

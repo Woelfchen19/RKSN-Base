@@ -38,6 +38,12 @@ table 50041 "SalesInvoiceHeaderNVX"
             Caption = 'Composition Gen. Bus. Posting Group WES', comment = 'DEA="Abfassung Steuerschlüssel WES"';
             TableRelation = "Gen. Business Posting Group".Code;
         }
+        field(30; "Transaction No."; Integer)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Transaction No.', comment = 'DEA="Transaktionsnummer"';
+        }
+        
     }
 
     keys

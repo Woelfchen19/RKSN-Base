@@ -135,6 +135,21 @@ table 50033 "InvoicePostBufferNVX"
             DataClassification = CustomerContent;
             Caption = 'Deactivate dimensional distribution', comment = 'DEA="Verteilung deaktiviert"';
         }
+        field(50050; "Sales Transaction No.NVX"; Integer)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Sales Transaction No.', comment = 'DEA="VERKAUF Transaktionsnummer"';
+        }
+        field(50051; "Sales Source EntryNVX"; Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Sales Source Entry', comment = 'DEA="QUELLPOSTEN Modul Verkauf"';
+        }
+        field(50052; "Sales Retrospect EntryNVX"; Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Sales Restrospect Entry', comment = 'DEA="NACHGELAGERT Modul Verkauf"';
+        }
     }
       
     keys

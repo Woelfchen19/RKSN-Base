@@ -34,6 +34,10 @@ table 50020 "GenJnlLineNVX"
         {
             DataClassification = CustomerContent;
         }
+        field(32; IsRetrospectPosting; Boolean)
+        {
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

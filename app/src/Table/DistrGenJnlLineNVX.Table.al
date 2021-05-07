@@ -1243,6 +1243,25 @@ table 50018 "DistrGenJnlLineNVX"
             FieldClass = FlowField;
             CalcFormula = lookup ("Gen. Business Posting Group".Description where (Code = field("Gen. Bus. Posting Group")));
         }
+        field(50015; IsRetrospectPosting; Boolean)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(50020; "Sales Transaction No.NVX"; Integer)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Sales Transaction No.', comment = 'DEA="VERKAUF Transaktionsnummer"';
+        }
+        field(50021; "Sales Source EntryNVX"; Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Sales Source Entry', comment = 'DEA="QUELLPOSTEN Modul Verkauf"';
+        }
+        field(50022; "Sales Retrospect EntryNVX"; Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Sales Restrospect Entry', comment = 'DEA="NACHGELAGERT Modul Verkauf"';
+        }
     }
 
     keys

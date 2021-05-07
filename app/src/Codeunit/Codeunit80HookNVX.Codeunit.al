@@ -1,32 +1,32 @@
 codeunit 50009 "Codeunit80HookNVX"
 {
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterSalesInvHeaderInsert', '', false, false)]
-    local procedure TransferRecToPstdAccompaniedTableInvoice(SalesInvHeader: Record "Sales Invoice Header"; SalesHeader: Record "Sales Header")
-    var
-        SalesHeaderNVX: Record SalesHeaderNVX;
-        SalesInvoiceHeaderNVX: Record SalesInvoiceHeaderNVX;
-    begin
-        IF SalesHeaderNVX.get(SalesHeader."Document Type", SalesHeader."No.") then begin
-            SalesInvoiceHeaderNVX.Init();
-            SalesInvoiceHeaderNVX.TransferFields(SalesHeaderNVX);
-            SalesInvoiceHeaderNVX."No." := SalesInvHeader."No.";
-            SalesInvoiceHeaderNVX.Insert();
-        end;
-    end;
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterSalesInvHeaderInsert', '', false, false)]
+    // local procedure TransferRecToPstdAccompaniedTableInvoice(SalesInvHeader: Record "Sales Invoice Header"; SalesHeader: Record "Sales Header")
+    // var
+    //     SalesHeaderNVX: Record SalesHeaderNVX;
+    //     SalesInvoiceHeaderNVX: Record SalesInvoiceHeaderNVX;
+    // begin
+    //     IF SalesHeaderNVX.get(SalesHeader."Document Type", SalesHeader."No.") then begin
+    //         SalesInvoiceHeaderNVX.Init();
+    //         SalesInvoiceHeaderNVX.TransferFields(SalesHeaderNVX);
+    //         SalesInvoiceHeaderNVX."No." := SalesInvHeader."No.";
+    //         SalesInvoiceHeaderNVX.Insert();
+    //     end;
+    // end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterSalesCrMemoHeaderInsert', '', false, false)]
-    local procedure TransferRecToPstdAccompaniedTableCrMemo(SalesCrMemoHeader: Record "Sales Cr.Memo Header"; SalesHeader: Record "Sales Header")
-    var
-        SalesHeaderNVX: Record SalesHeaderNVX;
-        SalesCrMemoHeaderNVX: Record SalesCrMemoHeaderNVX;
-    begin
-        IF SalesHeaderNVX.get(SalesHeader."Document Type", SalesHeader."No.") then begin
-            SalesCrMemoHeaderNVX.Init();
-            SalesCrMemoHeaderNVX.TransferFields(SalesHeaderNVX);
-            SalesCrMemoHeaderNVX."No." := SalesCrMemoHeader."No.";
-            SalesCrMemoHeaderNVX.Insert();
-        end;
-    end;
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterSalesCrMemoHeaderInsert', '', false, false)]
+    // local procedure TransferRecToPstdAccompaniedTableCrMemo(SalesCrMemoHeader: Record "Sales Cr.Memo Header"; SalesHeader: Record "Sales Header")
+    // var
+    //     SalesHeaderNVX: Record SalesHeaderNVX;
+    //     SalesCrMemoHeaderNVX: Record SalesCrMemoHeaderNVX;
+    // begin
+    //     IF SalesHeaderNVX.get(SalesHeader."Document Type", SalesHeader."No.") then begin
+    //         SalesCrMemoHeaderNVX.Init();
+    //         SalesCrMemoHeaderNVX.TransferFields(SalesHeaderNVX);
+    //         SalesCrMemoHeaderNVX."No." := SalesCrMemoHeader."No.";
+    //         SalesCrMemoHeaderNVX.Insert();
+    //     end;
+    // end;
 
     // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforeSalesShptHeaderInsert', '', false, false)]
     // local procedure TransferRecToPstdAccompaniedTableShip(SalesShptHeader: Record "Sales Shipment Header"; SalesHeader: Record "Sales Header")
