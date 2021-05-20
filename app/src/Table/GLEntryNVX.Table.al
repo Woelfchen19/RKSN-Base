@@ -58,6 +58,21 @@ table 50016 "GLEntryNVX"
             DataClassification = CustomerContent;
             Caption = 'Deactivate dimensional distribution', comment = 'DEA="Verteilung deaktiviert"';
         }
+        field(50; "FA as Expense"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Fixed Asset as Expense', comment = 'DEA="Anlage als Aufwand"';
+        }
+        field(51; "FA Transaction No."; Integer)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Fixed Asset Transaction No.', comment = 'DEA="ANLAGE Transaktionsnummer"';
+        }
+        field(52; "G/L Account as Expense"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'G/L Account as Expense', comment = 'DEA="Sachkonto als Aufwand"';
+        }
     }
 
     keys

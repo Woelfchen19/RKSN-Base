@@ -61,6 +61,7 @@ pageextension 50005 "GLEntryNVX" extends "General Ledger Entries"
                 ApplicationArea = All;
                 Editable = false;
                 Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
+                TableRelation = VATPostingTypeNVX.Code;
             }
             field("Deactivate dimensional distributionNVX"; GLEntryNVX."Deactivate dimensional distr")
             {
@@ -83,11 +84,32 @@ pageextension 50005 "GLEntryNVX" extends "General Ledger Entries"
             field("Sales Retrospect EntryNVX"; "Sales Retrospect EntryNVX")
             {
                 ApplicationArea = All;
+                Editable = false;
                 Caption = 'Sales Restrospect Entry', comment = 'DEA="NACHGELAGERT Modul Verkauf"';
             }
             field("Transaction No.NVX"; Rec."Transaction No.")
             {
                 ApplicationArea = All;
+                Editable = false;
+            }
+            field("FA as ExpenseNVX"; GLEntryNVX."FA as Expense")
+            {
+                ApplicationArea = All;
+                Editable = false;
+                Caption = 'Fixed Asset as Expense', comment = 'DEA="Anlage als Aufwand"';
+            }
+            field("FA Transaction No.NVX"; GLEntryNVX."FA Transaction No.")
+            {
+                ApplicationArea = All;
+                Editable = false;
+                Caption = 'Fixed Asset Transaction No.', comment = 'DEA="ANLAGE Transaktionsnummer"';
+            }
+            field("G/L Account as ExpenseNVX"; GLEntryNVX."G/L Account as Expense")
+            {
+                ApplicationArea = All;
+                Editable = false;
+                Caption = 'G/L Account as Expense', comment = 'DEA="Sachkonto als Aufwand"';
+                TableRelation = "G/L Account"."No.";
             }
         }
     }

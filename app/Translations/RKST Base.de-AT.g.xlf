@@ -6116,6 +6116,24 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table GLEntryNVX - Field Entry No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2583571545 - Field 2552758879 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed Asset as Expense</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Anlage als Aufwand"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GLEntryNVX - Field FA as Expense - Property Caption</note>
+          <target>Anlage als Aufwand</target>
+        </trans-unit>
+        <trans-unit id="Table 2583571545 - Field 529590544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed Asset Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="ANLAGE Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GLEntryNVX - Field FA Transaction No. - Property Caption</note>
+          <target>ANLAGE Transaktionsnummer</target>
+        </trans-unit>
+        <trans-unit id="Table 2583571545 - Field 2585388561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Account as Expense</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sachkonto als Aufwand"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GLEntryNVX - Field G/L Account as Expense - Property Caption</note>
+          <target>Sachkonto als Aufwand</target>
+        </trans-unit>
         <trans-unit id="Table 2583571545 - Field 2045127545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Interim Gen. Bus. Posting Group</source>
           <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
@@ -7920,6 +7938,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Abfassung Sparte"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesCrMemoHeaderNVX - Field Shortcut Dimension 3 Code - Property Caption</note>
           <target>Abfassung Sparte</target>
+        </trans-unit>
+        <trans-unit id="Table 1119121856 - Field 3319631365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesCrMemoHeaderNVX - Field Transaction No. - Property Caption</note>
+          <target>Transaktionsnummer</target>
         </trans-unit>
         <trans-unit id="Table 169155759 - Field 1152423399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Code</source>
@@ -10268,6 +10292,22 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table UserSetupNVX - Field User ID - Property Caption</note>
           <target>Benutzer-ID</target>
         </trans-unit>
+        <trans-unit id="Table 3911360504 - Field 2434839038 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase VAT as Expense</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VATPostingSetupNVX - Field Purchase VAT as Expense - Property Caption</note>
+          <target>VST als Aufwand</target>
+        </trans-unit>
+        <trans-unit id="Table 3911360504 - Field 1844012642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VATPostingSetupNVX - Field VAT Bus. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3911360504 - Field 236064653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table VATPostingSetupNVX - Field VAT Prod. Posting Group - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2664610773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Posting Type</source>
           <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
@@ -12283,6 +12323,24 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Deactivate dimensional distributionNVX - Property Caption</note>
           <target>Verteilung deaktiviert</target>
         </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 1524795919 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Fixed Asset as Expense</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Anlage als Aufwand"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control FA as ExpenseNVX - Property Caption</note>
+          <target>Anlage als Aufwand</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 1199432760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Fixed Asset Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="ANLAGE Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control FA Transaction No.NVX - Property Caption</note>
+          <target>ANLAGE Transaktionsnummer</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 1142494321 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>G/L Account as Expense</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sachkonto als Aufwand"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control G/L Account as ExpenseNVX - Property Caption</note>
+          <target>Sachkonto als Aufwand</target>
+        </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 3455357081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Interim Gen. Bus. Posting Group</source>
           <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
@@ -12540,6 +12598,18 @@
           <note from="Developer" annotates="general" priority="2">DEA="Änderung Prod.Bu.Grp. Artikelkarte"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control Allow Item Prod.Post.Group Change NVX - Property Caption</note>
           <target>Änderung Prod.Bu.Grp. Artikelkarte</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1685173316 - Control 3251619654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 434101636">
+          <source>Purchase VAT as Expense</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VATPostingSetupCardNVX - Control PurchaseVATasExpenseNVX - Property Caption</note>
+          <target>VST als Aufwand</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3911360504 - Control 3251619654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4132487568">
+          <source>Purchase VAT as Expense</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VATPostingSetupNVX - Control PurchaseVATasExpenseNVX - Property Caption</note>
+          <target>VST als Aufwand</target>
         </trans-unit>
         <trans-unit id="TableExtension 2583571545 - Field 1971121789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
           <source>Sales Restrospect Entry</source>
