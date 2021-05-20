@@ -90,4 +90,27 @@ codeunit 50006 "Table39HookNVX"
         IF ShortcutDims[3] <> InvSetupNVX."Inventory Section" then
             Error(InvValueErr);
     end;
+
+
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnAfterValidateEvent', 'Qty. to Receive', false, false)]
+    local procedure CheckForPartialShipment(VAR Rec : Record "Purchase Line")
+    var 
+        Item: Record Item;
+        NoPartialShipmentErr: Label 'Partial shipments are not allowed.', comment = 'DEA="Teillieferungen sind bei nicht lagerbewerteten Artikeln im Modul Einkauf nicht zulässig."';
+    begin
+        IF Item.Get(Rec."No.") and (not Item."Inventory Value Zero") then
+            exit;
+        If Rec."Quantity (Base)" <> Rec."Qty. to Receive (Base)" then
+            Error(NoPartialShipmentErr);
+    end;
+
+
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnAfterValidateEvent', 'Type', false, false)]
+    local procedure CheckType(Rec: Record "Purchase Line")
+    var
+        TypeNotAllowedErr : Label 'Type %1 is not allowed,', Comment = 'DEA="Art %1 ist nicht erlaubt."';
+    begin
+        IF (Rec.Type in [Rec.Type::"Charge (Item)",Rec.Type::"Fixed Asset"]) then
+            Error(TypeNotAllowedErr,Rec.Type);
+    end;
 }

@@ -4679,6 +4679,24 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table FixedAssetNVX - Field No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 662889827 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Primärschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table FixedAssetSetupNVX - Field Primary Key - Property Caption</note>
+          <target>Primärschlüssel</target>
+        </trans-unit>
+        <trans-unit id="Table 662889827 - Field 1638613558 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT as Expense Journal Batch Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand Buch.-Blattname"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table FixedAssetSetupNVX - Field VAT as Expense Jnl Batch Name - Property Caption</note>
+          <target>VST als Aufwand Buch.-Blattname</target>
+        </trans-unit>
+        <trans-unit id="Table 662889827 - Field 887411570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT as Expense Journal Template Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand Buch.-Blattvorlagenname"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table FixedAssetSetupNVX - Field VAT as Expense Jnl Templ Name - Property Caption</note>
+          <target>VST als Aufwand Buch.-Blattvorlagenname</target>
+        </trans-unit>
         <trans-unit id="Table 338499675 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Code"</note>
@@ -10326,6 +10344,30 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table VATPostingTypeNVX - Field Description - Property Caption</note>
           <target>Beschreibung</target>
         </trans-unit>
+        <trans-unit id="Codeunit 1787021016 - Method 2999721956 - NamedType 883549673" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This shipment has already been reversed</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Diese Lieferung wurde bereits storniert."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckPurchaseReceipt - NamedType AlreadyReversedErr</note>
+          <target>Diese Lieferung wurde bereits storniert.</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 1787021016 - Method 2999721956 - NamedType 645313898" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This receipt has already been invoiced. Undo Receipt can be applied only to posted, but not invoiced receipts.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dieser Wareneingang wurde bereits fakturiert. 'Wareneingang stornieren' kann nur auf gebuchte, aber nicht auf fakturierte Wareneingänge angewendet werden."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckPurchaseReceipt - NamedType AlreadyInvoicedErr</note>
+          <target>Dieser Wareneingang wurde bereits fakturiert. 'Wareneingang stornieren' kann nur auf gebuchte, aber nicht auf fakturierte Wareneingänge angewendet werden.</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 1787021016 - Method 2444159113 - NamedType 883549673" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This shipment has already been reversed</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Diese Lieferung wurde bereits storniert."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckSalesShipment - NamedType AlreadyReversedErr</note>
+          <target>Diese Lieferung wurde bereits storniert.</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 1787021016 - Method 2444159113 - NamedType 645313898" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This shipment has already been invoiced. Undo Shipment can be applied only to posted, but not invoiced shipments.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dieser Warenausgang wurde bereits fakturiert. 'Warenausgang stornieren' kann nur auf gebuchte, aber nicht auf fakturierte Warenausgänge angewendet werden."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckSalesShipment - NamedType AlreadyInvoicedErr</note>
+          <target>Dieser Warenausgang wurde bereits fakturiert. 'Warenausgang stornieren' kann nur auf gebuchte, aber nicht auf fakturierte Warenausgänge angewendet werden.</target>
+        </trans-unit>
         <trans-unit id="Codeunit 2241308083 - Method 1487222207 - NamedType 4220959294" size-unit="char" translate="yes" xml:space="preserve">
           <source>You are not allowed to use this Product Posting Group in this context. It belongs to the Datawarehouse</source>
           <note from="Developer" annotates="general" priority="2">DEA="Es ist nicht möglich, diese Produktbuchungsgruppe zuzuordnen, da diese zum Datawarehouse gehört!"</note>
@@ -10350,11 +10392,23 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table32HookNVX - Method VerifyOnInventory - NamedType IsNotOnInventoryErr</note>
           <target>Sie haben keine ausreichende Menge des Artikels %1 auf Lager.</target>
         </trans-unit>
+        <trans-unit id="Codeunit 4009923459 - Method 2663101026 - NamedType 3960831401" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Partial shipments are not allowed.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Teillieferungen sind im Modul Verkauf nicht zulässig."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckForPartialShipment - NamedType NoPartialShipmentErr</note>
+          <target>Teillieferungen sind im Modul Verkauf nicht zulässig.</target>
+        </trans-unit>
         <trans-unit id="Codeunit 4009923459 - Method 1826875482 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
           <source>Only the types 'Item' or 'Comment' are allowed.</source>
           <note from="Developer" annotates="general" priority="2">DEA="In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckType - NamedType WrongTypeErr</note>
           <target>In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 4009923459 - Method 1826875482 - NamedType 707631556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type %1 is not allowed,</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Art %1 ist nicht erlaubt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckType - NamedType TypeNotAllowedErr</note>
+          <target>Art %1 ist nicht erlaubt.</target>
         </trans-unit>
         <trans-unit id="Codeunit 4009923459 - Method 1617669554 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
           <source>Only the types 'Item' or 'Comment' are allowed.</source>
@@ -10373,6 +10427,18 @@
           <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table39HookNVX - Method CheckForInventorySetupDimensions - NamedType InvValueErr</note>
           <target>Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 754220121 - Method 2663101026 - NamedType 3960831401" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Partial shipments are not allowed.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Teillieferungen sind bei nicht lagerbewerteten Artikeln im Modul Einkauf nicht zulässig."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table39HookNVX - Method CheckForPartialShipment - NamedType NoPartialShipmentErr</note>
+          <target>Teillieferungen sind bei nicht lagerbewerteten Artikeln im Modul Einkauf nicht zulässig.</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 754220121 - Method 1826875482 - NamedType 707631556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type %1 is not allowed,</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Art %1 ist nicht erlaubt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table39HookNVX - Method CheckType - NamedType TypeNotAllowedErr</note>
+          <target>Art %1 ist nicht erlaubt.</target>
         </trans-unit>
         <trans-unit id="Codeunit 3690295394 - Method 3579618997 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup!</source>
@@ -12155,6 +12221,24 @@
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FALedgerEntriesNVX - Control Allocation CodeNVX - Property Caption</note>
           <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 662889827 - Control 3908421974 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 594930339">
+          <source>VAT as Expense</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FixedAssetSetupNVX - Control Purchase VAT as ExpenseNVX - Property Caption</note>
+          <target>VST als Aufwand</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 662889827 - Control 3863626310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 594930339">
+          <source>VAT as Expense Journal Batch Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand Buch.-Blattname"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FixedAssetSetupNVX - Control VAT as Expense Jnl Batch Name NVX - Property Caption</note>
+          <target>VST als Aufwand Buch.-Blattname</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 662889827 - Control 3367939778 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 594930339">
+          <source>VAT as Expense Journal Template Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand Buch.-Blattvorlagenname"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FixedAssetSetupNVX - Control VAT as Expense Jnl Templ Name NVX - Property Caption</note>
+          <target>VST als Aufwand Buch.-Blattvorlagenname</target>
         </trans-unit>
         <trans-unit id="PageExtension 338499675 - Method 4177352842 - NamedType 906389811" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 338499675">
           <source>You must specify all VAT Posting Groups for Gen. Business Posting Group %1</source>

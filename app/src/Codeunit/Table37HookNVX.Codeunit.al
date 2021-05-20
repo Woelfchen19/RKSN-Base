@@ -47,7 +47,7 @@ codeunit 50001 "Table37HookNVX"
         IF InvSetupNVX.Get() then;
         if (SalesHeader."Sell-to Customer No." = InvSetupNVX."Composition Customer") then
             IF not (Rec.Type in [Rec.Type::Item,Rec.Type::" "]) then
-                Error(WrongTypeErr);        
+                Error(WrongTypeErr);
         If not Item.get(Rec."No.") then
             exit;
 
@@ -163,15 +163,29 @@ codeunit 50001 "Table37HookNVX"
         SalesHeader: Record "Sales Header";
         InvSetupNVX: Record InvSetupNVX;
         WrongTypeErr: Label 'Only the types ''Item'' or ''Comment'' are allowed.', comment = 'DEA="In einer Abfassung können sie nur Art ''Artikel'' oder ''leer'' wählen"';
+        TypeNotAllowedErr : Label 'Type %1 is not allowed,', Comment = 'DEA="Art %1 ist nicht erlaubt."';
     begin
         IF Rec.IsTemporary or (Rec."Document Type" <> Rec."Document Type"::Order) or (Rec."Line No." = 0) then
             exit;
         SalesHeader.Get(Rec."Document Type",Rec."Document No.");
         IF InvSetupNVX.Get() then;
-        if SalesHeader."Sell-to Customer No." <> InvSetupNVX."Composition Customer" then
+        if SalesHeader."Sell-to Customer No." <> InvSetupNVX."Composition Customer" then begin
+            IF (Rec.Type in [Rec.Type::"Charge (Item)",Rec.Type::"Fixed Asset",Rec.type::Resource]) then
+                Error(TypeNotAllowedErr,Rec.Type);
             exit; //is normal sales exit here
+        end;
+            
         
         IF not (Rec.Type in [Rec.Type::Item,Rec.Type::" "]) then
             Error(WrongTypeErr);
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterValidateEvent', 'Qty. to Ship', false, false)]
+    local procedure CheckForPartialShipment(VAR Rec : Record "Sales Line")
+    var 
+        NoPartialShipmentErr: Label 'Partial shipments are not allowed.', comment = 'DEA="Teillieferungen sind im Modul Verkauf nicht zulässig."';
+    begin
+        If Rec."Quantity (Base)" <> Rec."Qty. to Ship (Base)" then
+            Error(NoPartialShipmentErr);
     end;
 }

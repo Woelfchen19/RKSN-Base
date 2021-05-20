@@ -8898,6 +8898,26 @@
           <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table VATPostingTypeNVX - Field Description - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1787021016 - Method 2999721956 - NamedType 883549673" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This shipment has already been reversed</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Diese Lieferung wurde bereits storniert."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckPurchaseReceipt - NamedType AlreadyReversedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1787021016 - Method 2999721956 - NamedType 645313898" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This receipt has already been invoiced. Undo Receipt can be applied only to posted, but not invoiced receipts.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dieser Wareneingang wurde bereits fakturiert. 'Wareneingang stornieren' kann nur auf gebuchte, aber nicht auf fakturierte Wareneingänge angewendet werden."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckPurchaseReceipt - NamedType AlreadyInvoicedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1787021016 - Method 2444159113 - NamedType 883549673" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This shipment has already been reversed</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Diese Lieferung wurde bereits storniert."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckSalesShipment - NamedType AlreadyReversedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1787021016 - Method 2444159113 - NamedType 645313898" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This shipment has already been invoiced. Undo Shipment can be applied only to posted, but not invoiced shipments.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dieser Warenausgang wurde bereits fakturiert. 'Warenausgang stornieren' kann nur auf gebuchte, aber nicht auf fakturierte Warenausgänge angewendet werden."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckSalesShipment - NamedType AlreadyInvoicedErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 2241308083 - Method 1487222207 - NamedType 4220959294" size-unit="char" translate="yes" xml:space="preserve">
           <source>You are not allowed to use this Product Posting Group in this context. It belongs to the Datawarehouse</source>
           <note from="Developer" annotates="general" priority="2">DEA="Es ist nicht möglich, diese Produktbuchungsgruppe zuzuordnen, da diese zum Datawarehouse gehört!"</note>
@@ -8918,10 +8938,20 @@
           <note from="Developer" annotates="general" priority="2">DEA="Sie haben keine ausreichende Menge des Artikels %1 auf Lager."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table32HookNVX - Method VerifyOnInventory - NamedType IsNotOnInventoryErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 4009923459 - Method 2663101026 - NamedType 3960831401" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Partial shipments are not allowed.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Teillieferungen sind im Modul Verkauf nicht zulässig."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckForPartialShipment - NamedType NoPartialShipmentErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 4009923459 - Method 1826875482 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
           <source>Only the types 'Item' or 'Comment' are allowed.</source>
           <note from="Developer" annotates="general" priority="2">DEA="In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckType - NamedType WrongTypeErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4009923459 - Method 1826875482 - NamedType 707631556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type %1 is not allowed,</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Art %1 ist nicht erlaubt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckType - NamedType TypeNotAllowedErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 4009923459 - Method 1617669554 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
           <source>Only the types 'Item' or 'Comment' are allowed.</source>
@@ -8937,6 +8967,16 @@
           <source>This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., </source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table39HookNVX - Method CheckForInventorySetupDimensions - NamedType InvValueErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 754220121 - Method 2663101026 - NamedType 3960831401" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Partial shipments are not allowed.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Teillieferungen sind bei nicht lagerbewerteten Artikeln im Modul Einkauf nicht zulässig."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table39HookNVX - Method CheckForPartialShipment - NamedType NoPartialShipmentErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 754220121 - Method 1826875482 - NamedType 707631556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type %1 is not allowed,</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Art %1 ist nicht erlaubt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table39HookNVX - Method CheckType - NamedType TypeNotAllowedErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3690295394 - Method 3579618997 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup!</source>
