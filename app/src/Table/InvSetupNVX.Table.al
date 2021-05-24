@@ -114,6 +114,30 @@ table 50002 "InvSetupNVX"
             Caption = 'Sales Bal. WES', comment = 'DEA="Verkauf Entl. WES"';
             TableRelation = "G/L Account"."No.";
         }
+        field(150; "Vend./Cust. Dim 1"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(1));
+            Caption = 'Vendor/Customer postings Dimension 1', comment = 'DEA="Dim. 1 Personenkonten Buchungsgruppen"';
+        }
+        field(151; "Vend./Cust. Dim 2"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(2));
+            Caption = 'Vendor/Customer postings Dimension 2', comment = 'DEA="Dim. 2 Personenkonten Buchungsgruppen"';
+        }
+        field(152; "Vend./Cust. Dim 3"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(3));
+            Caption = 'Vendor/Customer postings Dimension 3', comment = 'DEA="Dim. 3 Personenkonten Buchungsgruppen"';
+        }
+        field(153; "Vend./Cust. Dim Set ID"; Integer)
+        {
+            DataClassification = CustomerContent;
+            Editable = false;
+            Caption = 'Vendor/Customer Dimension Set-ID', comment = 'DEA="Dim. Personenkonten Buchungsgruppen Dimension Set ID"';
+        }
     }
 
     keys
@@ -123,4 +147,38 @@ table 50002 "InvSetupNVX"
             Clustered = true;
         }
     }
+
+    procedure GetDimSetID()
+    var
+        DimSetEntry: Record "Dimension Set Entry" temporary;
+        GLSetup: Record "General Ledger Setup";
+    begin
+        IF DimSetEntry.IsTemporary then
+            DimSetEntry.DeleteAll();
+        GLSetup.Get();
+        IF "Vend./Cust. Dim 1" <> '' then begin
+            DimSetEntry.Init();
+            DimSetEntry."Dimension Set ID" := 0;
+            DimSetEntry.Validate("Dimension Code",GLSetup."Global Dimension 1 Code");
+            DimSetEntry.Validate("Dimension Value Code","Vend./Cust. Dim 1");
+            DimSetEntry.Insert();
+        end;
+        IF "Vend./Cust. Dim 2" <> '' then begin
+            DimSetEntry.Init();
+            DimSetEntry."Dimension Set ID" := 0;
+            DimSetEntry.Validate("Dimension Code",GLSetup."Global Dimension 2 Code");
+            DimSetEntry.Validate("Dimension Value Code","Vend./Cust. Dim 2");
+            DimSetEntry.Insert();
+        end;
+        IF "Vend./Cust. Dim 3" <> '' then begin
+            DimSetEntry.Init();
+            DimSetEntry."Dimension Set ID" := 0;
+            DimSetEntry.Validate("Dimension Code",GLSetup."Shortcut Dimension 3 Code");
+            DimSetEntry.Validate("Dimension Value Code","Vend./Cust. Dim 3");
+            DimSetEntry.Insert();
+        end;
+
+        "Vend./Cust. Dim Set ID" := DimSetEntry.GetDimensionSetID(DimSetEntry);
+        Modify();
+    end;
 }

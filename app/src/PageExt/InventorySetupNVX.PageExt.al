@@ -64,7 +64,55 @@ pageextension 50004 "InventorySetupNVX" extends "Inventory Setup"
                 begin
                     InvSetupNVX.Modify();
                 end;
-            }                     
+            }             
+            field("Vend./Cust. Dim 1NVX"; InvSetupNVX."Vend./Cust. Dim 1")
+            {
+                ApplicationArea = All;
+                TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(1));
+                Caption = 'Vendor/Customer postings Dimension 1', comment = 'DEA="Dim. 1 Personenkonten Buchungsgruppen"';
+                trigger OnValidate()
+                begin
+                    InvSetupNVX.Modify();
+                    InvSetupNVX.GetDimSetID();
+                    CurrPage.Update();
+                end;
+            }
+            field("Vend./Cust. Dim 2NVX"; InvSetupNVX."Vend./Cust. Dim 2")
+            {
+                ApplicationArea = All;
+                TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(2));
+                Caption = 'Vendor/Customer postings Dimension 2', comment = 'DEA="Dim. 2 Personenkonten Buchungsgruppen"';
+                trigger OnValidate()
+                begin
+                    InvSetupNVX.Modify();
+                    InvSetupNVX.GetDimSetID();
+                    CurrPage.Update();
+                end;
+            }
+            field("Vend./Cust. Dim 3NVX"; InvSetupNVX."Vend./Cust. Dim 3")
+            {
+                ApplicationArea = All;
+                TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(3));
+                Caption = 'Vendor/Customer postings Dimension 3', comment = 'DEA="Dim. 3 Personenkonten Buchungsgruppen"';
+                trigger OnValidate()
+                begin
+                    InvSetupNVX.Modify();
+                    InvSetupNVX.GetDimSetID();
+                    CurrPage.Update();
+                end;
+            }
+            field("Vend./Cust. Dim Set IDNVX"; InvSetupNVX."Vend./Cust. Dim Set ID")
+            {
+                ApplicationArea = All;
+                Editable = false;
+                Caption = 'Vendor/Customer Dimension Set-ID', comment = 'DEA="Dim. Personenkonten Buchungsgruppen Dimension Set ID"';
+                trigger OnValidate()
+                begin
+                    InvSetupNVX.Modify();
+                    InvSetupNVX.GetDimSetID();
+                    CurrPage.Update();
+                end;
+            }
         }
         addlast(Content)
         {

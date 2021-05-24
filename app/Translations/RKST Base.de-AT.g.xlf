@@ -6431,6 +6431,30 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table InvSetupNVX - Field Section - Inventory Value Zero - Property Caption</note>
           <target>EK und VK nicht lagerbewertet Sparte</target>
         </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 3355874602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor/Customer postings Dimension 1</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim. 1 Personenkonten Buchungsgruppen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table InvSetupNVX - Field Vend./Cust. Dim 1 - Property Caption</note>
+          <target>Dim. 1 Personenkonten Buchungsgruppen</target>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 1442784751 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor/Customer postings Dimension 2</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim. 2 Personenkonten Buchungsgruppen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table InvSetupNVX - Field Vend./Cust. Dim 2 - Property Caption</note>
+          <target>Dim. 2 Personenkonten Buchungsgruppen</target>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 2080481368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor/Customer postings Dimension 3</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim. 3 Personenkonten Buchungsgruppen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table InvSetupNVX - Field Vend./Cust. Dim 3 - Property Caption</note>
+          <target>Dim. 3 Personenkonten Buchungsgruppen</target>
+        </trans-unit>
+        <trans-unit id="Table 2780653954 - Field 1723519444 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor/Customer Dimension Set-ID</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim. Personenkonten Buchungsgruppen Dimension Set ID"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table InvSetupNVX - Field Vend./Cust. Dim Set ID - Property Caption</note>
+          <target>Dim. Personenkonten Buchungsgruppen Dimension Set ID</target>
+        </trans-unit>
         <trans-unit id="Table 513384087 - Field 245901840 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Activation</source>
           <note from="Developer" annotates="general" priority="2">DEA="Aktivierung"</note>
@@ -12532,6 +12556,30 @@
           <note from="Developer" annotates="general" priority="2">DEA="EK und VK nicht lagerbewertet Sparte"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension InventorySetupNVX - Control Section - Inventory Value ZeroNVX - Property Caption</note>
           <target>EK und VK nicht lagerbewertet Sparte</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 2533046242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1180040559">
+          <source>Vendor/Customer postings Dimension 1</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim. 1 Personenkonten Buchungsgruppen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension InventorySetupNVX - Control Vend./Cust. Dim 1NVX - Property Caption</note>
+          <target>Dim. 1 Personenkonten Buchungsgruppen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 1752999455 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1180040559">
+          <source>Vendor/Customer postings Dimension 2</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim. 2 Personenkonten Buchungsgruppen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension InventorySetupNVX - Control Vend./Cust. Dim 2NVX - Property Caption</note>
+          <target>Dim. 2 Personenkonten Buchungsgruppen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 552958304 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1180040559">
+          <source>Vendor/Customer postings Dimension 3</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim. 3 Personenkonten Buchungsgruppen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension InventorySetupNVX - Control Vend./Cust. Dim 3NVX - Property Caption</note>
+          <target>Dim. 3 Personenkonten Buchungsgruppen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3395455879 - Control 2961372956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1180040559">
+          <source>Vendor/Customer Dimension Set-ID</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim. Personenkonten Buchungsgruppen Dimension Set ID"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension InventorySetupNVX - Control Vend./Cust. Dim Set IDNVX - Property Caption</note>
+          <target>Dim. Personenkonten Buchungsgruppen Dimension Set ID</target>
         </trans-unit>
         <trans-unit id="PageExtension 3395455879 - Control 1749522260 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1180040559">
           <source>Composition and Sales</source>
