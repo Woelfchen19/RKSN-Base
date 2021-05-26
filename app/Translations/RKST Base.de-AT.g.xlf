@@ -135,6 +135,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table AllocCodeRespCenterNVX - Field Resp. Center - Property Caption</note>
           <target>Zuständigkeitseinheitencode</target>
         </trans-unit>
+        <trans-unit id="Table 3870134522 - Field 1152423399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BankAccountLedgerEntryNVX - Field Allocation Code - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="Table 3870134522 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BankAccountLedgerEntryNVX - Field Entry No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1676099715 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
@@ -12119,6 +12130,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Zielartikelnr."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control TargetItemNo - Property Caption</note>
           <target>Zielartikelnr.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2935462756 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2591587468">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountLedgerEntriesNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
         </trans-unit>
         <trans-unit id="PageExtension 586387857 - Control 100781510 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3105459369">
           <source>Discount Dimension Detection</source>
