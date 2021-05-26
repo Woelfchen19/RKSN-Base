@@ -16,11 +16,8 @@ pageextension 50013 BankAccountLedgerEntriesNVX extends "Bank Account Ledger Ent
     
     trigger OnAfterGetRecord()
     begin
-        IF not BankAccountLedgerEntryNVX.get("Entry No.") then begin
+        IF not BankAccountLedgerEntryNVX.get("Entry No.") then
             BankAccountLedgerEntryNVX.Init();
-            BankAccountLedgerEntryNVX."Entry No." := Rec."Entry No.";
-            BankAccountLedgerEntryNVX.Insert();
-        end;
     end;
 
     var
