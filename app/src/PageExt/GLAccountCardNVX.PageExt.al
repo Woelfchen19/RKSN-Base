@@ -29,7 +29,7 @@ pageextension 50028 "GLAccountCardNVX" extends "G/L Account Card"
                     GBPGRec.Reset();
                     repeat
                         if GenBsnPstGrpNVX.Get(GBPGRec.Code) and GenBsnPstGrpNVX."Filter G/L Account" then
-                        GBPGRec.Mark(true);
+                            GBPGRec.Mark(true);
                     until GBPGRec.Next() = 0;
                     GBPGRec.MarkedOnly(true);
                     GBPGPage.SetRecord(GBPGRec);
@@ -37,9 +37,16 @@ pageextension 50028 "GLAccountCardNVX" extends "G/L Account Card"
                     GBPGPage.LookupMode(true);
                     if GBPGPage.RunModal() = "Action"::LookupOK then begin
                         GBPGPage.GetRecord(GBPGRec);
-                        Rec.Validate("Gen. Bus. Posting Group",GBPGRec.Code);
+                        Rec.Validate("Gen. Bus. Posting Group", GBPGRec.Code);
                     end;
                 end;
+            }
+        }
+        addafter(Blocked)
+        {
+            field("Hidden NVX"; "Hidden NVX")
+            {
+                ApplicationArea = All;
             }
         }
         addlast(General)
@@ -77,7 +84,28 @@ pageextension 50028 "GLAccountCardNVX" extends "G/L Account Card"
             }
         }
     }
-
+    actions
+    {
+        addlast(Navigation)
+        {
+            action(NCBClassificationNVX)
+            {
+                ApplicationArea = All;
+                Caption = 'Classification', comment = 'DEA="Gliederungsgruppen"';
+                Image = ViewDetails;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                trigger OnAction();
+                var
+                    NCBCLassification: Record "NCB Classification G/L Acc.";
+                begin
+                    NCBCLassification.SetRange("G/L Account No.", rec."No.");
+                    page.RunModal(1011161, NCBCLassification)
+                end;
+            }
+        }
+    }
     var
         GLAccountNVX: Record GLAccountNVX;
         PageEditable: Boolean;

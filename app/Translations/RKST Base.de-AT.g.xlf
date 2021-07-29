@@ -6027,6 +6027,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineArchiveNVX - Field VAT Registration No. - Property Caption</note>
           <target>USt-IdNr.</target>
         </trans-unit>
+        <trans-unit id="Table 623263038 - Field 1152423399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineNVX - Field Allocation Code - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
         <trans-unit id="Table 623263038 - Field 2859055696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>DoNotSplit</source>
           <note from="Developer" annotates="general" priority="2"/>
@@ -12137,6 +12143,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountLedgerEntriesNVX - Control Allocation CodeNVX - Property Caption</note>
           <target>Verteilungscode</target>
         </trans-unit>
+        <trans-unit id="PageExtension 586387857 - Action 3878433627 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3105459369">
+          <source>Classification</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gliederungsgruppen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ChartOfAccountsNVX - Action NCBClassificationNVX - Property Caption</note>
+          <target>Gliederungsgruppen</target>
+        </trans-unit>
         <trans-unit id="PageExtension 586387857 - Control 100781510 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3105459369">
           <source>Discount Dimension Detection</source>
           <note from="Developer" annotates="general" priority="2">DEA="Skonto-Dim.Findung"</note>
@@ -12411,6 +12423,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Ohne Lagerbewertung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GenPrdPstGrpNVX - Control InventoryValueZeroNVX - Property Caption</note>
           <target>Ohne Lagerbewertung</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 989769378 - Action 3878433627 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4219821699">
+          <source>Classification</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gliederungsgruppen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLAccountCardNVX - Action NCBClassificationNVX - Property Caption</note>
+          <target>Gliederungsgruppen</target>
         </trans-unit>
         <trans-unit id="PageExtension 989769378 - Control 100781510 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4219821699">
           <source>Discount Dimension Detection</source>
@@ -12759,6 +12777,18 @@
           <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VATPostingSetupNVX - Control PurchaseVATasExpenseNVX - Property Caption</note>
           <target>VST als Aufwand</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1715217982 - Field 2070468310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4274826855">
+          <source>Hidden</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sachkonto ausblenden"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccountNVX - Field Hidden NVX - Property Caption</note>
+          <target>Sachkonto ausblenden</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1715217982 - Field 2070468310 - Method 2126772001 - NamedType 1314787184" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1715217982">
+          <source>You can not hide the G/L Account because Balance ist &lt;&gt; 0.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Das Sachkonto kann nicht ausgeblendet werden, weil der Saldo &lt;&gt;0 ist!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccountNVX - Field Hidden NVX - Method OnValidate - NamedType Balance_Err</note>
+          <target>Das Sachkonto kann nicht ausgeblendet werden, weil der Saldo &lt;&gt;0 ist!</target>
         </trans-unit>
         <trans-unit id="TableExtension 2583571545 - Field 1971121789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
           <source>Sales Restrospect Entry</source>
