@@ -259,7 +259,7 @@ report 50000 "ItemCopyNVX"
           DialogTxt[26] + DialogTxt[27] + DialogTxt[28] + DialogTxt[29] + DialogTxt[30],
           Item."No.",InItem."No.");
 
-        Window.CLOSE;
+        Window.CLOSE();
 
         CopySuccessful := TRUE;
     end;
@@ -431,7 +431,7 @@ report 50000 "ItemCopyNVX"
           "Created From Nonstock Item" := FALSE;
           INSERT();
         END;
-        EndDialog;
+        EndDialog();
     end;
 
     local procedure CopyItemPicture(FromItem : Record "Item";var ToItem : Record "Item");
@@ -454,15 +454,15 @@ report 50000 "ItemCopyNVX"
 
         CommentLine.SETRANGE("Table Name",CommentLine."Table Name"::Item);
         CommentLine.SETRANGE("No.",FromItemNo);
-        IF CommentLine.FINDSET THEN BEGIN
+        IF CommentLine.FINDSET() THEN BEGIN
           InitDialog(Text013);
           REPEAT
             CommentLine."No." := ToItemNo;
             CommentLine.INSERT();
             CommentLine."No." := FromItemNo;
-            UpdateDialog;
+            UpdateDialog();
           UNTIL CommentLine.Next() = 0;
-          EndDialog;
+          EndDialog();
         END;
     end;
 
@@ -472,15 +472,15 @@ report 50000 "ItemCopyNVX"
     begin
         IF CopyUnitOfMeasure THEN BEGIN
           ItemUnitOfMeasure.SETRANGE("Item No.",FromItem."No.");
-          IF ItemUnitOfMeasure.FINDSET THEN BEGIN
+          IF ItemUnitOfMeasure.FINDSET() THEN BEGIN
             InitDialog(Text014);
             REPEAT
               ItemUnitOfMeasure."Item No." := ToItem."No.";
               ItemUnitOfMeasure.INSERT();
               ItemUnitOfMeasure."Item No." := FromItem."No.";
-              UpdateDialog;
+              UpdateDialog();
             UNTIL ItemUnitOfMeasure.Next() = 0;
-            EndDialog;
+            EndDialog();
           END;
         END ELSE
           IF CopyGenItemInfo THEN BEGIN
@@ -500,15 +500,15 @@ report 50000 "ItemCopyNVX"
           EXIT;
 
         ItemVariant.SETRANGE("Item No.",FromItemNo);
-        IF ItemVariant.FINDSET THEN BEGIN
+        IF ItemVariant.FINDSET() THEN BEGIN
           InitDialog(Text015);
           REPEAT
             ItemVariant."Item No." := ToItemNo;
             ItemVariant.INSERT();
             ItemVariant."Item No." := FromItemNo;
-            UpdateDialog;
+            UpdateDialog();
           UNTIL ItemVariant.Next() = 0;
-          EndDialog;
+          EndDialog();
         END;
     end;
 
@@ -520,15 +520,15 @@ report 50000 "ItemCopyNVX"
         ItemTranslation.SETRANGE("Item No.",FromItemNo);
         IF NOT CopyVariants THEN
           ItemTranslation.SETRANGE("Variant Code",'');
-        IF ItemTranslation.FINDSET THEN BEGIN
+        IF ItemTranslation.FINDSET() THEN BEGIN
           InitDialog(Text016);
           REPEAT
             ItemTranslation."Item No." := ToItemNo;
             ItemTranslation.INSERT();
             ItemTranslation."Item No." := FromItemNo;
-            UpdateDialog;
+            UpdateDialog();
           UNTIL ItemTranslation.Next() = 0;
-          EndDialog;
+          EndDialog();
         END;
     end;
 
@@ -542,14 +542,14 @@ report 50000 "ItemCopyNVX"
 
         ExtendedTextHeader.SETRANGE("Table Name",ExtendedTextHeader."Table Name"::Item);
         ExtendedTextHeader.SETRANGE("No.",FromItemNo);
-        IF ExtendedTextHeader.FINDSET THEN BEGIN
+        IF ExtendedTextHeader.FINDSET() THEN BEGIN
           InitDialog(Text017);
           REPEAT
             ExtendedTextLine.SETRANGE("Table Name",ExtendedTextHeader."Table Name");
             ExtendedTextLine.SETRANGE("No.",ExtendedTextHeader."No.");
             ExtendedTextLine.SETRANGE("Language Code",ExtendedTextHeader."Language Code");
             ExtendedTextLine.SETRANGE("Text No.",ExtendedTextHeader."Text No.");
-            IF ExtendedTextLine.FINDSET THEN
+            IF ExtendedTextLine.FINDSET() THEN
               REPEAT
                 ExtendedTextLine."No." := ToItemNo;
                 ExtendedTextLine.INSERT();
@@ -559,9 +559,9 @@ report 50000 "ItemCopyNVX"
             ExtendedTextHeader."No." := ToItemNo;
             ExtendedTextHeader.INSERT();
             ExtendedTextHeader."No." := FromItemNo;
-            UpdateDialog;
+            UpdateDialog();
           UNTIL ExtendedTextHeader.Next() = 0;
-          EndDialog;
+          EndDialog();
         END;
     end;
 
@@ -573,15 +573,15 @@ report 50000 "ItemCopyNVX"
           EXIT;
 
         BOMComponent.SETRANGE("Parent Item No.",FromItemNo);
-        IF BOMComponent.FINDSET THEN BEGIN
+        IF BOMComponent.FINDSET() THEN BEGIN
           InitDialog(Text018);
           REPEAT
             BOMComponent."Parent Item No." := ToItemNo;
             BOMComponent.INSERT();
             BOMComponent."Parent Item No." := FromItemNo;
-            UpdateDialog;
+            UpdateDialog();
           UNTIL BOMComponent.Next() = 0;
-          EndDialog;
+          EndDialog();
         END;
     end;
 
@@ -593,15 +593,15 @@ report 50000 "ItemCopyNVX"
           EXIT;
 
         ItemVendor.SETRANGE("Item No.",FromItemNo);
-        IF ItemVendor.FINDSET THEN BEGIN
+        IF ItemVendor.FINDSET() THEN BEGIN
           InitDialog(Text021);
           REPEAT
             ItemVendor."Item No." := ToItemNo;
             ItemVendor.INSERT();
             ItemVendor."Item No." := FromItemNo;
-            UpdateDialog;
+            UpdateDialog();
           UNTIL ItemVendor.Next() = 0;
-          EndDialog;
+          EndDialog();
         END;
     end;
 
@@ -614,15 +614,15 @@ report 50000 "ItemCopyNVX"
 
         TroubleshootingSetup.SETRANGE(Type,TroubleshootingSetup.Type::Item);
         TroubleshootingSetup.SETRANGE("No.",FromItemNo);
-        IF TroubleshootingSetup.FINDSET THEN BEGIN
+        IF TroubleshootingSetup.FINDSET() THEN BEGIN
           InitDialog(Text028);
           REPEAT
             TroubleshootingSetup."No." := ToItemNo;
             TroubleshootingSetup.INSERT();
             TroubleshootingSetup."No." := FromItemNo;
-            UpdateDialog;
+            UpdateDialog();
           UNTIL TroubleshootingSetup.Next() = 0;
-          EndDialog;
+          EndDialog();
         END;
     end;
 
@@ -635,15 +635,15 @@ report 50000 "ItemCopyNVX"
 
         ResourceSkill.SETRANGE(Type,ResourceSkill.Type::Item);
         ResourceSkill.SETRANGE("No.",FromItemNo);
-        IF ResourceSkill.FINDSET THEN BEGIN
+        IF ResourceSkill.FINDSET() THEN BEGIN
           InitDialog(Text026);
           REPEAT
             ResourceSkill."No." := ToItemNo;
             ResourceSkill.INSERT();
             ResourceSkill."No." := FromItemNo;
-            UpdateDialog;
+            UpdateDialog();
           UNTIL ResourceSkill.Next() = 0;
-          EndDialog;
+          EndDialog();
         END;
     end;
 
@@ -655,13 +655,13 @@ report 50000 "ItemCopyNVX"
           EXIT;
 
         SalesPrice.SETRANGE("Item No.",FromItemNo);
-        IF SalesPrice.FINDSET THEN BEGIN
+        IF SalesPrice.FINDSET() THEN BEGIN
           InitDialog(Text029);
           REPEAT
             SalesPrice."Item No." := ToItemNo;
             SalesPrice.INSERT();
             SalesPrice."Item No." := FromItemNo;
-            UpdateDialog;
+            UpdateDialog();
           UNTIL SalesPrice.Next() = 0;
         END;
     end;
@@ -675,13 +675,13 @@ report 50000 "ItemCopyNVX"
 
         SalesLineDiscount.SETRANGE(Type,SalesLineDiscount.Type::Item);
         SalesLineDiscount.SETRANGE(Code,FromItemNo);
-        IF SalesLineDiscount.FINDSET THEN BEGIN
+        IF SalesLineDiscount.FINDSET() THEN BEGIN
           InitDialog(Text030);
           REPEAT
             SalesLineDiscount.Code := ToItemNo;
             SalesLineDiscount.INSERT();
             SalesLineDiscount.Code := FromItemNo;
-            UpdateDialog;
+            UpdateDialog();
           UNTIL SalesLineDiscount.Next() = 0;
         END;
     end;
@@ -694,13 +694,13 @@ report 50000 "ItemCopyNVX"
           EXIT;
 
         PurchasePrice.SETRANGE("Item No.",FromItemNo);
-        IF PurchasePrice.FINDSET THEN BEGIN
+        IF PurchasePrice.FINDSET() THEN BEGIN
           InitDialog(Text031);
           REPEAT
             PurchasePrice."Item No." := ToItemNo;
             PurchasePrice.INSERT();
             PurchasePrice."Item No." := FromItemNo;
-            UpdateDialog;
+            UpdateDialog();
           UNTIL PurchasePrice.Next() = 0;
         END;
     end;
@@ -713,13 +713,13 @@ report 50000 "ItemCopyNVX"
           EXIT;
 
         PurchLineDiscount.SETRANGE("Item No.",FromItemNo);
-        IF PurchLineDiscount.FINDSET THEN BEGIN
+        IF PurchLineDiscount.FINDSET() THEN BEGIN
           InitDialog(Text032);
           REPEAT
             PurchLineDiscount."Item No." := ToItemNo;
             PurchLineDiscount.INSERT();
             PurchLineDiscount."Item No." := FromItemNo;
-            UpdateDialog;
+            UpdateDialog();
           UNTIL PurchLineDiscount.Next() = 0;
         END;
     end;
@@ -734,7 +734,7 @@ report 50000 "ItemCopyNVX"
 
         ItemAttributeValueMapping.SETRANGE("Table ID",DATABASE::Item);
         ItemAttributeValueMapping.SETRANGE("No.",FromItemNo);
-        IF ItemAttributeValueMapping.FINDSET THEN
+        IF ItemAttributeValueMapping.FINDSET() THEN
           REPEAT
             NewItemAttributeValueMapping := ItemAttributeValueMapping;
             NewItemAttributeValueMapping."No." := ToItemNo;
