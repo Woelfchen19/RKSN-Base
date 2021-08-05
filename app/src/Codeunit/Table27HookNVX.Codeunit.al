@@ -136,5 +136,14 @@ codeunit 50000 "Table27HookNVX"
             DimensionValue.Modify(true);
         end;
     end;
-
+    [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterValidateEvent', 'Gen. Prod. Posting Group', false, false)]
+    //RKSN-39
+    local procedure SuggestInventoryPostingGroup(var Rec: Record Item)
+    var
+        GenPrdPstGrpNVX: record GenPrdPstGrpNVX; 
+    begin
+        if (GenPrdPstGrpNVX.get(rec."Gen. Prod. Posting Group")) and
+           (GenPrdPstGrpNVX."Inventory Posting Group NVX" <> '') then
+            rec.Validate("Inventory Posting Group",GenPrdPstGrpNVX."Inventory Posting Group NVX");                      
+    end;
 }

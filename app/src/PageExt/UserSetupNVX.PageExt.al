@@ -9,14 +9,13 @@ pageextension 50002 "UserSetupNVX" extends "User Setup"
             {
                 ApplicationArea = All;
                 Caption = 'Allow Item Prod.Post.Group Change', comment = 'DEA="Änderung Prod.Bu.Grp. Artikelkarte"';
-                //TODO ToolTip
-                ToolTip = 'TODO', comment = 'DEA="TODO"';
+                ToolTip = 'Specifies if the user is allowed to change the Prod. Posting Group on items although entries are existing', 
+                comment = 'DEA="Gibt an, ob die Produktbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren"';
                 trigger OnValidate();
                 begin
                     UserSetupNVX.Modify();
                 end;
             }
-            
         }
     }
     

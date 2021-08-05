@@ -47,6 +47,26 @@
             "id": "AW0006",
             "action": "None",
             "justification": "UICop Rule - Pages and reports should use the UsageCategory and ApplicationArea properties to be searchable. - action:Info -> action:None"
-        }
+        },
+        {
+            "id": "AA0001",
+            "action": "None",
+            "justification": "UICop Rule - Pages and reports should use the UsageCategory and ApplicationArea properties to be searchable. - action:Info -> action:None"
+        },        
+        {
+            "id": "AA0005",
+            "action": "None",
+            "justification": "UICop Rule - Pages and reports should use the UsageCategory and ApplicationArea properties to be searchable. - action:Info -> action:None"
+        },
+        {
+            "id": "AA0074",
+            "action": "None",
+            "justification": "UICop Rule - Pages and reports should use the UsageCategory and ApplicationArea properties to be searchable. - action:Info -> action:None"
+        },
+        {
+            "id": "AA0232",
+            "action": "None",
+            "justification": "UICop Rule - Pages and reports should use the UsageCategory and ApplicationArea properties to be searchable. - action:Info -> action:None"
+        }             
     ]
 }

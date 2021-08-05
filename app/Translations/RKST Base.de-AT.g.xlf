@@ -6087,11 +6087,23 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table GenJournalBatchNVX - Field No Dim Distribution - Property Caption</note>
           <target>dim.Verteilungsprozess wiederk. deaktiviert</target>
         </trans-unit>
+        <trans-unit id="Table 3896373660 - Method 279053644 - NamedType 2597213558" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your are not allowed to fill both fields "Inventory Value Zero" and "Inventory Posting Group"</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Es ist nicht erlaubt beide Felder "Ohne Lagerbewertung" und "Lagerbuchungsgruppe" zu befüllen</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GenPrdPstGrpNVX - Method CheckValid - NamedType InvalidCombination_Err</note>
+          <target>"Es ist nicht erlaubt beide Felder "Ohne Lagerbewertung" und "Lagerbuchungsgruppe" zu befüllen</target>
+        </trans-unit>
         <trans-unit id="Table 3896373660 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Code"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table GenPrdPstGrpNVX - Field Code - Property Caption</note>
           <target>Code</target>
+        </trans-unit>
+        <trans-unit id="Table 3896373660 - Field 1251698959 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lagerbuchungsgruppe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GenPrdPstGrpNVX - Field Inventory Posting Group NVX - Property Caption</note>
+          <target>Lagerbuchungsgruppe</target>
         </trans-unit>
         <trans-unit id="Table 3896373660 - Field 2568386957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory Value Zero</source>
@@ -12412,6 +12424,18 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GeneralJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
+        <trans-unit id="PageExtension 3896373660 - Control 3021125679 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 675304631">
+          <source>Specifies the default Inventory Posting Group for Items with this Gen. Product Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gibt die Standard-Lagerbuchungsgruppe für Artikel mit dieser Produktbuchungsgruppe an"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GenPrdPstGrpNVX - Control InventoryPostingGroupNVX - Property ToolTip</note>
+          <target>Gibt die Standard-Lagerbuchungsgruppe für Artikel mit dieser Produktbuchungsgruppe an</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3896373660 - Control 3021125679 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 675304631">
+          <source>Inventory Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Lagerbuchungsgruppe"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GenPrdPstGrpNVX - Control InventoryPostingGroupNVX - Property Caption</note>
+          <target>Lagerbuchungsgruppe</target>
+        </trans-unit>
         <trans-unit id="PageExtension 3896373660 - Control 1436878437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 675304631">
           <source>Specifies if the product posting group must be excluded from inventory valuation.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Gibt an ob die Produktbuchungsgruppe Lagerbewertet ist, d.h. keinen Wertefluss hat."</note>
@@ -12755,10 +12779,10 @@
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 2662501360 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
-          <source>TODO</source>
-          <note from="Developer" annotates="general" priority="2">DEA="TODO"</note>
+          <source>Specifies if the user is allowed to change the Prod. Posting Group on items although entries are existing</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob die Produktbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control Allow Item Prod.Post.Group Change NVX - Property ToolTip</note>
-          <target>TODO</target>
+          <target>Gibt an, ob die Produktbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren</target>
         </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 2662501360 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Allow Item Prod.Post.Group Change</source>

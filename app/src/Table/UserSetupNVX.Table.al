@@ -15,7 +15,6 @@ table 50001 "UserSetupNVX"
             DataClassification = CustomerContent;
             Caption = 'Allow Item Prod.Post.Group Change', comment = 'DEA="Änderung Prod.Bu.Grp. Artikelkarte"';
         }
-
     }
 
     keys
