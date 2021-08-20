@@ -118,7 +118,7 @@ pageextension 50003 "GenBsnPstGrpNVX" extends "Gen. Business Posting Groups"
             part(PstTypeMatrixNVX; "PstTypeMatrixNVX")
             {
                 ApplicationArea = All;
-                Caption = 'PstTypeMatrix';
+                Caption = 'Matrix General Business Posting Group_VAT Posting Type', comment = 'DEA="Matrix Geschäftsbuchungsgruppe_USt Buchungsart"';
                 SubPageLink = "Code" = field (Code);
             }
         }

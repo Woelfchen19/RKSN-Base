@@ -4,14 +4,7 @@ pageextension 50006 "CustCardNVX" extends "Customer Card"
     {
         modify("Gen. Bus. Posting Group")
         {
-            Visible = false;
-        }
-        addfirst(PostingDetails)
-        {
-            field(GenBsnPstGrpNVX; "Gen. Bus. Posting Group")
-            {
-                ApplicationArea = All;
-                trigger OnLookup(var Text: Text) : Boolean;
+            trigger OnLookup(var Text: Text) : Boolean;
                 var
                     GBPGRec: Record "Gen. Business Posting Group";
                     GenBsnPstGrpNVX: Record GenBsnPstGrpNVX;
@@ -32,8 +25,6 @@ pageextension 50006 "CustCardNVX" extends "Customer Card"
                         Rec.Validate("Gen. Bus. Posting Group",GBPGRec.Code);
                     end;
                 end;
-            }
-            
         }
     }
 }

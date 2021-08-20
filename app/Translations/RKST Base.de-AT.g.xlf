@@ -10445,6 +10445,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table32HookNVX - Method VerifyOnInventory - NamedType IsNotOnInventoryErr</note>
           <target>Sie haben keine ausreichende Menge des Artikels %1 auf Lager.</target>
         </trans-unit>
+        <trans-unit id="Codeunit 3451440628 - Method 4084253282 - NamedType 4090211762" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory Setup field Composition Customer must be filled</source>
+          <note from="Developer" annotates="general" priority="2">DEA="In der Lager Einrichtung fehlt im Feld "Abfassung Debitor" die Zuordnung. Sie können deshalb keinen neuen Auftrag generieren!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table36HookNVX - Method SetCustomer - NamedType MissingSetupErr</note>
+          <target>In der Lager Einrichtung fehlt im Feld "Abfassung Debitor" die Zuordnung. Sie können deshalb keinen neuen Auftrag generieren!</target>
+        </trans-unit>
         <trans-unit id="Codeunit 4009923459 - Method 2663101026 - NamedType 3960831401" size-unit="char" translate="yes" xml:space="preserve">
           <source>Partial shipments are not allowed.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Teillieferungen sind im Modul Verkauf nicht zulässig."</note>
@@ -12396,9 +12402,10 @@
           <target>Filter Stammdaten Kreditor</target>
         </trans-unit>
         <trans-unit id="PageExtension 338499675 - Control 18325704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 644216884">
-          <source>PstTypeMatrix</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <source>Matrix General Business Posting Group_VAT Posting Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Matrix Geschäftsbuchungsgruppe_USt Buchungsart"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GenBsnPstGrpNVX - Control PstTypeMatrixNVX - Property Caption</note>
+          <target>Matrix Geschäftsbuchungsgruppe_USt Buchungsart</target>
         </trans-unit>
         <trans-unit id="PageExtension 192283119 - Control 4031747469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3603089623">
           <source>No dimensional distribution</source>

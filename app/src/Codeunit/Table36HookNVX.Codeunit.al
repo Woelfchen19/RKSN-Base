@@ -29,11 +29,15 @@ codeunit 50007 "Table36HookNVX"
     local procedure SetCustomer(var Rec: Record "Sales Header";RunTrigger : Boolean)
     var
         InvSetupNVX: Record InvSetupNVX;
+        MissingSetupErr: Label 'Inventory Setup field Composition Customer must be filled', Comment = 'DEA="In der Lager Einrichtung fehlt im Feld "Abfassung Debitor" die Zuordnung. Sie können deshalb keinen neuen Auftrag generieren!"';
     begin
         IF Rec.IsTemporary or not RunTrigger then
             exit;
         IF Rec."Document Type" = Rec."Document Type"::Order then begin
-            InvSetupNVX.Get();
+            IF not InvSetupNVX.Get() then
+                Clear(InvSetupNVX);
+            IF InvSetupNVX."Composition Customer" = '' then
+                Error(MissingSetupErr);
             Rec.Validate("Sell-to Customer No.",InvSetupNVX."Composition Customer");
             // Rec.Modify();
         end;

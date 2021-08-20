@@ -3,16 +3,8 @@ pageextension 50016 "ChartOfAccountsNVX" extends "Chart of Accounts"
     layout
     {
         modify("Gen. Bus. Posting Group")
-        {
-            Visible = false;
-            Enabled = false;
-        }
-        addafter("Gen. Posting Type")
-        {
-            field(GenBsnPstGrpNVX; "Gen. Bus. Posting Group")
-            {
-                ApplicationArea = All;
-                trigger OnLookup(var Text: Text): Boolean;
+        {              
+            trigger OnLookup(var Text: Text): Boolean;
                 var
                     GBPGRec: Record "Gen. Business Posting Group";
                     GenBsnPstGrpNVX: Record GenBsnPstGrpNVX;
@@ -33,7 +25,6 @@ pageextension 50016 "ChartOfAccountsNVX" extends "Chart of Accounts"
                         Rec.Validate("Gen. Bus. Posting Group", GBPGRec.Code);
                     end;
                 end;
-            }
         }
         addlast(Control1)
         {

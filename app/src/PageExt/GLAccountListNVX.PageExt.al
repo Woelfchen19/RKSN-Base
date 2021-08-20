@@ -4,15 +4,7 @@ pageextension 50038 "GLAccountListNVX" extends "G/L Account List"
     {
         modify("Gen. Bus. Posting Group")
         {
-            Visible = false;
-            Enabled = false;
-        }
-        addafter("Gen. Posting Type")
-        {
-            field(GenBsnPstGrpNVX; "Gen. Bus. Posting Group")
-            {
-                ApplicationArea = All;
-                trigger OnLookup(var Text: Text): Boolean;
+            trigger OnLookup(var Text: Text): Boolean;
                 var
                     GBPGRec: Record "Gen. Business Posting Group";
                     GenBsnPstGrpNVX: Record GenBsnPstGrpNVX;
@@ -33,7 +25,6 @@ pageextension 50038 "GLAccountListNVX" extends "G/L Account List"
                         Rec.Validate("Gen. Bus. Posting Group",GBPGRec.Code);
                     end;
                 end;
-            }
         }
     }
 }
