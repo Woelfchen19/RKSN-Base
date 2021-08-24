@@ -1,4 +1,4 @@
-pageextension 50045 "ResponsibilityCenterCardNVX" extends "Responsibility Center Card"
+pageextension 50014 "ResponsibilityCenterCardNVX" extends "Responsibility Center Card"
 {
     layout
     {

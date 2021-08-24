@@ -1,6 +1,6 @@
 codeunit 50025 "Table83HookNVX"
 {
-    [EventSubscriber(ObjectType::Table, database::"item journal line", 'OnAfterValidateEvent', 'Entry Type', true, true)]
+    [EventSubscriber(ObjectType::Table, Database::"Item Journal Line", 'OnAfterValidateEvent', 'Entry Type', true, true)]
     local procedure OnAfterValidateEntryType(rec: record "Item Journal Line"; xrec: record "Item Journal Line"; CurrfieldNo: integer)
     var
         EntryTypeErr: Label 'Only Entry Type "Positive Adjmt.", "Negative Adjmt" and "Transfer" are allowed!', comment = 'DEA="Nur die Postenarten Zugang, Abgang, Umlagerung sind erlaubt!"';

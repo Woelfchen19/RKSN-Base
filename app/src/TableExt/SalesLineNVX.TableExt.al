@@ -1,5 +1,13 @@
 tableextension 50003 "SalesLineNVX" extends "Sales Line"
 {
+    fields
+    {
+        modify(Type)
+        {
+            OptionCaption = ' ,G/L Account,Item', Comment = 'DEA=" ,Sachkonto,Artikel"';
+        }
+    }
+
     procedure UpdateSalesLineNVX(CustUnitPrice: Decimal)
     var
         VATPostingSetup: Record "VAT Posting Setup";

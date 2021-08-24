@@ -10607,11 +10607,11 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page DimVATAllocNVX - Property Caption</note>
           <target>Dim.USt.-Zuordnungen</target>
         </trans-unit>
-        <trans-unit id="Page 3618441594 - Method 4177352842 - NamedType 2041448" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Setup is incomplete</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Die Einrichtung ist nicht vollständig!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page DimVATAllocNVX - Method OnQueryClosePage - NamedType SetupIncompleteErr</note>
-          <target>Die Einrichtung ist nicht vollständig!</target>
+        <trans-unit id="Page 3618441594 - Method 4177352842 - NamedType 1554545965" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Percentage distribution is not complete!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Die %-Verteilung ist noch nicht vollständig abgeschlossen!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page DimVATAllocNVX - Method OnQueryClosePage - NamedType PercentageIncompleteErr</note>
+          <target>Die %-Verteilung ist noch nicht vollständig abgeschlossen!</target>
         </trans-unit>
         <trans-unit id="Page 1008084817 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Journal Line Archive Origin</source>
@@ -12844,6 +12844,18 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 8"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Shortcut Dimension 8 Code NVX - Property Caption</note>
           <target>Shortcutdimensionscode 8</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 3220818943 - Change 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source> ,G/L Account,Item</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Sachkonto,Artikel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchaseLineNVX - Change Type - Property OptionCaption</note>
+          <target> ,Sachkonto,Artikel</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 3976302498 - Change 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source> ,G/L Account,Item</source>
+          <note from="Developer" annotates="general" priority="2">DEA=" ,Sachkonto,Artikel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SalesLineNVX - Change Type - Property OptionCaption</note>
+          <target> ,Sachkonto,Artikel</target>
         </trans-unit>
       </group>
     </body>

@@ -113,39 +113,23 @@ page 50002 "DimVATAllocNVX"
     trigger OnQueryClosePage(CloseAction: Action): Boolean;
     var
         DimVATAlloc: Record DimVATAllocNVX;
-        AllFieldsFilled: Boolean;
-        // PercentSum: Decimal;
-        SetupIncompleteErr: Label 'Setup is incomplete', comment = 'DEA="Die Einrichtung ist nicht vollständig!"';
-        // PercentageIncomplete: Label 'Percentage distribution is not complete!', comment = 'DEA="Die %-Verteilung ist noch nicht vollständig abgeschlossen!"';
+        DimVATAlloc2: Record DimVATAllocNVX;
+        PercentageIncompleteErr: Label 'Percentage distribution is not complete!', comment = 'DEA="Die %-Verteilung ist noch nicht vollständig abgeschlossen!"';
     begin
-
-        AllFieldsFilled := true;
 
         DimVATAlloc.Reset();
         IF DimVATAlloc.FindSet() then
             repeat
-                case true of
-                    "Shortcut Dimension 1 Code" = '' :
-                        AllFieldsFilled := false;
-                    "Shortcut Dimension 2 Code" = '' :
-                        AllFieldsFilled := false;
-                    "Shortcut Dimension 3 Code" = '' :
-                        AllFieldsFilled := false;
-                    "VAT Posting Type" = '' :
-                        AllFieldsFilled := false;
-                    "Start Date" = 0D :
-                        AllFieldsFilled := false;
-            end;//of case
-
+                DimVATAlloc2.SetRange("Shortcut Dimension 1 Code", DimVATAlloc."Shortcut Dimension 1 Code");
+                DimVATAlloc2.SetRange("Shortcut Dimension 2 Code", DimVATAlloc."Shortcut Dimension 2 Code");
+                DimVATAlloc2.SetRange("Start Date", DimVATAlloc."Start Date");
+                DimVATAlloc2.CalcSums("Allocation %");
+                if DimVATAlloc2."Allocation %" <> 100 then
+                    Error(PercentageIncompleteErr);
             until DimVATAlloc.Next() = 0;
-
-        If not AllFieldsFilled then
-            Error(SetupIncompleteErr);
-
-        // If PercentSum <> 100 then //TODO RKSN-42 WorkItem 5348
-        //     Error(PercentageIncomplete);
 
         exit(true);
     end;
 
 }
+

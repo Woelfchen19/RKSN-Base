@@ -102,7 +102,7 @@ table 50006 "DimVATAllocNVX"
 
     keys
     {
-        key(PK; "Shortcut Dimension 1 Code","Shortcut Dimension 2 Code","Shortcut Dimension 3 Code","Start Date")
+        key(PK; "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Start Date", "Shortcut Dimension 3 Code")
         {
             Clustered = true;
         }

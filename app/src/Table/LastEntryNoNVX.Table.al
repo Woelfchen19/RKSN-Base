@@ -1,7 +1,7 @@
 table 50025 "LastEntryNoNVX"
 {
     DataClassification = CustomerContent;
-
+    //TODO Überarbeiten?
     fields
     {
         field(1; "Entry No."; Integer)

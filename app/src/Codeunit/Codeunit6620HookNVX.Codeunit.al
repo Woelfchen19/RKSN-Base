@@ -18,7 +18,7 @@ codeunit 50013 "Codeunit6620HookNVX"
         SalesDocType::"Return Order",
         SalesDocType::"Credit Memo" :
         
-            IF SalesHeaderNVX.get(CopyDocMgt.SalesHeaderDocType(FromDocType), FromDocNo) then begin
+            IF SalesHeaderNVX.get(CopyDocMgt.SalesHeaderDocType(FromDocType), FromDocNo) then
                 If not NewSalesHeaderNVX.Get(ToSalesHeader."Document Type",ToSalesHeader."No.") then begin
                     NewSalesHeaderNVX.Init();
                     NewSalesHeaderNVX.TransferFields(SalesHeaderNVX);
@@ -26,7 +26,6 @@ codeunit 50013 "Codeunit6620HookNVX"
                     NewSalesHeaderNVX."No." := ToSalesHeader."No.";
                     NewSalesHeaderNVX.Insert();
                 end;
-            end;
         
 
         SalesDocType::"Posted Invoice" :

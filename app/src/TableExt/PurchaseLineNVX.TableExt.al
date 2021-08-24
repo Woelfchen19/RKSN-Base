@@ -1,5 +1,12 @@
 tableextension 50002 "PurchaseLineNVX" extends "Purchase Line"
-{
+{    
+    fields
+    {
+        modify(Type)
+        {
+            OptionCaption = ' ,G/L Account,Item', Comment = 'DEA=" ,Sachkonto,Artikel"';
+        }
+    }
     procedure UpdatePurchaseLineNVX(VendUnitPrice: Decimal)
     var
         VATPostingSetup: Record "VAT Posting Setup";

@@ -1145,11 +1145,6 @@ table 50019 "GenJnlLineArchiveNVX"
             DataClassification = CustomerContent;
             OptionMembers = OG, Distributed, Temp;
         }
-        // // TODO dafuq?
-        // field(60002; "Saved Posting GUID"; GUID)
-        // {
-        //     DataClassification = CustomerContent;
-        // }
     }
 
     keys

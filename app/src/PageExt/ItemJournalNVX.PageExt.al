@@ -25,6 +25,27 @@ pageextension 50017 "ItemJournalNVX" extends "Item Journal"
                     Rec.Validate("Gen. Bus. Posting Group",GBPGRec.Code);
                 end;
             end;
-        }   
+        }
+    //     modify("Shortcut Dimension 1 Code")
+    //     {
+    //         trigger OnAfterValidate()
+    //         var
+    //             Item: Record Item;
+    //             InvSetupNVX: Record InvSetupNVX;
+    //             WrongDimErr: Label 'Item has inventory value. Dimension have to match the setup.', Comment = 'DEA="Der erfasste Artikel ist lagerbewertet eingerichtet. Die Angaben zu Kostenstelle und Sparte müssen dem setup der Lager Einrichtung entsprechen!"';
+    //         begin
+    //             Item.Get("Item No.");
+    //             Case Item."Inventory Value Zero" of
+    //                 true:
+    //                     TestField("Shortcut Dimension 1 Code");
+    //                 false:
+    //                     begin
+    //                         InvSetupNVX.Get();
+    //                         if "Shortcut Dimension 1 Code" <> InvSetupNVX."Inventory Cost Center" then
+    //                             Error(WrongDimErr);
+    //                     end;
+    //             end; //of Case
+    //         end;
+    //     }     
     }
 }
