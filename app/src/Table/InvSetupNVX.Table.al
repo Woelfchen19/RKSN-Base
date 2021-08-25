@@ -150,35 +150,35 @@ table 50002 "InvSetupNVX"
 
     procedure GetDimSetID()
     var
-        DimSetEntry: Record "Dimension Set Entry" temporary;
+        tempDimSetEntry: Record "Dimension Set Entry" temporary;
         GLSetup: Record "General Ledger Setup";
     begin
-        IF DimSetEntry.IsTemporary then
-            DimSetEntry.DeleteAll();
+        IF tempDimSetEntry.IsTemporary then
+            tempDimSetEntry.DeleteAll();
         GLSetup.Get();
         IF "Vend./Cust. Dim 1" <> '' then begin
-            DimSetEntry.Init();
-            DimSetEntry."Dimension Set ID" := 0;
-            DimSetEntry.Validate("Dimension Code",GLSetup."Global Dimension 1 Code");
-            DimSetEntry.Validate("Dimension Value Code","Vend./Cust. Dim 1");
-            DimSetEntry.Insert();
+            tempDimSetEntry.Init();
+            tempDimSetEntry."Dimension Set ID" := 0;
+            tempDimSetEntry.Validate("Dimension Code",GLSetup."Global Dimension 1 Code");
+            tempDimSetEntry.Validate("Dimension Value Code","Vend./Cust. Dim 1");
+            tempDimSetEntry.Insert();
         end;
         IF "Vend./Cust. Dim 2" <> '' then begin
-            DimSetEntry.Init();
-            DimSetEntry."Dimension Set ID" := 0;
-            DimSetEntry.Validate("Dimension Code",GLSetup."Global Dimension 2 Code");
-            DimSetEntry.Validate("Dimension Value Code","Vend./Cust. Dim 2");
-            DimSetEntry.Insert();
+            tempDimSetEntry.Init();
+            tempDimSetEntry."Dimension Set ID" := 0;
+            tempDimSetEntry.Validate("Dimension Code",GLSetup."Global Dimension 2 Code");
+            tempDimSetEntry.Validate("Dimension Value Code","Vend./Cust. Dim 2");
+            tempDimSetEntry.Insert();
         end;
         IF "Vend./Cust. Dim 3" <> '' then begin
-            DimSetEntry.Init();
-            DimSetEntry."Dimension Set ID" := 0;
-            DimSetEntry.Validate("Dimension Code",GLSetup."Shortcut Dimension 3 Code");
-            DimSetEntry.Validate("Dimension Value Code","Vend./Cust. Dim 3");
-            DimSetEntry.Insert();
+            tempDimSetEntry.Init();
+            tempDimSetEntry."Dimension Set ID" := 0;
+            tempDimSetEntry.Validate("Dimension Code",GLSetup."Shortcut Dimension 3 Code");
+            tempDimSetEntry.Validate("Dimension Value Code","Vend./Cust. Dim 3");
+            tempDimSetEntry.Insert();
         end;
 
-        "Vend./Cust. Dim Set ID" := DimSetEntry.GetDimensionSetID(DimSetEntry);
+        "Vend./Cust. Dim Set ID" := tempDimSetEntry.GetDimensionSetID(tempDimSetEntry);
         Modify();
     end;
 }

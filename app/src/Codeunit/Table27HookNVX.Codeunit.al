@@ -67,22 +67,24 @@ codeunit 50000 "Table27HookNVX"
             InvSetupNVX.Init();
 
         IF not Rec."Inventory Value Zero" then begin
-            IF InvSetupNVX."Inventory Cost Center" <> '' then
+            IF InvSetupNVX."Inventory Cost Center" <> '' then begin
                 Rec.Validate("Global Dimension 1 Code", InvSetupNVX."Inventory Cost Center");
-            IF InvSetupNVX."Inventory Section" <> '' then begin
-                If not DefaultDimension.Get(Database::item, Rec."No.", GLSetup."Shortcut Dimension 3 Code") then begin
+                DefaultDimension.Get(Database::Item, Rec."No.", GLSetup."Shortcut Dimension 1 Code");
+                DefaultDimension.Validate("Value Posting", DefaultDimension."Value Posting"::"Same Code");
+                DefaultDimension.Modify();
+            end;
+            IF InvSetupNVX."Inventory Section" <> '' then
+                If not DefaultDimension.Get(Database::Item, Rec."No.", GLSetup."Shortcut Dimension 3 Code") then begin
                     DefaultDimension.Init();
                     DefaultDimension.Validate("Table ID", Database::Item);
                     DefaultDimension.Validate("No.", Rec."No.");
                     DefaultDimension.Validate("Dimension Code", GLSetup."Shortcut Dimension 3 Code");
                     DefaultDimension.Validate("Dimension Value Code", InvSetupNVX."Inventory Section");
-                    // DefaultDimension.Validate("Value Posting",DefaultDimension."Value Posting"::"Same Code");
+                    DefaultDimension.Validate("Value Posting", DefaultDimension."Value Posting"::"Same Code");
                     DefaultDimension.Insert(true);
                 end;
-            end;
         end;
     end;
-
 
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterRenameEvent', '', false, false)]
     //RKSN-39
@@ -119,7 +121,6 @@ codeunit 50000 "Table27HookNVX"
             DefaultDimension.Validate("Dimension Value Code", Rec."No.");
             DefaultDimension.Modify();
         end;
-
     end;
 
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterValidateEvent', 'Description', false, false)]
@@ -136,6 +137,7 @@ codeunit 50000 "Table27HookNVX"
             DimensionValue.Modify(true);
         end;
     end;
+
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterValidateEvent', 'Gen. Prod. Posting Group', false, false)]
     //RKSN-39
     local procedure SuggestInventoryPostingGroup(var Rec: Record Item)

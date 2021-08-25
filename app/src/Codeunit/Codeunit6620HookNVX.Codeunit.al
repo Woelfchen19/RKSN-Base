@@ -1,7 +1,7 @@
 codeunit 50013 "Codeunit6620HookNVX"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Copy Document Mgt.", 'OnCopySalesDocWithHeader', '', false, false)]
-    local procedure CopyDocInfoSales(FromDocType: Option; FromDocNo: Code[20]; VAR ToSalesHeader: Record "Sales Header")
+    local procedure CopyDocInfoSales(FromDocType: Option; FromDocNo: Code[20]; var ToSalesHeader: Record "Sales Header")
     var
         SalesHeaderNVX: Record SalesHeaderNVX;
         NewSalesHeaderNVX: Record SalesHeaderNVX;
@@ -10,7 +10,7 @@ codeunit 50013 "Codeunit6620HookNVX"
         CopyDocMgt: Codeunit "Copy Document Mgt.";
         SalesDocType: Option Quote, "Blanket Order", Order, Invoice, "Return Order", "Credit Memo", "Posted Shipment", "Posted Invoice", "Posted Return Receipt", "Posted Credit Memo", "Arch. Quote", "Arch. Order", "Arch. Blanket Order", "Arch. Return Order";
     begin
-        CASE FromDocType OF
+        case FromDocType of
         SalesDocType::Quote,
         SalesDocType::"Blanket Order",
         SalesDocType::Order,
@@ -18,8 +18,8 @@ codeunit 50013 "Codeunit6620HookNVX"
         SalesDocType::"Return Order",
         SalesDocType::"Credit Memo" :
         
-            IF SalesHeaderNVX.get(CopyDocMgt.SalesHeaderDocType(FromDocType), FromDocNo) then
-                If not NewSalesHeaderNVX.Get(ToSalesHeader."Document Type",ToSalesHeader."No.") then begin
+            if SalesHeaderNVX.Get(CopyDocMgt.SalesHeaderDocType(FromDocType), FromDocNo) then
+                if not NewSalesHeaderNVX.Get(ToSalesHeader."Document Type",ToSalesHeader."No.") then begin
                     NewSalesHeaderNVX.Init();
                     NewSalesHeaderNVX.TransferFields(SalesHeaderNVX);
                     NewSalesHeaderNVX."Document Type" := ToSalesHeader."Document Type";
@@ -30,51 +30,48 @@ codeunit 50013 "Codeunit6620HookNVX"
 
         SalesDocType::"Posted Invoice" :
         
-            IF SalesInvoiceHeaderNVX.get(FromDocNo) then begin
-                If not NewSalesHeaderNVX.Get(ToSalesHeader."Document Type",ToSalesHeader."No.") then begin
+            if SalesInvoiceHeaderNVX.Get(FromDocNo) then
+                if not NewSalesHeaderNVX.Get(ToSalesHeader."Document Type",ToSalesHeader."No.") then begin
                     NewSalesHeaderNVX.Init();
                     NewSalesHeaderNVX.TransferFields(SalesInvoiceHeaderNVX);
                     NewSalesHeaderNVX."Document Type" := ToSalesHeader."Document Type";
                     NewSalesHeaderNVX."No." := ToSalesHeader."No.";
                     NewSalesHeaderNVX.Insert();
                 end;
-            end;
+            
 
         SalesDocType::"Posted Credit Memo" :
         
-            IF SalesCrMemoHeaderNVX.get(FromDocNo) then begin
-                If not NewSalesHeaderNVX.Get(ToSalesHeader."Document Type",ToSalesHeader."No.") then begin
+            if SalesCrMemoHeaderNVX.Get(FromDocNo) then
+                if not NewSalesHeaderNVX.Get(ToSalesHeader."Document Type",ToSalesHeader."No.") then begin
                     NewSalesHeaderNVX.Init();
                     NewSalesHeaderNVX.TransferFields(SalesCrMemoHeaderNVX);
                     NewSalesHeaderNVX."Document Type" := ToSalesHeader."Document Type";
                     NewSalesHeaderNVX."No." := ToSalesHeader."No.";
                     NewSalesHeaderNVX.Insert();
                 end;
-            end;
-        
-
-        END;
+        end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Copy Document Mgt.", 'OnCopySalesLineOnBeforeCheckVATBusGroup', '', false, false)]
-    local procedure SkipVatBusGroupCheck(VAR CheckVATBusGroup : Boolean)
+    local procedure SkipVatBusGroupCheck(var CheckVATBusGroup : Boolean)
     begin
         CheckVATBusGroup := false;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Copy Document Mgt.", 'OnBeforeCopySalesDocForInvoiceCancelling', '', false, false)]
-    local procedure CopyTransactionNoToCreditMemo(VAR ToSalesHeader : Record "Sales Header";FromDocNo : Code[20])
+    local procedure CopyTransactionNoToCreditMemo(var ToSalesHeader : Record "Sales Header";FromDocNo : Code[20])
     var
         SalesInvoiceHeaderNVX: Record SalesInvoiceHeaderNVX;
         SalesHeaderNVX: Record SalesHeaderNVX;
     begin
-        IF not SalesInvoiceHeaderNVX.Get(FromDocNo) then
+        if not SalesInvoiceHeaderNVX.Get(FromDocNo) then
             exit;
         
-        If ToSalesHeader."Document Type" <> ToSalesHeader."Document Type"::"Credit Memo" then
+        if ToSalesHeader."Document Type" <> ToSalesHeader."Document Type"::"Credit Memo" then
             exit;
 
-        If not SalesHeaderNVX.Get(ToSalesHeader."Document Type",ToSalesHeader."No.") then begin
+        if not SalesHeaderNVX.Get(ToSalesHeader."Document Type",ToSalesHeader."No.") then begin
             SalesHeaderNVX.Init();
             SalesHeaderNVX."Document Type" := ToSalesHeader."Document Type";
             SalesHeaderNVX."No." := ToSalesHeader."No.";

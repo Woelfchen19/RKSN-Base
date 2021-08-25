@@ -9058,6 +9058,16 @@
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table81HookNVX - Method InsertAllocationCodeInAccompaniedTable - NamedType WrongDimErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 4200806882 - Method 1565414135 - NamedType 2478128905" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item has inventory value. Dimension have to match the setup.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der erfasste Artikel ist lagerbewertet eingerichtet. Die Angaben zu Kostenstelle und Sparte müssen dem setup der Lager Einrichtung entsprechen!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table83HookNVX - Method CheckDimensions - NamedType WrongDimInventoryValueErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4200806882 - Method 1565414135 - NamedType 3709997511" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für lagerbewertete Artikel nicht zugeordnet werden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table83HookNVX - Method CheckDimensions - NamedType WrongDimInventoryValueZeroErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 4200806882 - Method 916722513 - NamedType 3629795635" size-unit="char" translate="yes" xml:space="preserve">
           <source>Only Entry Type "Positive Adjmt.", "Negative Adjmt" and "Transfer" are allowed!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Nur die Postenarten Zugang, Abgang, Umlagerung sind erlaubt!"</note>
