@@ -19,6 +19,13 @@ tableextension 50004 GLAccountNVX extends "G/L Account"
                     error(Balance_Err);
             end;
         }
+        field(50002; "No. of Classifications NVX"; Integer)
+        {
+            Editable = false;
+            Caption = 'No. of Classifications', comment = 'DEA="Anzahl Gliederungsgruppen"';
+            FieldClass = FlowField;
+            CalcFormula = count("NCB Classification G/L Acc." where ("G/L Account No." = field("No.")));
+        }
     }
 }
 

@@ -10428,6 +10428,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Skonto-Dim.Findung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ChartOfAccountsNVX - Control Disc. Dim. DetectionNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 586387857 - Control 4055666173 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3105459369">
+          <source>No. of Classifications</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Anzahl Gliederungsgruppen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ChartOfAccountsNVX - Control No. of Classifications NVX - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3858270453 - Method 4177352842 - NamedType 1496169471" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3858270453">
           <source>This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!"</note>
@@ -10687,6 +10692,11 @@
           <source>No dimensional distribution</source>
           <note from="Developer" annotates="general" priority="2">DEA="Dim.Aufbereitung nicht erlaubt"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLAccountCardNVX - Control No dim distributionNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2053733812 - Control 4055666173 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2668789169">
+          <source>No. of Classifications</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Anzahl Gliederungsgruppen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLAccountListNVX - Control No. of Classifications NVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Allocation Code</source>
@@ -10967,6 +10977,11 @@
           <source>You can not hide the G/L Account because Balance ist &lt;&gt; 0.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Das Sachkonto kann nicht ausgeblendet werden, weil der Saldo &lt;&gt;0 ist!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccountNVX - Field Hidden NVX - Method OnValidate - NamedType Balance_Err</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1715217982 - Field 4055666173 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4274826855">
+          <source>No. of Classifications</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Anzahl Gliederungsgruppen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLAccountNVX - Field No. of Classifications NVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2583571545 - Field 1971121789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
           <source>Sales Restrospect Entry</source>
