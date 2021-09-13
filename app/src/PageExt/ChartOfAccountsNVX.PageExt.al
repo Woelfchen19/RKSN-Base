@@ -36,10 +36,7 @@ pageextension 50016 "ChartOfAccountsNVX" extends "Chart of Accounts"
                 begin
                     GLAccountNVX.Modify();
                 end;
-            }
-        }
-        addlast(Control1)
-        {
+            }                  
             field("No. of Classifications NVX";"No. of Classifications NVX")
             {
                 ApplicationArea = All;
