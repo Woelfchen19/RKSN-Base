@@ -9398,6 +9398,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Betrag BRUTTO"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PreviewDimDistrNVX - Control Amount (LCY) - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2611948638 - Control 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Belegnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PreviewDimDistrNVX - Control Document No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2611948638 - Control 1264228252 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Gen. Bus. Posting Group Description</source>
           <note from="Developer" annotates="general" priority="2">DEA="Name Steuerschlüssel"</note>
@@ -9407,6 +9412,11 @@
           <source>Gen. Bus. Posting Group</source>
           <note from="Developer" annotates="general" priority="2">DEA="Steuerschlüssel (Gesch.Bu.Grp.)"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PreviewDimDistrNVX - Control Gen. Bus. Posting Group NVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2611948638 - Control 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Buchungsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PreviewDimDistrNVX - Control Posting Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2611948638 - Control 3132932824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KSt</source>
@@ -9458,10 +9468,20 @@
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PreviewFADimDistrNVX - Control Allocation Code NVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2038291095 - Control 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Belegnr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PreviewFADimDistrNVX - Control Document No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2038291095 - Control 275360884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>G/L Account / Fixed Asset</source>
           <note from="Developer" annotates="general" priority="2">DEA="Sachkto./Anlage"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PreviewFADimDistrNVX - Control FA No. NVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2038291095 - Control 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Buchungsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PreviewFADimDistrNVX - Control Posting Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2038291095 - Control 3132932824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>KSt</source>

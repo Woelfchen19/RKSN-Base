@@ -12,6 +12,16 @@ page 50011 "PreviewDimDistrNVX"
         {
             repeater(Group)
             {
+                field("Posting Date"; Rec."Posting Date")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Posting Date', comment = 'DEA="Buchungsdatum"';
+                }
+                field("Document No."; Rec."Document No.")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Document No.', comment = 'DEA="Belegnr."';
+                }
                 field("Account No. NVX"; "Account No.")
                 {
                     ApplicationArea = All;

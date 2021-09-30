@@ -12,6 +12,16 @@ page 50017 "PreviewFADimDistrNVX"
         {
             repeater(Group)
             {
+                field("Posting Date"; Rec."Posting Date")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Posting Date', comment = 'DEA="Buchungsdatum"';
+                }
+                field("Document No."; Rec."Document No.")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Document No.', comment = 'DEA="Belegnr."';
+                }
                 field("FA No. NVX"; "FA No.")
                 {
                     ApplicationArea = All;
