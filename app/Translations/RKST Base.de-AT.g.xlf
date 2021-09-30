@@ -10523,6 +10523,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5621HookNVX - Method CheckAllocationCodeDim - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
+        <trans-unit id="Codeunit 1054837503 - Method 4034257309 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5621HookNVX - Method CheckAllocationCodeDim - NamedType WrongDim2Err</note>
+          <target>Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!</target>
+        </trans-unit>
         <trans-unit id="Codeunit 1054837503 - Method 950186398 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugeordneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
@@ -10540,6 +10546,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table81HookNVX - Method CheckAllocationCodeDim - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 2689053120 - Method 4034257309 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table81HookNVX - Method CheckAllocationCodeDim - NamedType WrongDim2Err</note>
+          <target>Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!</target>
         </trans-unit>
         <trans-unit id="Codeunit 2689053120 - Method 950186398 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
@@ -12323,6 +12335,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAGLJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
+        <trans-unit id="PageExtension 998850351 - Control 2132930775 - Method 2126772001 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 998850351">
+          <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAGLJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDim2Err</note>
+          <target>Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!</target>
+        </trans-unit>
         <trans-unit id="PageExtension 1571559034 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4232171073">
           <source>Preview dimensional distribution</source>
           <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
@@ -12340,6 +12358,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1571559034 - Control 2132930775 - Method 2126772001 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1571559034">
+          <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDim2Err</note>
+          <target>Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!</target>
         </trans-unit>
         <trans-unit id="PageExtension 3944373180 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 377345500">
           <source>Allocation Code</source>

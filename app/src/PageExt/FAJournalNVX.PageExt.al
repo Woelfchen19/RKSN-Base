@@ -12,12 +12,15 @@ pageextension 50037 "FAJournalNVX" extends "Fixed Asset Journal"
                 trigger OnValidate();
                 var
                     AllocationCode: Record AllocationCodeNVX;
+                    FixedAssetNVX: Record FixedAssetNVX;
                     WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                         comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
+                    WrongDim2Err: Label 'Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.',
+                        comment = 'DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"';
                 begin
 
-                    If Rec."Line No." > 0 then
-                        IF not FAJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
+                    if Rec."Line No." > 0 then
+                        if not FAJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
                             FAJnlLineNVX.Init();
                             FAJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
                             FAJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
@@ -30,17 +33,20 @@ pageextension 50037 "FAJournalNVX" extends "Fixed Asset Journal"
                         end;
 
 
-                    If AllocationCodeVar <> '' then
-                        If Rec."Shortcut Dimension 2 Code" = '' then begin
+                    if AllocationCodeVar <> '' then
+                        if Rec."Shortcut Dimension 2 Code" = '' then begin
                             AllocationCode.Get(AllocationCodeVar);
                             Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
-                            If Rec."Line No." > 0 then
+                            if Rec."Line No." > 0 then
                                 Rec.Modify();
                         end else begin
                             AllocationCode.Get(AllocationCodeVar);
-                            IF Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+                            if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                                 Error(WrongDimErr);
                         end;
+
+                    if FixedAssetNVX.Get(Rec."FA No.") and (FixedAssetNVX."Allocation Code" <> AllocationCodeVar) then
+                        Error(WrongDim2Err);
                 end;
             }
         }
@@ -50,7 +56,7 @@ pageextension 50037 "FAJournalNVX" extends "Fixed Asset Journal"
     {
         addlast(Processing)
         {
-            action(PreviewDimDistributionNVX)
+            Action(PreviewDimDistributionNVX)
             {
                 ApplicationArea = All;
                 Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
@@ -78,7 +84,7 @@ pageextension 50037 "FAJournalNVX" extends "Fixed Asset Journal"
 
     trigger OnAfterGetRecord()
     begin
-        IF not FAJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
+        if not FAJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
             FAJnlLineNVX.Init();
             FAJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
             FAJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
@@ -96,7 +102,7 @@ pageextension 50037 "FAJournalNVX" extends "Fixed Asset Journal"
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean;
     begin
-        If AllocationCodeVar <> '' then begin
+        if AllocationCodeVar <> '' then begin
             FAJnlLineNVX.Init();
             FAJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
             FAJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";

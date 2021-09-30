@@ -11,7 +11,20 @@ pageextension 50033 "FACardNVX" extends "Fixed Asset Card"
             field("Global Dimension 2 CodeNVX"; Rec."Global Dimension 2 Code")
             {
                 ApplicationArea = All;
-            }            
+            }
+            field("Shortcut Dimension 3 CodeNVX"; ShortcutDimCode3)
+            {
+                ApplicationArea = All;
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
+                CaptionClass = '1,2,3';
+                trigger OnValidate();
+                var
+                    DimMgt: Codeunit DimensionManagement;
+                begin
+                    DimMgt.ValidateDimValueCode(3, ShortcutDimCode3);
+                    DimMgt.SaveDefaultDim(Database::"Responsibility Center", Rec."No.", 3, ShortcutDimCode3);
+                end;
+            }
             field("Allocation CodeNVX"; FixedAssetNVX."Allocation Code")
             {
                 ApplicationArea = All;
@@ -34,13 +47,13 @@ pageextension 50033 "FACardNVX" extends "Fixed Asset Card"
 
                     AllocationCode.Get(FixedAssetNVX."Allocation Code");
 
-                    IF Rec."Global Dimension 2 Code" = '' then begin
+                    if Rec."Global Dimension 2 Code" = '' then begin
                         Rec."Global Dimension 2 Code" := AllocationCode."Shortcut Dimension 2 Code";
                         Rec.Modify();
                     end else 
                         if Rec."Global Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
-                            If not Confirm(OverwriteDim2Qst) then
-                                error(WrongDimErr)
+                            if not Confirm(OverwriteDim2Qst) then
+                                Error(WrongDimErr)
                             else begin
                                 Rec.Validate("Global Dimension 2 Code",AllocationCode."Shortcut Dimension 2 Code");
                                 Rec.Modify(true);
@@ -55,15 +68,28 @@ pageextension 50033 "FACardNVX" extends "Fixed Asset Card"
     var
         FixedAssetNVX : Record FixedAssetNVX;
         PageEditable: Boolean;
+        ShortcutDimCode3: Code[20];
 
     trigger OnAfterGetRecord();
+    var
+        DefaultDim: Record "Default Dimension";
+        GLSetup: Record "General Ledger Setup";
     begin
-        IF not FixedAssetNVX.Get(Rec."No.") then begin
+        if not FixedAssetNVX.Get(Rec."No.") then begin
             FixedAssetNVX.Init();
             FixedAssetNVX."No." := Rec."No.";
             FixedAssetNVX.Insert();
         end;
         PageEditable := CurrPage.Editable;
+
+        GLSetup.Get();
+        DefaultDim.SetRange("Table ID", Database::"Responsibility Center");
+        DefaultDim.SetRange("No.", Rec."No.");
+        DefaultDim.SetRange("Dimension Code", GLSetup."Shortcut Dimension 3 Code");
+        if DefaultDim.FindFirst() then
+            ShortcutDimCode3 := DefaultDim."Dimension Value Code"
+        else
+            Clear(ShortcutDimCode3);
     end;
 
     trigger OnOpenPage();
@@ -81,10 +107,10 @@ pageextension 50033 "FACardNVX" extends "Fixed Asset Card"
     trigger OnQueryClosePage(CloseAction : Action) : Boolean;
     begin
 
-        IF Rec."No." = '' then 
+        if Rec."No." = '' then 
             exit(true);
 
-        IF FixedAssetNVX."Allocation Code" = '' then
+        if FixedAssetNVX."Allocation Code" = '' then
             Rec.TestField("Global Dimension 1 Code");
         Rec.TestField("Global Dimension 2 Code");
 
