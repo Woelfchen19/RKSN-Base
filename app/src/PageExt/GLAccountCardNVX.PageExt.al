@@ -73,7 +73,7 @@ pageextension 50028 "GLAccountCardNVX" extends "G/L Account Card"
                     GLAccountNVX.Modify();
                 end;
             }
-            field("No. of Classifications NVX";"No. of Classifications NVX")
+            field("No. of Classifications NVX";Rec."No. of Classifications NVX")
             {
                 ApplicationArea = All;
                 Caption = 'No. of Classifications', comment = 'DEA="Anzahl Gliederungsgruppen"';

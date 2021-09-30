@@ -25,7 +25,7 @@ table 50000 "GenPrdPstGrpNVX"
         {
             DataClassification = ToBeClassified;
             Caption = 'Inventory Posting Group', comment = 'DEA="Lagerbuchungsgruppe"';
-            TableRelation = "Inventory Posting Group";
+            TableRelation = "Inventory Posting Group".Code;
             trigger OnValidate();
             begin
                 CheckValid();
@@ -43,10 +43,10 @@ table 50000 "GenPrdPstGrpNVX"
 
     procedure CheckValid();
     var
-        InvalidCombination_Err: Label 'Your are not allowed to fill both fields "Inventory Value Zero" and "Inventory Posting Group"', 
-        comment = 'DEA="Es ist nicht erlaubt beide Felder "Ohne Lagerbewertung" und "Lagerbuchungsgruppe" zu befüllen';
-    begin 
-        if ("Inventory Value Zero" = "Inventory Value Zero"::Yes) and ("Inventory Posting Group NVX" <> '') then
+        InvalidCombination_Err: Label 'If ''No Item'' is selected then field ''Inventory Posting Group'' must be empty',
+        comment = 'DEA="Bei der Auswahl ''kein Artikel'' ist eine Zuordnung der Lagerbuchungsgruppe nicht möglich!"';
+    begin
+        if ("Inventory Value Zero" = "Inventory Value Zero"::"No Item") and ("Inventory Posting Group NVX" <> '') then
             error(InvalidCombination_Err);
     end;
 }

@@ -15,6 +15,11 @@ table 50001 "UserSetupNVX"
             DataClassification = CustomerContent;
             Caption = 'Allow Item Prod.Post.Group Change', comment = 'DEA="Änderung Prod.Bu.Grp. Artikelkarte"';
         }
+        field(11; "Allow Item Invt.Pst.Grp Change"; Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Allow Item Invt.Post.Group Change', comment = 'DEA="Änderung Lager.Bu.Grp. Artikelkarte"';
+        }        
     }
 
     keys

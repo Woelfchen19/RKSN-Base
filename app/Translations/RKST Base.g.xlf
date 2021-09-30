@@ -5119,8 +5119,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table GenJournalBatchNVX - Field No Dim Distribution - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3896373660 - Method 279053644 - NamedType 2597213558" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Your are not allowed to fill both fields "Inventory Value Zero" and "Inventory Posting Group"</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Es ist nicht erlaubt beide Felder "Ohne Lagerbewertung" und "Lagerbuchungsgruppe" zu befüllen</note>
+          <source>If 'No Item' is selected then field 'Inventory Posting Group' must be empty</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bei der Auswahl 'kein Artikel' ist eine Zuordnung der Lagerbuchungsgruppe nicht möglich!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table GenPrdPstGrpNVX - Method CheckValid - NamedType InvalidCombination_Err</note>
         </trans-unit>
         <trans-unit id="Table 3896373660 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -8898,6 +8898,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesLineNVX - Field Shortcut Dimension 3 Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1224611290 - Field 841247151 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allow Item Invt.Post.Group Change</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Änderung Lager.Bu.Grp. Artikelkarte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table UserSetupNVX - Field Allow Item Invt.Pst.Grp Change - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1224611290 - Field 2283305579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allow Item Prod.Post.Group Change</source>
           <note from="Developer" annotates="general" priority="2">DEA="Änderung Prod.Bu.Grp. Artikelkarte"</note>
@@ -8962,6 +8967,11 @@
           <source>You are not allowed to use this Product Posting Group in this context. It belongs to the Datawarehouse</source>
           <note from="Developer" annotates="general" priority="2">DEA="Es ist nicht möglich, diese Produktbuchungsgruppe zuzuordnen, da diese zum Datawarehouse gehört!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table15HookNVX - Method CheckInventoryValueZero - NamedType WrongPrdPstGrpErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2614021276 - Method 3561337113 - NamedType 3687080399" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are Ledger Entries for this Item and you are missing the necessary user rights to change the inventory posting group.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Es gibt zum Artikel bereits gebuchte Posten! Sie haben keine Rechte, um nachträglich die zugeordnete Lagerbuchungsgruppe zu ändern."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table27HookNVX - Method CheckforItemLedgerEntries - NamedType NoUserRightErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 2614021276 - Method 2764824227 - NamedType 559118403" size-unit="char" translate="yes" xml:space="preserve">
           <source>This Product Posting Group is blocked for use on Items!</source>
@@ -10693,6 +10703,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Dim.Aufbereitung nicht erlaubt"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLAccountCardNVX - Control No dim distributionNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 989769378 - Control 4055666173 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4219821699">
+          <source>No. of Classifications</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Anzahl Gliederungsgruppen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLAccountCardNVX - Control No. of Classifications NVX - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2053733812 - Control 4055666173 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2668789169">
           <source>No. of Classifications</source>
           <note from="Developer" annotates="general" priority="2">DEA="Anzahl Gliederungsgruppen"</note>
@@ -10947,6 +10962,16 @@
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SalesJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 2431373660 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies if the user is allowed to change the Inventory Posting Group on items although entries are existing</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob die Lagerbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control Allow Item Invt.Post.Group Change NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 2431373660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Allow Item Invt.Post.Group Change</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Änderung Lager.Bu.Grp. Artikelkarte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control Allow Item Invt.Post.Group Change NVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 2662501360 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies if the user is allowed to change the Prod. Posting Group on items although entries are existing</source>
