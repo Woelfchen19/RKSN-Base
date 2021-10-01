@@ -7808,6 +7808,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesInvoiceLineNVX - Field Line No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3657852281 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesInvoiceLineNVX - Field Shortcut Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3657852281 - Field 781257514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesInvoiceLineNVX - Field Shortcut Dimension 3 Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3657852281 - Field 1364463381 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Posting Type</source>
           <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
