@@ -1,12 +1,12 @@
 // page 50029 PurchLineArchiveNVX
 // {
-    
+
 //     ApplicationArea = All;
 //     Caption = 'Purchase Line Archive', comment = 'DEA="Einkaufszeilenarchiv"';
 //     PageType = List;
 //     SourceTable = PurchLineArchiveNVX;
 //     UsageCategory = History;
-    
+
 //     layout
 //     {
 //         area(content)
@@ -618,5 +618,5 @@
 //             }
 //         }
 //     }
-    
+
 // }

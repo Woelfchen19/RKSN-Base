@@ -1,11 +1,11 @@
-page 50031 "PostingListPurchaseNVX"
+page 50031 PostingListPurchaseNVX
 {
     Caption = 'Backup dimensional distribution Purchase', comment = 'DEA="Sicherung dim.Verteilungen Modul Einkauf"';
     PageType = List;
     UsageCategory = Lists;
     ApplicationArea = All;
     SourceTable = PostingsNVX;
-    CardPageId = 50014;
+    CardPageId = PostingCardNVX;
     Editable = false;
     InsertAllowed = false;
     layout
@@ -42,7 +42,7 @@ page 50031 "PostingListPurchaseNVX"
                 {
                     ApplicationArea = All;
                 }
-                
+
             }
         }
     }

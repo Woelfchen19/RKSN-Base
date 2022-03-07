@@ -1,4 +1,4 @@
-pageextension 50033 "FACardNVX" extends "Fixed Asset Card"
+pageextension 50033 FACardNVX extends "Fixed Asset Card"
 {
     layout
     {
@@ -35,10 +35,10 @@ pageextension 50033 "FACardNVX" extends "Fixed Asset Card"
                 var
                     // FixedAsset: Record "Fixed Asset";
                     AllocationCode: Record AllocationCodeNVX;
-                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup!', 
+                    OverwriteDim2Qst: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Do you want to overwrite the Profitcenter?',
+                        comment = 'DEA=Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Wollen Sie das Profitcenter mit dem Wert aus dem Verteilungscode überschreiben?"';
+                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup!',
                         comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Überprüfen Sie bitte das Setup."';
-                    OverwriteDim2Qst: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Do you want to overwrite the Profitcenter?', 
-                        comment = 'DEA=Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Wollen Sie das Profitcenter mit dem Wert aus dem Verteilungscode überschreiben?"';                    
                 begin
                     if FixedAssetNVX."Allocation Code" = '' then begin
                         FixedAssetNVX.Modify();
@@ -50,12 +50,12 @@ pageextension 50033 "FACardNVX" extends "Fixed Asset Card"
                     if Rec."Global Dimension 2 Code" = '' then begin
                         Rec."Global Dimension 2 Code" := AllocationCode."Shortcut Dimension 2 Code";
                         Rec.Modify();
-                    end else 
+                    end else
                         if Rec."Global Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                             if not Confirm(OverwriteDim2Qst) then
                                 Error(WrongDimErr)
                             else begin
-                                Rec.Validate("Global Dimension 2 Code",AllocationCode."Shortcut Dimension 2 Code");
+                                Rec.Validate("Global Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
                                 Rec.Modify(true);
                             end;
 
@@ -66,7 +66,7 @@ pageextension 50033 "FACardNVX" extends "Fixed Asset Card"
     }
 
     var
-        FixedAssetNVX : Record FixedAssetNVX;
+        FixedAssetNVX: Record FixedAssetNVX;
         PageEditable: Boolean;
         ShortcutDimCode3: Code[20];
 
@@ -97,17 +97,17 @@ pageextension 50033 "FACardNVX" extends "Fixed Asset Card"
         PageEditable := CurrPage.Editable;
     end;
 
-    trigger OnDeleteRecord() : Boolean;
+    trigger OnDeleteRecord(): Boolean;
     begin
         Rec.Delete(true);
         Rec.Init();
         CurrPage.Close();
     end;
 
-    trigger OnQueryClosePage(CloseAction : Action) : Boolean;
+    trigger OnQueryClosePage(CloseAction: Action): Boolean;
     begin
 
-        if Rec."No." = '' then 
+        if Rec."No." = '' then
             exit(true);
 
         if FixedAssetNVX."Allocation Code" = '' then

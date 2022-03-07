@@ -1,4 +1,4 @@
-pageextension 50037 "FAJournalNVX" extends "Fixed Asset Journal"
+pageextension 50037 FAJournalNVX extends "Fixed Asset Journal"
 {
     layout
     {
@@ -13,10 +13,10 @@ pageextension 50037 "FAJournalNVX" extends "Fixed Asset Journal"
                 var
                     AllocationCode: Record AllocationCodeNVX;
                     FixedAssetNVX: Record FixedAssetNVX;
-                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
-                        comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
                     WrongDim2Err: Label 'Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.',
                         comment = 'DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"';
+                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
+                        comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
                 begin
 
                     if Rec."Line No." > 0 then
@@ -56,7 +56,7 @@ pageextension 50037 "FAJournalNVX" extends "Fixed Asset Journal"
     {
         addlast(Processing)
         {
-            Action(PreviewDimDistributionNVX)
+            action(PreviewDimDistributionNVX)
             {
                 ApplicationArea = All;
                 Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';

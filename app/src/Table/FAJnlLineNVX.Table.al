@@ -1,7 +1,7 @@
-table 50023 "FAJnlLineNVX"
+table 50023 FAJnlLineNVX
 {
     DataClassification = ToBeClassified;
-    
+
     fields
     {
         field(1; "Journal Template Name"; Code[10])
@@ -25,7 +25,7 @@ table 50023 "FAJnlLineNVX"
 
     keys
     {
-        key(PK;"Journal Template Name","Journal Batch Name","Line No.")
+        key(PK; "Journal Template Name", "Journal Batch Name", "Line No.")
         {
             Clustered = true;
         }

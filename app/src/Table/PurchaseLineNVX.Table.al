@@ -1,7 +1,7 @@
-table 50028 "PurchaseLineNVX"
+table 50028 PurchaseLineNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Document Type"; Option)
@@ -15,7 +15,7 @@ table 50028 "PurchaseLineNVX"
         }
         field(4; "Line No."; Integer)
         {
-            DataClassification = CustomerContent;            
+            DataClassification = CustomerContent;
         }
         field(10; "Allocation Code"; Code[10])
         {
@@ -27,7 +27,7 @@ table 50028 "PurchaseLineNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));       
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
             // CaptionClass = '1338,1'; = Sales + Dim Name
             // CaptionClass = '1339,1'; = Purchase + Dim Name
         }
@@ -37,7 +37,7 @@ table 50028 "PurchaseLineNVX"
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
             // CaptionClass = '1338,3'; = Sales + Dim Name
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
         }
         field(30; "Vend. Unit Price"; Decimal)
         {
@@ -50,26 +50,26 @@ table 50028 "PurchaseLineNVX"
             DataClassification = ToBeClassified;
             Caption = 'Vend. Amount', comment = 'DEA="Kred. Betrag"';
             Editable = false;
-        }        
+        }
         field(100; "Allocation Amount"; Decimal)
         {
             Caption = 'Allocation Amount';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum (DistrPurchLineNVX."VAT Base Amount" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No."), "Origin Line No." = field ("Line No.")));
+            CalcFormula = sum(DistrPurchLineNVX."VAT Base Amount" where("Document Type" = field("Document Type"), "Document No." = field("Document No."), "Origin Line No." = field("Line No.")));
         }
         field(101; "Allocation Amount Incl. VAT"; Decimal)
         {
             Caption = 'Allocation Amount Incl. VAT';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum (DistrPurchLineNVX."Amount Including VAT" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No."), "Origin Line No." = field ("Line No.")));
+            CalcFormula = sum(DistrPurchLineNVX."Amount Including VAT" where("Document Type" = field("Document Type"), "Document No." = field("Document No."), "Origin Line No." = field("Line No.")));
         }
     }
 
     keys
     {
-        key(PK;"Document Type","Document No.","Line No.")
+        key(PK; "Document Type", "Document No.", "Line No.")
         {
             Clustered = true;
         }
@@ -80,7 +80,7 @@ table 50028 "PurchaseLineNVX"
     //     "Vend. Amount" := round(ActPurchaseLine.Quantity * "Vend. Unit Price", 0.01);
     //     Modify();
     // end;
-    
+
     // procedure UpdatePurchaseLine(var ActPurchaseLine: record "Purchase Line")
     // var
     //     VATPostingSetup: record "VAT Posting Setup";
@@ -97,36 +97,36 @@ table 50028 "PurchaseLineNVX"
 
     procedure HandleVATDifferenceNVX(PurchaseHeader: Record "Purchase Header")
     var
-        PurchaseLineNVX: record PurchaseLineNVX;
+        PurchaseLine: Record "Purchase Line";
+        PurchaseLineNVX: Record PurchaseLineNVX;
         TempVATAmountLine: Record "VAT Amount Line" temporary;
-        PurchaseLine: record "Purchase Line";
         VATDifference: Decimal;
     begin
         begin
 
-            purchaseHeader.TestField(Status, purchaseHeader.Status::Released);
-            purchaseHeader.CalcFields("Amount Including VAT");
+            PurchaseHeader.TestField(Status, PurchaseHeader.Status::Released);
+            PurchaseHeader.CalcFields("Amount Including VAT");
 
-            purchaseLineNVX.reset();
-            purchaseLineNVX.SetRange("Document Type", purchaseHeader."Document Type");
-            purchaseLineNVX.SetRange("Document No.", purchaseHeader."No.");
-            purchaseLineNVX.CalcSums("Vend. Amount");
-            if purchaseLineNVX."Vend. Amount" = 0 then
+            PurchaseLineNVX.Reset();
+            PurchaseLineNVX.SetRange("Document Type", PurchaseHeader."Document Type");
+            PurchaseLineNVX.SetRange("Document No.", PurchaseHeader."No.");
+            PurchaseLineNVX.CalcSums("Vend. Amount");
+            if PurchaseLineNVX."Vend. Amount" = 0 then
                 exit;
 
-            VATDifference := purchaseHeader."Amount Including VAT" - purchaseLineNVX."Vend. Amount";
+            VATDifference := PurchaseHeader."Amount Including VAT" - PurchaseLineNVX."Vend. Amount";
 
             if VATDifference <> 0 then begin
 
-                clear(purchaseline);
-                purchaseLine.SetpurchHeader(purchaseHeader);
-                purchaseLine.CalcVATAmountLines(0, purchaseHeader, purchaseLine, TempVATAmountLine);
+                Clear(PurchaseLine);
+                PurchaseLine.SetPurchHeader(PurchaseHeader);
+                PurchaseLine.CalcVATAmountLines(0, PurchaseHeader, PurchaseLine, TempVATAmountLine);
                 TempVATAmountLine.SetFilter("VAT Amount", '<>0');
-                TempVATAmountLine.findfirst();
+                TempVATAmountLine.FindFirst();
                 TempVATAmountLine.Validate("VAT Amount", TempVATAmountLine."VAT Amount" - VATDifference);
-                TempVATAmountLine.CheckVATDifference(purchaseHeader."Currency Code", true);
+                TempVATAmountLine.CheckVATDifference(PurchaseHeader."Currency Code", true);
                 TempVATAmountLine.Modify();
-                purchaseLine.UpdateVATOnLines(0, purchaseHeader, purchaseLine, TempVATAmountLine);
+                PurchaseLine.UpdateVATOnLines(0, PurchaseHeader, PurchaseLine, TempVATAmountLine);
 
             end;
 

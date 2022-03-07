@@ -1,4 +1,4 @@
-pageextension 50004 "InventorySetupNVX" extends "Inventory Setup"
+pageextension 50004 InventorySetupNVX extends "Inventory Setup"
 {
     layout
     {
@@ -28,33 +28,33 @@ pageextension 50004 "InventorySetupNVX" extends "Inventory Setup"
             {
                 ApplicationArea = All;
                 Caption = 'Inventory Section', comment = 'DEA="Lager Sparte"';
-                TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(3));
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
                 trigger OnValidate();
                 begin
                     InvSetupNVX.Modify();
-                end;                
+                end;
             }
             field("Inventory Cost Center NVX"; InvSetupNVX."Inventory Cost Center")
             {
                 ApplicationArea = All;
                 Caption = 'Inventory Cost Center', comment = 'DEA="Lager KSt."';
-                TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(1));
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
                 trigger OnValidate();
                 begin
                     InvSetupNVX.Modify();
-                end;                
+                end;
             }
             field("Section - Inventory Value ZeroNVX"; InvSetupNVX."Section - Inventory Value Zero")
             {
                 ApplicationArea = All;
                 Caption = 'Section - Inventory Value Zero', comment = 'DEA="EK und VK nicht lagerbewertet Sparte"';
-                TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(3));
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
                 trigger OnValidate();
                 begin
                     InvSetupNVX.Modify();
-                end;     
+                end;
             }
-            
+
             field("Purchase Gen. Bus. Posting Group FixedNVX"; InvSetupNVX."Purch Gen. Bus. Pst Grp Fixed")
             {
                 ApplicationArea = All;
@@ -64,11 +64,11 @@ pageextension 50004 "InventorySetupNVX" extends "Inventory Setup"
                 begin
                     InvSetupNVX.Modify();
                 end;
-            }             
+            }
             field("Vend./Cust. Dim 1NVX"; InvSetupNVX."Vend./Cust. Dim 1")
             {
                 ApplicationArea = All;
-                TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(1));
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
                 Caption = 'Vendor/Customer postings Dimension 1', comment = 'DEA="Dim. 1 Personenkonten Buchungsgruppen"';
                 trigger OnValidate()
                 begin
@@ -80,7 +80,7 @@ pageextension 50004 "InventorySetupNVX" extends "Inventory Setup"
             field("Vend./Cust. Dim 2NVX"; InvSetupNVX."Vend./Cust. Dim 2")
             {
                 ApplicationArea = All;
-                TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(2));
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
                 Caption = 'Vendor/Customer postings Dimension 2', comment = 'DEA="Dim. 2 Personenkonten Buchungsgruppen"';
                 trigger OnValidate()
                 begin
@@ -92,7 +92,7 @@ pageextension 50004 "InventorySetupNVX" extends "Inventory Setup"
             field("Vend./Cust. Dim 3NVX"; InvSetupNVX."Vend./Cust. Dim 3")
             {
                 ApplicationArea = All;
-                TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(3));
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
                 Caption = 'Vendor/Customer postings Dimension 3', comment = 'DEA="Dim. 3 Personenkonten Buchungsgruppen"';
                 trigger OnValidate()
                 begin
@@ -153,7 +153,7 @@ pageextension 50004 "InventorySetupNVX" extends "Inventory Setup"
                 {
                     ApplicationArea = All;
                     Caption = 'Composition Section - Inventory Value Zero', comment = 'DEA="Abfassung nicht lagerbewertete Sparte"';
-                    TableRelation = "Dimension Value".Code WHERE ("Global Dimension No."=CONST(3));
+                    TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
                     trigger OnValidate();
                     begin
                         InvSetupNVX.Modify();
@@ -173,7 +173,7 @@ pageextension 50004 "InventorySetupNVX" extends "Inventory Setup"
                 {
                     ApplicationArea = All;
                     Caption = 'Composition Journal Name', comment = 'DEA="Abfassung Buchblattname"';
-                    TableRelation = "Gen. Journal Batch".Name where ("Journal Template Name" = const ('Verkauf'));
+                    TableRelation = "Gen. Journal Batch".Name where("Journal Template Name" = const('Verkauf'));
                     trigger OnValidate();
                     begin
                         InvSetupNVX.Modify();
@@ -191,7 +191,7 @@ pageextension 50004 "InventorySetupNVX" extends "Inventory Setup"
                 {
                     ApplicationArea = All;
                     Caption = 'Sales Journal Name', comment = 'DEA="Verkauf Buchblattname"';
-                    TableRelation = "Gen. Journal Batch".Name where ("Journal Template Name" = const ('Verkauf'));
+                    TableRelation = "Gen. Journal Batch".Name where("Journal Template Name" = const('Verkauf'));
                     trigger OnValidate();
                     begin
                         InvSetupNVX.Modify();
@@ -228,18 +228,18 @@ pageextension 50004 "InventorySetupNVX" extends "Inventory Setup"
             }
         }
     }
-    
+
     var
-        InvSetupNVX : Record InvSetupNVX;    
-    
+        InvSetupNVX: Record InvSetupNVX;
+
     trigger OnAfterGetRecord();
     begin
         InvSetupNVX.Reset();
-        If not InvSetupNVX.Get() then begin
+        if not InvSetupNVX.Get() then begin
             InvSetupNVX.Init();
             InvSetupNVX.Insert();
         end;
-        InvSetupNVX.CalcFields("Comp Journal Description","Sales Journal Description");
+        InvSetupNVX.CalcFields("Comp Journal Description", "Sales Journal Description");
     end;
 
 

@@ -1,4 +1,4 @@
-page 50019 "FAJnlLineArchiveOriginNVX"
+page 50019 FAJnlLineArchiveOriginNVX
 {
     Caption = 'FA Journal Line Archive Origin', comment = 'DEA="Anlagen Buch.-Blattzeilenarchiv Ursprung"';
     PageType = ListPart;
@@ -50,7 +50,7 @@ page 50019 "FAJnlLineArchiveOriginNVX"
                 {
                     ApplicationArea = All;
                 }
-                field(Amount; "Amount")
+                field(Amount; Amount)
                 {
                     ApplicationArea = All;
                 }

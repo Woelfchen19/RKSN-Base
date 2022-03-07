@@ -1,4 +1,4 @@
-pageextension 50041 "RecurringGeneralJournalNVX" extends "Recurring General Journal"
+pageextension 50041 RecurringGeneralJournalNVX extends "Recurring General Journal"
 {
     layout
     {
@@ -12,11 +12,11 @@ pageextension 50041 "RecurringGeneralJournalNVX" extends "Recurring General Jour
                 trigger OnValidate();
                 var
                     AllocationCode: Record AllocationCodeNVX;
-                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!', 
+                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
                 begin
-                    IF Rec."Line No." > 0 then
-                        IF not GenJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
+                    if Rec."Line No." > 0 then
+                        if not GenJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
                             GenJnlLineNVX.Init();
                             GenJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
                             GenJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
@@ -29,15 +29,15 @@ pageextension 50041 "RecurringGeneralJournalNVX" extends "Recurring General Jour
                         end;
 
 
-                    If AllocationCodeVar <> '' then
-                        If Rec."Shortcut Dimension 2 Code" = '' then begin
+                    if AllocationCodeVar <> '' then
+                        if Rec."Shortcut Dimension 2 Code" = '' then begin
                             AllocationCode.Get(AllocationCodeVar);
                             Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
-                            If Rec."Line No." > 0 then
+                            if Rec."Line No." > 0 then
                                 Rec.Modify();
                         end else begin
                             AllocationCode.Get(AllocationCodeVar);
-                            IF Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+                            if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                                 Error(WrongDimErr);
                         end;
                 end;
@@ -63,8 +63,8 @@ pageextension 50041 "RecurringGeneralJournalNVX" extends "Recurring General Jour
                     PreviewDimDistrPage: Page PreviewDimDistrNVX;
                 begin
                     OnPreviewDimDistributionNVX(Rec);
-                    DistrGenJnlLine.SetRange("Journal Template Name",Rec."Journal Template Name");
-                    DistrGenJnlLine.SetRange("Journal Batch Name",Rec."Journal Batch Name");
+                    DistrGenJnlLine.SetRange("Journal Template Name", Rec."Journal Template Name");
+                    DistrGenJnlLine.SetRange("Journal Batch Name", Rec."Journal Batch Name");
                     PreviewDimDistrPage.SetRecord(DistrGenJnlLine);
                     PreviewDimDistrPage.SetTableView(DistrGenJnlLine);
                     PreviewDimDistrPage.Run();
@@ -79,7 +79,7 @@ pageextension 50041 "RecurringGeneralJournalNVX" extends "Recurring General Jour
 
     trigger OnAfterGetRecord()
     begin
-        IF not GenJnlLineNVX.Get(Rec."Journal Template Name",Rec."Journal Batch Name",Rec."Line No.") then begin
+        if not GenJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
             GenJnlLineNVX.Init();
             GenJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
             GenJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
@@ -97,7 +97,7 @@ pageextension 50041 "RecurringGeneralJournalNVX" extends "Recurring General Jour
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean;
     begin
-        If AllocationCodeVar <> '' then begin
+        if AllocationCodeVar <> '' then begin
             GenJnlLineNVX.Init();
             GenJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
             GenJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
@@ -108,7 +108,7 @@ pageextension 50041 "RecurringGeneralJournalNVX" extends "Recurring General Jour
         exit(true);
     end;
 
-    [IntegrationEvent(false,false)]
+    [IntegrationEvent(false, false)]
     local procedure OnPreviewDimDistributionNVX(var GenJnlLine: Record "Gen. Journal Line")
     begin
     end;

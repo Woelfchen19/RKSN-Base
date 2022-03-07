@@ -1,4 +1,4 @@
-table 50033 "InvoicePostBufferNVX"
+table 50033 InvoicePostBufferNVX
 {
     fields
     {
@@ -55,7 +55,7 @@ table 50033 "InvoicePostBufferNVX"
         {
             Caption = 'Use Tax';
             DataClassification = SystemMetadata;
-        }        
+        }
         field(23; "VAT Bus. Posting Group"; Code[20])
         {
             Caption = 'VAT Bus. Posting Group';
@@ -74,7 +74,7 @@ table 50033 "InvoicePostBufferNVX"
             DataClassification = SystemMetadata;
             Editable = false;
             TableRelation = "Dimension Set Entry";
-        }        
+        }
         field(1700; "Deferral Code"; Code[10])
         {
             Caption = 'Deferral Code';
@@ -85,7 +85,7 @@ table 50033 "InvoicePostBufferNVX"
         {
             Caption = 'Fixed Asset Line No.';
             DataClassification = SystemMetadata;
-        }        
+        }
         //Fields to save for later
         field(50000; "Allocation Code"; Code[10])
         {
@@ -102,7 +102,7 @@ table 50033 "InvoicePostBufferNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));       
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
             // CaptionClass = '1338,1'; = Sales + Dim Name
             // CaptionClass = '1339,1'; = Purchase + Dim Name
         }
@@ -112,13 +112,13 @@ table 50033 "InvoicePostBufferNVX"
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
             // CaptionClass = '1338,3'; = Sales + Dim Name
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
         }
         field(50035; "Purchase Shortcut Dimension 1"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));       
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
             // CaptionClass = '1338,1'; = Sales + Dim Name
             // CaptionClass = '1339,1'; = Purchase + Dim Name
         }
@@ -128,7 +128,7 @@ table 50033 "InvoicePostBufferNVX"
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
             // CaptionClass = '1338,3'; = Sales + Dim Name
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
         }
         field(50040; "Deactivate dimensional distr"; Boolean)
         {
@@ -151,7 +151,7 @@ table 50033 "InvoicePostBufferNVX"
             Caption = 'Sales Restrospect Entry', comment = 'DEA="NACHGELAGERT Modul Verkauf"';
         }
     }
-      
+
     keys
     {
         key(PK; Type, "G/L Account", "Gen. Bus. Posting Group", "Gen. Prod. Posting Group", "VAT Bus. Posting Group", "VAT Prod. Posting Group", "Tax Area Code", "Tax Group Code", "Tax Liable", "Use Tax", "Dimension Set ID", "Job No.", "Fixed Asset Line No.", "Deferral Code")

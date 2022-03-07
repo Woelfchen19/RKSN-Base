@@ -1,7 +1,7 @@
-table 50000 "GenPrdPstGrpNVX"
+table 50000 GenPrdPstGrpNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Code"; Code[20])
@@ -29,13 +29,13 @@ table 50000 "GenPrdPstGrpNVX"
             trigger OnValidate();
             begin
                 CheckValid();
-            end;            
-        }        
+            end;
+        }
     }
 
     keys
     {
-        key(PK;Code)
+        key(PK; Code)
         {
             Clustered = true;
         }
@@ -47,6 +47,6 @@ table 50000 "GenPrdPstGrpNVX"
         comment = 'DEA="Bei der Auswahl ''kein Artikel'' ist eine Zuordnung der Lagerbuchungsgruppe nicht möglich!"';
     begin
         if ("Inventory Value Zero" = "Inventory Value Zero"::"No Item") and ("Inventory Posting Group NVX" <> '') then
-            error(InvalidCombination_Err);
+            Error(InvalidCombination_Err);
     end;
 }

@@ -1,41 +1,41 @@
-codeunit 50017 "Codeunit311HookNVX"
+codeunit 50017 Codeunit311HookNVX
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item-Check Avail.", 'OnBeforeShowWarningForThisItem', '', false, false)]
-    local procedure HandleStockOutWarning(Item: record Item; var ShowWarning: Boolean; var IsHandled: Boolean)
+    local procedure HandleStockOutWarning(Item: Record Item; var ShowWarning: Boolean; var IsHandled: Boolean)
     var
-        MyNotifications: Record "My Notifications";
         InvSetupNVX: Record InvSetupNVX;
+        MyNotifications: Record "My Notifications";
         ItemCheckCU: Codeunit "Item-Check Avail.";
     begin
         IsHandled := true;
 
-        IF Item.Type = Item.Type::Service THEN begin
+        if Item.Type = Item.Type::Service then begin
             ShowWarning := false;
             exit;
         end;
 
-        IF NOT MyNotifications.IsEnabledForRecord(ItemCheckCU.GetItemAvailabilityNotificationId(), Item) THEN begin
+        if not MyNotifications.IsEnabledForRecord(ItemCheckCU.GetItemAvailabilityNotificationId(), Item) then begin
             ShowWarning := false;
             exit;
         end;
 
-        CASE Item."Stockout Warning" OF
-            Item."Stockout Warning"::No :
+        case Item."Stockout Warning" of
+            Item."Stockout Warning"::No:
                 ShowWarning := false;
-            Item."Stockout Warning"::Yes :
+            Item."Stockout Warning"::Yes:
                 ShowWarning := true;
-            Item."Stockout Warning"::Default :
-            BEGIN
-                InvSetupNVX.GET();
-                Case true of
-                    Item."Inventory Value Zero" AND (NOT InvSetupNVX."Allow Neg. Inv. no Stock Value"):
-                        ShowWarning := true;
-                    (NOT Item."Inventory Value Zero") AND (NOT InvSetupNVX."Allow Neg. Inv. Stock Value"):
-                        ShowWarning := true;
-                else
-                    ShowWarning := false;
+            Item."Stockout Warning"::Default:
+                begin
+                    InvSetupNVX.Get();
+                    case true of
+                        Item."Inventory Value Zero" and (not InvSetupNVX."Allow Neg. Inv. no Stock Value"):
+                            ShowWarning := true;
+                        (not Item."Inventory Value Zero") and (not InvSetupNVX."Allow Neg. Inv. Stock Value"):
+                            ShowWarning := true;
+                        else
+                            ShowWarning := false;
+                    end;
                 end;
-            END;
-        END;
+        end;
     end;
 }

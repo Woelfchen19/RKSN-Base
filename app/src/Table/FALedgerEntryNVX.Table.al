@@ -1,7 +1,7 @@
-table 50017 "FALedgerEntryNVX"
+table 50017 FALedgerEntryNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Entry No."; Integer)
@@ -18,7 +18,7 @@ table 50017 "FALedgerEntryNVX"
 
     keys
     {
-        key(PK;"Entry No.")
+        key(PK; "Entry No.")
         {
             Clustered = true;
         }

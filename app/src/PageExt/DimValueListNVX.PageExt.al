@@ -1,6 +1,6 @@
-pageextension 50007 "DimValueListNVX" extends "Dimension Value List"
+pageextension 50007 DimValueListNVX extends "Dimension Value List"
 {
-    
+
     Editable = false;
     layout
     {
@@ -26,7 +26,7 @@ pageextension 50007 "DimValueListNVX" extends "Dimension Value List"
                 ApplicationArea = All;
                 CaptionClass = '1,2,1';
                 Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));  
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
                 Visible = IsOE;
                 Editable = false;
             }
@@ -35,42 +35,42 @@ pageextension 50007 "DimValueListNVX" extends "Dimension Value List"
                 ApplicationArea = All;
                 CaptionClass = '1,2,2';
                 Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
-                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
                 Visible = IsOE;
-                Editable = false;      
+                Editable = false;
             }
-            
+
         }
     }
-    
+
     var
         DimValueNVX: Record DimValueNVX;
-        PostingTypeVisible: Boolean;        
         IsOE: Boolean;
+        PostingTypeVisible: Boolean;
 
     trigger OnAfterGetRecord();
     begin
-        IF (not PostingTypeVisible) and (not IsOE) then
+        if (not PostingTypeVisible) and (not IsOE) then
             exit;
 
-        If not DimValueNVX.GET("Dimension Code",Code) then begin
+        if not DimValueNVX.Get("Dimension Code", Code) then begin
             DimValueNVX.Init();
             DimValueNVX."Dimension Code" := "Dimension Code";
             DimValueNVX.Code := Code;
             DimValueNVX.Insert();
         end;
-        IF PostingTypeVisible then
+        if PostingTypeVisible then
             DimValueNVX.CalcFields("VAT Posting Type Desc");
     end;
 
     trigger OnOpenPage();
     begin
-        IF GetFilter("Global Dimension No.") = '3' then
+        if GetFilter("Global Dimension No.") = '3' then
             PostingTypeVisible := true
         else
             PostingTypeVisible := false;
 
-        IF GetFilter("Global Dimension No.") = '6' then
+        if GetFilter("Global Dimension No.") = '6' then
             IsOE := true
         else
             IsOE := false;

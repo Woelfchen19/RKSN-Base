@@ -1,10 +1,10 @@
-pageextension 50011 "VendCardNVX" extends "Vendor Card"
+pageextension 50011 VendCardNVX extends "Vendor Card"
 {
     layout
     {
         modify("Gen. Bus. Posting Group")
         {
-            trigger OnLookup(var Text: Text) : Boolean;
+            trigger OnLookup(var Text: Text): Boolean;
             var
                 GBPGRec: Record "Gen. Business Posting Group";
                 GenBsnPstGrpNVX: Record GenBsnPstGrpNVX;
@@ -22,7 +22,7 @@ pageextension 50011 "VendCardNVX" extends "Vendor Card"
                 GBPGPage.LookupMode(true);
                 if GBPGPage.RunModal() = "Action"::LookupOK then begin
                     GBPGPage.GetRecord(GBPGRec);
-                    Rec.Validate("Gen. Bus. Posting Group",GBPGRec.Code);
+                    Rec.Validate("Gen. Bus. Posting Group", GBPGRec.Code);
                 end;
             end;
         }

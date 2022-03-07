@@ -1,7 +1,7 @@
 table 50008 VATPostingSetupNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "VAT Bus. Posting Group"; Code[20])
@@ -18,10 +18,10 @@ table 50008 VATPostingSetupNVX
             Caption = 'Purchase VAT as Expense', comment = 'DEA="VST als Aufwand"';
         }
     }
-    
+
     keys
     {
-        key(Key1; "VAT Bus. Posting Group","VAT Prod. Posting Group")
+        key(Key1; "VAT Bus. Posting Group", "VAT Prod. Posting Group")
         {
             Clustered = true;
         }

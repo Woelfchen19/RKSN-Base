@@ -1,4 +1,4 @@
-page 50007 "AllocationListNVX"
+page 50007 AllocationListNVX
 {
     Caption = 'Allocations', comment = 'DEA="Verteilungen"';
     PageType = List;
@@ -8,7 +8,7 @@ page 50007 "AllocationListNVX"
     CardPageId = AllocationCardNVX;
     InsertAllowed = false;
     Editable = false;
-    SourceTableView = sorting("Allocation Code","Start Date");
+    SourceTableView = sorting("Allocation Code", "Start Date");
     layout
     {
         area(Content)
@@ -29,12 +29,12 @@ page 50007 "AllocationListNVX"
                 }
             }
         }
-        area(Factboxes)
+        area(FactBoxes)
         {
-            
+
         }
     }
-    
+
     // actions
     // {
     //     area(Processing)
@@ -42,7 +42,7 @@ page 50007 "AllocationListNVX"
     //         action(NewAllocation)
     //         {
     //             ApplicationArea = All;
-                
+
     //             trigger OnAction();
     //             var
     //                 AllocationCard: Page AllocationCardNVX;

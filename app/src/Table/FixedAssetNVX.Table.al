@@ -1,7 +1,7 @@
-table 50015 "FixedAssetNVX"
+table 50015 FixedAssetNVX
 {
     DataClassification = ToBeClassified;
-    
+
     fields
     {
         field(1; "No."; Code[20])
@@ -18,7 +18,7 @@ table 50015 "FixedAssetNVX"
 
     keys
     {
-        key(PK;"No.")
+        key(PK; "No.")
         {
             Clustered = true;
         }

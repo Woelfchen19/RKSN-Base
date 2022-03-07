@@ -1,13 +1,13 @@
-page 50001 "PstTypeMatrixNVX"
+page 50001 PstTypeMatrixNVX
 {
     PageType = ListPart;
     SourceTable = "Gen. Business Posting Group";
     Caption = 'Matrix General Business Posting Group_VAT Posting Type', comment = 'DEA="Matrix Geschäftsbuchungsgruppe_USt Buchungsart"';
-    
+
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(Group)
             {
@@ -40,11 +40,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field1Visible;
                     Editable = false;
-                }                
+                }
                 field(Field2; MATRIX_CellData[2])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[2];                   
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[2];
                     Visible = Field2Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -59,11 +59,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field2Visible;
                     Editable = false;
-                } 
+                }
                 field(Field3; MATRIX_CellData[3])
                 {
-                    ApplicationArea = Planning;                   
-                    CaptionClass = '3,' + MATRIX_CaptionSet[3];                   
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[3];
                     Visible = Field3Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -78,11 +78,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field3Visible;
                     Editable = false;
-                } 
+                }
                 field(Field4; MATRIX_CellData[4])
                 {
-                    ApplicationArea = Planning;                   
-                    CaptionClass = '3,' + MATRIX_CaptionSet[4];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[4];
                     Visible = Field4Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -97,11 +97,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field4Visible;
                     Editable = false;
-                } 
+                }
                 field(Field5; MATRIX_CellData[5])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[5];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[5];
                     Visible = Field5Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -116,11 +116,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field5Visible;
                     Editable = false;
-                } 
+                }
                 field(Field6; MATRIX_CellData[6])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[6];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[6];
                     Visible = Field6Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -135,11 +135,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field6Visible;
                     Editable = false;
-                } 
+                }
                 field(Field7; MATRIX_CellData[7])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[7];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[7];
                     Visible = Field7Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -154,11 +154,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field7Visible;
                     Editable = false;
-                } 
+                }
                 field(Field8; MATRIX_CellData[8])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[8];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[8];
                     Visible = Field8Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -173,12 +173,12 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field8Visible;
                     Editable = false;
-                } 
+                }
                 field(Field9; MATRIX_CellData[9])
                 {
 
-                    ApplicationArea = Planning;                   
-                    CaptionClass = '3,' + MATRIX_CaptionSet[9];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[9];
                     Visible = Field9Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -193,11 +193,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field9Visible;
                     Editable = false;
-                } 
+                }
                 field(Field10; MATRIX_CellData[10])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[10];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[10];
                     Visible = Field10Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -212,11 +212,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field10Visible;
                     Editable = false;
-                } 
+                }
                 field(Field11; MATRIX_CellData[11])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[11];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[11];
                     Visible = Field11Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -231,11 +231,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field11Visible;
                     Editable = false;
-                } 
+                }
                 field(Field12; MATRIX_CellData[12])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[12];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[12];
                     Visible = Field12Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -250,11 +250,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field12Visible;
                     Editable = false;
-                } 
+                }
                 field(Field13; MATRIX_CellData[13])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[13];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[13];
                     Visible = Field13Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -269,11 +269,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field13Visible;
                     Editable = false;
-                } 
+                }
                 field(Field14; MATRIX_CellData[14])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[14];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[14];
                     Visible = Field14Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -288,11 +288,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field14Visible;
                     Editable = false;
-                } 
+                }
                 field(Field15; MATRIX_CellData[15])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[15];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[15];
                     Visible = Field15Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -307,11 +307,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field15Visible;
                     Editable = false;
-                } 
+                }
                 field(Field16; MATRIX_CellData[16])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[16];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[16];
                     Visible = Field16Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -326,11 +326,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field16Visible;
                     Editable = false;
-                } 
+                }
                 field(Field17; MATRIX_CellData[17])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[17];                   
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[17];
                     Visible = Field17Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -345,11 +345,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field17Visible;
                     Editable = false;
-                } 
+                }
                 field(Field18; MATRIX_CellData[18])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[18];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[18];
                     Visible = Field18Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -364,11 +364,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field18Visible;
                     Editable = false;
-                }                 
+                }
                 field(Field19; MATRIX_CellData[19])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[19];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[19];
                     Visible = Field19Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -383,11 +383,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field19Visible;
                     Editable = false;
-                } 
+                }
                 field(Field20; MATRIX_CellData[20])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[20];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[20];
                     Visible = Field20Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -402,11 +402,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field20Visible;
                     Editable = false;
-                } 
+                }
                 field(Field21; MATRIX_CellData[21])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[21];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[21];
                     Visible = Field21Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -421,11 +421,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field21Visible;
                     Editable = false;
-                } 
+                }
                 field(Field22; MATRIX_CellData[22])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[22];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[22];
                     Visible = Field22Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -440,11 +440,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field22Visible;
                     Editable = false;
-                } 
+                }
                 field(Field23; MATRIX_CellData[23])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[23];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[23];
                     Visible = Field23Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -459,11 +459,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field23Visible;
                     Editable = false;
-                } 
+                }
                 field(Field24; MATRIX_CellData[24])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[24];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[24];
                     Visible = Field24Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -478,11 +478,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field24Visible;
                     Editable = false;
-                } 
+                }
                 field(Field25; MATRIX_CellData[25])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[25];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[25];
                     Visible = Field25Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -497,11 +497,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field25Visible;
                     Editable = false;
-                } 
+                }
                 field(Field26; MATRIX_CellData[26])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[26];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[26];
                     Visible = Field26Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -516,11 +516,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field26Visible;
                     Editable = false;
-                } 
+                }
                 field(Field27; MATRIX_CellData[27])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[27];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[27];
                     Visible = Field27Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -535,11 +535,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field27Visible;
                     Editable = false;
-                } 
+                }
                 field(Field28; MATRIX_CellData[28])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[28];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[28];
                     Visible = Field28Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -554,11 +554,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field28Visible;
                     Editable = false;
-                } 
+                }
                 field(Field29; MATRIX_CellData[29])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[29];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[29];
                     Visible = Field29Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -573,11 +573,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field29Visible;
                     Editable = false;
-                } 
+                }
                 field(Field30; MATRIX_CellData[30])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[30];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[30];
                     Visible = Field30Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -592,11 +592,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field30Visible;
                     Editable = false;
-                } 
+                }
                 field(Field31; MATRIX_CellData[31])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[31];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[31];
                     Visible = Field31Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -611,11 +611,11 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field31Visible;
                     Editable = false;
-                } 
+                }
                 field(Field32; MATRIX_CellData[32])
                 {
-                    ApplicationArea = Planning;                    
-                    CaptionClass = '3,' + MATRIX_CaptionSet[32];                    
+                    ApplicationArea = Planning;
+                    CaptionClass = '3,' + MATRIX_CaptionSet[32];
                     Visible = Field32Visible;
                     TableRelation = "Gen. Business Posting Group";
 
@@ -630,16 +630,13 @@ page 50001 "PstTypeMatrixNVX"
                     Caption = 'Description', comment = 'DEA="Beschreibung"';
                     Visible = Field32Visible;
                     Editable = false;
-                } 
-                
+                }
+
             }
         }
     }
 
-    var 
-        MATRIX_CellData: array[32] of Code[20];
-        MATRIX_CellDesc:  array[32] of Text[100];
-        MATRIX_CaptionSet: array[32] of Text[80];
+    var
         Field1Visible: Boolean;
         Field2Visible: Boolean;
         Field3Visible: Boolean;
@@ -672,11 +669,14 @@ page 50001 "PstTypeMatrixNVX"
         Field30Visible: Boolean;
         Field31Visible: Boolean;
         Field32Visible: Boolean;
+        MATRIX_CellData: array[32] of Code[20];
+        MATRIX_CaptionSet: array[32] of Text[80];
+        MATRIX_CellDesc: array[32] of Text[100];
 
     trigger OnOpenPage();
     begin
 
-    end;        
+    end;
 
     trigger OnAfterGetRecord();
     begin
@@ -688,13 +688,13 @@ page 50001 "PstTypeMatrixNVX"
     var
         BsnPstGrpVATPstType: Record BsnPstGrpVATPstTypeNVX;
     begin
-        If BsnPstGrpVATPstType.get(Code,MATRIX_CaptionSet[Which]) then begin
-            BsnPstGrpVATPstType."Gen. Bus. Posting Group2" := MATRIX_CellData[which];
+        if BsnPstGrpVATPstType.Get(Code, MATRIX_CaptionSet[Which]) then begin
+            BsnPstGrpVATPstType."Gen. Bus. Posting Group2" := MATRIX_CellData[Which];
             BsnPstGrpVATPstType.Modify();
         end else begin
-            BsnPstGrpVATPstType.init();
+            BsnPstGrpVATPstType.Init();
             BsnPstGrpVATPstType."Gen. Bus. Posting Group" := Code;
-            BsnPstGrpVATPstType."VAT Posting Type" := MATRIX_CaptionSet[which];
+            BsnPstGrpVATPstType."VAT Posting Type" := MATRIX_CaptionSet[Which];
             BsnPstGrpVATPstType."Gen. Bus. Posting Group2" := MATRIX_CellData[Which];
             BsnPstGrpVATPstType.Insert();
         end;
@@ -708,22 +708,22 @@ page 50001 "PstTypeMatrixNVX"
         VATPostingType: Record VATPostingTypeNVX;
         i: Integer;
     begin
-        clear(i);
+        Clear(i);
         Clear(MATRIX_CaptionSet);
         Clear(MATRIX_CellData);
         Clear(MATRIX_CellDesc);
         VATPostingType.Reset();
-        IF VATPostingType.FindSet() then
+        if VATPostingType.FindSet() then
             repeat
                 i += 1;
                 MATRIX_CaptionSet[i] := VATPostingType.Code;
-                IF BsnPstGrpVATPstType.Get(Code,VATPostingType.Code) then begin
+                if BsnPstGrpVATPstType.Get(Code, VATPostingType.Code) then begin
                     MATRIX_CellData[i] := BsnPstGrpVATPstType."Gen. Bus. Posting Group2";
                     BsnPstGrpVATPstType.CalcFields(Description);
                     MATRIX_CellDesc[i] := BsnPstGrpVATPstType.Description;
                 end;
-            until VATPostingType.next() = 0;
-       
+            until VATPostingType.Next() = 0;
+
     end;
 
     procedure SetVisible()

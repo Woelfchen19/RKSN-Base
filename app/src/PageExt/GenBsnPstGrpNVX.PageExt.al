@@ -1,4 +1,4 @@
-pageextension 50003 "GenBsnPstGrpNVX" extends "Gen. Business Posting Groups"
+pageextension 50003 GenBsnPstGrpNVX extends "Gen. Business Posting Groups"
 {
     layout
     {
@@ -115,11 +115,11 @@ pageextension 50003 "GenBsnPstGrpNVX" extends "Gen. Business Posting Groups"
         }
         addlast(Content)
         {
-            part(PstTypeMatrixNVX; "PstTypeMatrixNVX")
+            part(PstTypeMatrixNVX; PstTypeMatrixNVX)
             {
                 ApplicationArea = All;
                 Caption = 'Matrix General Business Posting Group_VAT Posting Type', comment = 'DEA="Matrix Geschäftsbuchungsgruppe_USt Buchungsart"';
-                SubPageLink = "Code" = field (Code);
+                SubPageLink = "Code" = field(Code);
             }
         }
     }
@@ -152,7 +152,7 @@ pageextension 50003 "GenBsnPstGrpNVX" extends "Gen. Business Posting Groups"
 
     trigger OnAfterGetRecord();
     begin
-        If not GenBsnPstGrp.get(Code) then begin
+        if not GenBsnPstGrp.Get(Code) then begin
             GenBsnPstGrp.Init();
             GenBsnPstGrp.Code := Code;
             GenBsnPstGrp.Insert();
@@ -163,16 +163,16 @@ pageextension 50003 "GenBsnPstGrpNVX" extends "Gen. Business Posting Groups"
 
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean;
-        var
-        VATPostingType: Record VATPostingTypeNVX;
+    var
         BsnPstGrpVATPstTypeNVX: Record BsnPstGrpVATPstTypeNVX;
         GenBusinessPostingGroup: Record "Gen. Business Posting Group";
+        VATPostingType: Record VATPostingTypeNVX;
         NoOfTypes: Integer;
         MissingTypeErr: Label 'You must specify all VAT Posting Groups for Gen. Business Posting Group %1', comment = 'DEA="Sie müssen für die Geschäftsbuchungsgruppe %1 alle Ust.-Buchungsarten definieren!"';
     begin
-        IF LookupMode then
+        if LookupMode then
             exit(true);
-        IF CloseAction = CloseAction::OK then begin
+        if CloseAction = CloseAction::OK then begin
             VATPostingType.Reset();
             NoOfTypes := VATPostingType.Count();
             GenBusinessPostingGroup.Reset();
@@ -181,10 +181,10 @@ pageextension 50003 "GenBsnPstGrpNVX" extends "Gen. Business Posting Groups"
                     BsnPstGrpVATPstTypeNVX.SetRange("Gen. Bus. Posting Group", GenBusinessPostingGroup.Code);
                     BsnPstGrpVATPstTypeNVX.SetFilter(BsnPstGrpVATPstTypeNVX."VAT Posting Type", '<>%1', '');
                     BsnPstGrpVATPstTypeNVX.SetFilter("Gen. Bus. Posting Group2", '<>%1', '');
-                    if BsnPstGrpVATPstTypeNVX.count() <> NoOfTypes then
-                        error(MissingTypeErr, GenBusinessPostingGroup.code);
+                    if BsnPstGrpVATPstTypeNVX.Count() <> NoOfTypes then
+                        Error(MissingTypeErr, GenBusinessPostingGroup.Code);
                 until GenBusinessPostingGroup.Next() = 0;
-        exit(true);
+            exit(true);
         end;
     end;
 }

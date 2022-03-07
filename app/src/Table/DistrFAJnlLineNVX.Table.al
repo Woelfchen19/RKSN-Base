@@ -1,4 +1,4 @@
-table 50022 "DistrFAJnlLineNVX"
+table 50022 DistrFAJnlLineNVX
 {
     Caption = 'FA Journal Line', comment = 'DEA="Anlagen Buch.-Blattzeile"';
 
@@ -14,7 +14,7 @@ table 50022 "DistrFAJnlLineNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Journal Batch Name', comment = 'DEA="Buch.-Blattname"';
-            TableRelation = "FA Journal Batch".Name WHERE ("Journal Template Name" = FIELD ("Journal Template Name"));
+            TableRelation = "FA Journal Batch".Name where("Journal Template Name" = field("Journal Template Name"));
         }
         field(3; "Line No."; Integer)
         {
@@ -32,7 +32,7 @@ table 50022 "DistrFAJnlLineNVX"
             DataClassification = CustomerContent;
             Caption = 'FA Posting Type', comment = 'DEA="Anlagenbuchungsart"';
             OptionCaption = 'Acquisition Cost,Depreciation,Write-Down,Appreciation,Custom 1,Custom 2,Disposal,Maintenance,Salvage Value', comment = 'DEA="Anschaffungskosten,Normal-AfA,Erhöhte AfA,Zuschreibung,Sonder-AfA,Benutzerdef. AfA,Verkauf,Wartung,Restwert"';
-            OptionMembers = "Acquisition Cost", Depreciation, "Write-Down", Appreciation, "Custom 1", "Custom 2", Disposal, Maintenance, "Salvage Value";
+            OptionMembers = "Acquisition Cost",Depreciation,"Write-Down",Appreciation,"Custom 1","Custom 2",Disposal,Maintenance,"Salvage Value";
         }
         field(6; "FA No."; Code[20])
         {
@@ -55,7 +55,7 @@ table 50022 "DistrFAJnlLineNVX"
             DataClassification = CustomerContent;
             Caption = 'Document Type', comment = 'DEA="Belegart"';
             OptionCaption = ' ,,Invoice,Credit Memo', comment = 'DEA=" ,,Rechnung,Gutschrift"';
-            OptionMembers = " ", , Invoice, "Credit Memo";
+            OptionMembers = " ",,Invoice,"Credit Memo";
         }
         field(10; "Document Date"; Date)
         {
@@ -145,14 +145,14 @@ table 50022 "DistrFAJnlLineNVX"
             DataClassification = CustomerContent;
             // CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (1));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
         }
         field(28; "Shortcut Dimension 2 Code"; Code[20])
         {
             DataClassification = CustomerContent;
             // CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (2));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
         }
         field(30; "Insurance No."; Code[20])
         {
@@ -206,7 +206,7 @@ table 50022 "DistrFAJnlLineNVX"
             DataClassification = CustomerContent;
             Caption = 'Recurring Method', comment = 'DEA="Wiederholungsart"';
             OptionCaption = ' ,F Fixed,V Variable', comment = 'DEA=" ,F Fest,V Variabel"';
-            OptionMembers = " ", "F Fixed", "V Variable";
+            OptionMembers = " ","F Fixed","V Variable";
         }
         field(39; "Recurring Frequency"; DateFormula)
         {
@@ -261,7 +261,7 @@ table 50022 "DistrFAJnlLineNVX"
             Caption = 'Shortcut Dimension 1 Name', comment = 'DEA="Shortcutdimensionsname 1"';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (1), Code = field ("Shortcut Dimension 1 Code")));
+            CalcFormula = lookup("Dimension Value".Name where("Global Dimension No." = const(1), Code = field("Shortcut Dimension 1 Code")));
             CaptionClass = '1337,1';
         }
     }

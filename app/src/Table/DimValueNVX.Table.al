@@ -1,7 +1,7 @@
-table 50009 "DimValueNVX"
+table 50009 DimValueNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Dimension Code"; Code[20])
@@ -25,27 +25,27 @@ table 50009 "DimValueNVX"
             Caption = 'VAT Posting Type Description', comment = 'DEA="USt.-Buchungsart Beschreibung"';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = lookup(VATPostingTypeNVX.Description where (Code=field("VAT Posting Type")));
+            CalcFormula = lookup(VATPostingTypeNVX.Description where(Code = field("VAT Posting Type")));
         }
         field(20; "Shortcut Dimension 1 Code"; Code[20])
         {
             DataClassification = CustomerContent;
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));       
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
         }
         field(21; "Shortcut Dimension 2 Code"; Code[20])
         {
             DataClassification = CustomerContent;
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
         }
     }
 
     keys
     {
-        key(PK;"Dimension Code",Code)
+        key(PK; "Dimension Code", Code)
         {
             Clustered = true;
         }

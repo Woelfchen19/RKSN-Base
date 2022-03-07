@@ -1,12 +1,13 @@
 table 50044 BankAccountLedgerEntryNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
-        field(1;"Entry No."; Integer)
+        field(1; "Entry No."; Integer)
         {
-            DataClassification = CustomerContent;   
+            DataClassification = CustomerContent;
+            Caption = 'Entry No.', comment = 'DEA="Lfd Nr."';
         }
         field(10; "Allocation Code"; Code[10])
         {
@@ -15,10 +16,10 @@ table 50044 BankAccountLedgerEntryNVX
             TableRelation = AllocationCodeNVX.Code;
         }
     }
-    
+
     keys
     {
-        key(Key1;"Entry No.")
+        key(Key1; "Entry No.")
         {
             Clustered = true;
         }

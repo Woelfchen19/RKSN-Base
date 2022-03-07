@@ -13,10 +13,10 @@ pageextension 50013 BankAccountLedgerEntriesNVX extends "Bank Account Ledger Ent
             }
         }
     }
-    
+
     trigger OnAfterGetRecord()
     begin
-        IF not BankAccountLedgerEntryNVX.get("Entry No.") then
+        if not BankAccountLedgerEntryNVX.Get("Entry No.") then
             BankAccountLedgerEntryNVX.Init();
     end;
 

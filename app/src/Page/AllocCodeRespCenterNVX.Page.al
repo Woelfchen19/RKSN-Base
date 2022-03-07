@@ -1,11 +1,11 @@
-page 50005 "AllocCodeRespCenterNVX"
+page 50005 AllocCodeRespCenterNVX
 {
     Caption = 'Allocation Codes/ Resp. Center', comment = 'DEA="Verteilungscodes/ Zuständigkeitseinh."';
     PageType = List;
     UsageCategory = Lists;
     ApplicationArea = All;
     SourceTable = AllocCodeRespCenterNVX;
-    
+
     layout
     {
         area(Content)
@@ -27,7 +27,7 @@ page 50005 "AllocCodeRespCenterNVX"
             }
         }
     }
-    
+
     actions
     {
         area(Processing)

@@ -1,4 +1,4 @@
-pageextension 50035 "FAGLJournalNVX" extends "Fixed Asset G/L Journal"
+pageextension 50035 FAGLJournalNVX extends "Fixed Asset G/L Journal"
 {
     layout
     {
@@ -13,10 +13,10 @@ pageextension 50035 "FAGLJournalNVX" extends "Fixed Asset G/L Journal"
                 var
                     AllocationCode: Record AllocationCodeNVX;
                     FixedAssetNVX: Record FixedAssetNVX;
-                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
-                        comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
                     WrongDim2Err: Label 'Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.',
                         comment = 'DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"';
+                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
+                        comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
                 begin
 
                     if Rec."Line No." > 0 then
@@ -61,7 +61,7 @@ pageextension 50035 "FAGLJournalNVX" extends "Fixed Asset G/L Journal"
     {
         addlast(Processing)
         {
-            Action(PreviewDimDistributionNVX)
+            action(PreviewDimDistributionNVX)
             {
                 ApplicationArea = All;
                 Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
@@ -75,8 +75,8 @@ pageextension 50035 "FAGLJournalNVX" extends "Fixed Asset G/L Journal"
                     PreviewDimDistrPage: Page PreviewDimDistrNVX;
                 begin
                     OnPreviewDimDistributionNVX(Rec);
-                    DistrGenJnlLine.SetRange("Journal Template Name",Rec."Journal Template Name");
-                    DistrGenJnlLine.SetRange("Journal Batch Name",Rec."Journal Batch Name");
+                    DistrGenJnlLine.SetRange("Journal Template Name", Rec."Journal Template Name");
+                    DistrGenJnlLine.SetRange("Journal Batch Name", Rec."Journal Batch Name");
                     PreviewDimDistrPage.SetRecord(DistrGenJnlLine);
                     PreviewDimDistrPage.SetTableView(DistrGenJnlLine);
                     PreviewDimDistrPage.Run();
@@ -84,11 +84,11 @@ pageextension 50035 "FAGLJournalNVX" extends "Fixed Asset G/L Journal"
             }
         }
     }
-        
+
 
     trigger OnAfterGetRecord()
     begin
-        if not GenJnlLineNVX.Get(Rec."Journal Template Name",Rec."Journal Batch Name",Rec."Line No.") then begin
+        if not GenJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
             GenJnlLineNVX.Init();
             GenJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
             GenJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
@@ -120,7 +120,8 @@ pageextension 50035 "FAGLJournalNVX" extends "Fixed Asset G/L Journal"
     var
         GenJnlLineNVX: Record GenJnlLineNVX;
         AllocationCodeVar: Code[10];
-    [IntegrationEvent(false,false)]
+
+    [IntegrationEvent(false, false)]
     local procedure OnPreviewDimDistributionNVX(var GenJnlLine: Record "Gen. Journal Line")
     begin
     end;

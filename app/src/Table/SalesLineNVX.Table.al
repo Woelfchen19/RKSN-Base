@@ -1,7 +1,7 @@
-table 50036 "SalesLineNVX"
+table 50036 SalesLineNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Document Type"; Option)
@@ -15,7 +15,7 @@ table 50036 "SalesLineNVX"
         }
         field(4; "Line No."; Integer)
         {
-            DataClassification = CustomerContent;            
+            DataClassification = CustomerContent;
         }
         field(10; "Allocation Code"; Code[10])
         {
@@ -27,7 +27,7 @@ table 50036 "SalesLineNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));       
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
             // CaptionClass = '1338,1'; = Sales + Dim Name
             // CaptionClass = '1339,1'; = Purchase + Dim Name
         }
@@ -37,7 +37,7 @@ table 50036 "SalesLineNVX"
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
             // CaptionClass = '1338,3'; = Sales + Dim Name
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
         }
         field(30; "Cust. Unit Price"; Decimal)
         {
@@ -56,26 +56,26 @@ table 50036 "SalesLineNVX"
             Caption = 'Allocation Amount';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum (DistrSalesLineNVX."VAT Base Amount" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No."), "Origin Line No." = field ("Line No.")));
+            CalcFormula = sum(DistrSalesLineNVX."VAT Base Amount" where("Document Type" = field("Document Type"), "Document No." = field("Document No."), "Origin Line No." = field("Line No.")));
         }
         field(101; "Allocation Amount Incl. VAT"; Decimal)
         {
             Caption = 'Allocation Amount Incl. VAT';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum (DistrSalesLineNVX."Amount Including VAT" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No."), "Origin Line No." = field ("Line No.")));
+            CalcFormula = sum(DistrSalesLineNVX."Amount Including VAT" where("Document Type" = field("Document Type"), "Document No." = field("Document No."), "Origin Line No." = field("Line No.")));
         }
         field(102; "Comp Gen. Bus. Pst Grp WES"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Composition Gen. Bus. Posting Group WES', comment = 'DEA="Abfassung Steuerschlüssel WES"';
             TableRelation = "Gen. Business Posting Group".Code;
-        }   
+        }
     }
 
     keys
     {
-        key(PK;"Document Type","Document No.","Line No.")
+        key(PK; "Document Type", "Document No.", "Line No.")
         {
             Clustered = true;
         }
@@ -109,8 +109,8 @@ table 50036 "SalesLineNVX"
 
     procedure HandleVATDifferenceNVX(SalesHeader: Record "Sales Header")
     var
-        SalesLineNVX: record SalesLineNVX;
-        SalesLine: record "Sales Line";
+        SalesLine: Record "Sales Line";
+        SalesLineNVX: Record SalesLineNVX;
         TempVATAmountLine: Record "VAT Amount Line" temporary;
         VATDifference: Decimal;
     begin
@@ -118,7 +118,7 @@ table 50036 "SalesLineNVX"
         SalesHeader.TestField(Status, SalesHeader.Status::Released);
         SalesHeader.CalcFields("Amount Including VAT");
 
-        SalesLineNVX.reset();
+        SalesLineNVX.Reset();
         SalesLineNVX.SetRange("Document Type", SalesHeader."Document Type");
         SalesLineNVX.SetRange("Document No.", SalesHeader."No.");
         SalesLineNVX.CalcSums("Cust. Amount");
@@ -129,11 +129,11 @@ table 50036 "SalesLineNVX"
 
         if VATDifference <> 0 then begin
 
-            clear(salesline);
+            Clear(SalesLine);
             SalesLine.SetSalesHeader(SalesHeader);
             SalesLine.CalcVATAmountLines(0, SalesHeader, SalesLine, TempVATAmountLine);
             TempVATAmountLine.SetFilter("VAT Amount", '<>0');
-            TempVATAmountLine.findfirst();
+            TempVATAmountLine.FindFirst();
             TempVATAmountLine.Validate("VAT Amount", TempVATAmountLine."VAT Amount" - VATDifference);
             TempVATAmountLine.CheckVATDifference(SalesHeader."Currency Code", true);
             TempVATAmountLine.Modify();

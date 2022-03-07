@@ -1,7 +1,7 @@
-table 50020 "GenJnlLineNVX"
+table 50020 GenJnlLineNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Journal Template Name"; Code[10])
@@ -42,7 +42,7 @@ table 50020 "GenJnlLineNVX"
 
     keys
     {
-        key(PK;"Journal Template Name","Journal Batch Name","Line No.")
+        key(PK; "Journal Template Name", "Journal Batch Name", "Line No.")
         {
             Clustered = true;
         }

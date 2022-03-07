@@ -1,4 +1,4 @@
-pageextension 50028 "GLAccountCardNVX" extends "G/L Account Card"
+pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
 {
     layout
     {
@@ -73,12 +73,12 @@ pageextension 50028 "GLAccountCardNVX" extends "G/L Account Card"
                     GLAccountNVX.Modify();
                 end;
             }
-            field("No. of Classifications NVX";Rec."No. of Classifications NVX")
+            field("No. of Classifications NVX"; Rec."No. of Classifications NVX")
             {
                 ApplicationArea = All;
                 Caption = 'No. of Classifications', comment = 'DEA="Anzahl Gliederungsgruppen"';
                 BlankZero = true;
-            }          
+            }
         }
     }
     actions
@@ -97,8 +97,8 @@ pageextension 50028 "GLAccountCardNVX" extends "G/L Account Card"
                 var
                     NCBCLassification: Record "NCB Classification G/L Acc.";
                 begin
-                    NCBCLassification.SetRange("G/L Account No.", rec."No.");
-                    page.RunModal(1011161, NCBCLassification)
+                    NCBCLassification.SetRange("G/L Account No.", Rec."No.");
+                    Page.RunModal(Page::"NCB Classification G/L Acc.", NCBCLassification)
                 end;
             }
         }
@@ -109,7 +109,7 @@ pageextension 50028 "GLAccountCardNVX" extends "G/L Account Card"
 
     trigger OnAfterGetRecord();
     begin
-        IF not GLAccountNVX.Get("No.") then begin
+        if not GLAccountNVX.Get("No.") then begin
             GLAccountNVX.Init();
             GLAccountNVX."G/L Account No." := "No.";
             GLAccountNVX.Insert();

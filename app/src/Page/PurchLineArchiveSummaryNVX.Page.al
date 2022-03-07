@@ -1,4 +1,4 @@
-page 50028 "PurchLineArchiveSummaryNVX"
+page 50028 PurchLineArchiveSummaryNVX
 {
     Caption = 'Purchase Line Archive Summary', comment = 'DEA="Einkaufszeilenarchiv Zusammenfassung"';
     PageType = ListPart;
@@ -84,7 +84,7 @@ page 50028 "PurchLineArchiveSummaryNVX"
                     ApplicationArea = All;
                     Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Name Steuerschlüssel"';
                 }
-                field("Allocation %";"Allocation %")
+                field("Allocation %"; "Allocation %")
                 {
                     ApplicationArea = All;
                     Caption = 'Percentage', comment = 'DEA="%-Anteil"';
@@ -94,7 +94,7 @@ page 50028 "PurchLineArchiveSummaryNVX"
                     ApplicationArea = All;
                     Caption = 'Amount Including VAT', comment = 'DEA="Betrag BRUTTO"';
                 }
-                field("VAT Amount (LCY)";"Amount Including VAT" - "VAT Base Amount")
+                field("VAT Amount (LCY)"; "Amount Including VAT" - "VAT Base Amount")
                 {
                     ApplicationArea = All;
                     Caption = 'VAT Amount (LCY)', comment = 'DEA="Betrag Ust."';
@@ -112,13 +112,13 @@ page 50028 "PurchLineArchiveSummaryNVX"
                 {
                     ApplicationArea = All;
                 }
-                
+
             }
         }
     }
     trigger OnOpenPage();
     begin
-        Rec.SetRange("Posting Type",Rec."Posting Type"::Distributed);
+        Rec.SetRange("Posting Type", Rec."Posting Type"::Distributed);
         // Rec.SetFilter("Account No.",'<>%1','');
         CurrPage.Editable(false);
     end;

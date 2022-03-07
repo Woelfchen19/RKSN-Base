@@ -1,7 +1,7 @@
-table 50001 "UserSetupNVX"
+table 50001 UserSetupNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "User ID"; Code[50])
@@ -19,12 +19,12 @@ table 50001 "UserSetupNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Allow Item Invt.Post.Group Change', comment = 'DEA="Änderung Lager.Bu.Grp. Artikelkarte"';
-        }        
+        }
     }
 
     keys
     {
-        key(PK;"User ID")
+        key(PK; "User ID")
         {
             Clustered = true;
         }

@@ -1,4 +1,4 @@
-page 50021 "FAJnlLineArchiveSummaryNVX"
+page 50021 FAJnlLineArchiveSummaryNVX
 {
     Caption = 'FA Journal Line Archive Summary', comment = 'DEA="Anlagen Buch.-Blattzeilenarchiv Zusammenfassung"';
     PageType = ListPart;
@@ -74,25 +74,25 @@ page 50021 "FAJnlLineArchiveSummaryNVX"
                 {
                     ApplicationArea = All;
                 }
-                field("Allocation %";"Allocation %")
+                field("Allocation %"; "Allocation %")
                 {
                     ApplicationArea = All;
                     Caption = 'Percentage', comment = 'DEA="%-Anteil"';
                 }
-                field(Amount; "Amount")
+                field(Amount; Amount)
                 {
                     ApplicationArea = All;
                 }
                 field("Start Date"; "Start Date")
                 {
                     ApplicationArea = All;
-                }                
+                }
             }
         }
     }
     trigger OnOpenPage();
     begin
-        Rec.SetRange("Posting Type",Rec."Posting Type"::Distributed);
+        Rec.SetRange("Posting Type", Rec."Posting Type"::Distributed);
         // Rec.SetFilter("Account No.",'<>%1','');
         CurrPage.Editable(false);
     end;

@@ -1,4 +1,4 @@
-pageextension 50002 "UserSetupNVX" extends "User Setup"
+pageextension 50002 UserSetupNVX extends "User Setup"
 {
     layout
     {
@@ -9,7 +9,7 @@ pageextension 50002 "UserSetupNVX" extends "User Setup"
             {
                 ApplicationArea = All;
                 Caption = 'Allow Item Prod.Post.Group Change', comment = 'DEA="Änderung Prod.Bu.Grp. Artikelkarte"';
-                ToolTip = 'Specifies if the user is allowed to change the Prod. Posting Group on items although entries are existing', 
+                ToolTip = 'Specifies if the user is allowed to change the Prod. Posting Group on items although entries are existing',
                 comment = 'DEA="Gibt an, ob die Produktbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren"';
                 trigger OnValidate();
                 begin
@@ -29,7 +29,7 @@ pageextension 50002 "UserSetupNVX" extends "User Setup"
             }
         }
     }
-    
+
     actions
     {
     }
@@ -39,7 +39,7 @@ pageextension 50002 "UserSetupNVX" extends "User Setup"
 
     trigger OnAfterGetRecord();
     begin
-        If not UserSetupNVX.get("User ID") then begin
+        if not UserSetupNVX.Get("User ID") then begin
             UserSetupNVX.Init();
             UserSetupNVX."User ID" := "User ID";
             UserSetupNVX.Insert();

@@ -10,7 +10,7 @@ pageextension 50010 VATPostingSetupCardNVX extends "VAT Posting Setup Card"
                 Caption = 'Purchase VAT as Expense', comment = 'DEA="VST als Aufwand"';
                 trigger OnValidate()
                 begin
-                    IF not VATPostingSetupNVX.Get(Rec."VAT Bus. Posting Group",Rec."VAT Prod. Posting Group") then begin
+                    if not VATPostingSetupNVX.Get(Rec."VAT Bus. Posting Group", Rec."VAT Prod. Posting Group") then begin
                         VATPostingSetupNVX.Init();
                         VATPostingSetupNVX."VAT Bus. Posting Group" := Rec."VAT Bus. Posting Group";
                         VATPostingSetupNVX."VAT Prod. Posting Group" := Rec."VAT Prod. Posting Group";
@@ -24,10 +24,10 @@ pageextension 50010 VATPostingSetupCardNVX extends "VAT Posting Setup Card"
             }
         }
     }
-    
+
     trigger OnAfterGetRecord()
     begin
-        IF not VATPostingSetupNVX.Get(Rec."VAT Bus. Posting Group",Rec."VAT Prod. Posting Group") then begin
+        if not VATPostingSetupNVX.Get(Rec."VAT Bus. Posting Group", Rec."VAT Prod. Posting Group") then begin
             VATPostingSetupNVX.Init();
             VATPostingSetupNVX."VAT Bus. Posting Group" := Rec."VAT Bus. Posting Group";
             VATPostingSetupNVX."VAT Prod. Posting Group" := Rec."VAT Prod. Posting Group";
@@ -44,7 +44,7 @@ pageextension 50010 VATPostingSetupCardNVX extends "VAT Posting Setup Card"
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
-        If PurchaseVATasExpense then begin
+        if PurchaseVATasExpense then begin
             VATPostingSetupNVX.Init();
             VATPostingSetupNVX."VAT Bus. Posting Group" := Rec."VAT Bus. Posting Group";
             VATPostingSetupNVX."VAT Prod. Posting Group" := Rec."VAT Prod. Posting Group";
@@ -53,7 +53,7 @@ pageextension 50010 VATPostingSetupCardNVX extends "VAT Posting Setup Card"
         end;
         exit(true);
     end;
-    
+
     var
         VATPostingSetupNVX: Record VATPostingSetupNVX;
         PurchaseVATasExpense: Boolean;

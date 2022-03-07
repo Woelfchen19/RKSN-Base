@@ -1,16 +1,16 @@
-page 50000 "VATPostingTypeNVX"
+page 50000 VATPostingTypeNVX
 {
-    
+
     ApplicationArea = All;
     Caption = 'VAT Posting Types', comment = 'DEA="USt.-Buchungsarten"';
     PageType = List;
     SourceTable = VATPostingTypeNVX;
     UsageCategory = Administration;
-    
-    
+
+
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(General)
             {
@@ -25,5 +25,5 @@ page 50000 "VATPostingTypeNVX"
             }
         }
     }
-    
+
 }

@@ -3,7 +3,7 @@
 //     Caption = 'Purchase Line Archive Complete', comment = 'DEA="Einkaufszeilenarchiv vollständig"';
 //     PageType = ListPart;
 //     SourceTable = PurchLineArchiveNVX;
-    
+
 //     layout
 //     {
 //         area(content)
@@ -825,5 +825,5 @@
 //             }
 //         }
 //     }
-    
+
 // }

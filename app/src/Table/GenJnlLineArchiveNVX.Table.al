@@ -1,8 +1,8 @@
-table 50019 "GenJnlLineArchiveNVX"
+table 50019 GenJnlLineArchiveNVX
 {
     Caption = 'Gen. Journal Line Archive', comment = 'DEA="Sicherung dim.Verteilungen Modul Fibu"';
-    Permissions = TableData "Sales Invoice Header" = r,
-                  TableData "Data Exch. Field" = rimd;
+    Permissions = tabledata "Sales Invoice Header" = r,
+                  tabledata "Data Exch. Field" = rimd;
 
     fields
     {
@@ -19,19 +19,25 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             Caption = 'Account Type', comment = 'DEA="Kontoart"';
             OptionCaption = 'G/L Account,Customer,Vendor,Bank Account,Fixed Asset,IC Partner,Employee', comment = 'DEA="Sachkonto,Debitor,Kreditor,Bankkonto,Anlage,IC-Partner,Mitarbeiter"';
-            OptionMembers = "G/L Account", Customer, Vendor, "Bank Account", "Fixed Asset", "IC Partner", Employee;
+            OptionMembers = "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset","IC Partner",Employee;
         }
         field(4; "Account No."; Code[20])
         {
             Caption = 'Account No.', comment = 'DEA="Kontonr."';
-            TableRelation = IF("Account Type" = CONST ("G/L Account")) "G/L Account" WHERE ("Account Type" = CONST (Posting),
-                                                                                          Blocked = CONST (false))
-            ELSE IF("Account Type" = CONST (Customer)) Customer
-            ELSE IF("Account Type" = CONST (Vendor)) Vendor
-            ELSE IF("Account Type" = CONST ("Bank Account")) "Bank Account"
-            ELSE IF("Account Type" = CONST ("Fixed Asset")) "Fixed Asset"
-            ELSE IF("Account Type" = CONST ("IC Partner")) "IC Partner"
-            ELSE IF("Account Type" = CONST (Employee)) Employee;
+            TableRelation = if ("Account Type" = const("G/L Account")) "G/L Account" where("Account Type" = const(Posting),
+                                                                                          Blocked = const(false))
+            else
+            if ("Account Type" = const(Customer)) Customer
+            else
+            if ("Account Type" = const(Vendor)) Vendor
+            else
+            if ("Account Type" = const("Bank Account")) "Bank Account"
+            else
+            if ("Account Type" = const("Fixed Asset")) "Fixed Asset"
+            else
+            if ("Account Type" = const("IC Partner")) "IC Partner"
+            else
+            if ("Account Type" = const(Employee)) Employee;
         }
         field(5; "Posting Date"; Date)
         {
@@ -42,7 +48,7 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             Caption = 'Document Type', comment = 'DEA="Belegart"';
             OptionCaption = ' ,Payment,Invoice,Credit Memo,Finance Charge Memo,Reminder,Refund', comment = 'DEA=" ,Zahlung,Rechnung,Gutschrift,Zinsrechnung,Mahnung,Erstattung"';
-            OptionMembers = " ", Payment, Invoice, "Credit Memo", "Finance Charge Memo", Reminder, Refund;
+            OptionMembers = " ",Payment,Invoice,"Credit Memo","Finance Charge Memo",Reminder,Refund;
         }
         field(7; "Document No."; Code[20])
         {
@@ -63,14 +69,20 @@ table 50019 "GenJnlLineArchiveNVX"
         field(11; "Bal. Account No."; Code[20])
         {
             Caption = 'Bal. Account No.', comment = 'DEA="Gegenkontonr."';
-            TableRelation = IF("Bal. Account Type" = CONST ("G/L Account")) "G/L Account" WHERE ("Account Type" = CONST (Posting),
-                                                                                               Blocked = CONST (false))
-            ELSE IF("Bal. Account Type" = CONST (Customer)) Customer
-            ELSE IF("Bal. Account Type" = CONST (Vendor)) Vendor
-            ELSE IF("Bal. Account Type" = CONST ("Bank Account")) "Bank Account"
-            ELSE IF("Bal. Account Type" = CONST ("Fixed Asset")) "Fixed Asset"
-            ELSE IF("Bal. Account Type" = CONST ("IC Partner")) "IC Partner"
-            ELSE IF("Bal. Account Type" = CONST (Employee)) Employee;
+            TableRelation = if ("Bal. Account Type" = const("G/L Account")) "G/L Account" where("Account Type" = const(Posting),
+                                                                                               Blocked = const(false))
+            else
+            if ("Bal. Account Type" = const(Customer)) Customer
+            else
+            if ("Bal. Account Type" = const(Vendor)) Vendor
+            else
+            if ("Bal. Account Type" = const("Bank Account")) "Bank Account"
+            else
+            if ("Bal. Account Type" = const("Fixed Asset")) "Fixed Asset"
+            else
+            if ("Bal. Account Type" = const("IC Partner")) "IC Partner"
+            else
+            if ("Bal. Account Type" = const(Employee)) Employee;
         }
         field(12; "Currency Code"; Code[10])
         {
@@ -134,32 +146,37 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             Caption = 'Bill-to/Pay-to No.', comment = 'DEA="Rech. an/Zahlung an Nr."';
             Editable = false;
-            TableRelation = IF("Account Type" = CONST (Customer)) Customer
-            ELSE IF("Bal. Account Type" = CONST (Customer)) Customer
-            ELSE IF("Account Type" = CONST (Vendor)) Vendor
-            ELSE IF("Bal. Account Type" = CONST (Vendor)) Vendor;
+            TableRelation = if ("Account Type" = const(Customer)) Customer
+            else
+            if ("Bal. Account Type" = const(Customer)) Customer
+            else
+            if ("Account Type" = const(Vendor)) Vendor
+            else
+            if ("Bal. Account Type" = const(Vendor)) Vendor;
         }
         field(23; "Posting Group"; Code[20])
         {
             Caption = 'Posting Group', comment = 'DEA="Buchungsgruppe"';
             Editable = false;
-            TableRelation = IF("Account Type" = CONST (Customer)) "Customer Posting Group"
-            ELSE IF("Account Type" = CONST (Vendor)) "Vendor Posting Group"
-            ELSE IF("Account Type" = CONST ("Fixed Asset")) "FA Posting Group";
+            TableRelation = if ("Account Type" = const(Customer)) "Customer Posting Group"
+            else
+            if ("Account Type" = const(Vendor)) "Vendor Posting Group"
+            else
+            if ("Account Type" = const("Fixed Asset")) "FA Posting Group";
         }
         field(24; "Shortcut Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (1),
-                                                          Blocked = CONST (false));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1),
+                                                          Blocked = const(false));
         }
         field(25; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (2),
-                                                          Blocked = CONST (false));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2),
+                                                          Blocked = const(false));
         }
         field(26; "Salespers./Purch. Code"; Code[20])
         {
@@ -185,7 +202,7 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             Caption = 'Applies-to Doc. Type', comment = 'DEA="Ausgleich mit Belegart"';
             OptionCaption = ' ,Payment,Invoice,Credit Memo,Finance Charge Memo,Reminder,Refund', comment = 'DEA=" ,Zahlung,Rechnung,Gutschrift,Zinsrechnung,Mahnung,Erstattung"';
-            OptionMembers = " ", Payment, Invoice, "Credit Memo", "Finance Charge Memo", Reminder, Refund;
+            OptionMembers = " ",Payment,Invoice,"Credit Memo","Finance Charge Memo",Reminder,Refund;
         }
         field(36; "Applies-to Doc. No."; Code[20])
         {
@@ -227,7 +244,7 @@ table 50019 "GenJnlLineArchiveNVX"
             Caption = 'VAT Posting', comment = 'DEA="MwSt.-Buchung"';
             Editable = false;
             OptionCaption = 'Automatic VAT Entry,Manual VAT Entry', comment = 'DEA="Automatische MwSt.-Buch.,Manuelle MwSt.-Buch."';
-            OptionMembers = "Automatic VAT Entry", "Manual VAT Entry";
+            OptionMembers = "Automatic VAT Entry","Manual VAT Entry";
         }
         field(47; "Payment Terms Code"; Code[10])
         {
@@ -246,7 +263,7 @@ table 50019 "GenJnlLineArchiveNVX"
         field(51; "Journal Batch Name"; Code[10])
         {
             Caption = 'Journal Batch Name', comment = 'DEA="Buch.-Blattname"';
-            TableRelation = "Gen. Journal Batch".Name WHERE ("Journal Template Name" = FIELD ("Journal Template Name"));
+            TableRelation = "Gen. Journal Batch".Name where("Journal Template Name" = field("Journal Template Name"));
         }
         field(52; "Reason Code"; Code[10])
         {
@@ -258,7 +275,7 @@ table 50019 "GenJnlLineArchiveNVX"
             BlankZero = true;
             Caption = 'Recurring Method', comment = 'DEA="Wiederholungsart"';
             OptionCaption = ' ,F  Fixed,V  Variable,B  Balance,RF Reversing Fixed,RV Reversing Variable,RB Reversing Balance', comment = 'DEA=" ,F  Fix,V  Variabel,A  Ausgleich,UF Umgekehrt Fix,UV Umgekehrt Variabel,UA Umgekehrt Ausgleich"';
-            OptionMembers = " ", "F  Fixed", "V  Variable", "B  Balance", "RF Reversing Fixed", "RV Reversing Variable", "RB Reversing Balance";
+            OptionMembers = " ","F  Fixed","V  Variable","B  Balance","RF Reversing Fixed","RV Reversing Variable","RB Reversing Balance";
         }
         field(54; "Expiration Date"; Date)
         {
@@ -271,9 +288,9 @@ table 50019 "GenJnlLineArchiveNVX"
         field(56; "Allocated Amt. (LCY)"; Decimal)
         {
             AutoFormatType = 1;
-            CalcFormula = Sum ("Gen. Jnl. Allocation".Amount WHERE ("Journal Template Name" = FIELD ("Journal Template Name"),
-                                                                   "Journal Batch Name" = FIELD ("Journal Batch Name"),
-                                                                   "Journal Line No." = FIELD ("Line No.")));
+            CalcFormula = sum("Gen. Jnl. Allocation".Amount where("Journal Template Name" = field("Journal Template Name"),
+                                                                   "Journal Batch Name" = field("Journal Batch Name"),
+                                                                   "Journal Line No." = field("Line No.")));
             Caption = 'Allocated Amt. (LCY)', comment = 'DEA="Zugeordneter Betrag (MW)"';
             Editable = false;
             FieldClass = FlowField;
@@ -282,7 +299,7 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             Caption = 'Gen. Posting Type', comment = 'DEA="Buchungsart"';
             OptionCaption = ' ,Purchase,Sale,Settlement', comment = 'DEA=" ,Einkauf,Verkauf,Ausgleich"';
-            OptionMembers = " ", Purchase, Sale, Settlement;
+            OptionMembers = " ",Purchase,Sale,Settlement;
         }
         field(58; "Gen. Bus. Posting Group"; Code[20])
         {
@@ -299,7 +316,7 @@ table 50019 "GenJnlLineArchiveNVX"
             Caption = 'VAT Calculation Type', comment = 'DEA="MwSt.-Berechnungsart"';
             Editable = false;
             OptionCaption = 'Normal VAT,Reverse Charge VAT,Full VAT,Sales Tax', comment = 'DEA="Normale MwSt.,Erwerbsbesteuerung,Nur MwSt.,Verkaufssteuer"';
-            OptionMembers = "Normal VAT", "Reverse Charge VAT", "Full VAT", "Sales Tax";
+            OptionMembers = "Normal VAT","Reverse Charge VAT","Full VAT","Sales Tax";
         }
         field(61; "EU 3-Party Trade"; Boolean)
         {
@@ -315,13 +332,13 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             Caption = 'Bal. Account Type', comment = 'DEA="Gegenkontoart"';
             OptionCaption = 'G/L Account,Customer,Vendor,Bank Account,Fixed Asset,IC Partner,Employee', comment = 'DEA="Sachkonto,Debitor,Kreditor,Bankkonto,Anlage,IC-Partner,Mitarbeiter"';
-            OptionMembers = "G/L Account", Customer, Vendor, "Bank Account", "Fixed Asset", "IC Partner", Employee;
+            OptionMembers = "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset","IC Partner",Employee;
         }
         field(64; "Bal. Gen. Posting Type"; Option)
         {
             Caption = 'Bal. Gen. Posting Type', comment = 'DEA="Gegenkonto Buchungsart"';
             OptionCaption = ' ,Purchase,Sale,Settlement';
-            OptionMembers = " ", Purchase, Sale, Settlement;
+            OptionMembers = " ",Purchase,Sale,Settlement;
         }
         field(65; "Bal. Gen. Bus. Posting Group"; Code[20])
         {
@@ -338,7 +355,7 @@ table 50019 "GenJnlLineArchiveNVX"
             Caption = 'Bal. VAT Calculation Type', comment = 'DEA="Gegenkto. MwSt.-Berechnungsart"';
             Editable = false;
             OptionCaption = 'Normal VAT,Reverse Charge VAT,Full VAT,Sales Tax', comment = 'DEA="Normale MwSt.,Erwerbsbesteuerung,Nur MwSt.,Verkaufssteuer"';
-            OptionMembers = "Normal VAT", "Reverse Charge VAT", "Full VAT", "Sales Tax";
+            OptionMembers = "Normal VAT","Reverse Charge VAT","Full VAT","Sales Tax";
         }
         field(68; "Bal. VAT %"; Decimal)
         {
@@ -356,10 +373,10 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(70; "Bank Payment Type"; Option)
         {
-            AccessByPermission = TableData "Bank Account" = R;
+            AccessByPermission = tabledata "Bank Account" = R;
             Caption = 'Bank Payment Type', comment = 'DEA="Bankkontozahlungsart"';
             OptionCaption = ' ,Computer Check,Manual Check,Electronic Payment,Electronic Payment-IAT', comment = 'DEA=" ,Computer Scheck,Manueller Scheck,Elektronische Zahlung,Elektronische IAT-Zahlung"';
-            OptionMembers = " ", "Computer Check", "Manual Check", "Electronic Payment", "Electronic Payment-IAT";
+            OptionMembers = " ","Computer Check","Manual Check","Electronic Payment","Electronic Payment-IAT";
         }
         field(71; "VAT Base Amount"; Decimal)
         {
@@ -379,7 +396,7 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(75; "Check Printed"; Boolean)
         {
-            AccessByPermission = TableData "Check Ledger Entry" = R;
+            AccessByPermission = tabledata "Check Ledger Entry" = R;
             Caption = 'Check Printed', comment = 'DEA="Storno"';
             Editable = false;
         }
@@ -396,16 +413,20 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             Caption = 'Source Type', comment = 'DEA="Herkunftsart"';
             OptionCaption = ' ,Customer,Vendor,Bank Account,Fixed Asset,IC Partner,Employee', comment = 'DEA=" ,Debitor,Kreditor,Bankkonto,Anlage,IC-Partner,Mitarbeiter"';
-            OptionMembers = " ", Customer, Vendor, "Bank Account", "Fixed Asset", "IC Partner", Employee;
+            OptionMembers = " ",Customer,Vendor,"Bank Account","Fixed Asset","IC Partner",Employee;
         }
         field(79; "Source No."; Code[20])
         {
             Caption = 'Source No.', comment = 'DEA="Herkunftsnr."';
-            TableRelation = IF("Source Type" = CONST (Customer)) Customer
-            ELSE IF("Source Type" = CONST (Vendor)) Vendor
-            ELSE IF("Source Type" = CONST ("Bank Account")) "Bank Account"
-            ELSE IF("Source Type" = CONST ("Fixed Asset")) "Fixed Asset"
-            ELSE IF("Source Type" = CONST (Employee)) Employee;
+            TableRelation = if ("Source Type" = const(Customer)) Customer
+            else
+            if ("Source Type" = const(Vendor)) Vendor
+            else
+            if ("Source Type" = const("Bank Account")) "Bank Account"
+            else
+            if ("Source Type" = const("Fixed Asset")) "Fixed Asset"
+            else
+            if ("Source Type" = const(Employee)) Employee;
         }
         field(80; "Posting No. Series"; Code[20])
         {
@@ -473,7 +494,7 @@ table 50019 "GenJnlLineArchiveNVX"
             Caption = 'Additional-Currency Posting', comment = 'DEA="Buchung (BW)"';
             Editable = false;
             OptionCaption = 'None,Amount Only,Additional-Currency Amount Only', comment = 'DEA="Kein,Nur Betrag,Nur Betrag (BW)"';
-            OptionMembers = "None", "Amount Only", "Additional-Currency Amount Only";
+            OptionMembers = None,"Amount Only","Additional-Currency Amount Only";
         }
         field(98; "FA Add.-Currency Factor"; Decimal)
         {
@@ -489,21 +510,21 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(100; "Source Currency Amount"; Decimal)
         {
-            AccessByPermission = TableData Currency = R;
+            AccessByPermission = tabledata Currency = R;
             AutoFormatType = 1;
             Caption = 'Source Currency Amount', comment = 'DEA="Urspr.-Währung Betrag"';
             Editable = false;
         }
         field(101; "Source Curr. VAT Base Amount"; Decimal)
         {
-            AccessByPermission = TableData Currency = R;
+            AccessByPermission = tabledata Currency = R;
             AutoFormatType = 1;
             Caption = 'Source Curr. VAT Base Amount', comment = 'DEA="Urspr.-Währung MwSt.-Bemess."';
             Editable = false;
         }
         field(102; "Source Curr. VAT Amount"; Decimal)
         {
-            AccessByPermission = TableData Currency = R;
+            AccessByPermission = tabledata Currency = R;
             AutoFormatType = 1;
             Caption = 'Source Curr. VAT Amount', comment = 'DEA="Urspr.-Währung MwSt.-Betrag"';
             Editable = false;
@@ -553,10 +574,13 @@ table 50019 "GenJnlLineArchiveNVX"
         field(110; "Ship-to/Order Address Code"; Code[10])
         {
             Caption = 'Ship-to/Order Address Code', comment = 'DEA="Verk. an/Eink. von Adresscode"';
-            TableRelation = IF("Account Type" = CONST (Customer)) "Ship-to Address".Code WHERE ("Customer No." = FIELD ("Bill-to/Pay-to No."))
-            ELSE IF("Account Type" = CONST (Vendor)) "Order Address".Code WHERE ("Vendor No." = FIELD ("Bill-to/Pay-to No."))
-            ELSE IF("Bal. Account Type" = CONST (Customer)) "Ship-to Address".Code WHERE ("Customer No." = FIELD ("Bill-to/Pay-to No."))
-            ELSE IF("Bal. Account Type" = CONST (Vendor)) "Order Address".Code WHERE ("Vendor No." = FIELD ("Bill-to/Pay-to No."));
+            TableRelation = if ("Account Type" = const(Customer)) "Ship-to Address".Code where("Customer No." = field("Bill-to/Pay-to No."))
+            else
+            if ("Account Type" = const(Vendor)) "Order Address".Code where("Vendor No." = field("Bill-to/Pay-to No."))
+            else
+            if ("Bal. Account Type" = const(Customer)) "Ship-to Address".Code where("Customer No." = field("Bill-to/Pay-to No."))
+            else
+            if ("Bal. Account Type" = const(Vendor)) "Order Address".Code where("Vendor No." = field("Bill-to/Pay-to No."));
         }
         field(111; "VAT Difference"; Decimal)
         {
@@ -582,7 +606,7 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             Caption = 'IC Direction', comment = 'DEA="IC-Richtung"';
             OptionCaption = 'Outgoing,Incoming', comment = 'DEA="Ausgehend,Eingehend"';
-            OptionMembers = Outgoing, Incoming;
+            OptionMembers = Outgoing,Incoming;
         }
         field(116; "IC Partner G/L Acc. No."; Code[20])
         {
@@ -597,10 +621,13 @@ table 50019 "GenJnlLineArchiveNVX"
         field(118; "Sell-to/Buy-from No."; Code[20])
         {
             Caption = 'Sell-to/Buy-from No.', comment = 'DEA="Verk. an/Eink. von Nr."';
-            TableRelation = IF("Account Type" = CONST (Customer)) Customer
-            ELSE IF("Bal. Account Type" = CONST (Customer)) Customer
-            ELSE IF("Account Type" = CONST (Vendor)) Vendor
-            ELSE IF("Bal. Account Type" = CONST (Vendor)) Vendor;
+            TableRelation = if ("Account Type" = const(Customer)) Customer
+            else
+            if ("Bal. Account Type" = const(Customer)) Customer
+            else
+            if ("Account Type" = const(Vendor)) Vendor
+            else
+            if ("Bal. Account Type" = const(Vendor)) Vendor;
         }
         field(119; "VAT Registration No."; Text[20])
         {
@@ -652,12 +679,17 @@ table 50019 "GenJnlLineArchiveNVX"
         field(288; "Recipient Bank Account"; Code[20])
         {
             Caption = 'Recipient Bank Account', comment = 'DEA="Bankkonto Empfänger"';
-            TableRelation = IF("Account Type" = CONST (Customer)) "Customer Bank Account".Code WHERE ("Customer No." = FIELD ("Account No."))
-            ELSE IF("Account Type" = CONST (Vendor)) "Vendor Bank Account".Code WHERE ("Vendor No." = FIELD ("Account No."))
-            ELSE IF("Account Type" = CONST (Employee)) Employee."No." WHERE ("Employee No. Filter" = FIELD ("Account No."))
-            ELSE IF("Bal. Account Type" = CONST (Customer)) "Customer Bank Account".Code WHERE ("Customer No." = FIELD ("Bal. Account No."))
-            ELSE IF("Bal. Account Type" = CONST (Vendor)) "Vendor Bank Account".Code WHERE ("Vendor No." = FIELD ("Bal. Account No."))
-            ELSE IF("Bal. Account Type" = CONST (Employee)) Employee."No." WHERE ("Employee No. Filter" = FIELD ("Bal. Account No."));
+            TableRelation = if ("Account Type" = const(Customer)) "Customer Bank Account".Code where("Customer No." = field("Account No."))
+            else
+            if ("Account Type" = const(Vendor)) "Vendor Bank Account".Code where("Vendor No." = field("Account No."))
+            else
+            if ("Account Type" = const(Employee)) Employee."No." where("Employee No. Filter" = field("Account No."))
+            else
+            if ("Bal. Account Type" = const(Customer)) "Customer Bank Account".Code where("Customer No." = field("Bal. Account No."))
+            else
+            if ("Bal. Account Type" = const(Vendor)) "Vendor Bank Account".Code where("Vendor No." = field("Bal. Account No."))
+            else
+            if ("Bal. Account Type" = const(Employee)) Employee."No." where("Employee No. Filter" = field("Bal. Account No."));
         }
         field(289; "Message to Recipient"; Text[140])
         {
@@ -670,9 +702,9 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(291; "Has Payment Export Error"; Boolean)
         {
-            CalcFormula = Exist ("Payment Jnl. Export Error Text" WHERE ("Journal Template Name" = FIELD ("Journal Template Name"),
-                                                                        "Journal Batch Name" = FIELD ("Journal Batch Name"),
-                                                                        "Journal Line No." = FIELD ("Line No.")));
+            CalcFormula = exist("Payment Jnl. Export Error Text" where("Journal Template Name" = field("Journal Template Name"),
+                                                                        "Journal Batch Name" = field("Journal Batch Name"),
+                                                                        "Journal Line No." = field("Line No.")));
             Caption = 'Has Payment Export Error', comment = 'DEA="Weist Zahlungsexportfehler auf"';
             Editable = false;
             FieldClass = FlowField;
@@ -694,34 +726,34 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(1002; "Job Unit Price (LCY)"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatType = 2;
             Caption = 'Job Unit Price (LCY)', comment = 'DEA="VK-Preis Projekt (MW)"';
             Editable = false;
         }
         field(1003; "Job Total Price (LCY)"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatType = 1;
             Caption = 'Job Total Price (LCY)', comment = 'DEA="Verkaufsbetrag Projekt (MW)"';
             Editable = false;
         }
         field(1004; "Job Quantity"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             Caption = 'Job Quantity', comment = 'DEA="Projektmenge"';
             DecimalPlaces = 0 : 5;
         }
         field(1005; "Job Unit Cost (LCY)"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatType = 2;
             Caption = 'Job Unit Cost (LCY)', comment = 'DEA="Projekteinstandspreis (MW)"';
             Editable = false;
         }
         field(1006; "Job Line Discount %"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatType = 1;
             Caption = 'Job Line Discount %', comment = 'DEA="Zeilenrabatt % Projekt"';
         }
@@ -738,21 +770,21 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(1009; "Job Line Type"; Option)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             Caption = 'Job Line Type', comment = 'DEA="Projektzeilenart"';
             OptionCaption = ' ,Budget,Billable,Both Budget and Billable', comment = 'DEA=" ,Budget,Fakturierbar,Budget und Fakturierbar"';
-            OptionMembers = " ", Budget, Billable, "Both Budget and Billable";
+            OptionMembers = " ",Budget,Billable,"Both Budget and Billable";
         }
         field(1010; "Job Unit Price"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatExpression = "Job Currency Code";
             AutoFormatType = 2;
             Caption = 'Job Unit Price', comment = 'DEA="VK-Preis Projekt"';
         }
         field(1011; "Job Total Price"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatExpression = "Job Currency Code";
             AutoFormatType = 1;
             Caption = 'Job Total Price', comment = 'DEA="Verkaufsbetrag Projekt"';
@@ -760,7 +792,7 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(1012; "Job Unit Cost"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatExpression = "Job Currency Code";
             AutoFormatType = 2;
             Caption = 'Job Unit Cost', comment = 'DEA="Projekteinstandspreis"';
@@ -768,7 +800,7 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(1013; "Job Total Cost"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatExpression = "Job Currency Code";
             AutoFormatType = 1;
             Caption = 'Job Total Cost', comment = 'DEA="Projekteinstandsbetrag"';
@@ -776,28 +808,28 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(1014; "Job Line Discount Amount"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatExpression = "Job Currency Code";
             AutoFormatType = 1;
             Caption = 'Job Line Discount Amount', comment = 'DEA="Zeilenrabattbetrag Projekt"';
         }
         field(1015; "Job Line Amount"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatExpression = "Job Currency Code";
             AutoFormatType = 1;
             Caption = 'Job Line Amount', comment = 'DEA="Zeilenbetrag Projekt"';
         }
         field(1016; "Job Total Cost (LCY)"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatType = 1;
             Caption = 'Job Total Cost (LCY)', comment = 'DEA="Projekteinstandsbetrag (MW)"';
             Editable = false;
         }
         field(1017; "Job Line Amount (LCY)"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatType = 1;
             Caption = 'Job Line Amount (LCY)', comment = 'DEA="Zeilenbetrag Projekt (MW)"';
             Editable = false;
@@ -812,20 +844,20 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(1020; "Job Planning Line No."; Integer)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             BlankZero = true;
             Caption = 'Job Planning Line No.', comment = 'DEA="Projektplanzeilennr."';
         }
         field(1030; "Job Remaining Qty."; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             Caption = 'Job Remaining Qty.', comment = 'DEA="Verbleibend für Projekt - Menge"';
             DecimalPlaces = 0 : 5;
         }
         field(1200; "Direct Debit Mandate ID"; Code[35])
         {
             Caption = 'Direct Debit Mandate ID', comment = 'DEA="Lastschrift-Mandat-ID"';
-            TableRelation = IF("Account Type" = CONST (Customer)) "SEPA Direct Debit Mandate" WHERE ("Customer No." = FIELD ("Account No."));
+            TableRelation = if ("Account Type" = const(Customer)) "SEPA Direct Debit Mandate" where("Customer No." = field("Account No."));
 
         }
         field(1220; "Data Exch. Entry No."; Integer)
@@ -873,15 +905,15 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(5600; "FA Posting Date"; Date)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'FA Posting Date', comment = 'DEA="Anlagedatum"';
         }
         field(5601; "FA Posting Type"; Option)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'FA Posting Type', comment = 'DEA="Anlagenbuchungsart"';
             OptionCaption = ' ,Acquisition Cost,Depreciation,Write-Down,Appreciation,Custom 1,Custom 2,Disposal,Maintenance', comment = 'DEA=" ,Anschaffung,Normal-AfA,Erhöhte AfA,Zuschreibung,Sonder-AfA,Benutzerdef. AfA,Verkauf,Wartung"';
-            OptionMembers = " ", "Acquisition Cost", Depreciation, "Write-Down", Appreciation, "Custom 1", "Custom 2", Disposal, Maintenance;
+            OptionMembers = " ","Acquisition Cost",Depreciation,"Write-Down",Appreciation,"Custom 1","Custom 2",Disposal,Maintenance;
         }
         field(5602; "Depreciation Book Code"; Code[10])
         {
@@ -890,24 +922,24 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(5603; "Salvage Value"; Decimal)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             AutoFormatType = 1;
             Caption = 'Salvage Value', comment = 'DEA="Restwert"';
         }
         field(5604; "No. of Depreciation Days"; Integer)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             BlankZero = true;
             Caption = 'No. of Depreciation Days', comment = 'DEA="Anzahl AfA-Tage"';
         }
         field(5605; "Depr. until FA Posting Date"; Boolean)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'Depr. until FA Posting Date', comment = 'DEA="AfA bis Anlagedatum"';
         }
         field(5606; "Depr. Acquisition Cost"; Boolean)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'Depr. Acquisition Cost', comment = 'DEA="Rückw. AfA-Korr. b. Anschaff."';
         }
         field(5609; "Maintenance Code"; Code[10])
@@ -932,12 +964,12 @@ table 50019 "GenJnlLineArchiveNVX"
         }
         field(5613; "Use Duplication List"; Boolean)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'Use Duplication List', comment = 'DEA="Kopiervorgang aktivieren"';
         }
         field(5614; "FA Reclassification Entry"; Boolean)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'FA Reclassification Entry', comment = 'DEA="Anlagenumbuchungsposten"';
         }
         field(5615; "FA Error Entry No."; Integer)
@@ -1028,7 +1060,7 @@ table 50019 "GenJnlLineArchiveNVX"
             Caption = 'Shortcut Dimension 1 Name', comment = 'DEA="Shortcutdimensionsname 1"';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (1), Code = field ("Shortcut Dimension 1 Code")));
+            CalcFormula = lookup("Dimension Value".Name where("Global Dimension No." = const(1), Code = field("Shortcut Dimension 1 Code")));
             CaptionClass = '1337,1';
         }
         // field(50005; "Shortcut Dimension 2 Name"; Text[50])
@@ -1043,7 +1075,7 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (3));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
             CaptionClass = '1,2,3';
         }
         // field(50007; "Shortcut Dimension 3 Name"; Text[50])
@@ -1058,7 +1090,7 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 4 Code', comment = 'DEA="Shortcutdimensionscode 4"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (4));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(4));
             CaptionClass = '1,2,4';
         }
         // field(50009; "Shortcut Dimension 4 Name"; Text[50])
@@ -1072,7 +1104,7 @@ table 50019 "GenJnlLineArchiveNVX"
         field(50010; "Shortcut Dimension 5 Code"; Code[20])
         {
             Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimensionscode 5"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (5));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5));
             CaptionClass = '1,2,5';
         }
         // field(50011; "Shortcut Dimension 5 Name"; Text[50])
@@ -1087,7 +1119,7 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 6 Code', comment = 'DEA="Shortcutdimensionscode 6"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (6));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(6));
             CaptionClass = '1,2,6';
         }
         // field(50013; "Shortcut Dimension 6 Name"; Text[50])
@@ -1102,7 +1134,7 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 7 Code', comment = 'DEA="Shortcutdimensionscode 7"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (7));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(7));
             CaptionClass = '1,2,7';
         }
         // field(50015; "Shortcut Dimension 7 Name"; Text[50])
@@ -1117,7 +1149,7 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 8 Code', comment = 'DEA="Shortcutdimensionscode 8"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (8));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(8));
             CaptionClass = '1,2,8';
         }
         // field(50017; "Shortcut Dimension 8 Name"; Text[50])
@@ -1132,7 +1164,7 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Geschäftsbuchungsgruppe Beschreibung"';
             FieldClass = FlowField;
-            CalcFormula = lookup ("Gen. Business Posting Group".Description where (Code = field ("Gen. Bus. Posting Group")));
+            CalcFormula = lookup("Gen. Business Posting Group".Description where(Code = field("Gen. Bus. Posting Group")));
         }
         field(60000; "Posting GUID"; Guid)
         {
@@ -1143,7 +1175,7 @@ table 50019 "GenJnlLineArchiveNVX"
         {
             Caption = 'Posting Type', comment = 'DEA="Buchungsart"';
             DataClassification = CustomerContent;
-            OptionMembers = OG, Distributed, Temp;
+            OptionMembers = OG,Distributed,Temp;
         }
     }
 

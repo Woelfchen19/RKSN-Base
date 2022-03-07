@@ -1,11 +1,11 @@
-page 50013 "PostingListFANVX"
+page 50013 PostingListFANVX
 {
     Caption = 'Backup dimensional distribution Fixed Asset', comment = 'DEA="Sicherung dim.Verteilungen Modul AnBu"';
     PageType = List;
     UsageCategory = Lists;
     ApplicationArea = All;
     SourceTable = PostingsNVX;
-    CardPageId = 50014;
+    CardPageId = PostingCardNVX;
     Editable = false;
     InsertAllowed = false;
     layout
@@ -42,7 +42,7 @@ page 50013 "PostingListFANVX"
                 {
                     ApplicationArea = All;
                 }
-                
+
             }
         }
     }

@@ -1,7 +1,7 @@
-table 50005 "BsnPstGrpVATPstTypeNVX"
+table 50005 BsnPstGrpVATPstTypeNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Gen. Bus. Posting Group"; Code[20])
@@ -23,14 +23,14 @@ table 50005 "BsnPstGrpVATPstTypeNVX"
         {
             Caption = 'Description', comment = 'DEA="Beschreibung"';
             FieldClass = FlowField;
-            CalcFormula = Lookup("Gen. Business Posting Group".Description WHERE (Code=FIELD("Gen. Bus. Posting Group2")));
+            CalcFormula = lookup("Gen. Business Posting Group".Description where(Code = field("Gen. Bus. Posting Group2")));
             Editable = false;
         }
     }
 
     keys
     {
-        key(PK;"Gen. Bus. Posting Group","VAT Posting Type")
+        key(PK; "Gen. Bus. Posting Group", "VAT Posting Type")
         {
             Clustered = true;
         }

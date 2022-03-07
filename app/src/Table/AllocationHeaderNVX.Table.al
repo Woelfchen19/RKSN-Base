@@ -1,9 +1,10 @@
-table 50012 "AllocationHeaderNVX"
+table 50012 AllocationHeaderNVX
 {
     DataClassification = CustomerContent;
     Caption = 'Allocation Header', comment = 'DEA="Verteilungskopf"';
-    DataCaptionFields = "Allocation Code","Start Date";
+    DataCaptionFields = "Allocation Code", "Start Date";
     LookupPageId = AllocationListNVX;
+    DrilldownPageId = AllocationListNVX;
 
     fields
     {
@@ -16,7 +17,7 @@ table 50012 "AllocationHeaderNVX"
             var
                 AllocationCode: Record AllocationCodeNVX;
             begin
-                IF Description = '' then begin
+                if Description = '' then begin
                     AllocationCode.Get("Allocation Code");
                     Description := AllocationCode.Description;
                 end;
@@ -36,7 +37,7 @@ table 50012 "AllocationHeaderNVX"
 
     keys
     {
-        key(PK;"Allocation Code","Start Date")
+        key(PK; "Allocation Code", "Start Date")
         {
             Clustered = true;
         }
@@ -46,7 +47,7 @@ table 50012 "AllocationHeaderNVX"
     var
         AllocationLine: Record AllocationLineNVX;
     begin
-        AllocationLine.SetRange("Allocation Code","Allocation Code");
+        AllocationLine.SetRange("Allocation Code", "Allocation Code");
         AllocationLine.DeleteAll();
     end;
 

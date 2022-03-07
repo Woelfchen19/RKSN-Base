@@ -1,4 +1,4 @@
-table 50021 "PostingsNVX"
+table 50021 PostingsNVX
 {
     DataClassification = CustomerContent;
     Caption = 'Backup dimensional distribution', comment = 'DEA="Sicherung dim.Verteilungen Modul AnBu"';
@@ -22,7 +22,7 @@ table 50021 "PostingsNVX"
         field(5; "Source Journal Line"; Option)
         {
             DataClassification = CustomerContent;
-            OptionMembers = GenJnlLine, FAJnlLine, PurchaseLine, SalesLine;
+            OptionMembers = GenJnlLine,FAJnlLine,PurchaseLine,SalesLine;
             OptionCaption = 'Gen. Journal Line,FA Journal Line,Purchase Line,Sales Line';
         }
         field(10; "Date"; Date)

@@ -1,9 +1,9 @@
-codeunit 50016 "Codeunit414HookNVX"
+codeunit 50016 Codeunit414HookNVX
 {
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"release sales document", 'OnAfterReleaseSalesDoc', '', true, true)]
-    local procedure HandleVATNVX(var SalesHeader: Record "Sales Header"; PreviewMode: boolean; LinesWereModified: boolean)
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Release Sales Document", 'OnAfterReleaseSalesDoc', '', true, true)]
+    local procedure HandleVATNVX(var SalesHeader: Record "Sales Header"; PreviewMode: Boolean; LinesWereModified: Boolean)
     var
-        SalesLineNVX: record SalesLineNVX;
+        SalesLineNVX: Record SalesLineNVX;
     begin
         SalesLineNVX.HandleVATDifferenceNVX(SalesHeader);
     end;

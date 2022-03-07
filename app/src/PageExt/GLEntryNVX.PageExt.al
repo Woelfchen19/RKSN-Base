@@ -1,4 +1,4 @@
-pageextension 50005 "GLEntryNVX" extends "General Ledger Entries"
+pageextension 50005 GLEntryNVX extends "General Ledger Entries"
 {
     layout
     {
@@ -16,7 +16,7 @@ pageextension 50005 "GLEntryNVX" extends "General Ledger Entries"
                 Editable = false;
                 Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
                 CaptionClass = '1338,1'; //= Sales + Dim Name
-                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1)); 
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
             }
             field("Sales Shortcut Dimension 3 CodeNVX"; GLEntryNVX."Sales Shortcut Dimension 3")
             {
@@ -24,7 +24,7 @@ pageextension 50005 "GLEntryNVX" extends "General Ledger Entries"
                 Editable = false;
                 Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
                 CaptionClass = '1338,3'; //= Sales + Dim Name
-                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
             }
             field("Purchase Shortcut Dimension 1 CodeNVX"; GLEntryNVX."Purchase Shortcut Dimension 1")
             {
@@ -32,7 +32,7 @@ pageextension 50005 "GLEntryNVX" extends "General Ledger Entries"
                 Editable = false;
                 Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
                 CaptionClass = '1339,1'; //= Purchase + Dim Name
-                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1)); 
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
             }
             field("Purchase Shortcut Dimension 3 CodeNVX"; GLEntryNVX."Purchase Shortcut Dimension 3")
             {
@@ -40,7 +40,7 @@ pageextension 50005 "GLEntryNVX" extends "General Ledger Entries"
                 Editable = false;
                 Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
                 CaptionClass = '1339,3'; //= Purchase + Dim Name
-                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
             }
             field("Interim Gen.Bus.Posting GroupNVX"; GLEntryNVX."Interim Gen.Bus.Posting Group")
             {
@@ -55,7 +55,7 @@ pageextension 50005 "GLEntryNVX" extends "General Ledger Entries"
                 Editable = false;
                 Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
                 TableRelation = AllocationCodeNVX.Code;
-            }                        
+            }
             field("VAT Posting TypeNVX"; GLEntryNVX."VAT Posting Type")
             {
                 ApplicationArea = All;
@@ -118,7 +118,7 @@ pageextension 50005 "GLEntryNVX" extends "General Ledger Entries"
 
     trigger OnAfterGetRecord();
     begin
-        IF not GLEntryNVX.get("Entry No.") then
+        if not GLEntryNVX.Get("Entry No.") then
             GLEntryNVX.Init();
     end;
 }

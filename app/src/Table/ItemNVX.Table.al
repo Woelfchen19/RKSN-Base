@@ -1,4 +1,4 @@
-table 50026 "ItemNVX"
+table 50026 ItemNVX
 {
     DataClassification = CustomerContent;
 

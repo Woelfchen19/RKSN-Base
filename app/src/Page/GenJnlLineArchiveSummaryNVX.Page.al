@@ -1,4 +1,4 @@
-page 50012 "GenJnlLineArchiveSummaryNVX"
+page 50012 GenJnlLineArchiveSummaryNVX
 {
     Caption = 'Gen. Journal Line Archive Summary', comment = 'DEA="Fibu Buch.-Blattzeilenarchiv Zusammenfassung"';
     PageType = ListPart;
@@ -84,22 +84,22 @@ page 50012 "GenJnlLineArchiveSummaryNVX"
                     ApplicationArea = All;
                     Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Name Steuerschlüssel"';
                 }
-                field("Allocation %";"Allocation %")
+                field("Allocation %"; "Allocation %")
                 {
                     ApplicationArea = All;
                     Caption = 'Percentage', comment = 'DEA="%-Anteil"';
                 }
-                field("Amount (LCY)";"Amount (LCY)")
+                field("Amount (LCY)"; "Amount (LCY)")
                 {
                     ApplicationArea = All;
                     Caption = 'Amount incl. VAT (LCY)', comment = 'DEA="Betrag BRUTTO"';
                 }
-                field("VAT Amount (LCY)";"VAT Amount (LCY)")
+                field("VAT Amount (LCY)"; "VAT Amount (LCY)")
                 {
                     ApplicationArea = All;
                     Caption = 'VAT Amount (LCY)', comment = 'DEA="Betrag Ust."';
                 }
-                field("VAT Base Amount (LCY)";"VAT Base Amount (LCY)")
+                field("VAT Base Amount (LCY)"; "VAT Base Amount (LCY)")
                 {
                     ApplicationArea = All;
                     Caption = 'VAT Base Amount (LCY)', comment = 'DEA="Betrag NETTO"';
@@ -112,14 +112,14 @@ page 50012 "GenJnlLineArchiveSummaryNVX"
                 {
                     ApplicationArea = All;
                 }
-                
+
             }
         }
     }
     trigger OnOpenPage();
     begin
-        Rec.SetRange("Posting Type",Rec."Posting Type"::Distributed);
-        Rec.SetFilter("Account No.",'<>%1','');
+        Rec.SetRange("Posting Type", Rec."Posting Type"::Distributed);
+        Rec.SetFilter("Account No.", '<>%1', '');
         CurrPage.Editable(false);
     end;
 }

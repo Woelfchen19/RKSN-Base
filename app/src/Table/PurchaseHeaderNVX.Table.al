@@ -1,7 +1,7 @@
-table 50040 "PurchaseHeaderNVX"
+table 50040 PurchaseHeaderNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Document Type"; Option)
@@ -24,19 +24,19 @@ table 50040 "PurchaseHeaderNVX"
             Caption = 'Allocation Amount', comment = 'DEA="Verteilungsbetrag"';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum (DistrPurchLineNVX."VAT Base Amount" where ("Document Type" = field ("Document Type"), "Document No." = field ("No.")));
+            CalcFormula = sum(DistrPurchLineNVX."VAT Base Amount" where("Document Type" = field("Document Type"), "Document No." = field("No.")));
         }
         field(101; "Allocation Amount Incl. VAT"; Decimal)
         {
             Caption = 'Allocation Amount Incl. VAT', comment = 'DEA="Verteilungsbetrag inkl. USt."';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum (DistrPurchLineNVX."Amount Including VAT" where ("Document Type" = field ("Document Type"), "Document No." = field ("No.")));
+            CalcFormula = sum(DistrPurchLineNVX."Amount Including VAT" where("Document Type" = field("Document Type"), "Document No." = field("No.")));
         }
     }
     keys
     {
-        key(PK;"Document Type","No.")
+        key(PK; "Document Type", "No.")
         {
             Clustered = true;
         }

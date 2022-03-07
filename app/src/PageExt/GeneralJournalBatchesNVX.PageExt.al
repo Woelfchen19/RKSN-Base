@@ -1,4 +1,4 @@
-pageextension 50040 "GeneralJournalBatchesNVX" extends "General Journal Batches"
+pageextension 50040 GeneralJournalBatchesNVX extends "General Journal Batches"
 {
     layout
     {
@@ -10,9 +10,9 @@ pageextension 50040 "GeneralJournalBatchesNVX" extends "General Journal Batches"
                 ApplicationArea = All;
                 trigger OnValidate();
                 begin
-                    IF GenJournalBatchNVX.Modify() then;
+                    if GenJournalBatchNVX.Modify() then;
 
-                    IF not GenJournalBatchNVX.Get(Rec."Journal Template Name", Rec.Name) then begin
+                    if not GenJournalBatchNVX.Get(Rec."Journal Template Name", Rec.Name) then begin
                         GenJournalBatchNVX."Journal Template Name" := Rec."Journal Template Name";
                         GenJournalBatchNVX.Name := Rec.Name;
                         GenJournalBatchNVX.Insert();
@@ -32,7 +32,7 @@ pageextension 50040 "GeneralJournalBatchesNVX" extends "General Journal Batches"
 
     trigger OnAfterGetRecord();
     begin
-        If not GenJournalBatchNVX.Get(Rec."Journal Template Name", Rec.Name) then begin
+        if not GenJournalBatchNVX.Get(Rec."Journal Template Name", Rec.Name) then begin
             GenJournalBatchNVX.Init();
             GenJournalBatchNVX."Journal Template Name" := Rec."Journal Template Name";
             GenJournalBatchNVX.Name := Rec.Name;

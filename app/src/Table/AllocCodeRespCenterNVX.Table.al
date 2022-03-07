@@ -1,9 +1,9 @@
-table 50011 "AllocCodeRespCenterNVX"
+table 50011 AllocCodeRespCenterNVX
 {
     DataClassification = CustomerContent;
     DrillDownPageId = AllocCodeRespCenterNVX;
     LookupPageId = AllocCodeRespCenterNVX;
-    
+
     fields
     {
         field(1; "Allocation Code"; Code[10])
@@ -29,29 +29,29 @@ table 50011 "AllocCodeRespCenterNVX"
 
     keys
     {
-        key(PK;"Allocation Code","Resp. Center")
+        key(PK; "Allocation Code", "Resp. Center")
         {
             Clustered = true;
         }
     }
 
-procedure InsertResponsibilityCenter();
-var
-    RespCenter: Record "Responsibility Center";
-    RespCenterList: Page "Responsibility Center List";
-begin
-    RespCenterList.LookupMode(true);
-    IF RespCenterList.RunModal() = "Action"::LookupOK then begin
-        RespCenterList.SetSelectionFilter(RespCenter);
-        IF RespCenter.FindSet() then
-            repeat
-            IF not Get("Allocation Code",RespCenter.Code) then begin
-                Init();
-                "Allocation Code" := "Allocation Code";
-                "Resp. Center" := RespCenter.Code;
-                Insert();
-            end;
-            until RespCenter.Next() = 0;
+    procedure InsertResponsibilityCenter();
+    var
+        RespCenter: Record "Responsibility Center";
+        RespCenterList: Page "Responsibility Center List";
+    begin
+        RespCenterList.LookupMode(true);
+        if RespCenterList.RunModal() = "Action"::LookupOK then begin
+            RespCenterList.SetSelectionFilter(RespCenter);
+            if RespCenter.FindSet() then
+                repeat
+                    if not Get("Allocation Code", RespCenter.Code) then begin
+                        Init();
+                        "Allocation Code" := "Allocation Code";
+                        "Resp. Center" := RespCenter.Code;
+                        Insert();
+                    end;
+                until RespCenter.Next() = 0;
+        end;
     end;
-end;
 }

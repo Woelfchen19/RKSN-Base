@@ -1,4 +1,4 @@
-pageextension 50001 "ItemCardNVX" extends "Item Card"
+pageextension 50001 ItemCardNVX extends "Item Card"
 {
     layout
     {
@@ -8,7 +8,7 @@ pageextension 50001 "ItemCardNVX" extends "Item Card"
             {
                 ApplicationArea = All;
                 Editable = false;
-            }           
+            }
         }
 
         addlast("Posting Details")
@@ -25,7 +25,7 @@ pageextension 50001 "ItemCardNVX" extends "Item Card"
             {
                 ApplicationArea = All;
                 Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
-                TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (3));
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
                 CaptionClass = '1,2,3';
                 trigger OnValidate();
                 begin
@@ -55,8 +55,8 @@ pageextension 50001 "ItemCardNVX" extends "Item Card"
                 Caption = 'Deactivate balance line - Inventory Value Zero', comment = 'DEA="Entlastungszeile ohne Wertefluss deaktiviert"';
                 trigger OnValidate();
                 begin
-                    IF ItemNVX."No bal line - Inv Value Zero" then
-                        Rec.TestField("Inventory Value Zero",true);
+                    if ItemNVX."No bal line - Inv Value Zero" then
+                        Rec.TestField("Inventory Value Zero", true);
                     ItemNVX.Modify();
                 end;
             }
@@ -69,14 +69,14 @@ pageextension 50001 "ItemCardNVX" extends "Item Card"
                     ItemEntry: Record "Item Ledger Entry";
                     ItemEntryNotEmptyErr: Label 'You cannot change this field if there are posted item entries', comment = 'DEA="Diese Einrichtung ist nur solange änderbar als es zum betreffenden Artikel noch keine Bewegungsposten gibt"';
                 begin
-                    ItemEntry.SetRange("Item No.",Rec."No.");
-                    IF not ItemEntry.IsEmpty() then
+                    ItemEntry.SetRange("Item No.", Rec."No.");
+                    if not ItemEntry.IsEmpty() then
                         Error(ItemEntryNotEmptyErr);
                     ItemNVX.Modify();
-                end;                
+                end;
             }
-            
-            
+
+
         }
         modify("VAT Prod. Posting Group")
         {
@@ -102,10 +102,10 @@ pageextension 50001 "ItemCardNVX" extends "Item Card"
         DefaultDim.SetRange("Table ID", Database::Item);
         DefaultDim.SetRange("No.", Rec."No.");
         DefaultDim.SetRange("Dimension Code", GLSetup."Shortcut Dimension 3 Code");
-        IF DefaultDim.FindFirst() then
+        if DefaultDim.FindFirst() then
             GlobalDimension3Code := DefaultDim."Dimension Value Code";
 
-        IF not ItemNVX.Get("No.") then begin
+        if not ItemNVX.Get("No.") then begin
             ItemNVX.Init();
             ItemNVX."Item No." := "No.";
             ItemNVX.Insert();

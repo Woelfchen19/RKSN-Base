@@ -1,4 +1,4 @@
-page 50015 "GenJnlLineArchiveOriginNVX"
+page 50015 GenJnlLineArchiveOriginNVX
 {
     Caption = 'Gen. Journal Line Archive Origin', comment = 'DEA="Fibu Buch.-Blattzeilenarchiv Ursprung"';
     PageType = ListPart;
@@ -54,7 +54,7 @@ page 50015 "GenJnlLineArchiveOriginNVX"
                 {
                     ApplicationArea = All;
                 }
-                field("Amount (LCY)";"Amount (LCY)")
+                field("Amount (LCY)"; "Amount (LCY)")
                 {
                     ApplicationArea = All;
                 }
@@ -76,7 +76,7 @@ page 50015 "GenJnlLineArchiveOriginNVX"
                     Caption = 'Business Case', comment = 'DEA="Geschäftsfall"';
                 }
             }
-            
+
         }
     }
     var
@@ -85,7 +85,7 @@ page 50015 "GenJnlLineArchiveOriginNVX"
     trigger OnOpenPage();
     begin
         BusinessCase := true; //Yes, this has (almost) no logic... but the customer knows best... or so they say....
-        Rec.SetRange("Posting Type",Rec."Posting Type"::OG);
+        Rec.SetRange("Posting Type", Rec."Posting Type"::OG);
         CurrPage.Editable(false);
     end;
 }

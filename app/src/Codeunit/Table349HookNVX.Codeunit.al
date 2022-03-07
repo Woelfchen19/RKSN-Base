@@ -5,9 +5,9 @@ codeunit 50010 Table349HookNVX
     var
         DimValueNVX: Record DimValueNVX;
     begin
-        IF Rec.IsTemporary then
+        if Rec.IsTemporary then
             exit;
-        If DimValueNVX.Get(Rec."Dimension Code",Rec.Code) then
+        if DimValueNVX.Get(Rec."Dimension Code", Rec.Code) then
             DimValueNVX.Delete(true);
     end;
 }

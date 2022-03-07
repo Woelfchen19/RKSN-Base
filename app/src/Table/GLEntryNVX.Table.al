@@ -1,7 +1,7 @@
-table 50016 "GLEntryNVX"
+table 50016 GLEntryNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Entry No."; Integer)
@@ -13,28 +13,28 @@ table 50016 "GLEntryNVX"
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
             CaptionClass = '1338,1'; //= Sales + Dim Name
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1)); 
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
         }
         field(11; "Sales Shortcut Dimension 3"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
             CaptionClass = '1338,3'; //= Sales + Dim Name
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
         }
         field(12; "Purchase Shortcut Dimension 1"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
             CaptionClass = '1339,1'; //= Purchase + Dim Name
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1)); 
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
         }
         field(13; "Purchase Shortcut Dimension 3"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
             CaptionClass = '1339,3'; //= Purchase + Dim Name      
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));      
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
         }
         field(15; "Interim Gen.Bus.Posting Group"; Code[20])
         {
@@ -77,7 +77,7 @@ table 50016 "GLEntryNVX"
 
     keys
     {
-        key(PK;"Entry No.")
+        key(PK; "Entry No.")
         {
             Clustered = true;
         }

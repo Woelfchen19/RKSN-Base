@@ -1,8 +1,8 @@
-table 50030 "PurchLineArchiveNVX"
+table 50030 PurchLineArchiveNVX
 {
     Caption = 'Purchase Line', comment = 'DEA="Einkaufszeile"';
-    DrillDownPageID = "Purchase Lines";
-    LookupPageID = "Purchase Lines";
+    DrillDownPageId = "Purchase Lines";
+    LookupPageId = "Purchase Lines";
 
     fields
     {
@@ -21,7 +21,7 @@ table 50030 "PurchLineArchiveNVX"
         field(3; "Document No."; Code[20])
         {
             Caption = 'Document No.', comment = 'DEA="Belegnr."';
-            TableRelation = "Purchase Header"."No." WHERE("Document Type" = FIELD("Document Type"));
+            TableRelation = "Purchase Header"."No." where("Document Type" = field("Document Type"));
         }
         field(4; "Line No."; Integer)
         {
@@ -31,29 +31,29 @@ table 50030 "PurchLineArchiveNVX"
         {
             Caption = 'Type', comment = 'DEA="Art"';
             OptionCaption = ' ,G/L Account,Item,,Fixed Asset,Charge (Item)', comment = 'DEA=" ,Sachkonto,Artikel,,WG/Anlage,Zu-/Abschlag (Artikel)"';
-            OptionMembers = " ","G/L Account",Item,,"Fixed Asset","Charge (Item)";            
+            OptionMembers = " ","G/L Account",Item,,"Fixed Asset","Charge (Item)";
         }
         field(6; "No."; Code[20])
         {
             // CaptionClass = GetCaptionClass(FieldNo("No."));
-            Caption = 'No.', comment = 'DEA="Nr."';           
+            Caption = 'No.', comment = 'DEA="Nr."';
         }
         field(7; "Location Code"; Code[10])
         {
             Caption = 'Location Code', comment = 'DEA="Lagerortcode"';
-            TableRelation = Location WHERE("Use As In-Transit" = CONST(false));
+            TableRelation = Location where("Use As In-Transit" = const(false));
         }
         field(8; "Posting Group"; Code[20])
         {
             Caption = 'Posting Group', comment = 'DEA="Buchungsgruppe"';
             Editable = false;
-            TableRelation = IF (Type = CONST(Item)) "Inventory Posting Group"
-            ELSE
-            IF (Type = CONST("Fixed Asset")) "FA Posting Group";
+            TableRelation = if (Type = const(Item)) "Inventory Posting Group"
+            else
+            if (Type = const("Fixed Asset")) "FA Posting Group";
         }
         field(10; "Expected Receipt Date"; Date)
         {
-            AccessByPermission = TableData "Purch. Rcpt. Header" = R;
+            AccessByPermission = tabledata "Purch. Rcpt. Header" = R;
             Caption = 'Expected Receipt Date', comment = 'DEA="Erwartetes Wareneingangsdatum"';
         }
         field(11; Description; Text[100])
@@ -87,7 +87,7 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(18; "Qty. to Receive"; Decimal)
         {
-            AccessByPermission = TableData "Purch. Rcpt. Header" = R;
+            AccessByPermission = tabledata "Purch. Rcpt. Header" = R;
             Caption = 'Qty. to Receive', comment = 'DEA="Menge akt. Lieferung"';
             DecimalPlaces = 0 : 5;
         }
@@ -145,7 +145,7 @@ table 50030 "PurchLineArchiveNVX"
         {
             Caption = 'Allow Invoice Disc.', comment = 'DEA="Rech.-Rabatt zulassen"';
             InitValue = true;
-    	}
+        }
         field(34; "Gross Weight"; Decimal)
         {
             Caption = 'Gross Weight', comment = 'DEA="Bruttogewicht"';
@@ -168,22 +168,22 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(38; "Appl.-to Item Entry"; Integer)
         {
-            AccessByPermission = TableData Item = R;
+            AccessByPermission = tabledata Item = R;
             Caption = 'Appl.-to Item Entry', comment = 'DEA="Ausgleich mit Artikelposten"';
         }
         field(40; "Shortcut Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1),
-                                                          Blocked = CONST(false));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1),
+                                                          Blocked = const(false));
         }
         field(41; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2),
-                                                          Blocked = CONST(false));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2),
+                                                          Blocked = const(false));
 
         }
         field(45; "Job No."; Code[20])
@@ -224,7 +224,7 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(60; "Quantity Received"; Decimal)
         {
-            AccessByPermission = TableData "Purch. Rcpt. Header" = R;
+            AccessByPermission = tabledata "Purch. Rcpt. Header" = R;
             Caption = 'Quantity Received', comment = 'DEA="Bereits gelief. Menge"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -280,7 +280,7 @@ table 50030 "PurchLineArchiveNVX"
         {
             Caption = 'Sales Order No.', comment = 'DEA="Verkaufsauftragsnr."';
             Editable = false;
-            TableRelation = IF ("Drop Shipment" = CONST(true)) "Sales Header"."No." WHERE("Document Type" = CONST(Order));
+            TableRelation = if ("Drop Shipment" = const(true)) "Sales Header"."No." where("Document Type" = const(Order));
         }
         field(72; "Sales Order Line No."; Integer)
         {
@@ -289,7 +289,7 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(73; "Drop Shipment"; Boolean)
         {
-            AccessByPermission = TableData "Drop Shpt. Post. Buffer" = R;
+            AccessByPermission = tabledata "Drop Shpt. Post. Buffer" = R;
             Caption = 'Drop Shipment', comment = 'DEA="Direktlieferung"';
             Editable = false;
         }
@@ -324,8 +324,8 @@ table 50030 "PurchLineArchiveNVX"
         {
             Caption = 'Attached to Line No.', comment = 'DEA="Gehört zu Zeilennr."';
             Editable = false;
-            TableRelation = "Purchase Line"."Line No." WHERE("Document Type" = FIELD("Document Type"),
-                                                              "Document No." = FIELD("Document No."));
+            TableRelation = "Purchase Line"."Line No." where("Document Type" = field("Document Type"),
+                                                              "Document No." = field("Document No."));
         }
         field(81; "Entry Point"; Code[10])
         {
@@ -384,19 +384,19 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(93; "Amt. Rcd. Not Invoiced (LCY)"; Decimal)
         {
-            AccessByPermission = TableData "Purch. Rcpt. Header" = R;
+            AccessByPermission = tabledata "Purch. Rcpt. Header" = R;
             AutoFormatType = 1;
             Caption = 'Amt. Rcd. Not Invoiced (LCY)', comment = 'DEA="Nicht fakt. Lieferbetrag (MW)"';
             Editable = false;
         }
         field(95; "Reserved Quantity"; Decimal)
         {
-            AccessByPermission = TableData "Purch. Rcpt. Header" = R;
-            CalcFormula = Sum ("Reservation Entry".Quantity WHERE("Source ID" = FIELD("Document No."),
-                                                                  "Source Ref. No." = FIELD("Line No."),
-                                                                  "Source Type" = CONST(39),
-                                                                  "Source Subtype" = FIELD("Document Type"),
-                                                                  "Reservation Status" = CONST(Reservation)));
+            AccessByPermission = tabledata "Purch. Rcpt. Header" = R;
+            CalcFormula = sum("Reservation Entry".Quantity where("Source ID" = field("Document No."),
+                                                                  "Source Ref. No." = field("Line No."),
+                                                                  "Source Type" = const(39),
+                                                                  "Source Subtype" = field("Document Type"),
+                                                                  "Reservation Status" = const(Reservation)));
             Caption = 'Reserved Quantity', comment = 'DEA="Reservierte Menge"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -404,18 +404,18 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(97; "Blanket Order No."; Code[20])
         {
-            AccessByPermission = TableData "Purch. Rcpt. Header" = R;
+            AccessByPermission = tabledata "Purch. Rcpt. Header" = R;
             Caption = 'Blanket Order No.', comment = 'DEA="Rahmenbestellungsnr."';
-            TableRelation = "Purchase Header"."No." WHERE("Document Type" = CONST("Blanket Order"));
+            TableRelation = "Purchase Header"."No." where("Document Type" = const("Blanket Order"));
             //This property is currently not supported
             //TestTableRelation = false;
         }
         field(98; "Blanket Order Line No."; Integer)
         {
-            AccessByPermission = TableData "Purch. Rcpt. Header" = R;
+            AccessByPermission = tabledata "Purch. Rcpt. Header" = R;
             Caption = 'Blanket Order Line No.', comment = 'DEA="Rahmenbestellungszeilennr."';
-            TableRelation = "Purchase Line"."Line No." WHERE("Document Type" = CONST("Blanket Order"),
-                                                              "Document No." = FIELD("Blanket Order No."));
+            TableRelation = "Purchase Line"."Line No." where("Document Type" = const("Blanket Order"),
+                                                              "Document No." = field("Blanket Order No."));
             //This property is currently not supported
             //TestTableRelation = false;
         }
@@ -466,15 +466,15 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(107; "IC Partner Ref. Type"; Option)
         {
-            AccessByPermission = TableData "IC G/L Account" = R;
+            AccessByPermission = tabledata "IC G/L Account" = R;
             Caption = 'IC Partner Ref. Type', comment = 'DEA="IC-Partnerref.-Art"';
             OptionCaption = ' ,G/L Account,Item,,,Charge (Item),Cross Reference,Common Item No.,Vendor Item No.', comment = 'DEA=" ,Sachkonto,Artikel,,,Zu-/Abschlag (Artikel),Referenz,Gemeinsame Artikelnr.,Kred.-Artikelnr."';
             OptionMembers = " ","G/L Account",Item,,,"Charge (Item)","Cross Reference","Common Item No.","Vendor Item No.";
         }
         field(108; "IC Partner Reference"; Code[20])
         {
-            AccessByPermission = TableData "IC G/L Account" = R;
-            Caption = 'IC Partner Reference', comment = 'DEA="IC-Partnerreferenz"';           
+            AccessByPermission = tabledata "IC G/L Account" = R;
+            Caption = 'IC Partner Reference', comment = 'DEA="IC-Partnerreferenz"';
         }
         field(109; "Prepayment %"; Decimal)
         {
@@ -641,31 +641,31 @@ table 50030 "PurchLineArchiveNVX"
         field(1001; "Job Task No."; Code[20])
         {
             Caption = 'Job Task No.', comment = 'DEA="Projektaufgabennr."';
-            TableRelation = "Job Task"."Job Task No." WHERE("Job No." = FIELD("Job No."));
+            TableRelation = "Job Task"."Job Task No." where("Job No." = field("Job No."));
         }
         field(1002; "Job Line Type"; Option)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             Caption = 'Job Line Type', comment = 'DEA="Projektzeilenart"';
             OptionCaption = ' ,Budget,Billable,Both Budget and Billable', comment = 'DEA=" ,Budget,Fakturierbar,Budget und Fakturierbar"';
             OptionMembers = " ",Budget,Billable,"Both Budget and Billable";
         }
         field(1003; "Job Unit Price"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             BlankZero = true;
             Caption = 'Job Unit Price', comment = 'DEA="VK-Preis Projekt"';
         }
         field(1004; "Job Total Price"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             BlankZero = true;
             Caption = 'Job Total Price', comment = 'DEA="Verkaufsbetrag Projekt"';
             Editable = false;
         }
         field(1005; "Job Line Amount"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatExpression = "Job Currency Code";
             AutoFormatType = 1;
             BlankZero = true;
@@ -673,7 +673,7 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(1006; "Job Line Discount Amount"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatExpression = "Job Currency Code";
             AutoFormatType = 1;
             BlankZero = true;
@@ -681,7 +681,7 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(1007; "Job Line Discount %"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             BlankZero = true;
             Caption = 'Job Line Discount %', comment = 'DEA="Zeilenrabatt % Projekt"';
             DecimalPlaces = 0 : 5;
@@ -690,21 +690,21 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(1008; "Job Unit Price (LCY)"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             BlankZero = true;
             Caption = 'Job Unit Price (LCY)', comment = 'DEA="VK-Preis Projekt (MW)"';
             Editable = false;
         }
         field(1009; "Job Total Price (LCY)"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             BlankZero = true;
             Caption = 'Job Total Price (LCY)', comment = 'DEA="Verkaufsbetrag Projekt (MW)"';
             Editable = false;
         }
         field(1010; "Job Line Amount (LCY)"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatType = 1;
             BlankZero = true;
             Caption = 'Job Line Amount (LCY)', comment = 'DEA="Zeilenbetrag Projekt (MW)"';
@@ -712,7 +712,7 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(1011; "Job Line Disc. Amount (LCY)"; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             AutoFormatType = 1;
             BlankZero = true;
             Caption = 'Job Line Disc. Amount (LCY)', comment = 'DEA="Zeilenrabattbetrag Projekt (MW)"';
@@ -729,7 +729,7 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(1019; "Job Planning Line No."; Integer)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             BlankZero = true;
             Caption = 'Job Planning Line No.', comment = 'DEA="Projektplanzeilennr."';
 
@@ -749,13 +749,13 @@ table 50030 "PurchLineArchiveNVX"
                 JobPlanningLine.SetRange("Usage Link", true);
                 JobPlanningLine.SetRange("System-Created Entry", false);
 
-                if PAGE.RunModal(0, JobPlanningLine) = ACTION::LookupOK then
+                if Page.RunModal(0, JobPlanningLine) = Action::LookupOK then
                     Validate("Job Planning Line No.", JobPlanningLine."Line No.");
             end;
         }
         field(1030; "Job Remaining Qty."; Decimal)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             Caption = 'Job Remaining Qty.', comment = 'DEA="Verbleibend für Projekt - Menge"';
             DecimalPlaces = 0 : 5;
         }
@@ -774,10 +774,10 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(5401; "Prod. Order No."; Code[20])
         {
-            AccessByPermission = TableData "Machine Center" = R;
+            AccessByPermission = tabledata "Machine Center" = R;
             Caption = 'Prod. Order No.', comment = 'DEA="FA-Nr."';
             Editable = false;
-            TableRelation = "Production Order"."No." WHERE(Status = CONST(Released));
+            TableRelation = "Production Order"."No." where(Status = const(Released));
             //This property is currently not supported
             //TestTableRelation = false;
             ValidateTableRelation = false;
@@ -785,12 +785,12 @@ table 50030 "PurchLineArchiveNVX"
         field(5402; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code', comment = 'DEA="Variantencode"';
-            TableRelation = IF (Type = CONST(Item)) "Item Variant".Code WHERE("Item No." = FIELD("No."));
+            TableRelation = if (Type = const(Item)) "Item Variant".Code where("Item No." = field("No."));
 
         }
         field(5403; "Bin Code"; Code[20])
         {
-            Caption = 'Bin Code', comment = 'DEA="Lagerplatzcode"';       
+            Caption = 'Bin Code', comment = 'DEA="Lagerplatzcode"';
         }
         field(5404; "Qty. per Unit of Measure"; Decimal)
         {
@@ -802,9 +802,9 @@ table 50030 "PurchLineArchiveNVX"
         field(5407; "Unit of Measure Code"; Code[10])
         {
             Caption = 'Unit of Measure Code', comment = 'DEA="Einheitencode"';
-            TableRelation = IF (Type = CONST(Item),
-                                "No." = FILTER(<> '')) "Item Unit of Measure".Code WHERE("Item No." = FIELD("No."))
-            ELSE
+            TableRelation = if (Type = const(Item),
+                                "No." = filter(<> '')) "Item Unit of Measure".Code where("Item No." = field("No."))
+            else
             "Unit of Measure";
 
         }
@@ -849,11 +849,11 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(5495; "Reserved Qty. (Base)"; Decimal)
         {
-            CalcFormula = Sum ("Reservation Entry"."Quantity (Base)" WHERE("Source Type" = CONST(39),
-                                                                           "Source Subtype" = FIELD("Document Type"),
-                                                                           "Source ID" = FIELD("Document No."),
-                                                                           "Source Ref. No." = FIELD("Line No."),
-                                                                           "Reservation Status" = CONST(Reservation)));
+            CalcFormula = sum("Reservation Entry"."Quantity (Base)" where("Source Type" = const(39),
+                                                                           "Source Subtype" = field("Document Type"),
+                                                                           "Source ID" = field("Document No."),
+                                                                           "Source Ref. No." = field("Line No."),
+                                                                           "Reservation Status" = const(Reservation)));
             Caption = 'Reserved Qty. (Base)', comment = 'DEA="Reservierte Menge (Basis)"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -865,7 +865,7 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(5601; "FA Posting Type"; Option)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'FA Posting Type', comment = 'DEA="Anlagenbuchungsart"';
             OptionCaption = ' ,Acquisition Cost,Maintenance,,Appreciation', comment = 'DEA=" ,Anschaffung,Wartung"';
             OptionMembers = " ","Acquisition Cost",Maintenance,,Appreciation;
@@ -882,12 +882,12 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(5605; "Depr. until FA Posting Date"; Boolean)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'Depr. until FA Posting Date', comment = 'DEA="AfA bis Anlagedatum"';
         }
         field(5606; "Depr. Acquisition Cost"; Boolean)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'Depr. Acquisition Cost', comment = 'DEA="Rückw. AfA-Korr. b. Anschaff."';
         }
         field(5609; "Maintenance Code"; Code[10])
@@ -912,7 +912,7 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(5613; "Use Duplication List"; Boolean)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'Use Duplication List', comment = 'DEA="Kopiervorgang aktivieren"';
         }
         field(5700; "Responsibility Center"; Code[10])
@@ -923,13 +923,13 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(5705; "Cross-Reference No."; Code[20])
         {
-            AccessByPermission = TableData "Item Cross Reference" = R;
+            AccessByPermission = tabledata "Item Cross Reference" = R;
             Caption = 'Cross-Reference No.', comment = 'DEA="Referenznr.';
         }
         field(5706; "Unit of Measure (Cross Ref.)"; Code[10])
         {
             Caption = 'Unit of Measure (Cross Ref.)', comment = 'DEA="Einheit (Referenz)"';
-            TableRelation = IF (Type = CONST(Item)) "Item Unit of Measure".Code WHERE("Item No." = FIELD("No."));
+            TableRelation = if (Type = const(Item)) "Item Unit of Measure".Code where("Item No." = field("No."));
         }
         field(5707; "Cross-Reference Type"; Option)
         {
@@ -948,7 +948,7 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(5710; Nonstock; Boolean)
         {
-            AccessByPermission = TableData "Nonstock Item" = R;
+            AccessByPermission = tabledata "Nonstock Item" = R;
             Caption = 'Catalog', comment = 'DEA="Katalogartikel"';
         }
         field(5711; "Purchasing Code"; Code[10])
@@ -971,25 +971,25 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(5714; "Special Order Sales No."; Code[20])
         {
-            AccessByPermission = TableData "Drop Shpt. Post. Buffer" = R;
+            AccessByPermission = tabledata "Drop Shpt. Post. Buffer" = R;
             Caption = 'Special Order Sales No.', comment = 'DEA="Spezialauftrag-Auftragsnr."';
-            TableRelation = IF ("Special Order" = CONST(true)) "Sales Header"."No." WHERE("Document Type" = CONST(Order));
+            TableRelation = if ("Special Order" = const(true)) "Sales Header"."No." where("Document Type" = const(Order));
         }
         field(5715; "Special Order Sales Line No."; Integer)
         {
-            AccessByPermission = TableData "Drop Shpt. Post. Buffer" = R;
+            AccessByPermission = tabledata "Drop Shpt. Post. Buffer" = R;
             Caption = 'Special Order Sales Line No.', comment = 'DEA="Spezialauftrag-Verk.-Zeilennr."';
-            TableRelation = IF ("Special Order" = CONST(true)) "Sales Line"."Line No." WHERE("Document Type" = CONST(Order),
-                                                                                            "Document No." = FIELD("Special Order Sales No."));
+            TableRelation = if ("Special Order" = const(true)) "Sales Line"."Line No." where("Document Type" = const(Order),
+                                                                                            "Document No." = field("Special Order Sales No."));
         }
         field(5750; "Whse. Outstanding Qty. (Base)"; Decimal)
         {
-            AccessByPermission = TableData Location = R;
+            AccessByPermission = tabledata Location = R;
             BlankZero = true;
-            CalcFormula = Sum ("Warehouse Receipt Line"."Qty. Outstanding (Base)" WHERE("Source Type" = CONST(39),
-                                                                                        "Source Subtype" = FIELD("Document Type"),
-                                                                                        "Source No." = FIELD("Document No."),
-                                                                                        "Source Line No." = FIELD("Line No.")));
+            CalcFormula = sum("Warehouse Receipt Line"."Qty. Outstanding (Base)" where("Source Type" = const(39),
+                                                                                        "Source Subtype" = field("Document Type"),
+                                                                                        "Source No." = field("Document No."),
+                                                                                        "Source Line No." = field("Line No.")));
             Caption = 'Whse. Outstanding Qty. (Base)', comment = 'DEA="Lagerrestbestellmenge (Basis)"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -1006,40 +1006,40 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(5791; "Promised Receipt Date"; Date)
         {
-            AccessByPermission = TableData "Order Promising Line" = R;
+            AccessByPermission = tabledata "Order Promising Line" = R;
             Caption = 'Promised Receipt Date', comment = 'DEA="Zugesagtes Wareneingangsdatum"';
         }
         field(5792; "Lead Time Calculation"; DateFormula)
         {
-            AccessByPermission = TableData "Purch. Rcpt. Header" = R;
+            AccessByPermission = tabledata "Purch. Rcpt. Header" = R;
             Caption = 'Lead Time Calculation', comment = 'DEA="Beschaffungszeit"';
         }
         field(5793; "Inbound Whse. Handling Time"; DateFormula)
         {
-            AccessByPermission = TableData Location = R;
+            AccessByPermission = tabledata Location = R;
             Caption = 'Inbound Whse. Handling Time', comment = 'DEA="Eingeh. Lagerdurchlaufzeit"';
         }
         field(5794; "Planned Receipt Date"; Date)
         {
-            AccessByPermission = TableData "Order Promising Line" = R;
+            AccessByPermission = tabledata "Order Promising Line" = R;
             Caption = 'Planned Receipt Date', comment = 'DEA="Geplantes Wareneingangsdatum"';
         }
         field(5795; "Order Date"; Date)
         {
-            AccessByPermission = TableData "Purch. Rcpt. Header" = R;
+            AccessByPermission = tabledata "Purch. Rcpt. Header" = R;
             Caption = 'Order Date', comment = 'DEA="Bestelldatum"';
         }
         field(5800; "Allow Item Charge Assignment"; Boolean)
         {
-            AccessByPermission = TableData "Item Charge" = R;
+            AccessByPermission = tabledata "Item Charge" = R;
             Caption = 'Allow Item Charge Assignment', comment = 'DEA="Artikel Zu-/Abschlagszuw. zul."';
             InitValue = true;
         }
         field(5801; "Qty. to Assign"; Decimal)
         {
-            CalcFormula = Sum ("Item Charge Assignment (Purch)"."Qty. to Assign" WHERE("Document Type" = FIELD("Document Type"),
-                                                                                       "Document No." = FIELD("Document No."),
-                                                                                       "Document Line No." = FIELD("Line No.")));
+            CalcFormula = sum("Item Charge Assignment (Purch)"."Qty. to Assign" where("Document Type" = field("Document Type"),
+                                                                                       "Document No." = field("Document No."),
+                                                                                       "Document Line No." = field("Line No.")));
             Caption = 'Qty. to Assign', comment = 'DEA="Menge für Zuweisung"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -1047,9 +1047,9 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(5802; "Qty. Assigned"; Decimal)
         {
-            CalcFormula = Sum ("Item Charge Assignment (Purch)"."Qty. Assigned" WHERE("Document Type" = FIELD("Document Type"),
-                                                                                      "Document No." = FIELD("Document No."),
-                                                                                      "Document Line No." = FIELD("Line No.")));
+            CalcFormula = sum("Item Charge Assignment (Purch)"."Qty. Assigned" where("Document Type" = field("Document Type"),
+                                                                                      "Document No." = field("Document No."),
+                                                                                      "Document Line No." = field("Line No.")));
             Caption = 'Qty. Assigned', comment = 'DEA="Zugewiesene Menge"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -1057,7 +1057,7 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(5803; "Return Qty. to Ship"; Decimal)
         {
-            AccessByPermission = TableData "Return Shipment Header" = R;
+            AccessByPermission = tabledata "Return Shipment Header" = R;
             Caption = 'Return Qty. to Ship', comment = 'DEA="Rücklieferungsmenge zu liefern"';
             DecimalPlaces = 0 : 5;
         }
@@ -1093,7 +1093,7 @@ table 50030 "PurchLineArchiveNVX"
         }
         field(5809; "Return Qty. Shipped"; Decimal)
         {
-            AccessByPermission = TableData "Return Shipment Header" = R;
+            AccessByPermission = tabledata "Return Shipment Header" = R;
             Caption = 'Return Qty. Shipped', comment = 'DEA="Rücklieferungsmenge geliefert"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -1161,9 +1161,9 @@ table 50030 "PurchLineArchiveNVX"
         {
             Caption = 'Operation No.', comment = 'DEA="Arbeitsgangnr."';
             Editable = false;
-            TableRelation = "Prod. Order Routing Line"."Operation No." WHERE(Status = CONST(Released),
-                                                                              "Prod. Order No." = FIELD("Prod. Order No."),
-                                                                              "Routing No." = FIELD("Routing No."));
+            TableRelation = "Prod. Order Routing Line"."Operation No." where(Status = const(Released),
+                                                                              "Prod. Order No." = field("Prod. Order No."),
+                                                                              "Routing No." = field("Routing No."));
         }
         field(99000752; "Work Center No."; Code[20])
         {
@@ -1179,8 +1179,8 @@ table 50030 "PurchLineArchiveNVX"
         {
             Caption = 'Prod. Order Line No.', comment = 'DEA="FA-Zeilennr."';
             Editable = false;
-            TableRelation = "Prod. Order Line"."Line No." WHERE(Status = FILTER(Released ..),
-                                                                 "Prod. Order No." = FIELD("Prod. Order No."));
+            TableRelation = "Prod. Order Line"."Line No." where(Status = filter(Released ..),
+                                                                 "Prod. Order No." = field("Prod. Order No."));
         }
         field(99000755; "Overhead Rate"; Decimal)
         {
@@ -1195,7 +1195,7 @@ table 50030 "PurchLineArchiveNVX"
         {
             Caption = 'Planning Flexibility', comment = 'DEA="Planungsflexibilität"';
             OptionCaption = 'Unlimited,None', comment = 'DEA="Unbeschränkt,Keine"';
-            OptionMembers = Unlimited,"None";
+            OptionMembers = Unlimited,None;
         }
         field(99000758; "Safety Lead Time"; DateFormula)
         {
@@ -1215,7 +1215,7 @@ table 50030 "PurchLineArchiveNVX"
             Caption = 'Allocation Code', comment = 'Verteilungscode"';
             DataClassification = CustomerContent;
         }
-        field(50002;"Allocation %";Decimal)
+        field(50002; "Allocation %"; Decimal)
         {
             Caption = 'Allocation %', comment = 'DEA="Verteilung %"';
             DataClassification = CustomerContent;
@@ -1230,14 +1230,14 @@ table 50030 "PurchLineArchiveNVX"
             Caption = 'Shortcut Dimension 1 Name', comment = 'DEA="Shortcutdimensionsname 1"';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = lookup ("Dimension Value".Name WHERE("Global Dimension No." = const(1), Code = field("Shortcut Dimension 1 Code")));
+            CalcFormula = lookup("Dimension Value".Name where("Global Dimension No." = const(1), Code = field("Shortcut Dimension 1 Code")));
             CaptionClass = '1337,1';
         }
         field(50006; "Shortcut Dimension 3 Code"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (3));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
             CaptionClass = '1,2,3';
         }
         // field(50007; "Shortcut Dimension 3 Name"; Text[50])
@@ -1252,7 +1252,7 @@ table 50030 "PurchLineArchiveNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 4 Code', comment = 'DEA="Shortcutdimensionscode 4"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (4));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(4));
             CaptionClass = '1,2,4';
         }
         // field(50009; "Shortcut Dimension 4 Name"; Text[50])
@@ -1266,7 +1266,7 @@ table 50030 "PurchLineArchiveNVX"
         field(50010; "Shortcut Dimension 5 Code"; Code[20])
         {
             Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimensionscode 5"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (5));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5));
             CaptionClass = '1,2,5';
         }
         // field(50011; "Shortcut Dimension 5 Name"; Text[50])
@@ -1281,7 +1281,7 @@ table 50030 "PurchLineArchiveNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 6 Code', comment = 'DEA="Shortcutdimensionscode 6"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (6));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(6));
             CaptionClass = '1,2,6';
         }
         // field(50013; "Shortcut Dimension 6 Name"; Text[50])
@@ -1296,7 +1296,7 @@ table 50030 "PurchLineArchiveNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 7 Code', comment = 'DEA="Shortcutdimensionscode 7"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (7));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(7));
             CaptionClass = '1,2,7';
         }
         // field(50015; "Shortcut Dimension 7 Name"; Text[50])
@@ -1311,7 +1311,7 @@ table 50030 "PurchLineArchiveNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 8 Code', comment = 'DEA="Shortcutdimensionscode 8"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (8));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(8));
             CaptionClass = '1,2,8';
         }
         // field(50017; "Shortcut Dimension 8 Name"; Text[50])
@@ -1326,7 +1326,7 @@ table 50030 "PurchLineArchiveNVX"
         {
             Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Geschäftsbuchungsgruppe Beschreibung"';
             FieldClass = FlowField;
-            CalcFormula = lookup ("Gen. Business Posting Group".Description where (Code = field("Gen. Bus. Posting Group")));
+            CalcFormula = lookup("Gen. Business Posting Group".Description where(Code = field("Gen. Bus. Posting Group")));
         }
         field(50030; "Posting Date"; Date)
         {
@@ -1347,7 +1347,7 @@ table 50030 "PurchLineArchiveNVX"
         {
             Caption = 'Posting Type', comment = 'DEA="Buchungsart"';
             DataClassification = CustomerContent;
-            OptionMembers = OG, Distributed, Temp;
+            OptionMembers = OG,Distributed,Temp;
         }
     }
 
@@ -1431,7 +1431,7 @@ table 50030 "PurchLineArchiveNVX"
 
     fieldgroups
     {
-    }       
-  
+    }
+
 }
 

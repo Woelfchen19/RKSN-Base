@@ -1,4 +1,4 @@
-pageextension 50000 "GenPrdPstGrpNVX" extends "Gen. Product Posting Groups"
+pageextension 50000 GenPrdPstGrpNVX extends "Gen. Product Posting Groups"
 {
     layout
     {
@@ -15,12 +15,12 @@ pageextension 50000 "GenPrdPstGrpNVX" extends "Gen. Product Posting Groups"
                     ModifyDataNVX();
                 end;
             }
-            field(InventoryPostingGroupNVX;GenPrdPstGrp."Inventory Posting Group NVX")
-            { 
+            field(InventoryPostingGroupNVX; GenPrdPstGrp."Inventory Posting Group NVX")
+            {
                 ApplicationArea = All;
                 TableRelation = "Inventory Posting Group";
                 Caption = 'Inventory Posting Group', comment = 'DEA="Lagerbuchungsgruppe"';
-                ToolTip = 'Specifies the default Inventory Posting Group for Items with this Gen. Product Posting Group', 
+                ToolTip = 'Specifies the default Inventory Posting Group for Items with this Gen. Product Posting Group',
                 comment = 'DEA="Gibt die Standard-Lagerbuchungsgruppe für Artikel mit dieser Produktbuchungsgruppe an"';
                 trigger OnValidate();
                 begin
@@ -39,6 +39,7 @@ pageextension 50000 "GenPrdPstGrpNVX" extends "Gen. Product Posting Groups"
                 GenPrdPstGrp.Insert();
             end;
     end;
+
     var
         GenPrdPstGrp: Record GenPrdPstGrpNVX;
 

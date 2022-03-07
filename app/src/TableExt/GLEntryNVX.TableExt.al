@@ -1,4 +1,4 @@
-tableextension 50000 "GLEntryNVX" extends "G/L Entry"
+tableextension 50000 GLEntryNVX extends "G/L Entry"
 {
     fields
     {
@@ -7,7 +7,7 @@ tableextension 50000 "GLEntryNVX" extends "G/L Entry"
             CaptionClass = '1,4,8';
             Caption = 'Shortcut Dimension 8 Code', comment = 'DEA="Shortcutdimensionscode 8"';
             FieldClass = FlowField;
-            CalcFormula = Lookup ("Dimension Set Entry"."Dimension Value Code" WHERE ("Dimension Set ID" = FIELD ("Dimension Set ID"), "Dimension Code" = CONST ('ARTIKEL.DIM')));
+            CalcFormula = lookup("Dimension Set Entry"."Dimension Value Code" where("Dimension Set ID" = field("Dimension Set ID"), "Dimension Code" = const('ARTIKEL.DIM')));
             Editable = false;
         }
         field(50001; "Sales Transaction No.NVX"; Integer)

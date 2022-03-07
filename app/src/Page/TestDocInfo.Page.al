@@ -11,7 +11,7 @@
 //             {
 //                 field(Department;Rec.Department)
 //                 {
-                    
+
 //                 }
 //                 field("Document No.";Rec."Document No.")
 //                 {
@@ -49,7 +49,7 @@
 //             }
 //         }
 //     }
-    
+
 //     var
 //         myInt : Integer;
 // }

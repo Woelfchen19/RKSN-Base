@@ -1,13 +1,13 @@
-codeunit 50007 "Table36HookNVX"
+codeunit 50007 Table36HookNVX
 {
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnBeforeDeleteEvent', '', false, false)]
     local procedure DeleteRecordInAccompaniedTable(Rec: Record "Sales Header")
     var
         SalesHeaderNVX: Record SalesHeaderNVX;
     begin
-        IF Rec.IsTemporary then
+        if Rec.IsTemporary then
             exit;
-        IF SalesHeaderNVX.Get(Rec."Document Type",Rec."No.") then
+        if SalesHeaderNVX.Get(Rec."Document Type", Rec."No.") then
             SalesHeaderNVX.Delete();
     end;
 
@@ -16,9 +16,9 @@ codeunit 50007 "Table36HookNVX"
     var
         SalesHeaderNVX: Record SalesHeaderNVX;
     begin
-        IF Rec.IsTemporary then
+        if Rec.IsTemporary then
             exit;
-        IF not SalesHeaderNVX.Get(Rec."Document Type",xRec."No.") then
+        if not SalesHeaderNVX.Get(Rec."Document Type", xRec."No.") then
             exit;
 
         SalesHeaderNVX."No." := Rec."No.";
@@ -26,34 +26,34 @@ codeunit 50007 "Table36HookNVX"
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnBeforeInsertEvent', '', false, false)]
-    local procedure SetCustomer(var Rec: Record "Sales Header";RunTrigger : Boolean)
+    local procedure SetCustomer(var Rec: Record "Sales Header"; RunTrigger: Boolean)
     var
         InvSetupNVX: Record InvSetupNVX;
         MissingSetupErr: Label 'Inventory Setup field Composition Customer must be filled', Comment = 'DEA="In der Lager Einrichtung fehlt im Feld "Abfassung Debitor" die Zuordnung. Sie können deshalb keinen neuen Auftrag generieren!"';
     begin
-        IF Rec.IsTemporary or not RunTrigger then
+        if Rec.IsTemporary or not RunTrigger then
             exit;
-        IF Rec."Document Type" = Rec."Document Type"::Order then begin
-            IF not InvSetupNVX.Get() then
+        if Rec."Document Type" = Rec."Document Type"::Order then begin
+            if not InvSetupNVX.Get() then
                 Clear(InvSetupNVX);
-            IF InvSetupNVX."Composition Customer" = '' then
+            if InvSetupNVX."Composition Customer" = '' then
                 Error(MissingSetupErr);
-            Rec.Validate("Sell-to Customer No.",InvSetupNVX."Composition Customer");
+            Rec.Validate("Sell-to Customer No.", InvSetupNVX."Composition Customer");
             // Rec.Modify();
         end;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterInsertEvent', '', false, false)]
-    local procedure SetCompositionFields(var Rec: Record "Sales Header";RunTrigger : Boolean)
+    local procedure SetCompositionFields(var Rec: Record "Sales Header"; RunTrigger: Boolean)
     var
         InvSetupNVX: Record InvSetupNVX;
         SalesHeaderNVX: Record SalesHeaderNVX;
     begin
-        IF Rec.IsTemporary or not RunTrigger then
+        if Rec.IsTemporary or not RunTrigger then
             exit;
-        IF Rec."Document Type" = Rec."Document Type"::Order then begin
+        if Rec."Document Type" = Rec."Document Type"::Order then begin
             InvSetupNVX.Get();
-            If not SalesHeaderNVX.Get(Rec."Document Type",Rec."No.") then begin
+            if not SalesHeaderNVX.Get(Rec."Document Type", Rec."No.") then begin
                 SalesHeaderNVX.Init();
                 SalesHeaderNVX."Document Type" := Rec."Document Type";
                 SalesHeaderNVX."No." := Rec."No.";
@@ -72,12 +72,12 @@ codeunit 50007 "Table36HookNVX"
         InvSetupNVX: Record InvSetupNVX;
         SalesHeaderNVX: Record SalesHeaderNVX;
     begin
-        IF Rec.IsTemporary then
+        if Rec.IsTemporary then
             exit;
-        IF Rec."Document Type" = Rec."Document Type"::Order then begin
+        if Rec."Document Type" = Rec."Document Type"::Order then begin
             InvSetupNVX.Get();
-            IF Rec."Sell-to Customer No." <> InvSetupNVX."Composition Customer" then
-                IF SalesHeaderNVX.Get(Rec."Document Type",Rec."No.") then begin
+            if Rec."Sell-to Customer No." <> InvSetupNVX."Composition Customer" then
+                if SalesHeaderNVX.Get(Rec."Document Type", Rec."No.") then begin
                     Clear(SalesHeaderNVX."Comp Gen. Bus. Pst Grp WES");
                     SalesHeaderNVX.Modify();
                 end;

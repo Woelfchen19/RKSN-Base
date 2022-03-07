@@ -1,7 +1,7 @@
 table 50043 FixedAssetSetupNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Primary Key"; Code[10])
@@ -20,15 +20,15 @@ table 50043 FixedAssetSetupNVX
         {
             DataClassification = CustomerContent;
             Caption = 'VAT as Expense Journal Batch Name', comment = 'DEA="VST als Aufwand Buch.-Blattname"';
-            TableRelation = "FA Journal Batch".Name where ("Journal Template Name" = field ("VAT as Expense Jnl Templ Name"));
+            TableRelation = "FA Journal Batch".Name where("Journal Template Name" = field("VAT as Expense Jnl Templ Name"));
         }
     }
-    
+
     keys
     {
         key(Key1; "Primary Key")
         {
             Clustered = true;
         }
-    }    
+    }
 }

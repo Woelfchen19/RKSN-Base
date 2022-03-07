@@ -1,4 +1,4 @@
-report 50000 "ItemCopyNVX"
+report 50000 ItemCopyNVX
 {
     // version NAVDACH11.00.00.24742
 
@@ -16,7 +16,7 @@ report 50000 "ItemCopyNVX"
 
         layout
         {
-            area(content)
+            area(Content)
             {
                 group(Options)
                 {
@@ -25,7 +25,7 @@ report 50000 "ItemCopyNVX"
 
                     field(ItemNo; Item."No.")
                     {
-                        ApplicationArea = Basic,Suite;
+                        ApplicationArea = Basic, Suite;
                         Caption = 'Source Item No.',
                                     comment = 'DEA="Ausgangsartikelnr."';
                         Lookup = true;
@@ -35,21 +35,21 @@ report 50000 "ItemCopyNVX"
                     }
                     field(TargetItemNo; InItem."No.")
                     {
-                        ApplicationArea = Basic,Suite;
+                        ApplicationArea = Basic, Suite;
                         Caption = 'Target Item No.',
                                     comment = 'DEA="Zielartikelnr."';
                         Lookup = true;
                         ToolTip = 'Specifies the number of the item that you want to copy the data to.',
                                     comment = 'DEA="Gibt die Nummer des Artikels an, in den die Daten kopiert werden sollen."';
 
-                        trigger OnLookup(var Text: Text) : Boolean;
+                        trigger OnLookup(var Text: Text): Boolean;
                         begin
-                            IF PAGE.RUNMODAL(PAGE::"Item List",InItem,InItem."No.") = ACTION::LookupOK THEN;
+                            if Page.RunModal(Page::"Item List", InItem, InItem."No.") = Action::LookupOK then;
                         end;
                     }
                     field(NewNoSeries; NewNoSeries)
                     {
-                        ApplicationArea = Basic,Suite;
+                        ApplicationArea = Basic, Suite;
                         AssistEdit = true;
                         Caption = 'Target No. Series',
                                     comment = 'DEA="Zielnummernserien"';
@@ -60,8 +60,8 @@ report 50000 "ItemCopyNVX"
                         trigger OnAssistEdit();
                         begin
                             ItemSetup.Get();
-                            ItemSetup.TESTFIELD("Item Nos.");
-                            NoSeriesMgt.SelectSeries(ItemSetup."Item Nos.",Item."No. Series",NewNoSeries);
+                            ItemSetup.TestField("Item Nos.");
+                            NoSeriesMgt.SelectSeries(ItemSetup."Item Nos.", Item."No. Series", NewNoSeries);
                         end;
                     }
                     group(General)
@@ -70,7 +70,7 @@ report 50000 "ItemCopyNVX"
                                     comment = 'DEA="Allgemein"';
                         field(GeneralItemInformation; CopyGenItemInfo)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'General Item Information',
                                         comment = 'DEA="Allgemeine Artikelinformationen"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -78,7 +78,7 @@ report 50000 "ItemCopyNVX"
                         }
                         field(Comments; CopyComments)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Comments',
                                         comment = 'DEA="Bemerkungen"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -86,7 +86,7 @@ report 50000 "ItemCopyNVX"
                         }
                         field(CopyPic; CopyPic)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Picture',
                                         comment = 'DEA="Bild"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -99,7 +99,7 @@ report 50000 "ItemCopyNVX"
                                     comment = 'DEA="Verkauf"';
                         field(SalesPrices; CopySalesPrices)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Sales Prices',
                                         comment = 'DEA="VK-Preise"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -107,7 +107,7 @@ report 50000 "ItemCopyNVX"
                         }
                         field(SalesLineDisc; CopySalesLineDisc)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Sales Line Disc.',
                                         comment = 'DEA="VK-Zeilenrabatte"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -120,7 +120,7 @@ report 50000 "ItemCopyNVX"
                                     comment = 'DEA="Einkauf"';
                         field(PurchasePrices; CopyPurchPrices)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Purchase Prices',
                                         comment = 'DEA="EK-Preise"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -128,7 +128,7 @@ report 50000 "ItemCopyNVX"
                         }
                         field(PurchaseLineDisc; CopyPurchLineDisc)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Purchase Line Disc.',
                                         comment = 'DEA="EK-Zeilenrabatte"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -141,7 +141,7 @@ report 50000 "ItemCopyNVX"
                                     comment = 'DEA="Service"';
                         field(Troubleshooting; CopyTroubleshooting)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Troubleshooting',
                                         comment = 'DEA="Lösungsanleitung"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -149,7 +149,7 @@ report 50000 "ItemCopyNVX"
                         }
                         field(ResourceSkills; CopyResourceSkills)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Resource Skills',
                                         comment = 'DEA="Ressourcenqualifikationen"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -162,7 +162,7 @@ report 50000 "ItemCopyNVX"
                                     comment = 'DEA="Erweitert"';
                         field(UnitsOfMeasure; CopyUnitOfMeasure)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Units of measure',
                                         comment = 'DEA="Einheiten"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -170,7 +170,7 @@ report 50000 "ItemCopyNVX"
                         }
                         field(ItemVariants; CopyVariants)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Item Variants',
                                         comment = 'DEA="Artikelvarianten"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -178,7 +178,7 @@ report 50000 "ItemCopyNVX"
                         }
                         field(Translations; CopyTranslations)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Translations',
                                         comment = 'DEA="Übersetzungen"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -186,7 +186,7 @@ report 50000 "ItemCopyNVX"
                         }
                         field(ExtendedTexts; CopyExtTxt)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Extended Texts',
                                         comment = 'DEA="Textbausteine"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -194,7 +194,7 @@ report 50000 "ItemCopyNVX"
                         }
                         field(BOMComponents; CopyBOM)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'BOM Components',
                                         comment = 'DEA="Stücklistenkomponenten"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -202,7 +202,7 @@ report 50000 "ItemCopyNVX"
                         }
                         field(CopyItemVendor; CopyItemVendor)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Item Vendors',
                                         comment = 'DEA="Debitoren Artikel"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -210,7 +210,7 @@ report 50000 "ItemCopyNVX"
                         }
                         field(Attributes; CopyAttributes)
                         {
-                            ApplicationArea = Basic,Suite;
+                            ApplicationArea = Basic, Suite;
                             Caption = 'Attributes',
                                         comment = 'DEA="Attribute"';
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
@@ -228,7 +228,7 @@ report 50000 "ItemCopyNVX"
         trigger OnOpenPage();
         begin
             Item := TmpItem;
-            CLEAR(InItem);
+            Clear(InItem);
             NewNoSeries := '"';
         end;
     }
@@ -239,17 +239,17 @@ report 50000 "ItemCopyNVX"
 
     trigger OnPreReport();
     begin
-        Window.OPEN(
+        Window.Open(
           Text001 + // copy item
           Text002 + // From item
           Text003 + // To item
           '             #3############## #4#####');
 
-        Window.UPDATE(1,Item."No.");
-        Window.UPDATE(2,InItem."No.");
-        CopyItem(Item."No.",InItem."No.");
+        Window.Update(1, Item."No.");
+        Window.Update(2, InItem."No.");
+        CopyItem(Item."No.", InItem."No.");
 
-        MESSAGE(
+        Message(
           RecapitulationTxt +
           DialogTxt[1] + DialogTxt[2] + DialogTxt[3] + DialogTxt[4] + DialogTxt[5] +
           DialogTxt[6] + DialogTxt[7] + DialogTxt[8] + DialogTxt[9] + DialogTxt[10] +
@@ -257,489 +257,487 @@ report 50000 "ItemCopyNVX"
           DialogTxt[16] + DialogTxt[17] + DialogTxt[18] + DialogTxt[19] + DialogTxt[20] +
           DialogTxt[21] + DialogTxt[22] + DialogTxt[23] + DialogTxt[24] + DialogTxt[25] +
           DialogTxt[26] + DialogTxt[27] + DialogTxt[28] + DialogTxt[29] + DialogTxt[30],
-          Item."No.",InItem."No.");
+          Item."No.", InItem."No.");
 
-        Window.CLOSE();
+        Window.Close();
 
-        CopySuccessful := TRUE;
+        CopySuccessful := true;
     end;
 
     var
-        Item : Record "Item";
-        InItem : Record "Item";
-        ItemTranslation : Record "Item Translation";
-        TmpItem : Record "Item";
-        ItemSetup : Record "Inventory Setup";
-        NoSeriesMgt : Codeunit NoSeriesManagement;
-        Window : Dialog;
-        CopyGenItemInfo : Boolean;
-        CopyComments : Boolean;
-        CopyPic : Boolean;
-        CopyUnitOfMeasure : Boolean;
-        CopyVariants : Boolean;
-        CopyTranslations : Boolean;
-        CopyExtTxt : Boolean;
-        CopyBOM : Boolean;
-        CopyItemVendor : Boolean;
-        CopyTroubleshooting : Boolean;
-        CopyResourceSkills : Boolean;
-        CopySalesPrices : Boolean;
-        CopySalesLineDisc : Boolean;
-        CopyPurchPrices : Boolean;
-        CopyPurchLineDisc : Boolean;
-        CopyAttributes : Boolean;
-        DialogTxt : array [30] of Text[250];
-        DialogTitle : Text[50];
-        RecCount : Integer;
-        CopyCount : Integer;
-        TmpItemNo : Code[20];
-        CopySuccessful : Boolean;
-        Text001 : Label 'Copy Item\\',comment = 'DEA="Artikel kopieren\\"';
-        Text002 : Label 'Source Item     #1########\',comment = 'DEA="Ausgangsartikel     #1########\"';
-        Text003 : Label 'Target Item     #2########\',comment = 'DEA="Zielartikel         #2########\"';
-        RecapitulationTxt : Label 'Recapitulation of copy job:\\Source Item: %1\Target Item: %2\',comment = 'DEA="Zusammenfassung von Kopierauftrag:\\Ausgangsartikel: %1\Zielartikel: %2\"';
-        Text007 : Label 'Source Item No. %1 doesn''t exist.',comment = 'DEA="Ausgangsartikel %1 existiert nicht."';
-        Text008 : Label 'Target Item No. must not be empty.',comment = 'DEA="Zielartikelnr. darf nicht leer sein."';
-        Text009 : Label 'General item information',comment = 'DEA="Allg. Artikelinformationen"';
-        Text010 : Label 'Target Item No.%1 already exists.',comment = 'DEA="Zielartikel %1 ist bereits vorhanden."';
-        Text011 : Label 'Target Item %1 doesn''t exist.',comment = 'DEA="Zielartikel %1 existiert nicht."';
-        Text013 : Label 'Comments',comment = 'DEA="Bemerkungen"';
-        Text014 : Label 'Item units of measure',comment = 'DEA="Maßeinheiten Artikel"';
-        Text015 : Label 'Item variants',comment = 'DEA="Artikelvarianten"';
-        Text016 : Label 'Item translations',comment = 'DEA="Artikelübersetzungen"';
-        Text017 : Label 'Extended texts',comment = 'DEA="Textbausteine"';
-        Text018 : Label 'BOM components',comment = 'DEA="Stücklistenkomponenten"';
-        Text021 : Label 'Item vendors',comment = 'DEA="Debitoren Artikel"';
-        Text025 : Label 'copied.',comment = 'DEA="kopiert."';
-        Text026 : Label 'Resource skills',comment = 'DEA="Ressourcenqualifikationen"';
-        Text027 : Label 'Dimensions',comment = 'DEA="Dimensionen"';
-        Text028 : Label 'Troubleshootings',comment = 'DEA="Lösungsanleitungen"';
-        Text029 : Label 'Sales Prices',comment = 'DEA="VK-Preise"';
-        Text030 : Label 'Sales Line Disc.',comment = 'DEA="VK-Zeilenrabatte"';
-        Text031 : Label 'Purchase Prices',comment = 'DEA="EK-Preise"';
-        Text032 : Label 'Purchase Line Disc.',comment = 'DEA="EK-Zeilenrabatte"';
-        NewNoSeries : Code[20];
+        ItemSetup: Record "Inventory Setup";
+        InItem: Record Item;
+        Item: Record Item;
+        TmpItem: Record Item;
+        ItemTranslation: Record "Item Translation";
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+        CopyAttributes: Boolean;
+        CopyBOM: Boolean;
+        CopyComments: Boolean;
+        CopyExtTxt: Boolean;
+        CopyGenItemInfo: Boolean;
+        CopyItemVendor: Boolean;
+        CopyPic: Boolean;
+        CopyPurchLineDisc: Boolean;
+        CopyPurchPrices: Boolean;
+        CopyResourceSkills: Boolean;
+        CopySalesLineDisc: Boolean;
+        CopySalesPrices: Boolean;
+        CopySuccessful: Boolean;
+        CopyTranslations: Boolean;
+        CopyTroubleshooting: Boolean;
+        CopyUnitOfMeasure: Boolean;
+        CopyVariants: Boolean;
+        NewNoSeries: Code[20];
+        TmpItemNo: Code[20];
+        Window: Dialog;
+        CopyCount: Integer;
+        RecCount: Integer;
+        RecapitulationTxt: Label 'Recapitulation of copy job:\\Source Item: %1\Target Item: %2\', comment = 'DEA="Zusammenfassung von Kopierauftrag:\\Ausgangsartikel: %1\Zielartikel: %2\"';
+        Text001: Label 'Copy Item\\', comment = 'DEA="Artikel kopieren\\"';
+        Text002: Label 'Source Item     #1########\', comment = 'DEA="Ausgangsartikel     #1########\"';
+        Text003: Label 'Target Item     #2########\', comment = 'DEA="Zielartikel         #2########\"';
+        Text007: Label 'Source Item No. %1 doesn''t exist.', comment = 'DEA="Ausgangsartikel %1 existiert nicht."';
+        Text008: Label 'Target Item No. must not be empty.', comment = 'DEA="Zielartikelnr. darf nicht leer sein."';
+        Text009: Label 'General item information', comment = 'DEA="Allg. Artikelinformationen"';
+        Text010: Label 'Target Item No.%1 already exists.', comment = 'DEA="Zielartikel %1 ist bereits vorhanden."';
+        Text011: Label 'Target Item %1 doesn''t exist.', comment = 'DEA="Zielartikel %1 existiert nicht."';
+        Text013: Label 'Comments', comment = 'DEA="Bemerkungen"';
+        Text014: Label 'Item units of measure', comment = 'DEA="Maßeinheiten Artikel"';
+        Text015: Label 'Item variants', comment = 'DEA="Artikelvarianten"';
+        Text016: Label 'Item translations', comment = 'DEA="Artikelübersetzungen"';
+        Text017: Label 'Extended texts', comment = 'DEA="Textbausteine"';
+        Text018: Label 'BOM components', comment = 'DEA="Stücklistenkomponenten"';
+        Text021: Label 'Item vendors', comment = 'DEA="Debitoren Artikel"';
+        Text025: Label 'copied.', comment = 'DEA="kopiert."';
+        Text026: Label 'Resource skills', comment = 'DEA="Ressourcenqualifikationen"';
+        Text027: Label 'Dimensions', comment = 'DEA="Dimensionen"';
+        Text028: Label 'Troubleshootings', comment = 'DEA="Lösungsanleitungen"';
+        Text029: Label 'Sales Prices', comment = 'DEA="VK-Preise"';
+        Text030: Label 'Sales Line Disc.', comment = 'DEA="VK-Zeilenrabatte"';
+        Text031: Label 'Purchase Prices', comment = 'DEA="EK-Preise"';
+        Text032: Label 'Purchase Line Disc.', comment = 'DEA="EK-Zeilenrabatte"';
+        DialogTitle: Text[50];
+        DialogTxt: array[30] of Text[250];
 
-    procedure CopyItem(_FromItemNo : Code[20];_InItemNo : Code[20]);
+    procedure CopyItem(_FromItemNo: Code[20]; _InItemNo: Code[20]);
     begin
-        IF NOT Item.GET(_FromItemNo) THEN
-          ERROR(Text007,_FromItemNo);
+        if not Item.Get(_FromItemNo) then
+            Error(Text007, _FromItemNo);
 
-        IF (_InItemNo = '') AND (NOT CopyGenItemInfo) THEN
-          ERROR(Text008);
+        if (_InItemNo = '') and (not CopyGenItemInfo) then
+            Error(Text008);
 
         ItemSetup.Get();
 
-        IF CopyGenItemInfo THEN
-          InsertTargetItem(_InItemNo)
-        ELSE BEGIN
-          IF NOT InItem.GET(_InItemNo) THEN
-            ERROR(Text011,_InItemNo);
-        END;
+        if CopyGenItemInfo then
+            InsertTargetItem(_InItemNo)
+        else begin
+            if not InItem.Get(_InItemNo) then
+                Error(Text011, _InItemNo);
+        end;
 
-        IF NOT (CopySalesLineDisc OR CopyPurchLineDisc) THEN BEGIN
-          InItem."Item Disc. Group" := '"';
-          InItem.Modify();
-        END;
+        if not (CopySalesLineDisc or CopyPurchLineDisc) then begin
+            InItem."Item Disc. Group" := '"';
+            InItem.Modify();
+        end;
 
-        CopyItemPicture(Item,InItem);
-        CopyItemComments(Item."No.",InItem."No.");
-        CopyItemUnisOfMeasure(Item,InItem);
-        CopyItemVariants(Item."No.",InItem."No.");
-        CopyItemTranslations(Item."No.",InItem."No.");
-        CopyExtendedTexts(Item."No.",InItem."No.");
-        CopyBOMComponents(Item."No.",InItem."No.");
-        CopyItemVendors(Item."No.",InItem."No.");
-        CopyTroubleshootingSetup(Item."No.",InItem."No.");
-        CopyItemResourceSkills(Item."No.",InItem."No.");
-        CopyItemSalesPrices(Item."No.",InItem."No.");
-        CopySalesLineDiscounts(Item."No.",InItem."No.");
-        CopyPurchasePrices(Item."No.",InItem."No.");
-        CopyPurchaseLineDiscounts(Item."No.",InItem."No.");
-        CopyItemAttributes(Item."No.",InItem."No.");
+        CopyItemPicture(Item, InItem);
+        CopyItemComments(Item."No.", InItem."No.");
+        CopyItemUnisOfMeasure(Item, InItem);
+        CopyItemVariants(Item."No.", InItem."No.");
+        CopyItemTranslations(Item."No.", InItem."No.");
+        CopyExtendedTexts(Item."No.", InItem."No.");
+        CopyBOMComponents(Item."No.", InItem."No.");
+        CopyItemVendors(Item."No.", InItem."No.");
+        CopyTroubleshootingSetup(Item."No.", InItem."No.");
+        CopyItemResourceSkills(Item."No.", InItem."No.");
+        CopyItemSalesPrices(Item."No.", InItem."No.");
+        CopySalesLineDiscounts(Item."No.", InItem."No.");
+        CopyPurchasePrices(Item."No.", InItem."No.");
+        CopyPurchaseLineDiscounts(Item."No.", InItem."No.");
+        CopyItemAttributes(Item."No.", InItem."No.");
     end;
 
-    procedure InitDialog(Txt : Text[50]);
+    procedure InitDialog(Txt: Text[50]);
     begin
         RecCount := 0;
         CopyCount := CopyCount + 1;
         DialogTitle := Txt;
-        Window.UPDATE(3,Txt);
-        Window.UPDATE(4,0);
+        Window.Update(3, Txt);
+        Window.Update(4, 0);
     end;
 
     procedure UpdateDialog();
     begin
         RecCount := RecCount + 1;
-        Window.UPDATE(4,RecCount);
+        Window.Update(4, RecCount);
     end;
 
     procedure EndDialog();
     begin
-        IF RecCount <> 0 THEN
-          DialogTitle := STRSUBSTNO('%1 %2',RecCount,DialogTitle);
+        if RecCount <> 0 then
+            DialogTitle := StrSubstNo('%1 %2', RecCount, DialogTitle);
         DialogTitle := DialogTitle + ' ' + Text025;
         DialogTxt[CopyCount] := DialogTitle + '\"';
     end;
 
-    procedure ItemDef(var Item2 : Record "Item");
+    procedure ItemDef(var Item2: Record Item);
     begin
         TmpItem := Item2;
     end;
 
-    procedure ItemReturn(var ReturnItem : Record "Item") : Boolean;
+    procedure ItemReturn(var ReturnItem: Record Item): Boolean;
     begin
         ReturnItem := InItem;
-        EXIT(CopySuccessful);
+        exit(CopySuccessful);
     end;
 
-    local procedure SetTargetItemNo(NewItemNo : Code[20];var TargetItemNo : Code[20];var TargetNoSeries : Code[20]);
+    local procedure SetTargetItemNo(NewItemNo: Code[20]; var TargetItemNo: Code[20]; var TargetNoSeries: Code[20]);
     var
-        TmpItemNo : Code[20];
+        TmpItemNo: Code[20];
     begin
-        IF NewItemNo = '' THEN
-          IF NewNoSeries <> '' THEN BEGIN
-            NoSeriesMgt.SetSeries(TargetItemNo);
-            TargetNoSeries := NewNoSeries;
-          END ELSE BEGIN
-            ItemSetup.TESTFIELD("Item Nos.");
-            NoSeriesMgt.InitSeries(ItemSetup."Item Nos.",Item."No. Series",0D,TargetItemNo,TargetNoSeries);
-          END
-        ELSE BEGIN
-          IF InItem.GET(NewItemNo) THEN
-            ERROR(Text010,NewItemNo);
-          IF ItemSetup."Item Nos." <> '' THEN
-            NoSeriesMgt.TestManual(ItemSetup."Item Nos.");
+        if NewItemNo = '' then
+            if NewNoSeries <> '' then begin
+                NoSeriesMgt.SetSeries(TargetItemNo);
+                TargetNoSeries := NewNoSeries;
+            end else begin
+                ItemSetup.TestField("Item Nos.");
+                NoSeriesMgt.InitSeries(ItemSetup."Item Nos.", Item."No. Series", 0D, TargetItemNo, TargetNoSeries);
+            end
+        else begin
+            if InItem.Get(NewItemNo) then
+                Error(Text010, NewItemNo);
+            if ItemSetup."Item Nos." <> '' then
+                NoSeriesMgt.TestManual(ItemSetup."Item Nos.");
 
-          TargetItemNo := NewItemNo;
-          TargetNoSeries := '"';
-        END
+            TargetItemNo := NewItemNo;
+            TargetNoSeries := '"';
+        end
     end;
 
-    local procedure InsertTargetItem(NewItemNo : Code[20]);
+    local procedure InsertTargetItem(NewItemNo: Code[20]);
     var
-        TempItemNo : Code[20];
-        TempItemNoSeries : Code[20];
+        TempItemNo: Code[20];
+        TempItemNoSeries: Code[20];
     begin
         InitDialog(Text009);
-        WITH InItem DO BEGIN
-          SetTargetItemNo(NewItemNo,TempItemNo,TempItemNoSeries);
-          COPY(Item);
-          "No." := TempItemNo;
-          "No. Series" := TempItemNoSeries;
-          "Last Date Modified" := TODAY;
-          "Created From Nonstock Item" := FALSE;
-          INSERT();
-        END;
+        SetTargetItemNo(NewItemNo, TempItemNo, TempItemNoSeries);
+        InItem.Copy(Item);
+        InItem."No." := TempItemNo;
+        InItem."No. Series" := TempItemNoSeries;
+        InItem."Last Date Modified" := Today;
+        InItem."Created From Nonstock Item" := false;
+        InItem.Insert();
         EndDialog();
     end;
 
-    local procedure CopyItemPicture(FromItem : Record "Item";var ToItem : Record "Item");
+    local procedure CopyItemPicture(FromItem: Record Item; var ToItem: Record Item);
     begin
-        IF CopyPic THEN BEGIN
-          ToItem.Picture := FromItem.Picture;
-          ToItem.Modify();
-        END ELSE BEGIN
-          CLEAR(ToItem.Picture);
-          ToItem.Modify();
-        END;
-    end;
-
-    local procedure CopyItemComments(FromItemNo : Code[20];ToItemNo : Code[20]);
-    var
-        CommentLine : Record "Comment Line";
-    begin
-        IF NOT CopyComments THEN
-          EXIT;
-
-        CommentLine.SETRANGE("Table Name",CommentLine."Table Name"::Item);
-        CommentLine.SETRANGE("No.",FromItemNo);
-        IF CommentLine.FINDSET() THEN BEGIN
-          InitDialog(Text013);
-          REPEAT
-            CommentLine."No." := ToItemNo;
-            CommentLine.INSERT();
-            CommentLine."No." := FromItemNo;
-            UpdateDialog();
-          UNTIL CommentLine.Next() = 0;
-          EndDialog();
-        END;
-    end;
-
-    local procedure CopyItemUnisOfMeasure(FromItem : Record "Item";var ToItem : Record "Item");
-    var
-        ItemUnitOfMeasure : Record "Item Unit of Measure";
-    begin
-        IF CopyUnitOfMeasure THEN BEGIN
-          ItemUnitOfMeasure.SETRANGE("Item No.",FromItem."No.");
-          IF ItemUnitOfMeasure.FINDSET() THEN BEGIN
-            InitDialog(Text014);
-            REPEAT
-              ItemUnitOfMeasure."Item No." := ToItem."No.";
-              ItemUnitOfMeasure.INSERT();
-              ItemUnitOfMeasure."Item No." := FromItem."No.";
-              UpdateDialog();
-            UNTIL ItemUnitOfMeasure.Next() = 0;
-            EndDialog();
-          END;
-        END ELSE
-          IF CopyGenItemInfo THEN BEGIN
-            ToItem."Base Unit of Measure" := '"';
-            ToItem."Sales Unit of Measure" := '"';
-            ToItem."Purch. Unit of Measure" := '"';
-            ToItem."Put-away Unit of Measure Code" := '"';
+        if CopyPic then begin
+            ToItem.Picture := FromItem.Picture;
             ToItem.Modify();
-          END;
+        end else begin
+            Clear(ToItem.Picture);
+            ToItem.Modify();
+        end;
     end;
 
-    local procedure CopyItemVariants(FromItemNo : Code[20];ToItemNo : Code[20]);
+    local procedure CopyItemComments(FromItemNo: Code[20]; ToItemNo: Code[20]);
     var
-        ItemVariant : Record "Item Variant";
+        CommentLine: Record "Comment Line";
     begin
-        IF NOT CopyVariants THEN
-          EXIT;
+        if not CopyComments then
+            exit;
 
-        ItemVariant.SETRANGE("Item No.",FromItemNo);
-        IF ItemVariant.FINDSET() THEN BEGIN
-          InitDialog(Text015);
-          REPEAT
-            ItemVariant."Item No." := ToItemNo;
-            ItemVariant.INSERT();
-            ItemVariant."Item No." := FromItemNo;
-            UpdateDialog();
-          UNTIL ItemVariant.Next() = 0;
-          EndDialog();
-        END;
+        CommentLine.SetRange("Table Name", CommentLine."Table Name"::Item);
+        CommentLine.SetRange("No.", FromItemNo);
+        if CommentLine.FindSet() then begin
+            InitDialog(Text013);
+            repeat
+                CommentLine."No." := ToItemNo;
+                CommentLine.Insert();
+                CommentLine."No." := FromItemNo;
+                UpdateDialog();
+            until CommentLine.Next() = 0;
+            EndDialog();
+        end;
     end;
 
-    local procedure CopyItemTranslations(FromItemNo : Code[20];ToItemNo : Code[20]);
-    begin
-        IF NOT CopyTranslations THEN
-          EXIT;
-
-        ItemTranslation.SETRANGE("Item No.",FromItemNo);
-        IF NOT CopyVariants THEN
-          ItemTranslation.SETRANGE("Variant Code",'');
-        IF ItemTranslation.FINDSET() THEN BEGIN
-          InitDialog(Text016);
-          REPEAT
-            ItemTranslation."Item No." := ToItemNo;
-            ItemTranslation.INSERT();
-            ItemTranslation."Item No." := FromItemNo;
-            UpdateDialog();
-          UNTIL ItemTranslation.Next() = 0;
-          EndDialog();
-        END;
-    end;
-
-    local procedure CopyExtendedTexts(FromItemNo : Code[20];ToItemNo : Code[20]);
+    local procedure CopyItemUnisOfMeasure(FromItem: Record Item; var ToItem: Record Item);
     var
-        ExtendedTextHeader : Record "Extended Text Header";
-        ExtendedTextLine : Record "Extended Text Line";
+        ItemUnitOfMeasure: Record "Item Unit of Measure";
     begin
-        IF NOT CopyExtTxt THEN
-          EXIT;
-
-        ExtendedTextHeader.SETRANGE("Table Name",ExtendedTextHeader."Table Name"::Item);
-        ExtendedTextHeader.SETRANGE("No.",FromItemNo);
-        IF ExtendedTextHeader.FINDSET() THEN BEGIN
-          InitDialog(Text017);
-          REPEAT
-            ExtendedTextLine.SETRANGE("Table Name",ExtendedTextHeader."Table Name");
-            ExtendedTextLine.SETRANGE("No.",ExtendedTextHeader."No.");
-            ExtendedTextLine.SETRANGE("Language Code",ExtendedTextHeader."Language Code");
-            ExtendedTextLine.SETRANGE("Text No.",ExtendedTextHeader."Text No.");
-            IF ExtendedTextLine.FINDSET() THEN
-              REPEAT
-                ExtendedTextLine."No." := ToItemNo;
-                ExtendedTextLine.INSERT();
-                ExtendedTextLine."No." := FromItemNo;
-              UNTIL ExtendedTextLine.Next() = 0;
-
-            ExtendedTextHeader."No." := ToItemNo;
-            ExtendedTextHeader.INSERT();
-            ExtendedTextHeader."No." := FromItemNo;
-            UpdateDialog();
-          UNTIL ExtendedTextHeader.Next() = 0;
-          EndDialog();
-        END;
+        if CopyUnitOfMeasure then begin
+            ItemUnitOfMeasure.SetRange("Item No.", FromItem."No.");
+            if ItemUnitOfMeasure.FindSet() then begin
+                InitDialog(Text014);
+                repeat
+                    ItemUnitOfMeasure."Item No." := ToItem."No.";
+                    ItemUnitOfMeasure.Insert();
+                    ItemUnitOfMeasure."Item No." := FromItem."No.";
+                    UpdateDialog();
+                until ItemUnitOfMeasure.Next() = 0;
+                EndDialog();
+            end;
+        end else
+            if CopyGenItemInfo then begin
+                ToItem."Base Unit of Measure" := '"';
+                ToItem."Sales Unit of Measure" := '"';
+                ToItem."Purch. Unit of Measure" := '"';
+                ToItem."Put-away Unit of Measure Code" := '"';
+                ToItem.Modify();
+            end;
     end;
 
-    local procedure CopyBOMComponents(FromItemNo : Code[20];ToItemNo : Code[20]);
+    local procedure CopyItemVariants(FromItemNo: Code[20]; ToItemNo: Code[20]);
     var
-        BOMComponent : Record "BOM Component";
+        ItemVariant: Record "Item Variant";
     begin
-        IF NOT CopyBOM THEN
-          EXIT;
+        if not CopyVariants then
+            exit;
 
-        BOMComponent.SETRANGE("Parent Item No.",FromItemNo);
-        IF BOMComponent.FINDSET() THEN BEGIN
-          InitDialog(Text018);
-          REPEAT
-            BOMComponent."Parent Item No." := ToItemNo;
-            BOMComponent.INSERT();
-            BOMComponent."Parent Item No." := FromItemNo;
-            UpdateDialog();
-          UNTIL BOMComponent.Next() = 0;
-          EndDialog();
-        END;
+        ItemVariant.SetRange("Item No.", FromItemNo);
+        if ItemVariant.FindSet() then begin
+            InitDialog(Text015);
+            repeat
+                ItemVariant."Item No." := ToItemNo;
+                ItemVariant.Insert();
+                ItemVariant."Item No." := FromItemNo;
+                UpdateDialog();
+            until ItemVariant.Next() = 0;
+            EndDialog();
+        end;
     end;
 
-    local procedure CopyItemVendors(FromItemNo : Code[20];ToItemNo : Code[20]);
-    var
-        ItemVendor : Record "Item Vendor";
+    local procedure CopyItemTranslations(FromItemNo: Code[20]; ToItemNo: Code[20]);
     begin
-        IF NOT CopyItemVendor THEN
-          EXIT;
+        if not CopyTranslations then
+            exit;
 
-        ItemVendor.SETRANGE("Item No.",FromItemNo);
-        IF ItemVendor.FINDSET() THEN BEGIN
-          InitDialog(Text021);
-          REPEAT
-            ItemVendor."Item No." := ToItemNo;
-            ItemVendor.INSERT();
-            ItemVendor."Item No." := FromItemNo;
-            UpdateDialog();
-          UNTIL ItemVendor.Next() = 0;
-          EndDialog();
-        END;
+        ItemTranslation.SetRange("Item No.", FromItemNo);
+        if not CopyVariants then
+            ItemTranslation.SetRange("Variant Code", '');
+        if ItemTranslation.FindSet() then begin
+            InitDialog(Text016);
+            repeat
+                ItemTranslation."Item No." := ToItemNo;
+                ItemTranslation.Insert();
+                ItemTranslation."Item No." := FromItemNo;
+                UpdateDialog();
+            until ItemTranslation.Next() = 0;
+            EndDialog();
+        end;
     end;
 
-    local procedure CopyTroubleshootingSetup(FromItemNo : Code[20];ToItemNo : Code[20]);
+    local procedure CopyExtendedTexts(FromItemNo: Code[20]; ToItemNo: Code[20]);
     var
-        TroubleshootingSetup : Record "Troubleshooting Setup";
+        ExtendedTextHeader: Record "Extended Text Header";
+        ExtendedTextLine: Record "Extended Text Line";
     begin
-        IF NOT CopyTroubleshooting THEN
-          EXIT;
+        if not CopyExtTxt then
+            exit;
 
-        TroubleshootingSetup.SETRANGE(Type,TroubleshootingSetup.Type::Item);
-        TroubleshootingSetup.SETRANGE("No.",FromItemNo);
-        IF TroubleshootingSetup.FINDSET() THEN BEGIN
-          InitDialog(Text028);
-          REPEAT
-            TroubleshootingSetup."No." := ToItemNo;
-            TroubleshootingSetup.INSERT();
-            TroubleshootingSetup."No." := FromItemNo;
-            UpdateDialog();
-          UNTIL TroubleshootingSetup.Next() = 0;
-          EndDialog();
-        END;
+        ExtendedTextHeader.SetRange("Table Name", ExtendedTextHeader."Table Name"::Item);
+        ExtendedTextHeader.SetRange("No.", FromItemNo);
+        if ExtendedTextHeader.FindSet() then begin
+            InitDialog(Text017);
+            repeat
+                ExtendedTextLine.SetRange("Table Name", ExtendedTextHeader."Table Name");
+                ExtendedTextLine.SetRange("No.", ExtendedTextHeader."No.");
+                ExtendedTextLine.SetRange("Language Code", ExtendedTextHeader."Language Code");
+                ExtendedTextLine.SetRange("Text No.", ExtendedTextHeader."Text No.");
+                if ExtendedTextLine.FindSet() then
+                    repeat
+                        ExtendedTextLine."No." := ToItemNo;
+                        ExtendedTextLine.Insert();
+                        ExtendedTextLine."No." := FromItemNo;
+                    until ExtendedTextLine.Next() = 0;
+
+                ExtendedTextHeader."No." := ToItemNo;
+                ExtendedTextHeader.Insert();
+                ExtendedTextHeader."No." := FromItemNo;
+                UpdateDialog();
+            until ExtendedTextHeader.Next() = 0;
+            EndDialog();
+        end;
     end;
 
-    local procedure CopyItemResourceSkills(FromItemNo : Code[20];ToItemNo : Code[20]);
+    local procedure CopyBOMComponents(FromItemNo: Code[20]; ToItemNo: Code[20]);
     var
-        ResourceSkill : Record "Resource Skill";
+        BOMComponent: Record "BOM Component";
     begin
-        IF NOT CopyResourceSkills THEN
-          EXIT;
+        if not CopyBOM then
+            exit;
 
-        ResourceSkill.SETRANGE(Type,ResourceSkill.Type::Item);
-        ResourceSkill.SETRANGE("No.",FromItemNo);
-        IF ResourceSkill.FINDSET() THEN BEGIN
-          InitDialog(Text026);
-          REPEAT
-            ResourceSkill."No." := ToItemNo;
-            ResourceSkill.INSERT();
-            ResourceSkill."No." := FromItemNo;
-            UpdateDialog();
-          UNTIL ResourceSkill.Next() = 0;
-          EndDialog();
-        END;
+        BOMComponent.SetRange("Parent Item No.", FromItemNo);
+        if BOMComponent.FindSet() then begin
+            InitDialog(Text018);
+            repeat
+                BOMComponent."Parent Item No." := ToItemNo;
+                BOMComponent.Insert();
+                BOMComponent."Parent Item No." := FromItemNo;
+                UpdateDialog();
+            until BOMComponent.Next() = 0;
+            EndDialog();
+        end;
     end;
 
-    local procedure CopyItemSalesPrices(FromItemNo : Code[20];ToItemNo : Code[20]);
+    local procedure CopyItemVendors(FromItemNo: Code[20]; ToItemNo: Code[20]);
     var
-        SalesPrice : Record "Sales Price";
+        ItemVendor: Record "Item Vendor";
     begin
-        IF NOT CopySalesPrices THEN
-          EXIT;
+        if not CopyItemVendor then
+            exit;
 
-        SalesPrice.SETRANGE("Item No.",FromItemNo);
-        IF SalesPrice.FINDSET() THEN BEGIN
-          InitDialog(Text029);
-          REPEAT
-            SalesPrice."Item No." := ToItemNo;
-            SalesPrice.INSERT();
-            SalesPrice."Item No." := FromItemNo;
-            UpdateDialog();
-          UNTIL SalesPrice.Next() = 0;
-        END;
+        ItemVendor.SetRange("Item No.", FromItemNo);
+        if ItemVendor.FindSet() then begin
+            InitDialog(Text021);
+            repeat
+                ItemVendor."Item No." := ToItemNo;
+                ItemVendor.Insert();
+                ItemVendor."Item No." := FromItemNo;
+                UpdateDialog();
+            until ItemVendor.Next() = 0;
+            EndDialog();
+        end;
     end;
 
-    local procedure CopySalesLineDiscounts(FromItemNo : Code[20];ToItemNo : Code[20]);
+    local procedure CopyTroubleshootingSetup(FromItemNo: Code[20]; ToItemNo: Code[20]);
     var
-        SalesLineDiscount : Record "Sales Line Discount";
+        TroubleshootingSetup: Record "Troubleshooting Setup";
     begin
-        IF NOT CopySalesLineDisc THEN
-          EXIT;
+        if not CopyTroubleshooting then
+            exit;
 
-        SalesLineDiscount.SETRANGE(Type,SalesLineDiscount.Type::Item);
-        SalesLineDiscount.SETRANGE(Code,FromItemNo);
-        IF SalesLineDiscount.FINDSET() THEN BEGIN
-          InitDialog(Text030);
-          REPEAT
-            SalesLineDiscount.Code := ToItemNo;
-            SalesLineDiscount.INSERT();
-            SalesLineDiscount.Code := FromItemNo;
-            UpdateDialog();
-          UNTIL SalesLineDiscount.Next() = 0;
-        END;
+        TroubleshootingSetup.SetRange(Type, TroubleshootingSetup.Type::Item);
+        TroubleshootingSetup.SetRange("No.", FromItemNo);
+        if TroubleshootingSetup.FindSet() then begin
+            InitDialog(Text028);
+            repeat
+                TroubleshootingSetup."No." := ToItemNo;
+                TroubleshootingSetup.Insert();
+                TroubleshootingSetup."No." := FromItemNo;
+                UpdateDialog();
+            until TroubleshootingSetup.Next() = 0;
+            EndDialog();
+        end;
     end;
 
-    local procedure CopyPurchasePrices(FromItemNo : Code[20];ToItemNo : Code[20]);
+    local procedure CopyItemResourceSkills(FromItemNo: Code[20]; ToItemNo: Code[20]);
     var
-        PurchasePrice : Record "Purchase Price";
+        ResourceSkill: Record "Resource Skill";
     begin
-        IF NOT CopyPurchPrices THEN
-          EXIT;
+        if not CopyResourceSkills then
+            exit;
 
-        PurchasePrice.SETRANGE("Item No.",FromItemNo);
-        IF PurchasePrice.FINDSET() THEN BEGIN
-          InitDialog(Text031);
-          REPEAT
-            PurchasePrice."Item No." := ToItemNo;
-            PurchasePrice.INSERT();
-            PurchasePrice."Item No." := FromItemNo;
-            UpdateDialog();
-          UNTIL PurchasePrice.Next() = 0;
-        END;
+        ResourceSkill.SetRange(Type, ResourceSkill.Type::Item);
+        ResourceSkill.SetRange("No.", FromItemNo);
+        if ResourceSkill.FindSet() then begin
+            InitDialog(Text026);
+            repeat
+                ResourceSkill."No." := ToItemNo;
+                ResourceSkill.Insert();
+                ResourceSkill."No." := FromItemNo;
+                UpdateDialog();
+            until ResourceSkill.Next() = 0;
+            EndDialog();
+        end;
     end;
 
-    local procedure CopyPurchaseLineDiscounts(FromItemNo : Code[20];ToItemNo : Code[20]);
+    local procedure CopyItemSalesPrices(FromItemNo: Code[20]; ToItemNo: Code[20]);
     var
-        PurchLineDiscount : Record "Purchase Line Discount";
+        SalesPrice: Record "Sales Price";
     begin
-        IF NOT CopyPurchLineDisc THEN
-          EXIT;
+        if not CopySalesPrices then
+            exit;
 
-        PurchLineDiscount.SETRANGE("Item No.",FromItemNo);
-        IF PurchLineDiscount.FINDSET() THEN BEGIN
-          InitDialog(Text032);
-          REPEAT
-            PurchLineDiscount."Item No." := ToItemNo;
-            PurchLineDiscount.INSERT();
-            PurchLineDiscount."Item No." := FromItemNo;
-            UpdateDialog();
-          UNTIL PurchLineDiscount.Next() = 0;
-        END;
+        SalesPrice.SetRange("Item No.", FromItemNo);
+        if SalesPrice.FindSet() then begin
+            InitDialog(Text029);
+            repeat
+                SalesPrice."Item No." := ToItemNo;
+                SalesPrice.Insert();
+                SalesPrice."Item No." := FromItemNo;
+                UpdateDialog();
+            until SalesPrice.Next() = 0;
+        end;
     end;
 
-    local procedure CopyItemAttributes(FromItemNo : Code[20];ToItemNo : Code[20]);
+    local procedure CopySalesLineDiscounts(FromItemNo: Code[20]; ToItemNo: Code[20]);
     var
-        ItemAttributeValueMapping : Record "Item Attribute Value Mapping";
-        NewItemAttributeValueMapping : Record "Item Attribute Value Mapping";
+        SalesLineDiscount: Record "Sales Line Discount";
     begin
-        IF NOT CopyAttributes THEN
-          EXIT;
+        if not CopySalesLineDisc then
+            exit;
 
-        ItemAttributeValueMapping.SETRANGE("Table ID",DATABASE::Item);
-        ItemAttributeValueMapping.SETRANGE("No.",FromItemNo);
-        IF ItemAttributeValueMapping.FINDSET() THEN
-          REPEAT
-            NewItemAttributeValueMapping := ItemAttributeValueMapping;
-            NewItemAttributeValueMapping."No." := ToItemNo;
-            NewItemAttributeValueMapping.INSERT();
-          UNTIL ItemAttributeValueMapping.Next() = 0;
+        SalesLineDiscount.SetRange(Type, SalesLineDiscount.Type::Item);
+        SalesLineDiscount.SetRange(Code, FromItemNo);
+        if SalesLineDiscount.FindSet() then begin
+            InitDialog(Text030);
+            repeat
+                SalesLineDiscount.Code := ToItemNo;
+                SalesLineDiscount.Insert();
+                SalesLineDiscount.Code := FromItemNo;
+                UpdateDialog();
+            until SalesLineDiscount.Next() = 0;
+        end;
+    end;
+
+    local procedure CopyPurchasePrices(FromItemNo: Code[20]; ToItemNo: Code[20]);
+    var
+        PurchasePrice: Record "Purchase Price";
+    begin
+        if not CopyPurchPrices then
+            exit;
+
+        PurchasePrice.SetRange("Item No.", FromItemNo);
+        if PurchasePrice.FindSet() then begin
+            InitDialog(Text031);
+            repeat
+                PurchasePrice."Item No." := ToItemNo;
+                PurchasePrice.Insert();
+                PurchasePrice."Item No." := FromItemNo;
+                UpdateDialog();
+            until PurchasePrice.Next() = 0;
+        end;
+    end;
+
+    local procedure CopyPurchaseLineDiscounts(FromItemNo: Code[20]; ToItemNo: Code[20]);
+    var
+        PurchLineDiscount: Record "Purchase Line Discount";
+    begin
+        if not CopyPurchLineDisc then
+            exit;
+
+        PurchLineDiscount.SetRange("Item No.", FromItemNo);
+        if PurchLineDiscount.FindSet() then begin
+            InitDialog(Text032);
+            repeat
+                PurchLineDiscount."Item No." := ToItemNo;
+                PurchLineDiscount.Insert();
+                PurchLineDiscount."Item No." := FromItemNo;
+                UpdateDialog();
+            until PurchLineDiscount.Next() = 0;
+        end;
+    end;
+
+    local procedure CopyItemAttributes(FromItemNo: Code[20]; ToItemNo: Code[20]);
+    var
+        ItemAttributeValueMapping: Record "Item Attribute Value Mapping";
+        NewItemAttributeValueMapping: Record "Item Attribute Value Mapping";
+    begin
+        if not CopyAttributes then
+            exit;
+
+        ItemAttributeValueMapping.SetRange("Table ID", Database::Item);
+        ItemAttributeValueMapping.SetRange("No.", FromItemNo);
+        if ItemAttributeValueMapping.FindSet() then
+            repeat
+                NewItemAttributeValueMapping := ItemAttributeValueMapping;
+                NewItemAttributeValueMapping."No." := ToItemNo;
+                NewItemAttributeValueMapping.Insert();
+            until ItemAttributeValueMapping.Next() = 0;
     end;
 }
 

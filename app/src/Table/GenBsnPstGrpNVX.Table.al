@@ -1,4 +1,4 @@
-table 50003 "GenBsnPstGrpNVX"
+table 50003 GenBsnPstGrpNVX
 {
     DataClassification = CustomerContent;
 
@@ -24,7 +24,7 @@ table 50003 "GenBsnPstGrpNVX"
             DataClassification = CustomerContent;
             Caption = 'Filter Sales Order', comment = 'DEA="Filter Auftrag"';
         }
-        field(13; "Filter Sales Invoice"; boolean)
+        field(13; "Filter Sales Invoice"; Boolean)
         {
             DataClassification = CustomerContent;
             Caption = 'Filter Sales Invoice', comment = 'DEA="Filter Erfassung VK-Rechnung"';

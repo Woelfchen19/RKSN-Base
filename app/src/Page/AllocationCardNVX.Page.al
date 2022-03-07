@@ -1,4 +1,4 @@
-page 50004 "AllocationCardNVX"
+page 50004 AllocationCardNVX
 {
     PageType = Card;
     SourceTable = AllocationHeaderNVX;
@@ -6,7 +6,7 @@ page 50004 "AllocationCardNVX"
     Caption = 'Allocation Card', comment = 'DEA="Verteilungskarte"';
     layout
     {
-        area(content)
+        area(Content)
         {
             group(General)
             {
@@ -15,19 +15,19 @@ page 50004 "AllocationCardNVX"
                 {
                     ApplicationArea = All;
                 }
-                field(Description; "Description")
+                field(Description; Description)
                 {
                     ApplicationArea = All;
-                }                
+                }
                 field("Start Date"; "Start Date")
                 {
                     ApplicationArea = All;
-                }                
+                }
             }
-            part(Lines;AllocationSubPageNVX)
+            part(Lines; AllocationSubPageNVX)
             {
                 ApplicationArea = All;
-                SubPageLink = "Allocation Code"= field("Allocation Code"),"Start Date" = FIELD("Start Date");
+                SubPageLink = "Allocation Code" = field("Allocation Code"), "Start Date" = field("Start Date");
             }
         }
     }

@@ -1,4 +1,4 @@
-table 50027 "GenJournalBatchNVX"
+table 50027 GenJournalBatchNVX
 {
     DataClassification = CustomerContent;
 
@@ -24,7 +24,7 @@ table 50027 "GenJournalBatchNVX"
 
     keys
     {
-        key(PK;  "Journal Template Name", Name)
+        key(PK; "Journal Template Name", Name)
         {
             Clustered = true;
         }

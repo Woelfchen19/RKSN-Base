@@ -1,12 +1,12 @@
-codeunit 50000 "Table27HookNVX"
+codeunit 50000 Table27HookNVX
 {
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterValidateEvent', 'Gen. Prod. Posting Group', false, false)]
     //RKSN-36
     local procedure SetInventoryValueZero(var Rec: Record Item)
     var
         GenPrdPstGrp: Record GenPrdPstGrpNVX;
-        UserSetupNVX: Record UserSetupNVX;
         ItemLedgerEntry: Record "Item Ledger Entry";
+        UserSetupNVX: Record UserSetupNVX;
         NoItemErr: Label 'This Product Posting Group is blocked for use on Items!', comment = 'DEA="Es ist nicht möglich, diese Produktbuchungsgruppe zuzuordnen, da diese nicht zum Datawarehouse gehört!"';
         NoUserRightErr: Label 'There are Ledger Entries for this Item and you are missing the necessary user rights to change the product posting group.',
                                 comment = 'DEA="Es gibt zum Artikel bereits gebuchte Posten! Sie haben keine Rechte, um nachträglich die zugeordnete Produktbuchungsgruppe zu ändern."';
@@ -24,19 +24,19 @@ codeunit 50000 "Table27HookNVX"
                     Error(NoItemErr);
                 GenPrdPstGrp."Inventory Value Zero"::Yes:
                     Rec.Validate("Inventory Value Zero", true);
-                GenPrdPstGrp."Inventory Value Zero"::"No":
+                GenPrdPstGrp."Inventory Value Zero"::No:
                     Rec.Validate("Inventory Value Zero", false);
             end;
 
         if (GenPrdPstGrp."Inventory Posting Group NVX" <> '') then
-            rec.Validate("Inventory Posting Group", GenPrdPstGrp."Inventory Posting Group NVX");
+            Rec.Validate("Inventory Posting Group", GenPrdPstGrp."Inventory Posting Group NVX");
     end;
 
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterValidateEvent', 'Inventory Posting Group', false, false)]
     local procedure CheckforItemLedgerEntries(var Rec: Record Item)
     var
-        UserSetupNVX: Record UserSetupNVX;
         ItemLedgerEntry: Record "Item Ledger Entry";
+        UserSetupNVX: Record UserSetupNVX;
         NoUserRightErr: Label 'There are Ledger Entries for this Item and you are missing the necessary user rights to change the inventory posting group.',
                                 comment = 'DEA="Es gibt zum Artikel bereits gebuchte Posten! Sie haben keine Rechte, um nachträglich die zugeordnete Lagerbuchungsgruppe zu ändern."';
     begin
@@ -52,9 +52,9 @@ codeunit 50000 "Table27HookNVX"
     //RKSN-39
     local procedure InsertItemDimAfterInsert(var Rec: Record Item)
     var
-        GLSetup: Record "General Ledger Setup";
-        DimensionValue: Record "Dimension Value";
         DefaultDimension: Record "Default Dimension";
+        DimensionValue: Record "Dimension Value";
+        GLSetup: Record "General Ledger Setup";
         InvSetupNVX: Record InvSetupNVX;
     begin
         if Rec.IsTemporary then
@@ -71,7 +71,7 @@ codeunit 50000 "Table27HookNVX"
             DimensionValue.Insert(true);
         end;
 
-        if not DefaultDimension.Get(Database::item, Rec."No.", GLSetup."Shortcut Dimension 8 Code") then begin
+        if not DefaultDimension.Get(Database::Item, Rec."No.", GLSetup."Shortcut Dimension 8 Code") then begin
             DefaultDimension.Init();
             DefaultDimension.Validate("Table ID", Database::Item);
             DefaultDimension.Validate("No.", Rec."No.");
@@ -108,9 +108,9 @@ codeunit 50000 "Table27HookNVX"
     //RKSN-39
     local procedure InsertItemDimAfterRename(Rec: Record Item; xRec: Record Item)
     var
-        GLSetup: Record "General Ledger Setup";
-        DimensionValue: Record "Dimension Value";
         DefaultDimension: Record "Default Dimension";
+        DimensionValue: Record "Dimension Value";
+        GLSetup: Record "General Ledger Setup";
     begin
         if Rec."No." = xRec."No." then
             exit;
@@ -127,7 +127,7 @@ codeunit 50000 "Table27HookNVX"
             DimensionValue.Insert(true);
         end;
 
-        if not DefaultDimension.Get(Database::item, Rec."No.", GLSetup."Shortcut Dimension 8 Code") then begin
+        if not DefaultDimension.Get(Database::Item, Rec."No.", GLSetup."Shortcut Dimension 8 Code") then begin
             DefaultDimension.Init();
             DefaultDimension.Validate("Table ID", Database::Item);
             DefaultDimension.Validate("No.", Rec."No.");
@@ -145,8 +145,8 @@ codeunit 50000 "Table27HookNVX"
     //RKSN-39
     local procedure FillNameinItemDim(Rec: Record Item)
     var
-        GLSetup: Record "General Ledger Setup";
         DimensionValue: Record "Dimension Value";
+        GLSetup: Record "General Ledger Setup";
     begin
         GLSetup.Get();
 
