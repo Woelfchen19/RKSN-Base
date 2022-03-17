@@ -1,7 +1,5 @@
 table 50020 GenJnlLineNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Journal Template Name"; Code[10])

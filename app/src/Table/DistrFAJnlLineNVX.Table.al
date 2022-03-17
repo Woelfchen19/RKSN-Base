@@ -1,7 +1,8 @@
 table 50022 DistrFAJnlLineNVX
 {
     Caption = 'FA Journal Line', comment = 'DEA="Anlagen Buch.-Blattzeile"';
-
+    LookupPageID = PreviewFADimDistrNVX;
+    DrilldownPageID = PreviewFADimDistrNVX;
     fields
     {
         field(1; "Journal Template Name"; Code[10])

@@ -30,10 +30,6 @@ pageextension 50002 UserSetupNVX extends "User Setup"
         }
     }
 
-    actions
-    {
-    }
-
     var
         UserSetupNVX: Record UserSetupNVX;
 
@@ -45,6 +41,4 @@ pageextension 50002 UserSetupNVX extends "User Setup"
             UserSetupNVX.Insert();
         end;
     end;
-
-
 }

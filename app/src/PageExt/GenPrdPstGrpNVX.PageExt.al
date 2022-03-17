@@ -5,7 +5,6 @@ pageextension 50000 GenPrdPstGrpNVX extends "Gen. Product Posting Groups"
         addlast(Control1)
         {
             field(InventoryValueZeroNVX; GenPrdPstGrp."Inventory Value Zero")
-            //RKSN-36
             {
                 ApplicationArea = All;
                 Caption = 'Inventory Value Zero', comment = 'DEA="Ohne Lagerbewertung"';
@@ -44,7 +43,6 @@ pageextension 50000 GenPrdPstGrpNVX extends "Gen. Product Posting Groups"
         GenPrdPstGrp: Record GenPrdPstGrpNVX;
 
     trigger OnAfterGetRecord();
-    //RKSN-36
     begin
         if not GenPrdPstGrp.Get(Code) then begin
             GenPrdPstGrp.Init();

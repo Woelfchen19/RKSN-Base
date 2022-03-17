@@ -1,7 +1,5 @@
 table 50017 FALedgerEntryNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Entry No."; Integer)

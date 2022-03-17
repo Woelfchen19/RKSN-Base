@@ -18,7 +18,6 @@ pageextension 50037 FAJournalNVX extends "Fixed Asset Journal"
                     WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                         comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
                 begin
-
                     if Rec."Line No." > 0 then
                         if not FAJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") then begin
                             FAJnlLineNVX.Init();
@@ -31,7 +30,6 @@ pageextension 50037 FAJournalNVX extends "Fixed Asset Journal"
                             FAJnlLineNVX."Allocation Code" := AllocationCodeVar;
                             FAJnlLineNVX.Modify();
                         end;
-
 
                     if AllocationCodeVar <> '' then
                         if Rec."Shortcut Dimension 2 Code" = '' then begin
@@ -79,8 +77,6 @@ pageextension 50037 FAJournalNVX extends "Fixed Asset Journal"
             }
         }
     }
-
-
 
     trigger OnAfterGetRecord()
     begin

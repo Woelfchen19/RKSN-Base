@@ -26,6 +26,7 @@ pageextension 50016 ChartOfAccountsNVX extends "Chart of Accounts"
                 end;
             end;
         }
+
         addlast(Control1)
         {
             field("Disc. Dim. DetectionNVX"; GLAccountNVX."Disc. Dim. Detection")
@@ -68,6 +69,7 @@ pageextension 50016 ChartOfAccountsNVX extends "Chart of Accounts"
             }
         }
     }
+    
     var
         GLAccountNVX: Record GLAccountNVX;
 

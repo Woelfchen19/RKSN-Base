@@ -1,7 +1,5 @@
 table 50015 FixedAssetNVX
 {
-    DataClassification = ToBeClassified;
-
     fields
     {
         field(1; "No."; Code[20])

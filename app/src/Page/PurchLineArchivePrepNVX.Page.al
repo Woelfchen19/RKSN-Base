@@ -83,6 +83,7 @@ page 50027 PurchLineArchivePrepNVX
 
         }
     }
+
     var
         BusinessCase: Boolean;
         BalAccountTypeLbl: Label 'Vendor', comment = 'DEA="Kreditor"';

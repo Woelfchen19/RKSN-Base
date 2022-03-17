@@ -1063,14 +1063,6 @@ table 50019 GenJnlLineArchiveNVX
             CalcFormula = lookup("Dimension Value".Name where("Global Dimension No." = const(1), Code = field("Shortcut Dimension 1 Code")));
             CaptionClass = '1337,1';
         }
-        // field(50005; "Shortcut Dimension 2 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 2 Name', comment = 'DEA="Shortcutdimensionsname 2"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (2), Code = field ("Shortcut Dimension 2 Code")));
-        //     CaptionClass = '1337,2';
-        // }
         field(50006; "Shortcut Dimension 3 Code"; Code[20])
         {
             DataClassification = CustomerContent;
@@ -1078,14 +1070,6 @@ table 50019 GenJnlLineArchiveNVX
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
             CaptionClass = '1,2,3';
         }
-        // field(50007; "Shortcut Dimension 3 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 3 Name', comment = 'DEA="Shortcutdimensionsname 3"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (3), Code = field ("Shortcut Dimension 3 Code")));
-        //     CaptionClass = '1337,3';
-        // }
         field(50008; "Shortcut Dimension 4 Code"; Code[20])
         {
             DataClassification = CustomerContent;
@@ -1093,28 +1077,12 @@ table 50019 GenJnlLineArchiveNVX
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(4));
             CaptionClass = '1,2,4';
         }
-        // field(50009; "Shortcut Dimension 4 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 4 Name', comment = 'DEA="Shortcutdimensionsname 4"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (4), Code = field ("Shortcut Dimension 4 Code")));
-        //     CaptionClass = '1337,4';
-        // }
         field(50010; "Shortcut Dimension 5 Code"; Code[20])
         {
             Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimensionscode 5"';
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5));
             CaptionClass = '1,2,5';
         }
-        // field(50011; "Shortcut Dimension 5 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 5 Name', comment = 'DEA="Shortcutdimensionsname 5"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (5), Code = field ("Shortcut Dimension 5 Code")));
-        //     CaptionClass = '1337,5';
-        // }
         field(50012; "Shortcut Dimension 6 Code"; Code[20])
         {
             DataClassification = CustomerContent;
@@ -1122,14 +1090,6 @@ table 50019 GenJnlLineArchiveNVX
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(6));
             CaptionClass = '1,2,6';
         }
-        // field(50013; "Shortcut Dimension 6 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 6 Name', comment = 'DEA="Shortcutdimensionsname 6"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (6), Code = field ("Shortcut Dimension 6 Code")));
-        //     CaptionClass = '1337,6';
-        // }
         field(50014; "Shortcut Dimension 7 Code"; Code[20])
         {
             DataClassification = CustomerContent;
@@ -1137,14 +1097,6 @@ table 50019 GenJnlLineArchiveNVX
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(7));
             CaptionClass = '1,2,7';
         }
-        // field(50015; "Shortcut Dimension 7 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 7 Name', comment = 'DEA="Shortcutdimensionsname 7"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (7), Code = field ("Shortcut Dimension 7 Code")));
-        //     CaptionClass = '1337,7';
-        // }
         field(50016; "Shortcut Dimension 8 Code"; Code[20])
         {
             DataClassification = CustomerContent;
@@ -1152,18 +1104,11 @@ table 50019 GenJnlLineArchiveNVX
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(8));
             CaptionClass = '1,2,8';
         }
-        // field(50017; "Shortcut Dimension 8 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 8 Name', comment = 'DEA="Shortcutdimensionsname 8"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (8), Code = field ("Shortcut Dimension 8 Code")));
-        //     CaptionClass = '1337,8';
-        // }
         field(50020; "Gen. Bus. Posting Group Desc"; Text[100])
         {
             Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Geschäftsbuchungsgruppe Beschreibung"';
             FieldClass = FlowField;
+            Editable = false;
             CalcFormula = lookup("Gen. Business Posting Group".Description where(Code = field("Gen. Bus. Posting Group")));
         }
         field(60000; "Posting GUID"; Guid)
@@ -1186,9 +1131,4 @@ table 50019 GenJnlLineArchiveNVX
             Clustered = true;
         }
     }
-
-    fieldgroups
-    {
-    }
 }
-

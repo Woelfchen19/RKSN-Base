@@ -2,7 +2,6 @@ table 50007 SalesHeaderArchiveNVX
 {
     Caption = 'Sales Header';
     DataCaptionFields = "No.", "Sell-to Customer Name";
-    LookupPageId = "Sales List";
 
     fields
     {
@@ -52,8 +51,6 @@ table 50007 SalesHeaderArchiveNVX
             TableRelation = if ("Bill-to Country/Region Code" = const('')) "Post Code".City
             else
             if ("Bill-to Country/Region Code" = filter(<> '')) "Post Code".City where("Country/Region Code" = field("Bill-to Country/Region Code"));
-            //This property is currently not supported
-            //TestTableRelation = false;
             ValidateTableRelation = false;
         }
         field(10; "Bill-to Contact"; Text[100])
@@ -91,8 +88,6 @@ table 50007 SalesHeaderArchiveNVX
             TableRelation = if ("Ship-to Country/Region Code" = const('')) "Post Code".City
             else
             if ("Ship-to Country/Region Code" = filter(<> '')) "Post Code".City where("Country/Region Code" = field("Ship-to Country/Region Code"));
-            //This property is currently not supported
-            //TestTableRelation = false;
             ValidateTableRelation = false;
         }
         field(18; "Ship-to Contact"; Text[100])
@@ -389,8 +384,6 @@ table 50007 SalesHeaderArchiveNVX
             TableRelation = if ("Sell-to Country/Region Code" = const('')) "Post Code".City
             else
             if ("Sell-to Country/Region Code" = filter(<> '')) "Post Code".City where("Country/Region Code" = field("Sell-to Country/Region Code"));
-            //This property is currently not supported
-            //TestTableRelation = false;
             ValidateTableRelation = false;
         }
         field(84; "Sell-to Contact"; Text[100])
@@ -401,8 +394,6 @@ table 50007 SalesHeaderArchiveNVX
         {
             Caption = 'Bill-to Post Code';
             TableRelation = "Post Code";
-            //This property is currently not supported
-            //TestTableRelation = false;
             ValidateTableRelation = false;
         }
         field(86; "Bill-to County"; Text[30])
@@ -421,8 +412,6 @@ table 50007 SalesHeaderArchiveNVX
             TableRelation = if ("Sell-to Country/Region Code" = const('')) "Post Code"
             else
             if ("Sell-to Country/Region Code" = filter(<> '')) "Post Code" where("Country/Region Code" = field("Sell-to Country/Region Code"));
-            //This property is currently not supported
-            //TestTableRelation = false;
             ValidateTableRelation = false;
         }
         field(89; "Sell-to County"; Text[30])
@@ -441,8 +430,6 @@ table 50007 SalesHeaderArchiveNVX
             TableRelation = if ("Ship-to Country/Region Code" = const('')) "Post Code"
             else
             if ("Ship-to Country/Region Code" = filter(<> '')) "Post Code" where("Country/Region Code" = field("Ship-to Country/Region Code"));
-            //This property is currently not supported
-            //TestTableRelation = false;
             ValidateTableRelation = false;
         }
         field(92; "Ship-to County"; Text[30])
@@ -993,12 +980,4 @@ table 50007 SalesHeaderArchiveNVX
             Clustered = true;
         }
     }
-
-    fieldgroups
-    {
-        fieldgroup(Brick; "No.", "Sell-to Customer Name", Amount, "Sell-to Contact", "Amount Including VAT")
-        {
-        }
-    }
 }
-

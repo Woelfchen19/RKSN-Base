@@ -145,7 +145,6 @@ pageextension 50003 GenBsnPstGrpNVX extends "Gen. Business Posting Groups"
         }
     }
 
-
     var
         GenBsnPstGrp: Record GenBsnPstGrpNVX;
 
@@ -160,7 +159,6 @@ pageextension 50003 GenBsnPstGrpNVX extends "Gen. Business Posting Groups"
 
         CurrPage.PstTypeMatrixNVX.Page.Load();
     end;
-
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean;
     var

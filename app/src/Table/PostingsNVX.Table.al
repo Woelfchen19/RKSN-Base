@@ -1,6 +1,5 @@
 table 50021 PostingsNVX
 {
-    DataClassification = CustomerContent;
     Caption = 'Backup dimensional distribution', comment = 'DEA="Sicherung dim.Verteilungen Modul AnBu"';
 
     fields
@@ -10,15 +9,6 @@ table 50021 PostingsNVX
             Caption = 'Posting GUID', comment = 'DEA="Buchungs-GUID"';
             DataClassification = CustomerContent;
         }
-        // field(2; "Document No."; Code[20])
-        // {
-        //     Caption = 'Document No.', comment = 'DEA="Belegnr."';
-        //     DataClassification = CustomerContent;
-        // }
-        // field(5; "Posting Date"; Date)
-        // {
-        //     ClosingDates = true;           
-        // }
         field(5; "Source Journal Line"; Option)
         {
             DataClassification = CustomerContent;

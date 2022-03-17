@@ -1,7 +1,5 @@
 table 50037 SalesInvoiceLineNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(3; "Document No."; Code[20])

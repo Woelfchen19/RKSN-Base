@@ -28,7 +28,6 @@ pageextension 50036 GeneralJournalNVX extends "General Journal"
                             GenJnlLineNVX.Modify();
                         end;
 
-
                     if AllocationCodeVar <> '' then
                         if Rec."Shortcut Dimension 2 Code" = '' then begin
                             AllocationCode.Get(AllocationCodeVar);

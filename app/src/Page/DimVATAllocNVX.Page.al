@@ -130,6 +130,4 @@ page 50002 DimVATAllocNVX
 
         exit(true);
     end;
-
 }
-

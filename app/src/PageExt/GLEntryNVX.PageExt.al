@@ -113,6 +113,7 @@ pageextension 50005 GLEntryNVX extends "General Ledger Entries"
             }
         }
     }
+    
     var
         GLEntryNVX: Record GLEntryNVX;
 

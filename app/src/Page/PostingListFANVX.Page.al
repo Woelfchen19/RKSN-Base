@@ -18,14 +18,6 @@ page 50013 PostingListFANVX
                 {
                     ApplicationArea = All;
                 }
-                // field("Posting Date"; "Posting Date")
-                // {
-                //     ApplicationArea = All;
-                // }
-                // field("Document No."; "Document No.")
-                // {
-                //     ApplicationArea = All;
-                // }
                 field("Date"; "Date")
                 {
                     ApplicationArea = All;
@@ -46,6 +38,7 @@ page 50013 PostingListFANVX
             }
         }
     }
+
     trigger OnOpenPage();
     begin
         SetCurrentKey("Date", "Time");

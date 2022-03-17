@@ -23,7 +23,6 @@ pageextension 50039 DefaultDimNVX extends "Default Dimensions"
         DefaultDim.SetRange("Table ID", Rec."Table ID");
         DefaultDim.SetRange("No.", Rec."No.");
 
-
         if DefaultDim.FindSet(false, false) then
             repeat
 
@@ -58,10 +57,7 @@ pageextension 50039 DefaultDimNVX extends "Default Dimensions"
                                         Error(InvValueErr);
                             end; // of case
                         end;
-
                 end; //of case
-
-
             until DefaultDim.Next() = 0;
 
         if (not Dim1Present) or (not Dim3Present) then
@@ -71,8 +67,6 @@ pageextension 50039 DefaultDimNVX extends "Default Dimensions"
                 false:
                     Error(InvValueErr);
             end; // of case
-
-
 
         exit(true);
     end;

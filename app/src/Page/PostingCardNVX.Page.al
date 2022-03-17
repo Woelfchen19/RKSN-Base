@@ -5,6 +5,8 @@ page 50014 PostingCardNVX
     InsertAllowed = false;
     DeleteAllowed = false;
     Editable = false;
+    Caption = 'Dimensional Distribution Archive', comment = 'DEA="Sicherung dim.Verteilungen"';
+    DataCaptionExpression = 'Sicherung dim.Verteilungen';
     layout
     {
         area(Content)
@@ -15,16 +17,6 @@ page 50014 PostingCardNVX
                 {
                     ApplicationArea = All;
                 }
-                // field("Posting Date"; "Posting Date")
-                // {
-                //     ApplicationArea = All;
-                //     Editable = false;
-                // }
-                // field("Document No."; "Document No.")
-                // {
-                //     ApplicationArea = All;
-                //     Editable = false;
-                // }           
                 field("Source Journal Line"; "Source Journal Line")
                 {
                     ApplicationArea = All;
@@ -64,14 +56,6 @@ page 50014 PostingCardNVX
                 SubPageLink = "Posting GUID" = field("Posting GUID");
                 Visible = GLVisible;
             }
-            // part(GLComplete; GenJnlArchiveCompleteNVX)
-            // {
-            //     ApplicationArea = All;
-            //     Caption = 'Complete', comment = 'DEA="Vollständig"';
-            //     SubPageLink = "Posting GUID" = field ("Posting GUID");
-            //     Visible = GLVisible;
-            // }
-
             //FA Parts
             part(FAOrigin; FAJnlLineArchiveOriginNVX)
             {
@@ -94,14 +78,6 @@ page 50014 PostingCardNVX
                 SubPageLink = "Posting GUID" = field("Posting GUID");
                 Visible = FAVisible;
             }
-            // part(FAComplete; FAJnlLineArchiveCompleteNVX)
-            // {
-            //     ApplicationArea = All;
-            //     Caption = 'Complete', comment = 'DEA="Vollständig"';
-            //     SubPageLink = "Posting GUID" = field ("Posting GUID");
-            //     Visible = FAVisible;
-            // }
-
             //Purchase Line parts
             part(PurchOrigin; PurchLineArchiveOriginNVX)
             {
@@ -124,14 +100,6 @@ page 50014 PostingCardNVX
                 SubPageLink = "Posting GUID" = field("Posting GUID");
                 Visible = PurchVisible;
             }
-            // part(PurchComplete; PurchLineArchiveCompleteNVX)
-            // {
-            //     ApplicationArea = All;
-            //     Caption = 'Complete', comment = 'DEA="Vollständig"';
-            //     SubPageLink = "Posting GUID" = field ("Posting GUID");
-            //     Visible = PurchVisible;
-            // }
-
             //Sales Line Parts
             part(SalesOrigin; SalesLineArchiveOriginNVX)
             {
@@ -154,14 +122,6 @@ page 50014 PostingCardNVX
                 SubPageLink = "Posting GUID" = field("Posting GUID");
                 Visible = SalesVisible;
             }
-            // part(SalesComplete; SalesLineArchiveCompleteNVX)
-            // {
-            //     ApplicationArea = All;
-            //     Caption = 'Complete', comment = 'DEA="Vollständig"';
-            //     SubPageLink = "Posting GUID" = field ("Posting GUID");
-            //     Visible = SalesVisible;
-            // }
-
         }
     }
 
@@ -183,5 +143,4 @@ page 50014 PostingCardNVX
         GLVisible: Boolean;
         PurchVisible: Boolean;
         SalesVisible: Boolean;
-
 }

@@ -7,7 +7,6 @@ page 50000 VATPostingTypeNVX
     SourceTable = VATPostingTypeNVX;
     UsageCategory = Administration;
 
-
     layout
     {
         area(Content)
@@ -25,5 +24,4 @@ page 50000 VATPostingTypeNVX
             }
         }
     }
-
 }

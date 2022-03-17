@@ -28,6 +28,3 @@ tableextension 50004 GLAccountNVX extends "G/L Account"
         }
     }
 }
-
-
-

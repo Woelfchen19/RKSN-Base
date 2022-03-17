@@ -77,7 +77,6 @@ pageextension 50027 DimValueNVX extends "Dimension Values"
                         end;
                 end;
             }
-
         }
     }
 
@@ -89,7 +88,6 @@ pageextension 50027 DimValueNVX extends "Dimension Values"
         PostingTypeVisible: Boolean;
         VATPostingType: Code[10];
         ShortcutDimension1: Code[20];
-
         ShortcutDimension2: Code[20];
 
     trigger OnAfterGetRecord();
@@ -161,7 +159,6 @@ pageextension 50027 DimValueNVX extends "Dimension Values"
         exit(true);
     end;
 
-
     local procedure GetGLSetup();
     begin
         if not GLSetupRead then begin
@@ -169,6 +166,4 @@ pageextension 50027 DimValueNVX extends "Dimension Values"
             GLSetupRead := true;
         end;
     end;
-
-
 }

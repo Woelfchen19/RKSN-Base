@@ -75,15 +75,12 @@ pageextension 50001 ItemCardNVX extends "Item Card"
                     ItemNVX.Modify();
                 end;
             }
-
-
         }
         modify("VAT Prod. Posting Group")
         {
             Enabled = false;
             Visible = false;
         }
-
     }
 
     var
@@ -92,7 +89,6 @@ pageextension 50001 ItemCardNVX extends "Item Card"
         DimMgt: Codeunit DimensionManagement;
         GLSetupRead: Boolean;
         GlobalDimension3Code: Code[20];
-
 
     trigger OnAfterGetRecord();
     var
@@ -111,8 +107,6 @@ pageextension 50001 ItemCardNVX extends "Item Card"
             ItemNVX.Insert();
         end;
     end;
-
-
     local procedure ReadGLSetup();
     begin
         if not GLSetupRead then begin
@@ -120,6 +114,4 @@ pageextension 50001 ItemCardNVX extends "Item Card"
             GLSetupRead := true;
         end;
     end;
-
-
 }

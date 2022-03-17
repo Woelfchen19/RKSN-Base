@@ -18,14 +18,6 @@ page 50024 PostingListGLNVX
                 {
                     ApplicationArea = All;
                 }
-                // field("Posting Date"; "Posting Date")
-                // {
-                //     ApplicationArea = All;
-                // }
-                // field("Document No."; "Document No.")
-                // {
-                //     ApplicationArea = All;
-                // }
                 field("Date"; "Date")
                 {
                     ApplicationArea = All;
@@ -38,10 +30,10 @@ page 50024 PostingListGLNVX
                 {
                     ApplicationArea = All;
                 }
-
             }
         }
     }
+
     trigger OnOpenPage();
     begin
         SetCurrentKey("Date", "Time");

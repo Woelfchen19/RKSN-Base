@@ -1,7 +1,6 @@
 codeunit 50000 Table27HookNVX
 {
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterValidateEvent', 'Gen. Prod. Posting Group', false, false)]
-    //RKSN-36
     local procedure SetInventoryValueZero(var Rec: Record Item)
     var
         GenPrdPstGrp: Record GenPrdPstGrpNVX;
@@ -47,9 +46,7 @@ codeunit 50000 Table27HookNVX
             Error(NoUserRightErr);
     end;
 
-
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterInsertEvent', '', false, false)]
-    //RKSN-39
     local procedure InsertItemDimAfterInsert(var Rec: Record Item)
     var
         DefaultDimension: Record "Default Dimension";
@@ -105,7 +102,6 @@ codeunit 50000 Table27HookNVX
     end;
 
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterRenameEvent', '', false, false)]
-    //RKSN-39
     local procedure InsertItemDimAfterRename(Rec: Record Item; xRec: Record Item)
     var
         DefaultDimension: Record "Default Dimension";
@@ -142,7 +138,6 @@ codeunit 50000 Table27HookNVX
     end;
 
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterValidateEvent', 'Description', false, false)]
-    //RKSN-39
     local procedure FillNameinItemDim(Rec: Record Item)
     var
         DimensionValue: Record "Dimension Value";

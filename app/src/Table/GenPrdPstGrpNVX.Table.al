@@ -1,7 +1,5 @@
 table 50000 GenPrdPstGrpNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Code"; Code[20])
@@ -10,7 +8,6 @@ table 50000 GenPrdPstGrpNVX
             Caption = 'Code', comment = 'DEA="Code"';
         }
         field(10; "Inventory Value Zero"; Option)
-        //RKSN-36
         {
             DataClassification = CustomerContent;
             Caption = 'Inventory Value Zero', comment = 'DEA="Ohne Lagerbewertung"';

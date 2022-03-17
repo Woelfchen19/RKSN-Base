@@ -13,12 +13,6 @@ table 50040 PurchaseHeaderNVX
         {
             DataClassification = CustomerContent;
         }
-        // field(15; "Interim Gen.Bus.Posting Group"; Code[20])
-        // {
-        //     DataClassification = CustomerContent;
-        //     Caption = 'Interim Gen. Bus. Posting Group', comment = 'DEA="Interim Steuerschlüssel"';
-        //     TableRelation = "Gen. Business Posting Group".Code;
-        // }
         field(100; "Allocation Amount"; Decimal)
         {
             Caption = 'Allocation Amount', comment = 'DEA="Verteilungsbetrag"';

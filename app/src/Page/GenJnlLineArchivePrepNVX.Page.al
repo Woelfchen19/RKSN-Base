@@ -76,9 +76,9 @@ page 50016 GenJnlLineArchivePrepNVX
                     Caption = 'Business Case', comment = 'DEA="Geschäftsfall"';
                 }
             }
-
         }
     }
+
     var
         BusinessCase: Boolean;
 

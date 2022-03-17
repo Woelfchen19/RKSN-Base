@@ -143,8 +143,9 @@
         </trans-unit>
         <trans-unit id="Table 3870134522 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry No.</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2">DEA="Lfd Nr."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BankAccountLedgerEntryNVX - Field Entry No. - Property Caption</note>
+          <target>Lfd Nr.</target>
         </trans-unit>
         <trans-unit id="Table 1676099715 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
@@ -2322,9 +2323,10 @@
           <target>Auftragsnr.</target>
         </trans-unit>
         <trans-unit id="Table 3278362078 - Field 4034965439 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Origin Line No.</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <source>EnglishText</source>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table DistrPurchLineNVX - Field Origin Line No. - Property Caption</note>
+          <target/>
         </trans-unit>
         <trans-unit id="Table 3278362078 - Field 3134116370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Outstanding Amount</source>
@@ -9029,8 +9031,9 @@
         </trans-unit>
         <trans-unit id="Table 2343142090 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2">DEA="Nr."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesInvoiceHeaderNVX - Field No. - Property Caption</note>
+          <target>Nr.</target>
         </trans-unit>
         <trans-unit id="Table 2343142090 - Field 781257514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Composition Section</source>
@@ -10415,22 +10418,16 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table VATPostingTypeNVX - Field Description - Property Caption</note>
           <target>Beschreibung</target>
         </trans-unit>
-        <trans-unit id="Codeunit 1787021016 - Method 2999721956 - NamedType 883549673" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This shipment has already been reversed</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Diese Lieferung wurde bereits storniert."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckPurchaseReceipt - NamedType AlreadyReversedErr</note>
-          <target>Diese Lieferung wurde bereits storniert.</target>
-        </trans-unit>
         <trans-unit id="Codeunit 1787021016 - Method 2999721956 - NamedType 645313898" size-unit="char" translate="yes" xml:space="preserve">
           <source>This receipt has already been invoiced. Undo Receipt can be applied only to posted, but not invoiced receipts.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Dieser Wareneingang wurde bereits fakturiert. 'Wareneingang stornieren' kann nur auf gebuchte, aber nicht auf fakturierte Wareneingänge angewendet werden."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckPurchaseReceipt - NamedType AlreadyInvoicedErr</note>
           <target>Dieser Wareneingang wurde bereits fakturiert. 'Wareneingang stornieren' kann nur auf gebuchte, aber nicht auf fakturierte Wareneingänge angewendet werden.</target>
         </trans-unit>
-        <trans-unit id="Codeunit 1787021016 - Method 2444159113 - NamedType 883549673" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1787021016 - Method 2999721956 - NamedType 883549673" size-unit="char" translate="yes" xml:space="preserve">
           <source>This shipment has already been reversed</source>
           <note from="Developer" annotates="general" priority="2">DEA="Diese Lieferung wurde bereits storniert."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckSalesShipment - NamedType AlreadyReversedErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckPurchaseReceipt - NamedType AlreadyReversedErr</note>
           <target>Diese Lieferung wurde bereits storniert.</target>
         </trans-unit>
         <trans-unit id="Codeunit 1787021016 - Method 2444159113 - NamedType 645313898" size-unit="char" translate="yes" xml:space="preserve">
@@ -10438,6 +10435,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Dieser Warenausgang wurde bereits fakturiert. 'Warenausgang stornieren' kann nur auf gebuchte, aber nicht auf fakturierte Warenausgänge angewendet werden."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckSalesShipment - NamedType AlreadyInvoicedErr</note>
           <target>Dieser Warenausgang wurde bereits fakturiert. 'Warenausgang stornieren' kann nur auf gebuchte, aber nicht auf fakturierte Warenausgänge angewendet werden.</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 1787021016 - Method 2444159113 - NamedType 883549673" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This shipment has already been reversed</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Diese Lieferung wurde bereits storniert."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckSalesShipment - NamedType AlreadyReversedErr</note>
+          <target>Diese Lieferung wurde bereits storniert.</target>
         </trans-unit>
         <trans-unit id="Codeunit 2241308083 - Method 1487222207 - NamedType 4220959294" size-unit="char" translate="yes" xml:space="preserve">
           <source>You are not allowed to use this Product Posting Group in this context. It belongs to the Datawarehouse</source>
@@ -10481,17 +10484,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckForPartialShipment - NamedType NoPartialShipmentErr</note>
           <target>Teillieferungen sind im Modul Verkauf nicht zulässig.</target>
         </trans-unit>
-        <trans-unit id="Codeunit 4009923459 - Method 1826875482 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Only the types 'Item' or 'Comment' are allowed.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckType - NamedType WrongTypeErr</note>
-          <target>In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen</target>
-        </trans-unit>
         <trans-unit id="Codeunit 4009923459 - Method 1826875482 - NamedType 707631556" size-unit="char" translate="yes" xml:space="preserve">
           <source>Type %1 is not allowed,</source>
           <note from="Developer" annotates="general" priority="2">DEA="Art %1 ist nicht erlaubt."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckType - NamedType TypeNotAllowedErr</note>
           <target>Art %1 ist nicht erlaubt.</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 4009923459 - Method 1826875482 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only the types 'Item' or 'Comment' are allowed.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckType - NamedType WrongTypeErr</note>
+          <target>In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen</target>
         </trans-unit>
         <trans-unit id="Codeunit 4009923459 - Method 1617669554 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
           <source>Only the types 'Item' or 'Comment' are allowed.</source>
@@ -10529,17 +10532,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5600HookNVX - Method CheckAllocationCodeDimension - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Überprüfen Sie bitte das Setup.</target>
         </trans-unit>
-        <trans-unit id="Codeunit 1054837503 - Method 4034257309 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5621HookNVX - Method CheckAllocationCodeDim - NamedType WrongDimErr</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
-        </trans-unit>
         <trans-unit id="Codeunit 1054837503 - Method 4034257309 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5621HookNVX - Method CheckAllocationCodeDim - NamedType WrongDim2Err</note>
           <target>Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 1054837503 - Method 4034257309 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5621HookNVX - Method CheckAllocationCodeDim - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
         <trans-unit id="Codeunit 1054837503 - Method 950186398 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
@@ -10553,17 +10556,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5621HookNVX - Method InsertAllocationCodeInAccompaniedTable - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
-        <trans-unit id="Codeunit 2689053120 - Method 4034257309 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table81HookNVX - Method CheckAllocationCodeDim - NamedType WrongDimErr</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
-        </trans-unit>
         <trans-unit id="Codeunit 2689053120 - Method 4034257309 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table81HookNVX - Method CheckAllocationCodeDim - NamedType WrongDim2Err</note>
           <target>Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 2689053120 - Method 4034257309 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table81HookNVX - Method CheckAllocationCodeDim - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
         <trans-unit id="Codeunit 2689053120 - Method 950186398 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
@@ -10846,6 +10849,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Betrag NETTO"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page GenJnlLineArchiveSummaryNVX - Control VAT Base Amount (LCY) - Property Caption</note>
           <target>Betrag NETTO</target>
+        </trans-unit>
+        <trans-unit id="Page 1243928120 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimensional Distribution Archive</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sicherung dim.Verteilungen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PostingCardNVX - Property Caption</note>
+          <target>Sicherung dim.Verteilungen</target>
         </trans-unit>
         <trans-unit id="Page 1243928120 - Control 392202981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Origin</source>
@@ -12251,17 +12260,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ChartOfAccountsNVX - Control No. of Classifications NVX - Property Caption</note>
           <target>Anzahl Gliederungsgruppen</target>
         </trans-unit>
-        <trans-unit id="PageExtension 3858270453 - Method 4177352842 - NamedType 1496169471" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3858270453">
-          <source>This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DefaultDimNVX - Method OnQueryClosePage - NamedType InvValueZeroErr</note>
-          <target>Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!</target>
-        </trans-unit>
         <trans-unit id="PageExtension 3858270453 - Method 4177352842 - NamedType 1602948993" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3858270453">
           <source>This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., </source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension DefaultDimNVX - Method OnQueryClosePage - NamedType InvValueErr</note>
           <target>Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3858270453 - Method 4177352842 - NamedType 1496169471" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3858270453">
+          <source>This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DefaultDimNVX - Method OnQueryClosePage - NamedType InvValueZeroErr</note>
+          <target>Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!</target>
         </trans-unit>
         <trans-unit id="PageExtension 122744579 - Control 3265622169 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3073920339">
           <source>Shortcut Dimension 1 Code</source>
@@ -12317,17 +12326,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FACardNVX - Control Allocation CodeNVX - Property Caption</note>
           <target>Verteilungscode</target>
         </trans-unit>
-        <trans-unit id="PageExtension 566041477 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 566041477">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Überprüfen Sie bitte das Setup."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FACardNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Überprüfen Sie bitte das Setup.</target>
-        </trans-unit>
         <trans-unit id="PageExtension 566041477 - Control 2132930775 - Method 2126772001 - NamedType 43121249" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 566041477">
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Do you want to overwrite the Profitcenter?</source>
           <note from="Developer" annotates="general" priority="2">DEA=Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Wollen Sie das Profitcenter mit dem Wert aus dem Verteilungscode überschreiben?"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FACardNVX - Control Allocation CodeNVX - Method OnValidate - NamedType OverwriteDim2Qst</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Wollen Sie das Profitcenter mit dem Wert aus dem Verteilungscode überschreiben?"</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 566041477 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 566041477">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Überprüfen Sie bitte das Setup."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FACardNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Überprüfen Sie bitte das Setup.</target>
         </trans-unit>
         <trans-unit id="PageExtension 998850351 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 714858205">
           <source>Preview dimensional distribution</source>
@@ -12341,17 +12350,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAGLJournalNVX - Control Allocation CodeNVX - Property Caption</note>
           <target>Verteilungscode</target>
         </trans-unit>
-        <trans-unit id="PageExtension 998850351 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 998850351">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAGLJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
-        </trans-unit>
         <trans-unit id="PageExtension 998850351 - Control 2132930775 - Method 2126772001 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 998850351">
           <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAGLJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDim2Err</note>
           <target>Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 998850351 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 998850351">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAGLJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
         <trans-unit id="PageExtension 1571559034 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4232171073">
           <source>Preview dimensional distribution</source>
@@ -12365,17 +12374,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAJournalNVX - Control Allocation CodeNVX - Property Caption</note>
           <target>Verteilungscode</target>
         </trans-unit>
-        <trans-unit id="PageExtension 1571559034 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1571559034">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
-          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
-        </trans-unit>
         <trans-unit id="PageExtension 1571559034 - Control 2132930775 - Method 2126772001 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1571559034">
           <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDim2Err</note>
           <target>Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1571559034 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1571559034">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
         <trans-unit id="PageExtension 3944373180 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 377345500">
           <source>Allocation Code</source>

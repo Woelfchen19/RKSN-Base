@@ -1,9 +1,8 @@
 table 50035 DistrSalesLineNVX
 {
     Caption = 'Sales Line', comment = 'DEA="Verkaufszeile';
-    DrillDownPageId = "Sales Lines";
-    LookupPageId = "Sales Lines";
-
+    LookupPageID = PreviewSalesDimDistrNVX;
+    DrilldownPageID = PreviewSalesDimDistrNVX;
     fields
     {
         field(1; "Document Type"; Option)
@@ -35,7 +34,6 @@ table 50035 DistrSalesLineNVX
         }
         field(6; "No."; Code[20])
         {
-            // CaptionClass = GetCaptionClass(FieldNo("No."));
             Caption = 'No.', comment = 'DEA="Nr."';
             TableRelation = if (Type = const(" ")) "Standard Text"
             else
@@ -100,8 +98,6 @@ table 50035 DistrSalesLineNVX
             if (Type = const("Fixed Asset")) "Fixed Asset".Description
             else
             if (Type = const("Charge (Item)")) "Item Charge".Description;
-            //This property is currently not supported
-            //TestTableRelation = false;
             ValidateTableRelation = false;
         }
         field(12; "Description 2"; Text[50])
@@ -112,8 +108,6 @@ table 50035 DistrSalesLineNVX
         {
             Caption = 'Unit of Measure', comment = 'DEA="Einheit"';
             TableRelation = if (Type = filter(<> " ")) "Unit of Measure".Description;
-            //This property is currently not supported
-            //TestTableRelation = false;
             ValidateTableRelation = false;
         }
         field(15; Quantity; Decimal)
@@ -464,8 +458,6 @@ table 50035 DistrSalesLineNVX
             AccessByPermission = tabledata "Sales Shipment Header" = R;
             Caption = 'Blanket Order No.', comment = 'DEA="Rahmenauftragsnr."';
             TableRelation = "Sales Header"."No." where("Document Type" = const("Blanket Order"));
-            //This property is currently not supported
-            //TestTableRelation = false;
         }
         field(98; "Blanket Order Line No."; Integer)
         {
@@ -473,8 +465,6 @@ table 50035 DistrSalesLineNVX
             Caption = 'Blanket Order Line No.', comment = 'DEA="Rahmenauftragszeilennr."';
             TableRelation = "Sales Line"."Line No." where("Document Type" = const("Blanket Order"),
                                                            "Document No." = field("Blanket Order No."));
-            //This property is currently not supported
-            //TestTableRelation = false;
         }
         field(99; "VAT Base Amount"; Decimal)
         {
@@ -499,7 +489,6 @@ table 50035 DistrSalesLineNVX
         {
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            // CaptionClass = GetCaptionClass(FieldNo("Line Amount"));
             Caption = 'Line Amount', comment = 'DEA="Zeilenbetrag"';
         }
         field(104; "VAT Difference"; Decimal)
@@ -544,7 +533,6 @@ table 50035 DistrSalesLineNVX
         {
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            // CaptionClass = GetCaptionClass(FieldNo("Prepmt. Line Amount"));
             Caption = 'Prepmt. Line Amount', comment = 'DEA="Vorauszahlungszeilenbetrag"';
             MinValue = 0;
         }
@@ -552,7 +540,6 @@ table 50035 DistrSalesLineNVX
         {
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            // CaptionClass = GetCaptionClass(FieldNo("Prepmt. Amt. Inv."));
             Caption = 'Prepmt. Amt. Inv.', comment = 'DEA="Fakt. Vorauszahlungsbetrag"';
             Editable = false;
         }
@@ -614,7 +601,6 @@ table 50035 DistrSalesLineNVX
         {
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            // CaptionClass = GetCaptionClass(FieldNo("Prepmt Amt to Deduct"));
             Caption = 'Prepmt Amt to Deduct', comment = 'DEA="Abzuziehender Vorauszahlungsbetrag"';
             MinValue = 0;
         }
@@ -622,7 +608,6 @@ table 50035 DistrSalesLineNVX
         {
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            // CaptionClass = GetCaptionClass(FieldNo("Prepmt Amt Deducted"));
             Caption = 'Prepmt Amt Deducted', comment = 'DEA="Abgezogener Vorauszahlungsbetrag"';
             Editable = false;
         }
@@ -675,12 +660,6 @@ table 50035 DistrSalesLineNVX
             Caption = 'Prepmt VAT Diff. Deducted', comment = 'DEA="Abgezogene MwSt.-Differenz Vorauszahlung"';
             Editable = false;
         }
-        // field(145; "Pmt. Discount Amount"; Decimal)
-        // {
-        //     AutoFormatExpression = "Currency Code";
-        //     AutoFormatType = 1;
-        //     Caption = 'Pmt. Discount Amount', comment = 'DEA=""';
-        // }
         field(180; "Line Discount Calculation"; Option)
         {
             Caption = 'Line Discount Calculation', comment = 'DEA="Zeilenrabattberechnung"';
@@ -744,13 +723,6 @@ table 50035 DistrSalesLineNVX
             Caption = 'Job Contract Entry No.', comment = 'DEA="Projektvertragspostennr."';
             Editable = false;
         }
-        // field(1300; "Posting Date"; Date)
-        // {
-        //     CalcFormula = Lookup ("Sales Header"."Posting Date" WHERE("Document Type" = FIELD("Document Type"),
-        //                                                               "No." = FIELD("Document No.")));
-        //     Caption = 'Posting Date', comment = 'DEA="Buchungsdatum"';
-        //     FieldClass = FlowField;
-        // }
         field(1700; "Deferral Code"; Code[10])
         {
             Caption = 'Deferral Code', comment = 'DEA="Abgrenzungscode"';
@@ -951,14 +923,6 @@ table 50035 DistrSalesLineNVX
             Caption = 'Purchasing Code', comment = 'DEA="Einkaufscode"';
             TableRelation = Purchasing;
         }
-        // field(5712; "Product Group Code"; Code[10])
-        // {
-        //     Caption = 'Product Group Code', comment = 'DEA="Produktgruppencode"';
-        //     ObsoleteReason = 'Product Groups became first level children of Item Categories.';
-        //     ObsoleteState = Obsolete;
-        //     TableRelation = "Product Group".Code WHERE("Item Category Code" = FIELD("Item Category Code"));
-        //     ValidateTableRelation = false;
-        // }
         field(5713; "Special Order"; Boolean)
         {
             AccessByPermission = tabledata "Drop Shpt. Post. Buffer" = R;
@@ -1176,17 +1140,6 @@ table 50035 DistrSalesLineNVX
         {
             Caption = 'Price description', comment = 'DEA="Preisbeschreibung"';
         }
-        // field(7010; "Attached Doc Count"; Integer)
-        // {
-        //     BlankNumbers = DontBlank;
-        //     CalcFormula = Count ("Document Attachment" WHERE("Table ID" = CONST(37),
-        //                                                      "No." = FIELD("Document No."),
-        //                                                      "Document Type" = FIELD("Document Type"),
-        //                                                      "Line No." = FIELD("Line No.")));
-        //     Caption = 'Attached Doc Count', comment = 'DEA=""';
-        //     FieldClass = FlowField;
-        //     InitValue = 0;
-        // }
         field(50000; "VAT Posting Type"; Code[10])
         {
             Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
@@ -1222,14 +1175,6 @@ table 50035 DistrSalesLineNVX
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
             CaptionClass = '1,2,3';
         }
-        // field(50007; "Shortcut Dimension 3 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 3 Name', comment = 'DEA="Shortcutdimensionsname 3"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (3), Code = field ("Shortcut Dimension 3 Code")));
-        //     CaptionClass = '1337,3';
-        // }
         field(50008; "Shortcut Dimension 4 Code"; Code[20])
         {
             DataClassification = CustomerContent;
@@ -1237,28 +1182,12 @@ table 50035 DistrSalesLineNVX
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(4));
             CaptionClass = '1,2,4';
         }
-        // field(50009; "Shortcut Dimension 4 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 4 Name', comment = 'DEA="Shortcutdimensionsname 4"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (4), Code = field ("Shortcut Dimension 4 Code")));
-        //     CaptionClass = '1337,4';
-        // }
         field(50010; "Shortcut Dimension 5 Code"; Code[20])
         {
             Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimensionscode 5"';
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5));
             CaptionClass = '1,2,5';
         }
-        // field(50011; "Shortcut Dimension 5 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 5 Name', comment = 'DEA="Shortcutdimensionsname 5"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (5), Code = field ("Shortcut Dimension 5 Code")));
-        //     CaptionClass = '1337,5';
-        // }
         field(50012; "Shortcut Dimension 6 Code"; Code[20])
         {
             DataClassification = CustomerContent;
@@ -1266,14 +1195,6 @@ table 50035 DistrSalesLineNVX
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(6));
             CaptionClass = '1,2,6';
         }
-        // field(50013; "Shortcut Dimension 6 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 6 Name', comment = 'DEA="Shortcutdimensionsname 6"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (6), Code = field ("Shortcut Dimension 6 Code")));
-        //     CaptionClass = '1337,6';
-        // }
         field(50014; "Shortcut Dimension 7 Code"; Code[20])
         {
             DataClassification = CustomerContent;
@@ -1281,14 +1202,6 @@ table 50035 DistrSalesLineNVX
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(7));
             CaptionClass = '1,2,7';
         }
-        // field(50015; "Shortcut Dimension 7 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 7 Name', comment = 'DEA="Shortcutdimensionsname 7"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (7), Code = field ("Shortcut Dimension 7 Code")));
-        //     CaptionClass = '1337,7';
-        // }
         field(50016; "Shortcut Dimension 8 Code"; Code[20])
         {
             DataClassification = CustomerContent;
@@ -1296,19 +1209,11 @@ table 50035 DistrSalesLineNVX
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(8));
             CaptionClass = '1,2,8';
         }
-
-        // field(50017; "Shortcut Dimension 8 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 8 Name', comment = 'DEA="Shortcutdimensionsname 8"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (8), Code = field ("Shortcut Dimension 8 Code")));
-        //     CaptionClass = '1337,8';
-        // }
         field(50020; "Gen. Bus. Posting Group Desc"; Text[100])
         {
             Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Geschäftsbuchungsgruppe Beschreibung"';
             FieldClass = FlowField;
+            Editable = false;
             CalcFormula = lookup("Gen. Business Posting Group".Description where(Code = field("Gen. Bus. Posting Group")));
         }
         field(50025; "Sales Shortcut Dimension 1"; Code[20])
@@ -1349,70 +1254,5 @@ table 50035 DistrSalesLineNVX
         {
             Clustered = true;
         }
-        // key(Key2; "Document No.", "Line No.", "Document Type")
-        // {
-        //     Enabled = false;
-        // }
-        // key(Key3; "Document Type", Type, "No.", "Variant Code", "Drop Shipment", "Location Code", "Shipment Date")
-        // {
-        //     SumIndexFields = "Outstanding Qty. (Base)";
-        // }
-        // key(Key4; "Document Type", "Bill-to Customer No.", "Currency Code", "Document No.")
-        // {
-        //     SumIndexFields = "Outstanding Amount", "Shipped Not Invoiced", "Outstanding Amount (LCY)", "Shipped Not Invoiced (LCY)", "Return Rcd. Not Invd. (LCY)";
-        // }
-        // key(Key5; "Document Type", Type, "No.", "Variant Code", "Drop Shipment", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Location Code", "Shipment Date")
-        // {
-        //     Enabled = false;
-        //     SumIndexFields = "Outstanding Qty. (Base)";
-        // }
-        // key(Key6; "Document Type", "Bill-to Customer No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Currency Code", "Document No.")
-        // {
-        //     Enabled = false;
-        //     SumIndexFields = "Outstanding Amount", "Shipped Not Invoiced", "Outstanding Amount (LCY)", "Shipped Not Invoiced (LCY)";
-        // }
-        // key(Key7; "Document Type", "Blanket Order No.", "Blanket Order Line No.")
-        // {
-        // }
-        // key(Key8; "Document Type", "Document No.", "Location Code")
-        // {
-        //     MaintainSQLIndex = false;
-        //     SumIndexFields = Amount, "Amount Including VAT", "Outstanding Amount", "Shipped Not Invoiced", "Outstanding Amount (LCY)", "Shipped Not Invoiced (LCY)";
-        // }
-        // key(Key9; "Document Type", "Shipment No.", "Shipment Line No.")
-        // {
-        // }
-        // key(Key10; Type, "No.", "Variant Code", "Drop Shipment", "Location Code", "Document Type", "Shipment Date")
-        // {
-        //     MaintainSQLIndex = false;
-        // }
-        // key(Key11; "Document Type", "Sell-to Customer No.", "Shipment No.", "Document No.")
-        // {
-        //     SumIndexFields = "Outstanding Amount (LCY)";
-        // }
-        // key(Key12; "Job Contract Entry No.")
-        // {
-        // }
-        // key(Key13; "Document Type", "Document No.", "Qty. Shipped Not Invoiced")
-        // {
-        //     Enabled = false;
-        // }
-        // key(Key14; "Document Type", "Document No.", Type, "No.")
-        // {
-        //     Enabled = false;
-        // }
-        // key(Key15; "Recalculate Invoice Disc.")
-        // {
-        // }
-        // key(Key16; "Qty. Shipped Not Invoiced")
-        // {
-        // }
-        // key(Key17; "Qty. Shipped (Base)")
-        // {
-        // }
-        // key(Key18; "Shipment Date", "Outstanding Quantity")
-        // {
-        // }
     }
 }
-

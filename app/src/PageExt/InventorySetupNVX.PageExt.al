@@ -241,6 +241,4 @@ pageextension 50004 InventorySetupNVX extends "Inventory Setup"
         end;
         InvSetupNVX.CalcFields("Comp Journal Description", "Sales Journal Description");
     end;
-
-
 }

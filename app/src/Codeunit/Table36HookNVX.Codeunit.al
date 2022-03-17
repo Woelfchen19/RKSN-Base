@@ -39,7 +39,6 @@ codeunit 50007 Table36HookNVX
             if InvSetupNVX."Composition Customer" = '' then
                 Error(MissingSetupErr);
             Rec.Validate("Sell-to Customer No.", InvSetupNVX."Composition Customer");
-            // Rec.Modify();
         end;
     end;
 

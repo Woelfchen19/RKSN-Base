@@ -63,6 +63,7 @@ page 50019 FAJnlLineArchiveOriginNVX
 
         }
     }
+
     var
         BusinessCase: Boolean;
 

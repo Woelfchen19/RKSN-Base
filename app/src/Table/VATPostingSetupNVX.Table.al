@@ -1,7 +1,5 @@
 table 50008 VATPostingSetupNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(1; "VAT Bus. Posting Group"; Code[20])
@@ -26,5 +24,4 @@ table 50008 VATPostingSetupNVX
             Clustered = true;
         }
     }
-
 }

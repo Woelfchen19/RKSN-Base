@@ -60,10 +60,6 @@ codeunit 50018 Table81HookNVX
         WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugeordneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
     begin
-
-        // IF FixedAssetNVX.Get(Rec."Account No.") AND (FixedAssetNVX."Allocation Code" <> '') then
-        //     GenJnlLineNVX."Allocation Code" := FixedAssetNVX."Allocation Code";
-
         //Get or check Dim2
         if AllocationCode.Get(FixedAssetNVX."Allocation Code") then begin
 

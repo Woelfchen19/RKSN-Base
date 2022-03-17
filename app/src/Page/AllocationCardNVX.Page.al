@@ -2,7 +2,6 @@ page 50004 AllocationCardNVX
 {
     PageType = Card;
     SourceTable = AllocationHeaderNVX;
-    // UsageCategory = Administration;
     Caption = 'Allocation Card', comment = 'DEA="Verteilungskarte"';
     layout
     {

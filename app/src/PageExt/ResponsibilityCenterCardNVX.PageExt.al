@@ -17,7 +17,6 @@ pageextension 50014 ResponsibilityCenterCardNVX extends "Responsibility Center C
                     DimMgt.SaveDefaultDim(Database::"Responsibility Center", Code, 3, ShortcutDimCode3);
                 end;
             }
-
         }
     }
 

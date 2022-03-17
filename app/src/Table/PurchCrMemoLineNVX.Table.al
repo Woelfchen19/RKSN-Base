@@ -1,7 +1,5 @@
 table 50032 PurchCrMemoLineNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(3; "Document No."; Code[20])

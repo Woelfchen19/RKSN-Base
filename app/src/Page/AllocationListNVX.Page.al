@@ -9,6 +9,7 @@ page 50007 AllocationListNVX
     InsertAllowed = false;
     Editable = false;
     SourceTableView = sorting("Allocation Code", "Start Date");
+
     layout
     {
         area(Content)
@@ -34,24 +35,4 @@ page 50007 AllocationListNVX
 
         }
     }
-
-    // actions
-    // {
-    //     area(Processing)
-    //     {
-    //         action(NewAllocation)
-    //         {
-    //             ApplicationArea = All;
-
-    //             trigger OnAction();
-    //             var
-    //                 AllocationCard: Page AllocationCardNVX;
-    //             begin
-    //                 AllocationCard.SetRecord(Rec);
-    //                 AllocationCard.SetTableView(Rec);
-    //                 AllocationCard.RunModal();
-    //             end;
-    //         }
-    //     }
-    // }
 }

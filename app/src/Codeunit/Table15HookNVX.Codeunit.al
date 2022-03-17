@@ -1,8 +1,6 @@
 codeunit 50002 Table15HookNVX
 {
-
     [EventSubscriber(ObjectType::Table, Database::"G/L Account", 'OnAfterValidateEvent', 'Gen. Prod. Posting Group', false, false)]
-    //RKSN-36
     local procedure CheckInventoryValueZero(var Rec: Record "G/L Account")
     var
         GenPrdPstGrp: Record GenPrdPstGrpNVX;
@@ -30,5 +28,4 @@ codeunit 50002 Table15HookNVX
             GLAccountNVX.Modify();
         end;
     end;
-
 }

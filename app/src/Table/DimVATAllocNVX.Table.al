@@ -1,7 +1,9 @@
 table 50006 DimVATAllocNVX
 {
     DataClassification = CustomerContent;
-    
+    LookupPageID = PreviewDimDistrNVX;
+    DrilldownPageID = PreviewDimDistrNVX;
+
     fields
     {
         field(1; "Shortcut Dimension 1 Code"; Code[20])

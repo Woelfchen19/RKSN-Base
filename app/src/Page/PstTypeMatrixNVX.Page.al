@@ -673,11 +673,6 @@ page 50001 PstTypeMatrixNVX
         MATRIX_CaptionSet: array[32] of Text[80];
         MATRIX_CellDesc: array[32] of Text[100];
 
-    trigger OnOpenPage();
-    begin
-
-    end;
-
     trigger OnAfterGetRecord();
     begin
         Load();

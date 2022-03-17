@@ -1,7 +1,5 @@
 table 50028 PurchaseLineNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Document Type"; Option)
@@ -74,27 +72,6 @@ table 50028 PurchaseLineNVX
             Clustered = true;
         }
     }
-
-    // procedure UpdateVendAmount(ActPurchaseLine: record "Purchase Line");
-    // begin
-    //     "Vend. Amount" := round(ActPurchaseLine.Quantity * "Vend. Unit Price", 0.01);
-    //     Modify();
-    // end;
-
-    // procedure UpdatePurchaseLine(var ActPurchaseLine: record "Purchase Line")
-    // var
-    //     VATPostingSetup: record "VAT Posting Setup";
-    //     VatPercent: Decimal;
-    //     NetUnitPrice: Decimal;
-    // begin        
-    //     UpdateVendAmount(ActPurchaseLine);
-    //     if VATPostingSetup.get(actPurchaseline."VAT Bus. Posting Group", actPurchaseLine."VAT Prod. Posting Group") then;
-    //     if VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT" then
-    //         VatPercent := VATPostingSetup."VAT %";
-    //     NetUnitPrice := round("Vend. Unit Price" / (100 + VatPercent) * 100, 0.01);
-    //     actPurchaseLine.Validate("Direct Unit Cost", NetUnitPrice);
-    // end;
-
     procedure HandleVATDifferenceNVX(PurchaseHeader: Record "Purchase Header")
     var
         PurchaseLine: Record "Purchase Line";
@@ -117,7 +94,6 @@ table 50028 PurchaseLineNVX
             VATDifference := PurchaseHeader."Amount Including VAT" - PurchaseLineNVX."Vend. Amount";
 
             if VATDifference <> 0 then begin
-
                 Clear(PurchaseLine);
                 PurchaseLine.SetPurchHeader(PurchaseHeader);
                 PurchaseLine.CalcVATAmountLines(0, PurchaseHeader, PurchaseLine, TempVATAmountLine);
@@ -127,10 +103,7 @@ table 50028 PurchaseLineNVX
                 TempVATAmountLine.CheckVATDifference(PurchaseHeader."Currency Code", true);
                 TempVATAmountLine.Modify();
                 PurchaseLine.UpdateVATOnLines(0, PurchaseHeader, PurchaseLine, TempVATAmountLine);
-
             end;
-
         end;
-
     end;
 }

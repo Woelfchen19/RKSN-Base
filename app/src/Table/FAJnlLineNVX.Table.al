@@ -1,7 +1,5 @@
 table 50023 FAJnlLineNVX
 {
-    DataClassification = ToBeClassified;
-
     fields
     {
         field(1; "Journal Template Name"; Code[10])

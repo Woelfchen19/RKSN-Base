@@ -1,7 +1,7 @@
 pageextension 50007 DimValueListNVX extends "Dimension Value List"
 {
-
     Editable = false;
+
     layout
     {
         addlast(Control1)
@@ -39,7 +39,6 @@ pageextension 50007 DimValueListNVX extends "Dimension Value List"
                 Visible = IsOE;
                 Editable = false;
             }
-
         }
     }
 

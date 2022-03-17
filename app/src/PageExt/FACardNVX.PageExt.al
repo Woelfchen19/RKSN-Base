@@ -106,7 +106,6 @@ pageextension 50033 FACardNVX extends "Fixed Asset Card"
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean;
     begin
-
         if Rec."No." = '' then
             exit(true);
 

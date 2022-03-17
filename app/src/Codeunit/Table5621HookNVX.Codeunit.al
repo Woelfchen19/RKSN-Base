@@ -13,7 +13,6 @@ codeunit 50022 Table5621HookNVX
             FAJnlLineNVX.Delete(true);
     end;
 
-
     [EventSubscriber(ObjectType::Table, Database::"FA Journal Line", 'OnAfterInsertEvent', '', false, false)]
     local procedure InsertAllocationCodeInAccompaniedTable(var Rec: Record "FA Journal Line"; RunTrigger: Boolean)
     var
@@ -99,9 +98,6 @@ codeunit 50022 Table5621HookNVX
         WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
     begin
-        // IF ((Rec."Account Type" in [Rec."Account Type"::"Fixed Asset",Rec."Account Type"::"G/L Account"]) AND (Rec."Account No." <> '')) 
-        // OR ((Rec."Bal. Account Type" in [Rec."Bal. Account Type"::"Fixed Asset",Rec."Bal. Account Type"::"G/L Account"]) AND (Rec."Account No." <> '')) then 
-
         if FAJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") and (FAJnlLineNVX."Allocation Code" <> '') then begin
             AllocationCode.Get(FAJnlLineNVX."Allocation Code");
             if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then

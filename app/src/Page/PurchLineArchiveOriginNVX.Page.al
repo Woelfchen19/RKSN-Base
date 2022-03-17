@@ -80,7 +80,6 @@ page 50026 PurchLineArchiveOriginNVX
                     Caption = 'Business Case', comment = 'DEA="Geschäftsfall"';
                 }
             }
-
         }
     }
     var

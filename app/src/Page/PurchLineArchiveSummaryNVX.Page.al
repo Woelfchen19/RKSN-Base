@@ -20,10 +20,6 @@ page 50028 PurchLineArchiveSummaryNVX
                     ApplicationArea = All;
                     Caption = 'PC', comment = 'DEA="PC"';
                 }
-                // field("Shortcut Dimension 2 Name NVX"; "Shortcut Dimension 2 Name")
-                // {
-                //     ApplicationArea = All;
-                // }
                 field("Shortcut Dimension 1 Code NVX"; "Shortcut Dimension 1 Code")
                 {
                     ApplicationArea = All;
@@ -34,32 +30,12 @@ page 50028 PurchLineArchiveSummaryNVX
                 {
                     ApplicationArea = All;
                     Caption = 'Sparte', comment = 'DEA="Sparte"';
-                    // trigger OnDrillDown();
-                    // var
-                    //     GLSetup: Record "General Ledger Setup";
-                    //     DimValueRec: Record "Dimension Value";
-                    //     DimValuesPage: Page "Dimension Values";
-                    // begin
-                    //     GLSetup.Get();
-                    //     DimValueRec.SetRange("Dimension Code",GLSetup."Shortcut Dimension 3 Code");
-                    //     DimValuesPage.SetRecord(DimValueRec);
-                    //     DimValuesPage.SetTableView(DimValueRec);
-                    //     DimValuesPage.Run();
-                    // end;
                 }
-                // field("Shortcut Dimension 3 Name NVX"; "Shortcut Dimension 3 Name")
-                // {
-                //     ApplicationArea = All;
-                // }
                 field("Shortcut Dimension 4 Code NVX"; "Shortcut Dimension 4 Code")
                 {
                     ApplicationArea = All;
                     Caption = 'Project', comment = 'DEA="Projekt"';
                 }
-                // field("Shortcut Dimension 4 Name NVX"; "Shortcut Dimension 4 Name")
-                // {
-                //     ApplicationArea = All;
-                // }       
                 field("Shortcut Dimension 1 Name NVX"; "Shortcut Dimension 1 Name")
                 {
                     ApplicationArea = All;
@@ -112,10 +88,10 @@ page 50028 PurchLineArchiveSummaryNVX
                 {
                     ApplicationArea = All;
                 }
-
             }
         }
     }
+
     trigger OnOpenPage();
     begin
         Rec.SetRange("Posting Type", Rec."Posting Type"::Distributed);

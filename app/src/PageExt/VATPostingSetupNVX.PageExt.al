@@ -53,7 +53,7 @@ pageextension 50009 VATPostingSetupNVX extends "VAT Posting Setup"
         end;
         exit(true);
     end;
-
+    
     var
         VATPostingSetupNVX: Record VATPostingSetupNVX;
         PurchaseVATasExpense: Boolean;

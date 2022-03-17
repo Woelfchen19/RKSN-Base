@@ -1,7 +1,5 @@
 table 50031 PurchInvLineNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(3; "Document No."; Code[20])

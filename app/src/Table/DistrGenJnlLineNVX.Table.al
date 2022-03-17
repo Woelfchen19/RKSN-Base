@@ -3,7 +3,8 @@ table 50018 DistrGenJnlLineNVX
     Caption = 'Gen. Journal Line', comment = 'DEA="Fibu Buch.-Blattzeile"';
     Permissions = tabledata "Sales Invoice Header" = r,
                   tabledata "Data Exch. Field" = rimd;
-
+    LookupPageID = PreviewDimDistrNVX;
+    DrilldownPageID = PreviewDimDistrNVX;
     fields
     {
         field(1; "Journal Template Name"; Code[10])
@@ -1241,6 +1242,7 @@ table 50018 DistrGenJnlLineNVX
         {
             Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Geschäftsbuchungsgruppe Beschreibung"';
             FieldClass = FlowField;
+            Editable = false;
             CalcFormula = lookup("Gen. Business Posting Group".Description where(Code = field("Gen. Bus. Posting Group")));
         }
         field(50015; IsRetrospectPosting; Boolean)
@@ -1270,120 +1272,5 @@ table 50018 DistrGenJnlLineNVX
         {
             Clustered = true;
         }
-        // key(Key2; "Journal Template Name", "Journal Batch Name", "Posting Date", "Document No.")
-        // {
-        //     MaintainSQLIndex = false;
-        // }
-        // key(Key3; "Account Type", "Account No.", "Applies-to Doc. Type", "Applies-to Doc. No.")
-        // {
-        // }
-        // key(Key4; "Document No.")
-        // {
-        // }
-        // key(Key5; "Journal Template Name", "Journal Batch Name", "Account Type", "Document Type")
-        // {
-        //     SumIndexFields = "Amount (LCY)";
-        // }
-        // key(Key6; "Incoming Document Entry No.")
-        // {
-        // }
-        // key(Key7; "Document No.", "Posting Date", "Source Code")
-        // {
-        //     MaintainSQLIndex = false;
-        //     SumIndexFields = "VAT Amount (LCY)", "Bal. VAT Amount (LCY)";
-        // }
-        // key(Key8; "Data Exch. Entry No.")
-        // {
-        // }
-        // key(Key9; "Journal Batch Name", "Journal Template Name")
-        // {
-        //     SumIndexFields = "Balance (LCY)";
-        // }
     }
-
-    fieldgroups
-    {
-    }
-
-    // procedure RenumberDocumentNo()
-    // var
-    //     GenJnlLine2: Record "Gen. Journal Line";
-    //     GenJnlBatch: Record "Gen. Journal Batch";
-    //     NoSeriesMgt: Codeunit NoSeriesManagement;
-    //     DocNo: Code[20];
-    //     FirstDocNo: Code[20];
-    //     FirstTempDocNo: Code[20];
-    //     LastTempDocNo: Code[20];
-
-    // begin
-    //     TestField("Check Printed", false);
-
-    //     GenJnlBatch.Get("Journal Template Name", "Journal Batch Name");
-    //     if GenJnlBatch."No. Series" = '' then
-    //         exit;
-    //     if GetFilter("Document No.") <> '' then
-    //         Error(DocNoFilterErr);
-    //     Clear(NoSeriesMgt);
-    //     FirstDocNo := NoSeriesMgt.TryGetNextNo(GenJnlBatch."No. Series", "Posting Date");
-    //     FirstTempDocNo := 'RENUMBERED-000000001';
-    //     // step1 - renumber to non-existing document number
-    //     DocNo := FirstTempDocNo;
-    //     GenJnlLine2 := Rec;
-    //     GenJnlLine2.Reset;
-    //     RenumberDocNoOnLines(DocNo, GenJnlLine2);
-    //     LastTempDocNo := DocNo;
-
-    //     // step2 - renumber to real document number (within Filter)
-    //     DocNo := FirstDocNo;
-    //     GenJnlLine2.CopyFilters(Rec);
-    //     GenJnlLine2 := Rec;
-    //     RenumberDocNoOnLines(DocNo, GenJnlLine2);
-
-    //     // step3 - renumber to real document number (outside filter)
-    //     DocNo := IncStr(DocNo);
-    //     GenJnlLine2.Reset;
-    //     GenJnlLine2.SetRange("Document No.", FirstTempDocNo, LastTempDocNo);
-    //     RenumberDocNoOnLines(DocNo, GenJnlLine2);
-
-    //     Get("Journal Template Name", "Journal Batch Name", "Line No.");
-    // end;
-
-    // local procedure RenumberDocNoOnLines(var DocNo: Code[20]; var GenJnlLine2: Record "Gen. Journal Line")
-    // var
-    //     LastGenJnlLine: Record "Gen. Journal Line";
-    //     GenJnlLine3: Record "Gen. Journal Line";
-    //     PrevDocNo: Code[20];
-    //     FirstDocNo: Code[20];
-    //     First: Boolean;
-    // begin
-    //     FirstDocNo := DocNo;
-    //     with GenJnlLine2 do begin
-    //         SetCurrentKey("Journal Template Name", "Journal Batch Name", "Document No.");
-    //         SetRange("Journal Template Name", "Journal Template Name");
-    //         SetRange("Journal Batch Name", "Journal Batch Name");
-    //         LastGenJnlLine.Init;
-    //         First := true;
-    //         if FindSet then begin
-    //             repeat
-    //                 if "Document No." = FirstDocNo then
-    //                     exit;
-    //                 if not First and (("Document No." <> PrevDocNo) or ("Bal. Account No." <> '')) and not LastGenJnlLine.EmptyLine then
-    //                     DocNo := IncStr(DocNo);
-    //                 PrevDocNo := "Document No.";
-    //                 if "Document No." <> '' then begin
-    //                     if "Applies-to ID" = "Document No." then
-    //                         RenumberAppliesToID(GenJnlLine2, "Document No.", DocNo);
-    //                     RenumberAppliesToDocNo(GenJnlLine2, "Document No.", DocNo);
-    //                 end;
-    //                 GenJnlLine3.Get("Journal Template Name", "Journal Batch Name", "Line No.");
-    //                 CheckJobQueueStatus(GenJnlLine3);
-    //                 GenJnlLine3."Document No." := DocNo;
-    //                 GenJnlLine3.Modify();
-    //                 First := false;
-    //                 LastGenJnlLine := GenJnlLine2
-    //             until Next = 0
-    //         end
-    //     end
-    // end;
 }
-

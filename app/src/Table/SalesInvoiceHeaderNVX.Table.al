@@ -1,13 +1,11 @@
 table 50041 SalesInvoiceHeaderNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(3; "No."; Code[20])
         {
             DataClassification = CustomerContent;
-          Caption = 'No.', comment = 'DEA="Nr."';
+            Caption = 'No.', comment = 'DEA="Nr."';
         }
         field(10; "Allocation Code"; Code[10])
         {
@@ -37,7 +35,6 @@ table 50041 SalesInvoiceHeaderNVX
             DataClassification = CustomerContent;
             Caption = 'Transaction No.', comment = 'DEA="Transaktionsnummer"';
         }
-
     }
 
     keys

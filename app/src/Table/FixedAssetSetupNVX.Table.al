@@ -1,7 +1,5 @@
 table 50043 FixedAssetSetupNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Primary Key"; Code[10])

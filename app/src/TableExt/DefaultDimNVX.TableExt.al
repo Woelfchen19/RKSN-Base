@@ -3,7 +3,6 @@ tableextension 50001 DefaultDimNVX extends "Default Dimension"
     procedure GetDefaultDimNVX(Type: Integer; No: Code[20]; DimNo: Integer): Code[20];
     var
         GLSetup: Record "General Ledger Setup";
-    // DefaultDim: Record "Default Dimension";
     begin
         Reset();
         GLSetup.Get();

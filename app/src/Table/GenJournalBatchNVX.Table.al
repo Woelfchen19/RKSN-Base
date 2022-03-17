@@ -1,7 +1,5 @@
 table 50027 GenJournalBatchNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Journal Template Name"; Code[10])

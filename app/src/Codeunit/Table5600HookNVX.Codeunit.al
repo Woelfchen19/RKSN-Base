@@ -15,7 +15,6 @@ codeunit 50015 Table5600HookNVX
             AllocationCode.Get(FixedAssetNVX."Allocation Code");
             if Rec."Global Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                 Error(WrongDimErr);
-
         end;
     end;
 }

@@ -80,9 +80,9 @@ page 50033 SalesLineArchiveOriginNVX
                     Caption = 'Business Case', comment = 'DEA="Geschäftsfall"';
                 }
             }
-
         }
     }
+
     var
         BusinessCase: Boolean;
         BalAccountTypeLbl: Label 'Customer', comment = 'DEA="Debitor"';

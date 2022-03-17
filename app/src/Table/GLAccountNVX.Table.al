@@ -1,6 +1,5 @@
 table 50014 GLAccountNVX
 {
-    DataClassification = CustomerContent;
     fields
     {
         field(1; "G/L Account No."; Code[20])

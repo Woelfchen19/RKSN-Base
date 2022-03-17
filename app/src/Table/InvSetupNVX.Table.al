@@ -10,13 +10,11 @@ table 50002 InvSetupNVX
             Caption = 'Primary Key', comment = 'DEA="Primärschlüssel"';
         }
         field(10; "Allow Neg. Inv. Stock Value"; Boolean)
-        //RKSN-38
         {
             DataClassification = CustomerContent;
             Caption = 'Allow Negative Inventory for Items with Stock Value', comment = 'DEA="Zu lagerbewerteten Artikeln negative Lagerbestände zulassen"';
         }
         field(11; "Allow Neg. Inv. no Stock Value"; Boolean)
-        //RKSN-38
         {
             DataClassification = CustomerContent;
             Caption = 'Allow Negative Inventory for Items without Stock Value', comment = 'DEA="Zu NICHT lagerbewerteten Artikeln negative Lagerbestände zulassen"';
@@ -45,7 +43,6 @@ table 50002 InvSetupNVX
             Caption = 'Purchase Gen. Bus. Posting Group Fixed', comment = 'DEA="Zukauf Steuerschlüssel FIX"';
             TableRelation = "Gen. Business Posting Group".Code;
         }
-
         field(100; "Composition Customer"; Code[20])
         {
             DataClassification = CustomerContent;

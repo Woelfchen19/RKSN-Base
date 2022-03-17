@@ -4,7 +4,7 @@ table 50012 AllocationHeaderNVX
     Caption = 'Allocation Header', comment = 'DEA="Verteilungskopf"';
     DataCaptionFields = "Allocation Code", "Start Date";
     LookupPageId = AllocationListNVX;
-    DrilldownPageId = AllocationListNVX;
+    DrillDownPageId = AllocationListNVX;
 
     fields
     {

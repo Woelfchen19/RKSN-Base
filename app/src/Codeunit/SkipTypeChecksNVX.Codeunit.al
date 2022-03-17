@@ -1,8 +1,6 @@
 codeunit 50011 SkipTypeChecksNVX
 {
-
     //Sales
-
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Undo Sales Shipment Line", 'OnBeforeOnRun', '', false, false)]
     local procedure SetSkipTypeCheckSalesShipment(var SkipTypeCheck: Boolean)
     begin
@@ -33,10 +31,7 @@ codeunit 50011 SkipTypeChecksNVX
             IsHandled := true;
     end;
 
-
-
     //Purchase
-
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Undo Purchase Receipt Line", 'OnBeforeOnRun', '', false, false)]
     local procedure SetSkipTypeCheckPurchaseReceipt(var SkipTypeCheck: Boolean)
     begin

@@ -42,16 +42,16 @@ table 50010 AllocationCodeNVX
     }
 
     trigger OnDelete();
+    var
+        AllocCodeRespCenter: Record AllocCodeRespCenterNVX;
+        AllocationHeader: Record AllocationHeaderNVX;
     begin
-        //TODO OnDeleteTrigger 
+        AllocCodeRespCenter.Reset();
+        AllocCodeRespCenter.SetRange("Allocation Code", Code);
+        AllocCodeRespCenter.DeleteAll(true);
 
-        // AllocCodeRespCenter.RESET;
-        // AllocCodeRespCenter.SETRANGE("Allocation Code", Code);
-        // AllocCodeRespCenter.DELETEALL;
-
-        // AllocHistory.RESET;
-        // AllocHistory.SETRANGE("Allocation Code",Code);
-        // AllocHistory.DELETEALL;
-
+        AllocationHeader.Reset();
+        AllocationHeader.SetRange("Allocation Code", Code);
+        AllocationHeader.DeleteAll(true);
     end;
 }

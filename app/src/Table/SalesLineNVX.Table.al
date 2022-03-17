@@ -1,7 +1,5 @@
 table 50036 SalesLineNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Document Type"; Option)
@@ -81,32 +79,6 @@ table 50036 SalesLineNVX
         }
     }
 
-    // procedure UpdateCustAmount(ActSalesLine: record "Sales Line");
-    // begin
-    //     "Cust. Amount" := round(ActSalesLine.Quantity * "Cust. Unit Price", 0.01);
-    //     Modify();
-    // end;
-
-    // procedure UpdateSalesLine(var ActSalesLine: record "Sales Line")
-    // var
-    //     VATPostingSetup: record "VAT Posting Setup";
-    //     SalesHeader: record "Sales Header";
-    //     VatPercent: Decimal;
-    //     NetUnitPrice: Decimal;
-    // begin
-    //     if not SalesHeader.get(ActSalesLine."Document Type",ActSalesLine."Document No.") then
-    //         exit;
-
-    //     UpdateCustAmount(ActSalesLine);
-    //     if not SalesHeader."Prices Including VAT" then begin 
-    //         if VATPostingSetup.get(actsalesline."VAT Bus. Posting Group", actSalesLine."VAT Prod. Posting Group") then;
-    //         if VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT" then
-    //             VatPercent := VATPostingSetup."VAT %";
-    //     end;
-    //     NetUnitPrice := round("Cust. Unit Price" / (100 + VatPercent) * 100, 0.01);
-    //     actSalesLine.Validate("Unit Price", NetUnitPrice);
-    // end;
-
     procedure HandleVATDifferenceNVX(SalesHeader: Record "Sales Header")
     var
         SalesLine: Record "Sales Line";
@@ -128,7 +100,6 @@ table 50036 SalesLineNVX
         VATDifference := SalesHeader."Amount Including VAT" - SalesLineNVX."Cust. Amount";
 
         if VATDifference <> 0 then begin
-
             Clear(SalesLine);
             SalesLine.SetSalesHeader(SalesHeader);
             SalesLine.CalcVATAmountLines(0, SalesHeader, SalesLine, TempVATAmountLine);
@@ -138,8 +109,6 @@ table 50036 SalesLineNVX
             TempVATAmountLine.CheckVATDifference(SalesHeader."Currency Code", true);
             TempVATAmountLine.Modify();
             SalesLine.UpdateVATOnLines(0, SalesHeader, SalesLine, TempVATAmountLine);
-
         end;
-
     end;
 }

@@ -28,7 +28,6 @@ pageextension 50008 SalesJournalNVX extends "Sales Journal"
                             GenJnlLineNVX.Modify();
                         end;
 
-
                     if AllocationCodeVar <> '' then
                         if Rec."Shortcut Dimension 2 Code" = '' then begin
                             AllocationCode.Get(AllocationCodeVar);

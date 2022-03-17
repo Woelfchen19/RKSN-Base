@@ -5,7 +5,6 @@ page 50003 AllocationCodesNVX
     Caption = 'Allocation Codes', comment = 'DEA="Verteilungscodes"';
     UsageCategory = Administration;
 
-
     layout
     {
         area(Content)
@@ -28,11 +27,8 @@ page 50003 AllocationCodesNVX
                 {
                     ApplicationArea = All;
                 }
-
-
             }
         }
-
     }
 
     actions
@@ -57,5 +53,4 @@ page 50003 AllocationCodesNVX
             }
         }
     }
-
 }

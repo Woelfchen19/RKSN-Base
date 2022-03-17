@@ -1,7 +1,5 @@
 table 50016 GLEntryNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Entry No."; Integer)

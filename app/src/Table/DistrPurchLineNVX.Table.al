@@ -1,9 +1,8 @@
 table 50029 DistrPurchLineNVX
 {
     Caption = 'Purchase Line', comment = 'DEA="Einkaufszeile"';
-    DrillDownPageId = "Purchase Lines";
-    LookupPageId = "Purchase Lines";
-
+    LookupPageID = DimVATAllocNVX;
+    DrilldownPageID = DimVATAllocNVX;
     fields
     {
         field(1; "Document Type"; Option)
@@ -41,7 +40,6 @@ table 50029 DistrPurchLineNVX
         field(6; "No."; Code[20])
         {
             DataClassification = CustomerContent;
-            // CaptionClass = GetCaptionClass(FieldNo("No."));
             Caption = 'No.', comment = 'DEA="Nr."';
         }
         field(7; "Location Code"; Code[10])
@@ -287,14 +285,6 @@ table 50029 DistrPurchLineNVX
             Caption = 'Receipt Line No.', comment = 'DEA="Wareneingangszeilennr."';
             Editable = false;
         }
-        // field(65; "Order No."; Code[20])
-        // {
-        //     Caption = 'Order No.', comment = 'DEA=""';
-        // }
-        // field(66; "Order Line No."; Integer)
-        // {
-        //     Caption = 'Order Line No.', comment = 'DEA=""';
-        // }
         field(67; "Profit %"; Decimal)
         {
             DataClassification = CustomerContent;
@@ -485,8 +475,6 @@ table 50029 DistrPurchLineNVX
             Caption = 'Blanket Order Line No.', comment = 'DEA="Rahmenbestellungszeilennr."';
             TableRelation = "Purchase Line"."Line No." where("Document Type" = const("Blanket Order"),
                                                               "Document No." = field("Blanket Order No."));
-            //This property is currently not supported
-            //TestTableRelation = false;
         }
         field(99; "VAT Base Amount"; Decimal)
         {
@@ -567,7 +555,6 @@ table 50029 DistrPurchLineNVX
             DataClassification = CustomerContent;
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            // CaptionClass = GetCaptionClass(FieldNo("Prepmt. Line Amount"));
             Caption = 'Prepmt. Line Amount', comment = 'DEA="Vorauszahlungszeilenbetrag"';
             MinValue = 0;
         }
@@ -576,7 +563,6 @@ table 50029 DistrPurchLineNVX
             DataClassification = CustomerContent;
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            // CaptionClass = GetCaptionClass(FieldNo("Prepmt. Amt. Inv."));
             Caption = 'Prepmt. Amt. Inv.', comment = 'DEA="Fakt. Vorauszahlungsbetrag"';
             Editable = false;
         }
@@ -728,12 +714,6 @@ table 50029 DistrPurchLineNVX
             DataClassification = CustomerContent;
             Caption = 'A. Rcd. Not Inv. Ex. VAT (LCY)', comment = 'DEA="Nicht fakt. Lieferbetrag ohne MwSt. (MW)"';
         }
-        // field(145; "Pmt. Discount Amount"; Decimal)
-        // {
-        //     AutoFormatExpression = "Currency Code";
-        //     AutoFormatType = 1;
-        //     Caption = 'Pmt. Discount Amount', comment = 'DEA="Pmt. Discount Amount"';
-        // }
         field(480; "Dimension Set ID"; Integer)
         {
             DataClassification = CustomerContent;
@@ -900,8 +880,6 @@ table 50029 DistrPurchLineNVX
             Caption = 'Prod. Order No.', comment = 'DEA="FA-Nr."';
             Editable = false;
             TableRelation = "Production Order"."No." where(Status = const(Released));
-            //This property is currently not supported
-            //TestTableRelation = false;
             ValidateTableRelation = false;
         }
         field(5402; "Variant Code"; Code[10])
@@ -1109,14 +1087,6 @@ table 50029 DistrPurchLineNVX
             Editable = false;
             TableRelation = Purchasing;
         }
-        // field(5712; "Product Group Code"; Code[10])
-        // {
-        //     Caption = 'Product Group Code', comment = 'DEA="Produktgruppencode"';
-        //     ObsoleteReason = 'Product Groups became first level children of Item Categories.';
-        //     ObsoleteState = Obsolete;
-        //     TableRelation = "Product Group".Code WHERE("Item Category Code" = FIELD("Item Category Code"));
-        //     ValidateTableRelation = false;
-        // }
         field(5713; "Special Order"; Boolean)
         {
             DataClassification = CustomerContent;
@@ -1305,23 +1275,10 @@ table 50029 DistrPurchLineNVX
             DataClassification = CustomerContent;
             Caption = 'Copied From Posted Doc.', comment = 'DEA="Copied From Posted Doc."';
         }
-        // field(7010; "Attached Doc Count"; Integer)
-        // {
-        //     BlankNumbers = DontBlank;
-        //     CalcFormula = Count ("Document Attachment" WHERE("Table ID" = CONST(39),
-        //                                                      "No." = FIELD("Document No."),
-        //                                                      "Document Type" = FIELD("Document Type"),
-        //                                                      "Line No." = FIELD("Line No.")));
-        //     Caption = 'Attached Doc Count';
-        //     FieldClass = FlowField;
-        //     InitValue = 0;
-        // }
         field(5005396; "Order No."; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Order No.', comment = 'DEA="Auftragsnr."';
-            // ObsoleteReason = 'Merged to W1';
-            // ObsoleteState = Pending;
         }
         field(5005397; "Order Line No."; Integer)
         {
@@ -1457,7 +1414,7 @@ table 50029 DistrPurchLineNVX
         field(50050; "Origin Line No."; Integer)
         {
             DataClassification = CustomerContent;
-          Caption = 'EnglishText', comment = 'DEA=""';
+            Caption = 'EnglishText', comment = 'DEA=""';
         }
     }
 

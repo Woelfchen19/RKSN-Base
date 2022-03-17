@@ -1,7 +1,5 @@
 table 50039 SalesHeaderNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Document Type"; Option)
@@ -31,13 +29,6 @@ table 50039 SalesHeaderNVX
             Caption = 'Composition Section', comment = 'DEA="Abfassung Sparte"';
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
         }
-        // field(22; "Shortcut Dimension 6 Code"; Code[20])
-        // {
-        //     DataClassification = CustomerContent;
-        //     Caption = 'Shortcut Dimension 6 Code', comment = 'DEA="Shortcutdimensionscode 6"';
-        //     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(6));       
-        //     CaptionClass = '1337,6'; //= Dim Name without "Code" or "Filter"
-        // }
         field(25; "Comp Gen. Bus. Pst Grp WES"; Code[20])
         {
             DataClassification = CustomerContent;
