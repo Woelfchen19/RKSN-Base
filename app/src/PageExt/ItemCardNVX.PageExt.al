@@ -28,7 +28,22 @@ pageextension 50001 ItemCardNVX extends "Item Card"
                 TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
                 CaptionClass = '1,2,3';
                 trigger OnValidate();
+                var
+                    InvSetupNVX: Record InvSetupNVX;
+                    InvValueErr: Label 'This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., ',
+                                            comment = 'DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"';
+                    InvValueZeroErr: Label 'This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.',
+                                comment = 'DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!"';
                 begin
+                    InvSetupNVX.Get();
+                    case Rec."Inventory Value Zero" of
+                        true:
+                            if GlobalDimension3Code = InvSetupNVX."Inventory Section" then
+                                Error(InvValueZeroErr);
+                        false:
+                            if GlobalDimension3Code <> InvSetupNVX."Inventory Section" then
+                                Error(InvValueErr);
+                    end; //of case
                     DimMgt.SaveDefaultDim(Database::Item, Rec."No.", 3, GlobalDimension3Code);
                 end;
             }

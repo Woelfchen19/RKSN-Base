@@ -10454,6 +10454,18 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table27HookNVX - Method CheckforItemLedgerEntries - NamedType NoUserRightErr</note>
           <target>Es gibt zum Artikel bereits gebuchte Posten! Sie haben keine Rechte, um nachträglich die zugeordnete Lagerbuchungsgruppe zu ändern.</target>
         </trans-unit>
+        <trans-unit id="Codeunit 2614021276 - Method 3461186517 - NamedType 1602948993" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., </source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table27HookNVX - Method CheckItemDim - NamedType InvValueErr</note>
+          <target>Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 2614021276 - Method 3461186517 - NamedType 1496169471" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table27HookNVX - Method CheckItemDim - NamedType InvValueZeroErr</note>
+          <target>Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!</target>
+        </trans-unit>
         <trans-unit id="Codeunit 2614021276 - Method 2764824227 - NamedType 559118403" size-unit="char" translate="yes" xml:space="preserve">
           <source>This Product Posting Group is blocked for use on Items!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Es ist nicht möglich, diese Produktbuchungsgruppe zuzuordnen, da diese nicht zum Datawarehouse gehört!"</note>
@@ -12835,6 +12847,18 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemCardNVX - Control GlobalDimension3CodeNVX - Property Caption</note>
           <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4221297843 - Control 2345306519 - Method 2126772001 - NamedType 1602948993" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 4221297843">
+          <source>This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., </source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemCardNVX - Control GlobalDimension3CodeNVX - Method OnValidate - NamedType InvValueErr</note>
+          <target>Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4221297843 - Control 2345306519 - Method 2126772001 - NamedType 1496169471" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 4221297843">
+          <source>This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemCardNVX - Control GlobalDimension3CodeNVX - Method OnValidate - NamedType InvValueZeroErr</note>
+          <target>Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!</target>
         </trans-unit>
         <trans-unit id="PageExtension 4221297843 - Control 3654491448 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Activation</source>

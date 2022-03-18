@@ -150,4 +150,25 @@ codeunit 50000 Table27HookNVX
             DimensionValue.Modify(true);
         end;
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterValidateEvent', 'Global Dimension 1 Code', false, false)]
+    local procedure CheckItemDim(var Rec: Record Item)
+    
+    var
+        InvSetupNVX: Record InvSetupNVX;
+        InvValueErr: Label 'This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., ',
+                                comment = 'DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"';
+        InvValueZeroErr: Label 'This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.',
+                                comment = 'DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!"';
+    begin
+        InvSetupNVX.Get();
+        case Rec."Inventory Value Zero" of
+            true:
+                if Rec."Global Dimension 1 Code" = InvSetupNVX."Inventory Cost Center" then
+                    Error(InvValueZeroErr);
+            false:
+                if Rec."Global Dimension 1 Code" <> InvSetupNVX."Inventory Cost Center" then
+                    Error(InvValueErr);
+        end; //of case
+    end;
 }
