@@ -5,7 +5,6 @@ pageextension 50002 UserSetupNVX extends "User Setup"
         addlast(Control1)
         {
             field("Allow Item Prod.Post.Group Change NVX"; UserSetupNVX."Allow Item Prod.Pst.Grp Change")
-            //RKSN-37
             {
                 ApplicationArea = All;
                 Caption = 'Allow Item Prod.Post.Group Change', comment = 'DEA="Änderung Prod.Bu.Grp. Artikelkarte"';
