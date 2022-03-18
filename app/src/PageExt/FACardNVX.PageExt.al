@@ -22,7 +22,7 @@ pageextension 50033 FACardNVX extends "Fixed Asset Card"
                     DimMgt: Codeunit DimensionManagement;
                 begin
                     DimMgt.ValidateDimValueCode(3, ShortcutDimCode3);
-                    DimMgt.SaveDefaultDim(Database::"Responsibility Center", Rec."No.", 3, ShortcutDimCode3);
+                    DimMgt.SaveDefaultDim(Database::"Fixed Asset", Rec."No.", 3, ShortcutDimCode3);
                 end;
             }
             field("Allocation CodeNVX"; FixedAssetNVX."Allocation Code")
@@ -33,7 +33,6 @@ pageextension 50033 FACardNVX extends "Fixed Asset Card"
                 TableRelation = AllocationCodeNVX.Code;
                 trigger OnValidate();
                 var
-                    // FixedAsset: Record "Fixed Asset";
                     AllocationCode: Record AllocationCodeNVX;
                     OverwriteDim2Qst: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Do you want to overwrite the Profitcenter?',
                         comment = 'DEA=Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Wollen Sie das Profitcenter mit dem Wert aus dem Verteilungscode überschreiben?"';
@@ -83,7 +82,7 @@ pageextension 50033 FACardNVX extends "Fixed Asset Card"
         PageEditable := CurrPage.Editable;
 
         GLSetup.Get();
-        DefaultDim.SetRange("Table ID", Database::"Responsibility Center");
+        DefaultDim.SetRange("Table ID", Database::"Fixed Asset");
         DefaultDim.SetRange("No.", Rec."No.");
         DefaultDim.SetRange("Dimension Code", GLSetup."Shortcut Dimension 3 Code");
         if DefaultDim.FindFirst() then
