@@ -1,7 +1,7 @@
 trigger: 
   branches:
     include:
-    - test
+    - master
   paths:
    include:
      - app/*
