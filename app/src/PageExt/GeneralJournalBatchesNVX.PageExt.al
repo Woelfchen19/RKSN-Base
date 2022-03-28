@@ -1,4 +1,4 @@
-pageextension 50040 GeneralJournalBatchesNVX extends "General Journal Batches"
+pageextension 50034 GeneralJournalBatchesNVX extends "General Journal Batches"
 {
     layout
     {

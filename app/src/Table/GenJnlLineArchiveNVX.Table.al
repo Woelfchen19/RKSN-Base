@@ -1,4 +1,4 @@
-table 50019 GenJnlLineArchiveNVX
+table 50018 GenJnlLineArchiveNVX
 {
     Caption = 'Gen. Journal Line Archive', comment = 'DEA="Sicherung dim.Verteilungen Modul Fibu"';
     Permissions = tabledata "Sales Invoice Header" = r,

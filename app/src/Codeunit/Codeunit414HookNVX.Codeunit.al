@@ -1,4 +1,4 @@
-codeunit 50016 Codeunit414HookNVX
+codeunit 50001 Codeunit414HookNVX
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Release Sales Document", 'OnAfterReleaseSalesDoc', '', true, true)]
     local procedure HandleVATNVX(var SalesHeader: Record "Sales Header"; PreviewMode: Boolean; LinesWereModified: Boolean)

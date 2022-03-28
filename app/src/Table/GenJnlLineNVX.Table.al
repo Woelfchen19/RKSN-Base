@@ -1,4 +1,4 @@
-table 50020 GenJnlLineNVX
+table 50019 GenJnlLineNVX
 {
     fields
     {

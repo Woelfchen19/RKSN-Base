@@ -1,4 +1,4 @@
-pageextension 50011 VendCardNVX extends "Vendor Card"
+pageextension 50050 VendCardNVX extends "Vendor Card"
 {
     layout
     {

@@ -1,4 +1,4 @@
-codeunit 50007 Table36HookNVX
+codeunit 50015 Table36HookNVX
 {
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnBeforeDeleteEvent', '', false, false)]
     local procedure DeleteRecordInAccompaniedTable(Rec: Record "Sales Header")

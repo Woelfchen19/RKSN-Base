@@ -1,4 +1,4 @@
-table 50011 AllocCodeRespCenterNVX
+table 50003 AllocCodeRespCenterNVX
 {
     DataClassification = CustomerContent;
     DrillDownPageId = AllocCodeRespCenterNVX;

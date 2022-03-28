@@ -1,4 +1,4 @@
-codeunit 50013 Codeunit6620HookNVX
+codeunit 50004 Codeunit6620HookNVX
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Copy Document Mgt.", 'OnCopySalesDocWithHeader', '', false, false)]
     local procedure CopyDocInfoSales(FromDocType: Option; FromDocNo: Code[20]; var ToSalesHeader: Record "Sales Header")

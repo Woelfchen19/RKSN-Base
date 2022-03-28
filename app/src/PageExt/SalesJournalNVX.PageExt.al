@@ -1,4 +1,4 @@
-pageextension 50008 SalesJournalNVX extends "Sales Journal"
+pageextension 50046 SalesJournalNVX extends "Sales Journal"
 {
     layout
     {

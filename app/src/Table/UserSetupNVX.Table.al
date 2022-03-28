@@ -1,4 +1,4 @@
-table 50001 UserSetupNVX
+table 50041 UserSetupNVX
 {
     fields
     {

@@ -1,4 +1,4 @@
-pageextension 50033 FACardNVX extends "Fixed Asset Card"
+pageextension 50028 FACardNVX extends "Fixed Asset Card"
 {
     layout
     {
@@ -91,10 +91,7 @@ pageextension 50033 FACardNVX extends "Fixed Asset Card"
             Clear(ShortcutDimCode3);
     end;
 
-    trigger OnOpenPage();
-    begin
-        PageEditable := CurrPage.Editable;
-    end;
+
 
     trigger OnDeleteRecord(): Boolean;
     begin

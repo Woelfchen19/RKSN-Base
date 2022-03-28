@@ -1,4 +1,4 @@
-page 50001 PstTypeMatrixNVX
+page 50021 PstTypeMatrixNVX
 {
     PageType = ListPart;
     SourceTable = "Gen. Business Posting Group";

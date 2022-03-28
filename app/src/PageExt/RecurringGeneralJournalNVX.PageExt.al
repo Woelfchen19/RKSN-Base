@@ -1,4 +1,4 @@
-pageextension 50041 RecurringGeneralJournalNVX extends "Recurring General Journal"
+pageextension 50044 RecurringGeneralJournalNVX extends "Recurring General Journal"
 {
     layout
     {

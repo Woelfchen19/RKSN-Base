@@ -1,4 +1,4 @@
-table 50037 SalesInvoiceLineNVX
+table 50038 SalesInvoiceLineNVX
 {
     fields
     {

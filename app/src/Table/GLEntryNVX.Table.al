@@ -1,4 +1,4 @@
-table 50016 GLEntryNVX
+table 50023 GLEntryNVX
 {
     fields
     {

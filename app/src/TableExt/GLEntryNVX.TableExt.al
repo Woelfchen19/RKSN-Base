@@ -1,4 +1,4 @@
-tableextension 50000 GLEntryNVX extends "G/L Entry"
+tableextension 50002 GLEntryNVX extends "G/L Entry"
 {
     fields
     {

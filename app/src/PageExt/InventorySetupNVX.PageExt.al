@@ -1,4 +1,4 @@
-pageextension 50004 InventorySetupNVX extends "Inventory Setup"
+pageextension 50041 InventorySetupNVX extends "Inventory Setup"
 {
     layout
     {

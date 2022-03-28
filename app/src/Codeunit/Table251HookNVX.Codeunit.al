@@ -1,4 +1,4 @@
-codeunit 50004 Table251HookNVX
+codeunit 50011 Table251HookNVX
 {
     [EventSubscriber(ObjectType::Table, Database::"Gen. Product Posting Group", 'OnBeforeDeleteEvent', '', false, false)]
     local procedure DeleteRecordInAccompaniedTable(var Rec: Record "Gen. Product Posting Group")

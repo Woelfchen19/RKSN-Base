@@ -1,4 +1,4 @@
-page 50004 AllocationCardNVX
+page 50000 AllocationCardNVX
 {
     PageType = Card;
     SourceTable = AllocationHeaderNVX;

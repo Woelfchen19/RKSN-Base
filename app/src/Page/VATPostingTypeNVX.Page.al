@@ -1,4 +1,4 @@
-page 50000 VATPostingTypeNVX
+page 50028 VATPostingTypeNVX
 {
 
     ApplicationArea = All;

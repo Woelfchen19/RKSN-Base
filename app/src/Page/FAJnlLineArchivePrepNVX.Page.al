@@ -1,4 +1,4 @@
-page 50020 FAJnlLineArchivePrepNVX
+page 50007 FAJnlLineArchivePrepNVX
 {
     Caption = 'FA Journal Line Archive Preparation', comment = 'DEA="Anlagen Buch.-Blattzeilenarchiv Vorbereitung"';
     PageType = ListPart;

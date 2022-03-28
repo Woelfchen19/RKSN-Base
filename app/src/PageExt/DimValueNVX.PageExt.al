@@ -1,4 +1,4 @@
-pageextension 50027 DimValueNVX extends "Dimension Values"
+pageextension 50005 DimValueNVX extends "Dimension Values"
 {
     layout
     {

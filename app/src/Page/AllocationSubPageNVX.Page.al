@@ -1,4 +1,4 @@
-page 50006 AllocationSubPageNVX
+page 50003 AllocationSubPageNVX
 {
     Caption = 'Lines', comment = 'DEA="Zeilen"';
     PageType = ListPart;

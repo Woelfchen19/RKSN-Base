@@ -1,4 +1,4 @@
-table 50012 AllocationHeaderNVX
+table 50001 AllocationHeaderNVX
 {
     DataClassification = CustomerContent;
     Caption = 'Allocation Header', comment = 'DEA="Verteilungskopf"';

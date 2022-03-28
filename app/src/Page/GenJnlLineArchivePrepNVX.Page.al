@@ -1,4 +1,4 @@
-page 50016 GenJnlLineArchivePrepNVX
+page 50010 GenJnlLineArchivePrepNVX
 {
     Caption = 'Gen. Journal Line Archive Preparation', comment = 'DEA="Fibu Buch.-Blattzeilenarchiv Vorbereitung"';
     PageType = ListPart;

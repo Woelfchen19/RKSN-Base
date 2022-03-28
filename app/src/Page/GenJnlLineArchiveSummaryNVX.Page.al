@@ -1,4 +1,4 @@
-page 50012 GenJnlLineArchiveSummaryNVX
+page 50011 GenJnlLineArchiveSummaryNVX
 {
     Caption = 'Gen. Journal Line Archive Summary', comment = 'DEA="Fibu Buch.-Blattzeilenarchiv Zusammenfassung"';
     PageType = ListPart;

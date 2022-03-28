@@ -1,4 +1,4 @@
-table 50030 PurchLineArchiveNVX
+table 50032 PurchLineArchiveNVX
 {
     Caption = 'Purchase Line', comment = 'DEA="Einkaufszeile"';
 

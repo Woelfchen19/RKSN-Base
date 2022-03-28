@@ -1,4 +1,4 @@
-pageextension 50028 GLAccountCardNVX extends "G/L Account Card"
+pageextension 50037 GLAccountCardNVX extends "G/L Account Card"
 {
     layout
     {

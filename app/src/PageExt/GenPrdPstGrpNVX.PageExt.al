@@ -1,4 +1,4 @@
-pageextension 50000 GenPrdPstGrpNVX extends "Gen. Product Posting Groups"
+pageextension 50036 GenPrdPstGrpNVX extends "Gen. Product Posting Groups"
 {
     layout
     {

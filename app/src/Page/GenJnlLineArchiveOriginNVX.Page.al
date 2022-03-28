@@ -1,4 +1,4 @@
-page 50015 GenJnlLineArchiveOriginNVX
+page 50009 GenJnlLineArchiveOriginNVX
 {
     Caption = 'Gen. Journal Line Archive Origin', comment = 'DEA="Fibu Buch.-Blattzeilenarchiv Ursprung"';
     PageType = ListPart;

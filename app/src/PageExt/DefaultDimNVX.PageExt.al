@@ -1,4 +1,4 @@
-pageextension 50039 DefaultDimNVX extends "Default Dimensions"
+pageextension 50003 DefaultDimNVX extends "Default Dimensions"
 {
     trigger OnQueryClosePage(CloseAction: Action): Boolean;
     var

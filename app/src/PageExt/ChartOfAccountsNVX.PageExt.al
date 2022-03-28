@@ -1,4 +1,4 @@
-pageextension 50016 ChartOfAccountsNVX extends "Chart of Accounts"
+pageextension 50001 ChartOfAccountsNVX extends "Chart of Accounts"
 {
     layout
     {

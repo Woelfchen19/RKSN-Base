@@ -1,4 +1,4 @@
-table 50002 InvSetupNVX
+table 50025 InvSetupNVX
 {
     DataClassification = CustomerContent;
 

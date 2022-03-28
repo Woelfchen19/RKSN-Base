@@ -1,4 +1,4 @@
-codeunit 50018 Table81HookNVX
+codeunit 50021 Table81HookNVX
 {
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterDeleteEvent', '', false, false)]
     local procedure DeleteRecordInAccompaniedTable(Rec: Record "Gen. Journal Line"; RunTrigger: Boolean)

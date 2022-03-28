@@ -1,4 +1,4 @@
-pageextension 50013 BankAccountLedgerEntriesNVX extends "Bank Account Ledger Entries"
+pageextension 50000 BankAccountLedgerEntriesNVX extends "Bank Account Ledger Entries"
 {
     layout
     {

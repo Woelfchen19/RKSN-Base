@@ -1,4 +1,4 @@
-table 50041 SalesInvoiceHeaderNVX
+table 50037 SalesInvoiceHeaderNVX
 {
     fields
     {

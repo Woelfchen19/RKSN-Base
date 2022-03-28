@@ -1,4 +1,4 @@
-pageextension 50015 GLEntriesPreviewNVX extends "G/L Entries Preview"
+pageextension 50039 GLEntriesPreviewNVX extends "G/L Entries Preview"
 {
     layout
     {

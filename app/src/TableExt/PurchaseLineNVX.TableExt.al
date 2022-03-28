@@ -1,4 +1,4 @@
-tableextension 50002 PurchaseLineNVX extends "Purchase Line"
+tableextension 50003 PurchaseLineNVX extends "Purchase Line"
 {
     fields
     {

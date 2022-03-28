@@ -1,4 +1,4 @@
-codeunit 50002 Table15HookNVX
+codeunit 50010 Table15HookNVX
 {
     [EventSubscriber(ObjectType::Table, Database::"G/L Account", 'OnAfterValidateEvent', 'Gen. Prod. Posting Group', false, false)]
     local procedure CheckInventoryValueZero(var Rec: Record "G/L Account")

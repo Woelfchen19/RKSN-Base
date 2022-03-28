@@ -1,4 +1,4 @@
-table 50033 InvoicePostBufferNVX
+table 50024 InvoicePostBufferNVX
 {
     fields
     {

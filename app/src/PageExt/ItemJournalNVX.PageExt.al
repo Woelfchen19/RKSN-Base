@@ -1,4 +1,4 @@
-pageextension 50017 ItemJournalNVX extends "Item Journal"
+pageextension 50043 ItemJournalNVX extends "Item Journal"
 {
     layout
     {

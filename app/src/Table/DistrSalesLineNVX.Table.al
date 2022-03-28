@@ -1,4 +1,4 @@
-table 50035 DistrSalesLineNVX
+table 50011 DistrSalesLineNVX
 {
     Caption = 'Sales Line', comment = 'DEA="Verkaufszeile';
     LookupPageID = PreviewSalesDimDistrNVX;

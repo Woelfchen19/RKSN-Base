@@ -1,4 +1,4 @@
-codeunit 50022 Table5621HookNVX
+codeunit 50020 Table5621HookNVX
 {
     [EventSubscriber(ObjectType::Table, Database::"FA Journal Line", 'OnAfterDeleteEvent', '', false, false)]
     local procedure DeleteAccompaniedRecord(var Rec: Record "FA Journal Line"; RunTrigger: Boolean)

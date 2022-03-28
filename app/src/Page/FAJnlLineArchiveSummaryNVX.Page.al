@@ -1,4 +1,4 @@
-page 50021 FAJnlLineArchiveSummaryNVX
+page 50008 FAJnlLineArchiveSummaryNVX
 {
     Caption = 'FA Journal Line Archive Summary', comment = 'DEA="Anlagen Buch.-Blattzeilenarchiv Zusammenfassung"';
     PageType = ListPart;

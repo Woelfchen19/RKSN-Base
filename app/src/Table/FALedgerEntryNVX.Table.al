@@ -1,4 +1,4 @@
-table 50017 FALedgerEntryNVX
+table 50014 FALedgerEntryNVX
 {
     fields
     {

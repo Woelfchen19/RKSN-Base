@@ -1,4 +1,4 @@
-table 50014 GLAccountNVX
+table 50022 GLAccountNVX
 {
     fields
     {

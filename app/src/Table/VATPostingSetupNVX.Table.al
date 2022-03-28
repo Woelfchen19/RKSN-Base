@@ -1,4 +1,4 @@
-table 50008 VATPostingSetupNVX
+table 50042 VATPostingSetupNVX
 {
     fields
     {

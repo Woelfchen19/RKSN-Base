@@ -1,4 +1,4 @@
-pageextension 50001 ItemCardNVX extends "Item Card"
+pageextension 50042 ItemCardNVX extends "Item Card"
 {
     layout
     {

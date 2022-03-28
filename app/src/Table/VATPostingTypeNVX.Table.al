@@ -1,4 +1,4 @@
-table 50004 VATPostingTypeNVX
+table 50043 VATPostingTypeNVX
 {
     Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
     LookupPageId = VATPostingTypeNVX;

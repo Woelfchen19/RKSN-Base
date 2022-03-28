@@ -1,4 +1,4 @@
-table 50003 GenBsnPstGrpNVX
+table 50017 GenBsnPstGrpNVX
 {
     DataClassification = CustomerContent;
 

@@ -1,4 +1,4 @@
-pageextension 50012 FixedAssetSetupNVX extends "Fixed Asset Setup"
+pageextension 50032 FixedAssetSetupNVX extends "Fixed Asset Setup"
 {
     layout
     {

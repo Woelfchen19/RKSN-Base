@@ -1,4 +1,4 @@
-pageextension 50036 GeneralJournalNVX extends "General Journal"
+pageextension 50035 GeneralJournalNVX extends "General Journal"
 {
     layout
     {

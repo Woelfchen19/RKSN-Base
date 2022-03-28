@@ -1,4 +1,4 @@
-page 50033 SalesLineArchiveOriginNVX
+page 50025 SalesLineArchiveOriginNVX
 {
     Caption = 'Sales Line Archive Origin', comment = 'DEA="Verkaufszeilenarchiv Ursprung"';
     PageType = ListPart;

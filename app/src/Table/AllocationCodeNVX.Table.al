@@ -1,4 +1,4 @@
-table 50010 AllocationCodeNVX
+table 50000 AllocationCodeNVX
 {
     DataClassification = CustomerContent;
     Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';

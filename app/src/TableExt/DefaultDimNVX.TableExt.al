@@ -1,4 +1,4 @@
-tableextension 50001 DefaultDimNVX extends "Default Dimension"
+tableextension 50000 DefaultDimNVX extends "Default Dimension"
 {
     procedure GetDefaultDimNVX(Type: Integer; No: Code[20]; DimNo: Integer): Code[20];
     var

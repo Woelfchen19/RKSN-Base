@@ -1,4 +1,4 @@
-page 50026 PurchLineArchiveOriginNVX
+page 50022 PurchLineArchiveOriginNVX
 {
     Caption = 'Purchase Line Archive Origin', comment = 'DEA="Einkaufszeilenarchiv Ursprung"';
     PageType = ListPart;

@@ -1,4 +1,4 @@
-pageextension 50035 FAGLJournalNVX extends "Fixed Asset G/L Journal"
+pageextension 50029 FAGLJournalNVX extends "Fixed Asset G/L Journal"
 {
     layout
     {

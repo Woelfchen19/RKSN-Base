@@ -1,4 +1,4 @@
-pageextension 50009 VATPostingSetupNVX extends "VAT Posting Setup"
+pageextension 50049 VATPostingSetupNVX extends "VAT Posting Setup"
 {
     layout
     {

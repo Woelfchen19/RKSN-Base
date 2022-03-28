@@ -1,4 +1,4 @@
-table 50009 DimValueNVX
+table 50006 DimValueNVX
 {
     DataClassification = CustomerContent;
 

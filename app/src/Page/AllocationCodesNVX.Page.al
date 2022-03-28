@@ -1,4 +1,4 @@
-page 50003 AllocationCodesNVX
+page 50001 AllocationCodesNVX
 {
     PageType = List;
     SourceTable = AllocationCodeNVX;

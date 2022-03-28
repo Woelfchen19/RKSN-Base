@@ -1,4 +1,4 @@
-pageextension 50037 FAJournalNVX extends "Fixed Asset Journal"
+pageextension 50030 FAJournalNVX extends "Fixed Asset Journal"
 {
     layout
     {

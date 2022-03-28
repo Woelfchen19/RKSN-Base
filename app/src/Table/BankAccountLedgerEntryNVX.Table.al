@@ -1,4 +1,4 @@
-table 50044 BankAccountLedgerEntryNVX
+table 50004 BankAccountLedgerEntryNVX
 {
     DataClassification = CustomerContent;
 

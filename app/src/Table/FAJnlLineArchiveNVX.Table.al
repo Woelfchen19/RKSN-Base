@@ -1,4 +1,4 @@
-table 50024 FAJnlLineArchiveNVX
+table 50012 FAJnlLineArchiveNVX
 {
     Caption = 'FA Journal Line Archive', comment = 'DEA="Anlagen Buch.-Blattzeilenarchiv"';
 
