@@ -6510,11 +6510,6 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ItemNVX - Field No Inv Gen. Bus. Posting Group - Property Caption</note>
           <target>"Steuerschlüssel Lager Einr.deaktivieren"</target>
         </trans-unit>
-        <trans-unit id="Table 3647664017 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Entry No.</source>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Table LastEntryNoNVX - Field Entry No. - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2449826669 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Backup dimensional distribution</source>
           <note from="Developer" annotates="general" priority="2">DEA="Sicherung dim.Verteilungen Modul AnBu"</note>
@@ -12997,6 +12992,402 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemCardNVX - Control Deactivate Inventory Gen. Bus. Posting GroupNVX - Method OnValidate - NamedType ItemEntryNotEmptyErr</note>
           <target>Diese Einrichtung ist nur solange änderbar als es zum betreffenden Artikel noch keine Bewegungsposten gibt</target>
         </trans-unit>
+        <trans-unit id="PageExtension 2490751801 - Control 248217307 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoSubNVX - Control Allocation Amount Incl. VATNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2490751801 - Control 2363487008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoSubNVX - Control Allocation AmountNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2490751801 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoSubNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2490751801 - Control 2132930775 - Method 2126772001 - NamedType 2716283354" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2490751801">
+          <source>An Allocation Code has no function if used together with an item with inventory value!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist Lagerbewertet eingerichtet, ein Verteilungscode hat keine Funktion!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoSubNVX - Control Allocation CodeNVX - Method OnValidate - NamedType UselessAllocationCodeMsg</note>
+          <target>Der Artikel ist Lagerbewertet eingerichtet, ein Verteilungscode hat keine Funktion!</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2490751801 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2490751801">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoSubNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2490751801 - Control 3860839238 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoSubNVX - Control Purchase Shortcut Dimension 1NVX - Property Caption</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2490751801 - Control 3364642500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoSubNVX - Control Purchase Shortcut Dimension 3NVX - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2490751801 - Control 3585970469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoSubNVX - Control Allocation Amount HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2490751801 - Control 2044492818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoSubNVX - Control Allocation Amount Incl. VAT HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2490751801 - Control 4100154828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>VAT Sum</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Summe USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoSubNVX - Control VAT SumNVX - Property Caption</note>
+          <target>Summe USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2490751801 - Control 4240079068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Vend. Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred. Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoSubNVX - Control PurchaseLineNVXCustAmountNVX - Property Caption</note>
+          <target>Kred. Betrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2490751801 - Control 813762569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Vend. Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred. VK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoSubNVX - Control PurchaseLineNVXCustUnitPriceNVX - Property Caption</note>
+          <target>Kred. VK-Preis</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 248217307 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PInvoiceSubNVX - Control Allocation Amount Incl. VATNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 2363487008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PInvoiceSubNVX - Control Allocation AmountNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PInvoiceSubNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 2132930775 - Method 2126772001 - NamedType 2716283354" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3297823951">
+          <source>An Allocation Code has no function if used together with an item with inventory value!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist Lagerbewertet eingerichtet, ein Verteilungscode hat keine Funktion!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PInvoiceSubNVX - Control Allocation CodeNVX - Method OnValidate - NamedType UselessAllocationCodeMsg</note>
+          <target>Der Artikel ist Lagerbewertet eingerichtet, ein Verteilungscode hat keine Funktion!</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3297823951">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PInvoiceSubNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 3860839238 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PInvoiceSubNVX - Control Purchase Shortcut Dimension 1NVX - Property Caption</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 3364642500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PInvoiceSubNVX - Control Purchase Shortcut Dimension 3NVX - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 3585970469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PInvoiceSubNVX - Control Allocation Amount HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 2044492818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PInvoiceSubNVX - Control Allocation Amount Incl. VAT HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 4100154828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>VAT Sum</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Summe USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PInvoiceSubNVX - Control VAT SumNVX - Property Caption</note>
+          <target>Summe USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 4240079068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Vend. Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred. Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PInvoiceSubNVX - Control PurchaseLineNVXCustAmountNVX - Property Caption</note>
+          <target>Kred. Betrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3297823951 - Control 2666421713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Vend. Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred. VK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PInvoiceSubNVX - Control PurchaseLineNVXVendUnitPriceNVX - Property Caption</note>
+          <target>Kred. VK-Preis</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4160108222 - Control 248217307 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderSubNVX - Control Allocation Amount Incl. VATNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4160108222 - Control 2363487008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderSubNVX - Control Allocation AmountNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4160108222 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderSubNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4160108222 - Control 2132930775 - Method 2126772001 - NamedType 2716283354" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 4160108222">
+          <source>An Allocation Code has no function if used together with an item with inventory value!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist Lagerbewertet eingerichtet, ein Verteilungscode hat keine Funktion!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderSubNVX - Control Allocation CodeNVX - Method OnValidate - NamedType UselessAllocationCodeMsg</note>
+          <target>Der Artikel ist Lagerbewertet eingerichtet, ein Verteilungscode hat keine Funktion!</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4160108222 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 4160108222">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderSubNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4160108222 - Control 3860839238 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderSubNVX - Control Purchase Shortcut Dimension 1NVX - Property Caption</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4160108222 - Control 3364642500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderSubNVX - Control Purchase Shortcut Dimension 3NVX - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4160108222 - Control 3585970469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderSubNVX - Control Allocation Amount HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4160108222 - Control 2044492818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderSubNVX - Control Allocation Amount Incl. VAT HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4160108222 - Control 4100154828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>VAT Sum</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Summe USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderSubNVX - Control VAT SumNVX - Property Caption</note>
+          <target>Summe USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4160108222 - Control 4240079068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Vend. Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred. Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderSubNVX - Control PurchaseLineNVXCustAmountNVX - Property Caption</note>
+          <target>Kred. Betrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4160108222 - Control 813762569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Vend. Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred. VK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderSubNVX - Control PurchaseLineNVXCustUnitPriceNVX - Property Caption</note>
+          <target>Kred. VK-Preis</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3449731914 - Control 248217307 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQuoteSubNVX - Control Allocation Amount Incl. VATNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3449731914 - Control 2363487008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQuoteSubNVX - Control Allocation AmountNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3449731914 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQuoteSubNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3449731914 - Control 2132930775 - Method 2126772001 - NamedType 2716283354" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3449731914">
+          <source>An Allocation Code has no function if used together with an item with inventory value!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist Lagerbewertet eingerichtet, ein Verteilungscode hat keine Funktion!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQuoteSubNVX - Control Allocation CodeNVX - Method OnValidate - NamedType UselessAllocationCodeMsg</note>
+          <target>Der Artikel ist Lagerbewertet eingerichtet, ein Verteilungscode hat keine Funktion!</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3449731914 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3449731914">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQuoteSubNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3449731914 - Control 3860839238 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQuoteSubNVX - Control Purchase Shortcut Dimension 1NVX - Property Caption</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3449731914 - Control 3364642500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQuoteSubNVX - Control Purchase Shortcut Dimension 3NVX - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3449731914 - Control 3585970469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQuoteSubNVX - Control Allocation Amount HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3449731914 - Control 2044492818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQuoteSubNVX - Control Allocation Amount Incl. VAT HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3449731914 - Control 4100154828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>VAT Sum</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Summe USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQuoteSubNVX - Control VAT SumNVX - Property Caption</note>
+          <target>Summe USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3449731914 - Control 4240079068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Vend. Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred. Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQuoteSubNVX - Control PurchaseLineNVXCustAmountNVX - Property Caption</note>
+          <target>Kred. Betrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3449731914 - Control 813762569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Vend. Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Kred. VK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PQuoteSubNVX - Control PurchaseLineNVXCustUnitPriceNVX - Property Caption</note>
+          <target>Kred. VK-Preis</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 351098856 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2618934728">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdPCrMemoSubNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 351098856 - Control 3326348821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2618934728">
+          <source>VAT Posting Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdPCrMemoSubNVX - Control VAT Posting TypeNVX - Property Caption</note>
+          <target>USt.-Buchungsart</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 591510762 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2410131092">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdPInvoiceSubNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 591510762 - Control 3326348821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2410131092">
+          <source>VAT Posting Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdPInvoiceSubNVX - Control VAT Posting TypeNVX - Property Caption</note>
+          <target>USt.-Buchungsart</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1426333277 - Control 517066103 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2716593954">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSCrMemoNVX - Control Allocation Code NVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1426333277 - Control 2233765166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2716593954">
+          <source>Composition Gen. Bus. Posting Group WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel WES"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSCrMemoNVX - Control Comp Gen. Bus. Pst Grp WES NVX - Property Caption</note>
+          <target>Abfassung Steuerschlüssel WES</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1426333277 - Control 2807217353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2716593954">
+          <source>Interim Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSCrMemoNVX - Control Interim Gen.Bus.Posting Group NVX - Property Caption</note>
+          <target>Interim Steuerschlüssel</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1426333277 - Control 1240035418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2716593954">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSCrMemoNVX - Control Shortcut Dimension 3 Code NVX - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1426333277 - Control 1247450261 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2716593954">
+          <source>Sales Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkauf Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSCrMemoNVX - Control Transaction No. NVX - Property Caption</note>
+          <target>Verkauf Transaktionsnummer</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1435976241 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1257057922">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSCrMemoSubNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1435976241 - Control 3326348821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1257057922">
+          <source>VAT Posting Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSCrMemoSubNVX - Control VAT Posting TypeNVX - Property Caption</note>
+          <target>USt.-Buchungsart</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1330255251 - Control 517066103 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2420212404">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSInvoiceNVX - Control Allocation Code NVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1330255251 - Control 2233765166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2420212404">
+          <source>Composition Gen. Bus. Posting Group WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel WES"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSInvoiceNVX - Control Comp Gen. Bus. Pst Grp WES NVX - Property Caption</note>
+          <target>Abfassung Steuerschlüssel WES</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1330255251 - Control 2807217353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2420212404">
+          <source>Interim Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSInvoiceNVX - Control Interim Gen.Bus.Posting Group NVX - Property Caption</note>
+          <target>Interim Steuerschlüssel</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1330255251 - Control 1240035418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2420212404">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSInvoiceNVX - Control Shortcut Dimension 3 Code NVX - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1330255251 - Control 1247450261 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2420212404">
+          <source>Sales Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkauf Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSInvoiceNVX - Control Transaction No. NVX - Property Caption</note>
+          <target>Verkauf Transaktionsnummer</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2219355255 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1379883806">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSInvoiceSubNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2219355255 - Control 3326348821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1379883806">
+          <source>VAT Posting Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSInvoiceSubNVX - Control VAT Posting TypeNVX - Property Caption</note>
+          <target>USt.-Buchungsart</target>
+        </trans-unit>
         <trans-unit id="PageExtension 1200957402 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
           <source>Preview dimensional distribution</source>
           <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
@@ -13032,6 +13423,354 @@
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SalesJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2820744100 - Control 1247450261 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1708100201">
+          <source>Sales Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verkauf Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoNVX - Control Transaction No. NVX - Property Caption</note>
+          <target>Verkauf Transaktionsnummer</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2820744100 - Control 45860813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1708100201">
+          <source>Shortcut Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 6"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoNVX - Control Shortcut Dimension 6 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 6</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2820744100 - Control 45860813 - Method 2126772001 - NamedType 2963323015" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2820744100">
+          <source>Do you want to update Sales %1 and %2 in Sales Line with the values defined in %3?</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Möchten Sie Verkauf-%1 und %2 mit den Daten aus %3 aktualisieren?"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoNVX - Control Shortcut Dimension 6 CodeNVX - Method OnValidate - NamedType ConfirmUpdateQst</note>
+          <target>Möchten Sie Verkauf-%1 und %2 mit den Daten aus %3 aktualisieren?</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1402180976 - Control 248217307 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoSubNVX - Control Allocation Amount Incl. VATNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1402180976 - Control 2363487008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoSubNVX - Control Allocation AmountNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1402180976 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoSubNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1402180976 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1402180976">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoSubNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1402180976 - Control 568336664 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoSubNVX - Control Sales Shortcut Dimension 1 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1402180976 - Control 2486018634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoSubNVX - Control Sales Shortcut Dimension 3 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1402180976 - Control 3585970469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoSubNVX - Control Allocation Amount HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1402180976 - Control 2044492818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoSubNVX - Control Allocation Amount Incl. VAT HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1402180976 - Control 4100154828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>VAT Sum</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Summe USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoSubNVX - Control VAT SumNVX - Property Caption</note>
+          <target>Summe USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1402180976 - Control 2337139301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Cust. Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Deb. Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoSubNVX - Control SalesLineNVXCustAmountNVX - Property Caption</note>
+          <target>Deb. Betrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1402180976 - Control 4122469816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Cust. Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Deb. VK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SCrMemoSubNVX - Control SalesLineNVXCustUnitPriceNVX - Property Caption</note>
+          <target>Deb. VK-Preis</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1452187718 - Control 45860813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4034894651">
+          <source>Shortcut Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 6"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceNVX - Control Shortcut Dimension 6 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 6</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1452187718 - Control 45860813 - Method 2126772001 - NamedType 2963323015" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1452187718">
+          <source>Do you want to update Sales %1 and %2 in Sales Line with the values defined in %3?</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Möchten Sie Verkauf-%1 und %2 mit den Daten aus %3 aktualisieren?"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceNVX - Control Shortcut Dimension 6 CodeNVX - Method OnValidate - NamedType ConfirmUpdateQst</note>
+          <target>Möchten Sie Verkauf-%1 und %2 mit den Daten aus %3 aktualisieren?</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4060436578 - Control 2739498483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceSubNVX - Control Allocation Amount Incl. VAT SalesNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4060436578 - Control 2667554072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceSubNVX - Control Allocation Amount SalesNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4060436578 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceSubNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4060436578 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 4060436578">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceSubNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4060436578 - Control 568336664 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceSubNVX - Control Sales Shortcut Dimension 1 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4060436578 - Control 2486018634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceSubNVX - Control Sales Shortcut Dimension 3 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4060436578 - Control 3585970469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceSubNVX - Control Allocation Amount HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4060436578 - Control 2044492818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceSubNVX - Control Allocation Amount Incl. VAT HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4060436578 - Control 4100154828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>VAT Sum</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Summe USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceSubNVX - Control VAT SumNVX - Property Caption</note>
+          <target>Summe USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4060436578 - Control 2337139301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Cust. Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Deb. Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceSubNVX - Control SalesLineNVXCustAmountNVX - Property Caption</note>
+          <target>Deb. Betrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 4060436578 - Control 4122469816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Cust. Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Deb. VK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SInvoiceSubNVX - Control SalesLineNVXCustUnitPriceNVX - Property Caption</note>
+          <target>Deb. VK-Preis</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 392986559 - NamedType 3091254118" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 392986559">
+          <source>Do you want to update the lines?</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Möchten Sie die Zelen aktualisieren?"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderNVX - NamedType UpdateLinesQst</note>
+          <target>Möchten Sie die Zelen aktualisieren?</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 392986559 - Control 3545158768 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Composition Allocation</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Verteilung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderNVX - Control Comp Allocation CodeNVX - Property Caption</note>
+          <target>Abfassung Verteilung</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 392986559 - Control 2233765166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Composition Gen. Bus. Posting Group WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel WES"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderNVX - Control Comp Gen. Bus. Pst Grp WES NVX - Property Caption</note>
+          <target>Abfassung Steuerschlüssel WES</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 392986559 - Control 1088833798 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Composition Section</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Sparte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderNVX - Control Comp Shortcut Dimension 3NVX - Property Caption</note>
+          <target>Abfassung Sparte</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 392986559 - Control 45860813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Shortcut Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 6"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderNVX - Control Shortcut Dimension 6 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 6</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 392986559 - Control 45860813 - Method 2126772001 - NamedType 2963323015" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 392986559">
+          <source>Do you want to update Sales %1 and %2 in Sales Line with the values defined in %3?</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Möchten Sie Verkauf-%1 und %2 mit den Daten aus %3 aktualisieren?"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderNVX - Control Shortcut Dimension 6 CodeNVX - Method OnValidate - NamedType ConfirmUpdateQst</note>
+          <target>Möchten Sie Verkauf-%1 und %2 mit den Daten aus %3 aktualisieren?</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3332211147 - Control 2739498483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderSubNVX - Control Allocation Amount Incl. VAT SalesNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3332211147 - Control 2667554072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderSubNVX - Control Allocation Amount SalesNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3332211147 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderSubNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3332211147 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3332211147">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderSubNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3332211147 - Control 1594024278 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Composition Gen. Bus. Posting Group WES</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel WES"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderSubNVX - Control Comp Gen. Bus. Pst Grp WESNVX - Property Caption</note>
+          <target>Abfassung Steuerschlüssel WES</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3332211147 - Control 568336664 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderSubNVX - Control Sales Shortcut Dimension 1 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3332211147 - Control 2486018634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderSubNVX - Control Sales Shortcut Dimension 3 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3332211147 - Control 3585970469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderSubNVX - Control Allocation Amount HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3332211147 - Control 2044492818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderSubNVX - Control Allocation Amount Incl. VAT HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3332211147 - Control 4100154828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>VAT Sum</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Summe USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderSubNVX - Control VAT SumNVX - Property Caption</note>
+          <target>Summe USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3332211147 - Control 2337139301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Cust. Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Deb. Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderSubNVX - Control SalesLineNVXCustAmountNVX - Property Caption</note>
+          <target>Deb. Betrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3332211147 - Control 4122469816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Cust. Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Deb. VK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SOrderSubNVX - Control SalesLineNVXCustUnitPriceNVX - Property Caption</note>
+          <target>Deb. VK-Preis</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1020021939 - Control 45860813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 280137910">
+          <source>Shortcut Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 6"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteNVX - Control Shortcut Dimension 6 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 6</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1020021939 - Control 45860813 - Method 2126772001 - NamedType 2963323015" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1020021939">
+          <source>Do you want to update Sales %1 and %2 in Sales Line with the values defined in %3?</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Möchten Sie Verkauf-%1 und %2 mit den Daten aus %3 aktualisieren?"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteNVX - Control Shortcut Dimension 6 CodeNVX - Method OnValidate - NamedType ConfirmUpdateQst</note>
+          <target>Möchten Sie Verkauf-%1 und %2 mit den Daten aus %3 aktualisieren?</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1387533847 - Control 2739498483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteSubNVX - Control Allocation Amount Incl. VAT SalesNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1387533847 - Control 2667554072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteSubNVX - Control Allocation Amount SalesNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1387533847 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteSubNVX - Control Allocation CodeNVX - Property Caption</note>
+          <target>Verteilungscode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1387533847 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1387533847">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteSubNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1387533847 - Control 568336664 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteSubNVX - Control Sales Shortcut Dimension 1 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 1</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1387533847 - Control 2486018634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteSubNVX - Control Sales Shortcut Dimension 3 CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1387533847 - Control 3585970469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Allocation Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteSubNVX - Control Allocation Amount HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1387533847 - Control 2044492818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Allocation Amount Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungsbetrag inkl. USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteSubNVX - Control Allocation Amount Incl. VAT HeaderNVX - Property Caption</note>
+          <target>Verteilungsbetrag inkl. USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1387533847 - Control 4100154828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>VAT Sum</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Summe USt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteSubNVX - Control VAT SumNVX - Property Caption</note>
+          <target>Summe USt.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1387533847 - Control 2337139301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Cust. Amount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Deb. Betrag"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteSubNVX - Control SalesLineNVXCustAmountNVX - Property Caption</note>
+          <target>Deb. Betrag</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1387533847 - Control 4122469816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Cust. Unit Price</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Deb. VK-Preis"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteSubNVX - Control SalesLineNVXCustUnitPriceNVX - Property Caption</note>
+          <target>Deb. VK-Preis</target>
         </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 2431373660 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies if the user is allowed to change the Inventory Posting Group on items although entries are existing</source>
