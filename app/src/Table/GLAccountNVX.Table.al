@@ -1,6 +1,5 @@
-table 50014 "GLAccountNVX"
+table 50022 GLAccountNVX
 {
-    DataClassification = CustomerContent;  
     fields
     {
         field(1; "G/L Account No."; Code[20])
@@ -21,14 +20,14 @@ table 50014 "GLAccountNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Gen. Bsn. Posting Group Type', comment = 'DEA="Art Steuerschlüssel"';
-            OptionMembers = Standard, Exchange;
+            OptionMembers = Standard,Exchange;
             OptionCaption = 'Standard,Exchange', comment = 'DEA="Standard,Wechsel Steuerschlüssel"';
         }
     }
 
     keys
     {
-        key(PK;"G/L Account No.")
+        key(PK; "G/L Account No.")
         {
             Clustered = true;
         }

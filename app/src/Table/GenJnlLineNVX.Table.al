@@ -1,7 +1,5 @@
-table 50020 "GenJnlLineNVX"
+table 50019 GenJnlLineNVX
 {
-    DataClassification = CustomerContent;
-    
     fields
     {
         field(1; "Journal Template Name"; Code[10])
@@ -42,9 +40,29 @@ table 50020 "GenJnlLineNVX"
 
     keys
     {
-        key(PK;"Journal Template Name","Journal Batch Name","Line No.")
+        key(PK; "Journal Template Name", "Journal Batch Name", "Line No.")
         {
             Clustered = true;
         }
     }
+
+    procedure GetDefinition(JournalTemplateName: Code[10]; JournalBatchName: Code[10]; LineNo: Integer)
+    begin
+        if LineNo = 0 then
+            exit;
+        if ("Journal Template Name" = JournalTemplateName) and
+            ("Journal Batch Name" = JournalBatchName) and
+            ("Line No." = LineNo)
+        then
+            exit;
+
+        if Get(JournalTemplateName, JournalBatchName, LineNo) then
+            exit;
+
+        Init();
+        "Journal Template Name" := JournalTemplateName;
+        "Journal Batch Name" := JournalBatchName;
+        "Line No." := LineNo;
+        Insert();
+    end;
 }

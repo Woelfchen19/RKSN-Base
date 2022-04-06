@@ -1,7 +1,5 @@
-table 50038 "SalesCrMemoLineNVX"
+table 50034 SalesCrMemoLineNVX
 {
-    DataClassification = CustomerContent;
-    
     fields
     {
         field(3; "Document No."; Code[20])
@@ -27,7 +25,7 @@ table 50038 "SalesCrMemoLineNVX"
 
     keys
     {
-        key(PK;"Document No.","Line No.")
+        key(PK; "Document No.", "Line No.")
         {
             Clustered = true;
         }

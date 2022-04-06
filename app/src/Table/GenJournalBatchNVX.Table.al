@@ -1,7 +1,5 @@
-table 50027 "GenJournalBatchNVX"
+table 50020 GenJournalBatchNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Journal Template Name"; Code[10])
@@ -24,9 +22,25 @@ table 50027 "GenJournalBatchNVX"
 
     keys
     {
-        key(PK;  "Journal Template Name", Name)
+        key(PK; "Journal Template Name", Name)
         {
             Clustered = true;
         }
     }
+
+    procedure GetDefinition(JournalTemplateName: Code[10]; Name: Code[10])
+    begin
+        if ("Journal Template Name" = JournalTemplateName) and
+            (Name = Name)
+        then
+            exit;
+
+        if Get(JournalTemplateName, Name) then
+            exit;
+
+        Init();
+        "Journal Template Name" := JournalTemplateName;
+        Name := Name;
+        Insert();
+    end;
 }

@@ -1,4 +1,4 @@
-tableextension 50004 GLAccountNVX extends "G/L Account"
+tableextension 50001 GLAccountNVX extends "G/L Account"
 {
     fields
     {
@@ -13,10 +13,10 @@ tableextension 50004 GLAccountNVX extends "G/L Account"
                 Balance_Err: Label 'You can not hide the G/L Account because Balance ist <> 0.', comment = 'DEA="Das Sachkonto kann nicht ausgeblendet werden, weil der Saldo <>0 ist!"';
             begin
                 TestField("No.");
-                GLAccount.get("No.");
+                GLAccount.Get("No.");
                 GLAccount.CalcFields(Balance);
                 if GLAccount.Balance <> 0 then
-                    error(Balance_Err);
+                    Error(Balance_Err);
             end;
         }
         field(50002; "No. of Classifications NVX"; Integer)
@@ -24,10 +24,7 @@ tableextension 50004 GLAccountNVX extends "G/L Account"
             Editable = false;
             Caption = 'No. of Classifications', comment = 'DEA="Anzahl Gliederungsgruppen"';
             FieldClass = FlowField;
-            CalcFormula = count("NCB Classification G/L Acc." where ("G/L Account No." = field("No.")));
+            CalcFormula = count("NCB Classification G/L Acc." where("G/L Account No." = field("No.")));
         }
     }
 }
-
-
-

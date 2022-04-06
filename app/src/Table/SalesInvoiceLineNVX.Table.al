@@ -1,7 +1,5 @@
-table 50037 "SalesInvoiceLineNVX"
+table 50038 SalesInvoiceLineNVX
 {
-    DataClassification = CustomerContent;
-    
     fields
     {
         field(3; "Document No."; Code[20])
@@ -17,12 +15,12 @@ table 50037 "SalesInvoiceLineNVX"
             DataClassification = CustomerContent;
             Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
             TableRelation = AllocationCodeNVX.Code;
-        }        
+        }
         field(20; "Shortcut Dimension 1 Code"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));       
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
             // CaptionClass = '1338,1'; = Sales + Dim Name
             // CaptionClass = '1339,1'; = Purchase + Dim Name
         }
@@ -32,18 +30,18 @@ table 50037 "SalesInvoiceLineNVX"
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
             // CaptionClass = '1338,3'; = Sales + Dim Name
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
         }
         field(25; "VAT Posting Type"; Code[10])
         {
             DataClassification = CustomerContent;
             Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
-        }    
+        }
     }
 
     keys
     {
-        key(PK;"Document No.","Line No.")
+        key(PK; "Document No.", "Line No.")
         {
             Clustered = true;
         }

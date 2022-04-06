@@ -1,7 +1,5 @@
-table 50026 "ItemNVX"
+table 50026 ItemNVX
 {
-    DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Item No."; Code[20])
@@ -24,7 +22,6 @@ table 50026 "ItemNVX"
             Caption = 'Deactivate Inventory Gen. Bus. Posting Group', comment = 'DEA=""Steuerschlüssel Lager Einr.deaktivieren""';
             DataClassification = CustomerContent;
         }
-
     }
 
     keys

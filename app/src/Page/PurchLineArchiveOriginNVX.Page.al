@@ -1,4 +1,4 @@
-page 50026 "PurchLineArchiveOriginNVX"
+page 50022 PurchLineArchiveOriginNVX
 {
     Caption = 'Purchase Line Archive Origin', comment = 'DEA="Einkaufszeilenarchiv Ursprung"';
     PageType = ListPart;
@@ -56,7 +56,7 @@ page 50026 "PurchLineArchiveOriginNVX"
                 {
                     ApplicationArea = All;
                 }
-                field(Amount; "Amount")
+                field(Amount; Amount)
                 {
                     ApplicationArea = All;
                 }
@@ -80,7 +80,6 @@ page 50026 "PurchLineArchiveOriginNVX"
                     Caption = 'Business Case', comment = 'DEA="Geschäftsfall"';
                 }
             }
-            
         }
     }
     var
@@ -90,7 +89,7 @@ page 50026 "PurchLineArchiveOriginNVX"
     trigger OnOpenPage();
     begin
         BusinessCase := true; //Yes, this has (almost) no logic... but the customer knows best... or so they say....
-        Rec.SetRange("Posting Type",Rec."Posting Type"::OG);
+        Rec.SetRange("Posting Type", Rec."Posting Type"::OG);
         CurrPage.Editable(false);
     end;
 }

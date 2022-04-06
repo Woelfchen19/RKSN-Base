@@ -1,9 +1,8 @@
-table 50035 "DistrSalesLineNVX"
+table 50011 DistrSalesLineNVX
 {
     Caption = 'Sales Line', comment = 'DEA="Verkaufszeile';
-    DrillDownPageID = "Sales Lines";
-    LookupPageID = "Sales Lines";
-
+    LookupPageId = PreviewSalesDimDistrNVX;
+    DrillDownPageId = PreviewSalesDimDistrNVX;
     fields
     {
         field(1; "Document Type"; Option)
@@ -21,7 +20,7 @@ table 50035 "DistrSalesLineNVX"
         field(3; "Document No."; Code[20])
         {
             Caption = 'Document No.', comment = 'DEA="Belegnr."';
-            TableRelation = "Sales Header"."No." WHERE("Document Type" = FIELD("Document Type"));
+            TableRelation = "Sales Header"."No." where("Document Type" = field("Document Type"));
         }
         field(4; "Line No."; Integer)
         {
@@ -35,73 +34,70 @@ table 50035 "DistrSalesLineNVX"
         }
         field(6; "No."; Code[20])
         {
-            // CaptionClass = GetCaptionClass(FieldNo("No."));
             Caption = 'No.', comment = 'DEA="Nr."';
-            TableRelation = IF (Type = CONST(" ")) "Standard Text"
-            ELSE
-            IF (Type = CONST("G/L Account"),
-                                     "System-Created Entry" = CONST(false)) "G/L Account" WHERE("Direct Posting" = CONST(true),
-                                                                                               "Account Type" = CONST(Posting),
-                                                                                               Blocked = CONST(false))
-            ELSE
-            IF (Type = CONST("G/L Account"),
-                                                                                                        "System-Created Entry" = CONST(true)) "G/L Account"
-            ELSE
-            IF (Type = CONST(Resource)) Resource
-            ELSE
-            IF (Type = CONST("Fixed Asset")) "Fixed Asset"
-            ELSE
-            IF (Type = CONST("Charge (Item)")) "Item Charge"
-            ELSE
-            IF (Type = CONST(Item),
-                                                                                                                 "Document Type" = FILTER(<> "Credit Memo" & <> "Return Order")) Item WHERE(Blocked = CONST(false))
-            ELSE
-            IF (Type = CONST(Item),
-                                                                                                                                                                                                "Document Type" = FILTER("Credit Memo" | "Return Order")) Item WHERE(Blocked = CONST(false));
+            TableRelation = if (Type = const(" ")) "Standard Text"
+            else
+            if (Type = const("G/L Account"),
+                                     "System-Created Entry" = const(false)) "G/L Account" where("Direct Posting" = const(true),
+                                                                                               "Account Type" = const(Posting),
+                                                                                               Blocked = const(false))
+            else
+            if (Type = const("G/L Account"),
+                                                                                                        "System-Created Entry" = const(true)) "G/L Account"
+            else
+            if (Type = const(Resource)) Resource
+            else
+            if (Type = const("Fixed Asset")) "Fixed Asset"
+            else
+            if (Type = const("Charge (Item)")) "Item Charge"
+            else
+            if (Type = const(Item),
+                                                                                                                 "Document Type" = filter(<> "Credit Memo" & <> "Return Order")) Item where(Blocked = const(false))
+            else
+            if (Type = const(Item),
+                                                                                                                                                                                                "Document Type" = filter("Credit Memo" | "Return Order")) Item where(Blocked = const(false));
             ValidateTableRelation = false;
         }
         field(7; "Location Code"; Code[10])
         {
             Caption = 'Location Code', comment = 'DEA="Lagerortcode"';
-            TableRelation = Location WHERE("Use As In-Transit" = CONST(false));
+            TableRelation = Location where("Use As In-Transit" = const(false));
         }
         field(8; "Posting Group"; Code[20])
         {
             Caption = 'Posting Group', comment = 'DEA="Buchungsgruppe"';
             Editable = false;
-            TableRelation = IF (Type = CONST(Item)) "Inventory Posting Group"
-            ELSE
-            IF (Type = CONST("Fixed Asset")) "FA Posting Group";
+            TableRelation = if (Type = const(Item)) "Inventory Posting Group"
+            else
+            if (Type = const("Fixed Asset")) "FA Posting Group";
         }
         field(10; "Shipment Date"; Date)
         {
-            AccessByPermission = TableData "Sales Shipment Header" = R;
+            AccessByPermission = tabledata "Sales Shipment Header" = R;
             Caption = 'Shipment Date', comment = 'DEA="Warenausg.-Datum"';
         }
         field(11; Description; Text[100])
         {
             Caption = 'Description', comment = 'DEA="Beschreibung"';
-            TableRelation = IF (Type = CONST("G/L Account"),
-                                "System-Created Entry" = CONST(false)) "G/L Account".Name WHERE("Direct Posting" = CONST(true),
-                                                                                               "Account Type" = CONST(Posting),
-                                                                                               Blocked = CONST(false))
-            ELSE
-            IF (Type = CONST("G/L Account"),
-                                                                                                        "System-Created Entry" = CONST(true)) "G/L Account".Name
-            ELSE
-            IF (Type = CONST(Item),
-                                                                                                                 "Document Type" = FILTER(<> "Credit Memo" & <> "Return Order")) Item.Description WHERE(Blocked = CONST(false))
-            ELSE
-            IF (Type = CONST(Item),
-                                                                                                                                                                                                            "Document Type" = FILTER("Credit Memo" | "Return Order")) Item.Description WHERE(Blocked = CONST(false))
-            ELSE
-            IF (Type = CONST(Resource)) Resource.Name
-            ELSE
-            IF (Type = CONST("Fixed Asset")) "Fixed Asset".Description
-            ELSE
-            IF (Type = CONST("Charge (Item)")) "Item Charge".Description;
-            //This property is currently not supported
-            //TestTableRelation = false;
+            TableRelation = if (Type = const("G/L Account"),
+                                "System-Created Entry" = const(false)) "G/L Account".Name where("Direct Posting" = const(true),
+                                                                                               "Account Type" = const(Posting),
+                                                                                               Blocked = const(false))
+            else
+            if (Type = const("G/L Account"),
+                                                                                                        "System-Created Entry" = const(true)) "G/L Account".Name
+            else
+            if (Type = const(Item),
+                                                                                                                 "Document Type" = filter(<> "Credit Memo" & <> "Return Order")) Item.Description where(Blocked = const(false))
+            else
+            if (Type = const(Item),
+                                                                                                                                                                                                            "Document Type" = filter("Credit Memo" | "Return Order")) Item.Description where(Blocked = const(false))
+            else
+            if (Type = const(Resource)) Resource.Name
+            else
+            if (Type = const("Fixed Asset")) "Fixed Asset".Description
+            else
+            if (Type = const("Charge (Item)")) "Item Charge".Description;
             ValidateTableRelation = false;
         }
         field(12; "Description 2"; Text[50])
@@ -111,9 +107,7 @@ table 50035 "DistrSalesLineNVX"
         field(13; "Unit of Measure"; Text[50])
         {
             Caption = 'Unit of Measure', comment = 'DEA="Einheit"';
-            TableRelation = IF (Type = FILTER(<> " ")) "Unit of Measure".Description;
-            //This property is currently not supported
-            //TestTableRelation = false;
+            TableRelation = if (Type = filter(<> " ")) "Unit of Measure".Description;
             ValidateTableRelation = false;
         }
         field(15; Quantity; Decimal)
@@ -134,7 +128,7 @@ table 50035 "DistrSalesLineNVX"
         }
         field(18; "Qty. to Ship"; Decimal)
         {
-            AccessByPermission = TableData "Sales Shipment Header" = R;
+            AccessByPermission = tabledata "Sales Shipment Header" = R;
             Caption = 'Qty. to Ship', comment = 'DEA="Zu liefern"';
             DecimalPlaces = 0 : 5;
         }
@@ -210,22 +204,22 @@ table 50035 "DistrSalesLineNVX"
         }
         field(38; "Appl.-to Item Entry"; Integer)
         {
-            AccessByPermission = TableData Item = R;
+            AccessByPermission = tabledata Item = R;
             Caption = 'Appl.-to Item Entry', comment = 'DEA="Ausgleich mit Artikelposten"';
         }
         field(40; "Shortcut Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1),
-                                                          Blocked = CONST(false));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1),
+                                                          Blocked = const(false));
         }
         field(41; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2),
-                                                          Blocked = CONST(false));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2),
+                                                          Blocked = const(false));
         }
         field(42; "Customer Price Group"; Code[10])
         {
@@ -271,7 +265,7 @@ table 50035 "DistrSalesLineNVX"
         }
         field(60; "Quantity Shipped"; Decimal)
         {
-            AccessByPermission = TableData "Sales Shipment Header" = R;
+            AccessByPermission = tabledata "Sales Shipment Header" = R;
             Caption = 'Quantity Shipped', comment = 'DEA="Menge geliefert"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -314,22 +308,22 @@ table 50035 "DistrSalesLineNVX"
         }
         field(71; "Purchase Order No."; Code[20])
         {
-            AccessByPermission = TableData "Sales Shipment Header" = R;
+            AccessByPermission = tabledata "Sales Shipment Header" = R;
             Caption = 'Purchase Order No.', comment = 'DEA="Bestellungsnr."';
             Editable = false;
-            TableRelation = IF ("Drop Shipment" = CONST(true)) "Purchase Header"."No." WHERE("Document Type" = CONST(Order));
+            TableRelation = if ("Drop Shipment" = const(true)) "Purchase Header"."No." where("Document Type" = const(Order));
         }
         field(72; "Purch. Order Line No."; Integer)
         {
-            AccessByPermission = TableData "Sales Shipment Header" = R;
+            AccessByPermission = tabledata "Sales Shipment Header" = R;
             Caption = 'Purch. Order Line No.', comment = 'DEA="Bestellungszeilennr."';
             Editable = false;
-            TableRelation = IF ("Drop Shipment" = CONST(true)) "Purchase Line"."Line No." WHERE("Document Type" = CONST(Order),
-                                                                                               "Document No." = FIELD("Purchase Order No."));
+            TableRelation = if ("Drop Shipment" = const(true)) "Purchase Line"."Line No." where("Document Type" = const(Order),
+                                                                                               "Document No." = field("Purchase Order No."));
         }
         field(73; "Drop Shipment"; Boolean)
         {
-            AccessByPermission = TableData "Drop Shpt. Post. Buffer" = R;
+            AccessByPermission = tabledata "Drop Shpt. Post. Buffer" = R;
             Caption = 'Drop Shipment', comment = 'DEA="Direktlieferung"';
             Editable = true;
         }
@@ -364,8 +358,8 @@ table 50035 "DistrSalesLineNVX"
         {
             Caption = 'Attached to Line No.', comment = 'DEA="Gehört zu Zeilennr."';
             Editable = false;
-            TableRelation = "Sales Line"."Line No." WHERE("Document Type" = FIELD("Document Type"),
-                                                           "Document No." = FIELD("Document No."));
+            TableRelation = "Sales Line"."Line No." where("Document Type" = field("Document Type"),
+                                                           "Document No." = field("Document No."));
         }
         field(81; "Exit Point"; Code[10])
         {
@@ -441,12 +435,12 @@ table 50035 "DistrSalesLineNVX"
         }
         field(95; "Reserved Quantity"; Decimal)
         {
-            AccessByPermission = TableData "Sales Shipment Header" = R;
-            CalcFormula = - Sum ("Reservation Entry".Quantity WHERE("Source ID" = FIELD("Document No."),
-                                                                   "Source Ref. No." = FIELD("Line No."),
-                                                                   "Source Type" = CONST(37),
-                                                                   "Source Subtype" = FIELD("Document Type"),
-                                                                   "Reservation Status" = CONST(Reservation)));
+            AccessByPermission = tabledata "Sales Shipment Header" = R;
+            CalcFormula = - sum("Reservation Entry".Quantity where("Source ID" = field("Document No."),
+                                                                   "Source Ref. No." = field("Line No."),
+                                                                   "Source Type" = const(37),
+                                                                   "Source Subtype" = field("Document Type"),
+                                                                   "Reservation Status" = const(Reservation)));
             Caption = 'Reserved Quantity', comment = 'DEA="Reservierte Menge"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -454,27 +448,23 @@ table 50035 "DistrSalesLineNVX"
         }
         field(96; Reserve; Option)
         {
-            AccessByPermission = TableData Item = R;
+            AccessByPermission = tabledata Item = R;
             Caption = 'Reserve', comment = 'DEA="Reservieren"';
             OptionCaption = 'Never,Optional,Always', comment = 'DEA="Nie,Optional,Immer"';
             OptionMembers = Never,Optional,Always;
         }
         field(97; "Blanket Order No."; Code[20])
         {
-            AccessByPermission = TableData "Sales Shipment Header" = R;
+            AccessByPermission = tabledata "Sales Shipment Header" = R;
             Caption = 'Blanket Order No.', comment = 'DEA="Rahmenauftragsnr."';
-            TableRelation = "Sales Header"."No." WHERE("Document Type" = CONST("Blanket Order"));
-            //This property is currently not supported
-            //TestTableRelation = false;
+            TableRelation = "Sales Header"."No." where("Document Type" = const("Blanket Order"));
         }
         field(98; "Blanket Order Line No."; Integer)
         {
-            AccessByPermission = TableData "Sales Shipment Header" = R;
+            AccessByPermission = tabledata "Sales Shipment Header" = R;
             Caption = 'Blanket Order Line No.', comment = 'DEA="Rahmenauftragszeilennr."';
-            TableRelation = "Sales Line"."Line No." WHERE("Document Type" = CONST("Blanket Order"),
-                                                           "Document No." = FIELD("Blanket Order No."));
-            //This property is currently not supported
-            //TestTableRelation = false;
+            TableRelation = "Sales Line"."Line No." where("Document Type" = const("Blanket Order"),
+                                                           "Document No." = field("Blanket Order No."));
         }
         field(99; "VAT Base Amount"; Decimal)
         {
@@ -499,7 +489,6 @@ table 50035 "DistrSalesLineNVX"
         {
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            // CaptionClass = GetCaptionClass(FieldNo("Line Amount"));
             Caption = 'Line Amount', comment = 'DEA="Zeilenbetrag"';
         }
         field(104; "VAT Difference"; Decimal)
@@ -523,14 +512,14 @@ table 50035 "DistrSalesLineNVX"
         }
         field(107; "IC Partner Ref. Type"; Option)
         {
-            AccessByPermission = TableData "IC G/L Account" = R;
+            AccessByPermission = tabledata "IC G/L Account" = R;
             Caption = 'IC Partner Ref. Type', comment = 'DEA="IC-Partnerref.-Art"';
             OptionCaption = ' ,G/L Account,Item,,,Charge (Item),Cross Reference,Common Item No.', comment = 'DEA=" ,Sachkonto,Artikel,,,Zu-/Abschlag (Artikel),Referenz,Gemeinsame Artikelnr."';
             OptionMembers = " ","G/L Account",Item,,,"Charge (Item)","Cross Reference","Common Item No.";
         }
         field(108; "IC Partner Reference"; Code[20])
         {
-            AccessByPermission = TableData "IC G/L Account" = R;
+            AccessByPermission = tabledata "IC G/L Account" = R;
             Caption = 'IC Partner Reference', comment = 'DEA="IC-Partnerreferenz"';
         }
         field(109; "Prepayment %"; Decimal)
@@ -544,7 +533,6 @@ table 50035 "DistrSalesLineNVX"
         {
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            // CaptionClass = GetCaptionClass(FieldNo("Prepmt. Line Amount"));
             Caption = 'Prepmt. Line Amount', comment = 'DEA="Vorauszahlungszeilenbetrag"';
             MinValue = 0;
         }
@@ -552,7 +540,6 @@ table 50035 "DistrSalesLineNVX"
         {
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            // CaptionClass = GetCaptionClass(FieldNo("Prepmt. Amt. Inv."));
             Caption = 'Prepmt. Amt. Inv.', comment = 'DEA="Fakt. Vorauszahlungsbetrag"';
             Editable = false;
         }
@@ -614,7 +601,6 @@ table 50035 "DistrSalesLineNVX"
         {
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            // CaptionClass = GetCaptionClass(FieldNo("Prepmt Amt to Deduct"));
             Caption = 'Prepmt Amt to Deduct', comment = 'DEA="Abzuziehender Vorauszahlungsbetrag"';
             MinValue = 0;
         }
@@ -622,7 +608,6 @@ table 50035 "DistrSalesLineNVX"
         {
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            // CaptionClass = GetCaptionClass(FieldNo("Prepmt Amt Deducted"));
             Caption = 'Prepmt Amt Deducted', comment = 'DEA="Abgezogener Vorauszahlungsbetrag"';
             Editable = false;
         }
@@ -675,17 +660,11 @@ table 50035 "DistrSalesLineNVX"
             Caption = 'Prepmt VAT Diff. Deducted', comment = 'DEA="Abgezogene MwSt.-Differenz Vorauszahlung"';
             Editable = false;
         }
-        // field(145; "Pmt. Discount Amount"; Decimal)
-        // {
-        //     AutoFormatExpression = "Currency Code";
-        //     AutoFormatType = 1;
-        //     Caption = 'Pmt. Discount Amount', comment = 'DEA=""';
-        // }
         field(180; "Line Discount Calculation"; Option)
         {
             Caption = 'Line Discount Calculation', comment = 'DEA="Zeilenrabattberechnung"';
             OptionCaption = 'None,%,Amount', comment = 'DEA="Kein,%,Betrag"';
-            OptionMembers = "None","%",Amount;
+            OptionMembers = None,"%",Amount;
         }
         field(480; "Dimension Set ID"; Integer)
         {
@@ -695,7 +674,7 @@ table 50035 "DistrSalesLineNVX"
         }
         field(900; "Qty. to Assemble to Order"; Decimal)
         {
-            AccessByPermission = TableData "BOM Component" = R;
+            AccessByPermission = tabledata "BOM Component" = R;
             Caption = 'Qty. to Assemble to Order', comment = 'DEA="Menge für Auftragsmontage"';
             DecimalPlaces = 0 : 5;
         }
@@ -706,13 +685,13 @@ table 50035 "DistrSalesLineNVX"
         }
         field(902; "ATO Whse. Outstanding Qty."; Decimal)
         {
-            AccessByPermission = TableData "BOM Component" = R;
+            AccessByPermission = tabledata "BOM Component" = R;
             BlankZero = true;
-            CalcFormula = Sum ("Warehouse Shipment Line"."Qty. Outstanding" WHERE("Source Type" = CONST(37),
-                                                                                  "Source Subtype" = FIELD("Document Type"),
-                                                                                  "Source No." = FIELD("Document No."),
-                                                                                  "Source Line No." = FIELD("Line No."),
-                                                                                  "Assemble to Order" = FILTER(true)));
+            CalcFormula = sum("Warehouse Shipment Line"."Qty. Outstanding" where("Source Type" = const(37),
+                                                                                  "Source Subtype" = field("Document Type"),
+                                                                                  "Source No." = field("Document No."),
+                                                                                  "Source Line No." = field("Line No."),
+                                                                                  "Assemble to Order" = filter(true)));
             Caption = 'ATO Whse. Outstanding Qty.', comment = 'DEA="Auftragsmontage - Lagerrestbestellmenge"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -720,13 +699,13 @@ table 50035 "DistrSalesLineNVX"
         }
         field(903; "ATO Whse. Outstd. Qty. (Base)"; Decimal)
         {
-            AccessByPermission = TableData "BOM Component" = R;
+            AccessByPermission = tabledata "BOM Component" = R;
             BlankZero = true;
-            CalcFormula = Sum ("Warehouse Shipment Line"."Qty. Outstanding (Base)" WHERE("Source Type" = CONST(37),
-                                                                                         "Source Subtype" = FIELD("Document Type"),
-                                                                                         "Source No." = FIELD("Document No."),
-                                                                                         "Source Line No." = FIELD("Line No."),
-                                                                                         "Assemble to Order" = FILTER(true)));
+            CalcFormula = sum("Warehouse Shipment Line"."Qty. Outstanding (Base)" where("Source Type" = const(37),
+                                                                                         "Source Subtype" = field("Document Type"),
+                                                                                         "Source No." = field("Document No."),
+                                                                                         "Source Line No." = field("Line No."),
+                                                                                         "Assemble to Order" = filter(true)));
             Caption = 'ATO Whse. Outstd. Qty. (Base)', comment = 'DEA="Auftragsmontage - Lagerrestbestellmenge (Basis)"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -736,21 +715,14 @@ table 50035 "DistrSalesLineNVX"
         {
             Caption = 'Job Task No.', comment = 'DEA="Projektaufgabennr."';
             Editable = false;
-            TableRelation = "Job Task"."Job Task No." WHERE("Job No." = FIELD("Job No."));
+            TableRelation = "Job Task"."Job Task No." where("Job No." = field("Job No."));
         }
         field(1002; "Job Contract Entry No."; Integer)
         {
-            AccessByPermission = TableData Job = R;
+            AccessByPermission = tabledata Job = R;
             Caption = 'Job Contract Entry No.', comment = 'DEA="Projektvertragspostennr."';
             Editable = false;
         }
-        // field(1300; "Posting Date"; Date)
-        // {
-        //     CalcFormula = Lookup ("Sales Header"."Posting Date" WHERE("Document Type" = FIELD("Document Type"),
-        //                                                               "No." = FIELD("Document No.")));
-        //     Caption = 'Posting Date', comment = 'DEA="Buchungsdatum"';
-        //     FieldClass = FlowField;
-        // }
         field(1700; "Deferral Code"; Code[10])
         {
             Caption = 'Deferral Code', comment = 'DEA="Abgrenzungscode"';
@@ -763,23 +735,23 @@ table 50035 "DistrSalesLineNVX"
         field(5402; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code', comment = 'DEA="Variantencode"';
-            TableRelation = IF (Type = CONST(Item)) "Item Variant".Code WHERE("Item No." = FIELD("No."));
+            TableRelation = if (Type = const(Item)) "Item Variant".Code where("Item No." = field("No."));
         }
         field(5403; "Bin Code"; Code[20])
         {
             Caption = 'Bin Code', comment = 'DEA="Lagerplatzcode"';
-            TableRelation = IF ("Document Type" = FILTER(Order | Invoice),
-                                Quantity = FILTER(>= 0),
-                                "Qty. to Asm. to Order (Base)" = CONST(0)) "Bin Content"."Bin Code" WHERE("Location Code" = FIELD("Location Code"),
-                                                                                                         "Item No." = FIELD("No."),
-                                                                                                         "Variant Code" = FIELD("Variant Code"))
-            ELSE
-            IF ("Document Type" = FILTER("Return Order" | "Credit Memo"),
-                                                                                                                  Quantity = FILTER(< 0)) "Bin Content"."Bin Code" WHERE("Location Code" = FIELD("Location Code"),
-                                                                                                                                                                       "Item No." = FIELD("No."),
-                                                                                                                                                                       "Variant Code" = FIELD("Variant Code"))
-            ELSE
-            Bin.Code WHERE("Location Code" = FIELD("Location Code"));
+            TableRelation = if ("Document Type" = filter(Order | Invoice),
+                                Quantity = filter(>= 0),
+                                "Qty. to Asm. to Order (Base)" = const(0)) "Bin Content"."Bin Code" where("Location Code" = field("Location Code"),
+                                                                                                         "Item No." = field("No."),
+                                                                                                         "Variant Code" = field("Variant Code"))
+            else
+            if ("Document Type" = filter("Return Order" | "Credit Memo"),
+                                                                                                                  Quantity = filter(< 0)) "Bin Content"."Bin Code" where("Location Code" = field("Location Code"),
+                                                                                                                                                                       "Item No." = field("No."),
+                                                                                                                                                                       "Variant Code" = field("Variant Code"))
+            else
+            Bin.Code where("Location Code" = field("Location Code"));
         }
         field(5404; "Qty. per Unit of Measure"; Decimal)
         {
@@ -796,12 +768,12 @@ table 50035 "DistrSalesLineNVX"
         field(5407; "Unit of Measure Code"; Code[10])
         {
             Caption = 'Unit of Measure Code', comment = 'DEA="Einheitencode"';
-            TableRelation = IF (Type = CONST(Item),
-                                "No." = FILTER(<> '')) "Item Unit of Measure".Code WHERE("Item No." = FIELD("No."))
-            ELSE
-            IF (Type = CONST(Resource),
-                                         "No." = FILTER(<> '')) "Resource Unit of Measure".Code WHERE("Resource No." = FIELD("No."))
-            ELSE
+            TableRelation = if (Type = const(Item),
+                                "No." = filter(<> '')) "Item Unit of Measure".Code where("Item No." = field("No."))
+            else
+            if (Type = const(Resource),
+                                         "No." = filter(<> '')) "Resource Unit of Measure".Code where("Resource No." = field("No."))
+            else
             "Unit of Measure";
         }
         field(5415; "Quantity (Base)"; Decimal)
@@ -845,12 +817,12 @@ table 50035 "DistrSalesLineNVX"
         }
         field(5495; "Reserved Qty. (Base)"; Decimal)
         {
-            AccessByPermission = TableData "Sales Shipment Header" = R;
-            CalcFormula = - Sum ("Reservation Entry"."Quantity (Base)" WHERE("Source ID" = FIELD("Document No."),
-                                                                            "Source Ref. No." = FIELD("Line No."),
-                                                                            "Source Type" = CONST(37),
-                                                                            "Source Subtype" = FIELD("Document Type"),
-                                                                            "Reservation Status" = CONST(Reservation)));
+            AccessByPermission = tabledata "Sales Shipment Header" = R;
+            CalcFormula = - sum("Reservation Entry"."Quantity (Base)" where("Source ID" = field("Document No."),
+                                                                            "Source Ref. No." = field("Line No."),
+                                                                            "Source Type" = const(37),
+                                                                            "Source Subtype" = field("Document Type"),
+                                                                            "Reservation Status" = const(Reservation)));
             Caption = 'Reserved Qty. (Base)', comment = 'DEA="Reservierte Menge (Basis)"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -858,7 +830,7 @@ table 50035 "DistrSalesLineNVX"
         }
         field(5600; "FA Posting Date"; Date)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'FA Posting Date', comment = 'DEA="Anlagedatum"';
         }
         field(5602; "Depreciation Book Code"; Code[10])
@@ -868,7 +840,7 @@ table 50035 "DistrSalesLineNVX"
         }
         field(5605; "Depr. until FA Posting Date"; Boolean)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'Depr. until FA Posting Date', comment = 'DEA="AfA bis Anlagedatum"';
         }
         field(5612; "Duplicate in Depreciation Book"; Code[10])
@@ -878,7 +850,7 @@ table 50035 "DistrSalesLineNVX"
         }
         field(5613; "Use Duplication List"; Boolean)
         {
-            AccessByPermission = TableData "Fixed Asset" = R;
+            AccessByPermission = tabledata "Fixed Asset" = R;
             Caption = 'Use Duplication List', comment = 'DEA="Kopiervorgang aktivieren"';
         }
         field(5700; "Responsibility Center"; Code[10])
@@ -894,35 +866,35 @@ table 50035 "DistrSalesLineNVX"
         }
         field(5702; "Substitution Available"; Boolean)
         {
-            CalcFormula = Exist ("Item Substitution" WHERE(Type = CONST(Item),
-                                                           "No." = FIELD("No."),
-                                                           "Substitute Type" = CONST(Item)));
+            CalcFormula = exist("Item Substitution" where(Type = const(Item),
+                                                           "No." = field("No."),
+                                                           "Substitute Type" = const(Item)));
             Caption = 'Substitution Available', comment = 'DEA="Ersatzartikel verfügbar"';
             Editable = false;
             FieldClass = FlowField;
         }
         field(5703; "Originally Ordered No."; Code[20])
         {
-            AccessByPermission = TableData "Item Substitution" = R;
+            AccessByPermission = tabledata "Item Substitution" = R;
             Caption = 'Originally Ordered No.', comment = 'DEA="Urspr. Nr. (Auftrag)"';
-            TableRelation = IF (Type = CONST(Item)) Item;
+            TableRelation = if (Type = const(Item)) Item;
         }
         field(5704; "Originally Ordered Var. Code"; Code[10])
         {
-            AccessByPermission = TableData "Item Substitution" = R;
+            AccessByPermission = tabledata "Item Substitution" = R;
             Caption = 'Originally Ordered Var. Code', comment = 'DEA="Urspr. Variantencode (Auftrag)"';
-            TableRelation = IF (Type = CONST(Item)) "Item Variant".Code WHERE("Item No." = FIELD("Originally Ordered No."));
+            TableRelation = if (Type = const(Item)) "Item Variant".Code where("Item No." = field("Originally Ordered No."));
         }
         field(5705; "Cross-Reference No."; Code[20])
         {
-            AccessByPermission = TableData "Item Cross Reference" = R;
+            AccessByPermission = tabledata "Item Cross Reference" = R;
             Caption = 'Cross-Reference No.', comment = 'DEA="Referenznr."';
         }
         field(5706; "Unit of Measure (Cross Ref.)"; Code[10])
         {
-            AccessByPermission = TableData "Item Cross Reference" = R;
+            AccessByPermission = tabledata "Item Cross Reference" = R;
             Caption = 'Unit of Measure (Cross Ref.)', comment = 'DEA="Einheit (Referenz)"';
-            TableRelation = IF (Type = CONST(Item)) "Item Unit of Measure".Code WHERE("Item No." = FIELD("No."));
+            TableRelation = if (Type = const(Item)) "Item Unit of Measure".Code where("Item No." = field("No."));
         }
         field(5707; "Cross-Reference Type"; Option)
         {
@@ -941,51 +913,43 @@ table 50035 "DistrSalesLineNVX"
         }
         field(5710; Nonstock; Boolean)
         {
-            AccessByPermission = TableData "Nonstock Item" = R;
+            AccessByPermission = tabledata "Nonstock Item" = R;
             Caption = 'Catalog', comment = 'DEA="Katalogartikel"';
             Editable = false;
         }
         field(5711; "Purchasing Code"; Code[10])
         {
-            AccessByPermission = TableData "Drop Shpt. Post. Buffer" = R;
+            AccessByPermission = tabledata "Drop Shpt. Post. Buffer" = R;
             Caption = 'Purchasing Code', comment = 'DEA="Einkaufscode"';
             TableRelation = Purchasing;
         }
-        // field(5712; "Product Group Code"; Code[10])
-        // {
-        //     Caption = 'Product Group Code', comment = 'DEA="Produktgruppencode"';
-        //     ObsoleteReason = 'Product Groups became first level children of Item Categories.';
-        //     ObsoleteState = Obsolete;
-        //     TableRelation = "Product Group".Code WHERE("Item Category Code" = FIELD("Item Category Code"));
-        //     ValidateTableRelation = false;
-        // }
         field(5713; "Special Order"; Boolean)
         {
-            AccessByPermission = TableData "Drop Shpt. Post. Buffer" = R;
+            AccessByPermission = tabledata "Drop Shpt. Post. Buffer" = R;
             Caption = 'Special Order', comment = 'DEA="Spezialauftrag"';
             Editable = false;
         }
         field(5714; "Special Order Purchase No."; Code[20])
         {
-            AccessByPermission = TableData "Drop Shpt. Post. Buffer" = R;
+            AccessByPermission = tabledata "Drop Shpt. Post. Buffer" = R;
             Caption = 'Special Order Purchase No.', comment = 'DEA="Spezialauftrag-Bestellnr."';
-            TableRelation = IF ("Special Order" = CONST(true)) "Purchase Header"."No." WHERE("Document Type" = CONST(Order));
+            TableRelation = if ("Special Order" = const(true)) "Purchase Header"."No." where("Document Type" = const(Order));
         }
         field(5715; "Special Order Purch. Line No."; Integer)
         {
-            AccessByPermission = TableData "Drop Shpt. Post. Buffer" = R;
+            AccessByPermission = tabledata "Drop Shpt. Post. Buffer" = R;
             Caption = 'Special Order Purch. Line No.', comment = 'DEA="Spezialauftrag-Eink.-Zeilennr."';
-            TableRelation = IF ("Special Order" = CONST(true)) "Purchase Line"."Line No." WHERE("Document Type" = CONST(Order),
-                                                                                               "Document No." = FIELD("Special Order Purchase No."));
+            TableRelation = if ("Special Order" = const(true)) "Purchase Line"."Line No." where("Document Type" = const(Order),
+                                                                                               "Document No." = field("Special Order Purchase No."));
         }
         field(5749; "Whse. Outstanding Qty."; Decimal)
         {
-            AccessByPermission = TableData Location = R;
+            AccessByPermission = tabledata Location = R;
             BlankZero = true;
-            CalcFormula = Sum ("Warehouse Shipment Line"."Qty. Outstanding" WHERE("Source Type" = CONST(37),
-                                                                                  "Source Subtype" = FIELD("Document Type"),
-                                                                                  "Source No." = FIELD("Document No."),
-                                                                                  "Source Line No." = FIELD("Line No.")));
+            CalcFormula = sum("Warehouse Shipment Line"."Qty. Outstanding" where("Source Type" = const(37),
+                                                                                  "Source Subtype" = field("Document Type"),
+                                                                                  "Source No." = field("Document No."),
+                                                                                  "Source Line No." = field("Line No.")));
             Caption = 'Whse. Outstanding Qty.', comment = 'DEA="Lagerrestbestellmenge"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -993,12 +957,12 @@ table 50035 "DistrSalesLineNVX"
         }
         field(5750; "Whse. Outstanding Qty. (Base)"; Decimal)
         {
-            AccessByPermission = TableData Location = R;
+            AccessByPermission = tabledata Location = R;
             BlankZero = true;
-            CalcFormula = Sum ("Warehouse Shipment Line"."Qty. Outstanding (Base)" WHERE("Source Type" = CONST(37),
-                                                                                         "Source Subtype" = FIELD("Document Type"),
-                                                                                         "Source No." = FIELD("Document No."),
-                                                                                         "Source Line No." = FIELD("Line No.")));
+            CalcFormula = sum("Warehouse Shipment Line"."Qty. Outstanding (Base)" where("Source Type" = const(37),
+                                                                                         "Source Subtype" = field("Document Type"),
+                                                                                         "Source No." = field("Document No."),
+                                                                                         "Source Line No." = field("Line No.")));
             Caption = 'Whse. Outstanding Qty. (Base)', comment = 'DEA="Lagerrestbestellmenge (Basis)"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -1015,52 +979,52 @@ table 50035 "DistrSalesLineNVX"
         }
         field(5791; "Promised Delivery Date"; Date)
         {
-            AccessByPermission = TableData "Order Promising Line" = R;
+            AccessByPermission = tabledata "Order Promising Line" = R;
             Caption = 'Promised Delivery Date', comment = 'DEA="Zugesagtes Lieferdatum"';
         }
         field(5792; "Shipping Time"; DateFormula)
         {
-            AccessByPermission = TableData "Order Promising Line" = R;
+            AccessByPermission = tabledata "Order Promising Line" = R;
             Caption = 'Shipping Time', comment = 'DEA="Transportzeit"';
         }
         field(5793; "Outbound Whse. Handling Time"; DateFormula)
         {
-            AccessByPermission = TableData Location = R;
+            AccessByPermission = tabledata Location = R;
             Caption = 'Outbound Whse. Handling Time', comment = 'DEA="Ausgeh. Lagerdurchlaufzeit"';
         }
         field(5794; "Planned Delivery Date"; Date)
         {
-            AccessByPermission = TableData "Order Promising Line" = R;
+            AccessByPermission = tabledata "Order Promising Line" = R;
             Caption = 'Planned Delivery Date', comment = 'DEA="Geplantes Lieferdatum"';
         }
         field(5795; "Planned Shipment Date"; Date)
         {
-            AccessByPermission = TableData "Order Promising Line" = R;
+            AccessByPermission = tabledata "Order Promising Line" = R;
             Caption = 'Planned Shipment Date', comment = 'DEA="Geplantes Warenausgangsdatum"';
         }
         field(5796; "Shipping Agent Code"; Code[10])
         {
-            AccessByPermission = TableData "Shipping Agent Services" = R;
+            AccessByPermission = tabledata "Shipping Agent Services" = R;
             Caption = 'Shipping Agent Code', comment = 'DEA="Zustellercode"';
             TableRelation = "Shipping Agent";
         }
         field(5797; "Shipping Agent Service Code"; Code[10])
         {
-            AccessByPermission = TableData "Shipping Agent Services" = R;
+            AccessByPermission = tabledata "Shipping Agent Services" = R;
             Caption = 'Shipping Agent Service Code', comment = 'DEA="Zustellertransportartencode"';
-            TableRelation = "Shipping Agent Services".Code WHERE("Shipping Agent Code" = FIELD("Shipping Agent Code"));
+            TableRelation = "Shipping Agent Services".Code where("Shipping Agent Code" = field("Shipping Agent Code"));
         }
         field(5800; "Allow Item Charge Assignment"; Boolean)
         {
-            AccessByPermission = TableData "Item Charge" = R;
+            AccessByPermission = tabledata "Item Charge" = R;
             Caption = 'Allow Item Charge Assignment', comment = 'DEA="Artikel Zu-/Abschlagszuw. zul."';
             InitValue = true;
         }
         field(5801; "Qty. to Assign"; Decimal)
         {
-            CalcFormula = Sum ("Item Charge Assignment (Sales)"."Qty. to Assign" WHERE("Document Type" = FIELD("Document Type"),
-                                                                                       "Document No." = FIELD("Document No."),
-                                                                                       "Document Line No." = FIELD("Line No.")));
+            CalcFormula = sum("Item Charge Assignment (Sales)"."Qty. to Assign" where("Document Type" = field("Document Type"),
+                                                                                       "Document No." = field("Document No."),
+                                                                                       "Document Line No." = field("Line No.")));
             Caption = 'Qty. to Assign', comment = 'DEA="Menge für Zuweisung"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -1068,9 +1032,9 @@ table 50035 "DistrSalesLineNVX"
         }
         field(5802; "Qty. Assigned"; Decimal)
         {
-            CalcFormula = Sum ("Item Charge Assignment (Sales)"."Qty. Assigned" WHERE("Document Type" = FIELD("Document Type"),
-                                                                                      "Document No." = FIELD("Document No."),
-                                                                                      "Document Line No." = FIELD("Line No.")));
+            CalcFormula = sum("Item Charge Assignment (Sales)"."Qty. Assigned" where("Document Type" = field("Document Type"),
+                                                                                      "Document No." = field("Document No."),
+                                                                                      "Document Line No." = field("Line No.")));
             Caption = 'Qty. Assigned', comment = 'DEA="Zugewiesene Menge"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -1078,7 +1042,7 @@ table 50035 "DistrSalesLineNVX"
         }
         field(5803; "Return Qty. to Receive"; Decimal)
         {
-            AccessByPermission = TableData "Return Receipt Header" = R;
+            AccessByPermission = tabledata "Return Receipt Header" = R;
             Caption = 'Return Qty. to Receive', comment = 'DEA="Menge akt. Rücksendung"';
             DecimalPlaces = 0 : 5;
         }
@@ -1114,7 +1078,7 @@ table 50035 "DistrSalesLineNVX"
         }
         field(5809; "Return Qty. Received"; Decimal)
         {
-            AccessByPermission = TableData "Return Receipt Header" = R;
+            AccessByPermission = tabledata "Return Receipt Header" = R;
             Caption = 'Return Qty. Received', comment = 'DEA="Bereits gelief. Rücks.-Menge"';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -1127,7 +1091,7 @@ table 50035 "DistrSalesLineNVX"
         }
         field(5811; "Appl.-from Item Entry"; Integer)
         {
-            AccessByPermission = TableData Item = R;
+            AccessByPermission = tabledata Item = R;
             Caption = 'Appl.-from Item Entry', comment = 'DEA="Ausgegl. von Artikelposten"';
             MinValue = 0;
         }
@@ -1176,17 +1140,6 @@ table 50035 "DistrSalesLineNVX"
         {
             Caption = 'Price description', comment = 'DEA="Preisbeschreibung"';
         }
-        // field(7010; "Attached Doc Count"; Integer)
-        // {
-        //     BlankNumbers = DontBlank;
-        //     CalcFormula = Count ("Document Attachment" WHERE("Table ID" = CONST(37),
-        //                                                      "No." = FIELD("Document No."),
-        //                                                      "Document Type" = FIELD("Document Type"),
-        //                                                      "Line No." = FIELD("Line No.")));
-        //     Caption = 'Attached Doc Count', comment = 'DEA=""';
-        //     FieldClass = FlowField;
-        //     InitValue = 0;
-        // }
         field(50000; "VAT Posting Type"; Code[10])
         {
             Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
@@ -1197,7 +1150,7 @@ table 50035 "DistrSalesLineNVX"
             Caption = 'Allocation Code', comment = 'Verteilungscode"';
             DataClassification = CustomerContent;
         }
-        field(50002;"Allocation %";Decimal)
+        field(50002; "Allocation %"; Decimal)
         {
             Caption = 'Allocation %', comment = 'DEA="Verteilung %"';
             DataClassification = CustomerContent;
@@ -1212,110 +1165,62 @@ table 50035 "DistrSalesLineNVX"
             Caption = 'Shortcut Dimension 1 Name', comment = 'DEA="Shortcutdimensionsname 1"';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = lookup ("Dimension Value".Name WHERE("Global Dimension No." = const(1), Code = field("Shortcut Dimension 1 Code")));
+            CalcFormula = lookup("Dimension Value".Name where("Global Dimension No." = const(1), Code = field("Shortcut Dimension 1 Code")));
             CaptionClass = '1337,1';
         }
         field(50006; "Shortcut Dimension 3 Code"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (3));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
             CaptionClass = '1,2,3';
         }
-        // field(50007; "Shortcut Dimension 3 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 3 Name', comment = 'DEA="Shortcutdimensionsname 3"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (3), Code = field ("Shortcut Dimension 3 Code")));
-        //     CaptionClass = '1337,3';
-        // }
         field(50008; "Shortcut Dimension 4 Code"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 4 Code', comment = 'DEA="Shortcutdimensionscode 4"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (4));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(4));
             CaptionClass = '1,2,4';
         }
-        // field(50009; "Shortcut Dimension 4 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 4 Name', comment = 'DEA="Shortcutdimensionsname 4"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (4), Code = field ("Shortcut Dimension 4 Code")));
-        //     CaptionClass = '1337,4';
-        // }
         field(50010; "Shortcut Dimension 5 Code"; Code[20])
         {
             Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimensionscode 5"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (5));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5));
             CaptionClass = '1,2,5';
         }
-        // field(50011; "Shortcut Dimension 5 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 5 Name', comment = 'DEA="Shortcutdimensionsname 5"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (5), Code = field ("Shortcut Dimension 5 Code")));
-        //     CaptionClass = '1337,5';
-        // }
         field(50012; "Shortcut Dimension 6 Code"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 6 Code', comment = 'DEA="Shortcutdimensionscode 6"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (6));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(6));
             CaptionClass = '1,2,6';
         }
-        // field(50013; "Shortcut Dimension 6 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 6 Name', comment = 'DEA="Shortcutdimensionsname 6"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (6), Code = field ("Shortcut Dimension 6 Code")));
-        //     CaptionClass = '1337,6';
-        // }
         field(50014; "Shortcut Dimension 7 Code"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 7 Code', comment = 'DEA="Shortcutdimensionscode 7"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (7));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(7));
             CaptionClass = '1,2,7';
         }
-        // field(50015; "Shortcut Dimension 7 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 7 Name', comment = 'DEA="Shortcutdimensionsname 7"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (7), Code = field ("Shortcut Dimension 7 Code")));
-        //     CaptionClass = '1337,7';
-        // }
         field(50016; "Shortcut Dimension 8 Code"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 8 Code', comment = 'DEA="Shortcutdimensionscode 8"';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (8));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(8));
             CaptionClass = '1,2,8';
         }
-
-        // field(50017; "Shortcut Dimension 8 Name"; Text[50])
-        // {
-        //     Caption = 'Shortcut Dimension 8 Name', comment = 'DEA="Shortcutdimensionsname 8"';
-        //     Editable = false;
-        //     FieldClass = FlowField;
-        //     CalcFormula = lookup ("Dimension Value".Name WHERE ("Global Dimension No." = const (8), Code = field ("Shortcut Dimension 8 Code")));
-        //     CaptionClass = '1337,8';
-        // }
         field(50020; "Gen. Bus. Posting Group Desc"; Text[100])
         {
             Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Geschäftsbuchungsgruppe Beschreibung"';
             FieldClass = FlowField;
-            CalcFormula = lookup ("Gen. Business Posting Group".Description where (Code = field("Gen. Bus. Posting Group")));
+            Editable = false;
+            CalcFormula = lookup("Gen. Business Posting Group".Description where(Code = field("Gen. Bus. Posting Group")));
         }
         field(50025; "Sales Shortcut Dimension 1"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));       
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
             // CaptionClass = '1338,1'; = Sales + Dim Name
             // CaptionClass = '1339,1'; = Purchase + Dim Name
         }
@@ -1325,8 +1230,8 @@ table 50035 "DistrSalesLineNVX"
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
             // CaptionClass = '1338,3'; = Sales + Dim Name
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
-        }        
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
+        }
         field(50031; "External Document No."; Code[35])
         {
             Caption = 'External Document No.', comment = 'DEA="Externe Belegnummer"';
@@ -1340,7 +1245,7 @@ table 50035 "DistrSalesLineNVX"
         field(50050; "Origin Line No."; Integer)
         {
             DataClassification = CustomerContent;
-        }   
+        }
     }
 
     keys
@@ -1349,70 +1254,5 @@ table 50035 "DistrSalesLineNVX"
         {
             Clustered = true;
         }
-        // key(Key2; "Document No.", "Line No.", "Document Type")
-        // {
-        //     Enabled = false;
-        // }
-        // key(Key3; "Document Type", Type, "No.", "Variant Code", "Drop Shipment", "Location Code", "Shipment Date")
-        // {
-        //     SumIndexFields = "Outstanding Qty. (Base)";
-        // }
-        // key(Key4; "Document Type", "Bill-to Customer No.", "Currency Code", "Document No.")
-        // {
-        //     SumIndexFields = "Outstanding Amount", "Shipped Not Invoiced", "Outstanding Amount (LCY)", "Shipped Not Invoiced (LCY)", "Return Rcd. Not Invd. (LCY)";
-        // }
-        // key(Key5; "Document Type", Type, "No.", "Variant Code", "Drop Shipment", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Location Code", "Shipment Date")
-        // {
-        //     Enabled = false;
-        //     SumIndexFields = "Outstanding Qty. (Base)";
-        // }
-        // key(Key6; "Document Type", "Bill-to Customer No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Currency Code", "Document No.")
-        // {
-        //     Enabled = false;
-        //     SumIndexFields = "Outstanding Amount", "Shipped Not Invoiced", "Outstanding Amount (LCY)", "Shipped Not Invoiced (LCY)";
-        // }
-        // key(Key7; "Document Type", "Blanket Order No.", "Blanket Order Line No.")
-        // {
-        // }
-        // key(Key8; "Document Type", "Document No.", "Location Code")
-        // {
-        //     MaintainSQLIndex = false;
-        //     SumIndexFields = Amount, "Amount Including VAT", "Outstanding Amount", "Shipped Not Invoiced", "Outstanding Amount (LCY)", "Shipped Not Invoiced (LCY)";
-        // }
-        // key(Key9; "Document Type", "Shipment No.", "Shipment Line No.")
-        // {
-        // }
-        // key(Key10; Type, "No.", "Variant Code", "Drop Shipment", "Location Code", "Document Type", "Shipment Date")
-        // {
-        //     MaintainSQLIndex = false;
-        // }
-        // key(Key11; "Document Type", "Sell-to Customer No.", "Shipment No.", "Document No.")
-        // {
-        //     SumIndexFields = "Outstanding Amount (LCY)";
-        // }
-        // key(Key12; "Job Contract Entry No.")
-        // {
-        // }
-        // key(Key13; "Document Type", "Document No.", "Qty. Shipped Not Invoiced")
-        // {
-        //     Enabled = false;
-        // }
-        // key(Key14; "Document Type", "Document No.", Type, "No.")
-        // {
-        //     Enabled = false;
-        // }
-        // key(Key15; "Recalculate Invoice Disc.")
-        // {
-        // }
-        // key(Key16; "Qty. Shipped Not Invoiced")
-        // {
-        // }
-        // key(Key17; "Qty. Shipped (Base)")
-        // {
-        // }
-        // key(Key18; "Shipment Date", "Outstanding Quantity")
-        // {
-        // }
     }
 }
-

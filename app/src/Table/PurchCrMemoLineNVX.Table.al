@@ -1,7 +1,5 @@
-table 50032 "PurchCrMemoLineNVX"
+table 50030 PurchCrMemoLineNVX
 {
-    DataClassification = CustomerContent;
-    
     fields
     {
         field(3; "Document No."; Code[20])
@@ -27,7 +25,7 @@ table 50032 "PurchCrMemoLineNVX"
 
     keys
     {
-        key(PK;"Document No.","Line No.")
+        key(PK; "Document No.", "Line No.")
         {
             Clustered = true;
         }

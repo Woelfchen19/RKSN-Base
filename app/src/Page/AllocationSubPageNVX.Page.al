@@ -1,4 +1,4 @@
-page 50006 "AllocationSubPageNVX"
+page 50003 AllocationSubPageNVX
 {
     Caption = 'Lines', comment = 'DEA="Zeilen"';
     PageType = ListPart;
@@ -35,11 +35,6 @@ page 50006 "AllocationSubPageNVX"
                 {
                     ApplicationArea = All;
                 }
-                //TODO I don't understand this field :(
-                // field("Allocation Quantity"; "Allocation Quantity")
-                // {
-                //     ApplicationArea = All;
-                // }
                 field("Allocation %"; "Allocation %")
                 {
                     ApplicationArea = All;
@@ -47,6 +42,7 @@ page 50006 "AllocationSubPageNVX"
             }
         }
     }
+
     trigger OnNewRecord(BelowxRec: Boolean);
     var
         AllocationCode: Record AllocationCodeNVX;

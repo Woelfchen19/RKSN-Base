@@ -1,4 +1,4 @@
-pageextension 50034 "FALedgerEntriesNVX" extends "FA Ledger Entries"
+pageextension 50031 FALedgerEntriesNVX extends "FA Ledger Entries"
 {
     layout
     {
@@ -15,10 +15,10 @@ pageextension 50034 "FALedgerEntriesNVX" extends "FA Ledger Entries"
 
     var
         FALedgerEntryNVX: Record FALedgerEntryNVX;
-    
+
     trigger OnAfterGetRecord();
     begin
-        IF not FALedgerEntryNVX.Get("Entry No.") then
+        if not FALedgerEntryNVX.Get("Entry No.") then
             FALedgerEntryNVX.Init();
     end;
 }

@@ -1,9 +1,8 @@
-table 50004 "VATPostingTypeNVX"
+table 50043 VATPostingTypeNVX
 {
-    DataClassification = CustomerContent;
     Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
-    LookupPageId = 50000;
-    DrillDownPageId = 50000;
+    LookupPageId = VATPostingTypeNVX;
+    DrillDownPageId = VATPostingTypeNVX;
     fields
     {
         field(1; "Code"; Code[10])
@@ -17,11 +16,10 @@ table 50004 "VATPostingTypeNVX"
             Caption = 'Description', comment = 'DEA="Beschreibung"';
         }
     }
-    
 
     keys
     {
-        key(PK;Code)
+        key(PK; Code)
         {
             Clustered = true;
         }

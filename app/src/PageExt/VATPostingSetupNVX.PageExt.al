@@ -1,4 +1,4 @@
-pageextension 50009 VATPostingSetupNVX extends "VAT Posting Setup"
+pageextension 50049 VATPostingSetupNVX extends "VAT Posting Setup"
 {
     layout
     {
@@ -10,51 +10,58 @@ pageextension 50009 VATPostingSetupNVX extends "VAT Posting Setup"
                 Caption = 'Purchase VAT as Expense', comment = 'DEA="VST als Aufwand"';
                 trigger OnValidate()
                 begin
-                    IF not VATPostingSetupNVX.Get(Rec."VAT Bus. Posting Group",Rec."VAT Prod. Posting Group") then begin
-                        VATPostingSetupNVX.Init();
-                        VATPostingSetupNVX."VAT Bus. Posting Group" := Rec."VAT Bus. Posting Group";
-                        VATPostingSetupNVX."VAT Prod. Posting Group" := Rec."VAT Prod. Posting Group";
-                        VATPostingSetupNVX."Purchase VAT as Expense" := PurchaseVATasExpense;
-                        VATPostingSetupNVX.Insert();
-                    end else begin
-                        VATPostingSetupNVX."Purchase VAT as Expense" := PurchaseVATasExpense;
-                        VATPostingSetupNVX.Modify();
-                    end;
+                    SetComplementaryFields();
                 end;
             }
         }
     }
 
+    var
+        VATPostingSetupNVX: Record VATPostingSetupNVX;
+        PurchaseVATasExpense: Boolean;
+
+
     trigger OnAfterGetRecord()
     begin
-        IF not VATPostingSetupNVX.Get(Rec."VAT Bus. Posting Group",Rec."VAT Prod. Posting Group") then begin
-            VATPostingSetupNVX.Init();
-            VATPostingSetupNVX."VAT Bus. Posting Group" := Rec."VAT Bus. Posting Group";
-            VATPostingSetupNVX."VAT Prod. Posting Group" := Rec."VAT Prod. Posting Group";
-            VATPostingSetupNVX.Insert();
-            Clear(PurchaseVATasExpense);
-        end else
-            PurchaseVATasExpense := VATPostingSetupNVX."Purchase VAT as Expense";
+        VATPostingSetupNVX.GetDefinition(Rec."VAT Bus. Posting Group", Rec."VAT Prod. Posting Group");
+        SetGlobalVariables();
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        Clear(PurchaseVATasExpense);
+        ClearGlobalVariables();
     end;
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
-        If PurchaseVATasExpense then begin
-            VATPostingSetupNVX.Init();
-            VATPostingSetupNVX."VAT Bus. Posting Group" := Rec."VAT Bus. Posting Group";
-            VATPostingSetupNVX."VAT Prod. Posting Group" := Rec."VAT Prod. Posting Group";
-            VATPostingSetupNVX."Purchase VAT as Expense" := PurchaseVATasExpense;
-            VATPostingSetupNVX.Insert();
-        end;
+        VATPostingSetupNVX.GetDefinition(Rec."VAT Bus. Posting Group", Rec."VAT Prod. Posting Group");
+        SetComplementaryFields();
+        exit(true)
+    end;
+
+    trigger OnDeleteRecord(): Boolean
+    begin
+        ClearGlobalVariables();
         exit(true);
     end;
-    
-    var
-        VATPostingSetupNVX: Record VATPostingSetupNVX;
-        PurchaseVATasExpense: Boolean;
+
+    local procedure SetGlobalVariables()
+    begin
+        PurchaseVATasExpense := VATPostingSetupNVX."Purchase VAT as Expense";
+    end;
+
+    local procedure ClearGlobalVariables()
+    begin
+        Clear(VATPostingSetupNVX);
+        Clear(PurchaseVATasExpense);
+    end;
+
+    local procedure SetComplementaryFields()
+    begin
+        if (PurchaseVATasExpense = VATPostingSetupNVX."Purchase VAT as Expense") then
+            exit;
+
+        VATPostingSetupNVX."Purchase VAT as Expense" := PurchaseVATasExpense;
+        VATPostingSetupNVX.Modify();
+    end;
 }

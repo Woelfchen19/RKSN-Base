@@ -1,4 +1,4 @@
-page 50002 "DimVATAllocNVX"
+page 50005 DimVATAllocNVX
 {
 
     ApplicationArea = All;
@@ -9,7 +9,7 @@ page 50002 "DimVATAllocNVX"
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(General)
             {
@@ -26,8 +26,8 @@ page 50002 "DimVATAllocNVX"
                     ApplicationArea = All;
                     trigger OnDrillDown();
                     var
-                        GLSetup: Record "General Ledger Setup";
                         DimValueRec: Record "Dimension Value";
+                        GLSetup: Record "General Ledger Setup";
                         DimValuesPage: Page "Dimension Values";
                     begin
                         GLSetup.Get();
@@ -46,8 +46,8 @@ page 50002 "DimVATAllocNVX"
                     ApplicationArea = All;
                     trigger OnDrillDown();
                     var
-                        GLSetup: Record "General Ledger Setup";
                         DimValueRec: Record "Dimension Value";
+                        GLSetup: Record "General Ledger Setup";
                         DimValuesPage: Page "Dimension Values";
                     begin
                         GLSetup.Get();
@@ -66,8 +66,8 @@ page 50002 "DimVATAllocNVX"
                     ApplicationArea = All;
                     trigger OnDrillDown();
                     var
-                        GLSetup: Record "General Ledger Setup";
                         DimValueRec: Record "Dimension Value";
+                        GLSetup: Record "General Ledger Setup";
                         DimValuesPage: Page "Dimension Values";
                     begin
                         GLSetup.Get();
@@ -86,8 +86,8 @@ page 50002 "DimVATAllocNVX"
                     ApplicationArea = All;
                     trigger OnDrillDown();
                     var
-                        GLSetup: Record "General Ledger Setup";
                         DimValueRec: Record "Dimension Value";
+                        GLSetup: Record "General Ledger Setup";
                         DimValuesPage: Page "Dimension Values";
                     begin
                         GLSetup.Get();
@@ -118,7 +118,7 @@ page 50002 "DimVATAllocNVX"
     begin
 
         DimVATAlloc.Reset();
-        IF DimVATAlloc.FindSet() then
+        if DimVATAlloc.FindSet() then
             repeat
                 DimVATAlloc2.SetRange("Shortcut Dimension 1 Code", DimVATAlloc."Shortcut Dimension 1 Code");
                 DimVATAlloc2.SetRange("Shortcut Dimension 2 Code", DimVATAlloc."Shortcut Dimension 2 Code");
@@ -130,6 +130,4 @@ page 50002 "DimVATAllocNVX"
 
         exit(true);
     end;
-
 }
-

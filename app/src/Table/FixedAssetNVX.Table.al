@@ -1,7 +1,5 @@
-table 50015 "FixedAssetNVX"
+table 50015 FixedAssetNVX
 {
-    DataClassification = ToBeClassified;
-    
     fields
     {
         field(1; "No."; Code[20])
@@ -18,9 +16,21 @@ table 50015 "FixedAssetNVX"
 
     keys
     {
-        key(PK;"No.")
+        key(PK; "No.")
         {
             Clustered = true;
         }
     }
+
+    procedure GetDefinition(No: Code[20])
+    begin
+        if No = "No." then
+            exit;
+        if Get(No) then
+            exit;
+
+        Init();
+        "No." := No;
+        Insert();
+    end;
 }

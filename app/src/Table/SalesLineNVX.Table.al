@@ -1,7 +1,5 @@
-table 50036 "SalesLineNVX"
+table 50040 SalesLineNVX
 {
-    DataClassification = CustomerContent;
-    
     fields
     {
         field(1; "Document Type"; Option)
@@ -15,7 +13,7 @@ table 50036 "SalesLineNVX"
         }
         field(4; "Line No."; Integer)
         {
-            DataClassification = CustomerContent;            
+            DataClassification = CustomerContent;
         }
         field(10; "Allocation Code"; Code[10])
         {
@@ -27,7 +25,7 @@ table 50036 "SalesLineNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));       
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
             // CaptionClass = '1338,1'; = Sales + Dim Name
             // CaptionClass = '1339,1'; = Purchase + Dim Name
         }
@@ -37,7 +35,7 @@ table 50036 "SalesLineNVX"
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
             // CaptionClass = '1338,3'; = Sales + Dim Name
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
         }
         field(30; "Cust. Unit Price"; Decimal)
         {
@@ -56,61 +54,35 @@ table 50036 "SalesLineNVX"
             Caption = 'Allocation Amount';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum (DistrSalesLineNVX."VAT Base Amount" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No."), "Origin Line No." = field ("Line No.")));
+            CalcFormula = sum(DistrSalesLineNVX."VAT Base Amount" where("Document Type" = field("Document Type"), "Document No." = field("Document No."), "Origin Line No." = field("Line No.")));
         }
         field(101; "Allocation Amount Incl. VAT"; Decimal)
         {
             Caption = 'Allocation Amount Incl. VAT';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum (DistrSalesLineNVX."Amount Including VAT" where ("Document Type" = field ("Document Type"), "Document No." = field ("Document No."), "Origin Line No." = field ("Line No.")));
+            CalcFormula = sum(DistrSalesLineNVX."Amount Including VAT" where("Document Type" = field("Document Type"), "Document No." = field("Document No."), "Origin Line No." = field("Line No.")));
         }
         field(102; "Comp Gen. Bus. Pst Grp WES"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Composition Gen. Bus. Posting Group WES', comment = 'DEA="Abfassung Steuerschlüssel WES"';
             TableRelation = "Gen. Business Posting Group".Code;
-        }   
+        }
     }
 
     keys
     {
-        key(PK;"Document Type","Document No.","Line No.")
+        key(PK; "Document Type", "Document No.", "Line No.")
         {
             Clustered = true;
         }
     }
 
-    // procedure UpdateCustAmount(ActSalesLine: record "Sales Line");
-    // begin
-    //     "Cust. Amount" := round(ActSalesLine.Quantity * "Cust. Unit Price", 0.01);
-    //     Modify();
-    // end;
-
-    // procedure UpdateSalesLine(var ActSalesLine: record "Sales Line")
-    // var
-    //     VATPostingSetup: record "VAT Posting Setup";
-    //     SalesHeader: record "Sales Header";
-    //     VatPercent: Decimal;
-    //     NetUnitPrice: Decimal;
-    // begin
-    //     if not SalesHeader.get(ActSalesLine."Document Type",ActSalesLine."Document No.") then
-    //         exit;
-
-    //     UpdateCustAmount(ActSalesLine);
-    //     if not SalesHeader."Prices Including VAT" then begin 
-    //         if VATPostingSetup.get(actsalesline."VAT Bus. Posting Group", actSalesLine."VAT Prod. Posting Group") then;
-    //         if VATPostingSetup."VAT Calculation Type" <> VATPostingSetup."VAT Calculation Type"::"Reverse Charge VAT" then
-    //             VatPercent := VATPostingSetup."VAT %";
-    //     end;
-    //     NetUnitPrice := round("Cust. Unit Price" / (100 + VatPercent) * 100, 0.01);
-    //     actSalesLine.Validate("Unit Price", NetUnitPrice);
-    // end;
-
     procedure HandleVATDifferenceNVX(SalesHeader: Record "Sales Header")
     var
-        SalesLineNVX: record SalesLineNVX;
-        SalesLine: record "Sales Line";
+        SalesLine: Record "Sales Line";
+        SalesLineNVX: Record SalesLineNVX;
         TempVATAmountLine: Record "VAT Amount Line" temporary;
         VATDifference: Decimal;
     begin
@@ -118,7 +90,7 @@ table 50036 "SalesLineNVX"
         SalesHeader.TestField(Status, SalesHeader.Status::Released);
         SalesHeader.CalcFields("Amount Including VAT");
 
-        SalesLineNVX.reset();
+        SalesLineNVX.Reset();
         SalesLineNVX.SetRange("Document Type", SalesHeader."Document Type");
         SalesLineNVX.SetRange("Document No.", SalesHeader."No.");
         SalesLineNVX.CalcSums("Cust. Amount");
@@ -128,18 +100,38 @@ table 50036 "SalesLineNVX"
         VATDifference := SalesHeader."Amount Including VAT" - SalesLineNVX."Cust. Amount";
 
         if VATDifference <> 0 then begin
-
-            clear(salesline);
+            Clear(SalesLine);
             SalesLine.SetSalesHeader(SalesHeader);
             SalesLine.CalcVATAmountLines(0, SalesHeader, SalesLine, TempVATAmountLine);
             TempVATAmountLine.SetFilter("VAT Amount", '<>0');
-            TempVATAmountLine.findfirst();
+            TempVATAmountLine.FindFirst();
             TempVATAmountLine.Validate("VAT Amount", TempVATAmountLine."VAT Amount" - VATDifference);
             TempVATAmountLine.CheckVATDifference(SalesHeader."Currency Code", true);
             TempVATAmountLine.Modify();
             SalesLine.UpdateVATOnLines(0, SalesHeader, SalesLine, TempVATAmountLine);
+        end;
+    end;
 
+    procedure GetDefinition(DocumentType: Enum RKSSalesDocumentTypeNVX; DocumentNo: Code[20]; LineNo: Integer)
+    begin
+        if LineNo = 0 then
+            exit;
+        if ("Document Type" = DocumentType) and
+            ("Document No." = DocumentNo) and
+            ("Line No." = LineNo)
+        then
+            exit;
+
+        if Get(DocumentType, DocumentNo, LineNo) then begin
+            CalcFields("Allocation Amount", "Allocation Amount Incl. VAT");
+            exit;
         end;
 
+        Init();
+        "Document Type" := DocumentType;
+        "Document No." := DocumentNo;
+        "Line No." := LineNo;
+        Insert();
+        CalcFields("Allocation Amount", "Allocation Amount Incl. VAT");
     end;
 }

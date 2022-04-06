@@ -1,4 +1,4 @@
-page 50034 "SalesLineArchivePrepNVX"
+page 50026 SalesLineArchivePrepNVX
 {
     Caption = 'Sales Line Archive Preparation', comment = 'DEA="Verkaufszeilenarchiv Vorbereitung"';
     PageType = ListPart;
@@ -56,7 +56,7 @@ page 50034 "SalesLineArchivePrepNVX"
                 {
                     ApplicationArea = All;
                 }
-                field(Amount; "Amount")
+                field(Amount; Amount)
                 {
                     ApplicationArea = All;
                 }
@@ -80,9 +80,9 @@ page 50034 "SalesLineArchivePrepNVX"
                     Caption = 'Business Case', comment = 'DEA="Geschäftsfall"';
                 }
             }
-            
         }
     }
+
     var
         BusinessCase: Boolean;
         BalAccountTypeLbl: Label 'Customer', comment = 'DEA="Debitor"';
@@ -90,7 +90,7 @@ page 50034 "SalesLineArchivePrepNVX"
     trigger OnOpenPage();
     begin
         BusinessCase := false; //Yes, this has (almost) no logic... but the customer knows best... or so they say....
-        Rec.SetRange("Posting Type",Rec."Posting Type"::Distributed);
+        Rec.SetRange("Posting Type", Rec."Posting Type"::Distributed);
         CurrPage.Editable(false);
     end;
 }

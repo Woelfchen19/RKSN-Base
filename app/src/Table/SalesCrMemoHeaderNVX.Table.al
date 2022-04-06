@@ -1,7 +1,7 @@
-table 50042 "SalesCrMemoHeaderNVX"
+table 50033 SalesCrMemoHeaderNVX
 {
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(3; "No."; Code[20])
@@ -23,15 +23,8 @@ table 50042 "SalesCrMemoHeaderNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Composition Section', comment = 'DEA="Abfassung Sparte"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
-        }   
-        // field(22; "Shortcut Dimension 6 Code"; Code[20])
-        // {
-        //     DataClassification = CustomerContent;
-        //     Caption = 'Shortcut Dimension 6 Code', comment = 'DEA="Shortcutdimensionscode 6"';
-        //     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(6));       
-        //     CaptionClass = '1337,6'; //= Dim Name without "Code" or "Filter"
-        // }
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
+        }
         field(25; "Comp Gen. Bus. Pst Grp WES"; Code[20])
         {
             DataClassification = CustomerContent;
@@ -42,12 +35,12 @@ table 50042 "SalesCrMemoHeaderNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Transaction No.', comment = 'DEA="Transaktionsnummer"';
-        }     
+        }
     }
 
     keys
     {
-        key(PK;"No.")
+        key(PK; "No.")
         {
             Clustered = true;
         }

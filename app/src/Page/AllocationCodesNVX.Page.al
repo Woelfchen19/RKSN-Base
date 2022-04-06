@@ -1,4 +1,4 @@
-page 50003 "AllocationCodesNVX"
+page 50001 AllocationCodesNVX
 {
     PageType = List;
     SourceTable = AllocationCodeNVX;
@@ -7,7 +7,7 @@ page 50003 "AllocationCodesNVX"
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(Group)
             {
@@ -27,16 +27,13 @@ page 50003 "AllocationCodesNVX"
                 {
                     ApplicationArea = All;
                 }
-                
-                
             }
         }
-        
     }
 
     actions
     {
-        area(processing)
+        area(Processing)
         {
             action(Allocations)
             {
@@ -56,5 +53,4 @@ page 50003 "AllocationCodesNVX"
             }
         }
     }
-
 }

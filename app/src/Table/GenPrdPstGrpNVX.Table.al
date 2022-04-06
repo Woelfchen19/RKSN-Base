@@ -1,7 +1,5 @@
-table 50000 "GenPrdPstGrpNVX"
+table 50021 GenPrdPstGrpNVX
 {
-    DataClassification = CustomerContent;
-    
     fields
     {
         field(1; "Code"; Code[20])
@@ -10,7 +8,6 @@ table 50000 "GenPrdPstGrpNVX"
             Caption = 'Code', comment = 'DEA="Code"';
         }
         field(10; "Inventory Value Zero"; Option)
-        //RKSN-36
         {
             DataClassification = CustomerContent;
             Caption = 'Inventory Value Zero', comment = 'DEA="Ohne Lagerbewertung"';
@@ -29,13 +26,13 @@ table 50000 "GenPrdPstGrpNVX"
             trigger OnValidate();
             begin
                 CheckValid();
-            end;            
-        }        
+            end;
+        }
     }
 
     keys
     {
-        key(PK;Code)
+        key(PK; Code)
         {
             Clustered = true;
         }
@@ -47,6 +44,6 @@ table 50000 "GenPrdPstGrpNVX"
         comment = 'DEA="Bei der Auswahl ''kein Artikel'' ist eine Zuordnung der Lagerbuchungsgruppe nicht möglich!"';
     begin
         if ("Inventory Value Zero" = "Inventory Value Zero"::"No Item") and ("Inventory Posting Group NVX" <> '') then
-            error(InvalidCombination_Err);
+            Error(InvalidCombination_Err);
     end;
 }

@@ -1,10 +1,10 @@
-pageextension 50012 FixedAssetSetupNVX extends "Fixed Asset Setup"
+pageextension 50032 FixedAssetSetupNVX extends "Fixed Asset Setup"
 {
     layout
     {
         addlast(Content)
         {
-            Group("Purchase VAT as ExpenseNVX")
+            group("Purchase VAT as ExpenseNVX")
             {
                 Caption = 'VAT as Expense', comment = 'DEA="VST als Aufwand"';
                 field("VAT as Expense Jnl Templ Name NVX"; FixedAssetSetupNVX."VAT as Expense Jnl Templ Name")
@@ -34,12 +34,12 @@ pageextension 50012 FixedAssetSetupNVX extends "Fixed Asset Setup"
     trigger OnAfterGetRecord()
     begin
         FixedAssetSetupNVX.Reset();
-        IF not FixedAssetSetupNVX.Get() then begin
+        if not FixedAssetSetupNVX.Get() then begin
             FixedAssetSetupNVX.Init();
             FixedAssetSetupNVX.Insert();
         end;
     end;
-    
+
     var
         FixedAssetSetupNVX: Record FixedAssetSetupNVX;
 }

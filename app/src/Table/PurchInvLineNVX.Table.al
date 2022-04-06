@@ -1,7 +1,5 @@
-table 50031 "PurchInvLineNVX"
+table 50031 PurchInvLineNVX
 {
-    DataClassification = CustomerContent;
-    
     fields
     {
         field(3; "Document No."; Code[20])
@@ -27,7 +25,7 @@ table 50031 "PurchInvLineNVX"
 
     keys
     {
-        key(PK;"Document No.","Line No.")
+        key(PK; "Document No.", "Line No.")
         {
             Clustered = true;
         }

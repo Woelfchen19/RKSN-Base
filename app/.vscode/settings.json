@@ -6,9 +6,9 @@
     "al.enableCodeAnalysis": true,
     "al.codeAnalyzers": [
         "${CodeCop}",
-        "${AppSourceCop}",
         "${UICop}",
-        "${PerTenantExtensionCop}"
+        "${PerTenantExtensionCop}",
+        "${AppSourceCop}"
     ],
     "al.ruleSetPath": ".vscode\\ruleset.json"
 }

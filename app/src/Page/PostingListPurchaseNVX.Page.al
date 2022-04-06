@@ -1,11 +1,11 @@
-page 50031 "PostingListPurchaseNVX"
+page 50015 PostingListPurchaseNVX
 {
     Caption = 'Backup dimensional distribution Purchase', comment = 'DEA="Sicherung dim.Verteilungen Modul Einkauf"';
     PageType = List;
     UsageCategory = Lists;
     ApplicationArea = All;
     SourceTable = PostingsNVX;
-    CardPageId = 50014;
+    CardPageId = PostingCardNVX;
     Editable = false;
     InsertAllowed = false;
     layout
@@ -18,14 +18,6 @@ page 50031 "PostingListPurchaseNVX"
                 {
                     ApplicationArea = All;
                 }
-                // field("Posting Date"; "Posting Date")
-                // {
-                //     ApplicationArea = All;
-                // }
-                // field("Document No."; "Document No.")
-                // {
-                //     ApplicationArea = All;
-                // }
                 field("Date"; "Date")
                 {
                     ApplicationArea = All;
@@ -42,10 +34,10 @@ page 50031 "PostingListPurchaseNVX"
                 {
                     ApplicationArea = All;
                 }
-                
             }
         }
     }
+
     trigger OnOpenPage();
     begin
         SetCurrentKey("Date", "Time");

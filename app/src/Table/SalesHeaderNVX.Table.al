@@ -1,7 +1,5 @@
-table 50039 "SalesHeaderNVX"
+table 50036 SalesHeaderNVX
 {
-    DataClassification = CustomerContent;
-    
     fields
     {
         field(1; "Document Type"; Option)
@@ -29,15 +27,8 @@ table 50039 "SalesHeaderNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Composition Section', comment = 'DEA="Abfassung Sparte"';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3));
-        }   
-        // field(22; "Shortcut Dimension 6 Code"; Code[20])
-        // {
-        //     DataClassification = CustomerContent;
-        //     Caption = 'Shortcut Dimension 6 Code', comment = 'DEA="Shortcutdimensionscode 6"';
-        //     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(6));       
-        //     CaptionClass = '1337,6'; //= Dim Name without "Code" or "Filter"
-        // }
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
+        }
         field(25; "Comp Gen. Bus. Pst Grp WES"; Code[20])
         {
             DataClassification = CustomerContent;
@@ -59,22 +50,40 @@ table 50039 "SalesHeaderNVX"
             Caption = 'Allocation Amount', comment = 'DEA="Verteilungsbetrag"';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum (DistrSalesLineNVX."VAT Base Amount" where ("Document Type" = field ("Document Type"), "Document No." = field ("No.")));
+            CalcFormula = sum(DistrSalesLineNVX."VAT Base Amount" where("Document Type" = field("Document Type"), "Document No." = field("No.")));
         }
         field(101; "Allocation Amount Incl. VAT"; Decimal)
         {
             Caption = 'Allocation Amount Incl. VAT', comment = 'DEA="Verteilungsbetrag inkl. USt."';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum (DistrSalesLineNVX."Amount Including VAT" where ("Document Type" = field ("Document Type"), "Document No." = field ("No.")));
+            CalcFormula = sum(DistrSalesLineNVX."Amount Including VAT" where("Document Type" = field("Document Type"), "Document No." = field("No.")));
         }
     }
 
     keys
     {
-        key(PK;"Document Type","No.")
+        key(PK; "Document Type", "No.")
         {
             Clustered = true;
         }
     }
+    procedure GetDefinition(DocumentType: Enum RKSSalesDocumentTypeNVX; DocumentNo: Code[20])
+    begin
+        if ("Document Type" = DocumentType) and
+            ("No." = DocumentNo)
+        then
+            exit;
+
+        if Get(DocumentType, DocumentNo) then begin
+            CalcFields("Allocation Amount", "Allocation Amount Incl. VAT");
+            exit;
+        end;
+
+        Init();
+        "Document Type" := DocumentType;
+        "No." := DocumentNo;
+        Insert();
+        CalcFields("Allocation Amount", "Allocation Amount Incl. VAT");
+    end;
 }

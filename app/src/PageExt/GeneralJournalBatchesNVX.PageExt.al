@@ -1,22 +1,16 @@
-pageextension 50040 "GeneralJournalBatchesNVX" extends "General Journal Batches"
+pageextension 50034 GeneralJournalBatchesNVX extends "General Journal Batches"
 {
     layout
     {
         addlast(Control1)
         {
-            field(NoDimDistributionNVX; GenJournalBatchNVX."No Dim Distribution")
+            field(NoDimDistributionNVX; NoDimDistribution)
             {
                 Caption = 'No dimensional distribution', comment = 'DEA="dim.Verteilungsprozess wiederk. deaktiviert"';
                 ApplicationArea = All;
                 trigger OnValidate();
                 begin
-                    IF GenJournalBatchNVX.Modify() then;
-
-                    IF not GenJournalBatchNVX.Get(Rec."Journal Template Name", Rec.Name) then begin
-                        GenJournalBatchNVX."Journal Template Name" := Rec."Journal Template Name";
-                        GenJournalBatchNVX.Name := Rec.Name;
-                        GenJournalBatchNVX.Insert();
-                    end;
+                    SetComplementaryFields();
                 end;
             }
         }
@@ -24,19 +18,49 @@ pageextension 50040 "GeneralJournalBatchesNVX" extends "General Journal Batches"
 
     var
         GenJournalBatchNVX: Record GenJournalBatchNVX;
-
-    trigger OnNewRecord(BelowxRec: Boolean);
-    begin
-        GenJournalBatchNVX.Init();
-    end;
+        NoDimDistribution: Boolean;
 
     trigger OnAfterGetRecord();
     begin
-        If not GenJournalBatchNVX.Get(Rec."Journal Template Name", Rec.Name) then begin
-            GenJournalBatchNVX.Init();
-            GenJournalBatchNVX."Journal Template Name" := Rec."Journal Template Name";
-            GenJournalBatchNVX.Name := Rec.Name;
-            GenJournalBatchNVX.Insert()
-        end;
+        GenJournalBatchNVX.GetDefinition(Rec."Journal Template Name", Rec.Name);
+        SetGlobalVariables();
+    end;
+
+    trigger OnNewRecord(BelowxRec: Boolean);
+    begin
+        ClearGlobalVariables();
+    end;
+
+    trigger OnInsertRecord(BelowxRec: Boolean): Boolean
+    begin
+        GenJournalBatchNVX.GetDefinition(Rec."Journal Template Name", Rec.Name);
+        SetComplementaryFields();
+        exit(true);
+    end;
+
+    trigger OnDeleteRecord(): Boolean
+    begin
+        ClearGlobalVariables();
+        exit(true);
+    end;
+
+    local procedure SetGlobalVariables()
+    begin
+        NoDimDistribution := GenJournalBatchNVX."No Dim Distribution";
+    end;
+
+    local procedure ClearGlobalVariables()
+    begin
+        Clear(GenJournalBatchNVX);
+        Clear(NoDimDistribution);
+    end;
+
+    local procedure SetComplementaryFields()
+    begin
+        if (NoDimDistribution = GenJournalBatchNVX."No Dim Distribution") then
+            exit;
+
+        GenJournalBatchNVX."No Dim Distribution" := NoDimDistribution;
+        GenJournalBatchNVX.Modify();
     end;
 }

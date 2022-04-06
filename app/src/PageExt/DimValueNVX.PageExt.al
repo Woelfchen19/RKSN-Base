@@ -1,4 +1,4 @@
-pageextension 50027 "DimValueNVX" extends "Dimension Values"
+pageextension 50005 DimValueNVX extends "Dimension Values"
 {
     layout
     {
@@ -11,9 +11,9 @@ pageextension 50027 "DimValueNVX" extends "Dimension Values"
                 TableRelation = VATPostingTypeNVX.Code;
                 Visible = PostingTypeVisible;
                 trigger OnValidate();
-                begin                    
-                    IF Rec."Dimension Code" <> '' then
-                        IF not DimValueNVX.Get(Rec."Dimension Code", Rec.Code) then begin
+                begin
+                    if Rec."Dimension Code" <> '' then
+                        if not DimValueNVX.Get(Rec."Dimension Code", Rec.Code) then begin
                             DimValueNVX.Init();
                             DimValueNVX."Dimension Code" := Rec."Dimension Code";
                             DimValueNVX."Code" := Rec.Code;
@@ -24,7 +24,7 @@ pageextension 50027 "DimValueNVX" extends "Dimension Values"
                             DimValueNVX.Modify();
                         end;
                     DimValueNVX.CalcFields("VAT Posting Type Desc");
-                end;                    
+                end;
             }
             field("VAT Posting Type Desc NVX"; DimValueNVX."VAT Posting Type Desc")
             {
@@ -38,12 +38,12 @@ pageextension 50027 "DimValueNVX" extends "Dimension Values"
                 ApplicationArea = All;
                 CaptionClass = '1,2,1';
                 Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));  
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
                 Visible = IsOE;
                 trigger OnValidate();
                 begin
-                    IF Rec."Dimension Code" <> '' then
-                        IF not DimValueNVX.Get(Rec."Dimension Code", Rec.Code) then begin
+                    if Rec."Dimension Code" <> '' then
+                        if not DimValueNVX.Get(Rec."Dimension Code", Rec.Code) then begin
                             DimValueNVX.Init();
                             DimValueNVX."Dimension Code" := Rec."Dimension Code";
                             DimValueNVX."Code" := Rec.Code;
@@ -53,19 +53,19 @@ pageextension 50027 "DimValueNVX" extends "Dimension Values"
                             DimValueNVX."Shortcut Dimension 1 Code" := ShortcutDimension1;
                             DimValueNVX.Modify();
                         end;
-                end;          
+                end;
             }
             field("DimValueNVX Shortcut Dimension 2 CodeNVX"; ShortcutDimension2)
             {
                 ApplicationArea = All;
                 CaptionClass = '1,2,2';
                 Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
-                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
                 Visible = IsOE;
                 trigger OnValidate();
                 begin
-                    IF Rec."Dimension Code" <> '' then
-                        IF not DimValueNVX.Get(Rec."Dimension Code", Rec.Code) then begin
+                    if Rec."Dimension Code" <> '' then
+                        if not DimValueNVX.Get(Rec."Dimension Code", Rec.Code) then begin
                             DimValueNVX.Init();
                             DimValueNVX."Dimension Code" := Rec."Dimension Code";
                             DimValueNVX."Code" := Rec.Code;
@@ -75,56 +75,42 @@ pageextension 50027 "DimValueNVX" extends "Dimension Values"
                             DimValueNVX."Shortcut Dimension 2 Code" := ShortcutDimension2;
                             DimValueNVX.Modify();
                         end;
-                end;          
+                end;
             }
-            
         }
     }
-    
+
     var
         DimValueNVX: Record DimValueNVX;
         GLSetup: Record "General Ledger Setup";
+        IsOE: Boolean;
+        PostingTypeVisible: Boolean;
         VATPostingType: Code[10];
         ShortcutDimension1: Code[20];
-        
         ShortcutDimension2: Code[20];
-        PostingTypeVisible: Boolean;        
-        GLSetupRead: Boolean;
-        IsOE: Boolean;
 
     trigger OnAfterGetRecord();
     begin
-        IF (not PostingTypeVisible) and (not IsOE) then
+        if (not PostingTypeVisible) and (not IsOE) then
             exit;
 
-        If not DimValueNVX.GET(Rec."Dimension Code",Rec.Code) then begin
-            DimValueNVX.Init();
-            DimValueNVX."Dimension Code" := "Dimension Code";
-            DimValueNVX.Code := Code;
-            DimValueNVX.Insert();
-            Clear(VATPostingType);
-            Clear(ShortcutDimension1);
-            Clear(ShortcutDimension2);
-        end else begin
-            VATPostingType := DimValueNVX."VAT Posting Type";
-            ShortcutDimension1 := DimValueNVX."Shortcut Dimension 1 Code";
-            ShortcutDimension2 := DimValueNVX."Shortcut Dimension 2 Code";
-        end;
+        DimValueNVX.GetDefinition(Rec."Dimension Code", Rec.Code);
+        SetGlobalVariables();
 
-        IF PostingTypeVisible then
+        if PostingTypeVisible then
             DimValueNVX.CalcFields("VAT Posting Type Desc");
     end;
 
     trigger OnOpenPage();
     begin
-        GetGLSetup();
+        GLSetup.GetRecordOnce();
 
-        IF GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 3 Code" then
+        if GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 3 Code" then
             PostingTypeVisible := true
         else
             PostingTypeVisible := false;
 
-        IF GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 6 Code" then
+        if GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 6 Code" then
             IsOE := true
         else
             IsOE := false;
@@ -132,43 +118,42 @@ pageextension 50027 "DimValueNVX" extends "Dimension Values"
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        Clear(VATPostingType);
-        Clear(ShortcutDimension1);
-        Clear(ShortcutDimension2);
-        DimValueNVX.Init();
+        ClearGlobalVariables();
     end;
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
-        If (VATPostingType <> '') OR (ShortcutDimension1 <> '') OR (ShortcutDimension2 <> '') then begin
-            DimValueNVX.Init();
-            DimValueNVX."Dimension Code" := "Dimension Code";
-            DimValueNVX.Code := Code;
-            DimValueNVX."VAT Posting Type" := VATPostingType;
-            DimValueNVX."Shortcut Dimension 1 Code" := ShortcutDimension1;
-            DimValueNVX."Shortcut Dimension 2 Code" := ShortcutDimension2;
-            DimValueNVX.Insert();
-        end;
+        DimValueNVX.GetDefinition(Rec."Dimension Code", Rec.Code);
+        SetComplementaryFields();
         exit(true);
     end;
 
     trigger OnDeleteRecord(): Boolean
     begin
-        Clear(VATPostingType);
-        Clear(ShortcutDimension1);
-        Clear(ShortcutDimension2);
-        DimValueNVX.Init();
+        ClearGlobalVariables();
         exit(true);
     end;
 
-
-    local procedure GetGLSetup();
+    local procedure SetGlobalVariables()
     begin
-        if not GLSetupRead then begin
-          GLSetup.Get();
-          GLSetupRead := true;
-        end;
+        VATPostingType := DimValueNVX."VAT Posting Type";
+        ShortcutDimension1 := DimValueNVX."Shortcut Dimension 1 Code";
+        ShortcutDimension2 := DimValueNVX."Shortcut Dimension 2 Code"
     end;
 
-    
+    local procedure ClearGlobalVariables()
+    begin
+        Clear(DimValueNVX);
+        Clear(VATPostingType);
+        Clear(ShortcutDimension1);
+        Clear(ShortcutDimension2);
+    end;
+
+    local procedure SetComplementaryFields()
+    begin
+        DimValueNVX."VAT Posting Type" := VATPostingType;
+        DimValueNVX."Shortcut Dimension 1 Code" := ShortcutDimension1;
+        DimValueNVX."Shortcut Dimension 2 Code" := ShortcutDimension2;
+        DimValueNVX.Modify();
+    end;
 }

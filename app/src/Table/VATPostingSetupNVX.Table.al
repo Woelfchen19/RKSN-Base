@@ -1,7 +1,5 @@
-table 50008 VATPostingSetupNVX
+table 50042 VATPostingSetupNVX
 {
-    DataClassification = CustomerContent;
-    
     fields
     {
         field(1; "VAT Bus. Posting Group"; Code[20])
@@ -18,13 +16,28 @@ table 50008 VATPostingSetupNVX
             Caption = 'Purchase VAT as Expense', comment = 'DEA="VST als Aufwand"';
         }
     }
-    
+
     keys
     {
-        key(Key1; "VAT Bus. Posting Group","VAT Prod. Posting Group")
+        key(Key1; "VAT Bus. Posting Group", "VAT Prod. Posting Group")
         {
             Clustered = true;
         }
     }
 
+    procedure GetDefinition(VATBusPostingGroup: Code[20]; VATProdPostingGroup: Code[20])
+    begin
+        if ("VAT Bus. Posting Group" = VATBusPostingGroup) and
+            ("VAT Prod. Posting Group" = VATProdPostingGroup)
+        then
+            exit;
+
+        if Get(VATBusPostingGroup, VATProdPostingGroup) then
+            exit;
+
+        Init();
+        "VAT Bus. Posting Group" := VATBusPostingGroup;
+        "VAT Prod. Posting Group" := VATProdPostingGroup;
+        Insert();
+    end;
 }

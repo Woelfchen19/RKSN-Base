@@ -1,7 +1,5 @@
-table 50001 "UserSetupNVX"
+table 50041 UserSetupNVX
 {
-    DataClassification = CustomerContent;
-    
     fields
     {
         field(1; "User ID"; Code[50])
@@ -10,7 +8,6 @@ table 50001 "UserSetupNVX"
             Caption = 'User ID', comment = 'DEA="Benutzer-ID"';
         }
         field(10; "Allow Item Prod.Pst.Grp Change"; Boolean)
-        //RKSN-37
         {
             DataClassification = CustomerContent;
             Caption = 'Allow Item Prod.Post.Group Change', comment = 'DEA="Änderung Prod.Bu.Grp. Artikelkarte"';
@@ -19,14 +16,26 @@ table 50001 "UserSetupNVX"
         {
             DataClassification = CustomerContent;
             Caption = 'Allow Item Invt.Post.Group Change', comment = 'DEA="Änderung Lager.Bu.Grp. Artikelkarte"';
-        }        
+        }
     }
 
     keys
     {
-        key(PK;"User ID")
+        key(PK; "User ID")
         {
             Clustered = true;
         }
     }
+
+    procedure GetDefinition(UserID: Code[50])
+    begin
+        if UserID = "User ID" then
+            exit;
+        if Get(UserID) then
+            exit;
+
+        Init();
+        "User ID" := UserID;
+        Insert();
+    end;
 }
