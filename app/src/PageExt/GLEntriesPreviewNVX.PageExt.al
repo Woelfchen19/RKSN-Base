@@ -18,7 +18,7 @@ pageextension 50039 GLEntriesPreviewNVX extends "G/L Entries Preview"
 
     var
         DimMgt: Codeunit DimensionManagement;
-        ShortcutDims: array[8] of Code[20];
+        ShortcutDims: array[10] of Code[20];
 
     trigger OnAfterGetRecord()
     begin

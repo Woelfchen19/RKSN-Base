@@ -144,7 +144,7 @@ pageextension 50040 GLEntryNVX extends "General Ledger Entries"
     var
         GLEntryNVX: Record GLEntryNVX;
         DimMgt: Codeunit DimensionManagement;
-        ShortcutDims: array[8] of Code[20];
+        ShortcutDims: array[10] of Code[20];
 
     trigger OnAfterGetRecord();
     begin

@@ -118,7 +118,7 @@ pageextension 50020 SCrMemoNVX extends "Sales Credit Memo"
             }
         }
     }
-    
+
     var
         GLSetup: Record "General Ledger Setup";
         SalesHeaderNVX: Record SalesHeaderNVX;
@@ -127,7 +127,7 @@ pageextension 50020 SCrMemoNVX extends "Sales Credit Memo"
 
         DimMgt: Codeunit DimensionManagement;
         PageEditable: Boolean;
-        ShortcutDims: array[8] of Code[20];
+        ShortcutDims: array[10] of Code[20];
 
     trigger OnAfterGetRecord();
     begin

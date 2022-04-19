@@ -101,7 +101,6 @@ page 50019 PreviewPurchDimDistrNVX
 
     trigger OnOpenPage()
     begin
-
         SetDimensionsVisibility();
     end;
 
@@ -116,7 +115,9 @@ page 50019 PreviewPurchDimDistrNVX
         DimVisible6: Boolean;
         DimVisible7: Boolean;
         DimVisible8: Boolean;
-        ShortcutDimCode: array[8] of Code[20];
+        DimVisible9: Boolean;
+        DimVisible10: Boolean;
+        ShortcutDimCode: array[10] of Code[20];
 
     local procedure SetDimensionsVisibility()
     begin
@@ -128,13 +129,15 @@ page 50019 PreviewPurchDimDistrNVX
         DimVisible6 := false;
         DimVisible7 := false;
         DimVisible8 := false;
+        DimVisible8 := false;
+        DimVisible9 := false;
+        DimVisible10 := false;
 
         UseShortcutDims(
-        DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8);
-
+        DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10);
     end;
 
-    local procedure UseShortcutDims(var DimVisible1: Boolean; var DimVisible2: Boolean; var DimVisible3: Boolean; var DimVisible4: Boolean; var DimVisible5: Boolean; var DimVisible6: Boolean; var DimVisible7: Boolean; var DimVisible8: Boolean);
+    local procedure UseShortcutDims(var DimVisible1: Boolean; var DimVisible2: Boolean; var DimVisible3: Boolean; var DimVisible4: Boolean; var DimVisible5: Boolean; var DimVisible6: Boolean; var DimVisible7: Boolean; var DimVisible8: Boolean; var DimVisible9: Boolean; var DimVisible10: Boolean);
     begin
         GLSetup.Get();
         DimVisible1 := GLSetup."Shortcut Dimension 1 Code" <> '';
@@ -145,5 +148,7 @@ page 50019 PreviewPurchDimDistrNVX
         DimVisible6 := GLSetup."Shortcut Dimension 6 Code" <> '';
         DimVisible7 := GLSetup."Shortcut Dimension 7 Code" <> '';
         DimVisible8 := GLSetup."Shortcut Dimension 8 Code" <> '';
+        DimVisible9 := GLSetup."Shortcut Dimension 9 Code" <> '';
+        DimVisible10 := GLSetup."Shortcut Dimension 10 Code" <> '';
     end;
 }

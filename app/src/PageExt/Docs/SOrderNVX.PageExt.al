@@ -231,7 +231,7 @@ pageextension 50024 SOrderNVX extends "Sales Order"
             }
         }
     }
-    
+
     var
         GLSetup: Record "General Ledger Setup";
         InvSetupNVX: Record InvSetupNVX;
@@ -246,7 +246,7 @@ pageextension 50024 SOrderNVX extends "Sales Order"
         AllocationCodeVar: Code[10];
         CompGenBusPstGrpWES: Code[20];
         CompShortcutDimension3: Code[20];
-        ShortcutDims: array[8] of Code[20];
+        ShortcutDims: array[10] of Code[20];
         UpdateLinesQst: Label 'Do you want to update the lines?', comment = 'DEA="Möchten Sie die Zelen aktualisieren?"';
 
     trigger OnAfterGetRecord();

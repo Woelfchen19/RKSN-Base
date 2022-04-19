@@ -127,7 +127,10 @@ page 50017 PreviewDimDistrNVX
         DimVisible6: Boolean;
         DimVisible7: Boolean;
         DimVisible8: Boolean;
-        ShortcutDimCode: array[8] of Code[20];
+        DimVisible9: Boolean;
+        DimVisible10: Boolean;
+
+        ShortcutDimCode: array[10] of Code[20];
 
     local procedure SetDimensionsVisibility()
     begin
@@ -139,6 +142,8 @@ page 50017 PreviewDimDistrNVX
         DimVisible6 := false;
         DimVisible7 := false;
         DimVisible8 := false;
+        DimVisible9 := false;
+        DimVisible10 := false;
 
         UseShortcutDims(
         DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8);

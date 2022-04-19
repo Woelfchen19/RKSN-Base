@@ -16,7 +16,7 @@ codeunit 50022 Table83HookNVX
         InvSetupNVX: Record InvSetupNVX;
         Item: Record Item;
         DimMgt: Codeunit DimensionManagement;
-        ShortcutDims: array[8] of Code[20];
+        ShortcutDims: array[10] of Code[20];
         WrongDimInventoryValueErr: Label 'Item has inventory value. Dimension have to match the setup.', Comment = 'DEA="Der erfasste Artikel ist lagerbewertet eingerichtet. Die Angaben zu Kostenstelle und Sparte müssen dem setup der Lager Einrichtung entsprechen!"';
         WrongDimInventoryValueZeroErr: Label 'This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.', Comment = 'DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für lagerbewertete Artikel nicht zugeordnet werden!"';
     begin

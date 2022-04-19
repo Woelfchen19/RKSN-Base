@@ -110,14 +110,14 @@ pageextension 50022 SInvoiceNVX extends "Sales Invoice"
             }
         }
     }
-    
+
     var
         GLSetup: Record "General Ledger Setup";
         SalesLine: Record "Sales Line";
         SalesLineNVX: Record SalesLineNVX;
         DimMgt: Codeunit DimensionManagement;
         PageEditable: Boolean;
-        ShortcutDims: array[8] of Code[20];
+        ShortcutDims: array[10] of Code[20];
 
     trigger OnAfterGetRecord();
     begin
