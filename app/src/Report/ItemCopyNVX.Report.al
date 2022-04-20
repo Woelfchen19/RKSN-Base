@@ -332,10 +332,9 @@ report 50000 ItemCopyNVX
 
         if CopyGenItemInfo then
             InsertTargetItem(_InItemNo)
-        else begin
+        else
             if not InItem.Get(_InItemNo) then
                 Error(Text011, _InItemNo);
-        end;
 
         if not (CopySalesLineDisc or CopyPurchLineDisc) then begin
             InItem."Item Disc. Group" := '"';

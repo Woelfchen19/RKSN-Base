@@ -35,6 +35,10 @@ tableextension 50000 DefaultDimNVX extends "Default Dimension"
                 SetRange("Dimension Code", GLSetup."Shortcut Dimension 7 Code");
             8:
                 SetRange("Dimension Code", GLSetup."Shortcut Dimension 8 Code");
+            9:
+                SetRange("Dimension Code", GLSetup."Shortcut Dimension 9 Code");
+            10:
+                SetRange("Dimension Code", GLSetup."Shortcut Dimension 10 Code");
         end; //of case
 
         if not FindFirst() then

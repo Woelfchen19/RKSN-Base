@@ -146,11 +146,11 @@ page 50017 PreviewDimDistrNVX
         DimVisible10 := false;
 
         UseShortcutDims(
-        DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8);
+        DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10);
 
     end;
 
-    local procedure UseShortcutDims(var DimVisible1: Boolean; var DimVisible2: Boolean; var DimVisible3: Boolean; var DimVisible4: Boolean; var DimVisible5: Boolean; var DimVisible6: Boolean; var DimVisible7: Boolean; var DimVisible8: Boolean);
+    local procedure UseShortcutDims(var DimVisible1: Boolean; var DimVisible2: Boolean; var DimVisible3: Boolean; var DimVisible4: Boolean; var DimVisible5: Boolean; var DimVisible6: Boolean; var DimVisible7: Boolean; var DimVisible8: Boolean; var DimVisible9: Boolean; var DimVisible10: Boolean);
     begin
         GLSetup.Get();
         DimVisible1 := GLSetup."Shortcut Dimension 1 Code" <> '';
@@ -161,5 +161,7 @@ page 50017 PreviewDimDistrNVX
         DimVisible6 := GLSetup."Shortcut Dimension 6 Code" <> '';
         DimVisible7 := GLSetup."Shortcut Dimension 7 Code" <> '';
         DimVisible8 := GLSetup."Shortcut Dimension 8 Code" <> '';
+        DimVisible9 := GLSetup."Shortcut Dimension 9 Code" <> '';
+        DimVisible10 := GLSetup."Shortcut Dimension 10 Code" <> '';
     end;
 }

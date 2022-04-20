@@ -322,6 +322,37 @@ table 50012 FAJnlLineArchiveNVX
             CalcFormula = lookup("Dimension Value".Name where("Global Dimension No." = const(8), Code = field("Shortcut Dimension 8 Code")));
             CaptionClass = '1337,8';
         }
+        field(50018; "Shortcut Dimension 9 Code"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Shortcut Dimension 9 Code', comment = 'DEA="Shortcutdimensionscode 9"';
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(9));
+            CaptionClass = '1,2,9';
+        }
+
+        field(50019; "Shortcut Dimension 9 Name"; Text[50])
+        {
+            Caption = 'Shortcut Dimension 9 Name', comment = 'DEA="Shortcutdimensionsname 9"';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup("Dimension Value".Name where("Global Dimension No." = const(9), Code = field("Shortcut Dimension 9 Code")));
+            CaptionClass = '1337,9';
+        }
+        field(50020; "Shortcut Dimension 10 Code"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Shortcut Dimension 10 Code', comment = 'DEA="Shortcutdimensionscode 10"';
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(10));
+            CaptionClass = '1,2,10';
+        }
+        field(50021; "Shortcut Dimension 10 Name"; Text[50])
+        {
+            Caption = 'Shortcut Dimension 10 Name', comment = 'DEA="Shortcutdimensionsname 10"';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup("Dimension Value".Name where("Global Dimension No." = const(10), Code = field("Shortcut Dimension 10 Code")));
+            CaptionClass = '1337,10';
+        }
         field(60000; "Posting GUID"; Guid)
         {
             Caption = 'Posting GUID', comment = 'DEA="Buchungs-GUID"';
