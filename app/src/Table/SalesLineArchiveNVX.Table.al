@@ -1208,6 +1208,20 @@ table 50039 SalesLineArchiveNVX
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(8));
             CaptionClass = '1,2,8';
         }
+        field(50017; "Shortcut Dimension 9 Code"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Shortcut Dimension 9 Code', comment = 'DEA="Shortcutdimensionscode 9"';
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(9));
+            CaptionClass = '1,2,9';
+        }
+        field(50018; "Shortcut Dimension 10 Code"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Shortcut Dimension 10 Code', comment = 'DEA="Shortcutdimensionscode 10"';
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(10));
+            CaptionClass = '1,2,10';
+        }
         field(50020; "Gen. Bus. Posting Group Desc"; Text[100])
         {
             Caption = 'Gen. Bus. Posting Group Description', comment = 'DEA="Geschäftsbuchungsgruppe Beschreibung"';

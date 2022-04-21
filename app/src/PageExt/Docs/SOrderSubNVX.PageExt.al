@@ -251,7 +251,7 @@ pageextension 50025 SOrderSubNVX extends "Sales Order Subform"
         SalesLineNVX."Cust. Unit Price" := CustUnitPrice;
         SalesLineNVX."Cust. Amount" := Round(Rec.Quantity * CustUnitPrice, 0.01);
         SalesLineNVX."Comp Gen. Bus. Pst Grp WES" := CompGenBusPstGrpWES;
-        SalesLineNVX.Modify();
+        if SalesLineNVX.Modify() then;
     end;
 
     local procedure IsCompositionNVX(): Boolean

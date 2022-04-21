@@ -4898,6 +4898,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionsname 1"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineArchiveNVX - Field Shortcut Dimension 1 Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 776441972 - Field 1016095192 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 10 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 10"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineArchiveNVX - Field Shortcut Dimension 10 Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 776441972 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 2 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 2"</note>
@@ -4932,6 +4937,11 @@
           <source>Shortcut Dimension 8 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 8"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineArchiveNVX - Field Shortcut Dimension 8 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 776441972 - Field 2475792064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 9 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 9"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineArchiveNVX - Field Shortcut Dimension 9 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 776441972 - Field 2720485332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Source Code</source>
@@ -6538,6 +6548,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionsname 1"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table PurchLineArchiveNVX - Field Shortcut Dimension 1 Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 1016095192 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 10 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 10"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PurchLineArchiveNVX - Field Shortcut Dimension 10 Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2144770924 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 2 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 2"</note>
@@ -6572,6 +6587,11 @@
           <source>Shortcut Dimension 8 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 8"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table PurchLineArchiveNVX - Field Shortcut Dimension 8 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2144770924 - Field 2475792064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 9 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 9"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PurchLineArchiveNVX - Field Shortcut Dimension 9 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2144770924 - Field 4011591569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Special Order</source>
@@ -8643,6 +8663,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionsname 1"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesLineArchiveNVX - Field Shortcut Dimension 1 Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2087446872 - Field 1016095192 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 10 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 10"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesLineArchiveNVX - Field Shortcut Dimension 10 Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2087446872 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 2 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 2"</note>
@@ -8677,6 +8702,11 @@
           <source>Shortcut Dimension 8 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 8"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesLineArchiveNVX - Field Shortcut Dimension 8 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2087446872 - Field 2475792064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 9 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 9"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SalesLineArchiveNVX - Field Shortcut Dimension 9 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2087446872 - Field 4011591569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Special Order</source>
@@ -10953,10 +10983,20 @@
           <note from="Developer" annotates="general" priority="2">DEA="VERKAUF Transaktionsnummer"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Transaction No.NVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 4138725704 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Shortcut Dimension 10 Code NVX - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 2185944783 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Shortcut Dimension 8 Code NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 1216781072 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Shortcut Dimension 9 Code NVX - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 4131289413 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Specifies the value of the Transaction No. field.</source>
@@ -11678,10 +11718,20 @@
           <note from="Developer" annotates="general" priority="2">DEA="VERKAUF Transaktionsnummer"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Sales Transaction No.NVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2583571545 - Field 4138725704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Shortcut Dimension 10 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 10"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Shortcut Dimension 10 Code NVX - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2583571545 - Field 2185944783 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
           <source>Shortcut Dimension 8 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 8"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Shortcut Dimension 8 Code NVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2583571545 - Field 1216781072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Shortcut Dimension 9 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 9"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Shortcut Dimension 9 Code NVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3220818943 - Change 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source> ,G/L Account,Item</source>

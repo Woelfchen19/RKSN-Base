@@ -28,19 +28,19 @@ table 50020 GenJournalBatchNVX
         }
     }
 
-    procedure GetDefinition(JournalTemplateName: Code[10]; Name: Code[10])
+    procedure GetDefinition(JournalTemplateName: Code[10]; Name2: Code[10])
     begin
         if ("Journal Template Name" = JournalTemplateName) and
-            (Name = Name)
+            (Name = Name2)
         then
             exit;
 
-        if Get(JournalTemplateName, Name) then
+        if Get(JournalTemplateName, Name2) then
             exit;
 
         Init();
         "Journal Template Name" := JournalTemplateName;
-        Name := Name;
+        Name := Name2;
         Insert();
     end;
 }

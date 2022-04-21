@@ -22,6 +22,18 @@ pageextension 50040 GLEntryNVX extends "General Ledger Entries"
                 Editable = false;
                 ToolTip = 'Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.', comment = 'DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."';
             }
+            field("Shortcut Dimension 9 Code NVX"; "Shortcut Dimension 9 Code NVX")
+            {
+                ApplicationArea = All;
+                Editable = false;
+                ToolTip = 'Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.', comment = 'DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."';
+            }
+            field("Shortcut Dimension 10 Code NVX"; "Shortcut Dimension 10 Code NVX")
+            {
+                ApplicationArea = All;
+                Editable = false;
+                ToolTip = 'Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.', comment = 'DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."';
+            }
             field("Sales Shortcut Dimension 1 CodeNVX"; GLEntryNVX."Sales Shortcut Dimension 1")
             {
                 ApplicationArea = All;
