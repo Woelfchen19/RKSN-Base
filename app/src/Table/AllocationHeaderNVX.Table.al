@@ -51,4 +51,40 @@ table 50001 AllocationHeaderNVX
         AllocationLine.DeleteAll();
     end;
 
+    trigger OnRename();
+    var
+        AllocationLine: Record AllocationLineNVX;
+        TempAllocationLine: Record AllocationLineNVX temporary;
+    begin
+        AllocationLine.SetRange("Allocation Code", xRec."Allocation Code");
+        AllocationLine.SetRange("Start Date", xRec."Start Date");
+        if AllocationLine.IsEmpty() then
+            exit;
+
+        CreateTempAllocationLine(TempAllocationLine, AllocationLine);
+        AllocationLine.DeleteAll();
+        RecreateAllocationLine(TempAllocationLine, AllocationLine);
+    end;
+
+    local procedure CreateTempAllocationLine(var TempAllocationLine: Record AllocationLineNVX temporary; var AllocationLine: Record AllocationLineNVX)
+    begin
+        AllocationLine.FindSet();
+        repeat
+            TempAllocationLine.Init();
+            TempAllocationLine := AllocationLine;
+            TempAllocationLine.Insert();
+        until AllocationLine.Next() = 0;
+    end;
+
+    local procedure RecreateAllocationLine(var TempAllocationLine: Record AllocationLineNVX temporary; var AllocationLine: Record AllocationLineNVX)
+    begin
+        TempAllocationLine.FindSet();
+        repeat
+            AllocationLine.Init();
+            AllocationLine := TempAllocationLine;
+            AllocationLine."Allocation Code" := Rec."Allocation Code";
+            AllocationLine."Start Date" := Rec."Start Date";
+            AllocationLine.Insert();
+        until TempAllocationLine.Next() = 0;
+    end;
 }
