@@ -47,7 +47,7 @@ report 50000 ItemCopyNVX
                             if Page.RunModal(Page::"Item List", InItem, InItem."No.") = Action::LookupOK then;
                         end;
                     }
-                    field(NewNoSeries; NewNoSeries)
+                    field(NoSeries; NewNoSeries)
                     {
                         ApplicationArea = Basic, Suite;
                         AssistEdit = true;
@@ -84,7 +84,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(CopyPic; CopyPic)
+                        field(Pic; CopyPic)
                         {
                             ApplicationArea = Basic, Suite;
                             Caption = 'Picture',
@@ -200,7 +200,7 @@ report 50000 ItemCopyNVX
                             ToolTip = 'Specifies if the selected data type if also copied to the new item.',
                                         comment = 'DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."';
                         }
-                        field(CopyItemVendor; CopyItemVendor)
+                        field(ItemVendor; CopyItemVendor)
                         {
                             ApplicationArea = Basic, Suite;
                             Caption = 'Item Vendors',
@@ -239,11 +239,12 @@ report 50000 ItemCopyNVX
 
     trigger OnPreReport();
     begin
+        //   Text001Txt + // copy item
+        //   Text002Txt + // From item
+        //   Text003Txt + // To item
+
         Window.Open(
-          Text001 + // copy item
-          Text002 + // From item
-          Text003 + // To item
-          '             #3############## #4#####');
+            StrSubstNo('%1%2%3%4', Text001Txt, Text002Txt, Text003Txt, '             #3############## #4#####'));
 
         Window.Update(1, Item."No.");
         Window.Update(2, InItem."No.");
@@ -278,8 +279,8 @@ report 50000 ItemCopyNVX
         CopyGenItemInfo: Boolean;
         CopyItemVendor: Boolean;
         CopyPic: Boolean;
-        CopyPurchLineDisc: Boolean;
         CopyPurchPrices: Boolean;
+        CopyPurchLineDisc: Boolean;
         CopyResourceSkills: Boolean;
         CopySalesLineDisc: Boolean;
         CopySalesPrices: Boolean;
@@ -289,44 +290,42 @@ report 50000 ItemCopyNVX
         CopyUnitOfMeasure: Boolean;
         CopyVariants: Boolean;
         NewNoSeries: Code[20];
-        TmpItemNo: Code[20];
         Window: Dialog;
         CopyCount: Integer;
         RecCount: Integer;
         RecapitulationTxt: Label 'Recapitulation of copy job:\\Source Item: %1\Target Item: %2\', comment = 'DEA="Zusammenfassung von Kopierauftrag:\\Ausgangsartikel: %1\Zielartikel: %2\"';
-        Text001: Label 'Copy Item\\', comment = 'DEA="Artikel kopieren\\"';
-        Text002: Label 'Source Item     #1########\', comment = 'DEA="Ausgangsartikel     #1########\"';
-        Text003: Label 'Target Item     #2########\', comment = 'DEA="Zielartikel         #2########\"';
-        Text007: Label 'Source Item No. %1 doesn''t exist.', comment = 'DEA="Ausgangsartikel %1 existiert nicht."';
-        Text008: Label 'Target Item No. must not be empty.', comment = 'DEA="Zielartikelnr. darf nicht leer sein."';
-        Text009: Label 'General item information', comment = 'DEA="Allg. Artikelinformationen"';
-        Text010: Label 'Target Item No.%1 already exists.', comment = 'DEA="Zielartikel %1 ist bereits vorhanden."';
-        Text011: Label 'Target Item %1 doesn''t exist.', comment = 'DEA="Zielartikel %1 existiert nicht."';
-        Text013: Label 'Comments', comment = 'DEA="Bemerkungen"';
-        Text014: Label 'Item units of measure', comment = 'DEA="Maßeinheiten Artikel"';
-        Text015: Label 'Item variants', comment = 'DEA="Artikelvarianten"';
-        Text016: Label 'Item translations', comment = 'DEA="Artikelübersetzungen"';
-        Text017: Label 'Extended texts', comment = 'DEA="Textbausteine"';
-        Text018: Label 'BOM components', comment = 'DEA="Stücklistenkomponenten"';
-        Text021: Label 'Item vendors', comment = 'DEA="Debitoren Artikel"';
-        Text025: Label 'copied.', comment = 'DEA="kopiert."';
-        Text026: Label 'Resource skills', comment = 'DEA="Ressourcenqualifikationen"';
-        Text027: Label 'Dimensions', comment = 'DEA="Dimensionen"';
-        Text028: Label 'Troubleshootings', comment = 'DEA="Lösungsanleitungen"';
-        Text029: Label 'Sales Prices', comment = 'DEA="VK-Preise"';
-        Text030: Label 'Sales Line Disc.', comment = 'DEA="VK-Zeilenrabatte"';
-        Text031: Label 'Purchase Prices', comment = 'DEA="EK-Preise"';
-        Text032: Label 'Purchase Line Disc.', comment = 'DEA="EK-Zeilenrabatte"';
-        DialogTitle: Text[50];
+        Text001Txt: Label 'Copy Item\\', comment = 'DEA="Artikel kopieren\\"';
+        Text002Txt: Label 'Source Item     #1########\', comment = 'DEA="Ausgangsartikel     #1########\"';
+        Text003Txt: Label 'Target Item     #2########\', comment = 'DEA="Zielartikel         #2########\"';
+        Text007Txt: Label 'Source Item No. %1 doesn''t exist.', comment = 'DEA="Ausgangsartikel %1 existiert nicht."';
+        Text008Txt: Label 'Target Item No. must not be empty.', comment = 'DEA="Zielartikelnr. darf nicht leer sein."';
+        Text009Txt: Label 'General item information', comment = 'DEA="Allg. Artikelinformationen"';
+        Text010Txt: Label 'Target Item No.%1 already exists.', comment = 'DEA="Zielartikel %1 ist bereits vorhanden."';
+        Text011Txt: Label 'Target Item %1 doesn''t exist.', comment = 'DEA="Zielartikel %1 existiert nicht."';
+        Text013Txt: Label 'Comments', comment = 'DEA="Bemerkungen"';
+        Text014Txt: Label 'Item units of measure', comment = 'DEA="Maßeinheiten Artikel"';
+        Text015Txt: Label 'Item variants', comment = 'DEA="Artikelvarianten"';
+        Text016Txt: Label 'Item translations', comment = 'DEA="Artikelübersetzungen"';
+        Text017Txt: Label 'Extended texts', comment = 'DEA="Textbausteine"';
+        Text018Txt: Label 'BOM components', comment = 'DEA="Stücklistenkomponenten"';
+        Text021Txt: Label 'Item vendors', comment = 'DEA="Debitoren Artikel"';
+        Text025Txt: Label 'copied.', comment = 'DEA="kopiert."';
+        Text026Txt: Label 'Resource skills', comment = 'DEA="Ressourcenqualifikationen"';
+        Text028Txt: Label 'Troubleshootings', comment = 'DEA="Lösungsanleitungen"';
+        Text029Txt: Label 'Sales Prices', comment = 'DEA="VK-Preise"';
+        Text030Txt: Label 'Sales Line Disc.', comment = 'DEA="VK-Zeilenrabatte"';
+        Text031Txt: Label 'Purchase Prices', comment = 'DEA="EK-Preise"';
+        Text032Txt: Label 'Purchase Line Disc.', comment = 'DEA="EK-Zeilenrabatte"';
+        DialogTitleTxt: Text[50];
         DialogTxt: array[30] of Text[250];
 
     procedure CopyItem(_FromItemNo: Code[20]; _InItemNo: Code[20]);
     begin
         if not Item.Get(_FromItemNo) then
-            Error(Text007, _FromItemNo);
+            Error(Text007Txt, _FromItemNo);
 
         if (_InItemNo = '') and (not CopyGenItemInfo) then
-            Error(Text008);
+            Error(Text008Txt);
 
         ItemSetup.Get();
 
@@ -334,7 +333,7 @@ report 50000 ItemCopyNVX
             InsertTargetItem(_InItemNo)
         else
             if not InItem.Get(_InItemNo) then
-                Error(Text011, _InItemNo);
+                Error(Text011Txt, _InItemNo);
 
         if not (CopySalesLineDisc or CopyPurchLineDisc) then begin
             InItem."Item Disc. Group" := '"';
@@ -362,7 +361,7 @@ report 50000 ItemCopyNVX
     begin
         RecCount := 0;
         CopyCount := CopyCount + 1;
-        DialogTitle := Txt;
+        DialogTitleTxt := Txt;
         Window.Update(3, Txt);
         Window.Update(4, 0);
     end;
@@ -376,9 +375,9 @@ report 50000 ItemCopyNVX
     procedure EndDialog();
     begin
         if RecCount <> 0 then
-            DialogTitle := StrSubstNo('%1 %2', RecCount, DialogTitle);
-        DialogTitle := DialogTitle + ' ' + Text025;
-        DialogTxt[CopyCount] := DialogTitle + '\"';
+            DialogTitleTxt := StrSubstNo('%1 %2', RecCount, DialogTitleTxt);
+        DialogTitleTxt := copystr(DialogTitleTxt + ' ' + Text025Txt, 1, 50);
+        DialogTxt[CopyCount] := DialogTitleTxt + '\"';
     end;
 
     procedure ItemDef(var Item2: Record Item);
@@ -393,8 +392,6 @@ report 50000 ItemCopyNVX
     end;
 
     local procedure SetTargetItemNo(NewItemNo: Code[20]; var TargetItemNo: Code[20]; var TargetNoSeries: Code[20]);
-    var
-        TmpItemNo: Code[20];
     begin
         if NewItemNo = '' then
             if NewNoSeries <> '' then begin
@@ -406,7 +403,7 @@ report 50000 ItemCopyNVX
             end
         else begin
             if InItem.Get(NewItemNo) then
-                Error(Text010, NewItemNo);
+                Error(Text010Txt, NewItemNo);
             if ItemSetup."Item Nos." <> '' then
                 NoSeriesMgt.TestManual(ItemSetup."Item Nos.");
 
@@ -420,7 +417,7 @@ report 50000 ItemCopyNVX
         TempItemNo: Code[20];
         TempItemNoSeries: Code[20];
     begin
-        InitDialog(Text009);
+        InitDialog(Text009Txt);
         SetTargetItemNo(NewItemNo, TempItemNo, TempItemNoSeries);
         InItem.Copy(Item);
         InItem."No." := TempItemNo;
@@ -452,7 +449,7 @@ report 50000 ItemCopyNVX
         CommentLine.SetRange("Table Name", CommentLine."Table Name"::Item);
         CommentLine.SetRange("No.", FromItemNo);
         if CommentLine.FindSet() then begin
-            InitDialog(Text013);
+            InitDialog(Text013Txt);
             repeat
                 CommentLine."No." := ToItemNo;
                 CommentLine.Insert();
@@ -470,7 +467,7 @@ report 50000 ItemCopyNVX
         if CopyUnitOfMeasure then begin
             ItemUnitOfMeasure.SetRange("Item No.", FromItem."No.");
             if ItemUnitOfMeasure.FindSet() then begin
-                InitDialog(Text014);
+                InitDialog(Text014Txt);
                 repeat
                     ItemUnitOfMeasure."Item No." := ToItem."No.";
                     ItemUnitOfMeasure.Insert();
@@ -498,7 +495,7 @@ report 50000 ItemCopyNVX
 
         ItemVariant.SetRange("Item No.", FromItemNo);
         if ItemVariant.FindSet() then begin
-            InitDialog(Text015);
+            InitDialog(Text015Txt);
             repeat
                 ItemVariant."Item No." := ToItemNo;
                 ItemVariant.Insert();
@@ -518,8 +515,9 @@ report 50000 ItemCopyNVX
         if not CopyVariants then
             ItemTranslation.SetRange("Variant Code", '');
         if ItemTranslation.FindSet() then begin
-            InitDialog(Text016);
+            InitDialog(Text016Txt);
             repeat
+                ItemTranslation.Init();
                 ItemTranslation."Item No." := ToItemNo;
                 ItemTranslation.Insert();
                 ItemTranslation."Item No." := FromItemNo;
@@ -540,7 +538,7 @@ report 50000 ItemCopyNVX
         ExtendedTextHeader.SetRange("Table Name", ExtendedTextHeader."Table Name"::Item);
         ExtendedTextHeader.SetRange("No.", FromItemNo);
         if ExtendedTextHeader.FindSet() then begin
-            InitDialog(Text017);
+            InitDialog(Text017Txt);
             repeat
                 ExtendedTextLine.SetRange("Table Name", ExtendedTextHeader."Table Name");
                 ExtendedTextLine.SetRange("No.", ExtendedTextHeader."No.");
@@ -571,7 +569,7 @@ report 50000 ItemCopyNVX
 
         BOMComponent.SetRange("Parent Item No.", FromItemNo);
         if BOMComponent.FindSet() then begin
-            InitDialog(Text018);
+            InitDialog(Text018Txt);
             repeat
                 BOMComponent."Parent Item No." := ToItemNo;
                 BOMComponent.Insert();
@@ -584,20 +582,20 @@ report 50000 ItemCopyNVX
 
     local procedure CopyItemVendors(FromItemNo: Code[20]; ToItemNo: Code[20]);
     var
-        ItemVendor: Record "Item Vendor";
+        ItemVendor2: Record "Item Vendor";
     begin
         if not CopyItemVendor then
             exit;
 
-        ItemVendor.SetRange("Item No.", FromItemNo);
-        if ItemVendor.FindSet() then begin
-            InitDialog(Text021);
+        ItemVendor2.SetRange("Item No.", FromItemNo);
+        if ItemVendor2.FindSet() then begin
+            InitDialog(Text021Txt);
             repeat
-                ItemVendor."Item No." := ToItemNo;
-                ItemVendor.Insert();
-                ItemVendor."Item No." := FromItemNo;
+                ItemVendor2."Item No." := ToItemNo;
+                ItemVendor2.Insert();
+                ItemVendor2."Item No." := FromItemNo;
                 UpdateDialog();
-            until ItemVendor.Next() = 0;
+            until ItemVendor2.Next() = 0;
             EndDialog();
         end;
     end;
@@ -612,7 +610,7 @@ report 50000 ItemCopyNVX
         TroubleshootingSetup.SetRange(Type, TroubleshootingSetup.Type::Item);
         TroubleshootingSetup.SetRange("No.", FromItemNo);
         if TroubleshootingSetup.FindSet() then begin
-            InitDialog(Text028);
+            InitDialog(Text028Txt);
             repeat
                 TroubleshootingSetup."No." := ToItemNo;
                 TroubleshootingSetup.Insert();
@@ -633,7 +631,7 @@ report 50000 ItemCopyNVX
         ResourceSkill.SetRange(Type, ResourceSkill.Type::Item);
         ResourceSkill.SetRange("No.", FromItemNo);
         if ResourceSkill.FindSet() then begin
-            InitDialog(Text026);
+            InitDialog(Text026Txt);
             repeat
                 ResourceSkill."No." := ToItemNo;
                 ResourceSkill.Insert();
@@ -653,7 +651,7 @@ report 50000 ItemCopyNVX
 
         SalesPrice.SetRange("Item No.", FromItemNo);
         if SalesPrice.FindSet() then begin
-            InitDialog(Text029);
+            InitDialog(Text029Txt);
             repeat
                 SalesPrice."Item No." := ToItemNo;
                 SalesPrice.Insert();
@@ -673,7 +671,7 @@ report 50000 ItemCopyNVX
         SalesLineDiscount.SetRange(Type, SalesLineDiscount.Type::Item);
         SalesLineDiscount.SetRange(Code, FromItemNo);
         if SalesLineDiscount.FindSet() then begin
-            InitDialog(Text030);
+            InitDialog(Text030Txt);
             repeat
                 SalesLineDiscount.Code := ToItemNo;
                 SalesLineDiscount.Insert();
@@ -692,7 +690,7 @@ report 50000 ItemCopyNVX
 
         PurchasePrice.SetRange("Item No.", FromItemNo);
         if PurchasePrice.FindSet() then begin
-            InitDialog(Text031);
+            InitDialog(Text031Txt);
             repeat
                 PurchasePrice."Item No." := ToItemNo;
                 PurchasePrice.Insert();
@@ -711,7 +709,7 @@ report 50000 ItemCopyNVX
 
         PurchLineDiscount.SetRange("Item No.", FromItemNo);
         if PurchLineDiscount.FindSet() then begin
-            InitDialog(Text032);
+            InitDialog(Text032Txt);
             repeat
                 PurchLineDiscount."Item No." := ToItemNo;
                 PurchLineDiscount.Insert();

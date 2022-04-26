@@ -47,6 +47,22 @@
             "id": "AW0006",
             "action": "None",
             "justification": "UICop Rule - Pages and reports should use the UsageCategory and ApplicationArea properties to be searchable. - action:Info -> action:None"
-        }          
+        },         
+        {
+            "id": "AS0099",
+            "action": "None"
+        },
+        {
+            "id": "AL0603",
+            "action": "None"
+        },
+        {
+            "id": "AA0232",
+            "action": "None"
+        },
+        {
+            "id": "AA0217",
+            "action": "None"
+        }
     ]
 }

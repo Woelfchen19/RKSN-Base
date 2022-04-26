@@ -20,8 +20,11 @@ codeunit 50016 Table37HookNVX
         DimMgt: Codeunit DimensionManagement;
         WrongTypeErr: Label 'Only the types ''Item'' or ''Comment'' are allowed.', comment = 'DEA="In einer Abfassung können sie nur Art ''Artikel'' oder ''leer'' wählen"';
     begin
-        if Rec.IsTemporary or (Rec."Document Type" <> Rec."Document Type"::Order) or (Rec.Type <> Rec.Type::Item) or (Rec."Line No." = 0) then
+        if (Rec."Document Type" <> Rec."Document Type"::Order) and (rec."Document Type" <> rec."Document Type"::Invoice) then
             exit;
+        if (Rec.Type <> Rec.Type::Item) or (Rec."Line No." = 0) then
+            exit;
+
         SalesHeader.Get(Rec."Document Type", Rec."Document No.");
         if InvSetupNVX.Get() then;
         if (SalesHeader."Sell-to Customer No." = InvSetupNVX."Composition Customer") then
@@ -33,10 +36,10 @@ codeunit 50016 Table37HookNVX
         SalesHeaderNVX.GetDefinition(Rec."Document Type", Rec."Document No.");
         SalesLineNVX.GetDefinition(Rec."Document Type", Rec."Document No.", Rec."Line No.");
         if InvSetupNVX.Get() then;
-        
+
         //Get Dims from OE
         GLSetup.Get();
-        if DimSetEntry.Get(SalesHeader."Dimension Set ID", GLSetup."Shortcut Dimension 6 Code") then begin
+        if DimSetEntry.Get(Rec."Dimension Set ID", GLSetup."Shortcut Dimension 6 Code") then begin
             DimValueNVX.Get(GLSetup."Shortcut Dimension 6 Code", DimSetEntry."Dimension Value Code");
             Rec.Validate("Shortcut Dimension 2 Code", DimValueNVX."Shortcut Dimension 2 Code");
             SalesLineNVX."Shortcut Dimension 1 Code" := DimValueNVX."Shortcut Dimension 1 Code";
