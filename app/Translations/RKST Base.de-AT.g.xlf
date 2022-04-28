@@ -11913,142 +11913,136 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType RecapitulationTxt</note>
           <target>Zusammenfassung von Kopierauftrag:\\Ausgangsartikel: %1\Zielartikel: %2\</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 1614022648" size-unit="char" translate="yes" xml:space="preserve">
           <source>Copy Item\\</source>
           <note from="Developer" annotates="general" priority="2">DEA="Artikel kopieren\\"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text001</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text001Txt</note>
           <target>Artikel kopieren\\</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 598315961" size-unit="char" translate="yes" xml:space="preserve">
           <source>Source Item     #1########\</source>
           <note from="Developer" annotates="general" priority="2">DEA="Ausgangsartikel     #1########\"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text002</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text002Txt</note>
           <target>Ausgangsartikel     #1########\</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 4230064890" size-unit="char" translate="yes" xml:space="preserve">
           <source>Target Item     #2########\</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zielartikel         #2########\"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text003</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text003Txt</note>
           <target>Zielartikel         #2########\</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 1068094782" size-unit="char" translate="yes" xml:space="preserve">
           <source>Source Item No. %1 doesn't exist.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Ausgangsartikel %1 existiert nicht."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text007</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text007Txt</note>
           <target>Ausgangsartikel %1 existiert nicht.</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 2621188527" size-unit="char" translate="yes" xml:space="preserve">
           <source>Target Item No. must not be empty.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zielartikelnr. darf nicht leer sein."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text008</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text008Txt</note>
           <target>Zielartikelnr. darf nicht leer sein.</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 884324592" size-unit="char" translate="yes" xml:space="preserve">
           <source>General item information</source>
           <note from="Developer" annotates="general" priority="2">DEA="Allg. Artikelinformationen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text009</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text009Txt</note>
           <target>Allg. Artikelinformationen</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 1644702992" size-unit="char" translate="yes" xml:space="preserve">
           <source>Target Item No.%1 already exists.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zielartikel %1 ist bereits vorhanden."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text010</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text010Txt</note>
           <target>Zielartikel %1 ist bereits vorhanden.</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 1026443335" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 2660409679" size-unit="char" translate="yes" xml:space="preserve">
           <source>Target Item %1 doesn't exist.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zielartikel %1 existiert nicht."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text011</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text011Txt</note>
           <target>Zielartikel %1 existiert nicht.</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 2301836569" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 939907921" size-unit="char" translate="yes" xml:space="preserve">
           <source>Comments</source>
           <note from="Developer" annotates="general" priority="2">DEA="Bemerkungen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text013</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text013Txt</note>
           <target>Bemerkungen</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 4214926420" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 2014966228" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item units of measure</source>
           <note from="Developer" annotates="general" priority="2">DEA="Maßeinheiten Artikel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text014</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text014Txt</note>
           <target>Maßeinheiten Artikel</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 3577229803" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 3793406867" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item variants</source>
           <note from="Developer" annotates="general" priority="2">DEA="Artikelvarianten"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text015</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text015Txt</note>
           <target>Artikelvarianten</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 1195352358" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 1088573462" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item translations</source>
           <note from="Developer" annotates="general" priority="2">DEA="Artikelübersetzungen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text016</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text016Txt</note>
           <target>Artikelübersetzungen</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 557655741" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 2072905109" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extended texts</source>
           <note from="Developer" annotates="general" priority="2">DEA="Textbausteine"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text017</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text017Txt</note>
           <target>Textbausteine</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 857534312" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 3116731672" size-unit="char" translate="yes" xml:space="preserve">
           <source>BOM components</source>
           <note from="Developer" annotates="general" priority="2">DEA="Stücklistenkomponenten"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text018</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text018Txt</note>
           <target>Stücklistenkomponenten</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 2578368842" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 1974421322" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item vendors</source>
           <note from="Developer" annotates="general" priority="2">DEA="Debitoren Artikel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text021</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text021Txt</note>
           <target>Debitoren Artikel</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 834188014" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 3107418510" size-unit="char" translate="yes" xml:space="preserve">
           <source>copied.</source>
           <note from="Developer" annotates="general" priority="2">DEA="kopiert."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text025</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text025Txt</note>
           <target>kopiert.</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 3216065459" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 1885953547" size-unit="char" translate="yes" xml:space="preserve">
           <source>Resource skills</source>
           <note from="Developer" annotates="general" priority="2">DEA="Ressourcenqualifikationen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text026</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text026Txt</note>
           <target>Ressourcenqualifikationen</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 3853762076" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimensions</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Dimensionen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text027</note>
-          <target>Dimensionen</target>
-        </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 2747277865" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 2981587201" size-unit="char" translate="yes" xml:space="preserve">
           <source>Troubleshootings</source>
           <note from="Developer" annotates="general" priority="2">DEA="Lösungsanleitungen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text028</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text028Txt</note>
           <target>Lösungsanleitungen</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 3384974482" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 1244723266" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales Prices</source>
           <note from="Developer" annotates="general" priority="2">DEA="VK-Preise"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text029</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text029Txt</note>
           <target>VK-Preise</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 1148659762" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 674430178" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales Line Disc.</source>
           <note from="Developer" annotates="general" priority="2">DEA="VK-Zeilenrabatte"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text030</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text030Txt</note>
           <target>VK-Zeilenrabatte</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 510963145" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 1690136865" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase Prices</source>
           <note from="Developer" annotates="general" priority="2">DEA="EK-Preise"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text031</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text031Txt</note>
           <target>EK-Preise</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - NamedType 4168233824" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - NamedType 2353355232" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase Line Disc.</source>
           <note from="Developer" annotates="general" priority="2">DEA="EK-Zeilenrabatte"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text032</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - NamedType Text032Txt</note>
           <target>EK-Zeilenrabatte</target>
         </trans-unit>
         <trans-unit id="Report 1150330740 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -12087,18 +12081,6 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control BOMComponents - Property Caption</note>
           <target>Stücklistenkomponenten</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - Control 1496338672 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies if the selected data type if also copied to the new item.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control CopyItemVendor - Property ToolTip</note>
-          <target>Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird.</target>
-        </trans-unit>
-        <trans-unit id="Report 1150330740 - Control 1496338672 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item Vendors</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Debitoren Artikel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control CopyItemVendor - Property Caption</note>
-          <target>Debitoren Artikel</target>
-        </trans-unit>
         <trans-unit id="Report 1150330740 - Control 1498824363 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if the selected data type if also copied to the new item.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."</note>
@@ -12122,6 +12104,18 @@
           <note from="Developer" annotates="general" priority="2">DEA="Artikelvarianten"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control ItemVariants - Property Caption</note>
           <target>Artikelvarianten</target>
+        </trans-unit>
+        <trans-unit id="Report 1150330740 - Control 2157280787 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if the selected data type if also copied to the new item.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control ItemVendor - Property ToolTip</note>
+          <target>Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird.</target>
+        </trans-unit>
+        <trans-unit id="Report 1150330740 - Control 2157280787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Vendors</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Debitoren Artikel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control ItemVendor - Property Caption</note>
+          <target>Debitoren Artikel</target>
         </trans-unit>
         <trans-unit id="Report 1150330740 - Control 2653012956 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if the selected data type if also copied to the new item.</source>
@@ -12165,18 +12159,6 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control Comments - Property Caption</note>
           <target>Bemerkungen</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - Control 3795667633 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies if the selected data type if also copied to the new item.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control CopyPic - Property ToolTip</note>
-          <target>Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird.</target>
-        </trans-unit>
-        <trans-unit id="Report 1150330740 - Control 3795667633 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Picture</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Bild"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control CopyPic - Property Caption</note>
-          <target>Bild</target>
-        </trans-unit>
         <trans-unit id="Report 1150330740 - Control 1500616313 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if the selected data type if also copied to the new item.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."</note>
@@ -12188,6 +12170,18 @@
           <note from="Developer" annotates="general" priority="2">DEA="Allgemeine Artikelinformationen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control GeneralItemInformation - Property Caption</note>
           <target>Allgemeine Artikelinformationen</target>
+        </trans-unit>
+        <trans-unit id="Report 1150330740 - Control 2706886222 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if the selected data type if also copied to the new item.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control Pic - Property ToolTip</note>
+          <target>Gibt an, ob der ausgewählte Datentyp auch in den neuen Artikel kopiert wird.</target>
+        </trans-unit>
+        <trans-unit id="Report 1150330740 - Control 2706886222 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Picture</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bild"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control Pic - Property Caption</note>
+          <target>Bild</target>
         </trans-unit>
         <trans-unit id="Report 1150330740 - Control 332802016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the number of the item that you want to copy the data from.</source>
@@ -12201,16 +12195,16 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control ItemNo - Property Caption</note>
           <target>Ausgangsartikelnr.</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - Control 501184962 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - Control 2295453870 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the item number series to which the data is to be copied.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Gibt die Artikelnummernserie an, in die Daten kopiert werden sollen."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control NewNoSeries - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control NoSeries - Property ToolTip</note>
           <target>Gibt die Artikelnummernserie an, in die Daten kopiert werden sollen.</target>
         </trans-unit>
-        <trans-unit id="Report 1150330740 - Control 501184962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1150330740 - Control 2295453870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Target No. Series</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zielnummernserien"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control NewNoSeries - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ItemCopyNVX - Control NoSeries - Property Caption</note>
           <target>Zielnummernserien</target>
         </trans-unit>
         <trans-unit id="Report 1150330740 - Control 395510365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -12338,6 +12332,76 @@
           <note from="Developer" annotates="general" priority="2">DEA="Anzahl Gliederungsgruppen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ChartOfAccountsNVX - Control No. of Classifications NVX - Property Caption</note>
           <target>Anzahl Gliederungsgruppen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>New,Process,Report,Line,Entry,Navigate,Sort</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Neu,Prozess,Bericht,Zeile,Posten,Navigieren,Sortieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Property PromotedActionCategories</note>
+          <target>Neu,Prozess,Bericht,Zeile,Posten,Navigieren,Sortieren</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Action 3054748504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Sort by</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sortieren nach"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Action SetCurrentkeyNVX - Property Caption</note>
+          <target>Sortieren nach</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Action 1260246126 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>"Global Dimension 2 Code", "Posting Date", "Document No."</source>
+          <note from="Developer" annotates="general" priority="2">DEA="PC|Buchungsdatum|Belegnr"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Action SortbyGlobalDimension2CodePostingDateDocumentDateNVX - Property Caption</note>
+          <target>PC|Buchungsdatum|Belegnr</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Action 3944390202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>"Posting Date|Document No. </source>
+          <note from="Developer" annotates="general" priority="2">DEA="Buchungsdatum|Belegnr"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Action SortbyPostingDateDocumentDateNVX - Property Caption</note>
+          <target>Buchungsdatum|Belegnr</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Action 3489897037 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>"Document No."|"Posting Date"</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Belegnr|Buchungsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Action SortbyPostingDateDocumentNoNVX - Property Caption</note>
+          <target>Belegnr|Buchungsdatum</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Control 478110000 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Specifies the value of the Shortcut Dimension 10 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Control ShortcutDimension10CodeNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Control 2474047554 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Specifies the value of the Shortcut Dimension 3 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Control ShortcutDimension3CodeNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Control 1017265779 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Specifies the value of the Shortcut Dimension 4 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Control ShortcutDimension4CodeNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Control 1875382756 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Specifies the value of the Shortcut Dimension 5 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Control ShortcutDimension5CodeNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Control 3919586709 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Specifies the value of the Shortcut Dimension 6 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Control ShortcutDimension6CodeNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Control 2141403142 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Specifies the value of the Shortcut Dimension 7 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Control ShortcutDimension7CodeNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Control 2024997319 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Specifies the value of the Shortcut Dimension 8 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Control ShortcutDimension8CodeNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Control 689540952 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Specifies the value of the Shortcut Dimension 9 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Control ShortcutDimension9CodeNVX - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3858270453 - Method 4177352842 - NamedType 1602948993" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3858270453">
           <source>This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., </source>
@@ -12855,10 +12919,22 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Transaction No.NVX - Property Caption</note>
           <target>VERKAUF Transaktionsnummer</target>
         </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 4138725704 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Shortcut Dimension 10 Code NVX - Property ToolTip</note>
+          <target>Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist.</target>
+        </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 2185944783 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Shortcut Dimension 8 Code NVX - Property ToolTip</note>
+          <target>Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 1216781072 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Shortcut Dimension 9 Code NVX - Property ToolTip</note>
           <target>Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist.</target>
         </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 4131289413 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
@@ -13688,6 +13764,46 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VATPostingSetupNVX - Control PurchaseVATasExpenseNVX - Property Caption</note>
           <target>VST als Aufwand</target>
         </trans-unit>
+        <trans-unit id="TableExtension 3933977732 - Field 478110000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
+          <source>Shortcut Dimension 10 Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgerentryNVX - Field ShortcutDimension10CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3933977732 - Field 2474047554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgerentryNVX - Field ShortcutDimension3CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3933977732 - Field 1017265779 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
+          <source>Shortcut Dimension 4 Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgerentryNVX - Field ShortcutDimension4CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3933977732 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgerentryNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3933977732 - Field 3919586709 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
+          <source>Shortcut Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgerentryNVX - Field ShortcutDimension6CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3933977732 - Field 2141403142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
+          <source>Shortcut Dimension 7 Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgerentryNVX - Field ShortcutDimension7CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3933977732 - Field 2024997319 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
+          <source>Shortcut Dimension 10 Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgerentryNVX - Field ShortcutDimension8CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3933977732 - Field 689540952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
+          <source>Shortcut Dimension 9 Code</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgerentryNVX - Field ShortcutDimension9CodeNVX - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1715217982 - Field 2070468310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4274826855">
           <source>Hidden</source>
           <note from="Developer" annotates="general" priority="2">DEA="Sachkonto ausblenden"</note>
@@ -13724,11 +13840,23 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Sales Transaction No.NVX - Property Caption</note>
           <target>VERKAUF Transaktionsnummer</target>
         </trans-unit>
+        <trans-unit id="TableExtension 2583571545 - Field 4138725704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Shortcut Dimension 10 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 10"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Shortcut Dimension 10 Code NVX - Property Caption</note>
+          <target>Shortcutdimensionscode 10</target>
+        </trans-unit>
         <trans-unit id="TableExtension 2583571545 - Field 2185944783 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
           <source>Shortcut Dimension 8 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 8"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Shortcut Dimension 8 Code NVX - Property Caption</note>
           <target>Shortcutdimensionscode 8</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 2583571545 - Field 1216781072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Shortcut Dimension 9 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 9"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Shortcut Dimension 9 Code NVX - Property Caption</note>
+          <target>Shortcutdimensionscode 9</target>
         </trans-unit>
         <trans-unit id="TableExtension 3220818943 - Change 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source> ,G/L Account,Item</source>
