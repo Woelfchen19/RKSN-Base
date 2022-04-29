@@ -12345,6 +12345,24 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Action SetCurrentkeyNVX - Property Caption</note>
           <target>Sortieren nach</target>
         </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Action 2778528438 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Business Field|CollectedAccount|PC|Posting Date|Document No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfeld|Sammelkto|PC|Buchungsdatum|Belegnr"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Action SortbyBusinessFieldCollectedAccountPCPostingDateDocumentNoNVX - Property Caption</note>
+          <target>Geschäftsfeld|Sammelkto|PC|Buchungsdatum|Belegnr</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Action 1851392833 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Business Field|Posting Date|Document No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfeld|Buchungsdatum|Belegnr"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Action SortbyBusinessFieldPostingDateDocumentNoNVX - Property Caption</note>
+          <target>Geschäftsfeld|Buchungsdatum|Belegnr</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Action 1237633904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Business Field|Posting Date|PC|Document No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfeld|Buchungsdatum|PC|Belegnr"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Action SortbyBusinessFieldPostingDatePCDocumentNoNVX - Property Caption</note>
+          <target>Geschäftsfeld|Buchungsdatum|PC|Belegnr</target>
+        </trans-unit>
         <trans-unit id="PageExtension 3163317604 - Action 1260246126 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
           <source>"Global Dimension 2 Code", "Posting Date", "Document No."</source>
           <note from="Developer" annotates="general" priority="2">DEA="PC|Buchungsdatum|Belegnr"</note>

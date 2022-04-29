@@ -6,8 +6,7 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
         {
             CaptionClass = '1,2,3';
             Caption = 'Shortcut Dimension 3 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3),
-                                                          Blocked = CONST(false));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3), Blocked = CONST(false));
 
             trigger OnValidate()
             begin
@@ -18,8 +17,7 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
         {
             CaptionClass = '1,2,4';
             Caption = 'Shortcut Dimension 4 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(4),
-                                                          Blocked = CONST(false));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(4), Blocked = CONST(false));
 
             trigger OnValidate()
             begin
@@ -30,8 +28,7 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
         {
             CaptionClass = '1,2,5';
             Caption = 'Shortcut Dimension 5 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5),
-                                                          Blocked = CONST(false));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
 
             trigger OnValidate()
             begin
@@ -42,8 +39,7 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
         {
             CaptionClass = '1,2,6';
             Caption = 'Shortcut Dimension 6 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(6),
-                                                          Blocked = CONST(false));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(6), Blocked = CONST(false));
 
             trigger OnValidate()
             begin
@@ -54,8 +50,7 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
         {
             CaptionClass = '1,2,7';
             Caption = 'Shortcut Dimension 7 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(7),
-                                                          Blocked = CONST(false));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(7), Blocked = CONST(false));
 
             trigger OnValidate()
             begin
@@ -66,8 +61,7 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
         {
             CaptionClass = '1,2,8';
             Caption = 'Shortcut Dimension 10 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(8),
-                                                          Blocked = CONST(false));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(8), Blocked = CONST(false));
 
             trigger OnValidate()
             begin
@@ -79,8 +73,7 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
         {
             CaptionClass = '1,2,9';
             Caption = 'Shortcut Dimension 9 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9),
-                                                          Blocked = CONST(false));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
 
             trigger OnValidate()
             begin
@@ -91,8 +84,7 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
         {
             CaptionClass = '1,2,10';
             Caption = 'Shortcut Dimension 10 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(10),
-                                                          Blocked = CONST(false));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(10), Blocked = CONST(false));
 
             trigger OnValidate()
             begin
@@ -115,12 +107,50 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
         ShortcutDimension8CodeNVX := ShortcutDimCode[8];
         ShortcutDimension9CodeNVX := ShortcutDimCode[9];
         ShortcutDimension10CodeNVX := ShortcutDimCode[10];
+        Modify();
     end;
 
     procedure GetShortcutDimensionsNVX(DimSetID: Integer; VAR ShortcutDimCode: ARRAY[10] OF Code[20])
     begin
         DimensionManagement.GetShortcutDimensions(DimSetID, ShortcutDimCode);
     end;
+
+    procedure SortByNVX(Index: Integer)
+    begin
+        case index of
+            1:
+                begin
+                    SetCurrentKey("Posting Date", "Document No.");
+                    SetAscending("Posting Date", false);
+                end;
+            2:
+                begin
+                    SetCurrentKey("Document No.", "Posting Date");
+                    SetAscending("Document No.", false);
+                end;
+            3:
+                begin
+                    SetCurrentKey("Global Dimension 2 Code", "Posting Date", "Document No.");
+                    SetAscending("Global Dimension 2 Code", false);
+                end;
+            4:
+                begin
+                    SetCurrentKey(ShortcutDimension5CodeNVX, "Posting Date", "Document No.");
+                    SetAscending(ShortcutDimension5CodeNVX, false);
+                end;
+            5:
+                begin
+                    SetCurrentKey(ShortcutDimension5CodeNVX, "Posting Date", "Global Dimension 2 Code", "Document No.");
+                    SetAscending(ShortcutDimension5CodeNVX, false);
+                end;
+            6:
+                begin
+                    SetCurrentKey(ShortcutDimension5CodeNVX, ShortcutDimension9CodeNVX, "Global Dimension 2 Code", "Posting Date", "Document No.");
+                    SetAscending(ShortcutDimension5CodeNVX, false);
+                end;
+        end;
+    end;
+
 
     var
         DimensionManagement: Codeunit DimensionManagement;

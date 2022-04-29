@@ -6,6 +6,7 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
     {
         modify("Global Dimension 2 Code")
         {
+            Editable = false;
             Visible = DimVisible2;
         }
 
@@ -13,43 +14,59 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
         {
             field(ShortcutDimension3CodeNVX; Rec.ShortcutDimension3CodeNVX)
             {
-                ToolTip = 'Specifies the value of the Shortcut Dimension 3 Code field.';
                 ApplicationArea = All;
+                Editable = false;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 3 Code field.';
+                Visible = DimVisible3;
             }
             field(ShortcutDimension4CodeNVX; Rec.ShortcutDimension4CodeNVX)
             {
-                ToolTip = 'Specifies the value of the Shortcut Dimension 4 Code field.';
                 ApplicationArea = All;
+                Editable = false;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 4 Code field.';
+                Visible = DimVisible4;
             }
             field(ShortcutDimension5CodeNVX; Rec.ShortcutDimension5CodeNVX)
             {
-                ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
                 ApplicationArea = All;
+                Editable = false;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
+                Visible = DimVisible5;
             }
             field(ShortcutDimension6CodeNVX; Rec.ShortcutDimension6CodeNVX)
             {
-                ToolTip = 'Specifies the value of the Shortcut Dimension 6 Code field.';
                 ApplicationArea = All;
+                Editable = false;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 6 Code field.';
+                Visible = DimVisible6;
             }
             field(ShortcutDimension7CodeNVX; Rec.ShortcutDimension7CodeNVX)
             {
-                ToolTip = 'Specifies the value of the Shortcut Dimension 7 Code field.';
                 ApplicationArea = All;
+                Editable = false;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 7 Code field.';
+                Visible = DimVisible7;
             }
             field(ShortcutDimension8CodeNVX; Rec.ShortcutDimension8CodeNVX)
             {
-                ToolTip = 'Specifies the value of the Shortcut Dimension 8 Code field.';
                 ApplicationArea = All;
+                Editable = false;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 8 Code field.';
+                Visible = DimVisible8;
             }
             field(ShortcutDimension9CodeNVX; Rec.ShortcutDimension9CodeNVX)
             {
-                ToolTip = 'Specifies the value of the Shortcut Dimension 9 Code field.';
                 ApplicationArea = All;
+                Editable = false;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 9 Code field.';
+                Visible = DimVisible9;
             }
             field(ShortcutDimension10CodeNVX; Rec.ShortcutDimension10CodeNVX)
             {
-                ToolTip = 'Specifies the value of the Shortcut Dimension 10 Code field.';
                 ApplicationArea = All;
+                Editable = false;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 10 Code field.';
+                Visible = DimVisible10;
             }
         }
     }
@@ -103,11 +120,62 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
                         SortByNVX(3);
                     end;
                 }
+                action(SortbyBusinessFieldPostingDateDocumentNoNVX)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Business Field|Posting Date|Document No.', comment = 'DEA="Geschäftsfeld|Buchungsdatum|Belegnr"';
+                    Image = PostingEntries;
+                    Promoted = true;
+                    PromotedCategory = Category7;
+
+                    trigger OnAction();
+                    begin
+                        SortByNVX(4);
+                    end;
+                }
+                action(SortbyBusinessFieldPostingDatePCDocumentNoNVX)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Business Field|Posting Date|PC|Document No.', comment = 'DEA="Geschäftsfeld|Buchungsdatum|PC|Belegnr"';
+                    Image = PostingEntries;
+                    Promoted = true;
+                    PromotedCategory = Category7;
+
+                    trigger OnAction();
+                    begin
+                        SortByNVX(5);
+                    end;
+                }
+                action(SortbyBusinessFieldCollectedAccountPCPostingDateDocumentNoNVX)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Business Field|CollectedAccount|PC|Posting Date|Document No.', comment = 'DEA="Geschäftsfeld|Sammelkto|PC|Buchungsdatum|Belegnr"';
+                    Image = PostingEntries;
+                    Promoted = true;
+                    PromotedCategory = Category7;
+
+                    trigger OnAction();
+                    begin
+                        SortByNVX(6);
+                    end;
+                }
             }
         }
     }
 
     var
+        /*
+        DimEditable1: Boolean;
+        DimEditable2: Boolean;
+        DimEditable3: Boolean;
+        DimEditable4: Boolean;
+        DimEditable5: Boolean;
+        DimEditable6: Boolean;
+        DimEditable7: Boolean;
+        DimEditable8: Boolean;
+        DimEditable9: Boolean;
+        DimEditable10: Boolean;
+        */
         DimVisible1: Boolean;
         DimVisible2: Boolean;
         DimVisible3: Boolean;
@@ -122,12 +190,6 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
     trigger OnOpenPage()
     begin
         SetDimensionsVisibility();
-    end;
-
-    trigger OnAfterGetRecord()
-    begin
-        GetShortcutDimensionsNVX("Dimension Set ID", ShortcutDimCodes);
-        AssignShortCutDimensions();
     end;
 
     local procedure SetDimensionsVisibility()
@@ -154,46 +216,19 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
         DimVisible8 := false;
         DimVisible10 := false;
 
+        /*
+        DimEditable1 := false;
+        DimEditable2 := false;
+        DimEditable3 := false;
+        DimEditable4 := false;
+        DimEditable5 := false;
+        DimEditable6 := false;
+        DimEditable7 := false;
+        DimEditable8 := false;
+        DimEditable9 := false;
+        DimEditable10 := false;
+        */
+
         Clear(DimensionManagement);
     end;
-
-    local procedure AssignShortCutDimensions()
-    begin
-        ShortcutDimension3CodeNVX := ShortcutDimCodes[3];
-        ShortcutDimension4CodeNVX := ShortcutDimCodes[4];
-        ShortcutDimension5CodeNVX := ShortcutDimCodes[5];
-        ShortcutDimension6CodeNVX := ShortcutDimCodes[6];
-        ShortcutDimension7CodeNVX := ShortcutDimCodes[7];
-        ShortcutDimension8CodeNVX := ShortcutDimCodes[8];
-        ShortcutDimension9CodeNVX := ShortcutDimCodes[9];
-        ShortcutDimension10CodeNVX := ShortcutDimCodes[10];
-    end;
-
-    local procedure SortByNVX(Index: Integer)
-    begin
-        case index of
-            1:
-                begin
-                    SetCurrentKey("Posting Date", "Document No.");
-                    SetAscending("Posting Date", false);
-                end;
-            2:
-                begin
-                    SetCurrentKey("Document No.", "Posting Date");
-                    SetAscending("Document No.", false);
-                end;
-            3:
-                begin
-                    SetCurrentKey("Global Dimension 2 Code", "Posting Date", "Document No.");
-                    SetAscending("Global Dimension 2 Code", false);
-                    ;
-                end;
-        // 4:SetCurrentKey()
-        // 5:
-        // 6:
-        end;
-    end;
-
-    var
-        ShortcutDimCodes: ARRAY[10] OF Code[20];
 }
