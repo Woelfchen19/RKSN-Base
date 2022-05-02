@@ -133,7 +133,7 @@ page 50018 PreviewFADimDistrNVX
         DimVisible6 := GLSetup."Shortcut Dimension 6 Code" <> '';
         DimVisible7 := GLSetup."Shortcut Dimension 7 Code" <> '';
         DimVisible8 := GLSetup."Shortcut Dimension 8 Code" <> '';
-        DimVisible9 := GLSetup."Shortcut Dimension 9 Code" <> '';
-        DimVisible10 := GLSetup."Shortcut Dimension 10 Code" <> '';
+        DimVisible9 := GLSetup.ShortcutDimension9CodeNVX <> '';
+        DimVisible10 := GLSetup.ShortcutDimension10CodeNVX <> '';
     end;
 }

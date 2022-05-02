@@ -1,5 +1,6 @@
 pageextension 50053 ApplyCustomerEntryNVX extends "Apply Customer Entries"
 {
+    PromotedActionCategories = 'New,Process,Report,Line,Entry,Sort', comment = 'DEA="Neu,Prozess,Bericht,Zeile,Posten,Sortieren"';
     layout
     {
         modify("Global Dimension 1 Code")
@@ -71,6 +72,97 @@ pageextension 50053 ApplyCustomerEntryNVX extends "Apply Customer Entries"
                 Editable = false;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 10 Code field.';
                 Visible = DimVisible10;
+            }
+        }
+    }
+    actions
+    {
+        addlast(Creation)
+        {
+            group(SetCurrentkeyNVX)
+            {
+                Caption = 'Sort by', comment = 'DEA="Sortieren nach"';
+                Image = SortDescending;
+
+                action(SortbyPostingDateDocumentDateNVX)
+                {
+                    ApplicationArea = All;
+                    Caption = '"Posting Date|Document No. ', comment = 'DEA="Buchungsdatum|Belegnr"';
+                    Image = PostingEntries;
+                    Promoted = true;
+                    PromotedCategory = Category7;
+
+                    trigger OnAction();
+                    begin
+                        SortByNVX(1);
+                    end;
+                }
+                action(SortbyPostingDateDocumentNoNVX)
+                {
+                    ApplicationArea = All;
+                    Caption = '"Document No."|"Posting Date"', comment = 'DEA="Belegnr|Buchungsdatum"';
+                    Image = PostingEntries;
+                    Promoted = true;
+                    PromotedCategory = Category7;
+
+                    trigger OnAction();
+                    begin
+                        SortByNVX(2);
+                    end;
+                }
+
+                action(SortbyGlobalDimension2CodePostingDateDocumentDateNVX)
+                {
+                    ApplicationArea = All;
+                    Caption = '"Global Dimension 2 Code", "Posting Date", "Document No."', comment = 'DEA="PC|Buchungsdatum|Belegnr"';
+                    Image = PostingEntries;
+                    Promoted = true;
+                    PromotedCategory = Category7;
+
+                    trigger OnAction();
+                    begin
+                        SortByNVX(3);
+                    end;
+                }
+                action(SortbyBusinessFieldPostingDateDocumentNoNVX)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Business Field|Posting Date|Document No.', comment = 'DEA="Geschäftsfeld|Buchungsdatum|Belegnr"';
+                    Image = PostingEntries;
+                    Promoted = true;
+                    PromotedCategory = Category7;
+
+                    trigger OnAction();
+                    begin
+                        SortByNVX(4);
+                    end;
+                }
+                action(SortbyBusinessFieldPostingDatePCDocumentNoNVX)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Business Field|Posting Date|PC|Document No.', comment = 'DEA="Geschäftsfeld|Buchungsdatum|PC|Belegnr"';
+                    Image = PostingEntries;
+                    Promoted = true;
+                    PromotedCategory = Category7;
+
+                    trigger OnAction();
+                    begin
+                        SortByNVX(5);
+                    end;
+                }
+                action(SortbyBusinessFieldCollectedAccountPCPostingDateDocumentNoNVX)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Business Field|CollectedAccount|PC|Posting Date|Document No.', comment = 'DEA="Geschäftsfeld|Sammelkto|PC|Buchungsdatum|Belegnr"';
+                    Image = PostingEntries;
+                    Promoted = true;
+                    PromotedCategory = Category7;
+
+                    trigger OnAction();
+                    begin
+                        SortByNVX(6);
+                    end;
+                }
             }
         }
     }
