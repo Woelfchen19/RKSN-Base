@@ -21,7 +21,7 @@ pageextension 50055 "PostedSalesShipmentsNVX" extends "Posted Sales Shipments"
                 Editable = DimEditable3;
                 TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
                 ToolTip = 'Specifies the value of the Shortcut Dimension 3 Code field.';
-                Visible = DimVisible4;
+                Visible = DimVisible3;
             }
             field(ShortcutDimCode4NVX; ShortcutDimCode[4])
             {
@@ -29,7 +29,7 @@ pageextension 50055 "PostedSalesShipmentsNVX" extends "Posted Sales Shipments"
                 CaptionClass = '1,2,4';
                 Editable = DimEditable4;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 4 Code field.';
-                Visible = DimVisible5;
+                Visible = DimVisible4;
             }
             field(ShortcutDimCode5NVX; ShortcutDimCode[5])
             {

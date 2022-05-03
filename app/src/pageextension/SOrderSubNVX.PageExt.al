@@ -145,43 +145,6 @@ pageextension 50025 "SOrderSubNVX" extends "Sales Order Subform"
                 Caption = 'Cust. Amount', comment = 'DEA="Deb. Betrag"';
             }
 
-            /*
-            field(ShortcutDimension4CodeNVX; Rec.ShortcutDimension4CodeNVX)
-            {
-                ApplicationArea = All;
-                Editable = false;
-                ToolTip = 'Specifies the value of the Shortcut Dimension 4 Code field.';
-                Visible = DimVisible4;
-            }
-            field(ShortcutDimension5CodeNVX; Rec.ShortcutDimension5CodeNVX)
-            {
-                ApplicationArea = All;
-                Editable = false;
-                ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
-                Visible = DimVisible5;
-            }
-            field(ShortcutDimension6CodeNVX; Rec.ShortcutDimension6CodeNVX)
-            {
-                ApplicationArea = All;
-                Editable = false;
-                ToolTip = 'Specifies the value of the Shortcut Dimension 6 Code field.';
-                Visible = DimVisible6;
-            }
-            field(ShortcutDimension7CodeNVX; Rec.ShortcutDimension7CodeNVX)
-            {
-                ApplicationArea = All;
-                Editable = false;
-                ToolTip = 'Specifies the value of the Shortcut Dimension 7 Code field.';
-                Visible = DimVisible7;
-            }
-            field(ShortcutDimension8CodeNVX; Rec.ShortcutDimension8CodeNVX)
-            {
-                ApplicationArea = All;
-                Editable = false;
-                ToolTip = 'Specifies the value of the Shortcut Dimension 8 Code field.';
-                Visible = DimVisible8;
-            }
-           */
             field(ShortcutDimCode9NVX; ShortcutDimCodeVisible[9])
             {
                 ApplicationArea = All;
@@ -245,24 +208,8 @@ pageextension 50025 "SOrderSubNVX" extends "Sales Order Subform"
         CustUnitPrice: Decimal;
         ShortcutDimCodeVisible: array[10] of Boolean;
         ShortcutDimCodeEnable: array[10] of Boolean;
-        DimEditable1: Boolean;
-        DimEditable2: Boolean;
-        DimEditable3: Boolean;
-        DimEditable4: Boolean;
-        DimEditable5: Boolean;
-        DimEditable6: Boolean;
-        DimEditable7: Boolean;
-        DimEditable8: Boolean;
         DimEditable9: Boolean;
         DimEditable10: Boolean;
-        DimVisible1: Boolean;
-        DimVisible2: Boolean;
-        DimVisible3: Boolean;
-        DimVisible4: Boolean;
-        DimVisible5: Boolean;
-        DimVisible6: Boolean;
-        DimVisible7: Boolean;
-        DimVisible8: Boolean;
         DimVisible9: Boolean;
         DimVisible10: Boolean;
 

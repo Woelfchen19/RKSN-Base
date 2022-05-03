@@ -11158,175 +11158,45 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntriesPreviewNVX - Control ShortcutDimension3CodeNVX - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 2474047554 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Shortcut Dimension 3 Code field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control ShortcutDimension3CodeNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 2474047554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control ShortcutDimension3CodeNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 2132930775 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Allocation Code field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Allocation CodeNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Allocation Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Allocation CodeNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1659818353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Deactivate dimensional distribution field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilung deaktiviert"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Deactivate dimensional distributionNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1659818353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Deactivate dimensional distribution</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Verteilung deaktiviert"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Deactivate dimensional distributionNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1524795919 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Fixed Asset as Expense field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Anlage als Aufwand"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control FA as ExpenseNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1524795919 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Fixed Asset as Expense</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Anlage als Aufwand"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control FA as ExpenseNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1199432760 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Fixed Asset Transaction No. field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="ANLAGE Transaktionsnummer"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control FA Transaction No.NVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1199432760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Fixed Asset Transaction No.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="ANLAGE Transaktionsnummer"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control FA Transaction No.NVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1142494321 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the G/L Account as Expense field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Sachkonto als Aufwand"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control G/L Account as ExpenseNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1142494321 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>G/L Account as Expense</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Sachkonto als Aufwand"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control G/L Account as ExpenseNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 3455357081 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Interim Gen. Bus. Posting Group field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Interim Gen.Bus.Posting GroupNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 3455357081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Interim Gen. Bus. Posting Group</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Interim Steuerschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Interim Gen.Bus.Posting GroupNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 4178918377 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Shortcut Dimension 1 Code field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Purchase Shortcut Dimension 1 CodeNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 4178918377 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Purchase Shortcut Dimension 1 CodeNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1496128951 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Shortcut Dimension 3 Code field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Purchase Shortcut Dimension 3 CodeNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1496128951 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Purchase Shortcut Dimension 3 CodeNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1971121789 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Sales Restrospect Entry field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="NACHGELAGERT Modul Verkauf"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Retrospect EntryNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1971121789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Sales Restrospect Entry</source>
-          <note from="Developer" annotates="general" priority="2">DEA="NACHGELAGERT Modul Verkauf"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Retrospect EntryNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 568336664 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Shortcut Dimension 1 Code field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Shortcut Dimension 1 CodeNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 568336664 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Shortcut Dimension 1 CodeNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 2486018634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Shortcut Dimension 3 Code field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Shortcut Dimension 3 CodeNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 2486018634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Shortcut Dimension 3 CodeNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 3905601987 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Sales Source Entry field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="QUELLPOSTEN Modul Verkauf"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Source EntryNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 3905601987 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Sales Source Entry</source>
-          <note from="Developer" annotates="general" priority="2">DEA="QUELLPOSTEN Modul Verkauf"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Source EntryNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 2281252205 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Sales Transaction No. field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="VERKAUF Transaktionsnummer"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Transaction No.NVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 2281252205 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Sales Transaction No.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="VERKAUF Transaktionsnummer"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Sales Transaction No.NVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 4138725704 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Shortcut Dimension 10 Code NVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 2185944783 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Shortcut Dimension 8 Code NVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 1216781072 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the code for the shortcut dimension that is linked to the record or entry for analysis purposes.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Gibt den Code für die Shortcut Dimension an, die für Analysezwecke mit dem Datensatz oder Posten verknüpft ist."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Shortcut Dimension 9 Code NVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 4131289413 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the Transaction No. field.</source>
+        <trans-unit id="PageExtension 2583571545 - Control 1862511320 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Specifies the value of the Shortcut Dimension 10 Code field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control Transaction No.NVX - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control ShortcutDimCode10NVX - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 3326348821 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>Specifies the value of the VAT Posting Type field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control VAT Posting TypeNVX - Property ToolTip</note>
+        <trans-unit id="PageExtension 2583571545 - Control 2650788674 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Specifies the value of the Shortcut Dimension 3 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control ShortcutDimCode3NVX - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2583571545 - Control 3326348821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
-          <source>VAT Posting Type</source>
-          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control VAT Posting TypeNVX - Property Caption</note>
+        <trans-unit id="PageExtension 2583571545 - Control 2209937091 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Specifies the value of the Shortcut Dimension 4 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control ShortcutDimCode4NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 1009895940 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Specifies the value of the Shortcut Dimension 5 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control ShortcutDimCode5NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 1310989957 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Specifies the value of the Shortcut Dimension 6 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control ShortcutDimCode6NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 2989983878 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Specifies the value of the Shortcut Dimension 7 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control ShortcutDimCode7NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 562926215 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Specifies the value of the Shortcut Dimension 8 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control ShortcutDimCode8NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2583571545 - Control 3827747496 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Specifies the value of the Shortcut Dimension 9 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control ShortcutDimCode9NVX - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3395455879 - Control 1999315802 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1180040559">
           <source>Allows Negative Inventory for Items without Stock Value</source>
@@ -11482,6 +11352,46 @@
           <source>You cannot change this field if there are posted item entries</source>
           <note from="Developer" annotates="general" priority="2">DEA="Diese Einrichtung ist nur solange änderbar als es zum betreffenden Artikel noch keine Bewegungsposten gibt"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemCardNVX - Control Deactivate Inventory Gen. Bus. Posting GroupNVX - Method OnValidate - NamedType ItemEntryNotEmptyErr</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1909007966 - Control 1862511320 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Shortcut Dimension 10 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemLedgerEntriesNVX - Control ShortcutDimCode10NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1909007966 - Control 2650788674 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Shortcut Dimension 3 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemLedgerEntriesNVX - Control ShortcutDimCode3NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1909007966 - Control 2209937091 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Shortcut Dimension 4 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemLedgerEntriesNVX - Control ShortcutDimCode4NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1909007966 - Control 1009895940 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Shortcut Dimension 5 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemLedgerEntriesNVX - Control ShortcutDimCode5NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1909007966 - Control 1310989957 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Shortcut Dimension 6 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemLedgerEntriesNVX - Control ShortcutDimCode6NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1909007966 - Control 2989983878 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Shortcut Dimension 7 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemLedgerEntriesNVX - Control ShortcutDimCode7NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1909007966 - Control 562926215 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Shortcut Dimension 8 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemLedgerEntriesNVX - Control ShortcutDimCode8NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1909007966 - Control 3827747496 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Shortcut Dimension 9 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemLedgerEntriesNVX - Control ShortcutDimCode9NVX - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1589426501 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4042331808">
           <source>Preview dimensional distribution</source>
@@ -12043,6 +11953,46 @@
           <note from="Developer" annotates="general" priority="2">DEA="Änderung Prod.Bu.Grp. Artikelkarte"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control Allow Item Prod.Post.Group Change NVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2510516659 - Control 1862511320 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2513602899">
+          <source>Specifies the value of the Shortcut Dimension 10 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ValueEntriesNVX - Control ShortcutDimCode10NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2510516659 - Control 2650788674 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2513602899">
+          <source>Specifies the value of the Shortcut Dimension 3 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ValueEntriesNVX - Control ShortcutDimCode3NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2510516659 - Control 2209937091 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2513602899">
+          <source>Specifies the value of the Shortcut Dimension 4 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ValueEntriesNVX - Control ShortcutDimCode4NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2510516659 - Control 1009895940 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2513602899">
+          <source>Specifies the value of the Shortcut Dimension 5 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ValueEntriesNVX - Control ShortcutDimCode5NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2510516659 - Control 1310989957 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2513602899">
+          <source>Specifies the value of the Shortcut Dimension 6 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ValueEntriesNVX - Control ShortcutDimCode6NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2510516659 - Control 2989983878 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2513602899">
+          <source>Specifies the value of the Shortcut Dimension 7 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ValueEntriesNVX - Control ShortcutDimCode7NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2510516659 - Control 562926215 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2513602899">
+          <source>Specifies the value of the Shortcut Dimension 8 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ValueEntriesNVX - Control ShortcutDimCode8NVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2510516659 - Control 3827747496 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2513602899">
+          <source>Specifies the value of the Shortcut Dimension 9 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ValueEntriesNVX - Control ShortcutDimCode9NVX - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2830905203 - Action 395637661 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
           <source>View or edit dimensions, such as area, project, or department, that you can assign to sales and purchase documents to distribute costs and analyze transaction history.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -12193,20 +12143,85 @@
           <note from="Developer" annotates="general" priority="2">DEA="VERKAUF Transaktionsnummer"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Sales Transaction No.NVX - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2583571545 - Field 4138725704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+        <trans-unit id="TableExtension 2583571545 - Field 478110000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
           <source>Shortcut Dimension 10 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 10"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Shortcut Dimension 10 Code NVX - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field ShortcutDimension10CodeNVX - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2583571545 - Field 2185944783 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
-          <source>Shortcut Dimension 8 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 8"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Shortcut Dimension 8 Code NVX - Property Caption</note>
+        <trans-unit id="TableExtension 2583571545 - Field 2474047554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field ShortcutDimension3CodeNVX - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2583571545 - Field 1216781072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+        <trans-unit id="TableExtension 2583571545 - Field 1017265779 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Shortcut Dimension 4 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field ShortcutDimension4CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2583571545 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2583571545 - Field 3919586709 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Shortcut Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field ShortcutDimension6CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2583571545 - Field 2141403142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Shortcut Dimension 7 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field ShortcutDimension7CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2583571545 - Field 2024997319 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
+          <source>Shortcut Dimension 10 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field ShortcutDimension8CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2583571545 - Field 689540952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
           <source>Shortcut Dimension 9 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 9"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field Shortcut Dimension 9 Code NVX - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field ShortcutDimension9CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3460349296 - Field 478110000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Shortcut Dimension 10 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ItemLedgerEntryNVX - Field ShortcutDimension10CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3460349296 - Field 2474047554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ItemLedgerEntryNVX - Field ShortcutDimension3CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3460349296 - Field 1017265779 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Shortcut Dimension 4 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ItemLedgerEntryNVX - Field ShortcutDimension4CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3460349296 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ItemLedgerEntryNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3460349296 - Field 3919586709 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Shortcut Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ItemLedgerEntryNVX - Field ShortcutDimension6CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3460349296 - Field 2141403142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Shortcut Dimension 7 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ItemLedgerEntryNVX - Field ShortcutDimension7CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3460349296 - Field 2024997319 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Shortcut Dimension 10 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ItemLedgerEntryNVX - Field ShortcutDimension8CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3460349296 - Field 689540952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Shortcut Dimension 9 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ItemLedgerEntryNVX - Field ShortcutDimension9CodeNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3220818943 - Change 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source> ,G/L Account,Item</source>
@@ -12217,6 +12232,61 @@
           <source> ,G/L Account,Item</source>
           <note from="Developer" annotates="general" priority="2">DEA=" ,Sachkonto,Artikel"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SalesLineNVX - Change Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 29513321 - Field 1971121789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 467645625">
+          <source>Sales Restrospect Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="NACHGELAGERT Modul Verkauf"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ValueEntryNVX - Field Sales Retrospect EntryNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 29513321 - Field 3905601987 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 467645625">
+          <source>Sales Source Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="QUELLPOSTEN Modul Verkauf"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ValueEntryNVX - Field Sales Source EntryNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 29513321 - Field 2281252205 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 467645625">
+          <source>Sales Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VERKAUF Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ValueEntryNVX - Field Sales Transaction No.NVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 29513321 - Field 478110000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 467645625">
+          <source>Shortcut Dimension 10 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ValueEntryNVX - Field ShortcutDimension10CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 29513321 - Field 2474047554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 467645625">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ValueEntryNVX - Field ShortcutDimension3CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 29513321 - Field 1017265779 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 467645625">
+          <source>Shortcut Dimension 4 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ValueEntryNVX - Field ShortcutDimension4CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 29513321 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 467645625">
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ValueEntryNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 29513321 - Field 3919586709 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 467645625">
+          <source>Shortcut Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ValueEntryNVX - Field ShortcutDimension6CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 29513321 - Field 2141403142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 467645625">
+          <source>Shortcut Dimension 7 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ValueEntryNVX - Field ShortcutDimension7CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 29513321 - Field 2024997319 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 467645625">
+          <source>Shortcut Dimension 10 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ValueEntryNVX - Field ShortcutDimension8CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 29513321 - Field 689540952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 467645625">
+          <source>Shortcut Dimension 9 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ValueEntryNVX - Field ShortcutDimension9CodeNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2146477609 - Field 1878656657 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
           <source>Dimension Set ID</source>

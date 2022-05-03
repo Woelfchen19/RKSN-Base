@@ -1,4 +1,4 @@
-tableextension 50002 GLEntryNVX extends "G/L Entry"
+tableextension 50010 "ValueEntryNVX" extends "Value Entry"
 {
     fields
     {
@@ -112,7 +112,7 @@ tableextension 50002 GLEntryNVX extends "G/L Entry"
     VAR
         ShortcutDimCode: ARRAY[10] OF Code[20];
     begin
-        GetShortcutDimensionsNVX("Dimension Set ID", ShortcutDimCode);
+        GetShortcutDimensionsNVX(ShortcutDimCode);
         ShortcutDimension3CodeNVX := ShortcutDimCode[3];
         ShortcutDimension4CodeNVX := ShortcutDimCode[4];
         ShortcutDimension5CodeNVX := ShortcutDimCode[5];
@@ -123,9 +123,9 @@ tableextension 50002 GLEntryNVX extends "G/L Entry"
         ShortcutDimension10CodeNVX := ShortcutDimCode[10];
     end;
 
-    procedure GetShortcutDimensionsNVX(DimSetID: Integer; VAR ShortcutDimCode: ARRAY[10] OF Code[20])
+    procedure GetShortcutDimensionsNVX(VAR ShortcutDimCode: ARRAY[10] OF Code[20])
     begin
-        DimensionManagement.GetShortcutDimensions(DimSetID, ShortcutDimCode);
+        DimensionManagement.GetShortcutDimensions("Dimension Set ID", ShortcutDimCode);
     end;
 
     var

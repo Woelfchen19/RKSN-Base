@@ -163,8 +163,17 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
         }
     }
 
+    trigger OnOpenPage()
+    begin
+        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Customer Ledger Entries", DimVisible, DimEditable);
+        AppMgt.GetFieldsPropertyVisibleEditableBySetup(
+            DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
+                DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
+    end;
+
     var
-        /*
+        AppMgt: Codeunit AppMgtNVX;
+        DimEditable: array[10] of Boolean;
         DimEditable1: Boolean;
         DimEditable2: Boolean;
         DimEditable3: Boolean;
@@ -175,7 +184,7 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
         DimEditable8: Boolean;
         DimEditable9: Boolean;
         DimEditable10: Boolean;
-        */
+        DimVisible: array[10] of Boolean;
         DimVisible1: Boolean;
         DimVisible2: Boolean;
         DimVisible3: Boolean;
@@ -186,49 +195,5 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
         DimVisible8: Boolean;
         DimVisible9: Boolean;
         DimVisible10: Boolean;
-
-    trigger OnOpenPage()
-    begin
-        SetDimensionsVisibility();
-    end;
-
-    local procedure SetDimensionsVisibility()
-    var
-        DimensionManagement: Codeunit DimensionManagement;
-    begin
-        DimVisible1 := false;
-        DimVisible2 := false;
-        DimVisible3 := false;
-        DimVisible4 := false;
-        DimVisible5 := false;
-        DimVisible6 := false;
-        DimVisible7 := false;
-        DimVisible8 := false;
-        DimVisible9 := false;
-        DimVisible10 := false;
-
-        DimensionManagement.UseShortcutDims(
-          DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10);
-
-        DimVisible1 := false;
-        DimVisible3 := false;
-        DimVisible7 := false;
-        DimVisible8 := false;
-        DimVisible10 := false;
-
-        /*
-        DimEditable1 := false;
-        DimEditable2 := false;
-        DimEditable3 := false;
-        DimEditable4 := false;
-        DimEditable5 := false;
-        DimEditable6 := false;
-        DimEditable7 := false;
-        DimEditable8 := false;
-        DimEditable9 := false;
-        DimEditable10 := false;
-        */
-
-        Clear(DimensionManagement);
-    end;
+        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query",System;
 }

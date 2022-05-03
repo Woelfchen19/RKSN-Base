@@ -15,19 +15,96 @@ codeunit 50026 AppMgtNVX
         DimVisible: array[10] of Boolean;
         DimEditable: array[10] of Boolean)
     var
+        i: integer;
+    begin
+        GLSetup.Get();
+
+        DimMgt.UseShortcutDims(
+          DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10);
+
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 1 Code") then begin
+            Dimvisible[1] := DimVisible1 and SetupPropertyForFields.IsVisible;
+            DimEditable[1] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 2 Code") then begin
+            Dimvisible[2] := DimVisible2 and SetupPropertyForFields.IsVisible;
+            DimEditable[2] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 3 Code") then begin
+            Dimvisible[3] := DimVisible3 and SetupPropertyForFields.IsVisible;
+            DimEditable[3] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 4 Code") then begin
+            Dimvisible[4] := DimVisible4 and SetupPropertyForFields.IsVisible;
+            DimEditable[4] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 5 Code") then begin
+            Dimvisible[5] := DimVisible5 and SetupPropertyForFields.IsVisible;
+            DimEditable[5] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 6 Code") then begin
+            Dimvisible[6] := DimVisible6 and SetupPropertyForFields.IsVisible;
+            DimEditable[6] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 7 Code") then begin
+            Dimvisible[7] := DimVisible7 and SetupPropertyForFields.IsVisible;
+            DimEditable[7] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 8 Code") then begin
+            Dimvisible[8] := DimVisible8 and SetupPropertyForFields.IsVisible;
+            DimEditable[8] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup.ShortcutDimension9CodeNVX) then begin
+            Dimvisible[9] := DimVisible9 and SetupPropertyForFields.IsVisible;
+            DimEditable[9] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup.ShortcutDimension10CodeNVX) then begin
+            Dimvisible[10] := DimVisible10 and SetupPropertyForFields.IsVisible;
+            DimEditable[10] := SetupPropertyForFields.IsEditable;
+        end;
+
+        for i := 1 to 10 do begin
+            DimensionEditable[i] := DimEditable[i];
+            DimensionVisible[i] := DimVisible[i];
+        end;
+
+        Clear(DimMgt);
+    end;
+
+    procedure GetFieldsPropertyVisibleEditableBySetup(
+        var Dimension1Visible: Boolean; var Dimension2Visible: Boolean; var Dimension3Visible: Boolean; var Dimension4Visible: Boolean; var Dimension5Visible: Boolean;
+            var Dimension6Visible: Boolean; var Dimension7Visible: Boolean; var Dimension8Visible: Boolean; var Dimension9Visible: Boolean; var Dimension10Visible: Boolean;
+                var Dimension1Editable: Boolean; var Dimension2Editable: Boolean; var Dimension3Editable: Boolean; var Dimension4Editable: Boolean; var Dimension5Editable: Boolean;
+                    var Dimension6Editable: Boolean; var Dimension7Editable: Boolean; var Dimension8Editable: Boolean; var Dimension9Editable: Boolean; var Dimension10Editable: Boolean)
+    begin
+        Dimension1Visible := DimensionVisible[1];
+        Dimension2Visible := DimensionVisible[2];
+        Dimension3Visible := DimensionVisible[3];
+        Dimension4Visible := DimensionVisible[4];
+        Dimension5Visible := DimensionVisible[5];
+        Dimension6Visible := DimensionVisible[6];
+        Dimension7Visible := DimensionVisible[7];
+        Dimension8Visible := DimensionVisible[8];
+        Dimension9Visible := DimensionVisible[9];
+        Dimension10Visible := DimensionVisible[10];
+        Dimension1Editable := DimensionEditable[1];
+        Dimension2Editable := DimensionEditable[2];
+        Dimension3Editable := DimensionEditable[3];
+        Dimension4Editable := DimensionEditable[4];
+        Dimension5Editable := DimensionEditable[5];
+        Dimension6Editable := DimensionEditable[6];
+        Dimension7Editable := DimensionEditable[7];
+        Dimension8Editable := DimensionEditable[8];
+        Dimension9Editable := DimensionEditable[9];
+        Dimension10Editable := DimensionEditable[10];
+    end;
+
+    var
         GLSetup: Record "General Ledger Setup";
         SetupPropertyForFields: Record SetupPropertyForFieldsNVX;
         DimMgt: codeunit DimensionManagement;
-        DimEditable1: Boolean;
-        DimEditable2: Boolean;
-        DimEditable3: Boolean;
-        DimEditable4: Boolean;
-        DimEditable5: Boolean;
-        DimEditable6: Boolean;
-        DimEditable7: Boolean;
-        DimEditable8: Boolean;
-        DimEditable9: Boolean;
-        DimEditable10: Boolean;
+        DimensionVisible: array[10] of Boolean;
+        DimensionEditable: array[10] of Boolean;
         DimVisible1: Boolean;
         DimVisible2: Boolean;
         DimVisible3: Boolean;
@@ -38,75 +115,4 @@ codeunit 50026 AppMgtNVX
         DimVisible8: Boolean;
         DimVisible9: Boolean;
         DimVisible10: Boolean;
-    begin
-        GLSetup.Get();
-
-        DimMgt.UseShortcutDims(
-          DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10);
-
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 1 Code") then begin
-            DimVisible1 := DimVisible1 and SetupPropertyForFields.IsVisible;
-            DimEditable1 := DimEditable1 and SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 2 Code") then begin
-            DimVisible2 := DimVisible2 and SetupPropertyForFields.IsVisible;
-            DimEditable2 := DimEditable2 and SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 3 Code") then begin
-            DimVisible3 := DimVisible3 and SetupPropertyForFields.IsVisible;
-            DimEditable3 := DimEditable3 and SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 4 Code") then begin
-            DimVisible4 := DimVisible4 and SetupPropertyForFields.IsVisible;
-            DimEditable4 := DimEditable4 and SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 5 Code") then begin
-            DimVisible5 := DimVisible5 and SetupPropertyForFields.IsVisible;
-            DimEditable5 := DimEditable5 and SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 6 Code") then begin
-            DimVisible6 := DimVisible6 and SetupPropertyForFields.IsVisible;
-            DimEditable6 := DimEditable6 and SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 7 Code") then begin
-            DimVisible7 := DimVisible7 and SetupPropertyForFields.IsVisible;
-            DimEditable7 := DimEditable7 and SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 8 Code") then begin
-            DimVisible8 := DimVisible8 and SetupPropertyForFields.IsVisible;
-            DimEditable8 := DimEditable8 and SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup.ShortcutDimension9CodeNVX) then begin
-            DimVisible9 := DimVisible9 and SetupPropertyForFields.IsVisible;
-            DimEditable9 := DimEditable9 and SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup.ShortcutDimension10CodeNVX) then begin
-            DimVisible10 := DimVisible10 and SetupPropertyForFields.IsVisible;
-            DimEditable10 := DimEditable10 and SetupPropertyForFields.IsEditable;
-        end;
-
-        Clear(DimMgt);
-
-        dimvisible[1] := DimVisible1;
-        dimvisible[2] := DimVisible2;
-        dimvisible[3] := DimVisible3;
-        dimvisible[4] := DimVisible4;
-        dimvisible[5] := DimVisible5;
-        dimvisible[6] := DimVisible6;
-        dimvisible[7] := DimVisible7;
-        dimvisible[8] := DimVisible8;
-        dimvisible[9] := DimVisible9;
-        dimvisible[10] := DimVisible10;
-
-        DimEditable[1] := DimEditable1;
-        DimEditable[2] := DimEditable2;
-        DimEditable[3] := DimEditable3;
-        DimEditable[4] := DimEditable4;
-        DimEditable[5] := DimEditable5;
-        DimEditable[6] := DimEditable6;
-        DimEditable[7] := DimEditable7;
-        DimEditable[8] := DimEditable8;
-        DimEditable[9] := DimEditable9;
-        DimEditable[10] := DimEditable10;
-    end;
 }

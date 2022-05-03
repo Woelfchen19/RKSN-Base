@@ -1,4 +1,4 @@
-tableextension 50002 GLEntryNVX extends "G/L Entry"
+tableextension 50009 "ItemLedgerEntryNVX" extends "Item Ledger Entry"
 {
     fields
     {
@@ -10,7 +10,7 @@ tableextension 50002 GLEntryNVX extends "G/L Entry"
 
             trigger OnValidate()
             begin
-                DimensionManagement.ValidateShortcutDimValues(3, ShortcutDimension3CodeNVX, "Dimension Set ID");
+                DimMgt.ValidateShortcutDimValues(3, ShortcutDimension3CodeNVX, "Dimension Set ID");
             end;
         }
         field(50001; ShortcutDimension4CodeNVX; Code[20])
@@ -21,7 +21,7 @@ tableextension 50002 GLEntryNVX extends "G/L Entry"
 
             trigger OnValidate()
             begin
-                DimensionManagement.ValidateShortcutDimValues(4, ShortcutDimension4CodeNVX, "Dimension Set ID");
+                DimMgt.ValidateShortcutDimValues(4, ShortcutDimension4CodeNVX, "Dimension Set ID");
             end;
         }
         field(50002; ShortcutDimension5CodeNVX; Code[20])
@@ -32,7 +32,7 @@ tableextension 50002 GLEntryNVX extends "G/L Entry"
 
             trigger OnValidate()
             begin
-                DimensionManagement.ValidateShortcutDimValues(5, ShortcutDimension5CodeNVX, "Dimension Set ID");
+                DimMgt.ValidateShortcutDimValues(5, ShortcutDimension5CodeNVX, "Dimension Set ID");
             end;
         }
         field(50003; ShortcutDimension6CodeNVX; Code[20])
@@ -43,7 +43,7 @@ tableextension 50002 GLEntryNVX extends "G/L Entry"
 
             trigger OnValidate()
             begin
-                DimensionManagement.ValidateShortcutDimValues(6, ShortcutDimension6CodeNVX, "Dimension Set ID");
+                DimMgt.ValidateShortcutDimValues(6, ShortcutDimension6CodeNVX, "Dimension Set ID");
             end;
         }
         field(50004; ShortcutDimension7CodeNVX; Code[20])
@@ -54,7 +54,7 @@ tableextension 50002 GLEntryNVX extends "G/L Entry"
 
             trigger OnValidate()
             begin
-                DimensionManagement.ValidateShortcutDimValues(7, ShortcutDimension7CodeNVX, "Dimension Set ID");
+                DimMgt.ValidateShortcutDimValues(7, ShortcutDimension7CodeNVX, "Dimension Set ID");
             end;
         }
         field(50005; ShortcutDimension8CodeNVX; Code[20])
@@ -65,7 +65,7 @@ tableextension 50002 GLEntryNVX extends "G/L Entry"
 
             trigger OnValidate()
             begin
-                DimensionManagement.ValidateShortcutDimValues(8, ShortcutDimension8CodeNVX, "Dimension Set ID");
+                DimMgt.ValidateShortcutDimValues(8, ShortcutDimension8CodeNVX, "Dimension Set ID");
             end;
         }
 
@@ -77,10 +77,10 @@ tableextension 50002 GLEntryNVX extends "G/L Entry"
 
             trigger OnValidate()
             begin
-                DimensionManagement.ValidateShortcutDimValues(9, ShortcutDimension9CodeNVX, "Dimension Set ID");
+                DimMgt.ValidateShortcutDimValues(9, ShortcutDimension9CodeNVX, "Dimension Set ID");
             end;
         }
-        field(50007; "ShortcutDimension10CodeNVX"; Code[20])
+        field(50007; ShortcutDimension10CodeNVX; Code[20])
         {
             CaptionClass = '1,2,10';
             Caption = 'Shortcut Dimension 10 Code';
@@ -88,31 +88,16 @@ tableextension 50002 GLEntryNVX extends "G/L Entry"
 
             trigger OnValidate()
             begin
-                DimensionManagement.ValidateShortcutDimValues(10, ShortcutDimension10CodeNVX, "Dimension Set ID");
+                DimMgt.ValidateShortcutDimValues(10, ShortcutDimension10CodeNVX, "Dimension Set ID");
 
             end;
-        }
-        field(50010; "Sales Transaction No.NVX"; Integer)
-        {
-            DataClassification = CustomerContent;
-            Caption = 'Sales Transaction No.', comment = 'DEA="VERKAUF Transaktionsnummer"';
-        }
-        field(50011; "Sales Source EntryNVX"; Boolean)
-        {
-            DataClassification = CustomerContent;
-            Caption = 'Sales Source Entry', comment = 'DEA="QUELLPOSTEN Modul Verkauf"';
-        }
-        field(50012; "Sales Retrospect EntryNVX"; Boolean)
-        {
-            DataClassification = CustomerContent;
-            Caption = 'Sales Restrospect Entry', comment = 'DEA="NACHGELAGERT Modul Verkauf"';
         }
     }
     procedure CopyShortCutDimensionsFromDimensionValuesNVX()
     VAR
         ShortcutDimCode: ARRAY[10] OF Code[20];
     begin
-        GetShortcutDimensionsNVX("Dimension Set ID", ShortcutDimCode);
+        GetShortcutDimensionsNVX(ShortcutDimCode);
         ShortcutDimension3CodeNVX := ShortcutDimCode[3];
         ShortcutDimension4CodeNVX := ShortcutDimCode[4];
         ShortcutDimension5CodeNVX := ShortcutDimCode[5];
@@ -123,11 +108,11 @@ tableextension 50002 GLEntryNVX extends "G/L Entry"
         ShortcutDimension10CodeNVX := ShortcutDimCode[10];
     end;
 
-    procedure GetShortcutDimensionsNVX(DimSetID: Integer; VAR ShortcutDimCode: ARRAY[10] OF Code[20])
+    procedure GetShortcutDimensionsNVX(VAR ShortcutDimCode: ARRAY[10] OF Code[20])
     begin
-        DimensionManagement.GetShortcutDimensions(DimSetID, ShortcutDimCode);
+        DimMgt.GetShortcutDimensions("Dimension Set ID", ShortcutDimCode);
     end;
 
     var
-        DimensionManagement: Codeunit DimensionManagement;
+        DimMgt: Codeunit DimensionManagement;
 }
