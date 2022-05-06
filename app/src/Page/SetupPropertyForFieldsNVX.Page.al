@@ -2,9 +2,10 @@ page 50029 SetupPropertyForFieldsNVX
 {
     PageType = List;
     ApplicationArea = All;
-    UsageCategory = Lists;
+    UsageCategory = Administration;
     SourceTable = SetupPropertyForFieldsNVX;
     DelayedInsert = true;
+    Caption = 'Setup Properties from Fields (visible,editable)', comment = 'DEA="Einrichtung Eigenschaften der Felder (visible,editable)"';
 
     layout
     {

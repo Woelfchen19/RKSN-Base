@@ -1,4 +1,4 @@
-pageextension 50040 "GLEntryNVX" extends "General Ledger Entries"
+pageextension 50040 GLEntryNVX extends "General Ledger Entries"
 {
     layout
     {

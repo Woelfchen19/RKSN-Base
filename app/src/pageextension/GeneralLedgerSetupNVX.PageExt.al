@@ -1,4 +1,4 @@
-pageextension 50056 "GeneralLedgerSetupNVX" extends "General Ledger Setup"
+pageextension 50056 GeneralLedgerSetupNVX extends "General Ledger Setup"
 {
     layout
     {
