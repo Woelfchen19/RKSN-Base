@@ -83,9 +83,7 @@ pageextension 50040 "GLEntryNVX" extends "General Ledger Entries"
     end;
 
     var
-        GLEntryNVX: Record GLEntryNVX;
         AppMgt: Codeunit AppMgtNVX;
-        DimMgt: Codeunit DimensionManagement;
         DimEditable: array[10] of Boolean;
         DimEditable1: Boolean;
         DimEditable2: Boolean;

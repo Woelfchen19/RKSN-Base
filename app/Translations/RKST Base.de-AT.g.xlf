@@ -10477,24 +10477,6 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SetupPropertyForFieldsNVX - Field Object Type - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="Table 1224611290 - Field 841247151 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allow Item Invt.Post.Group Change</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Änderung Lager.Bu.Grp. Artikelkarte"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table UserSetupNVX - Field Allow Item Invt.Pst.Grp Change - Property Caption</note>
-          <target>Änderung Lager.Bu.Grp. Artikelkarte</target>
-        </trans-unit>
-        <trans-unit id="Table 1224611290 - Field 2283305579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allow Item Prod.Post.Group Change</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Änderung Prod.Bu.Grp. Artikelkarte"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table UserSetupNVX - Field Allow Item Prod.Pst.Grp Change - Property Caption</note>
-          <target>Änderung Prod.Bu.Grp. Artikelkarte</target>
-        </trans-unit>
-        <trans-unit id="Table 1224611290 - Field 2708250016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>User ID</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Benutzer-ID"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table UserSetupNVX - Field User ID - Property Caption</note>
-          <target>Benutzer-ID</target>
-        </trans-unit>
         <trans-unit id="Table 3911360504 - Field 2434839038 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase VAT as Expense</source>
           <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand"</note>
@@ -12498,6 +12480,30 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ChartOfAccountsNVX - Control No. of Classifications NVX - Property Caption</note>
           <target>Anzahl Gliederungsgruppen</target>
         </trans-unit>
+        <trans-unit id="PageExtension 1546242143 - Control 1767319268 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Evidence - EV</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Evidenz - EV"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustCardNVX - Control SetupBusinessFieldEVNVX - Property Caption</note>
+          <target>Evidenz - EV</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546242143 - Control 2851920608 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>EVSetup</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EVSetup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustCardNVX - Control EVSetupNVX - Property ToolTip</note>
+          <target>EVSetup</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546242143 - Control 454572635 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Care and Support</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Pflege und Betreuung - PB"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustCardNVX - Control SetupBusinessFieldPBNVX - Property Caption</note>
+          <target>Pflege und Betreuung - PB</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546242143 - Control 3209937647 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>PBSetup</source>
+          <note from="Developer" annotates="general" priority="2">DEA="PBSetup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustCardNVX - Control PBSetupNVX - Property ToolTip</note>
+          <target>PBSetup</target>
+        </trans-unit>
         <trans-unit id="PageExtension 3163317604 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
           <source>New,Process,Report,Line,Entry,Navigate,Sort</source>
           <note from="Developer" annotates="general" priority="2">DEA="Neu,Prozess,Bericht,Zeile,Posten,Navigieren,Sortieren"</note>
@@ -13936,29 +13942,53 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SQuoteSubNVX - Control SalesLineNVXCustUnitPriceNVX - Property Caption</note>
           <target>Deb. VK-Preis</target>
         </trans-unit>
-        <trans-unit id="PageExtension 1224611290 - Control 2431373660 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
-          <source>Specifies if the user is allowed to change the Inventory Posting Group on items although entries are existing</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob die Lagerbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control Allow Item Invt.Post.Group Change NVX - Property ToolTip</note>
-          <target>Gibt an, ob die Lagerbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren</target>
-        </trans-unit>
-        <trans-unit id="PageExtension 1224611290 - Control 2431373660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
-          <source>Allow Item Invt.Post.Group Change</source>
+        <trans-unit id="PageExtension 1224611290 - Control 639668495 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the Allow Item Invt.Post.Group Change field.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Änderung Lager.Bu.Grp. Artikelkarte"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control Allow Item Invt.Post.Group Change NVX - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control AllowItemInvtPstGrpChangeNVX - Property ToolTip</note>
           <target>Änderung Lager.Bu.Grp. Artikelkarte</target>
         </trans-unit>
-        <trans-unit id="PageExtension 1224611290 - Control 2662501360 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
-          <source>Specifies if the user is allowed to change the Prod. Posting Group on items although entries are existing</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob die Produktbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control Allow Item Prod.Post.Group Change NVX - Property ToolTip</note>
-          <target>Gibt an, ob die Produktbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren</target>
+        <trans-unit id="PageExtension 1224611290 - Control 2604956699 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies if the user is allowed to change the Inventory Posting Group on items although entries are existing</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob die Lagerbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control AllowItemProdPstGrpChangeNVX - Property ToolTip</note>
+          <target>Gibt an, ob die Lagerbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren</target>
         </trans-unit>
-        <trans-unit id="PageExtension 1224611290 - Control 2662501360 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
-          <source>Allow Item Prod.Post.Group Change</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Änderung Prod.Bu.Grp. Artikelkarte"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control Allow Item Prod.Post.Group Change NVX - Property Caption</note>
-          <target>Änderung Prod.Bu.Grp. Artikelkarte</target>
+        <trans-unit id="PageExtension 1224611290 - Control 3628519213 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the EA-setup field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EA-setup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control EASetupNVX - Property ToolTip</note>
+          <target>EA-setup</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 2851920608 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the EV-setup field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EV-setup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control EVSetupNVX - Property ToolTip</note>
+          <target>EV-setup</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 3209937647 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the PB-setup field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="PB-setup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control PBSetupNVX - Property ToolTip</note>
+          <target>PB-setup</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 3674141283 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the RD-setup field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="RD-setup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control RDSetupNVX - Property ToolTip</note>
+          <target>RD-setup</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 2071610583 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the RH-setup field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="RH-setup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control RHSetupNVX - Property ToolTip</note>
+          <target>RH-setup</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 1518406549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the SO-setup field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="SO-setup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control SOSetupNVX - Property ToolTip</note>
+          <target>SO-setup</target>
         </trans-unit>
         <trans-unit id="PageExtension 2510516659 - Control 1862511320 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2513602899">
           <source>Specifies the value of the Shortcut Dimension 10 Code field.</source>
@@ -14200,11 +14230,6 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GLEntryNVX - Field ShortcutDimension9CodeNVX - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3460349296 - Field 1878656657 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
-          <source>Dimension Set ID</source>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ItemLedgerEntryNVX - Field DimensionSetIDNVX - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 3460349296 - Field 478110000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>Shortcut Dimension 10 Code</source>
           <note from="Developer" annotates="general" priority="2"/>
@@ -14256,6 +14281,54 @@
           <note from="Developer" annotates="general" priority="2">DEA=" ,Sachkonto,Artikel"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SalesLineNVX - Change Type - Property OptionCaption</note>
           <target> ,Sachkonto,Artikel</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 639668495 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Allow Item Invt.Post.Group Change</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Änderung Lager.Bu.Grp. Artikelkarte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field AllowItemInvtPstGrpChangeNVX - Property Caption</note>
+          <target>Änderung Lager.Bu.Grp. Artikelkarte</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 2604956699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Allow Item Prod.Post.Group Change</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Änderung Prod.Bu.Grp. Artikelkarte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field AllowItemProdPstGrpChangeNVX - Property Caption</note>
+          <target>Änderung Prod.Bu.Grp. Artikelkarte</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 3628519213 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>EA-setup</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EA-setup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field EASetupNVX - Property Caption</note>
+          <target>EA-setup</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 2851920608 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>EV-setup</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EV-setup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field EVSetupNVX - Property Caption</note>
+          <target>EV-setup</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 3209937647 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>PB-setup</source>
+          <note from="Developer" annotates="general" priority="2">DEA="PB-setup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field PBSetupNVX - Property Caption</note>
+          <target>PB-setup</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 3674141283 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>RD-setup</source>
+          <note from="Developer" annotates="general" priority="2">DEA="RD-setup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field RDSetupNVX - Property Caption</note>
+          <target>RD-setup</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 2071610583 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>RH-setup</source>
+          <note from="Developer" annotates="general" priority="2">DEA="RH-setup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field RHSetupNVX - Property Caption</note>
+          <target>RH-setup</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 1518406549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>SO-setup</source>
+          <note from="Developer" annotates="general" priority="2">DEA="SO-setup"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field SOSetupNVX - Property Caption</note>
+          <target>SO-setup</target>
         </trans-unit>
         <trans-unit id="TableExtension 29513321 - Field 1971121789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 467645625">
           <source>Sales Restrospect Entry</source>

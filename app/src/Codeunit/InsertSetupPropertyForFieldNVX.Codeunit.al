@@ -9,7 +9,9 @@ codeunit 50024 InsertSetupPropertyForFieldNVX
 
     local procedure InsertSetupPropertyForField()
     var
+        Dimension: Record Dimension;
         SetupPropertyForFields: Record SetupPropertyForFieldsNVX;
+        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
         PageID: Integer;
         index: Integer;
     begin
@@ -17,22 +19,32 @@ codeunit 50024 InsertSetupPropertyForFieldNVX
             exit;
 
         Initialize();
+        Dimension.ChangeCompany('CRONUS AG');
 
-        foreach PageID in Pagelist do
+        foreach PageID in Pagelist do begin
+            if Dimension.FindSet() then
+                repeat
+                    SetupPropertyForFields.Init();
+                    SetupPropertyForFields."Object ID" := PageID;
+                    SetupPropertyForFields.Dimension := Dimension.Code;
+                    SetupPropertyForFields.Insert();
+                until Dimension.Next() = 0;
             for index := 1 to ArrayLen(GLSetupShortcutDimCode) do begin
-                SetupPropertyForFields.Init();
-                SetupPropertyForFields."Object ID" := PageID;
-                SetupPropertyForFields.Dimension := GLSetupShortcutDimCode[index];
+                SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetupShortcutDimCode[index]);
                 SetupPropertyForFields.IsVisible := true;
-                SetupPropertyForFields.IsEditable := false;
-                SetupPropertyForFields.Insert();
+                SetupPropertyForFields.Modify();
             end;
+        end;
     end;
 
     local procedure Initialize()
     begin
         GetGLSetup();
-        PageList.AddRange(20, 25, 29, 38, 41, 42, 43, 44, 46, 47, 62, 95, 96, 131, 132, 133, 135, 142, 143, 144, 232, 251, 380, 536, 537, 573, 574, 5628, 5802, 9300, 9301, 9302, 9305);
+        PageList.AddRange(
+            20, 25, 29, 38, 39, 40, 41, 42, 43, 44, 46, 47, 62, 95, 96,
+            131, 132, 133, 135, 142, 143, 144, 232, 251, 253, 254, 255, 256, 380, 536, 537,
+            573, 574, 5628, 5629, 5802, 9300, 9301, 9302, 9305
+        );
     end;
 
     local procedure GetGLSetup()

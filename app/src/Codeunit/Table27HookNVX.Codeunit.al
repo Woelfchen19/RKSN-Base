@@ -5,16 +5,16 @@ codeunit 50012 Table27HookNVX
     var
         GenPrdPstGrp: Record GenPrdPstGrpNVX;
         ItemLedgerEntry: Record "Item Ledger Entry";
-        UserSetupNVX: Record UserSetupNVX;
+        UserSetup: Record "User Setup";
         NoItemErr: Label 'This Product Posting Group is blocked for use on Items!', comment = 'DEA="Es ist nicht möglich, diese Produktbuchungsgruppe zuzuordnen, da diese nicht zum Datawarehouse gehört!"';
         NoUserRightErr: Label 'There are Ledger Entries for this Item and you are missing the necessary user rights to change the product posting group.',
                                 comment = 'DEA="Es gibt zum Artikel bereits gebuchte Posten! Sie haben keine Rechte, um nachträglich die zugeordnete Produktbuchungsgruppe zu ändern."';
     begin
 
-        UserSetupNVX.Get(UserId());
+        UserSetup.Get(UserId());
         ItemLedgerEntry.SetCurrentKey("Item No.");
         ItemLedgerEntry.SetRange("Item No.", Rec."No.");
-        if not ItemLedgerEntry.IsEmpty() and (not UserSetupNVX."Allow Item Prod.Pst.Grp Change") then
+        if not ItemLedgerEntry.IsEmpty() and (not UserSetup.AllowItemProdPstGrpChangeNVX) then
             Error(NoUserRightErr);
 
         if GenPrdPstGrp.Get(Rec."Gen. Prod. Posting Group") then
@@ -35,14 +35,14 @@ codeunit 50012 Table27HookNVX
     local procedure CheckforItemLedgerEntries(var Rec: Record Item)
     var
         ItemLedgerEntry: Record "Item Ledger Entry";
-        UserSetupNVX: Record UserSetupNVX;
+        UserSetup: Record "User Setup";
         NoUserRightErr: Label 'There are Ledger Entries for this Item and you are missing the necessary user rights to change the inventory posting group.',
                                 comment = 'DEA="Es gibt zum Artikel bereits gebuchte Posten! Sie haben keine Rechte, um nachträglich die zugeordnete Lagerbuchungsgruppe zu ändern."';
     begin
-        UserSetupNVX.Get(UserId());
+        UserSetup.Get(UserId());
         ItemLedgerEntry.SetCurrentKey("Item No.");
         ItemLedgerEntry.SetRange("Item No.", Rec."No.");
-        if not ItemLedgerEntry.IsEmpty() and (not UserSetupNVX."Allow Item Invt.Pst.Grp Change") then
+        if not ItemLedgerEntry.IsEmpty() and (not UserSetup.AllowItemInvtPstGrpChangeNVX) then
             Error(NoUserRightErr);
     end;
 

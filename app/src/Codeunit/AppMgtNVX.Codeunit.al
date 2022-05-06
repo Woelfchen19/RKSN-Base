@@ -9,6 +9,22 @@ codeunit 50026 AppMgtNVX
         SetFieldsPropertyVisibleEditableBySetup(ObjectType, PageID, DimVisible, DimEditable);
     end;
 
+    procedure SetFieldsPropertyVisibleEditableBySetup(PageID: integer)
+    begin
+        SetFieldsPropertyVisibleEditableBySetup(8, PageID);
+    end;
+
+    procedure SetFieldsPropertyVisibleEditableBySetup(
+        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
+        PageID: integer
+        )
+    var
+        DimVisible: array[10] of Boolean;
+        DimEditable: array[10] of Boolean;
+    begin
+        SetFieldsPropertyVisibleEditableBySetup(ObjectType, PageID, DimVisible, DimEditable);
+    end;
+
     procedure SetFieldsPropertyVisibleEditableBySetup(
         ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
         PageID: integer;
@@ -97,6 +113,47 @@ codeunit 50026 AppMgtNVX
         Dimension8Editable := DimensionEditable[8];
         Dimension9Editable := DimensionEditable[9];
         Dimension10Editable := DimensionEditable[10];
+    end;
+
+    procedure InsertDimValue(AllocationCode: Record AllocationCodeNVX)
+    var
+        Dimvalue: Record "Dimension Value";
+    begin
+        GLSetup.Get();
+        if not Dimvalue.Get(Glsetup.ShortcutDimension10CodeNVX, AllocationCode.Code) then begin
+            Dimvalue.Init();
+            Dimvalue.Validate("Dimension Code", Glsetup.ShortcutDimension10CodeNVX);
+            Dimvalue.Validate(Code, AllocationCode.Code);
+            dimvalue.Validate(Name, AllocationCode.Description);
+            Dimvalue.insert(true);
+        end;
+    end;
+
+    procedure BlockDimValue(AllocationCode: Code[10])
+    var
+        Dimvalue: Record "Dimension Value";
+    begin
+        GLSetup.Get();
+        if Dimvalue.Get(Glsetup.ShortcutDimension10CodeNVX, AllocationCode) then begin
+            Dimvalue.Blocked := true;
+            Dimvalue.Modify(true);
+        end;
+    end;
+
+    procedure ModifyDimensionSetEntry(var GenJnlLine: Record "Gen. Journal Line"; AllocationCode: Code[20])
+    VAR
+        TempDimSetEntry: Record "Dimension Set Entry" temporary;
+    begin
+        GLSetup.Get();
+        DimMgt.GetDimensionSet(TempDimSetEntry, GenJnlLine."Dimension Set ID");
+
+        TempDimSetEntry.Init();
+        TempDimSetEntry.Validate("Dimension Code", GLSetup.ShortcutDimension10CodeNVX);
+        TempDimSetEntry.Validate("Dimension Value Code", AllocationCode);
+        if TempDimSetEntry.Insert() then;
+
+        GenJnlLine."Dimension Set ID" := DimMgt.GetDimensionSetID(TempDimSetEntry);
+        GenJnlLine.ValidateShortcutDimCode(10, AllocationCode);
     end;
 
     var

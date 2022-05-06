@@ -43,7 +43,7 @@ table 50000 AllocationCodeNVX
 
     trigger OnInsert()
     begin
-        InsertDimValue(Rec.Code);
+        AppMgt.InsertDimValue(Rec);
     end;
 
     trigger OnDelete();
@@ -51,7 +51,7 @@ table 50000 AllocationCodeNVX
         AllocationHeader: Record AllocationHeaderNVX;
         AllocCodeRespCenter: Record AllocCodeRespCenterNVX;
     begin
-        BlockDimValue(Rec.Code);
+        AppMgt.BlockDimValue(Rec.Code);
 
         AllocCodeRespCenter.Reset();
         AllocCodeRespCenter.SetRange("Allocation Code", Code);
@@ -62,29 +62,6 @@ table 50000 AllocationCodeNVX
         AllocationHeader.DeleteAll(true);
     end;
 
-    local procedure InsertDimValue(AllocationCode: Code[10])
     var
-        GLSetup: Record "General Ledger Setup";
-        Dimvalue: Record "Dimension Value";
-    begin
-        GLSetup.Get();
-        if not Dimvalue.Get(Glsetup.ShortcutDimension10CodeNVX, Rec.Code) then begin
-            Dimvalue.init();
-            Dimvalue.Validate("Dimension Code", Glsetup.ShortcutDimension10CodeNVX);
-            Dimvalue.Validate(Code, AllocationCode);
-            Dimvalue.insert(true);
-        end;
-    end;
-
-    local procedure BlockDimValue(AllocationCode: Code[10])
-    var
-        GLSetup: Record "General Ledger Setup";
-        Dimvalue: Record "Dimension Value";
-    begin
-        GLSetup.Get();
-        if Dimvalue.Get(Glsetup.ShortcutDimension10CodeNVX, AllocationCode) then begin
-            Dimvalue.Blocked := true;
-            Dimvalue.Modify(true);
-        end;
-    end;
+        AppMgt: Codeunit AppMgtNVX;
 }

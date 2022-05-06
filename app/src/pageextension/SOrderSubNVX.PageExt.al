@@ -207,20 +207,10 @@ pageextension 50025 "SOrderSubNVX" extends "Sales Order Subform"
         ShortcutDimCode3: Code[20];
         CustUnitPrice: Decimal;
         ShortcutDimCodeVisible: array[10] of Boolean;
-        ShortcutDimCodeEnable: array[10] of Boolean;
         DimEditable9: Boolean;
         DimEditable10: Boolean;
         DimVisible9: Boolean;
         DimVisible10: Boolean;
-
-    trigger OnOpenPage()
-    var
-        AppMgt: Codeunit AppMgtNVX;
-        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
-    begin
-        // AppMgt.SetDimensionsVisibility(
-        //     ObjectType::Page, Page::"Sales Order Subform", ShortcutDimCodeVisible, ShortcutDimCodeEnable);
-    end;
 
     trigger OnAfterGetRecord()
     begin
