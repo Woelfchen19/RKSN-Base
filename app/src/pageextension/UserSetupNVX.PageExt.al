@@ -45,6 +45,11 @@ pageextension 50047 UserSetupNVX extends "User Setup"
                 ToolTip = 'Specifies the value of the EV-setup field.', Comment = 'DEA="EV-setup"';
                 ApplicationArea = All;
             }
+            field(ReminderRunAuthorizedNVX; Rec.ReminderRunAuthorizedNVX)
+            {
+                ToolTip = 'Specifies the value of the Reminder Run authorized field.', Comment = 'DEA="Mahnlauf berechtigt"';
+                ApplicationArea = All;
+            }
         }
     }
 }

@@ -42,5 +42,10 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
             Caption = 'EV-setup', comment = 'DEA="EV-setup"';
             DataClassification = CustomerContent;
         }
+        field(50016; ReminderRunAuthorizedNVX; Boolean)
+        {
+            Caption = 'Reminder Run authorized', comment = 'DEA="Mahnlauf berechtigt"';
+            DataClassification = CustomerContent;
+        }
     }
 }

@@ -10433,6 +10433,42 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesLineNVX - Field Shortcut Dimension 3 Code - Property Caption</note>
           <target>Shortcutdimensionscode 3</target>
         </trans-unit>
+        <trans-unit id="Table 3694351021 - NamedType 3981277784" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EA</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupBusinessFieldNVX - NamedType EATxt</note>
+        </trans-unit>
+        <trans-unit id="Table 3694351021 - NamedType 755237005" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EV</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupBusinessFieldNVX - NamedType EVTxt</note>
+        </trans-unit>
+        <trans-unit id="Table 3694351021 - NamedType 1537359302" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PB</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupBusinessFieldNVX - NamedType PBTxt</note>
+        </trans-unit>
+        <trans-unit id="Table 3694351021 - NamedType 1529166706" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RD</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupBusinessFieldNVX - NamedType RDTxt</note>
+        </trans-unit>
+        <trans-unit id="Table 3694351021 - NamedType 3381660286" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RH</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupBusinessFieldNVX - NamedType RHTxt</note>
+        </trans-unit>
+        <trans-unit id="Table 3694351021 - NamedType 3569282640" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SO</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupBusinessFieldNVX - NamedType SOTxt</note>
+        </trans-unit>
+        <trans-unit id="Table 3694351021 - Field 1091775435 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Activ</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Aktiv"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupBusinessFieldNVX - Field Activ - Property Caption</note>
+          <target>Aktiv</target>
+        </trans-unit>
         <trans-unit id="Table 3694351021 - Field 3689535207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer No.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Debitornr."</note>
@@ -10454,6 +10490,12 @@
           <source>Shortcut Dimension 9 Code</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SetupBusinessFieldNVX - Field Shortcut Dimension 9 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3694351021 - Field 3007069574 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sort</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sortierung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupBusinessFieldNVX - Field Sort - Property Caption</note>
+          <target>Sortierung</target>
         </trans-unit>
         <trans-unit id="Table 1664901462 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Setup Property for Fields</source>
@@ -11970,6 +12012,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SetupBusinessFieldNVX - Control Shortcut Dimension 9 Code - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 3694351021 - Control 3007069574 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sorting</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sortierung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SetupBusinessFieldNVX - Control Sort - Property ToolTip</note>
+          <target>Sortierung</target>
+        </trans-unit>
         <trans-unit id="Page 1664901462 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Setup Properties from Fields (visible,editable)</source>
           <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Eigenschaften der Felder (visible,editable)"</note>
@@ -12623,17 +12671,65 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Control ShortcutDimension9CodeNVX - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 2687019089 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Food on Wheels - EA</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Essen auf Rädern - EA"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control SetupBusinessFieldEANVX - Property Caption</note>
+          <target>Essen auf Rädern - EA</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 2487613998 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control EAReminderTermsCodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 2487613998 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Reminder Terms Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnungsmethodencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control EAReminderTermsCodeNVX - Property Caption</note>
+          <target>Mahnungsmethodencode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 1651113592 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control EAShortcutDimension5CodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 3536361348 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control EAShortcutDimension9CodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
         <trans-unit id="PageExtension 3295638260 - Control 1767319268 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>Evidence - EV</source>
           <note from="Developer" annotates="general" priority="2">DEA="Evidenz - EV"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control SetupBusinessFieldEVNVX - Property Caption</note>
           <target>Evidenz - EV</target>
         </trans-unit>
-        <trans-unit id="PageExtension 3295638260 - Control 2851920608 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
-          <source>EVSetup</source>
-          <note from="Developer" annotates="general" priority="2">DEA="EVSetup"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control EVSetupNVX - Property ToolTip</note>
-          <target>EVSetup</target>
+        <trans-unit id="PageExtension 3295638260 - Control 3372206687 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control EVReminderTermsCodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 3372206687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Reminder Terms Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnungsmethodencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control EVReminderTermsCodeNVX - Property Caption</note>
+          <target>Mahnungsmethodencode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 4174699277 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control EVShortcutDimension5CodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 2542996977 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control EVShortcutDimension9CodeNVX - Property ToolTip</note>
+          <target/>
         </trans-unit>
         <trans-unit id="PageExtension 3295638260 - Control 454572635 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>Care and Support</source>
@@ -12653,11 +12749,11 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control PBReminderTermsCodeNVX - Property Caption</note>
           <target>Mahnungsmethodencode</target>
         </trans-unit>
-        <trans-unit id="PageExtension 3295638260 - Control 3209937647 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
-          <source>PBSetup</source>
-          <note from="Developer" annotates="general" priority="2">DEA="PBSetup"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control PBSetupNVX - Property ToolTip</note>
-          <target>PBSetup</target>
+        <trans-unit id="PageExtension 3295638260 - Control 824094438 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control PBShortcutDimension5CodeNVX - Property ToolTip</note>
+          <target/>
         </trans-unit>
         <trans-unit id="PageExtension 3295638260 - Control 2947811866 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source/>
@@ -12665,10 +12761,95 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control PBShortcutDimension9CodeNVX - Property ToolTip</note>
           <target/>
         </trans-unit>
-        <trans-unit id="PageExtension 3295638260 - Control 2947811866 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
-          <source>Shortcut Dimension 9 Code</source>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control PBShortcutDimension9CodeNVX - Property Caption</note>
+        <trans-unit id="PageExtension 3295638260 - Control 3120504519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Emergency Assistence - RD</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rettungsdienst - RD"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control SetupBusinessFieldRDNVX - Property Caption</note>
+          <target>Rettungsdienst - RD</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 2245545748 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control RDHReminderTermsCodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 2245545748 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Reminder Terms Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnungsmethodencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control RDHReminderTermsCodeNVX - Property Caption</note>
+          <target>Mahnungsmethodencode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 1880884562 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control RDShortcutDimension5CodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 1948395278 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control RDShortcutDimension9CodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 1956439299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Call Help - RH</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Rufhilfe - RH"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control SetupBusinessFieldRHNVX - Property Caption</note>
+          <target>Rufhilfe - RH</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 2512752056 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control RHReminderTermsCodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 2512752056 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Reminder Terms Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnungsmethodencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control RHReminderTermsCodeNVX - Property Caption</note>
+          <target>Mahnungsmethodencode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 2623194302 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control RHShortcutDimension5CodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 2879480834 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control RHShortcutDimension9CodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 3114329017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Miscellanious - SO</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sonstiges - SO"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control SetupBusinessFieldSONVX - Property Caption</note>
+          <target>Sonstiges - SO</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 2380731558 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control SOReminderTermsCodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 2380731558 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Reminder Terms Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnungsmethodencode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control SOReminderTermsCodeNVX - Property Caption</note>
+          <target>Mahnungsmethodencode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 859088848 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control SOShortcutDimension5CodeNVX - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="PageExtension 3295638260 - Control 218242892 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCardNVX - Control SOShortcutDimension9CodeNVX - Property ToolTip</note>
+          <target/>
         </trans-unit>
         <trans-unit id="PageExtension 3858270453 - Method 4177352842 - NamedType 1602948993" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3858270453">
           <source>This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., </source>
@@ -14092,6 +14273,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control RDSetupNVX - Property ToolTip</note>
           <target>RD-setup</target>
         </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 2663599612 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the Reminder Run authorized field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnlauf berechtigt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control ReminderRunAuthorizedNVX - Property ToolTip</note>
+          <target>Mahnlauf berechtigt</target>
+        </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 2071610583 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies the value of the RH-setup field.</source>
           <note from="Developer" annotates="general" priority="2">DEA="RH-setup"</note>
@@ -14432,6 +14619,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field RDSetupNVX - Property Caption</note>
           <target>RD-setup</target>
         </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 2663599612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Reminder Run authorized</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnlauf berechtigt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field ReminderRunAuthorizedNVX - Property Caption</note>
+          <target>Mahnlauf berechtigt</target>
+        </trans-unit>
         <trans-unit id="TableExtension 1224611290 - Field 2071610583 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>RH-setup</source>
           <note from="Developer" annotates="general" priority="2">DEA="RH-setup"</note>
@@ -14511,42 +14704,6 @@
           <source>Global Dimension 2 Code</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATEntryNVX - Field GlobalDimension2CodeNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Enum 998218504 - EnumValue 3595176488 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Food on Wheels</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Essen auf Rädern"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum BusinessFieldNVX - EnumValue EA - Property Caption</note>
-          <target>Essen auf Rädern</target>
-        </trans-unit>
-        <trans-unit id="Enum 998218504 - EnumValue 4101903557 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Evidence</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Evidenz"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum BusinessFieldNVX - EnumValue EV - Property Caption</note>
-          <target>Evidenz</target>
-        </trans-unit>
-        <trans-unit id="Enum 998218504 - EnumValue 2414719222 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Care and Support</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Pflege und Betreuung"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum BusinessFieldNVX - EnumValue PB - Property Caption</note>
-          <target>Pflege und Betreuung</target>
-        </trans-unit>
-        <trans-unit id="Enum 998218504 - EnumValue 1257905186 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Emergency Service</source>
-          <note from="Developer" annotates="general" priority="2">DEA=Rettungsdienst"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum BusinessFieldNVX - EnumValue RD - Property Caption</note>
-          <target>Rettungsdienst"</target>
-        </trans-unit>
-        <trans-unit id="Enum 998218504 - EnumValue 3002086014 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Call Assistence</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Rufhilfe"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum BusinessFieldNVX - EnumValue RH - Property Caption</note>
-          <target>Rufhilfe</target>
-        </trans-unit>
-        <trans-unit id="Enum 998218504 - EnumValue 102525552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Miscellaneous</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Sonstige"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum BusinessFieldNVX - EnumValue SO - Property Caption</note>
-          <target>Sonstige</target>
         </trans-unit>
         <trans-unit id="Enum 3877659762 - EnumValue 3263198591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Blanket Order</source>

@@ -32,6 +32,11 @@ page 50062 "SetupBusinessFieldNVX"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Reminder Terms Code field.';
                 }
+                field(Sort; Sort)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Sorting', comment = 'DEA="Sortierung"';
+                }
             }
         }
     }

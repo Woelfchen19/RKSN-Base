@@ -22,97 +22,134 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 Caption = 'Care and Support', comment = 'DEA="Pflege und Betreuung - PB"';
                 Visible = PBSetupVisible;
 
-
-                // field(PBSetupNVX; UserSetup.PBSetupNVX)
-                // {
-                //     ApplicationArea = All;
-                //     ToolTip = 'PBSetup', comment = 'DEA="PBSetup"';
-                // }
-
-                //ToDo
-                //Show Shortcutdim5 PB -> Geschäftsfall -> PB
-                field(PBShortcutDimension9CodeNVX; ShortcutDimension9Code.Get(1))
+                field(PBShortcutDimension5CodeNVX; PBShortcutDimension5Code)
                 {
                     ApplicationArea = All;
-                    Caption = 'Shortcut Dimension 9 Code';
+                    CaptionClass = '1,2,5';
+                    Editable = false;
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
-                field(PBReminderTermsCodeNVX; ReminderTermsCode.Get(1))
+                field(PBShortcutDimension9CodeNVX; PBShortcutDimension9Code)
+                {
+                    ApplicationArea = All;
+                    CaptionClass = '1,2,9';
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(PBReminderTermsCodeNVX; PBReminderTermsCode)
                 {
                     ApplicationArea = All;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    TableRelation = "Reminder Terms";
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
             group(SetupBusinessFieldRDNVX)
             {
-                Caption = 'Emergency Assistence', comment = 'DEA="Rettungsdienst"';
+                Caption = 'Emergency Assistence - RD', comment = 'DEA="Rettungsdienst - RD"';
                 Visible = RDSetupVisible;
 
-                field(RDShortcutDimension9CodeNVX; ShortcutDimension9Code.Get(2))
+                field(RDShortcutDimension5CodeNVX; RDShortcutDimension5Code)
                 {
                     ApplicationArea = All;
-                    Caption = 'Shortcut Dimension 9 Code';
+                    CaptionClass = '1,2,5';
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
-                field(RDHReminderTermsCodeNVX; ReminderTermsCode.Get(2))
+                field(RDShortcutDimension9CodeNVX; RDShortcutDimension9Code)
+                {
+                    ApplicationArea = All;
+                    CaptionClass = '1,2,9';
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(RDHReminderTermsCodeNVX; RDReminderTermsCode)
                 {
                     ApplicationArea = All;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    TableRelation = "Reminder Terms";
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
             group(SetupBusinessFieldRHNVX)
             {
                 Caption = 'Call Help - RH', comment = 'DEA="Rufhilfe - RH"';
-                Visible = EVSetupVisible;
+                Visible = RHSetupVisible;
 
-                field(RHShortcutDimension9CodeNVX; ShortcutDimension9Code.Get(3))
+                field(RHShortcutDimension5CodeNVX; RHShortcutDimension5Code)
                 {
                     ApplicationArea = All;
-                    Caption = 'Shortcut Dimension 9 Code';
+                    CaptionClass = '1,2,5';
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
-                field(RHReminderTermsCodeNVX; ReminderTermsCode.Get(3))
+                field(RHShortcutDimension9CodeNVX; RHShortcutDimension9Code)
+                {
+                    ApplicationArea = All;
+                    CaptionClass = '1,2,9';
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(RHReminderTermsCodeNVX; RHReminderTermsCode)
                 {
                     ApplicationArea = All;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    TableRelation = "Reminder Terms";
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
             group(SetupBusinessFieldEANVX)
             {
                 Caption = 'Food on Wheels - EA', comment = 'DEA="Essen auf Rädern - EA"';
-                Visible = EVSetupVisible;
+                Visible = EASetupVisible;
 
-                field(EAShortcutDimension9CodeNVX; ShortcutDimension9Code.Get(4))
+                field(EAShortcutDimension5CodeNVX; EAShortcutDimension5Code)
                 {
                     ApplicationArea = All;
-                    Caption = 'Shortcut Dimension 9 Code';
+                    CaptionClass = '1,2,5';
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
-                field(EAReminderTermsCodeNVX; ReminderTermsCode.Get(4))
+                field(EAShortcutDimension9CodeNVX; EAShortcutDimension9Code)
+                {
+                    ApplicationArea = All;
+                    CaptionClass = '1,2,9';
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(EAReminderTermsCodeNVX; EAReminderTermsCode)
                 {
                     ApplicationArea = All;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    TableRelation = "Reminder Terms";
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
             group(SetupBusinessFieldSONVX)
             {
                 Caption = 'Miscellanious - SO', comment = 'DEA="Sonstiges - SO"';
-                Visible = EVSetupVisible;
+                Visible = SOSetupVisible;
 
-                field(SOShortcutDimension9CodeNVX; ShortcutDimension9Code.Get(5))
+                field(SOShortcutDimension5CodeNVX; SOShortcutDimension5Code)
                 {
                     ApplicationArea = All;
-                    Caption = 'Shortcut Dimension 9 Code';
+                    CaptionClass = '1,2,5';
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
-                field(SOReminderTermsCodeNVX; ReminderTermsCode.Get(5))
+                field(SOShortcutDimension9CodeNVX; SOShortcutDimension9Code)
+                {
+                    ApplicationArea = All;
+                    CaptionClass = '1,2,9';
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(SOReminderTermsCodeNVX; SOReminderTermsCode)
                 {
                     ApplicationArea = All;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    TableRelation = "Reminder Terms";
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
@@ -121,16 +158,25 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 Caption = 'Evidence - EV', comment = 'DEA="Evidenz - EV"';
                 Visible = EVSetupVisible;
 
-                field(EVShortcutDimension9CodeNVX; ShortcutDimension9Code.Get(2))
+                field(EVShortcutDimension5CodeNVX; EVShortcutDimension5Code)
                 {
                     ApplicationArea = All;
-                    Caption = 'Shortcut Dimension 9 Code';
+                    CaptionClass = '1,2,5';
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
-                field(EVReminderTermsCodeNVX; ReminderTermsCode.Get(2))
+                field(EVShortcutDimension9CodeNVX; EVShortcutDimension9Code)
+                {
+                    ApplicationArea = All;
+                    CaptionClass = '1,2,9';
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(EVReminderTermsCodeNVX; EVReminderTermsCode)
                 {
                     ApplicationArea = All;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    TableRelation = "Reminder Terms";
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
@@ -139,53 +185,163 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
 
     trigger OnOpenPage()
     begin
-        UserSetup.Get(userid);
-        PBSetupVisible := UserSetup.PBSetupNVX;
-        EVSetupVisible := UserSetup.EVSetupNVX;
-
         Initialize();
-        AssingnBusinessFields();
+        AssignBusinessFields(false);
+    end;
+
+    trigger OnClosePage()
+    begin
+        ModifySetupBusinessField();
+    end;
+
+    local procedure AssignBusinessFields(OnClosePage: Boolean)
+    begin
+        GLSetup.Get();
+        DimensionValue.Reset();
+        DimensionValue.SetRange("Dimension Code", GLSetup."Shortcut Dimension 5 Code");
+        if DimensionValue.FindSet() then
+            repeat
+                if SetupBusinessField.Get(Rec."No.", DimensionValue.Code) then
+                    case SetupBusinessField.Sort of
+                        1:
+                            if OnClosePage then begin
+                                SetupBusinessField."Shortcut Dimension 5 Code" := PBShortcutDimension5Code;
+                                SetupBusinessField."Shortcut Dimension 9 Code" := PBShortcutDimension9Code;
+                                SetupBusinessField."Reminder Terms Code" := PBReminderTermsCode;
+                                SetupBusinessField.Modify();
+                            end else begin
+                                PBShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
+                                PBShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
+                                PBReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                            end;
+                        2:
+                            if OnClosePage then begin
+                                SetupBusinessField."Shortcut Dimension 5 Code" := RDShortcutDimension5Code;
+                                SetupBusinessField."Shortcut Dimension 9 Code" := RDShortcutDimension9Code;
+                                SetupBusinessField."Reminder Terms Code" := RDReminderTermsCode;
+                                SetupBusinessField.Modify();
+                            end else begin
+                                RDShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
+                                RDShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
+                                RDReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                            end;
+                        3:
+                            if OnClosePage then begin
+                                SetupBusinessField."Shortcut Dimension 5 Code" := RHShortcutDimension5Code;
+                                SetupBusinessField."Shortcut Dimension 9 Code" := RHShortcutDimension9Code;
+                                SetupBusinessField."Reminder Terms Code" := RHReminderTermsCode;
+                                SetupBusinessField.Modify();
+                            end else begin
+                                RHShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
+                                RHShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
+                                RHReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                            end;
+                        4:
+                            if OnClosePage then begin
+                                SetupBusinessField."Shortcut Dimension 5 Code" := EAShortcutDimension5Code;
+                                SetupBusinessField."Shortcut Dimension 9 Code" := EAShortcutDimension9Code;
+                                SetupBusinessField."Reminder Terms Code" := EAReminderTermsCode;
+                                SetupBusinessField.Modify();
+                            end else begin
+                                EAShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
+                                EAShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
+                                EAReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                            end;
+                        5:
+                            if OnClosePage then begin
+                                SetupBusinessField."Shortcut Dimension 5 Code" := SOShortcutDimension5Code;
+                                SetupBusinessField."Shortcut Dimension 9 Code" := SOShortcutDimension9Code;
+                                SetupBusinessField."Reminder Terms Code" := SOReminderTermsCode;
+                                SetupBusinessField.Modify();
+                            end else begin
+                                SOShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
+                                SOShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
+                                SOReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                            end;
+                        6:
+                            if OnClosePage then begin
+                                SetupBusinessField."Shortcut Dimension 5 Code" := EVShortcutDimension5Code;
+                                SetupBusinessField."Shortcut Dimension 9 Code" := EVShortcutDimension9Code;
+                                SetupBusinessField."Reminder Terms Code" := EVReminderTermsCode;
+                                SetupBusinessField.Modify();
+                            end else begin
+                                EVShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
+                                EVShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
+                                EVReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                            end;
+                    end;
+            until DimensionValue.Next() = 0;
+    end;
+
+    local procedure Initialize()
+    begin
+        if UserSetup.Get(UserId) then begin
+            PBSetupVisible := UserSetup.PBSetupNVX;
+            RDSetupVisible := Usersetup.RDSetupNVX;
+            RHSetupVisible := Usersetup.RHSetupNVX;
+            EASetupVisible := Usersetup.EASetupNVX;
+            SOSetupVisible := Usersetup.SOSetupNVX;
+            EVSetupVisible := UserSetup.EVSetupNVX;
+
+            SetupBusinessField.Reset();
+            SetupBusinessField.SetRange(CustomerNo, Rec."No.");
+            if SetupBusinessField.IsEmpty() then
+                InsertSetupBusinessField();
+        end;
+    end;
+
+    local procedure InsertSetupBusinessField()
+    var
+        SetupBusinessField2: Record SetupBusinessFieldNVX;
+    begin
+        GLSetup.Get();
+        DimensionValue.Reset();
+        DimensionValue.SetRange("Dimension Code", GLSetup."Shortcut Dimension 5 Code");
+        if DimensionValue.FindSet() then
+            repeat
+                SetupBusinessField2.Init();
+                SetupBusinessField2.CustomerNo := Rec."No.";
+                SetupBusinessField2."Shortcut Dimension 5 Code" := DimensionValue.Code;
+                SetupBusinessField2.Insert(true);
+            until DimensionValue.Next() = 0;
+    end;
+
+    local procedure ModifySetupBusinessField()
+    begin
+        AssignBusinessFields(true);
     end;
 
     var
         SetupBusinessField: Record SetupBusinessFieldNVX;
         UserSetup: Record "User Setup";
+        GLSetup: Record "General Ledger Setup";
+        DimensionValue: Record "Dimension Value";
+
+        PBShortcutDimension5Code: Code[20];
+        RDShortcutDimension5Code: Code[20];
+        RHShortcutDimension5Code: Code[20];
+        EAShortcutDimension5Code: Code[20];
+        SOShortcutDimension5Code: Code[20];
+        EVShortcutDimension5Code: Code[20];
+
+        PBShortcutDimension9Code: Code[20];
+        RDShortcutDimension9Code: Code[20];
+        RHShortcutDimension9Code: Code[20];
+        EAShortcutDimension9Code: Code[20];
+        SOShortcutDimension9Code: Code[20];
+        EVShortcutDimension9Code: Code[20];
+
+        PBReminderTermsCode: Code[10];
+        RDReminderTermsCode: Code[10];
+        RHReminderTermsCode: Code[10];
+        EAReminderTermsCode: Code[10];
+        SOReminderTermsCode: Code[10];
+        EVReminderTermsCode: Code[10];
+
         EASetupVisible: Boolean;
         EVSetupVisible: Boolean;
         PBSetupVisible: Boolean;
         RDSetupVisible: Boolean;
         RHSetupVisible: Boolean;
         SOSetupVisible: Boolean;
-        BusinessField: List of [Code[20]];
-        ReminderTermsCode: List of [Code[20]];
-        ShortcutDimension9Code: List of [Code[20]];
-
-    local procedure AssignBusinessField(DimensionCode: Code[20])
-    begin
-        if SetupBusinessField.Get(Rec."No.", DimensionCode) then begin
-            ShortcutDimension9Code.Add(SetupBusinessField."Shortcut Dimension 9 Code");
-            ReminderTermsCode.Add(SetupBusinessField."Reminder Terms Code");
-        end;
-    end;
-
-    local procedure AssingnBusinessFields()
-    var
-        DimensionCode: Code[20];
-    begin
-        foreach DimensionCode in BusinessField do
-            AssignBusinessField(DimensionCode);
-    end;
-
-    local procedure Initialize()
-    var
-        DimensionValue: Record "Dimension Value";
-        GLSetup: Record "General Ledger Setup";
-    begin
-        GLSetup.Get();
-        DimensionValue.SetRange("Dimension Code", GLSetup."Shortcut Dimension 5 Code");
-        if DimensionValue.FindSet() then
-            repeat
-                BusinessField.Add(DimensionValue.Code);
-            until DimensionValue.Next() = 0;
-    end;
 }
