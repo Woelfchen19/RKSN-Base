@@ -13,7 +13,7 @@ codeunit 50019 Table5600HookNVX
 
         if FixedAssetNVX.Get(Rec."No.") and (FixedAssetNVX."Allocation Code" <> '') then begin
             AllocationCode.Get(FixedAssetNVX."Allocation Code");
-            if Rec."Global Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+            if Rec."Global Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
                 Error(WrongDimErr);
         end;
     end;

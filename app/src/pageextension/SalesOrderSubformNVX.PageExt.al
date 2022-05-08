@@ -1,4 +1,4 @@
-pageextension 50021 SCrMemoSubNVX extends "Sales Cr. Memo Subform"
+pageextension 50025 SalesOrderSubformNVX extends "Sales Order Subform"
 {
     layout
     {
@@ -15,11 +15,16 @@ pageextension 50021 SCrMemoSubNVX extends "Sales Cr. Memo Subform"
                 var
                     Item: Record Item;
                 begin
+                    if IsCompositionNVX() then
+                        SalesLineNVX.TestField("Allocation Code", '');
+
                     if Rec."Line No." > 0 then
                         SetComplementaryFields();
 
                     if Item.Get(Rec."No.") and Item."Inventory Value Zero" then
                         Rec.Validate("Shortcut Dimension 1 Code", ShortcutDimCode1);
+
+                    Rec.SetBusinessFieldNVX();
                 end;
             }
             field("Sales Shortcut Dimension 3 CodeNVX"; ShortcutDimCode3)
@@ -43,15 +48,20 @@ pageextension 50021 SCrMemoSubNVX extends "Sales Cr. Memo Subform"
             field("Gen. Bus. Posting Group NVX"; "Gen. Bus. Posting Group")
             {
                 ApplicationArea = All;
+                Editable = GBPGEditable;
                 trigger OnLookup(var Text: Text): Boolean;
                 var
                     RKSMgt: Codeunit AllocationMgtNVX;
                     NewGBPG: Code[20];
                     FilterOptionNVX: Enum FilterOptionNVX;
                 begin
-                    NewGBPG := RKSMgt.LookupGenBusinessPostingGroup(FilterOptionNVX::SalesCrMemo);
+                    if IsCompositionNVX() then
+                        exit;
+
+                    NewGBPG := RKSMgt.LookupGenBusinessPostingGroup(FilterOptionNVX::SalesOrder);
                     if (NewGBPG <> '') then
                         Rec.Validate("Gen. Bus. Posting Group", NewGBPG);
+
                     UpdateSalesLineNVX(SalesLineNVX."Cust. Unit Price");
                 end;
             }
@@ -79,28 +89,50 @@ pageextension 50021 SCrMemoSubNVX extends "Sales Cr. Memo Subform"
                 trigger OnValidate();
                 var
                     AllocationCode: Record AllocationCodeNVX;
-                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
-                    comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
+                    Item: Record Item;
+                    AppMgt: Codeunit AppMgtNVX;
+                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or Salesline!',
+                    comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in der Verkaufszeile! Überprüfen Sie bitte Ihre Angabe."';
                 begin
+                    if Item.Get(Rec."No.") and not Item."Inventory Value Zero" then
+                        if (AllocationCodeVar <> '') then
+                            SalesLineNVX.TestField("Shortcut Dimension 3 Code", '');
+
                     if Rec."Line No." > 0 then
                         SetComplementaryFields();
 
                     if AllocationCodeVar <> '' then
-                        AllocationCode.Get(AllocationCodeVar);
-
-                    if Rec."Shortcut Dimension 2 Code" = '' then begin
-                        Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
-                        if Rec."Line No." > 0 then
-                            Rec.Modify();
-                    end else
-                        if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
-                            Error(WrongDimErr);
+                        if Rec."Shortcut Dimension 1 Code" = '' then begin
+                            AllocationCode.Get(AllocationCodeVar);
+                            Rec.Validate("Shortcut Dimension 1 Code", AllocationCode."Shortcut Dimension 1 Code");
+                            if Rec."Line No." > 0 then begin
+                                AppMgt.InsertDimValue(AllocationCode);
+                                AppMgt.ModifyDimensionSetEntry(Rec, AllocationCode.Code);
+                                Rec.Modify();
+                            end;
+                        end else begin
+                            AllocationCode.Get(AllocationCodeVar);
+                            if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
+                                Error(WrongDimErr);
+                        end;
+                end;
+            }
+            field("Comp Gen. Bus. Pst Grp WESNVX"; CompGenBusPstGrpWES)
+            {
+                ApplicationArea = All;
+                Caption = 'Composition Gen. Bus. Posting Group WES', comment = 'DEA="Abfassung Steuerschlüssel WES"';
+                Editable = CompFieldsEditable;
+                TableRelation = "Gen. Business Posting Group".Code;
+                trigger OnValidate()
+                begin
+                    if Rec."Line No." > 0 then
+                        SetComplementaryFields();
                 end;
             }
         }
         addafter("Unit Price")
         {
-            field(SalesLineNVXCustUnitPriceNVX; CustUnitPrice)
+            field(SalesLineNVXCustUnitPriceNVX; SalesLineNVX."Cust. Unit Price")
             {
                 ApplicationArea = All;
                 Caption = 'Cust. Unit Price', comment = 'DEA="Deb. VK-Preis"';
@@ -118,6 +150,29 @@ pageextension 50021 SCrMemoSubNVX extends "Sales Cr. Memo Subform"
                 Editable = false;
                 Caption = 'Cust. Amount', comment = 'DEA="Deb. Betrag"';
             }
+
+            field(ShortcutDimCode9NVX; ShortcutDimCodeVisible[9])
+            {
+                ApplicationArea = All;
+                CaptionClass = '1,2,9';
+                Editable = DimEditable9;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 9 Code field.';
+                Visible = DimVisible9;
+            }
+            field(ShortcutDimCode10NVX; ShortcutDimCodeVisible[10])
+            {
+                ApplicationArea = All;
+                CaptionClass = '1,2,10';
+                Editable = DimEditable10;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 10 Code field.';
+                Visible = DimVisible10;
+            }
+
+        }
+        modify("VAT Prod. Posting Group")
+        {
+            Enabled = false;
+            Visible = false;
         }
         modify("No.")
         {
@@ -127,15 +182,6 @@ pageextension 50021 SCrMemoSubNVX extends "Sales Cr. Memo Subform"
                     Rec.Validate(Quantity, 1);
             end;
         }
-        modify("Shortcut Dimension 1 Code")
-        {
-            Enabled = false;
-        }
-        modify("VAT Prod. Posting Group")
-        {
-            Enabled = false;
-            Visible = false;
-        }
         modify(Quantity)
         {
             trigger OnAfterValidate();
@@ -144,6 +190,10 @@ pageextension 50021 SCrMemoSubNVX extends "Sales Cr. Memo Subform"
                     SetComplementaryFields();
             end;
         }
+        modify("Shortcut Dimension 1 Code")
+        {
+            Enabled = false;
+        }
         modify(ShortcutDimCode3)
         {
             Enabled = false;
@@ -151,13 +201,22 @@ pageextension 50021 SCrMemoSubNVX extends "Sales Cr. Memo Subform"
     }
 
     var
+        InvSetupNVX: Record InvSetupNVX;
         SalesHeaderNVX: Record SalesHeaderNVX;
         SalesLineNVX: Record SalesLineNVX;
+        CompFieldsEditable: Boolean;
+        GBPGEditable: Boolean;
         PageEditable: Boolean;
         AllocationCodeVar: Code[10];
+        CompGenBusPstGrpWES: Code[20];
         ShortcutDimCode1: Code[20];
         ShortcutDimCode3: Code[20];
         CustUnitPrice: Decimal;
+        ShortcutDimCodeVisible: array[10] of Boolean;
+        DimEditable9: Boolean;
+        DimEditable10: Boolean;
+        DimVisible9: Boolean;
+        DimVisible10: Boolean;
 
     trigger OnAfterGetRecord()
     begin
@@ -165,6 +224,14 @@ pageextension 50021 SCrMemoSubNVX extends "Sales Cr. Memo Subform"
         SalesHeaderNVX.GetDefinition(Rec."Document Type", Rec."Document No.");
         SetGlobalVariables();
         PageEditable := CurrPage.Editable();
+
+        if IsCompositionNVX() then begin
+            GBPGEditable := false;
+            CompFieldsEditable := true;
+        end else begin
+            GBPGEditable := true;
+            CompFieldsEditable := false
+        end;
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
@@ -192,6 +259,7 @@ pageextension 50021 SCrMemoSubNVX extends "Sales Cr. Memo Subform"
         ShortcutDimCode1 := SalesLineNVX."Shortcut Dimension 1 Code";
         ShortcutDimCode3 := SalesLineNVX."Shortcut Dimension 3 Code";
         CustUnitPrice := SalesLineNVX."Cust. Unit Price";
+        CompGenBusPstGrpWES := SalesLineNVX."Comp Gen. Bus. Pst Grp WES";
     end;
 
     local procedure ClearGlobalVariables()
@@ -201,6 +269,7 @@ pageextension 50021 SCrMemoSubNVX extends "Sales Cr. Memo Subform"
         Clear(ShortcutDimCode1);
         Clear(ShortcutDimCode3);
         Clear(CustUnitPrice);
+        Clear(CompGenBusPstGrpWES)
     end;
 
     local procedure SetComplementaryFields()
@@ -210,6 +279,16 @@ pageextension 50021 SCrMemoSubNVX extends "Sales Cr. Memo Subform"
         SalesLineNVX."Shortcut Dimension 3 Code" := ShortcutDimCode3;
         SalesLineNVX."Cust. Unit Price" := CustUnitPrice;
         SalesLineNVX."Cust. Amount" := Round(Rec.Quantity * CustUnitPrice, 0.01);
-        SalesLineNVX.Modify();
+        SalesLineNVX."Comp Gen. Bus. Pst Grp WES" := CompGenBusPstGrpWES;
+        if SalesLineNVX.Modify() then;
+    end;
+
+    local procedure IsCompositionNVX(): Boolean
+    begin
+        InvSetupNVX.Get();
+        if InvSetupNVX."Composition Customer" = Rec."Sell-to Customer No." then
+            exit(true)
+        else
+            exit(false);
     end;
 }

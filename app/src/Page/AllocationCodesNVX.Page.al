@@ -19,7 +19,7 @@ page 50001 AllocationCodesNVX
                 {
                     ApplicationArea = All;
                 }
-                field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
                 {
                     ApplicationArea = All;
                 }

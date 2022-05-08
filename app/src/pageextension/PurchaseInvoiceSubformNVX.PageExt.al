@@ -1,4 +1,4 @@
-pageextension 50009 PInvoiceSubNVX extends "Purch. Invoice Subform"
+pageextension 50009 "PurchaseInvoiceSubformNVX" extends "Purch. Invoice Subform"
 {
     layout
     {
@@ -9,8 +9,8 @@ pageextension 50009 PInvoiceSubNVX extends "Purch. Invoice Subform"
                 ApplicationArea = All;
                 Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
                 CaptionClass = '1339,1'; //= Purchase + Dim Name;
-                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
                 Editable = PageEditable;
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
                 trigger OnValidate();
                 var
                     DefaultDim: Record "Default Dimension";
@@ -43,8 +43,8 @@ pageextension 50009 PInvoiceSubNVX extends "Purch. Invoice Subform"
                 ApplicationArea = All;
                 Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
                 CaptionClass = '1339,3'; //= Purchase + Dim Name
-                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
                 Editable = PageEditable;
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
                 trigger OnValidate();
                 var
                     DefaultDim: Record "Default Dimension";
@@ -84,7 +84,7 @@ pageextension 50009 PInvoiceSubNVX extends "Purch. Invoice Subform"
                     Modify();
                 end;
             }
-            field("Gen. Bus. Posting Group NVX"; "Gen. Bus. Posting Group")
+            field(GenBusPostingGroupNVX; "Gen. Bus. Posting Group")
             {
                 ApplicationArea = All;
                 Editable = PageEditable;
@@ -101,7 +101,7 @@ pageextension 50009 PInvoiceSubNVX extends "Purch. Invoice Subform"
                     Modify();
                 end;
             }
-            field("Gen. P Posting Group NVX"; "Gen. Prod. Posting Group")
+            field(GenProdPostingGroupNVX; "Gen. Prod. Posting Group")
             {
                 ApplicationArea = All;
                 Editable = false;
@@ -117,18 +117,19 @@ pageextension 50009 PInvoiceSubNVX extends "Purch. Invoice Subform"
                 Editable = false;
             }
 
-            field("Allocation CodeNVX"; AllocationCodeVar)
+            field(AllocationCodeNVX; AllocationCodeVar)
             {
                 ApplicationArea = All;
                 Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
-                TableRelation = AllocationCodeNVX.Code;
                 Editable = PageEditable;
+                TableRelation = AllocationCodeNVX.Code;
                 trigger OnValidate();
                 var
                     AllocationCode: Record AllocationCodeNVX;
                     Item: Record Item;
+                    AppMgt: Codeunit AppMgtNVX;
                     UselessAllocationCodeMsg: Label 'An Allocation Code has no function if used together with an item with inventory value!', comment = 'DEA="Der Artikel ist Lagerbewertet eingerichtet, ein Verteilungscode hat keine Funktion!"';
-                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
+                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or Purchaseline!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
                 begin
                     if Rec.Type = Rec.Type::Item then begin
@@ -151,12 +152,15 @@ pageextension 50009 PInvoiceSubNVX extends "Purch. Invoice Subform"
                     if AllocationCodeVar <> '' then
                         if Rec."Shortcut Dimension 2 Code" = '' then begin
                             AllocationCode.Get(AllocationCodeVar);
-                            Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
-                            if Rec."Line No." > 0 then
+                            Rec.Validate("Shortcut Dimension 1 Code", AllocationCode."Shortcut Dimension 1 Code");
+                            if Rec."Line No." > 0 then begin
+                                AppMgt.InsertDimValue(AllocationCode);
+                                AppMgt.ModifyDimensionSetEntry(Rec, AllocationCode.Code);
                                 Rec.Modify();
+                            end;
                         end else begin
                             AllocationCode.Get(AllocationCodeVar);
-                            if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+                            if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
                                 Error(WrongDimErr);
                         end;
                 end;
@@ -179,8 +183,8 @@ pageextension 50009 PInvoiceSubNVX extends "Purch. Invoice Subform"
             field(PurchaseLineNVXCustAmountNVX; PurchaseLineNVX."Vend. Amount")
             {
                 ApplicationArea = All;
-                Editable = false;
                 Caption = 'Vend. Amount', comment = 'DEA="Kred. Betrag"';
+                Editable = false;
             }
         }
         modify("No.")
@@ -245,14 +249,6 @@ pageextension 50009 PInvoiceSubNVX extends "Purch. Invoice Subform"
         exit(true);
     end;
 
-    local procedure SetGlobalVariables()
-    begin
-        AllocationCodeVar := PurchaseLineNVX."Allocation Code";
-        ShortcutDimCode1 := PurchaseLineNVX."Shortcut Dimension 1 Code";
-        ShortcutDimCode3 := PurchaseLineNVX."Shortcut Dimension 3 Code";
-        VendUnitPrice := PurchaseLineNVX."Vend. Unit Price";
-    end;
-
     local procedure ClearGlobalVariables()
     begin
         Clear(PurchaseLineNVX);
@@ -270,5 +266,13 @@ pageextension 50009 PInvoiceSubNVX extends "Purch. Invoice Subform"
         PurchaseLineNVX."Vend. Unit Price" := VendUnitPrice;
         PurchaseLineNVX."Vend. Amount" := Round(Rec.Quantity * VendUnitPrice, 0.01);
         PurchaseLineNVX.Modify();
+    end;
+
+    local procedure SetGlobalVariables()
+    begin
+        AllocationCodeVar := PurchaseLineNVX."Allocation Code";
+        ShortcutDimCode1 := PurchaseLineNVX."Shortcut Dimension 1 Code";
+        ShortcutDimCode3 := PurchaseLineNVX."Shortcut Dimension 3 Code";
+        VendUnitPrice := PurchaseLineNVX."Vend. Unit Price";
     end;
 }

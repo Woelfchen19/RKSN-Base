@@ -28,6 +28,12 @@ table 50041 "SetupBusinessFieldNVX"
             DataClassification = CustomerContent;
             TableRelation = "Reminder Terms";
         }
+        field(5; "Payment Terms Code"; Code[10])
+        {
+            Caption = 'Payment Terms Code', comment = 'DEA="Zlg.-Bedingungscode"';
+            DataClassification = CustomerContent;
+            TableRelation = "Payment Terms";
+        }
         field(10; Activ; Boolean)
         {
             Caption = 'Activ', comment = 'DEA="Aktiv"';
@@ -55,6 +61,8 @@ table 50041 "SetupBusinessFieldNVX"
     trigger OnInsert()
     begin
         SetSorting();
+        Customer.Get(CustomerNo);
+        "Payment Terms Code" := Customer."Payment Terms Code";
     end;
 
     local procedure SetSorting()
@@ -78,6 +86,7 @@ table 50041 "SetupBusinessFieldNVX"
     end;
 
     var
+        Customer: Record Customer;
         PBTxt: Label 'PB';
         RDTxt: Label 'RD';
         RHTxt: Label 'RH';

@@ -34,6 +34,7 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,9';
+                    Importance = Additional;
                     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
@@ -41,7 +42,16 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    Importance = Additional;
                     TableRelation = "Reminder Terms";
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(PBPaymentTermsCodeNVX; PBPaymentTermsCode)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Payment Terms Code', comment = 'DEA="Zlg. Bedingungscode"';
+                    Importance = Additional;
+                    TableRelation = "Payment Terms";
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
@@ -54,12 +64,14 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,5';
+                    Editable = false;
                     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
                 field(RDShortcutDimension9CodeNVX; RDShortcutDimension9Code)
                 {
                     ApplicationArea = All;
+                    Importance = Additional;
                     CaptionClass = '1,2,9';
                     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
@@ -68,7 +80,16 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    Importance = Additional;
                     TableRelation = "Reminder Terms";
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(RDPaymentTermsCodeNVX; RDPaymentTermsCode)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Payment Terms Code', comment = 'DEA="Zlg. Bedingungscode"';
+                    TableRelation = "Payment Terms";
+                    Importance = Additional;
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
@@ -81,6 +102,7 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,5';
+                    Editable = false;
                     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
@@ -88,6 +110,7 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,9';
+                    Importance = Additional;
                     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
@@ -95,7 +118,16 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    Importance = Additional;
                     TableRelation = "Reminder Terms";
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(RHPaymentTermsCodeNVX; RHPaymentTermsCode)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Payment Terms Code', comment = 'DEA="Zlg. Bedingungscode"';
+                    Importance = Additional;
+                    TableRelation = "Payment Terms";
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
@@ -108,12 +140,14 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,5';
+                    Editable = false;
                     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
                 field(EAShortcutDimension9CodeNVX; EAShortcutDimension9Code)
                 {
                     ApplicationArea = All;
+                    Importance = Additional;
                     CaptionClass = '1,2,9';
                     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
@@ -121,8 +155,17 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 field(EAReminderTermsCodeNVX; EAReminderTermsCode)
                 {
                     ApplicationArea = All;
+                    Importance = Additional;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
                     TableRelation = "Reminder Terms";
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(EAPaymentTermsCodeNVX; EAPaymentTermsCode)
+                {
+                    ApplicationArea = All;
+                    Importance = Additional;
+                    Caption = 'Payment Terms Code', comment = 'DEA="Zlg. Bedingungscode"';
+                    TableRelation = "Payment Terms";
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
@@ -135,6 +178,7 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,5';
+                    Editable = false;
                     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
@@ -142,6 +186,7 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,9';
+                    Importance = Additional;
                     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
@@ -149,7 +194,16 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    Importance = Additional;
                     TableRelation = "Reminder Terms";
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(SOPaymentTermsCodeNVX; SOPaymentTermsCode)
+                {
+                    ApplicationArea = All;
+                    Importance = Additional;
+                    Caption = 'Payment Terms Code', comment = 'DEA="Zlg. Bedingungscode"';
+                    TableRelation = "Payment Terms";
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
@@ -162,12 +216,14 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,5';
+                    Editable = false;
                     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
                 }
                 field(EVShortcutDimension9CodeNVX; EVShortcutDimension9Code)
                 {
                     ApplicationArea = All;
+                    Importance = Additional;
                     CaptionClass = '1,2,9';
                     TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
@@ -176,7 +232,16 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                 {
                     ApplicationArea = All;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    Importance = Additional;
                     TableRelation = "Reminder Terms";
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(EVPaymentTermsCodeNVX; EVPaymentTermsCode)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Payment Terms Code', comment = 'DEA="Zlg. Bedingungscode"';
+                    Importance = Promoted;
+                    TableRelation = "Payment Terms";
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
@@ -208,66 +273,78 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
                                 SetupBusinessField."Shortcut Dimension 5 Code" := PBShortcutDimension5Code;
                                 SetupBusinessField."Shortcut Dimension 9 Code" := PBShortcutDimension9Code;
                                 SetupBusinessField."Reminder Terms Code" := PBReminderTermsCode;
+                                SetupBusinessField."Payment Terms Code" := PBPaymentTermsCode;
                                 SetupBusinessField.Modify();
                             end else begin
                                 PBShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
                                 PBShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
                                 PBReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                                PBPaymentTermsCode := SetupBusinessField."Payment Terms Code";
                             end;
                         2:
                             if OnClosePage then begin
                                 SetupBusinessField."Shortcut Dimension 5 Code" := RDShortcutDimension5Code;
                                 SetupBusinessField."Shortcut Dimension 9 Code" := RDShortcutDimension9Code;
                                 SetupBusinessField."Reminder Terms Code" := RDReminderTermsCode;
+                                SetupBusinessField."Payment Terms Code" := RDPaymentTermsCode;
                                 SetupBusinessField.Modify();
                             end else begin
                                 RDShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
                                 RDShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
                                 RDReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                                RDPaymentTermsCode := SetupBusinessField."Payment Terms Code";
                             end;
                         3:
                             if OnClosePage then begin
                                 SetupBusinessField."Shortcut Dimension 5 Code" := RHShortcutDimension5Code;
                                 SetupBusinessField."Shortcut Dimension 9 Code" := RHShortcutDimension9Code;
                                 SetupBusinessField."Reminder Terms Code" := RHReminderTermsCode;
+                                SetupBusinessField."Payment Terms Code" := RHPaymentTermsCode;
                                 SetupBusinessField.Modify();
                             end else begin
                                 RHShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
                                 RHShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
                                 RHReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                                RHPaymentTermsCode := SetupBusinessField."Payment Terms Code";
                             end;
                         4:
                             if OnClosePage then begin
                                 SetupBusinessField."Shortcut Dimension 5 Code" := EAShortcutDimension5Code;
                                 SetupBusinessField."Shortcut Dimension 9 Code" := EAShortcutDimension9Code;
                                 SetupBusinessField."Reminder Terms Code" := EAReminderTermsCode;
+                                SetupBusinessField."Payment Terms Code" := EAPaymentTermsCode;
                                 SetupBusinessField.Modify();
                             end else begin
                                 EAShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
                                 EAShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
                                 EAReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                                EAPaymentTermsCode := SetupBusinessField."Payment Terms Code";
                             end;
                         5:
                             if OnClosePage then begin
                                 SetupBusinessField."Shortcut Dimension 5 Code" := SOShortcutDimension5Code;
                                 SetupBusinessField."Shortcut Dimension 9 Code" := SOShortcutDimension9Code;
                                 SetupBusinessField."Reminder Terms Code" := SOReminderTermsCode;
+                                SetupBusinessField."Payment Terms Code" := SOPaymentTermsCode;
                                 SetupBusinessField.Modify();
                             end else begin
                                 SOShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
                                 SOShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
                                 SOReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                                SOPaymentTermsCode := SetupBusinessField."Payment Terms Code";
                             end;
                         6:
                             if OnClosePage then begin
                                 SetupBusinessField."Shortcut Dimension 5 Code" := EVShortcutDimension5Code;
                                 SetupBusinessField."Shortcut Dimension 9 Code" := EVShortcutDimension9Code;
                                 SetupBusinessField."Reminder Terms Code" := EVReminderTermsCode;
+                                SetupBusinessField."Payment Terms Code" := EVPaymentTermsCode;
                                 SetupBusinessField.Modify();
                             end else begin
                                 EVShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
                                 EVShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
                                 EVReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                                EVPaymentTermsCode := SetupBusinessField."Payment Terms Code";
                             end;
                     end;
             until DimensionValue.Next() = 0;
@@ -283,10 +360,12 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
             SOSetupVisible := Usersetup.SOSetupNVX;
             EVSetupVisible := UserSetup.EVSetupNVX;
 
-            SetupBusinessField.Reset();
-            SetupBusinessField.SetRange(CustomerNo, Rec."No.");
-            if SetupBusinessField.IsEmpty() then
-                InsertSetupBusinessField();
+            if Rec."No." <> '' then begin
+                SetupBusinessField.Reset();
+                SetupBusinessField.SetRange(CustomerNo, Rec."No.");
+                if SetupBusinessField.IsEmpty() then
+                    InsertSetupBusinessField();
+            end;
         end;
     end;
 
@@ -338,6 +417,12 @@ pageextension 50002 CustomerCardNVX extends "Customer Card"
         SOReminderTermsCode: Code[10];
         EVReminderTermsCode: Code[10];
 
+        PBPaymentTermsCode: Code[10];
+        RDPaymentTermsCode: Code[10];
+        RHPaymentTermsCode: Code[10];
+        EAPaymentTermsCode: Code[10];
+        SOPaymentTermsCode: Code[10];
+        EVPaymentTermsCode: Code[10];
         EASetupVisible: Boolean;
         EVSetupVisible: Boolean;
         PBSetupVisible: Boolean;

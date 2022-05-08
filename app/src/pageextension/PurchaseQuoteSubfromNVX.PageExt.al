@@ -1,4 +1,4 @@
-pageextension 50011 POrderSubNVX extends "Purchase Order Subform"
+pageextension 50013 "PurchaseQuoteSubfromNVX" extends "Purchase Quote Subform"
 {
     layout
     {
@@ -25,7 +25,6 @@ pageextension 50011 POrderSubNVX extends "Purchase Order Subform"
                         Modify();
                         exit;
                     end;
-
                     if Rec.Type = Rec.Type::Item then begin
                         if not ItemNVX.Get(Rec."No.") then
                             ItemNVX.Init();
@@ -61,7 +60,6 @@ pageextension 50011 POrderSubNVX extends "Purchase Order Subform"
                         Modify();
                         exit;
                     end;
-
                     if Rec.Type = Rec.Type::Item then begin
                         if not ItemNVX.Get(Rec."No.") then
                             ItemNVX.Init();
@@ -84,7 +82,7 @@ pageextension 50011 POrderSubNVX extends "Purchase Order Subform"
                     NewGBPG: Code[20];
                     FilterOptionNVX: Enum FilterOptionNVX;
                 begin
-                    NewGBPG := RKSMgt.LookupGenBusinessPostingGroup(FilterOptionNVX::PurchaseOrder);
+                    NewGBPG := RKSMgt.LookupGenBusinessPostingGroup(FilterOptionNVX::PurchaseQuote);
                     if (NewGBPG <> '') then
                         Rec.Validate("Gen. Bus. Posting Group", NewGBPG);
                     UpdatePurchaseLineNVX(PurchaseLineNVX."Vend. Unit Price");
@@ -116,6 +114,7 @@ pageextension 50011 POrderSubNVX extends "Purchase Order Subform"
                 var
                     AllocationCode: Record AllocationCodeNVX;
                     Item: Record Item;
+                    AppMgt: Codeunit AppMgtNVX;
                     UselessAllocationCodeMsg: Label 'An Allocation Code has no function if used together with an item with inventory value!', comment = 'DEA="Der Artikel ist Lagerbewertet eingerichtet, ein Verteilungscode hat keine Funktion!"';
                     WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
@@ -138,14 +137,17 @@ pageextension 50011 POrderSubNVX extends "Purchase Order Subform"
                         SetComplementaryFields();
 
                     if AllocationCodeVar <> '' then
-                        if Rec."Shortcut Dimension 2 Code" = '' then begin
+                        if Rec."Shortcut Dimension 1 Code" = '' then begin
                             AllocationCode.Get(AllocationCodeVar);
-                            Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
-                            if Rec."Line No." > 0 then
+                            Rec.Validate("Shortcut Dimension 1 Code", AllocationCode."Shortcut Dimension 1 Code");
+                            if Rec."Line No." > 0 then begin
+                                AppMgt.InsertDimValue(AllocationCode);
+                                AppMgt.ModifyDimensionSetEntry(Rec, AllocationCode.Code);
                                 Rec.Modify();
+                            end;
                         end else begin
                             AllocationCode.Get(AllocationCodeVar);
-                            if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+                            if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
                                 Error(WrongDimErr);
                         end;
                 end;
@@ -179,10 +181,6 @@ pageextension 50011 POrderSubNVX extends "Purchase Order Subform"
                 if Rec.Quantity = 0 then
                     Rec.Validate(Quantity, 1);
             end;
-        }
-        modify("Shortcut Dimension 1 Code")
-        {
-            Enabled = false;
         }
         modify("VAT Prod. Posting Group")
         {

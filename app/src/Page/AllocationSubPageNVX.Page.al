@@ -48,6 +48,6 @@ page 50003 AllocationSubPageNVX
         AllocationCode: Record AllocationCodeNVX;
     begin
         AllocationCode.Get(Rec."Allocation Code");
-        "Shortcut Dimension 2 Code" := AllocationCode."Shortcut Dimension 2 Code";
+        "Shortcut Dimension 1 Code" := AllocationCode."Shortcut Dimension 1 Code";
     end;
 }

@@ -1,10 +1,27 @@
-codeunit 50024 InsertSetupPropertyForFieldNVX
+codeunit 50024 UpgradeMgtNVX
 {
     Subtype = Upgrade;
 
     trigger OnUpgradePerDatabase()
     begin
         InsertSetupPropertyForField();
+    end;
+
+    trigger OnUpgradePerCompany()
+    begin
+        InitializeDimensionCustomer();
+    end;
+
+    local procedure InitializeDimensionCustomer()
+    var
+        Customer: Record Customer;
+        AppMgt: Codeunit AppMgtNVX;
+    begin
+        if Customer.FindSet() then
+            repeat
+                AppMgt.InsertPKShortCutdimension(Customer);
+                AppMgt.InsertPKDefaultDim(Customer);
+            until customer.Next() = 0;
     end;
 
     local procedure InsertSetupPropertyForField()

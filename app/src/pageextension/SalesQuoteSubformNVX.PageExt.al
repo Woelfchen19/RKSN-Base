@@ -1,132 +1,109 @@
-pageextension 50025 "SOrderSubNVX" extends "Sales Order Subform"
+pageextension 50027 SalesQuoteSubformNVX extends "Sales Quote Subform"
 {
     layout
     {
         addlast(Control1)
         {
-            field("Sales Shortcut Dimension 1 CodeNVX"; ShortcutDimCode1)
+            field(SalesShortcutDimension1CodeNVX; ShortcutDimCode1)
             {
                 ApplicationArea = All;
                 Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
                 CaptionClass = '1338,1'; //= Sales + Dim Name;
                 TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
-                Editable = PageEditable;
                 trigger OnValidate();
                 var
                     Item: Record Item;
                 begin
-                    if IsCompositionNVX() then
-                        SalesLineNVX.TestField("Allocation Code", '');
-
                     if Rec."Line No." > 0 then
                         SetComplementaryFields();
 
                     if Item.Get(Rec."No.") and Item."Inventory Value Zero" then
                         Rec.Validate("Shortcut Dimension 1 Code", ShortcutDimCode1);
+
+                    Rec.SetBusinessFieldNVX();
                 end;
             }
-            field("Sales Shortcut Dimension 3 CodeNVX"; ShortcutDimCode3)
+            field(SalesShortcutDimension3CodeNVX; ShortcutDimCode3)
             {
                 ApplicationArea = All;
                 Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
                 CaptionClass = '1338,3'; //= Sales + Dim Name
                 TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
-                Editable = PageEditable;
                 trigger OnValidate();
                 var
                     Item: Record Item;
                 begin
                     if Rec."Line No." > 0 then
                         SetComplementaryFields();
-
                     if Item.Get(Rec."No.") and Item."Inventory Value Zero" then
                         ValidateShortcutDimCode(3, ShortcutDimCode3);
                 end;
             }
-            field("Gen. Bus. Posting Group NVX"; "Gen. Bus. Posting Group")
+            field(GenBusPostingGroupNVX; "Gen. Bus. Posting Group")
             {
                 ApplicationArea = All;
-                Editable = GBPGEditable;
                 trigger OnLookup(var Text: Text): Boolean;
                 var
                     RKSMgt: Codeunit AllocationMgtNVX;
                     NewGBPG: Code[20];
                     FilterOptionNVX: Enum FilterOptionNVX;
                 begin
-                    if IsCompositionNVX() then
-                        exit;
-
-                    NewGBPG := RKSMgt.LookupGenBusinessPostingGroup(FilterOptionNVX::SalesOrder);
+                    NewGBPG := RKSMgt.LookupGenBusinessPostingGroup(FilterOptionNVX::SalesQuote);
                     if (NewGBPG <> '') then
                         Rec.Validate("Gen. Bus. Posting Group", NewGBPG);
-
                     UpdateSalesLineNVX(SalesLineNVX."Cust. Unit Price");
                 end;
             }
-            field("Gen. P Posting Group NVX"; "Gen. Prod. Posting Group")
+            field(GenProdPostingGroupNVX; "Gen. Prod. Posting Group")
             {
                 ApplicationArea = All;
                 Editable = false;
             }
-            field("VAT Bus. Posting Group NVX"; "VAT Bus. Posting Group")
+            field(VATBusPostingGroupNVX; "VAT Bus. Posting Group")
             {
                 ApplicationArea = All;
                 Editable = false;
             }
-            field("VAT Prod. Posting Group NVX"; "VAT Prod. Posting Group")
+            field(VATProdPostingGroupNVX; "VAT Prod. Posting Group")
             {
                 ApplicationArea = All;
                 Editable = false;
             }
-            field("Allocation CodeNVX"; AllocationCodeVar)
+            field(AllocationCodeNVX; AllocationCodeVar)
             {
                 ApplicationArea = All;
                 Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
                 TableRelation = AllocationCodeNVX.Code;
-                Editable = PageEditable;
                 trigger OnValidate();
                 var
                     AllocationCode: Record AllocationCodeNVX;
-                    Item: Record Item;
-                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
-                    comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
+                    AppMgt: Codeunit AppMgtNVX;
+                    WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or Salesline!',
+                    comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Angebotszeilen! Überprüfen Sie bitte Ihre Angabe."';
                 begin
-                    if Item.Get(Rec."No.") and not Item."Inventory Value Zero" then
-                        if (AllocationCodeVar <> '') then
-                            SalesLineNVX.TestField("Shortcut Dimension 3 Code", '');
-
                     if Rec."Line No." > 0 then
                         SetComplementaryFields();
 
-                    if AllocationCodeVar <> '' then begin
-                        if Rec."Shortcut Dimension 2 Code" = '' then
+                    if AllocationCodeVar <> '' then
+                        if Rec."Shortcut Dimension 1 Code" = '' then begin
                             AllocationCode.Get(AllocationCodeVar);
-                        Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
-                        if Rec."Line No." > 0 then
-                            Rec.Modify();
-                    end else begin
-                        AllocationCode.Get(AllocationCodeVar);
-                        if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
-                            Error(WrongDimErr);
-                    end;
-                end;
-            }
-            field("Comp Gen. Bus. Pst Grp WESNVX"; CompGenBusPstGrpWES)
-            {
-                ApplicationArea = All;
-                Caption = 'Composition Gen. Bus. Posting Group WES', comment = 'DEA="Abfassung Steuerschlüssel WES"';
-                Editable = CompFieldsEditable;
-                TableRelation = "Gen. Business Posting Group".Code;
-                trigger OnValidate()
-                begin
-                    if Rec."Line No." > 0 then
-                        SetComplementaryFields();
+                            Rec.Validate("Shortcut Dimension 1 Code", AllocationCode."Shortcut Dimension 1 Code");
+                            if Rec."Line No." > 0 then begin
+                                AppMgt.InsertDimValue(AllocationCode);
+                                AppMgt.ModifyDimensionSetEntry(Rec, AllocationCode.Code);
+                                Rec.Modify();
+                            end;
+                        end else begin
+                            AllocationCode.Get(AllocationCodeVar);
+                            if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
+                                Error(WrongDimErr);
+                        end;
                 end;
             }
         }
         addafter("Unit Price")
         {
-            field(SalesLineNVXCustUnitPriceNVX; SalesLineNVX."Cust. Unit Price")
+            field(SalesLineNVXCustUnitPriceNVX; CustUnitPrice)
             {
                 ApplicationArea = All;
                 Caption = 'Cust. Unit Price', comment = 'DEA="Deb. VK-Preis"';
@@ -141,32 +118,9 @@ pageextension 50025 "SOrderSubNVX" extends "Sales Order Subform"
             field(SalesLineNVXCustAmountNVX; SalesLineNVX."Cust. Amount")
             {
                 ApplicationArea = All;
-                Editable = false;
                 Caption = 'Cust. Amount', comment = 'DEA="Deb. Betrag"';
+                Editable = false;
             }
-
-            field(ShortcutDimCode9NVX; ShortcutDimCodeVisible[9])
-            {
-                ApplicationArea = All;
-                CaptionClass = '1,2,9';
-                Editable = DimEditable9;
-                ToolTip = 'Specifies the value of the Shortcut Dimension 9 Code field.';
-                Visible = DimVisible9;
-            }
-            field(ShortcutDimCode10NVX; ShortcutDimCodeVisible[10])
-            {
-                ApplicationArea = All;
-                CaptionClass = '1,2,10';
-                Editable = DimEditable10;
-                ToolTip = 'Specifies the value of the Shortcut Dimension 10 Code field.';
-                Visible = DimVisible10;
-            }
-
-        }
-        modify("VAT Prod. Posting Group")
-        {
-            Enabled = false;
-            Visible = false;
         }
         modify("No.")
         {
@@ -176,6 +130,15 @@ pageextension 50025 "SOrderSubNVX" extends "Sales Order Subform"
                     Rec.Validate(Quantity, 1);
             end;
         }
+        modify("Shortcut Dimension 1 Code")
+        {
+            Enabled = false;
+        }
+        modify("VAT Prod. Posting Group")
+        {
+            Enabled = false;
+            Visible = false;
+        }
         modify(Quantity)
         {
             trigger OnAfterValidate();
@@ -184,10 +147,6 @@ pageextension 50025 "SOrderSubNVX" extends "Sales Order Subform"
                     SetComplementaryFields();
             end;
         }
-        modify("Shortcut Dimension 1 Code")
-        {
-            Enabled = false;
-        }
         modify(ShortcutDimCode3)
         {
             Enabled = false;
@@ -195,22 +154,13 @@ pageextension 50025 "SOrderSubNVX" extends "Sales Order Subform"
     }
 
     var
-        InvSetupNVX: Record InvSetupNVX;
         SalesHeaderNVX: Record SalesHeaderNVX;
         SalesLineNVX: Record SalesLineNVX;
-        CompFieldsEditable: Boolean;
-        GBPGEditable: Boolean;
         PageEditable: Boolean;
         AllocationCodeVar: Code[10];
-        CompGenBusPstGrpWES: Code[20];
         ShortcutDimCode1: Code[20];
         ShortcutDimCode3: Code[20];
         CustUnitPrice: Decimal;
-        ShortcutDimCodeVisible: array[10] of Boolean;
-        DimEditable9: Boolean;
-        DimEditable10: Boolean;
-        DimVisible9: Boolean;
-        DimVisible10: Boolean;
 
     trigger OnAfterGetRecord()
     begin
@@ -218,14 +168,6 @@ pageextension 50025 "SOrderSubNVX" extends "Sales Order Subform"
         SalesHeaderNVX.GetDefinition(Rec."Document Type", Rec."Document No.");
         SetGlobalVariables();
         PageEditable := CurrPage.Editable();
-
-        if IsCompositionNVX() then begin
-            GBPGEditable := false;
-            CompFieldsEditable := true;
-        end else begin
-            GBPGEditable := true;
-            CompFieldsEditable := false
-        end;
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
@@ -247,15 +189,6 @@ pageextension 50025 "SOrderSubNVX" extends "Sales Order Subform"
         exit(true);
     end;
 
-    local procedure SetGlobalVariables()
-    begin
-        AllocationCodeVar := SalesLineNVX."Allocation Code";
-        ShortcutDimCode1 := SalesLineNVX."Shortcut Dimension 1 Code";
-        ShortcutDimCode3 := SalesLineNVX."Shortcut Dimension 3 Code";
-        CustUnitPrice := SalesLineNVX."Cust. Unit Price";
-        CompGenBusPstGrpWES := SalesLineNVX."Comp Gen. Bus. Pst Grp WES";
-    end;
-
     local procedure ClearGlobalVariables()
     begin
         Clear(SalesLineNVX);
@@ -263,7 +196,6 @@ pageextension 50025 "SOrderSubNVX" extends "Sales Order Subform"
         Clear(ShortcutDimCode1);
         Clear(ShortcutDimCode3);
         Clear(CustUnitPrice);
-        Clear(CompGenBusPstGrpWES)
     end;
 
     local procedure SetComplementaryFields()
@@ -273,16 +205,14 @@ pageextension 50025 "SOrderSubNVX" extends "Sales Order Subform"
         SalesLineNVX."Shortcut Dimension 3 Code" := ShortcutDimCode3;
         SalesLineNVX."Cust. Unit Price" := CustUnitPrice;
         SalesLineNVX."Cust. Amount" := Round(Rec.Quantity * CustUnitPrice, 0.01);
-        SalesLineNVX."Comp Gen. Bus. Pst Grp WES" := CompGenBusPstGrpWES;
-        if SalesLineNVX.Modify() then;
+        SalesLineNVX.Modify();
     end;
 
-    local procedure IsCompositionNVX(): Boolean
+    local procedure SetGlobalVariables()
     begin
-        InvSetupNVX.Get();
-        if InvSetupNVX."Composition Customer" = Rec."Sell-to Customer No." then
-            exit(true)
-        else
-            exit(false);
+        AllocationCodeVar := SalesLineNVX."Allocation Code";
+        ShortcutDimCode1 := SalesLineNVX."Shortcut Dimension 1 Code";
+        ShortcutDimCode3 := SalesLineNVX."Shortcut Dimension 3 Code";
+        CustUnitPrice := SalesLineNVX."Cust. Unit Price";
     end;
 }

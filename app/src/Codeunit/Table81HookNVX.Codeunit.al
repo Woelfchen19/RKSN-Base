@@ -34,10 +34,10 @@ codeunit 50021 Table81HookNVX
 
                 AllocationCode.Get(FixedAssetNVX."Allocation Code");
                 if Rec."Shortcut Dimension 2 Code" = '' then begin
-                    Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
+                    Rec.Validate("Shortcut Dimension 1 Code", AllocationCode."Shortcut Dimension 1 Code");
                     Rec.Modify();
                 end else
-                    if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+                    if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
                         Error(WrongDimErr);
             end;
     end;
@@ -57,10 +57,10 @@ codeunit 50021 Table81HookNVX
             exit;
         if AllocationCode.Get(FixedAssetNVX."Allocation Code") then begin
             if Rec."Shortcut Dimension 2 Code" = '' then begin
-                Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
+                Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 1 Code");
                 if Rec.Modify() then; //in case rec is not inserted yet
             end else
-                if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+                if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
                     Error(WrongDimErr);
 
             if Rec."Line No." = 0 then
@@ -89,7 +89,7 @@ codeunit 50021 Table81HookNVX
 
             if GenJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") and (GenJnlLineNVX."Allocation Code" <> '') then begin
                 AllocationCode.Get(GenJnlLineNVX."Allocation Code");
-                if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+                if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
                     Error(WrongDimErr);
             end;
 

@@ -32,6 +32,11 @@ page 50062 "SetupBusinessFieldNVX"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Reminder Terms Code field.';
                 }
+                field("Payment Terms Code"; Rec."Payment Terms Code")
+                {
+                    ToolTip = 'Specifies the value of the Payment Terms Code field.', Comment = 'DEA="Zlg.-Bedingungscode"';
+                    ApplicationArea = All;
+                }
                 field(Sort; Sort)
                 {
                     ApplicationArea = All;

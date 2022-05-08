@@ -20,9 +20,9 @@ pageextension 50059 PurchaseJournalNVX extends "Purchase Journal"
                         SetComplementaryFields();
 
                     if AllocationCodeVar <> '' then
-                        if Rec."Shortcut Dimension 2 Code" = '' then begin
+                        if Rec."Shortcut Dimension 1 Code" = '' then begin
                             AllocationCode.Get(AllocationCodeVar);
-                            Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
+                            Rec.Validate("Shortcut Dimension 1 Code", AllocationCode."Shortcut Dimension 1 Code");
                             if Rec."Line No." > 0 then begin
                                 AppMgt.InsertDimValue(AllocationCode);
                                 AppMgt.ModifyDimensionSetEntry(Rec, AllocationCode.Code);
@@ -30,7 +30,7 @@ pageextension 50059 PurchaseJournalNVX extends "Purchase Journal"
                             end;
                         end else begin
                             AllocationCode.Get(AllocationCodeVar);
-                            if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+                            if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
                                 Error(WrongDimErr);
                         end;
                 end;
@@ -52,8 +52,8 @@ pageextension 50059 PurchaseJournalNVX extends "Purchase Journal"
                 Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
                 Image = PreviewChecks;
                 Promoted = true;
-                PromotedIsBig = true;
                 PromotedCategory = Process;
+                PromotedIsBig = true;
                 trigger OnAction();
                 var
                     DistrGenJnlLine: Record DistrGenJnlLineNVX;
@@ -98,11 +98,6 @@ pageextension 50059 PurchaseJournalNVX extends "Purchase Journal"
         exit(true);
     end;
 
-    local procedure SetGlobalVariables()
-    begin
-        AllocationCodeVar := GenJnlLineNVX."Allocation Code";
-    end;
-
     local procedure ClearGlobalVariables()
     begin
         Clear(GenJnlLineNVX);
@@ -116,6 +111,11 @@ pageextension 50059 PurchaseJournalNVX extends "Purchase Journal"
 
         GenJnlLineNVX."Allocation Code" := AllocationCodeVar;
         GenJnlLineNVX.Modify();
+    end;
+
+    local procedure SetGlobalVariables()
+    begin
+        AllocationCodeVar := GenJnlLineNVX."Allocation Code";
     end;
 
     [IntegrationEvent(false, false)]

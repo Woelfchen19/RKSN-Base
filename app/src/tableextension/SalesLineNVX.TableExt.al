@@ -27,4 +27,14 @@ tableextension 50004 SalesLineNVX extends "Sales Line"
             Validate("Unit Price", NetUnitPrice);
         end;
     end;
+
+    procedure SetBusinessFieldNVX()
+    var
+        AssosiatedDepartment: Record AssosiatedDepartmentNVX;
+    begin
+        AssosiatedDepartment.Reset();
+        AssosiatedDepartment.SetRange("Shortcut Dimension 1 Code", Rec."Shortcut Dimension 1 Code");
+        if AssosiatedDepartment.FindFirst() then
+            ValidateShortcutDimCode(5, AssosiatedDepartment."Shortcut Dimension 5 Code");
+    end;
 }

@@ -156,6 +156,85 @@ codeunit 50026 AppMgtNVX
         GenJnlLine.ValidateShortcutDimCode(10, AllocationCode);
     end;
 
+    procedure ModifyDimensionSetEntry(var PurchaseLine: Record "Purchase Line"; AllocationCode: Code[20])
+    VAR
+        TempDimSetEntry: Record "Dimension Set Entry" temporary;
+    begin
+        GLSetup.Get();
+        DimMgt.GetDimensionSet(TempDimSetEntry, PurchaseLine."Dimension Set ID");
+
+        TempDimSetEntry.Init();
+        TempDimSetEntry.Validate("Dimension Code", GLSetup.ShortcutDimension10CodeNVX);
+        TempDimSetEntry.Validate("Dimension Value Code", AllocationCode);
+        if TempDimSetEntry.Insert() then;
+
+        PurchaseLine."Dimension Set ID" := DimMgt.GetDimensionSetID(TempDimSetEntry);
+        PurchaseLine.ValidateShortcutDimCode(10, AllocationCode);
+    end;
+
+    procedure ModifyDimensionSetEntry(var SalesLine: Record "Sales Line"; AllocationCode: Code[20])
+    VAR
+        TempDimSetEntry: Record "Dimension Set Entry" temporary;
+    begin
+        GLSetup.Get();
+        DimMgt.GetDimensionSet(TempDimSetEntry, SalesLine."Dimension Set ID");
+
+        TempDimSetEntry.Init();
+        TempDimSetEntry.Validate("Dimension Code", GLSetup.ShortcutDimension10CodeNVX);
+        TempDimSetEntry.Validate("Dimension Value Code", AllocationCode);
+        if TempDimSetEntry.Insert() then;
+
+        SalesLine."Dimension Set ID" := DimMgt.GetDimensionSetID(TempDimSetEntry);
+        SalesLine.ValidateShortcutDimCode(10, AllocationCode);
+    end;
+
+    procedure InsertPKShortCutdimension(Customer: Record Customer)
+    var
+        DimensionValue: Record "Dimension Value";
+    begin
+        Glsetup.Get();
+        IF NOT DimensionValue.Get(GLSetup."Shortcut Dimension 7 Code", Customer."No.") then begin
+            DimensionValue.Init();
+            DimensionValue."Dimension Code" := GLSetup."Shortcut Dimension 7 Code";
+            DimensionValue.Code := Customer."No.";
+            DimensionValue.Name := CopyStr(Customer.Name, 1, 50);
+            DimensionValue.Insert(true);
+        END else
+            ModifyPKShortCutdimension(Customer);
+    end;
+
+    local procedure ModifyPKShortCutdimension(Customer: Record Customer)
+    var
+        DimensionValue: Record "Dimension Value";
+    begin
+        Glsetup.Get();
+        IF DimensionValue.Get(GLSetup."Shortcut Dimension 7 Code", Customer."No.") then
+            if DimensionValue.Name <> Customer.Name then begin
+                DimensionValue.Name := CopyStr(Customer.Name, 1, 50);
+                DimensionValue.Modify();
+            END;
+    end;
+
+
+    procedure InsertPKDefaultDim(Customer: Record Customer)
+    var
+        DefaultDimension: Record "Default Dimension";
+    begin
+        GLSetup.Get();
+        DefaultDimension.SetRange("Table ID", DATABASE::Customer);
+        DefaultDimension.SetRange("No.", Customer."No.");
+        DefaultDimension.SetRange("Dimension Code", GLSetup."Shortcut Dimension 7 Code");
+        IF DefaultDimension.IsEmpty THEN begin
+            DefaultDimension.Init();
+            DefaultDimension."Table ID" := DATABASE::Customer;
+            DefaultDimension."No." := Customer."No.";
+            DefaultDimension."Dimension Code" := GLSetup."Shortcut Dimension 7 Code";
+            DefaultDimension."Dimension Value Code" := Customer."No.";
+            DefaultDimension."Value Posting" := DefaultDimension."Value Posting"::"Same Code";
+            DefaultDimension.Insert();
+        end;
+    end;
+
     var
         GLSetup: Record "General Ledger Setup";
         SetupPropertyForFields: Record SetupPropertyForFieldsNVX;

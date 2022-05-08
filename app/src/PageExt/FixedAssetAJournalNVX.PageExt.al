@@ -1,4 +1,4 @@
-pageextension 50030 FAJournalNVX extends "Fixed Asset Journal"
+pageextension 50030 FixedAssetAJournalNVX extends "Fixed Asset Journal"
 {
     layout
     {
@@ -22,16 +22,17 @@ pageextension 50030 FAJournalNVX extends "Fixed Asset Journal"
                         SetComplementaryFields();
 
                     if AllocationCodeVar <> '' then
-                        if Rec."Shortcut Dimension 2 Code" = '' then begin
+                        if Rec."Shortcut Dimension 1 Code" = '' then begin
                             AllocationCode.Get(AllocationCodeVar);
-                            Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
+                            Rec.Validate("Shortcut Dimension 1 Code", AllocationCode."Shortcut Dimension 1 Code");
                             if Rec."Line No." > 0 then
                                 Rec.Modify();
                         end else begin
                             AllocationCode.Get(AllocationCodeVar);
-                            if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+                            if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
                                 Error(WrongDimErr);
                         end;
+
 
                     if FixedAssetNVX.Get(Rec."FA No.") and (FixedAssetNVX."Allocation Code" <> AllocationCodeVar) then
                         Error(WrongDim2Err);

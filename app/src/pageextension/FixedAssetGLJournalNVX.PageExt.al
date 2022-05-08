@@ -1,4 +1,4 @@
-pageextension 50029 FAGLJournalNVX extends "Fixed Asset G/L Journal"
+pageextension 50029 "FixedAssetGLJournalNVX" extends "Fixed Asset G/L Journal"
 {
     layout
     {
@@ -13,6 +13,7 @@ pageextension 50029 FAGLJournalNVX extends "Fixed Asset G/L Journal"
                 var
                     AllocationCode: Record AllocationCodeNVX;
                     FixedAssetNVX: Record FixedAssetNVX;
+                    AppMgt: Codeunit AppMgtNVX;
                     WrongDim2Err: Label 'Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.',
                         comment = 'DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"';
                     WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
@@ -32,16 +33,18 @@ pageextension 50029 FAGLJournalNVX extends "Fixed Asset G/L Journal"
                             GenJnlLineNVX.Modify();
                         end;
 
-
                     if AllocationCodeVar <> '' then
-                        if Rec."Shortcut Dimension 2 Code" = '' then begin
+                        if Rec."Shortcut Dimension 1 Code" = '' then begin
                             AllocationCode.Get(AllocationCodeVar);
-                            Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
-                            if Rec."Line No." > 0 then
+                            Rec.Validate("Shortcut Dimension 1 Code", AllocationCode."Shortcut Dimension 1 Code");
+                            if Rec."Line No." > 0 then begin
+                                AppMgt.InsertDimValue(AllocationCode);
+                                AppMgt.ModifyDimensionSetEntry(Rec, AllocationCode.Code);
                                 Rec.Modify();
+                            end;
                         end else begin
                             AllocationCode.Get(AllocationCodeVar);
-                            if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+                            if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
                                 Error(WrongDimErr);
                         end;
 
