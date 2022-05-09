@@ -1,4 +1,4 @@
-report 50000 ItemCopyNVX
+report 50000 "ItemCopyNVX"
 {
     // version NAVDACH11.00.00.24742
 

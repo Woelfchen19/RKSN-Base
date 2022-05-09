@@ -1,4 +1,4 @@
-tableextension 50004 SalesLineNVX extends "Sales Line"
+tableextension 50004 "SalesLineNVX" extends "Sales Line"
 {
     fields
     {

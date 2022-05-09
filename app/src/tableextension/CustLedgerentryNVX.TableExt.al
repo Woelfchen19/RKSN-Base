@@ -80,7 +80,7 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
                 DimensionManagement.ValidateShortcutDimValues(9, ShortcutDimension9CodeNVX, "Dimension Set ID");
             end;
         }
-        field(50007; "ShortcutDimension10CodeNVX"; Code[20])
+        field(50007; ShortcutDimension10CodeNVX; Code[20])
         {
             CaptionClass = '1,2,10';
             Caption = 'Shortcut Dimension 10 Code';

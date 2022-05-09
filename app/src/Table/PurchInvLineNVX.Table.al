@@ -1,4 +1,4 @@
-table 50031 PurchInvLineNVX
+table 50031 "PurchInvLineNVX"
 {
     fields
     {

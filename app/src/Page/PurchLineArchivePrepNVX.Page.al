@@ -1,4 +1,4 @@
-page 50023 PurchLineArchivePrepNVX
+page 50023 "PurchLineArchivePrepNVX"
 {
     Caption = 'Purchase Line Archive Preparation', comment = 'DEA="Einkaufszeilenarchiv Vorbereitung"';
     PageType = ListPart;

@@ -1,4 +1,4 @@
-codeunit 50001 HandleVATHooksNVX
+codeunit 50001 "HandleVATHooksNVX"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Release Sales Document", 'OnAfterReleaseSalesDoc', '', true, true)]
     local procedure HandleVATNVXReleaseSalesDocument(var SalesHeader: Record "Sales Header"; PreviewMode: Boolean; LinesWereModified: Boolean)

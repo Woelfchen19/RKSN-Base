@@ -1,4 +1,4 @@
-codeunit 50002 CustLedgerEditHookNVX
+codeunit 50002 "CustLedgerEditHookNVX"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Cust. Entry-Edit", 'OnBeforeCustLedgEntryModify', '', true, true)]
     local procedure OnBeforeCustLedgEntryModify(var CustLedgEntry: Record "Cust. Ledger Entry"; FromCustLedgEntry: Record "Cust. Ledger Entry")

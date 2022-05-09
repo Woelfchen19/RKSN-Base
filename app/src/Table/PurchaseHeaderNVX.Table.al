@@ -1,4 +1,4 @@
-table 50028 PurchaseHeaderNVX
+table 50028 "PurchaseHeaderNVX"
 {
     DataClassification = CustomerContent;
 

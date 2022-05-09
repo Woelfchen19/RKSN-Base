@@ -1,4 +1,4 @@
-table 50002 AllocationLineNVX
+table 50002 "AllocationLineNVX"
 {
     DataClassification = CustomerContent;
     Caption = 'Allocation Line', comment = 'DEA="Verteilungszeile"';

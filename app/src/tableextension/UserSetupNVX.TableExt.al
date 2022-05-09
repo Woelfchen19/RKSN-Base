@@ -2,12 +2,12 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
 {
     fields
     {
-        field(50000; "AllowItemProdPstGrpChangeNVX"; Boolean)
+        field(50000; AllowItemProdPstGrpChangeNVX; Boolean)
         {
             Caption = 'Allow Item Prod.Post.Group Change', comment = 'DEA="Änderung Prod.Bu.Grp. Artikelkarte"';
             DataClassification = CustomerContent;
         }
-        field(50001; "AllowItemInvtPstGrpChangeNVX"; Boolean)
+        field(50001; AllowItemInvtPstGrpChangeNVX; Boolean)
         {
             Caption = 'Allow Item Invt.Post.Group Change', comment = 'DEA="Änderung Lager.Bu.Grp. Artikelkarte"';
             DataClassification = CustomerContent;

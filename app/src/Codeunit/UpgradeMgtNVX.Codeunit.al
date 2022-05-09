@@ -1,4 +1,4 @@
-codeunit 50024 UpgradeMgtNVX
+codeunit 50024 "UpgradeMgtNVX"
 {
     Subtype = Upgrade;
 

@@ -1,4 +1,4 @@
-table 50000 AllocationCodeNVX
+table 50000 "AllocationCodeNVX"
 {
     DataClassification = CustomerContent;
     Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
@@ -16,13 +16,13 @@ table 50000 AllocationCodeNVX
             DataClassification = CustomerContent;
             Caption = 'Description', comment = 'DEA="Beschreibung"';
         }
-        field(5; "Shortcut Dimension 1 Code"; Code[20])
+        field(5; "Shortcut Dimension 2 Code"; Code[20])
         {
             //This field prevents multiple dimensions per allocation
             DataClassification = CustomerContent;
-            Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
-            CaptionClass = '1,2,1';
+            Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
+            CaptionClass = '1,2,2';
         }
         field(10; "Resp. Center"; Code[10])
         {

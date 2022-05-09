@@ -1,4 +1,4 @@
-pageextension 50020 SalesCrMemoNVX extends "Sales Credit Memo"
+pageextension 50020 "SalesCrMemoNVX" extends "Sales Credit Memo"
 {
     layout
     {

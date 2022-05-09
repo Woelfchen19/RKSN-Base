@@ -1,4 +1,4 @@
-codeunit 50014 Table349HookNVX
+codeunit 50014 "Table349HookNVX"
 {
     [EventSubscriber(ObjectType::Table, Database::"Dimension Value", 'OnAfterDeleteEvent', '', false, false)]
     local procedure DeleteRecInAccompaniedTable(Rec: Record "Dimension Value")

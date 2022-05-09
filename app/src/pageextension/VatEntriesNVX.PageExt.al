@@ -1,10 +1,15 @@
-pageextension 50052 VatEntriesNVX extends "VAT Entries"
+pageextension 50052 "VatEntriesNVX" extends "VAT Entries"
 {
     layout
     {
         addlast(Control1)
         {
             field(GlobalDimension2CodeNVX; Rec.GlobalDimension2CodeNVX)
+            {
+                ToolTip = 'Specifies the value of the Global Dimension 2 Code field.';
+                ApplicationArea = All;
+            }
+            field(GlobalDimension5CodeNVX; Rec.GlobalDimension5CodeNVX)
             {
                 ToolTip = 'Specifies the value of the Global Dimension 2 Code field.';
                 ApplicationArea = All;

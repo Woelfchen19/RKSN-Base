@@ -1,4 +1,4 @@
-codeunit 50006 GLAccountSetHiddenFilterNVX
+codeunit 50006 "GLAccountSetHiddenFilterNVX"
 {
     [EventSubscriber(ObjectType::Page, Page::"Chart of Accounts", 'OnOpenPageEvent', '', true, true)]
     local procedure SetHiddenFilterChartofAccounts(var Rec: Record "G/L Account")

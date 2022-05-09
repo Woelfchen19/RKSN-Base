@@ -1,4 +1,4 @@
-page 50012 PostingCardNVX
+page 50012 "PostingCardNVX"
 {
     PageType = Card;
     SourceTable = PostingsNVX;

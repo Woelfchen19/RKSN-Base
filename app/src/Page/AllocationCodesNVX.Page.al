@@ -1,4 +1,4 @@
-page 50001 AllocationCodesNVX
+page 50001 "AllocationCodesNVX"
 {
     PageType = List;
     SourceTable = AllocationCodeNVX;
@@ -19,7 +19,7 @@ page 50001 AllocationCodesNVX
                 {
                     ApplicationArea = All;
                 }
-                field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
                 {
                     ApplicationArea = All;
                 }

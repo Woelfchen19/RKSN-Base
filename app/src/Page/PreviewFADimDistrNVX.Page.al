@@ -1,4 +1,4 @@
-page 50018 PreviewFADimDistrNVX
+page 50018 "PreviewFADimDistrNVX"
 {
     Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
     PageType = List;

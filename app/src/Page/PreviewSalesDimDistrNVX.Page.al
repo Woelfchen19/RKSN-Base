@@ -1,4 +1,4 @@
-page 50020 PreviewSalesDimDistrNVX
+page 50020 "PreviewSalesDimDistrNVX"
 {
     Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
     PageType = List;

@@ -1,4 +1,4 @@
-tableextension 50001 GLAccountNVX extends "G/L Account"
+tableextension 50001 "GLAccountNVX" extends "G/L Account"
 {
     fields
     {

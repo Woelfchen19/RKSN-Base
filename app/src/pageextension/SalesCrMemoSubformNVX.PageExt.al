@@ -88,12 +88,12 @@ pageextension 50021 "SalesCrMemoSubformNVX" extends "Sales Cr. Memo Subform"
                         SetComplementaryFields();
 
                     if AllocationCodeVar <> '' then
-                        if Rec."Shortcut Dimension 1 Code" = '' then begin
+                        if Rec."Shortcut Dimension 2 Code" = '' then begin
                             AllocationCode.Get(AllocationCodeVar);
-                            Rec.Validate("Shortcut Dimension 1 Code", AllocationCode."Shortcut Dimension 1 Code");
+                            Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
                         end else begin
                             AllocationCode.Get(AllocationCodeVar);
-                            if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
+                            if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                                 Error(WrongDimErr);
                         end;
                 end;

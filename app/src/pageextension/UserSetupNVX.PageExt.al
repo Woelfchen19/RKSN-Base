@@ -1,4 +1,4 @@
-pageextension 50047 UserSetupNVX extends "User Setup"
+pageextension 50047 "UserSetupNVX" extends "User Setup"
 {
     layout
     {

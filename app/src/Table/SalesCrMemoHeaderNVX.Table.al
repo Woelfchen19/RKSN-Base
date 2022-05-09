@@ -1,4 +1,4 @@
-table 50033 SalesCrMemoHeaderNVX
+table 50033 "SalesCrMemoHeaderNVX"
 {
     DataClassification = CustomerContent;
 

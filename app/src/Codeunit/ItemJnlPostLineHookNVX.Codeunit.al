@@ -1,4 +1,4 @@
-codeunit 50027 ItemJnlPostLineHookNVX
+codeunit 50027 "ItemJnlPostLineHookNVX"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post Line", 'OnBeforeInsertItemLedgEntry', '', true, true)]
     local procedure OnBeforeInsertItemLedgEntry(var ItemLedgerEntry: Record "Item Ledger Entry"; ItemJournalLine: Record "Item Journal Line"; TransferItem: Boolean)

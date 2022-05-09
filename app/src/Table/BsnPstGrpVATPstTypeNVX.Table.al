@@ -1,4 +1,4 @@
-table 50005 BsnPstGrpVATPstTypeNVX
+table 50005 "BsnPstGrpVATPstTypeNVX"
 {
     DataClassification = CustomerContent;
 

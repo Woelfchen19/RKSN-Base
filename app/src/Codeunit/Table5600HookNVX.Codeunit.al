@@ -1,4 +1,4 @@
-codeunit 50019 Table5600HookNVX
+codeunit 50019 "Table5600HookNVX"
 {
     [EventSubscriber(ObjectType::Table, Database::"Fixed Asset", 'OnAfterValidateEvent', 'Global Dimension 2 Code', false, false)]
     local procedure CheckAllocationCodeDimension(var Rec: Record "Fixed Asset"; var xRec: Record "Fixed Asset")
@@ -13,7 +13,7 @@ codeunit 50019 Table5600HookNVX
 
         if FixedAssetNVX.Get(Rec."No.") and (FixedAssetNVX."Allocation Code" <> '') then begin
             AllocationCode.Get(FixedAssetNVX."Allocation Code");
-            if Rec."Global Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
+            if Rec."Global Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                 Error(WrongDimErr);
         end;
     end;

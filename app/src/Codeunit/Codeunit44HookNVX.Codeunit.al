@@ -1,4 +1,4 @@
-codeunit 50003 Codeunit44HookNVX
+codeunit 50003 "Codeunit44HookNVX"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::ReportManagement, 'OnAfterSubstituteReport', '', false, false)]
     local procedure SubstituteItemCopyReport(ReportId: Integer; var NewReportId: Integer)

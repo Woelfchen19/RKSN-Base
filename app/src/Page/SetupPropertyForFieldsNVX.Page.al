@@ -1,4 +1,4 @@
-page 50029 SetupPropertyForFieldsNVX
+page 50029 "SetupPropertyForFieldsNVX"
 {
     PageType = List;
     ApplicationArea = All;

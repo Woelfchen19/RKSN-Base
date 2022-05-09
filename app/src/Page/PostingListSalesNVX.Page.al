@@ -1,4 +1,4 @@
-page 50016 PostingListSalesNVX
+page 50016 "PostingListSalesNVX"
 {
     Caption = 'Backup dimensional distribution Sales', comment = 'DEA="Sicherung dim.Verteilungen Modul Verkauf"';
     PageType = List;

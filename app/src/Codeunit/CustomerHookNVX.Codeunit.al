@@ -1,4 +1,4 @@
-codeunit 50023 CustomerHookNVX
+codeunit 50023 "CustomerHookNVX"
 {
 
     [EventSubscriber(ObjectType::Table, Database::"Customer", 'OnAfterValidateEvent', 'Name', true, true)]

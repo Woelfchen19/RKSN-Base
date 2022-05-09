@@ -1,4 +1,4 @@
-codeunit 50008 AllocationMgtNVX
+codeunit 50008 "AllocationMgtNVX"
 {
     procedure LookupGenBusinessPostingGroup(FilterOption: Enum FilterOptionNVX): Code[20]
     var

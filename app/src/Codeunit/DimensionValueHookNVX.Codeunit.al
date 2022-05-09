@@ -1,4 +1,4 @@
-codeunit 50025 DimensionValueHookNVX
+codeunit 50025 "DimensionValueHookNVX"
 {
     [EventSubscriber(ObjectType::Table, Database::"Dimension Value", 'OnAfterInsertEvent', '', true, true)]
     local procedure OnAfterInsertEvent(var Rec: Record "Dimension Value"; RunTrigger: Boolean)

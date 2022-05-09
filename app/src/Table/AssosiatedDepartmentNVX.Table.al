@@ -1,4 +1,4 @@
-table 50047 AssosiatedDepartmentNVX
+table 50047 "AssosiatedDepartmentNVX"
 {
     DataClassification = CustomerContent;
     Caption = 'Assosiated Department', comment = 'DEA="Zugehörig KST"';

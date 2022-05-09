@@ -1,4 +1,4 @@
-page 50005 DimVATAllocNVX
+page 50005 "DimVATAllocNVX"
 {
 
     ApplicationArea = All;

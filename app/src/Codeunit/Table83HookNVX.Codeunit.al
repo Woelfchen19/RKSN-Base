@@ -1,4 +1,4 @@
-codeunit 50022 Table83HookNVX
+codeunit 50022 "Table83HookNVX"
 {
     [EventSubscriber(ObjectType::Table, Database::"Item Journal Line", 'OnAfterValidateEvent', 'Entry Type', true, true)]
     local procedure OnAfterValidateEntryType(rec: Record "Item Journal Line"; xrec: Record "Item Journal Line"; CurrfieldNo: Integer)

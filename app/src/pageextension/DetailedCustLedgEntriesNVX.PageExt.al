@@ -1,4 +1,4 @@
-pageextension 50054 DetailedCustLedgEntriesNVX extends "Detailed Cust. Ledg. Entries"
+pageextension 50054 "DetailedCustLedgEntriesNVX" extends "Detailed Cust. Ledg. Entries"
 {
     PromotedActionCategories = 'New,Process,Report,Entry,Sort', comment = 'DEA="Neu,Prozess,Bericht,Posten,Sortieren"';
 

@@ -1,4 +1,4 @@
-tableextension 50007 DetailedCustLedgEntryNVX extends "Detailed Cust. Ledg. Entry"
+tableextension 50007 "DetailedCustLedgEntryNVX" extends "Detailed Cust. Ledg. Entry"
 {
     fields
     {

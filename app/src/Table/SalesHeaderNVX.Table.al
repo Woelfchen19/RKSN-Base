@@ -1,4 +1,4 @@
-table 50036 SalesHeaderNVX
+table 50036 "SalesHeaderNVX"
 {
     fields
     {

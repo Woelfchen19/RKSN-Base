@@ -1,4 +1,4 @@
-table 50030 PurchCrMemoLineNVX
+table 50030 "PurchCrMemoLineNVX"
 {
     fields
     {

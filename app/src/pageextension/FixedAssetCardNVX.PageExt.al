@@ -46,15 +46,15 @@ pageextension 50028 "FixedAssetCardNVX" extends "Fixed Asset Card"
 
                     AllocationCode.Get(FixedAssetNVX."Allocation Code");
 
-                    if Rec."Global Dimension 1 Code" = '' then begin
-                        Rec."Global Dimension 1 Code" := AllocationCode."Shortcut Dimension 1 Code";
+                    if Rec."Global Dimension 2 Code" = '' then begin
+                        Rec."Global Dimension 2 Code" := AllocationCode."Shortcut Dimension 2 Code";
                         Rec.Modify();
                     end else
-                        if Rec."Global Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
+                        if Rec."Global Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                             if not Confirm(OverwriteDim2Qst) then
                                 Error(WrongDimErr)
                             else begin
-                                Rec.Validate("Global Dimension 1 Code", AllocationCode."Shortcut Dimension 1 Code");
+                                Rec.Validate("Global Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
                                 Rec.Modify(true);
                             end;
 

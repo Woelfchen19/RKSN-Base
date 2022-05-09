@@ -1,4 +1,4 @@
-table 50007 DimVATAllocNVX
+table 50007 "DimVATAllocNVX"
 {
     DataClassification = CustomerContent;
     LookupPageId = PreviewDimDistrNVX;

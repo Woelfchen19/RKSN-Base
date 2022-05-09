@@ -1,4 +1,4 @@
-pageextension 50002 CustomerCardNVX extends "Customer Card"
+pageextension 50002 "CustomerCardNVX" extends "Customer Card"
 {
     layout
     {

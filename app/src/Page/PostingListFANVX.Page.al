@@ -1,4 +1,4 @@
-page 50013 PostingListFANVX
+page 50013 "PostingListFANVX"
 {
     Caption = 'Backup dimensional distribution Fixed Asset', comment = 'DEA="Sicherung dim.Verteilungen Modul AnBu"';
     PageType = List;

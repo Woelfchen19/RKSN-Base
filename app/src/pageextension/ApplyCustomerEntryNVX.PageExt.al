@@ -1,4 +1,4 @@
-pageextension 50053 ApplyCustomerEntryNVX extends "Apply Customer Entries"
+pageextension 50053 "ApplyCustomerEntryNVX" extends "Apply Customer Entries"
 {
     PromotedActionCategories = 'New,Process,Report,Line,Entry,Sort', comment = 'DEA="Neu,Prozess,Bericht,Zeile,Posten,Sortieren"';
     layout

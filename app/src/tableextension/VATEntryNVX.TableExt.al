@@ -9,7 +9,14 @@ tableextension 50006 "VATEntryNVX" extends "VAT Entry"
             Editable = false;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
-        field(50001; DimensionSetIDNVX; Integer)
+        field(50001; GlobalDimension5CodeNVX; Code[20])
+        {
+            Caption = 'Global Dimension 2 Code';
+            CaptionClass = '1,1,5';
+            Editable = false;
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5));
+        }
+        field(50002; DimensionSetIDNVX; Integer)
         {
             Caption = 'Dimension Set ID';
             Editable = false;

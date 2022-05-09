@@ -1,4 +1,4 @@
-table 50039 SalesLineArchiveNVX
+table 50039 "SalesLineArchiveNVX"
 {
     Caption = 'Sales Line Archive', comment = 'DEA="Verkaufszeilenarchiv"';
     DrillDownPageId = "Sales Lines";

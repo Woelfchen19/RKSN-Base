@@ -1,4 +1,4 @@
-table 50010 DistrPurchLineNVX
+table 50010 "DistrPurchLineNVX"
 {
     Caption = 'Purchase Line', comment = 'DEA="Einkaufszeile"';
     LookupPageId = DimVATAllocNVX;

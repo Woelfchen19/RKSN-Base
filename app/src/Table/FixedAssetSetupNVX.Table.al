@@ -1,4 +1,4 @@
-table 50016 FixedAssetSetupNVX
+table 50016 "FixedAssetSetupNVX"
 {
     fields
     {

@@ -1,4 +1,4 @@
-table 50023 GLEntryNVX
+table 50023 "GLEntryNVX"
 {
     fields
     {

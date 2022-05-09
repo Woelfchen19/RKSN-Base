@@ -1,4 +1,4 @@
-enum 50002 RKSSalesDocumentTypeNVX
+enum 50002 "RKSSalesDocumentTypeNVX"
 {
     Extensible = true;
 

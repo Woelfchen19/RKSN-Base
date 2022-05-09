@@ -1,4 +1,4 @@
-table 50020 GenJournalBatchNVX
+table 50020 "GenJournalBatchNVX"
 {
     fields
     {
@@ -17,6 +17,12 @@ table 50020 GenJournalBatchNVX
         {
             Caption = 'No dimensional distribution', comment = 'DEA="dim.Verteilungsprozess wiederk. deaktiviert"';
             DataClassification = CustomerContent;
+        }
+        field(20; ShortcutDimension5CodeNVX; Code[20])
+        {
+            CaptionClass = '1,2,5';
+            Caption = 'Shortcut Dimension 5 Code';
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
         }
     }
 

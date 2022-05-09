@@ -1,4 +1,4 @@
-table 50013 FAJnlLineNVX
+table 50013 "FAJnlLineNVX"
 {
     fields
     {

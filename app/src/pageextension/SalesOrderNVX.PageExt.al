@@ -1,4 +1,4 @@
-pageextension 50024 SalesOrderNVX extends "Sales Order"
+pageextension 50024 "SalesOrderNVX" extends "Sales Order"
 {
     layout
     {

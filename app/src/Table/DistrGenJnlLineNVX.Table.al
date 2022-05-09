@@ -1,4 +1,4 @@
-table 50009 DistrGenJnlLineNVX
+table 50009 "DistrGenJnlLineNVX"
 {
     Caption = 'Gen. Journal Line', comment = 'DEA="Fibu Buch.-Blattzeile"';
     Permissions = tabledata "Sales Invoice Header" = r,

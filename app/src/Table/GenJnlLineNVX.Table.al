@@ -1,4 +1,4 @@
-table 50019 GenJnlLineNVX
+table 50019 "GenJnlLineNVX"
 {
     fields
     {
@@ -23,6 +23,12 @@ table 50019 GenJnlLineNVX
         {
             DataClassification = CustomerContent;
             Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
+        }
+        field(20; ShortcutDimension5CodeNVX; Code[20])
+        {
+            CaptionClass = '1,2,5';
+            Caption = 'Shortcut Dimension 5 Code';
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
         }
         field(30; DoNotSplit; Boolean)
         {
@@ -64,5 +70,15 @@ table 50019 GenJnlLineNVX
         "Journal Batch Name" := JournalBatchName;
         "Line No." := LineNo;
         Insert();
+    end;
+
+    procedure SetBusinessFieldNVX(var GenJournalLine: Record "Gen. Journal Line")
+    var
+        AssosiatedDepartment: Record AssosiatedDepartmentNVX;
+    begin
+        AssosiatedDepartment.Reset();
+        AssosiatedDepartment.SetRange("Shortcut Dimension 1 Code", GenJournalLine."Shortcut Dimension 1 Code");
+        if AssosiatedDepartment.FindFirst() then
+            GenJournalLine.ValidateShortcutDimCode(5, AssosiatedDepartment."Shortcut Dimension 5 Code");
     end;
 }

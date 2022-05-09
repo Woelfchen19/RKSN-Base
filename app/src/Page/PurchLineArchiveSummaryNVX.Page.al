@@ -1,4 +1,4 @@
-page 50024 PurchLineArchiveSummaryNVX
+page 50024 "PurchLineArchiveSummaryNVX"
 {
     Caption = 'Purchase Line Archive Summary', comment = 'DEA="Einkaufszeilenarchiv Zusammenfassung"';
     PageType = ListPart;

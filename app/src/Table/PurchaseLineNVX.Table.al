@@ -1,4 +1,4 @@
-table 50029 PurchaseLineNVX
+table 50029 "PurchaseLineNVX"
 {
     fields
     {

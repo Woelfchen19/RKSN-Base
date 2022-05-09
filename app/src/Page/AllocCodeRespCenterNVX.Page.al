@@ -1,4 +1,4 @@
-page 50004 AllocCodeRespCenterNVX
+page 50004 "AllocCodeRespCenterNVX"
 {
     Caption = 'Allocation Codes/ Resp. Center', comment = 'DEA="Verteilungscodes/ Zuständigkeitseinh."';
     PageType = List;

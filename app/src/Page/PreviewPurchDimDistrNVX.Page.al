@@ -1,4 +1,4 @@
-page 50019 PreviewPurchDimDistrNVX
+page 50019 "PreviewPurchDimDistrNVX"
 {
     Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
     PageType = List;

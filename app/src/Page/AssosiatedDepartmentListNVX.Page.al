@@ -1,4 +1,4 @@
-page 50030 AssosiatedDepartmentListNVX
+page 50030 "AssosiatedDepartmentListNVX"
 {
 
     ApplicationArea = All;

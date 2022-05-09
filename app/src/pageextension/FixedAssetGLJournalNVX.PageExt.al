@@ -27,16 +27,18 @@ pageextension 50029 "FixedAssetGLJournalNVX" extends "Fixed Asset G/L Journal"
                             GenJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
                             GenJnlLineNVX."Line No." := Rec."Line No.";
                             GenJnlLineNVX."Allocation Code" := AllocationCodeVar;
+                            GenJnlLineNVX.ShortcutDimension5CodeNVX := ShortCutDimension5Code;
                             GenJnlLineNVX.Insert();
                         end else begin
                             GenJnlLineNVX."Allocation Code" := AllocationCodeVar;
+                            GenJnlLineNVX.ShortcutDimension5CodeNVX := ShortCutDimension5Code;
                             GenJnlLineNVX.Modify();
                         end;
 
                     if AllocationCodeVar <> '' then
-                        if Rec."Shortcut Dimension 1 Code" = '' then begin
+                        if Rec."Shortcut Dimension 2 Code" = '' then begin
                             AllocationCode.Get(AllocationCodeVar);
-                            Rec.Validate("Shortcut Dimension 1 Code", AllocationCode."Shortcut Dimension 1 Code");
+                            Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
                             if Rec."Line No." > 0 then begin
                                 AppMgt.InsertDimValue(AllocationCode);
                                 AppMgt.ModifyDimensionSetEntry(Rec, AllocationCode.Code);
@@ -44,10 +46,9 @@ pageextension 50029 "FixedAssetGLJournalNVX" extends "Fixed Asset G/L Journal"
                             end;
                         end else begin
                             AllocationCode.Get(AllocationCodeVar);
-                            if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
+                            if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                                 Error(WrongDimErr);
                         end;
-
                     if (Rec."Account Type" = Rec."Account Type"::"Fixed Asset") and (Rec."Account No." <> '') then
                         if FixedAssetNVX.Get(Rec."Account No.") and (FixedAssetNVX."Allocation Code" <> AllocationCodeVar) then
                             Error(WrongDim2Err);
@@ -96,15 +97,18 @@ pageextension 50029 "FixedAssetGLJournalNVX" extends "Fixed Asset G/L Journal"
             GenJnlLineNVX."Journal Template Name" := Rec."Journal Template Name";
             GenJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
             GenJnlLineNVX."Line No." := Rec."Line No.";
+            GenJnlLineNVX.ShortcutDimension5CodeNVX := ShortCutDimension5Code;
             GenJnlLineNVX.Insert();
             Clear(AllocationCodeVar);
-        end else
+        end else begin
             AllocationCodeVar := GenJnlLineNVX."Allocation Code";
+            ShortCutDimension5Code := GenJnlLineNVX.ShortcutDimension5CodeNVX;
+        end;
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean);
     begin
-        Clear(AllocationCodeVar);
+        AllocationCodeVar := '';
     end;
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean;
@@ -115,6 +119,7 @@ pageextension 50029 "FixedAssetGLJournalNVX" extends "Fixed Asset G/L Journal"
             GenJnlLineNVX."Journal Batch Name" := Rec."Journal Batch Name";
             GenJnlLineNVX."Line No." := Rec."Line No.";
             GenJnlLineNVX."Allocation Code" := AllocationCodeVar;
+            GenJnlLineNVX.ShortcutDimension5CodeNVX := ShortCutDimension5Code;
             GenJnlLineNVX.Insert();
         end;
         exit(true);
@@ -123,6 +128,7 @@ pageextension 50029 "FixedAssetGLJournalNVX" extends "Fixed Asset G/L Journal"
     var
         GenJnlLineNVX: Record GenJnlLineNVX;
         AllocationCodeVar: Code[10];
+        ShortCutDimension5Code: Code[20];
 
     [IntegrationEvent(false, false)]
     local procedure OnPreviewDimDistributionNVX(var GenJnlLine: Record "Gen. Journal Line")

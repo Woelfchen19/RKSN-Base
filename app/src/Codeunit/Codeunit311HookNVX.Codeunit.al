@@ -1,4 +1,4 @@
-codeunit 50000 Codeunit311HookNVX
+codeunit 50000 "Codeunit311HookNVX"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item-Check Avail.", 'OnBeforeShowWarningForThisItem', '', false, false)]
     local procedure HandleStockOutWarning(Item: Record Item; var ShowWarning: Boolean; var IsHandled: Boolean)

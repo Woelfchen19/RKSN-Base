@@ -1,4 +1,4 @@
-pageextension 50055 PostedSalesShipmentsNVX extends "Posted Sales Shipments"
+pageextension 50055 "PostedSalesShipmentsNVX" extends "Posted Sales Shipments"
 {
     layout
     {

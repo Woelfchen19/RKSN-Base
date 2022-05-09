@@ -1,4 +1,4 @@
-pageextension 50057 ItemLedgerEntriesNVX extends "Item Ledger Entries"
+pageextension 50057 "ItemLedgerEntriesNVX" extends "Item Ledger Entries"
 {
     layout
     {

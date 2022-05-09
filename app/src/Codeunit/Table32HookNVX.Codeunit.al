@@ -1,4 +1,4 @@
-codeunit 50013 Table32HookNVX
+codeunit 50013 "Table32HookNVX"
 {
     [EventSubscriber(ObjectType::Table, Database::"Item Ledger Entry", 'OnBeforeVerifyOnInventory', '', false, false)]
     local procedure VerifyOnInventory(var ItemLedgerEntry: Record "Item Ledger Entry"; var IsHandled: Boolean)

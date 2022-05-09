@@ -23,10 +23,10 @@
           <note from="Developer" annotates="general" priority="2">DEA="Zuständigkeitseinheitencode"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table AllocationCodeNVX - Field Resp. Center - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2334602911 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table AllocationCodeNVX - Field Shortcut Dimension 1 Code - Property Caption</note>
+        <trans-unit id="Table 2334602911 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AllocationCodeNVX - Field Shortcut Dimension 2 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4083095369 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Header</source>
@@ -5163,6 +5163,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineNVX - Field Line No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 623263038 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 623263038 - Field 1364463381 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Posting Type</source>
           <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
@@ -5182,6 +5187,11 @@
           <source>No dimensional distribution</source>
           <note from="Developer" annotates="general" priority="2">DEA="dim.Verteilungsprozess wiederk. deaktiviert"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table GenJournalBatchNVX - Field No Dim Distribution - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1283864707 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GenJournalBatchNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3896373660 - Method 279053644 - NamedType 2597213558" size-unit="char" translate="yes" xml:space="preserve">
           <source>If 'No Item' is selected then field 'Inventory Posting Group' must be empty</source>
@@ -11423,6 +11433,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="dim.Verteilungsprozess wiederk. deaktiviert"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GeneralJournalBatchesNVX - Control NoDimDistributionNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 192283119 - Control 1875382756 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3603089623">
+          <source>Specifies the value of the Shortcut Dimension 5 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GeneralJournalBatchesNVX - Control ShortcutDimension5CodeNVX - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1795213297 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
           <source>Preview dimensional distribution</source>
           <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
@@ -12418,6 +12433,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VatEntriesNVX - Control GlobalDimension2CodeNVX - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2830905203 - Control 2219498941 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
+          <source>Specifies the value of the Global Dimension 2 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VatEntriesNVX - Control GlobalDimension5CodeNVX - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1685173316 - Control 3251619654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 434101636">
           <source>Purchase VAT as Expense</source>
           <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand"</note>
@@ -12752,6 +12772,11 @@
           <source>Global Dimension 2 Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATEntryNVX - Field GlobalDimension2CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2146477609 - Field 2219498941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
+          <source>Global Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATEntryNVX - Field GlobalDimension5CodeNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 3877659762 - EnumValue 3263198591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Blanket Order</source>

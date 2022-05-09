@@ -1,4 +1,4 @@
-table 50035 SalesHeaderArchiveNVX
+table 50035 "SalesHeaderArchiveNVX"
 {
     Caption = 'Sales Header';
     DataCaptionFields = "No.", "Sell-to Customer Name";

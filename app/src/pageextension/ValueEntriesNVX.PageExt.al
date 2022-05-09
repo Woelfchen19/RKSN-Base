@@ -1,4 +1,4 @@
-pageextension 50058 ValueEntriesNVX extends "Value Entries"
+pageextension 50058 "ValueEntriesNVX" extends "Value Entries"
 {
     layout
     {

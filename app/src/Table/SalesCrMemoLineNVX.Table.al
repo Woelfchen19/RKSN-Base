@@ -1,4 +1,4 @@
-table 50034 SalesCrMemoLineNVX
+table 50034 "SalesCrMemoLineNVX"
 {
     fields
     {

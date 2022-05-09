@@ -1,4 +1,4 @@
-pageextension 50004 DimValueListNVX extends "Dimension Value List"
+pageextension 50004 "DimValueListNVX" extends "Dimension Value List"
 {
     Editable = false;
 

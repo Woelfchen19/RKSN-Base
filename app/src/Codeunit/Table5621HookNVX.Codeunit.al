@@ -1,4 +1,4 @@
-codeunit 50020 Table5621HookNVX
+codeunit 50020 "Table5621HookNVX"
 {
     [EventSubscriber(ObjectType::Table, Database::"FA Journal Line", 'OnAfterDeleteEvent', '', false, false)]
     local procedure DeleteAccompaniedRecord(var Rec: Record "FA Journal Line"; RunTrigger: Boolean)
@@ -33,10 +33,10 @@ codeunit 50020 Table5621HookNVX
 
             AllocationCode.Get(FixedAssetNVX."Allocation Code");
             if Rec."Shortcut Dimension 2 Code" = '' then begin
-                Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 1 Code");
+                Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
                 Rec.Modify();
             end else
-                if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
+                if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                     Error(WrongDimErr);
         end;
     end;
@@ -54,11 +54,11 @@ codeunit 50020 Table5621HookNVX
 
             //Get or check Dim2
             AllocationCode.Get(FixedAssetNVX."Allocation Code");
-            if Rec."Shortcut Dimension 1 Code" = '' then begin
-                Rec.Validate("Shortcut Dimension 1 Code", AllocationCode."Shortcut Dimension 1 Code");
+            if Rec."Shortcut Dimension 2 Code" = '' then begin
+                Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
                 if Rec.Modify() then; //in case rec is not inserted yet
             end else
-                if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
+                if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                     Error(WrongDimErr);
 
             if Rec."Line No." = 0 then
@@ -84,11 +84,11 @@ codeunit 50020 Table5621HookNVX
     begin
         if FAJnlLineNVX.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.") and (FAJnlLineNVX."Allocation Code" <> '') then begin
             AllocationCode.Get(FAJnlLineNVX."Allocation Code");
-            if Rec."Shortcut Dimension 1 Code" <> AllocationCode."Shortcut Dimension 1 Code" then
+            if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                 Error(WrongDimErr);
         end;
 
-        if FixedAsset.Get(Rec."FA No.") and (FixedAsset."Global Dimension 1 Code" <> Rec."Shortcut Dimension 1 Code") then
+        if FixedAsset.Get(Rec."FA No.") and (FixedAsset."Global Dimension 2 Code" <> Rec."Shortcut Dimension 2 Code") then
             Error(WrongDim2Err);
     end;
 }

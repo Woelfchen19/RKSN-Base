@@ -1,4 +1,4 @@
-codeunit 50026 AppMgtNVX
+codeunit 50026 "AppMgtNVX"
 {
     procedure SetDimensionsVisibility(
         ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";

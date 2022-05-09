@@ -1,4 +1,4 @@
-table 50008 DistrFAJnlLineNVX
+table 50008 "DistrFAJnlLineNVX"
 {
     Caption = 'FA Journal Line', comment = 'DEA="Anlagen Buch.-Blattzeile"';
     LookupPageId = PreviewFADimDistrNVX;

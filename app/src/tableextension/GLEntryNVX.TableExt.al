@@ -1,4 +1,4 @@
-tableextension 50002 GLEntryNVX extends "G/L Entry"
+tableextension 50002 "GLEntryNVX" extends "G/L Entry"
 {
     fields
     {
@@ -80,7 +80,7 @@ tableextension 50002 GLEntryNVX extends "G/L Entry"
                 DimensionManagement.ValidateShortcutDimValues(9, ShortcutDimension9CodeNVX, "Dimension Set ID");
             end;
         }
-        field(50007; "ShortcutDimension10CodeNVX"; Code[20])
+        field(50007; ShortcutDimension10CodeNVX; Code[20])
         {
             CaptionClass = '1,2,10';
             Caption = 'Shortcut Dimension 10 Code';
