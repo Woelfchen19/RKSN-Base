@@ -1,4 +1,4 @@
-pageextension 50004 "DimValueListNVX" extends "Dimension Value List"
+pageextension 50004 DimValueListNVX extends "Dimension Value List"
 {
     Editable = false;
 
@@ -10,50 +10,50 @@ pageextension 50004 "DimValueListNVX" extends "Dimension Value List"
             {
                 ApplicationArea = All;
                 Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
+                Editable = false;
                 TableRelation = VATPostingTypeNVX.Code;
                 Visible = PostingTypeVisible;
-                Editable = false;
             }
             field(VATPostingTypeDescNVX; DimValueNVX."VAT Posting Type Desc")
             {
-                Caption = 'VAT Posting Type Description', comment = 'DEA="USt.-Buchungsart Beschreibung"';
-                Visible = PostingTypeVisible;
                 ApplicationArea = All;
+                Caption = 'VAT Posting Type Description', comment = 'DEA="USt.-Buchungsart Beschreibung"';
                 Editable = false;
+                Visible = PostingTypeVisible;
             }
             field(DimValueNVXShortcutDimension1CodeNVX; DimValueNVX."Shortcut Dimension 1 Code")
             {
                 ApplicationArea = All;
-                CaptionClass = '1,2,1';
                 Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
+                CaptionClass = '1,2,1';
+                Editable = false;
                 TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
                 Visible = IsOE;
-                Editable = false;
             }
             field(DimValueNVXShortcutDimension2CodeNVX; DimValueNVX."Shortcut Dimension 2 Code")
             {
                 ApplicationArea = All;
-                CaptionClass = '1,2,2';
                 Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
+                CaptionClass = '1,2,2';
+                Editable = false;
                 TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
                 Visible = IsOE;
-                Editable = false;
             }
-            field(DimValueNVXShortcutDimension5CodeNVX; DimValueNVX."Shortcut Dimension 5 Code")
+            field(DimValueNVXShortcutDimension5CodeNVX; Rec.ShortcutDimension5CodeNVX)
             {
                 ApplicationArea = All;
-                CaptionClass = '1,2,5';
                 Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimensionscode 5"';
+                CaptionClass = '1,2,5';
+                Editable = true;
                 TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5));
                 Visible = DimValueNVXShortcutDimension5CodeVisible;
-                Editable = true;
             }
-            field(AssociatedNVX; DimValueNVX.Assosiated)
+            field(AssociatedNVX; Rec.AssociatedNVX)
             {
                 ApplicationArea = All;
                 Caption = 'Assosiated', comment = 'DEA="zugehörig"';
-                Visible = AssosiatedVisible;
                 Editable = true;
+                Visible = AssosiatedVisible;
             }
         }
     }
@@ -77,10 +77,10 @@ pageextension 50004 "DimValueListNVX" extends "Dimension Value List"
     end;
 
     var
-        GLSetup: Record "General Ledger Setup";
         DimValueNVX: Record DimValueNVX;
+        GLSetup: Record "General Ledger Setup";
+        AssosiatedVisible: Boolean;
+        DimValueNVXShortcutDimension5CodeVisible: Boolean;
         IsOE: Boolean;
         PostingTypeVisible: Boolean;
-        DimValueNVXShortcutDimension5CodeVisible: Boolean;
-        AssosiatedVisible: Boolean;
 }

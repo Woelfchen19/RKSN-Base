@@ -47,5 +47,21 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
             Caption = 'Reminder Run authorized', comment = 'DEA="Mahnlauf berechtigt"';
             DataClassification = CustomerContent;
         }
+        field(50017; EditBusFieldCustLedgerEntryNVX; Boolean)
+        {
+            Caption = 'EDIT BusinessField CustLedgerEntry', comment = 'DEA="EDIT Geschäftsfeld Debitorenposten"';
+        }
+        field(50018; ChangeCodeDimBusinessFieldNVX; Boolean)
+        {
+            Caption = 'EDIT BusinessField CustLedgerEntry', comment = 'DEA="Änderung Code Dim.Geschäftsfeld erlaubt"';
+        }
+        field(50019; SetupDynamicFieldsNVX; Boolean)
+        {
+            Caption = 'Setup dynamic Fields', comment = 'DEA="setup dynamische Felder erlaubt"';
+        }
+        field(50020; AllCollectedAccountsNVX; Boolean)
+        {
+            Caption = 'All Collected Accounts', comment = 'DEA="Alle Sammelkto"';
+        }
     }
 }

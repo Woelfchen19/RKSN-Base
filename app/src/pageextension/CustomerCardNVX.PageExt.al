@@ -33,12 +33,17 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
                 field(PBShortcutDimension9CodeNVX; PBShortcutDimension9Code)
                 {
                     ApplicationArea = All;
-                    CaptionClass = '1,2,9';
                     Importance = Additional;
-                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
+                    CaptionClass = '1,2,9';
                     ToolTip = '', comment = 'DEA=""';
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        PBShortcutDimension9Code :=
+                            AppMgt.OnLookupByBusinessFieldDimension(PBShortcutDimension5Code, 9);
+                    end;
                 }
-                field(PBReminderTermsCodeNVX; PBReminderTermsCode)
+                field(PBHReminderTermsCodeNVX; PBReminderTermsCode)
                 {
                     ApplicationArea = All;
                     Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
@@ -50,8 +55,8 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
                 {
                     ApplicationArea = All;
                     Caption = 'Payment Terms Code', comment = 'DEA="Zlg. Bedingungscode"';
-                    Importance = Additional;
                     TableRelation = "Payment Terms";
+                    Importance = Additional;
                     ToolTip = '', comment = 'DEA=""';
                 }
             }
@@ -73,8 +78,13 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
                     ApplicationArea = All;
                     Importance = Additional;
                     CaptionClass = '1,2,9';
-                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        RDShortcutDimension9Code :=
+                            AppMgt.OnLookupByBusinessFieldDimension(RDShortcutDimension5Code, 9);
+                    end;
                 }
                 field(RDHReminderTermsCodeNVX; RDReminderTermsCode)
                 {
@@ -111,8 +121,13 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
                     ApplicationArea = All;
                     CaptionClass = '1,2,9';
                     Importance = Additional;
-                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        RHShortcutDimension9Code :=
+                            AppMgt.OnLookupByBusinessFieldDimension(RHShortcutDimension5Code, 9);
+                    end;
                 }
                 field(RHReminderTermsCodeNVX; RHReminderTermsCode)
                 {
@@ -149,8 +164,13 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
                     ApplicationArea = All;
                     Importance = Additional;
                     CaptionClass = '1,2,9';
-                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        EAShortcutDimension9Code :=
+                            AppMgt.OnLookupByBusinessFieldDimension(EAShortcutDimension5Code, 9);
+                    end;
                 }
                 field(EAReminderTermsCodeNVX; EAReminderTermsCode)
                 {
@@ -187,8 +207,13 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
                     ApplicationArea = All;
                     CaptionClass = '1,2,9';
                     Importance = Additional;
-                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        SOShortcutDimension9Code :=
+                            AppMgt.OnLookupByBusinessFieldDimension(SOShortcutDimension5Code, 9);
+                    end;
                 }
                 field(SOReminderTermsCodeNVX; SOReminderTermsCode)
                 {
@@ -225,8 +250,13 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
                     ApplicationArea = All;
                     Importance = Additional;
                     CaptionClass = '1,2,9';
-                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
                     ToolTip = '', comment = 'DEA=""';
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        EVShortcutDimension9Code :=
+                            AppMgt.OnLookupByBusinessFieldDimension(EVShortcutDimension5Code, 9);
+                    end;
                 }
                 field(EVReminderTermsCodeNVX; EVReminderTermsCode)
                 {
@@ -257,6 +287,11 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
     trigger OnClosePage()
     begin
         ModifySetupBusinessField();
+    end;
+
+    trigger OnAfterGetRecord()
+    begin
+        SetupBusinessField.CalcFields("Dimension Name");
     end;
 
     local procedure AssignBusinessFields(OnClosePage: Boolean)
@@ -391,12 +426,13 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
     end;
 
     var
+        DimensionValue: Record "Dimension Value";
         SetupBusinessField: Record SetupBusinessFieldNVX;
         UserSetup: Record "User Setup";
         GLSetup: Record "General Ledger Setup";
-        DimensionValue: Record "Dimension Value";
-
+        AppMgt: Codeunit AppMgtNVX;
         PBShortcutDimension5Code: Code[20];
+
         RDShortcutDimension5Code: Code[20];
         RHShortcutDimension5Code: Code[20];
         EAShortcutDimension5Code: Code[20];

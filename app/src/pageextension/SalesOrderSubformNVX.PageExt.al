@@ -9,8 +9,10 @@ pageextension 50025 "SalesOrderSubformNVX" extends "Sales Order Subform"
                 ApplicationArea = All;
                 Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
                 CaptionClass = '1338,1'; //= Sales + Dim Name;
+                Editable = false;
                 TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
-                Editable = PageEditable;
+                Visible = false;
+
                 trigger OnValidate();
                 var
                     Item: Record Item;
@@ -33,7 +35,7 @@ pageextension 50025 "SalesOrderSubformNVX" extends "Sales Order Subform"
                 Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
                 CaptionClass = '1338,3'; //= Sales + Dim Name
                 TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
-                Editable = PageEditable;
+
                 trigger OnValidate();
                 var
                     Item: Record Item;
@@ -84,8 +86,8 @@ pageextension 50025 "SalesOrderSubformNVX" extends "Sales Order Subform"
             {
                 ApplicationArea = All;
                 Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
-                TableRelation = AllocationCodeNVX.Code;
                 Editable = PageEditable;
+                TableRelation = AllocationCodeNVX.Code;
                 trigger OnValidate();
                 var
                     AllocationCode: Record AllocationCodeNVX;
@@ -147,25 +149,21 @@ pageextension 50025 "SalesOrderSubformNVX" extends "Sales Order Subform"
             field(SalesLineNVXCustAmountNVX; SalesLineNVX."Cust. Amount")
             {
                 ApplicationArea = All;
-                Editable = false;
                 Caption = 'Cust. Amount', comment = 'DEA="Deb. Betrag"';
+                Editable = false;
             }
 
             field(ShortcutDimCode9NVX; ShortcutDimCodeVisible[9])
             {
                 ApplicationArea = All;
                 CaptionClass = '1,2,9';
-                Editable = DimEditable9;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 9 Code field.';
-                Visible = DimVisible9;
             }
             field(ShortcutDimCode10NVX; ShortcutDimCodeVisible[10])
             {
                 ApplicationArea = All;
                 CaptionClass = '1,2,10';
-                Editable = DimEditable10;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 10 Code field.';
-                Visible = DimVisible10;
             }
 
         }
@@ -207,23 +205,18 @@ pageextension 50025 "SalesOrderSubformNVX" extends "Sales Order Subform"
         CompFieldsEditable: Boolean;
         GBPGEditable: Boolean;
         PageEditable: Boolean;
+        ShortcutDimCodeVisible: array[10] of Boolean;
         AllocationCodeVar: Code[10];
         CompGenBusPstGrpWES: Code[20];
         ShortcutDimCode1: Code[20];
         ShortcutDimCode3: Code[20];
         CustUnitPrice: Decimal;
-        ShortcutDimCodeVisible: array[10] of Boolean;
-        DimEditable9: Boolean;
-        DimEditable10: Boolean;
-        DimVisible9: Boolean;
-        DimVisible10: Boolean;
 
     trigger OnAfterGetRecord()
     begin
         SalesLineNVX.GetDefinition(Rec."Document Type", Rec."Document No.", Rec."Line No.");
         SalesHeaderNVX.GetDefinition(Rec."Document Type", Rec."Document No.");
         SetGlobalVariables();
-        PageEditable := CurrPage.Editable();
 
         if IsCompositionNVX() then begin
             GBPGEditable := false;
@@ -253,15 +246,6 @@ pageextension 50025 "SalesOrderSubformNVX" extends "Sales Order Subform"
         exit(true);
     end;
 
-    local procedure SetGlobalVariables()
-    begin
-        AllocationCodeVar := SalesLineNVX."Allocation Code";
-        ShortcutDimCode1 := SalesLineNVX."Shortcut Dimension 1 Code";
-        ShortcutDimCode3 := SalesLineNVX."Shortcut Dimension 3 Code";
-        CustUnitPrice := SalesLineNVX."Cust. Unit Price";
-        CompGenBusPstGrpWES := SalesLineNVX."Comp Gen. Bus. Pst Grp WES";
-    end;
-
     local procedure ClearGlobalVariables()
     begin
         Clear(SalesLineNVX);
@@ -270,6 +254,15 @@ pageextension 50025 "SalesOrderSubformNVX" extends "Sales Order Subform"
         Clear(ShortcutDimCode3);
         Clear(CustUnitPrice);
         Clear(CompGenBusPstGrpWES)
+    end;
+
+    local procedure IsCompositionNVX(): Boolean
+    begin
+        InvSetupNVX.Get();
+        if InvSetupNVX."Composition Customer" = Rec."Sell-to Customer No." then
+            exit(true)
+        else
+            exit(false);
     end;
 
     local procedure SetComplementaryFields()
@@ -283,12 +276,12 @@ pageextension 50025 "SalesOrderSubformNVX" extends "Sales Order Subform"
         if SalesLineNVX.Modify() then;
     end;
 
-    local procedure IsCompositionNVX(): Boolean
+    local procedure SetGlobalVariables()
     begin
-        InvSetupNVX.Get();
-        if InvSetupNVX."Composition Customer" = Rec."Sell-to Customer No." then
-            exit(true)
-        else
-            exit(false);
+        AllocationCodeVar := SalesLineNVX."Allocation Code";
+        ShortcutDimCode1 := SalesLineNVX."Shortcut Dimension 1 Code";
+        ShortcutDimCode3 := SalesLineNVX."Shortcut Dimension 3 Code";
+        CustUnitPrice := SalesLineNVX."Cust. Unit Price";
+        CompGenBusPstGrpWES := SalesLineNVX."Comp Gen. Bus. Pst Grp WES";
     end;
 }

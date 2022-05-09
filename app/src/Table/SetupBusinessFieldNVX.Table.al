@@ -34,6 +34,13 @@ table 50041 "SetupBusinessFieldNVX"
             DataClassification = CustomerContent;
             TableRelation = "Payment Terms";
         }
+        field(6; "Dimension Name"; Text[50])
+        {
+            Caption = 'Dimension Name', comment = 'DEA="Dimensionname"';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = Lookup(Dimension.Name WHERE(Code = FIELD("Shortcut Dimension 9 Code")));
+        }
         field(10; Activ; Boolean)
         {
             Caption = 'Activ', comment = 'DEA="Aktiv"';

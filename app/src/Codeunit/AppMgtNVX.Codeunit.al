@@ -235,6 +235,21 @@ codeunit 50026 "AppMgtNVX"
         end;
     end;
 
+    procedure OnLookupByBusinessFieldDimension(BusinessFieldDimension: Code[20]; GlobalDimensionNo: integer): Code[20]
+    var
+        DimensionValue: Record "Dimension Value";
+    begin
+        DimensionValue.Reset();
+        DimensionValue.FilterGroup(2);
+        DimensionValue.SetRange("Global Dimension No.", GlobalDimensionNo);
+        DimensionValue.SetRange(Blocked, false);
+        DimensionValue.SetRange(ShortcutDimension5CodeNVX, BusinessFieldDimension);
+        DimensionValue.FilterGroup(0);
+
+        if PAGE.RUNMODAL(PAGE::"Dimension Value List", DimensionValue) = Action::LookupOK then
+            exit(DimensionValue.Code);
+    end;
+
     var
         GLSetup: Record "General Ledger Setup";
         SetupPropertyForFields: Record SetupPropertyForFieldsNVX;
