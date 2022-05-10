@@ -3,7 +3,7 @@ table 50041 "SetupBusinessFieldNVX"
     DataClassification = CustomerContent;
     fields
     {
-        field(1; CustomerNo; Code[20])
+        field(1; "Customer No."; Code[20])
         {
             Caption = 'Customer No.', comment = 'DEA="Debitornr."';
             DataClassification = CustomerContent;
@@ -34,12 +34,16 @@ table 50041 "SetupBusinessFieldNVX"
             DataClassification = CustomerContent;
             TableRelation = "Payment Terms";
         }
-        field(6; "Dimension Name"; Text[50])
+        field(6; "Payment Method Code"; Code[10])
         {
-            Caption = 'Dimension Name', comment = 'DEA="Dimensionname"';
-            Editable = false;
-            FieldClass = FlowField;
-            CalcFormula = Lookup(Dimension.Name WHERE(Code = FIELD("Shortcut Dimension 9 Code")));
+            Caption = 'Payment Method Code', comment = 'DEA="Zahlungsformcode"';
+            DataClassification = CustomerContent;
+            TableRelation = "Payment Method";
+        }
+        field(7; "Preferred BankAccount Code"; Code[20])
+        {
+            Caption = 'Preferred Bank Account Code', comment = 'DEA="Bevorzugter Bankkontocode"';
+            TableRelation = "Customer Bank Account".Code WHERE("Customer No." = FIELD("Customer No."));
         }
         field(10; Activ; Boolean)
         {
@@ -55,11 +59,11 @@ table 50041 "SetupBusinessFieldNVX"
 
     keys
     {
-        key(Key1; "CustomerNo", "Shortcut Dimension 5 Code")
+        key(Key1; "Customer No.", "Shortcut Dimension 5 Code")
         {
             Clustered = true;
         }
-        key(Key2; CustomerNo, Sort)
+        key(Key2; "Customer No.", Sort)
         {
 
         }
@@ -68,7 +72,7 @@ table 50041 "SetupBusinessFieldNVX"
     trigger OnInsert()
     begin
         SetSorting();
-        Customer.Get(CustomerNo);
+        Customer.Get("Customer No.");
         "Payment Terms Code" := Customer."Payment Terms Code";
     end;
 

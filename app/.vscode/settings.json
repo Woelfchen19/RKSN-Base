@@ -10,5 +10,6 @@
         "${PerTenantExtensionCop}",
         "${AppSourceCop}"
     ],
-    "al.ruleSetPath": ".vscode\\ruleset.json"
+    "al.ruleSetPath": ".vscode\\ruleset.json",
+    "workbench.editor.showTabs": true
 }

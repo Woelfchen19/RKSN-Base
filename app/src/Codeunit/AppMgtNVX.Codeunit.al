@@ -244,10 +244,94 @@ codeunit 50026 "AppMgtNVX"
         DimensionValue.SetRange("Global Dimension No.", GlobalDimensionNo);
         DimensionValue.SetRange(Blocked, false);
         DimensionValue.SetRange(ShortcutDimension5CodeNVX, BusinessFieldDimension);
+        if GlobalDimensionNo <> 9 then
+            DimensionValue.SetRange("Dimension Value Type", DimensionValue."Dimension Value Type"::Standard);
         DimensionValue.FilterGroup(0);
 
         if PAGE.RUNMODAL(PAGE::"Dimension Value List", DimensionValue) = Action::LookupOK then
             exit(DimensionValue.Code);
+    end;
+
+    procedure ShowPagePaymentTerms(Token: Code[20]): Code[10]
+    var
+        PaymentTerms: Record "Payment Terms";
+        PaymentTermsPage: Page "Payment Terms";
+    begin
+        PaymentTerms.Reset();
+        PaymentTerms.FilterGroup(2);
+        PaymentTerms.SetFilter(Code, '%1', Token + '*');
+        PaymentTerms.FilterGroup(0);
+        PaymentTerms.FindSet();
+
+        PaymentTermsPage.SetTableView(PaymentTerms);
+        PaymentTermsPage.Editable(false);
+        PaymentTermsPage.LookupMode(true);
+
+        if PaymentTermsPage.RunModal() = Action::LookupOK then
+            PaymentTermsPage.GetRecord(PaymentTerms);
+
+        exit(PaymentTerms.Code)
+    end;
+
+    procedure ShowPagePaymentMethods(Token: Code[20]): Code[10]
+    var
+        PaymentMethod: Record "Payment Method";
+        PaymentMethodPage: Page "Payment Methods";
+    begin
+        PaymentMethod.Reset();
+        PaymentMethod.FilterGroup(2);
+        PaymentMethod.SetFilter(Code, '%1', Token + '*');
+        PaymentMethod.FilterGroup(0);
+        PaymentMethod.FindSet();
+
+        PaymentMethodPage.SetTableView(PaymentMethod);
+        PaymentMethodPage.Editable(false);
+        PaymentMethodPage.LookupMode(true);
+
+        if PaymentMethodPage.RunModal() = Action::LookupOK then
+            PaymentMethodPage.GetRecord(PaymentMethod);
+
+        exit(PaymentMethod.Code)
+    end;
+
+    procedure ShowPageReminderTerms(ShortCutDimension5: Code[20]): Code[10]
+    var
+        ReminderTerms: Record "Reminder Terms";
+        ReminderTermsPage: Page "Reminder Terms";
+    begin
+        ReminderTerms.Reset();
+        ReminderTerms.FilterGroup(2);
+        ReminderTerms.SetRange(ShortcutDimension5CodeNVX, ShortCutDimension5);
+        ReminderTerms.FilterGroup(0);
+
+        ReminderTermsPage.SetTableView(ReminderTerms);
+        ReminderTermsPage.Editable(false);
+        ReminderTermsPage.LookupMode(true);
+
+        if ReminderTermsPage.RunModal() = Action::LookupOK then
+            ReminderTermsPage.GetRecord(ReminderTerms);
+
+        exit(ReminderTerms.Code)
+    end;
+
+    procedure ShowPageCustomerBankAccount(CodeFilter: Text): Code[20]
+    var
+        CustomerBankAccount: Record "Customer Bank Account";
+        CustomerBankAccountPage: Page "Customer Bank Account List";
+    begin
+        CustomerBankAccount.Reset();
+        CustomerBankAccount.FilterGroup(2);
+        CustomerBankAccount.SetFilter(Code, CodeFilter);
+        CustomerBankAccount.FilterGroup(0);
+
+        CustomerBankAccountPage.SetTableView(CustomerBankAccount);
+        CustomerBankAccountPage.Editable(false);
+        CustomerBankAccountPage.LookupMode(true);
+
+        if CustomerBankAccountPage.RunModal() = Action::LookupOK then
+            CustomerBankAccountPage.GetRecord(CustomerBankAccount);
+
+        exit(CustomerBankAccount.Code)
     end;
 
     var

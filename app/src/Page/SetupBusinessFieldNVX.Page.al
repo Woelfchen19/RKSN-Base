@@ -12,7 +12,7 @@ page 50062 "SetupBusinessFieldNVX"
         {
             repeater(Controls1)
             {
-                field(CustomerNo; Rec.CustomerNo)
+                field(CustomerNo; Rec."Customer No.")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Customer No. field.', Comment = 'DEA="Debitornr."';
@@ -35,6 +35,11 @@ page 50062 "SetupBusinessFieldNVX"
                 field("Payment Terms Code"; Rec."Payment Terms Code")
                 {
                     ToolTip = 'Specifies the value of the Payment Terms Code field.', Comment = 'DEA="Zlg.-Bedingungscode"';
+                    ApplicationArea = All;
+                }
+                field("Preferred BankAccount Code"; Rec."Preferred BankAccount Code")
+                {
+                    ToolTip = 'Specifies the value of the Preferred Bank Account Code field.', Comment = 'DEA="Bevorzugter Bankkontocode"';
                     ApplicationArea = All;
                 }
                 field(Sort; Sort)
