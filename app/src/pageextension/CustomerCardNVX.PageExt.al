@@ -33,7 +33,6 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
                 field(PBShortcutDimension9CodeNVX; PBShortcutDimension9Code)
                 {
                     ApplicationArea = All;
-                    Importance = Additional;
                     CaptionClass = '1,2,9';
                     ToolTip = '', comment = 'DEA=""';
 
@@ -328,112 +327,119 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
                                 StrSubstNo(TokenPreferredBankAccountCodeTok, EAShortcutDimension5Code));
                     end;
                 }
+            }
+            group(SetupBusinessFieldSONVX)
+            {
+                Caption = 'Miscellanious - SO', comment = 'DEA="Sonstiges - SO"';
+                Visible = SOSetupVisible;
 
-                group(SetupBusinessFieldSONVX)
+                field(SOShortcutDimension5CodeNVX; SOShortcutDimension5Code)
                 {
-                    Caption = 'Miscellanious - SO', comment = 'DEA="Sonstiges - SO"';
-                    Visible = SOSetupVisible;
-
-                    field(SOShortcutDimension5CodeNVX; SOShortcutDimension5Code)
-                    {
-                        ApplicationArea = All;
-                        CaptionClass = '1,2,5';
-                        Editable = false;
-                        TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
-                        ToolTip = '', comment = 'DEA=""';
-                    }
-                    field(SOShortcutDimension9CodeNVX; SOShortcutDimension9Code)
-                    {
-                        ApplicationArea = All;
-                        CaptionClass = '1,2,9';
-                        Importance = Additional;
-                        ToolTip = '', comment = 'DEA=""';
-
-                        trigger OnLookup(var Text: Text): Boolean
-                        begin
-                            SOShortcutDimension9Code := AppMgt.OnLookupByBusinessFieldDimension(SOShortcutDimension5Code, 9);
-                        end;
-                    }
-                    field(SOReminderTermsCodeNVX; SOReminderTermsCode)
-                    {
-                        ApplicationArea = All;
-                        Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
-                        Importance = Additional;
-                        TableRelation = "Reminder Terms";
-                        ToolTip = '', comment = 'DEA=""';
-
-                        trigger OnLookup(var Text: Text): Boolean
-                        begin
-                            SOReminderTermsCode := AppMgt.ShowPageReminderTerms(SOShortcutDimension5Code);
-                        end;
-                    }
-                    field(SOPaymentTermsCodeNVX; SOPaymentTermsCode)
-                    {
-                        ApplicationArea = All;
-                        Importance = Additional;
-                        Caption = 'Payment Terms Code', comment = 'DEA="Zlg. Bedingungscode"';
-                        TableRelation = "Payment Terms";
-                        ToolTip = '', comment = 'DEA=""';
-
-                        trigger OnLookup(var Text: Text): Boolean
-                        begin
-                            SOPaymentTermsCode := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
-                        end;
-                    }
+                    ApplicationArea = All;
+                    CaptionClass = '1,2,5';
+                    Editable = false;
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
+                    ToolTip = '', comment = 'DEA=""';
                 }
-                group(SetupBusinessFieldEVNVX)
+                field(SOShortcutDimension9CodeNVX; SOShortcutDimension9Code)
                 {
-                    Caption = 'Evidence - EV', comment = 'DEA="Evidenz - EV"';
-                    Visible = EVSetupVisible;
+                    ApplicationArea = All;
+                    CaptionClass = '1,2,9';
+                    Importance = Additional;
+                    ToolTip = '', comment = 'DEA=""';
 
-                    field(EVShortcutDimension5CodeNVX; EVShortcutDimension5Code)
-                    {
-                        ApplicationArea = All;
-                        CaptionClass = '1,2,5';
-                        Editable = false;
-                        TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
-                        ToolTip = '', comment = 'DEA=""';
-                    }
-                    field(EVShortcutDimension9CodeNVX; EVShortcutDimension9Code)
-                    {
-                        ApplicationArea = All;
-                        Importance = Additional;
-                        CaptionClass = '1,2,9';
-                        ToolTip = '', comment = 'DEA=""';
-
-                        trigger OnLookup(var Text: Text): Boolean
-                        begin
-                            EVShortcutDimension9Code :=
-                                AppMgt.OnLookupByBusinessFieldDimension(EVShortcutDimension5Code, 9);
-                        end;
-                    }
-                    field(EVReminderTermsCodeNVX; EVReminderTermsCode)
-                    {
-                        ApplicationArea = All;
-                        Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
-                        Importance = Additional;
-                        TableRelation = "Reminder Terms";
-                        ToolTip = '', comment = 'DEA=""';
-
-                        trigger OnLookup(var Text: Text): Boolean
-                        begin
-                            EVReminderTermsCode := AppMgt.ShowPageReminderTerms(EVShortcutDimension5Code);
-                        end;
-                    }
-                    field(EVPaymentTermsCodeNVX; EVPaymentTermsCode)
-                    {
-                        ApplicationArea = All;
-                        Caption = 'Payment Terms Code', comment = 'DEA="Zlg. Bedingungscode"';
-                        Importance = Promoted;
-                        TableRelation = "Payment Terms";
-                        ToolTip = '', comment = 'DEA=""';
-
-                        trigger OnLookup(var Text: Text): Boolean
-                        begin
-                            EVPaymentTermsCode := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
-                        end;
-                    }
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        SOShortcutDimension9Code := AppMgt.OnLookupByBusinessFieldDimension(SOShortcutDimension5Code, 9);
+                    end;
                 }
+                field(SOReminderTermsCodeNVX; SOReminderTermsCode)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    Importance = Additional;
+                    TableRelation = "Reminder Terms";
+                    ToolTip = '', comment = 'DEA=""';
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        SOReminderTermsCode := AppMgt.ShowPageReminderTerms(SOShortcutDimension5Code);
+                    end;
+                }
+                field(SOPaymentTermsCodeNVX; SOPaymentTermsCode)
+                {
+                    ApplicationArea = All;
+                    Importance = Additional;
+                    Caption = 'Payment Terms Code', comment = 'DEA="Zlg. Bedingungscode"';
+                    TableRelation = "Payment Terms";
+                    ToolTip = '', comment = 'DEA=""';
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        SOPaymentTermsCode := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
+                    end;
+                }
+            }
+            group(SetupBusinessFieldEVNVX)
+            {
+                Caption = 'Evidence - EV', comment = 'DEA="Evidenz - EV"';
+                Visible = EVSetupVisible;
+
+                field(EVShortcutDimension5CodeNVX; EVShortcutDimension5Code)
+                {
+                    ApplicationArea = All;
+                    CaptionClass = '1,2,5';
+                    Editable = false;
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
+                    ToolTip = '', comment = 'DEA=""';
+                }
+                field(EVShortcutDimension9CodeNVX; EVShortcutDimension9Code)
+                {
+                    ApplicationArea = All;
+                    Importance = Additional;
+                    CaptionClass = '1,2,9';
+                    ToolTip = '', comment = 'DEA=""';
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        EVShortcutDimension9Code :=
+                            AppMgt.OnLookupByBusinessFieldDimension(EVShortcutDimension5Code, 9);
+                    end;
+                }
+                field(EVReminderTermsCodeNVX; EVReminderTermsCode)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
+                    Importance = Additional;
+                    TableRelation = "Reminder Terms";
+                    ToolTip = '', comment = 'DEA=""';
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        EVReminderTermsCode := AppMgt.ShowPageReminderTerms(EVShortcutDimension5Code);
+                    end;
+                }
+                field(EVPaymentTermsCodeNVX; EVPaymentTermsCode)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Payment Terms Code', comment = 'DEA="Zlg. Bedingungscode"';
+                    Importance = Promoted;
+                    TableRelation = "Payment Terms";
+                    ToolTip = '', comment = 'DEA=""';
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        EVPaymentTermsCode := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
+                    end;
+                }
+            }
+        }
+        addbefore(Control149)
+        {
+            part(Dimension5ValuesNVX; SetupBusinessFieldFactBoxNVX)
+            {
+                ApplicationArea = Basic, Suite;
+                SubPageLink = "Customer No." = Field("No.");
             }
         }
     }
@@ -601,6 +607,7 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
                 SetupBusinessField2.Init();
                 SetupBusinessField2."Customer No." := Rec."No.";
                 SetupBusinessField2."Shortcut Dimension 5 Code" := DimensionValue.Code;
+                SetupBusinessField2."Dimension Value Type" := DimensionValue."Dimension Value Type";
                 SetupBusinessField2.Insert(true);
             until DimensionValue.Next() = 0;
     end;
