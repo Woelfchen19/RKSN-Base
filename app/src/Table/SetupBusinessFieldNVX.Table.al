@@ -9,6 +9,11 @@ table 50041 "SetupBusinessFieldNVX"
             Caption = 'Customer No.', comment = 'DEA="Debitornr."';
             DataClassification = CustomerContent;
         }
+        // field(2; OKIcon; MediaSet)
+        // {
+        //     Caption = 'OK-Icon', comment = 'DEA="OK-Icon"';
+        //     DataClassification = CustomerContent;
+        // }
         field(10; "Shortcut Dimension 5 Code"; Code[20])
         {
             Caption = 'Shortcut Dimension 5 Code';

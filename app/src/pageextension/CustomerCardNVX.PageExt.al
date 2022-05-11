@@ -455,6 +455,11 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
         ModifySetupBusinessField();
     end;
 
+    trigger OnAfterGetCurrRecord()
+    begin
+        CurrPage.Dimension5ValuesNVX.Page.SetCustomerNo(Rec."No.");
+    end;
+
     /// <summary>
     /// ToDo 
     /// Variables should be an Array 

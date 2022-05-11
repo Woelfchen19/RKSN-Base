@@ -334,6 +334,65 @@ codeunit 50026 "AppMgtNVX"
         exit(CustomerBankAccount.Code)
     end;
 
+    procedure GetTemoraryBusinessLines(CustomerNo: code[20]; var TempSetupBusinessField: record SetupBusinessFieldNVX temporary)
+    var
+        UserSetup: Record "User Setup";
+        SetupBusinessField: Record SetupBusinessFieldNVX;
+        DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX;
+        IsHandled: Boolean;
+    begin
+        OnBeforeGetGetBusinessLines(TempSetupBusinessField, IsHandled);
+        if IsHandled then
+            exit;
+
+        if not UserSetup.Get(UserId) then
+            exit;
+
+        TempSetupBusinessField.DeleteAll();
+        SetupBusinessField.SetRange("Customer No.", CustomerNo);
+        SetupBusinessField.SetRange("Dimension Value Type", SetupBusinessField."Dimension Value Type"::Standard);
+        if SetupBusinessField.FindSet() then
+            repeat
+                case SetupBusinessField."Shortcut Dimension 5 Code" of
+                    Format(DimShortcutBusinessField::PB):
+                        if UserSetup.PBSetupNVX then begin
+                            TempSetupBusinessField := SetupBusinessField;
+                            TempSetupBusinessField.Insert();
+                        end;
+                    Format(DimShortcutBusinessField::RD):
+                        if UserSetup.RDSetupNVX then begin
+                            TempSetupBusinessField := SetupBusinessField;
+                            TempSetupBusinessField.Insert();
+                        end;
+                    Format(DimShortcutBusinessField::RH):
+                        if UserSetup.RHSetupNVX then begin
+                            TempSetupBusinessField := SetupBusinessField;
+                            TempSetupBusinessField.Insert();
+                        end;
+                    Format(DimShortcutBusinessField::EA):
+                        if UserSetup.EASetupNVX then begin
+                            TempSetupBusinessField := SetupBusinessField;
+                            TempSetupBusinessField.Insert();
+                        end;
+                    Format(DimShortcutBusinessField::SO):
+                        if UserSetup.SOSetupNVX then begin
+                            TempSetupBusinessField := SetupBusinessField;
+                            TempSetupBusinessField.Insert();
+                        end;
+                    Format(DimShortcutBusinessField::EV):
+                        if UserSetup.EVSetupNVX then begin
+                            TempSetupBusinessField := SetupBusinessField;
+                            TempSetupBusinessField.Insert();
+                        end;
+                end
+            until SetupBusinessField.Next() = 0;
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeGetGetBusinessLines(var TempSetupBusinessField: record SetupBusinessFieldNVX temporary; var IsHandled: Boolean);
+    begin
+    end;
+
     var
         GLSetup: Record "General Ledger Setup";
         SetupPropertyForFields: Record SetupPropertyForFieldsNVX;

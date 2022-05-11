@@ -1,6 +1,6 @@
 page 50032 SetupBusinessFieldCardNVX
 {
-    Caption = 'SetupBusinessFieldNVX Card', comment = 'DEA="Einrichtung Geschäftsfelder"';
+    Caption = 'BusinessFields Customer Card', comment = 'DEA="Geschäftsfelder Debitor Karte"';
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = Card;
@@ -12,67 +12,75 @@ page 50032 SetupBusinessFieldCardNVX
         {
             group(General)
             {
-                field("Customer No."; Rec."Customer No.")
+                Caption = 'General', comment = 'DEA="Allgemein"';
+                group(BusinessFields)
                 {
-                    ApplicationArea = All;
-                    Enabled = false;
-                    Visible = false;
-                }
-                field("Shortcut Dimension 5 Code"; Rec."Shortcut Dimension 5 Code")
-                {
-                    ApplicationArea = All;
-                    Enabled = false;
-                    Visible = false;
-                }
-                field("Shortcut Dimension 9 Code"; Rec."Shortcut Dimension 9 Code")
-                {
-                    ApplicationArea = All;
-                    CaptionClass = '1,2,9';
-                    ToolTip = '', comment = 'DEA=""';
+                    Caption = 'Business Fields', comment = 'DEA="Geschäftsfelder"';
+                    field("Customer No."; Rec."Customer No.")
+                    {
+                        ApplicationArea = All;
+                        Enabled = false;
+                        Visible = false;
+                    }
+                    field("Shortcut Dimension 5 Code"; Rec."Shortcut Dimension 5 Code")
+                    {
+                        ApplicationArea = All;
+                        Enabled = false;
+                    }
+                    field("Shortcut Dimension 9 Code"; Rec."Shortcut Dimension 9 Code")
+                    {
+                        ApplicationArea = All;
+                        CaptionClass = '1,2,9';
+                        ToolTip = '', comment = 'DEA=""';
 
-                    trigger OnLookup(var Text: Text): Boolean
-                    begin
-                        Rec."Shortcut Dimension 9 Code" :=
-                            AppMgt.OnLookupByBusinessFieldDimension(Rec."Shortcut Dimension 5 Code", 9);
-                    end;
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            Rec."Shortcut Dimension 9 Code" :=
+                                AppMgt.OnLookupByBusinessFieldDimension(Rec."Shortcut Dimension 5 Code", 9);
+                        end;
+                    }
                 }
-                field("Reminder Terms Code"; Rec."Reminder Terms Code")
+                group(Payment)
                 {
-                    ApplicationArea = All;
+                    Caption = 'Payment Management', comment = 'DEA="Zahlungsmanagement"';
+                    field("Reminder Terms Code"; Rec."Reminder Terms Code")
+                    {
+                        ApplicationArea = All;
 
-                    trigger OnLookup(var Text: Text): Boolean
-                    begin
-                        Rec."Reminder Terms Code" := AppMgt.ShowPageReminderTerms(Rec."Shortcut Dimension 5 Code");
-                    end;
-                }
-                field("Payment Terms Code"; Rec."Payment Terms Code")
-                {
-                    ApplicationArea = All;
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            Rec."Reminder Terms Code" := AppMgt.ShowPageReminderTerms(Rec."Shortcut Dimension 5 Code");
+                        end;
+                    }
+                    field("Payment Terms Code"; Rec."Payment Terms Code")
+                    {
+                        ApplicationArea = All;
 
-                    trigger OnLookup(var Text: Text): Boolean
-                    begin
-                        Rec."Payment Terms Code" := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
-                    end;
-                }
-                field("Payment Method Code"; Rec."Payment Method Code")
-                {
-                    ApplicationArea = All;
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            Rec."Payment Terms Code" := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
+                        end;
+                    }
+                    field("Payment Method Code"; Rec."Payment Method Code")
+                    {
+                        ApplicationArea = All;
 
-                    trigger OnLookup(var Text: Text): Boolean
-                    begin
-                        Rec."Payment Method Code" := AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok);
-                    end;
-                }
-                field("Preferred BankAccount Code"; Rec."Preferred BankAccount Code")
-                {
-                    ApplicationArea = All;
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            Rec."Payment Method Code" := AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok);
+                        end;
+                    }
+                    field("Preferred BankAccount Code"; Rec."Preferred BankAccount Code")
+                    {
+                        ApplicationArea = All;
 
-                    trigger OnLookup(var Text: Text): Boolean
-                    begin
-                        "Preferred BankAccount Code" :=
-                            AppMgt.ShowPageCustomerBankAccount(
-                                StrSubstNo(TokenPreferredBankAccountCodeTok, "Shortcut Dimension 5 Code"));
-                    end;
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            "Preferred BankAccount Code" :=
+                                AppMgt.ShowPageCustomerBankAccount(
+                                    StrSubstNo(TokenPreferredBankAccountCodeTok, "Shortcut Dimension 5 Code"));
+                        end;
+                    }
                 }
             }
         }
@@ -94,6 +102,7 @@ page 50032 SetupBusinessFieldCardNVX
         GLSetup.Get();
         DimensionValue.Reset();
         DimensionValue.SetRange("Dimension Code", GLSetup."Shortcut Dimension 5 Code");
+        DimensionValue.SetRange("Dimension Value Type", DimensionValue."Dimension Value Type"::Standard);
         if DimensionValue.FindSet() then
             repeat
                 if SetupBusinessField.Get(Rec."Customer No.", DimensionValue.Code) then
@@ -207,14 +216,13 @@ page 50032 SetupBusinessFieldCardNVX
     local procedure Initialize()
     begin
         if UserSetup.Get(UserId) then begin
-            ;
             // PBSetupVisible := UserSetup.PBSetupNVX;
             // RDSetupVisible := Usersetup.RDSetupNVX;
             // RHSetupVisible := Usersetup.RHSetupNVX;
             // EASetupVisible := Usersetup.EASetupNVX;
             // SOSetupVisible := Usersetup.SOSetupNVX;
             // EVSetupVisible := UserSetup.EVSetupNVX;
-
+            ;
             if Rec."Customer No." <> '' then begin
                 SetupBusinessField.Reset();
                 SetupBusinessField.SetRange("Customer No.", Rec."Customer No.");

@@ -29,5 +29,6 @@
     "features":  [
                      "TranslationFile"
                  ],
-    "runtime":  "3.2"
+    "runtime":  "3.2",
+    "target": "Extension"
 }
