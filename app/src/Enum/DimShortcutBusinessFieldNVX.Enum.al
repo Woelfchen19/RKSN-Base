@@ -1,7 +1,6 @@
 enum 50003 DimShortcutBusinessFieldNVX
 {
     Extensible = true;
-
     value(1; PB)
     {
     }
@@ -19,5 +18,9 @@ enum 50003 DimShortcutBusinessFieldNVX
     }
     value(6; EV)
     {
+    }
+    Value(7; All)
+    {
+        caption = 'All Dimensions', comment = 'DEA="Alle Dimensionen"';
     }
 }

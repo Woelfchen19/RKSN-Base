@@ -1,7 +1,9 @@
-table 50041 "SetupBusinessFieldNVX"
+table 50041 CustomerBusinessFieldNVX
 {
-    Caption = 'Businessfields (Dim 5)', comment = 'DEA="Geschäftsfelder (Dim 5)"';
+    Caption = 'Customer Businessfield (Dim 5)', comment = 'DEA="Debitor Geschäftsfeld (Dim 5)"';
     DataClassification = CustomerContent;
+    DataCaptionFields = "Customer No.";
+
     fields
     {
         field(1; "Customer No."; Code[20])
@@ -9,11 +11,6 @@ table 50041 "SetupBusinessFieldNVX"
             Caption = 'Customer No.', comment = 'DEA="Debitornr."';
             DataClassification = CustomerContent;
         }
-        // field(2; OKIcon; MediaSet)
-        // {
-        //     Caption = 'OK-Icon', comment = 'DEA="OK-Icon"';
-        //     DataClassification = CustomerContent;
-        // }
         field(10; "Shortcut Dimension 5 Code"; Code[20])
         {
             Caption = 'Shortcut Dimension 5 Code';
@@ -91,8 +88,6 @@ table 50041 "SetupBusinessFieldNVX"
     end;
 
     local procedure SetSorting()
-    var
-        DimShortcutBusinessField: enum DimShortcutBusinessFieldNVX;
     begin
 
         case "Shortcut Dimension 5 Code" of
@@ -108,6 +103,37 @@ table 50041 "SetupBusinessFieldNVX"
                 sort := 5;
             Format(DimShortcutBusinessField::EV):
                 sort := 6;
+            Format(DimShortcutBusinessField::All):
+                sort := 7;
         end
     end;
+
+    procedure InsertSetupBusinessField(CustomerNo: Code[20])
+    var
+        GLSetup: Record "General Ledger Setup";
+        DimensionValue: Record "Dimension Value";
+        CustomerBusinessField: Record CustomerBusinessFieldNVX;
+    begin
+        GLSetup.Get();
+        DimensionValue.Reset();
+        DimensionValue.SetRange("Dimension Code", GLSetup."Shortcut Dimension 5 Code");
+        if DimensionValue.FindSet() then begin
+            repeat
+                CustomerBusinessField.Init();
+                CustomerBusinessField."Customer No." := CustomerNo;
+                CustomerBusinessField."Shortcut Dimension 5 Code" := DimensionValue.Code;
+                CustomerBusinessField."Dimension Value Type" := DimensionValue."Dimension Value Type";
+                CustomerBusinessField.Insert(true);
+            until DimensionValue.Next() = 0;
+
+            CustomerBusinessField.Init();
+            CustomerBusinessField."Customer No." := CustomerNo;
+            CustomerBusinessField."Shortcut Dimension 5 Code" := Format(DimShortcutBusinessField::All);
+            CustomerBusinessField."Dimension Value Type" := DimensionValue."Dimension Value Type"::Standard;
+            CustomerBusinessField.Insert(true);
+        end;
+    end;
+
+    var
+        DimShortcutBusinessField: enum DimShortcutBusinessFieldNVX;
 }

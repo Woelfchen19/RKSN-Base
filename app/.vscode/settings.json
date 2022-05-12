@@ -11,5 +11,6 @@
         "${AppSourceCop}"
     ],
     "al.ruleSetPath": ".vscode\\ruleset.json",
-    "workbench.editor.showTabs": true
+    "workbench.editor.showTabs": true,
+    "al.browser": "Edge"
 }

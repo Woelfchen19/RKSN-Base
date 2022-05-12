@@ -1,8 +1,8 @@
-page 50062 "SetupBusinessFieldNVX"
+page 50062 CustBusinessFieldListNVX
 {
-    Caption = 'Setup Business Fields', comment = 'DEA="Einrichtung Geschäftsfelder"';
+    Caption = 'Customer Business Field List', comment = 'DEA="Debitor Geschäftsfelder Übersicht"';
     PageType = List;
-    SourceTable = SetupBusinessFieldNVX;
+    SourceTable = CustomerBusinessFieldNVX;
     UsageCategory = Administration;
     DelayedInsert = true;
 

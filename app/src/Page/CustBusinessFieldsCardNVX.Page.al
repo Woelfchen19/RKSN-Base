@@ -1,9 +1,10 @@
-page 50033 CustomerBusinessFieldsCardNVX
+page 50033 CustBusinessFieldsCardNVX
 {
 
-    Caption = 'CustomerBusinessFieldsNVX Card';
+    Caption = 'Customer Business Fields', comment = 'DEA="Debitoren Geschäftsfelder"';
     PageType = Card;
-    SourceTable = SetupBusinessFieldNVX;
+    SourceTable = CustomerBusinessFieldNVX;
+    DataCaptionFields = "Customer No.";
 
     layout
     {
@@ -44,7 +45,6 @@ page 50033 CustomerBusinessFieldsCardNVX
                     {
                         ApplicationArea = All;
                         Caption = 'Reminder Terms Code', comment = 'DEA="Mahnungsmethodencode"';
-                        Importance = Additional;
                         TableRelation = "Reminder Terms";
                         ToolTip = '', comment = 'DEA=""';
 
@@ -395,6 +395,32 @@ page 50033 CustomerBusinessFieldsCardNVX
                             SOPaymentTermsCode := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
                         end;
                     }
+                    field(SOPaymentMethodCodeNVX; SOPaymentMethodCode)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Payment Method Code', comment = 'DEA="Zahlungsformcode"';
+                        TableRelation = "Payment Terms";
+                        ToolTip = '', comment = 'DEA=""';
+
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            SOPaymentMethodCode := AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok);
+                        end;
+                    }
+                    field(SOPreferredBankAccountCodeNVX; SOPreferredBankAccountCode)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Preferred Bank Account Code', comment = 'DEA="Bevorzugter Bankkkontocode"';
+                        TableRelation = "Customer Bank Account";
+                        ToolTip = '', comment = 'DEA=""';
+
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            SOPreferredBankAccountCode :=
+                                AppMgt.ShowPageCustomerBankAccount(
+                                    StrSubstNo(TokenPreferredBankAccountCodeTok, SOShortcutDimension5Code));
+                        end;
+                    }
                 }
             }
             group(SetupBusinessFieldEVNVX)
@@ -451,6 +477,32 @@ page 50033 CustomerBusinessFieldsCardNVX
                         trigger OnLookup(var Text: Text): Boolean
                         begin
                             EVPaymentTermsCode := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
+                        end;
+                    }
+                    field(EVPaymentMethodCodeNVX; EVPaymentMethodCode)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Payment Method Code', comment = 'DEA="Zahlungsformcode"';
+                        TableRelation = "Payment Terms";
+                        ToolTip = '', comment = 'DEA=""';
+
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            EVPaymentMethodCode := AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok);
+                        end;
+                    }
+                    field(EVPreferredBankAccountCodeNVX; EVPreferredBankAccountCode)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Preferred Bank Account Code', comment = 'DEA="Bevorzugter Bankkkontocode"';
+                        TableRelation = "Customer Bank Account";
+                        ToolTip = '', comment = 'DEA=""';
+
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            EVPreferredBankAccountCode :=
+                                AppMgt.ShowPageCustomerBankAccount(
+                                    StrSubstNo(TokenPreferredBankAccountCodeTok, EVShortcutDimension5Code));
                         end;
                     }
                 }
@@ -599,26 +651,9 @@ page 50033 CustomerBusinessFieldsCardNVX
                 SetupBusinessField.Reset();
                 SetupBusinessField.SetRange("Customer No.", Rec."Customer No.");
                 if SetupBusinessField.IsEmpty() then
-                    InsertSetupBusinessField();
+                    SetupBusinessField.InsertSetupBusinessField(Rec."Customer No.");
             end;
         end;
-    end;
-
-    local procedure InsertSetupBusinessField()
-    var
-        SetupBusinessField2: Record SetupBusinessFieldNVX;
-    begin
-        GLSetup.Get();
-        DimensionValue.Reset();
-        DimensionValue.SetRange("Dimension Code", GLSetup."Shortcut Dimension 5 Code");
-        if DimensionValue.FindSet() then
-            repeat
-                SetupBusinessField2.Init();
-                SetupBusinessField2."Customer No." := Rec."Customer No.";
-                SetupBusinessField2."Shortcut Dimension 5 Code" := DimensionValue.Code;
-                SetupBusinessField2."Dimension Value Type" := DimensionValue."Dimension Value Type";
-                SetupBusinessField2.Insert(true);
-            until DimensionValue.Next() = 0;
     end;
 
     local procedure ModifySetupBusinessField()
@@ -628,7 +663,7 @@ page 50033 CustomerBusinessFieldsCardNVX
 
     var
         DimensionValue: Record "Dimension Value";
-        SetupBusinessField: Record SetupBusinessFieldNVX;
+        SetupBusinessField: Record CustomerBusinessFieldNVX;
         UserSetup: Record "User Setup";
         GLSetup: Record "General Ledger Setup";
         AppMgt: Codeunit AppMgtNVX;
@@ -684,6 +719,6 @@ page 50033 CustomerBusinessFieldsCardNVX
 
         TokenPaymentTermsTok: Label 'K', comment = 'DEA="K"', Locked = true;
         TokenPaymentMethodTok: Label 'K', comment = 'DEA="K"', Locked = true;
-        TokenPreferredBankAccountCodeTok: Label '*%1*', comment = 'DEA="*%1*"';
+        TokenPreferredBankAccountCodeTok: Label '*%1*', comment = 'DEA="*%1*"', Locked = true;
 
 }

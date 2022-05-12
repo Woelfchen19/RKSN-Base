@@ -334,10 +334,10 @@ codeunit 50026 "AppMgtNVX"
         exit(CustomerBankAccount.Code)
     end;
 
-    procedure GetTemoraryBusinessLines(CustomerNo: code[20]; var TempSetupBusinessField: record SetupBusinessFieldNVX temporary)
+    procedure GetTemoraryBusinessLines(CustomerNo: code[20]; var TempSetupBusinessField: record CustomerBusinessFieldNVX temporary)
     var
         UserSetup: Record "User Setup";
-        SetupBusinessField: Record SetupBusinessFieldNVX;
+        SetupBusinessField: Record CustomerBusinessFieldNVX;
         DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX;
         IsHandled: Boolean;
     begin
@@ -384,12 +384,17 @@ codeunit 50026 "AppMgtNVX"
                             TempSetupBusinessField := SetupBusinessField;
                             TempSetupBusinessField.Insert();
                         end;
+                    Format(DimShortcutBusinessField::All):
+                        begin
+                            TempSetupBusinessField := SetupBusinessField;
+                            TempSetupBusinessField.Insert();
+                        end;
                 end
             until SetupBusinessField.Next() = 0;
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeGetGetBusinessLines(var TempSetupBusinessField: record SetupBusinessFieldNVX temporary; var IsHandled: Boolean);
+    local procedure OnBeforeGetGetBusinessLines(var TempSetupBusinessField: record CustomerBusinessFieldNVX temporary; var IsHandled: Boolean);
     begin
     end;
 
