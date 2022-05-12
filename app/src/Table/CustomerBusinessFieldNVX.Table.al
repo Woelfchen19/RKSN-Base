@@ -1,8 +1,8 @@
 table 50041 CustomerBusinessFieldNVX
 {
     Caption = 'Customer Businessfield (Dim 5)', comment = 'DEA="Debitor Geschäftsfeld (Dim 5)"';
-    DataClassification = CustomerContent;
     DataCaptionFields = "Customer No.";
+    DataClassification = CustomerContent;
 
     fields
     {
@@ -87,32 +87,42 @@ table 50041 CustomerBusinessFieldNVX
         SetSorting();
     end;
 
-    local procedure SetSorting()
-    begin
+    var
+        DimShortcutBusinessField: enum DimShortcutBusinessFieldNVX;
 
-        case "Shortcut Dimension 5 Code" of
-            Format(DimShortcutBusinessField::PB):
-                sort := 1;
-            Format(DimShortcutBusinessField::RD):
-                sort := 2;
-            Format(DimShortcutBusinessField::RH):
-                sort := 3;
-            Format(DimShortcutBusinessField::EA):
-                sort := 4;
-            Format(DimShortcutBusinessField::SO):
-                sort := 5;
-            Format(DimShortcutBusinessField::EV):
-                sort := 6;
-            Format(DimShortcutBusinessField::All):
-                sort := 7;
-        end
-    end;
+    procedure GetStatusSetup(CustomerNo: Code[20]; DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX): Enum StatusCustBusinessFieldsNVX
+    var
+        CustomerBusinessField: Record CustomerBusinessFieldNVX;
+        AppMgt: Codeunit AppMgtNVX;
+        RecRef: RecordRef;
+        StatusCustBusinessField: Enum StatusCustBusinessFieldsNVX;
+        Counter: integer;
+        i: Integer;
+    begin
+        CustomerBusinessField.Reset();
+        CustomerBusinessField.SetRange("Customer No.", CustomerNo);
+        if DimShortcutBusinessField <> DimShortcutBusinessField::All then
+            CustomerBusinessField.SetRange("Shortcut Dimension 5 Code", Format(DimShortcutBusinessField));
+        RecRef.GetTable(CustomerBusinessField);
+
+        for i := 1 to RecRef.FieldCount do
+            if AppMgt.IsNormalField(RecRef.FieldIndex(i)) and AppMgt.HasValue(RecRef.FieldIndex(i)) then
+                Counter += 1;
+
+        if counter = RecRef.FieldCount then
+            Exit(StatusCustBusinessField::EE);
+
+        if Counter = 0 then
+            exit(StatusCustBusinessField::NE)
+        else
+            exit(StatusCustBusinessField::TE);
+    End;
 
     procedure InsertSetupBusinessField(CustomerNo: Code[20])
     var
-        GLSetup: Record "General Ledger Setup";
-        DimensionValue: Record "Dimension Value";
         CustomerBusinessField: Record CustomerBusinessFieldNVX;
+        DimensionValue: Record "Dimension Value";
+        GLSetup: Record "General Ledger Setup";
     begin
         GLSetup.Get();
         DimensionValue.Reset();
@@ -134,6 +144,24 @@ table 50041 CustomerBusinessFieldNVX
         end;
     end;
 
-    var
-        DimShortcutBusinessField: enum DimShortcutBusinessFieldNVX;
+    local procedure SetSorting()
+    begin
+
+        case "Shortcut Dimension 5 Code" of
+            Format(DimShortcutBusinessField::PB):
+                sort := 1;
+            Format(DimShortcutBusinessField::RD):
+                sort := 2;
+            Format(DimShortcutBusinessField::RH):
+                sort := 3;
+            Format(DimShortcutBusinessField::EA):
+                sort := 4;
+            Format(DimShortcutBusinessField::SO):
+                sort := 5;
+            Format(DimShortcutBusinessField::EV):
+                sort := 6;
+            Format(DimShortcutBusinessField::All):
+                sort := 7;
+        end
+    end;
 }

@@ -393,6 +393,59 @@ codeunit 50026 "AppMgtNVX"
             until SetupBusinessField.Next() = 0;
     end;
 
+    procedure HasValue(FieldRef: FieldRef): Boolean
+    var
+        FieldRec: Record Field;
+        HasValueBoolean: Boolean;
+        Int: Integer;
+        Dec: Decimal;
+        D: Date;
+        T: Time;
+    begin
+        Evaluate(FieldRec.Type, Format(FieldRef.Type));
+
+        case FieldRec.Type of
+            FieldRec.Type::Boolean:
+                HasValueBoolean := FieldRef.Value;
+            FieldRec.Type::Option:
+                HasValueBoolean := true;
+            FieldRec.Type::Integer:
+                begin
+                    Int := FieldRef.Value;
+                    HasValueBoolean := Int <> 0;
+                end;
+            FieldRec.Type::Decimal:
+                begin
+                    Dec := FieldRef.Value;
+                    HasValueBoolean := Dec <> 0;
+                end;
+            FieldRec.Type::Date:
+                begin
+                    D := FieldRef.Value;
+                    HasValueBoolean := D <> 0D;
+                end;
+            FieldRec.Type::Time:
+                begin
+                    T := FieldRef.Value;
+                    HasValueBoolean := T <> 0T;
+                end;
+            FieldRec.Type::BLOB:
+                HasValueBoolean := false;
+            else
+                HasValueBoolean := Format(FieldRef.Value) <> '';
+        end;
+
+        exit(HasValueBoolean);
+    end;
+
+    procedure IsNormalField(FieldRef: FieldRef): Boolean
+    begin
+        if Format(FieldRef.Class) = 'Normal' then
+            exit(true);
+
+        exit(false);
+    end;
+
     [IntegrationEvent(false, false)]
     local procedure OnBeforeGetGetBusinessLines(var TempSetupBusinessField: record CustomerBusinessFieldNVX temporary; var IsHandled: Boolean);
     begin

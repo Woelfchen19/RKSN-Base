@@ -9378,6 +9378,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldFactBoxNVX - Control Shortcut Dimension 5 Code - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 4040994964 - Control 4160567894 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>State</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Status"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldFactBoxNVX - Control StatusCustBusinessFields - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 4040994964 - Action 1929393835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Functions</source>
           <note from="Developer" annotates="general" priority="2">DEA="Funktionen"</note>
@@ -13142,6 +13147,21 @@
           <source>Return Order</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum RKSSalesDocumentTypeNVX - EnumValue Return Order - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4141580686 - EnumValue 1850995660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>successfuly configurated</source>
+          <note from="Developer" annotates="general" priority="2">DEA="erfolgreich eingerichtet"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum StatusCustBusinessFieldsNVX - EnumValue EE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4141580686 - EnumValue 2486547637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>not configurated</source>
+          <note from="Developer" annotates="general" priority="2">DEA="nicht eingerichtet"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum StatusCustBusinessFieldsNVX - EnumValue NE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4141580686 - EnumValue 1946286747 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>partially configurated</source>
+          <note from="Developer" annotates="general" priority="2">DEA="teilweise eingerichtet"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum StatusCustBusinessFieldsNVX - EnumValue TE - Property Caption</note>
         </trans-unit>
       </group>
     </body>

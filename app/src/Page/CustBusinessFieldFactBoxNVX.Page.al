@@ -43,6 +43,11 @@ page 50031 CustBusinessFieldFactBoxNVX
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Shortcut Dimension 5 Name field.', Comment = 'DEA="Name"';
                 }
+                field(StatusCustBusinessFields; StatusCustBusinessFields)
+                {
+                    Caption = 'State', comment = 'DEA="Status"';
+                    ApplicationArea = All;
+                }
             }
         }
     }
@@ -73,6 +78,18 @@ page 50031 CustBusinessFieldFactBoxNVX
         exit(Find(which));
     end;
 
+    trigger OnAfterGetRecord()
+    var
+        CustomerBusinessField: Record CustomerBusinessFieldNVX;
+    begin
+        if Rec."Shortcut Dimension 5 Code" = UpperCase(Format(DimShortcutBusinessField::All)) then
+            CustomerBusinessField.GetStatusSetup("Customer No.", DimShortcutBusinessField::All)
+        else
+            if Rec."Shortcut Dimension 5 Code" = UpperCase(Format(DimShortcutBusinessField::PB)) then
+                CustomerBusinessField.GetStatusSetup("Customer No.", DimShortcutBusinessField::PB);
+        //...
+    end;
+
     var
         AppMgt: Codeunit AppMgtNVX;
         CustomerNo: Code[20];
@@ -81,4 +98,8 @@ page 50031 CustBusinessFieldFactBoxNVX
     begin
         CustomerNo := value;
     end;
+
+    var
+        DimShortcutBusinessField: enum DimShortcutBusinessFieldNVX;
+        StatusCustBusinessFields: enum StatusCustBusinessFieldsNVX;
 }
