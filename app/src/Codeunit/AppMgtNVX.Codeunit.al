@@ -334,63 +334,76 @@ codeunit 50026 "AppMgtNVX"
         exit(CustomerBankAccount.Code)
     end;
 
-    procedure GetTemoraryBusinessLines(CustomerNo: code[20]; var TempSetupBusinessField: record CustomerBusinessFieldNVX temporary)
+    procedure SetActiveAndStateCustomerBusinessLines(CustomerNo: code[20]; _UserID: Text)
     var
         UserSetup: Record "User Setup";
-        SetupBusinessField: Record CustomerBusinessFieldNVX;
+        CustomerBusinessField: Record CustomerBusinessFieldNVX;
         DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX;
         IsHandled: Boolean;
+        Counter: Integer;
     begin
-        OnBeforeGetGetBusinessLines(TempSetupBusinessField, IsHandled);
+        OnBeforeGetGetBusinessLines(CustomerBusinessField, IsHandled);
         if IsHandled then
             exit;
 
-        if not UserSetup.Get(UserId) then
+        if not UserSetup.Get(_UserId) then
             exit;
 
-        TempSetupBusinessField.DeleteAll();
-        SetupBusinessField.SetRange("Customer No.", CustomerNo);
-        SetupBusinessField.SetRange("Dimension Value Type", SetupBusinessField."Dimension Value Type"::Standard);
-        if SetupBusinessField.FindSet() then
+        CustomerBusinessField.SetRange("Customer No.", CustomerNo);
+        CustomerBusinessField.SetRange("Dimension Value Type", CustomerBusinessField."Dimension Value Type"::Standard);
+        if CustomerBusinessField.FindSet() then
             repeat
-                case SetupBusinessField."Shortcut Dimension 5 Code" of
+                case CustomerBusinessField."Shortcut Dimension 5 Code" of
                     Format(DimShortcutBusinessField::PB):
                         if UserSetup.PBSetupNVX then begin
-                            TempSetupBusinessField := SetupBusinessField;
-                            TempSetupBusinessField.Insert();
+                            CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::PB);
+                            CustomerBusinessField.Active := true;
+                            CustomerBusinessField.Modify();
+                            counter += 1;
                         end;
                     Format(DimShortcutBusinessField::RD):
                         if UserSetup.RDSetupNVX then begin
-                            TempSetupBusinessField := SetupBusinessField;
-                            TempSetupBusinessField.Insert();
+                            CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::RD);
+                            CustomerBusinessField.Active := true;
+                            CustomerBusinessField.Modify();
+                            counter += 1;
                         end;
                     Format(DimShortcutBusinessField::RH):
                         if UserSetup.RHSetupNVX then begin
-                            TempSetupBusinessField := SetupBusinessField;
-                            TempSetupBusinessField.Insert();
+                            CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::RH);
+                            CustomerBusinessField.Active := true;
+                            CustomerBusinessField.Modify();
+                            counter += 1;
                         end;
                     Format(DimShortcutBusinessField::EA):
                         if UserSetup.EASetupNVX then begin
-                            TempSetupBusinessField := SetupBusinessField;
-                            TempSetupBusinessField.Insert();
+                            CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::EA);
+                            CustomerBusinessField.Active := true;
+                            CustomerBusinessField.Modify();
+                            counter += 1;
                         end;
                     Format(DimShortcutBusinessField::SO):
                         if UserSetup.SOSetupNVX then begin
-                            TempSetupBusinessField := SetupBusinessField;
-                            TempSetupBusinessField.Insert();
+                            CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::SO);
+                            CustomerBusinessField.Active := true;
+                            CustomerBusinessField.Modify();
+                            counter += 1;
                         end;
                     Format(DimShortcutBusinessField::EV):
                         if UserSetup.EVSetupNVX then begin
-                            TempSetupBusinessField := SetupBusinessField;
-                            TempSetupBusinessField.Insert();
+                            CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::EV);
+                            CustomerBusinessField.Active := true;
+                            CustomerBusinessField.Modify();
+                            counter += 1;
                         end;
                     Format(DimShortcutBusinessField::All):
-                        begin
-                            TempSetupBusinessField := SetupBusinessField;
-                            TempSetupBusinessField.Insert();
+                        if counter > 1 then begin
+                            CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::All);
+                            CustomerBusinessField.Active := true;
+                            CustomerBusinessField.Modify();
                         end;
                 end
-            until SetupBusinessField.Next() = 0;
+            until CustomerBusinessField.Next() = 0;
     end;
 
     procedure HasValue(FieldRef: FieldRef): Boolean
@@ -446,8 +459,35 @@ codeunit 50026 "AppMgtNVX"
         exit(false);
     end;
 
+    procedure ShowCustBusinessFieldFactBox(_UserID: Text): Boolean
+    var
+        UserSetup: Record "User Setup";
+    begin
+        if not UserSetup.Get(_UserID) then
+            exit(false)
+        else
+            if not (UserSetup.PBSetupNVX or
+                UserSetup.RDSetupNVX or
+                UserSetup.RHSetupNVX or
+                UserSetup.EASetupNVX or
+                UserSetup.SOSetupNVX or
+                UserSetup.EVSetupNVX)
+            then
+                exit(false);
+
+        exit(true);
+    end;
+
+    procedure GetActiveCustBusinessFieldFilter(CustomerNo: Code[20]; var CustomerBusinessField: Record CustomerBusinessFieldNVX): Boolean
+    begin
+        CustomerBusinessField.Reset();
+        CustomerBusinessField.SetRange("Customer No.", CustomerNo);
+        CustomerBusinessField.SetRange("Dimension Value Type", CustomerBusinessField."Dimension Value Type"::Standard);
+        CustomerBusinessField.SetRange(Active, true);
+    end;
+
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeGetGetBusinessLines(var TempSetupBusinessField: record CustomerBusinessFieldNVX temporary; var IsHandled: Boolean);
+    local procedure OnBeforeGetGetBusinessLines(var SetupBusinessField: record CustomerBusinessFieldNVX; var IsHandled: Boolean);
     begin
     end;
 

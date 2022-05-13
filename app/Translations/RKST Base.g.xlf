@@ -168,6 +168,16 @@
           <note from="Developer" annotates="general" priority="2">DEA="Aktiv"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Active - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 207956542 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created By User</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Erstellt von Benutzer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Created By User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 1407200743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creation Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Errichtungsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Creation Date - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1911021804 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer No.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Debitornr."</note>
@@ -187,6 +197,16 @@
           <source>Shortcut Dimension 5 Name</source>
           <note from="Developer" annotates="general" priority="2">DEA="Name"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Dimension5Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 2151862291 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Modified By User</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zuletzt geändert von Benutzer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Last Modified By User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 2626717425 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Modified Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Datum der letzten Änderung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Last Modified Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1911021804 - Field 3855271124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Method Code</source>
@@ -222,6 +242,11 @@
           <source>Sort</source>
           <note from="Developer" annotates="general" priority="2">DEA="Sortierung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Sort - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 269761521 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>State</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Status"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field State - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1555680109 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
@@ -9383,30 +9408,50 @@
           <note from="Developer" annotates="general" priority="2">DEA="Status"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldFactBoxNVX - Control StatusCustBusinessFields - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 4040994964 - Action 1929393835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Functions</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Funktionen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldFactBoxNVX - Action Functions - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4040994964 - Action 2365623617 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldFactBoxNVX - Action OpenPage - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 4040994964 - Action 2365623617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer Business Fields Card</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Debitoren Geschäftsfelder"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldFactBoxNVX - Action OpenPage - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 1980119545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer Business Field List</source>
           <note from="Developer" annotates="general" priority="2">DEA="Debitor Geschäftsfelder Übersicht"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldListNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1980119545 - Control 1090351696 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Active field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Aktiv"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldListNVX - Control Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1980119545 - Control 207956542 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Created By User field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Erstellt von Benutzer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldListNVX - Control Created By User - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1980119545 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Creation Date field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Errichtungsdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldListNVX - Control Creation Date - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1980119545 - Control 3689535207 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Customer No. field.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Debitornr."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldListNVX - Control CustomerNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1980119545 - Control 1307142958 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 5 Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldListNVX - Control Dimension5Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1980119545 - Control 2151862291 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Last Modified By User field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zuletzt geändert von Benutzer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldListNVX - Control Last Modified By User - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1980119545 - Control 2626717425 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Last Modified Date field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Datum der letzten Änderung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldListNVX - Control Last Modified Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1980119545 - Control 3855271124 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Payment Method Code field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zahlungsformcode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldListNVX - Control Payment Method Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1980119545 - Control 966740350 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Payment Terms Code field.</source>
@@ -9433,10 +9478,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldListNVX - Control Shortcut Dimension 9 Code - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1980119545 - Control 3007069574 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sorting</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Sortierung"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldListNVX - Control Sort - Property ToolTip</note>
+        <trans-unit id="Page 1980119545 - Control 269761521 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the State field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Status"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldListNVX - Control State - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1324634718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer Business Fields</source>
@@ -13084,8 +13129,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATEntryNVX - Field GlobalDimension5CodeNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 807737872 - EnumValue 3703598467 - Property 3830149458" size-unit="char" translate="yes" xml:space="preserve">
-          <source>All Dimensions</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Alle Dimensionen"</note>
+          <source>Show all</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Alles anzeigen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum DimShortcutBusinessFieldNVX - EnumValue All - Property caption</note>
         </trans-unit>
         <trans-unit id="Enum 3877659762 - EnumValue 3263198591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

@@ -84,6 +84,11 @@ page 50032 CustBusinessFieldCardNVX
         }
     }
 
+    trigger OnClosePage()
+    begin
+        AppMgt.SetActiveAndStateCustomerBusinessLines("Customer No.", UserID);
+    end;
+
     var
         AppMgt: Codeunit AppMgtNVX;
         TokenPaymentTermsTok: Label 'K', comment = 'DEA="K"', Locked = true;

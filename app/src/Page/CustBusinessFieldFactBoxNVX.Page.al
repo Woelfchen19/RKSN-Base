@@ -5,8 +5,8 @@ page 50031 CustBusinessFieldFactBoxNVX
     Editable = false;
     PageType = ListPart;
     SourceTable = CustomerBusinessFieldNVX;
-    SourceTableTemporary = true;
-    SourceTableView = SORTING(sort);
+    SourceTableView = SORTING(sort) WHERE(Active = const(true));
+
     layout
     {
         area(content)
@@ -43,7 +43,7 @@ page 50031 CustBusinessFieldFactBoxNVX
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Shortcut Dimension 5 Name field.', Comment = 'DEA="Name"';
                 }
-                field(StatusCustBusinessFields; StatusCustBusinessFields)
+                field(StatusCustBusinessFields; Rec.State)
                 {
                     Caption = 'State', comment = 'DEA="Status"';
                     ApplicationArea = All;
@@ -51,55 +51,4 @@ page 50031 CustBusinessFieldFactBoxNVX
             }
         }
     }
-    actions
-    {
-        area(processing)
-        {
-            Group(Functions)
-            {
-                Caption = 'Functions', comment = 'DEA="Funktionen"';
-                Visible = false;
-                action(OpenPage)
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'Customer Business Fields Card', comment = 'DEA="Debitoren Geschäftsfelder"';
-                    image = Card;
-                    RunObject = Page CustBusinessFieldsCardNVX;
-                    RunPageLink = "Customer No." = FIELD("Customer No.");
-                    ToolTip = '';
-                }
-            }
-        }
-    }
-
-    trigger OnFindRecord(Which: Text): Boolean
-    begin
-        AppMgt.GetTemoraryBusinessLines(CustomerNo, Rec);
-        exit(Find(which));
-    end;
-
-    trigger OnAfterGetRecord()
-    var
-        CustomerBusinessField: Record CustomerBusinessFieldNVX;
-    begin
-        if Rec."Shortcut Dimension 5 Code" = UpperCase(Format(DimShortcutBusinessField::All)) then
-            CustomerBusinessField.GetStatusSetup("Customer No.", DimShortcutBusinessField::All)
-        else
-            if Rec."Shortcut Dimension 5 Code" = UpperCase(Format(DimShortcutBusinessField::PB)) then
-                CustomerBusinessField.GetStatusSetup("Customer No.", DimShortcutBusinessField::PB);
-        //...
-    end;
-
-    var
-        AppMgt: Codeunit AppMgtNVX;
-        CustomerNo: Code[20];
-
-    procedure SetCustomerNo(Value: Code[20])
-    begin
-        CustomerNo := value;
-    end;
-
-    var
-        DimShortcutBusinessField: enum DimShortcutBusinessFieldNVX;
-        StatusCustBusinessFields: enum StatusCustBusinessFieldsNVX;
 }
