@@ -35,6 +35,11 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
                         end;
                 end;
             }
+            field(AssociatedNVX; Associated)
+            {
+                Caption = 'Assosiated', comment = 'DEA="zugehörig"';
+                ApplicationArea = All;
+            }
         }
     }
 
@@ -69,10 +74,11 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
     var
         GenJnlLineNVX: Record GenJnlLineNVX;
         AllocationCodeVar: Code[10];
+        Associated: Code[10];
 
     trigger OnAfterGetRecord()
     begin
-        GenJnlLineNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.");
+        GenJnlLineNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.", Associated);
         SetGlobalVariables();
     end;
 
@@ -83,7 +89,7 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
-        GenJnlLineNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.");
+        GenJnlLineNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.", Associated);
         SetComplementaryFields();
         exit(true)
     end;
@@ -102,15 +108,17 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
     local procedure ClearGlobalVariables()
     begin
         Clear(GenJnlLineNVX);
-        Clear(AllocationCodeVar);
+        AllocationCodeVar := '';
+        Associated := '';
     end;
 
     local procedure SetComplementaryFields()
     begin
-        if (AllocationCodeVar = GenJnlLineNVX."Allocation Code") then
+        if (AllocationCodeVar = GenJnlLineNVX."Allocation Code") and (Associated = GenJnlLineNVX.AssociatedNVX) then
             exit;
 
         GenJnlLineNVX."Allocation Code" := AllocationCodeVar;
+        GenJnlLineNVX.AssociatedNVX := Associated;
         GenJnlLineNVX.Modify();
     end;
 

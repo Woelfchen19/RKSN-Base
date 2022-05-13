@@ -24,6 +24,11 @@ table 50019 "GenJnlLineNVX"
             DataClassification = CustomerContent;
             Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
         }
+        field(16; AssociatedNVX; Text[10])
+        {
+            Caption = 'Assosiated', comment = 'DEA="zugehörig"';
+            DataClassification = CustomerContent;
+        }
         field(20; ShortcutDimension5CodeNVX; Code[20])
         {
             CaptionClass = '1,2,5';
@@ -51,8 +56,12 @@ table 50019 "GenJnlLineNVX"
             Clustered = true;
         }
     }
-
     procedure GetDefinition(JournalTemplateName: Code[10]; JournalBatchName: Code[10]; LineNo: Integer)
+    begin
+        GetDefinition(JournalTemplateName, JournalBatchName, LineNo, '');
+    end;
+
+    procedure GetDefinition(JournalTemplateName: Code[10]; JournalBatchName: Code[10]; LineNo: Integer; Assosiated: Text[10])
     begin
         if LineNo = 0 then
             exit;
@@ -69,6 +78,7 @@ table 50019 "GenJnlLineNVX"
         "Journal Template Name" := JournalTemplateName;
         "Journal Batch Name" := JournalBatchName;
         "Line No." := LineNo;
+        AssociatedNVX := Assosiated;
         Insert();
     end;
 
@@ -80,5 +90,20 @@ table 50019 "GenJnlLineNVX"
         AssosiatedDepartment.SetRange("Shortcut Dimension 1 Code", GenJournalLine."Shortcut Dimension 1 Code");
         if AssosiatedDepartment.FindFirst() then
             GenJournalLine.ValidateShortcutDimCode(5, AssosiatedDepartment."Shortcut Dimension 5 Code");
+    end;
+
+    procedure SetAssociatedNVX()
+    var
+        GLSetup: Record "General Ledger Setup";
+        GenJournalLine: Record "Gen. Journal Line";
+        DimensionValue: Record "Dimension Value";
+    begin
+        GenJournalLine.Get(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.");
+        if GenJournalLine."Shortcut Dimension 2 Code" = '' then
+            exit;
+
+        GLSetup.Get();
+        DimensionValue.Get(GLSetup."Global Dimension 2 Code", GenJournalLine."Shortcut Dimension 2 Code");
+        Rec.AssociatedNVX := Dimensionvalue.AssociatedNVX;
     end;
 }

@@ -39,6 +39,10 @@ pageextension 50061 "PaymentJournalNVX" extends "Payment Journal"
             {
                 ApplicationArea = All;
             }
+            field(AssoCiatedNVX; GenJnlLineNVX.AssociatedNVX)
+            {
+                ApplicationArea = All;
+            }
         }
     }
 
@@ -73,10 +77,11 @@ pageextension 50061 "PaymentJournalNVX" extends "Payment Journal"
     var
         GenJnlLineNVX: Record GenJnlLineNVX;
         AllocationCodeVar: Code[10];
+        AssoCiated: Code[10];
 
     trigger OnAfterGetRecord()
     begin
-        GenJnlLineNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.");
+        GenJnlLineNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.", AssoCiated);
         SetGlobalVariables();
     end;
 
@@ -87,7 +92,7 @@ pageextension 50061 "PaymentJournalNVX" extends "Payment Journal"
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
-        GenJnlLineNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.");
+        GenJnlLineNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.", AssoCiated);
         SetComplementaryFields();
         exit(true)
     end;
@@ -101,20 +106,23 @@ pageextension 50061 "PaymentJournalNVX" extends "Payment Journal"
     local procedure SetGlobalVariables()
     begin
         AllocationCodeVar := GenJnlLineNVX."Allocation Code";
+        AssoCiated := GenJnlLineNVX.AssociatedNVX;
     end;
 
     local procedure ClearGlobalVariables()
     begin
         Clear(GenJnlLineNVX);
-        Clear(AllocationCodeVar);
+        AllocationCodeVar := '';
+        AssoCiated := '';
     end;
 
     local procedure SetComplementaryFields()
     begin
-        if (AllocationCodeVar = GenJnlLineNVX."Allocation Code") then
+        if (AllocationCodeVar = GenJnlLineNVX."Allocation Code") and (AssoCiated = GenJnlLineNVX.AssociatedNVX) then
             exit;
 
         GenJnlLineNVX."Allocation Code" := AllocationCodeVar;
+        GenJnlLineNVX.AssociatedNVX := AssoCiated;
         GenJnlLineNVX.Modify();
     end;
 

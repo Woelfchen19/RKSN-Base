@@ -73,7 +73,7 @@ pageextension 50004 DimValueListNVX extends "Dimension Value List"
         PostingTypeVisible := GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 3 Code";
         IsOE := GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 6 Code";
         DimValueNVXShortcutDimension5CodeVisible := GetFilter("Dimension Code") = GlSetup.ShortcutDimension9CodeNVX;
-        AssosiatedVisible := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 1 Code";
+        AssosiatedVisible := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 2 Code";
     end;
 
     var

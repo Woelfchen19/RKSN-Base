@@ -13,11 +13,18 @@ codeunit 50007 "GenJnlPostLineHookNVX"
         CustLedgerEntry.CopyShortCutDimensionsFromDimensionValuesNVX();
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeCustLedgEntryInsert', '', true, true)]
+    local procedure OnBeforeInsertCustLedgEntry(var CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    begin
+        CustLedgerEntry.SetAssociatedNVX();
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertDtldCustLedgEntry', '', true, true)]
     local procedure OnBeforeInsertDtldCustLedgEntry(var DtldCustLedgEntry: Record "Detailed Cust. Ledg. Entry"; GenJournalLine: Record "Gen. Journal Line"; DtldCVLedgEntryBuffer: Record "Detailed CV Ledg. Entry Buffer")
     begin
         DtldCustLedgEntry.DimensionSetIDNVX := GenJournalLine."Dimension Set ID";
         DtldCustLedgEntry.CopyShortCutDimensionsFromDimensionValuesNVX();
+
     end;
 
 

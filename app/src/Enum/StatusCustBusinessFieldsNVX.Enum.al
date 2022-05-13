@@ -2,16 +2,20 @@ enum 50004 StatusCustBusinessFieldsNVX
 {
     Extensible = true;
 
-    value(0; NE)
+    Value(0; EMPTY)
     {
-        Caption = 'not configurated',comment = 'DEA="nicht eingerichtet"';
+        Caption = '', comment = 'DEA=""';
     }
-    value(1;TE)
+    value(1; NE)
     {
-        Caption = 'partially configurated',comment = 'DEA="teilweise eingerichtet"';
+        Caption = 'not configurated', comment = 'DEA="nicht eingerichtet"';
     }
-    value(2;EE)
+    value(2; TE)
     {
-        Caption = 'successfuly configurated',comment = 'DEA="erfolgreich eingerichtet"';
+        Caption = 'partially configurated', comment = 'DEA="teilweise eingerichtet"';
+    }
+    value(3; EE)
+    {
+        Caption = 'successfuly configurated', comment = 'DEA="erfolgreich eingerichtet"';
     }
 }

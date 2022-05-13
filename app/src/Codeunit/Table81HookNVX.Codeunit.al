@@ -28,6 +28,8 @@ codeunit 50021 "Table81HookNVX"
             if (Rec."Bal. Account Type" = Rec."Bal. Account Type"::"Fixed Asset") and (Rec."Bal. Account No." <> '') then
                 if FixedAsset.Get(Rec."Bal. Account No.") and (FixedAsset."Global Dimension 2 Code" <> Rec."Shortcut Dimension 2 Code") then
                     Error(WrongDim2Err);
+
+            GenJnlLineNVX.SetAssociatedNVX();
         end;
     end;
 

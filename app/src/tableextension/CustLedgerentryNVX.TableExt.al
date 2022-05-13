@@ -92,7 +92,25 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
 
             end;
         }
+        field(50010; AssociatedNVX; Code[10])
+        {
+            Caption = 'Assosiated', comment = 'DEA="zugehörig"';
+            DataClassification = CustomerContent;
+        }
     }
+
+    procedure SetAssociatedNVX()
+    var
+        GLSetup: Record "General Ledger Setup";
+        DimensionValue: Record "Dimension Value";
+    begin
+        if ("Global Dimension 2 Code" = '') or (Rec.AssociatedNVX <> '') then
+            exit;
+
+        GLSetup.Get();
+        DimensionValue.Get(GLSetup."Global Dimension 2 Code", Rec."Global Dimension 2 Code");
+        Rec.AssociatedNVX := Dimensionvalue.AssociatedNVX;
+    end;
 
     procedure CopyShortCutDimensionsFromDimensionValuesNVX()
     VAR

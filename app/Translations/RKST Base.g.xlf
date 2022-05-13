@@ -5213,6 +5213,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineNVX - Field Allocation Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 623263038 - Field 4275227508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Assosiated</source>
+          <note from="Developer" annotates="general" priority="2">DEA="zugehörig"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table GenJnlLineNVX - Field AssociatedNVX - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 623263038 - Field 2859055696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>DoNotSplit</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -11368,6 +11373,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Belegnr|Buchungsdatum"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Action SortbyPostingDateDocumentNoNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3163317604 - Control 4275227508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
+          <source>Assosiated</source>
+          <note from="Developer" annotates="general" priority="2">DEA="zugehörig"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustLedgerEntryNVX - Control AssociatedNVX - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3163317604 - Control 478110000 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
           <source>Specifies the value of the Shortcut Dimension 10 Code field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -11742,6 +11752,11 @@
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GeneralJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1795213297 - Control 4275227508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
+          <source>Assosiated</source>
+          <note from="Developer" annotates="general" priority="2">DEA="zugehörig"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GeneralJournalNVX - Control AssociatedNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 189489864 - Control 478110000 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4050813720">
           <source>Specifies the code for Shortcut Dimension 10, whose dimension values you can then enter directly on journals and sales or purchase lines.</source>
@@ -12763,6 +12778,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VATPostingSetupNVX - Control PurchaseVATasExpenseNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3933977732 - Field 4275227508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
+          <source>Assosiated</source>
+          <note from="Developer" annotates="general" priority="2">DEA="zugehörig"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgerentryNVX - Field AssociatedNVX - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3933977732 - Field 478110000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
           <source>Shortcut Dimension 10 Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -13130,7 +13150,7 @@
         </trans-unit>
         <trans-unit id="Enum 807737872 - EnumValue 3703598467 - Property 3830149458" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show all</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Alles anzeigen"</note>
+          <note from="Developer" annotates="general" priority="2">DEA="Alle anzeigen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum DimShortcutBusinessFieldNVX - EnumValue All - Property caption</note>
         </trans-unit>
         <trans-unit id="Enum 3877659762 - EnumValue 3263198591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -13197,6 +13217,11 @@
           <source>successfuly configurated</source>
           <note from="Developer" annotates="general" priority="2">DEA="erfolgreich eingerichtet"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum StatusCustBusinessFieldsNVX - EnumValue EE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4141580686 - EnumValue 3938122455 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum StatusCustBusinessFieldsNVX - EnumValue EMPTY - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 4141580686 - EnumValue 2486547637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>not configurated</source>

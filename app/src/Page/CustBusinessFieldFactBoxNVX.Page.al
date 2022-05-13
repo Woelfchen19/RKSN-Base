@@ -17,12 +17,14 @@ page 50031 CustBusinessFieldFactBoxNVX
                 field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = All;
+                    StyleExpr = StyleTxt;
                     ToolTip = 'Specifies the value of the Customer No. field.';
                     Visible = false;
                 }
                 field("Shortcut Dimension 5 Code"; Rec."Shortcut Dimension 5 Code")
                 {
                     ApplicationArea = All;
+                    StyleExpr = StyleTxt;
                     ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
 
                     trigger OnDrillDown()
@@ -41,14 +43,24 @@ page 50031 CustBusinessFieldFactBoxNVX
                 field(Dimension5Name; Rec.Dimension5Name)
                 {
                     ApplicationArea = All;
+                    StyleExpr = StyleTxt;
                     ToolTip = 'Specifies the value of the Shortcut Dimension 5 Name field.', Comment = 'DEA="Name"';
                 }
                 field(StatusCustBusinessFields; Rec.State)
                 {
                     Caption = 'State', comment = 'DEA="Status"';
+                    StyleExpr = StyleTxt;
                     ApplicationArea = All;
                 }
             }
         }
     }
+    trigger OnAfterGetRecord()
+    var
+    begin
+        StyleTxt := SetStyle();
+    end;
+
+    var
+        StyleTxt: Text;
 }

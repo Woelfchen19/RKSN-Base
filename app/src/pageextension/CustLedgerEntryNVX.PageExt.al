@@ -68,6 +68,13 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
                 ToolTip = 'Specifies the value of the Shortcut Dimension 10 Code field.';
                 Visible = DimVisible10;
             }
+            field(AssociatedNVX; Rec.AssociatedNVX)
+            {
+                ApplicationArea = All;
+                Caption = 'Assosiated', comment = 'DEA="zugehörig"';
+                Editable = false;
+                Visible = false;
+            }
         }
     }
 

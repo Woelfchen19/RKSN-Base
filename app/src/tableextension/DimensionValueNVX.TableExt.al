@@ -8,7 +8,7 @@ tableextension 50012 "DimensionValueNVX" extends "Dimension Value"
             CaptionClass = '1,2,5';
             DataClassification = CustomerContent;
         }
-        field(50001; AssociatedNVX; Boolean)
+        field(50001; AssociatedNVX; Code[10])
         {
             Caption = 'Assosiated', comment = 'DEA="zugehörig"';
             DataClassification = CustomerContent;

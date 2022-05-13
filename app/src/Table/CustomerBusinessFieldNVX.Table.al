@@ -163,12 +163,13 @@ table 50041 CustomerBusinessFieldNVX
         Counter: integer;
         i: Integer;
     begin
+        if DimShortcutBusinessField = DimShortcutBusinessField::All then
+            exit(StatusCustBusinessField::EMPTY);
+
         CustomerBusinessField.Reset();
         CustomerBusinessField.SetRange("Customer No.", CustomerNo);
         CustomerBusinessField.SetRange(Active, true);
-        if DimShortcutBusinessField <> DimShortcutBusinessField::All then
-            CustomerBusinessField.SetRange("Shortcut Dimension 5 Code", Format(DimShortcutBusinessField));
-
+        CustomerBusinessField.SetRange("Shortcut Dimension 5 Code", Format(DimShortcutBusinessField));
         if CustomerBusinessField.FindSet() then
             repeat
                 RecRef.GetTable(CustomerBusinessField);
@@ -187,6 +188,20 @@ table 50041 CustomerBusinessFieldNVX
             exit(StatusCustBusinessField::NE)
         else
             exit(StatusCustBusinessField::TE);
+    end;
+
+    procedure SetStyle(): Text
+    begin
+        case Rec.State of
+            StatusCustBusinessFieldsNVX::EMPTY:
+                exit('Standard');
+            StatusCustBusinessFieldsNVX::EE:
+                exit('Favorable');
+            StatusCustBusinessFieldsNVX::NE:
+                exit('Attension');
+            StatusCustBusinessFieldsNVX::TE:
+                exit('AttensionAccent');
+        end;
     end;
 
     local procedure SetSorting()
