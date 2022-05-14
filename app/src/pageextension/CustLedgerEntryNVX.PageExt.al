@@ -71,9 +71,8 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
             field(AssociatedNVX; Rec.AssociatedNVX)
             {
                 ApplicationArea = All;
-                Caption = 'Assosiated', comment = 'DEA="zugehörig"';
                 Editable = false;
-                Visible = false;
+                ToolTip = 'Specifies the value of the Associated field.';
             }
         }
     }

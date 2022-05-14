@@ -4,11 +4,12 @@ pageextension 50061 "PaymentJournalNVX" extends "Payment Journal"
     {
         addlast(Control1)
         {
-            field("Allocation CodeNVX"; AllocationCodeVar)
+            field(AllocationCodeNVX; Rec.AllocationCodeNVX)
             {
+                ToolTip = 'Specifies the value of the Allocation Code field.', Comment = 'DEA="Verteilungscode"';
                 ApplicationArea = All;
-                Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
                 TableRelation = AllocationCodeNVX.Code;
+
                 trigger OnValidate();
                 var
                     AllocationCode: Record AllocationCodeNVX;
@@ -16,12 +17,9 @@ pageextension 50061 "PaymentJournalNVX" extends "Payment Journal"
                     WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
                 begin
-                    if Rec."Line No." > 0 then
-                        SetComplementaryFields();
-
-                    if AllocationCodeVar <> '' then
+                    if Rec.AllocationCodeNVX <> '' then
                         if Rec."Shortcut Dimension 2 Code" = '' then begin
-                            AllocationCode.Get(AllocationCodeVar);
+                            AllocationCode.Get(Rec.AllocationCodeNVX);
                             Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
                             if Rec."Line No." > 0 then begin
                                 AppMgt.InsertDimValue(AllocationCode);
@@ -29,18 +27,22 @@ pageextension 50061 "PaymentJournalNVX" extends "Payment Journal"
                                 Rec.Modify();
                             end;
                         end else begin
-                            AllocationCode.Get(AllocationCodeVar);
+                            AllocationCode.Get(Rec.AllocationCodeNVX);
                             if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                                 Error(WrongDimErr);
                         end;
+
                 end;
             }
-            field(testfixedGBPGNVX; GenJnlLineNVX.FixedGBPG)
+
+            field(FixedGBPGNVX; Rec.FixedGBPGNVX)
             {
+                ToolTip = 'Specifies the value of the FixedGBPG field.', Comment = 'DEA="FixedGBPG"';
                 ApplicationArea = All;
             }
-            field(AssoCiatedNVX; GenJnlLineNVX.AssociatedNVX)
+            field(AssociatedNVX; Rec.AssociatedNVX)
             {
+                ToolTip = 'Specifies the value of the Assosiated field.', Comment = 'DEA="Zugehörig"';
                 ApplicationArea = All;
             }
         }
@@ -73,58 +75,6 @@ pageextension 50061 "PaymentJournalNVX" extends "Payment Journal"
             }
         }
     }
-
-    var
-        GenJnlLineNVX: Record GenJnlLineNVX;
-        AllocationCodeVar: Code[10];
-        AssoCiated: Code[10];
-
-    trigger OnAfterGetRecord()
-    begin
-        GenJnlLineNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.", AssoCiated);
-        SetGlobalVariables();
-    end;
-
-    trigger OnNewRecord(BelowxRec: Boolean)
-    begin
-        ClearGlobalVariables();
-    end;
-
-    trigger OnInsertRecord(BelowxRec: Boolean): Boolean
-    begin
-        GenJnlLineNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name", Rec."Line No.", AssoCiated);
-        SetComplementaryFields();
-        exit(true)
-    end;
-
-    trigger OnDeleteRecord(): Boolean
-    begin
-        ClearGlobalVariables();
-        exit(true);
-    end;
-
-    local procedure SetGlobalVariables()
-    begin
-        AllocationCodeVar := GenJnlLineNVX."Allocation Code";
-        AssoCiated := GenJnlLineNVX.AssociatedNVX;
-    end;
-
-    local procedure ClearGlobalVariables()
-    begin
-        Clear(GenJnlLineNVX);
-        AllocationCodeVar := '';
-        AssoCiated := '';
-    end;
-
-    local procedure SetComplementaryFields()
-    begin
-        if (AllocationCodeVar = GenJnlLineNVX."Allocation Code") and (AssoCiated = GenJnlLineNVX.AssociatedNVX) then
-            exit;
-
-        GenJnlLineNVX."Allocation Code" := AllocationCodeVar;
-        GenJnlLineNVX.AssociatedNVX := AssoCiated;
-        GenJnlLineNVX.Modify();
-    end;
 
     [IntegrationEvent(false, false)]
     local procedure OnPreviewDimDistributionNVX(var GenJnlLine: Record "Gen. Journal Line")
