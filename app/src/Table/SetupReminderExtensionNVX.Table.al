@@ -34,4 +34,15 @@ table 50006 "SetupReminderExtensionNVX"
             Clustered = true;
         }
     }
+
+    procedure RefreshUserSetup()
+    var
+        UserSetup: Record "User Setup";
+        AppMgt: Codeunit AppMgtNVX;
+    begin
+        if UserSetup.FindSet() then
+            repeat
+                AppMgt.CreateBusinessFieldFilter(UserSetup, Rec.AllowEmptyfilter);
+            until UserSetup.Next() = 0;
+    end;
 }

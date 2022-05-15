@@ -9094,7 +9094,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table VATPostingTypeNVX - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 1250765185 - NamedType 3655678631" size-unit="char" translate="yes" xml:space="preserve">
-          <source>''</source>
+          <source>'</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - NamedType EmptyFilterTxt</note>
         </trans-unit>

@@ -35,4 +35,9 @@ page 50034 SetupReminderExtensionCardNVX
             insert();
         end;
     end;
+
+    trigger OnClosePage()
+    begin
+        Rec.RefreshUserSetup();
+    end;
 }

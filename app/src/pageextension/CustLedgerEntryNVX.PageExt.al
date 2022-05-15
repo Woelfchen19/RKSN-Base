@@ -170,18 +170,14 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
     }
 
     trigger OnOpenPage()
-    var
-        UserSetup: Record "User Setup";
     begin
         AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Customer Ledger Entries", DimVisible, DimEditable);
         AppMgt.GetFieldsPropertyVisibleEditableBySetup(
             DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
                 DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
-
-        if AppMgt.GetActivateBusinessFilterInPages() then begin
-            UserSetup.Get(UserId);
-            Rec.SetRange(ShortcutDimension5CodeNVX, AppMgt.GetBusinessFieldFilterNVX(UserId));
-        end;
+        if AppMgt.GetActivateBusinessFilterInPages() then
+            Rec.SetFilter(ShortcutDimension5CodeNVX, AppMgt.GetBusinessFieldFilterNVX(UserId));
+        Message(rec.getfilters);
     end;
 
     var

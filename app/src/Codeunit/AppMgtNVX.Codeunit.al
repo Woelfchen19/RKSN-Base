@@ -494,16 +494,23 @@ codeunit 50026 "AppMgtNVX"
             TextBuilder.Append(Format(DimShortcutBusinessField::SO) + '|');
         if Rec.EVSetupNVX then
             TextBuilder.Append(Format(DimShortcutBusinessField::EV) + '|');
-        if InclusiveEmptyEntries and AllowEmptyFilterinPages() then
+        if InclusiveEmptyEntries then
             TextBuilder.Append(EmptyFilterTxt)
         else
             TextBuilder.Remove(StrLen(TextBuilder.ToText()), 1);
 
-        Rec.BusinessFieldFilterNVX := (CopyStr(TextBuilder.ToText(), 1, TextBuilder.Capacity(20)));
+        Rec.BusinessFieldFilterNVX :=
+            CopyStr(TextBuilder.ToText(), 1, TextBuilder.Capacity(20));
+
+        Message(TextBuilder.ToText());
+
+        Rec.Modify();
     end;
 
     procedure GetBusinessFieldFilterNVX(_UserID: Text): Code[20];
     begin
+        UserSetup.Get(_UserID);
+        Message(UserSetup.BusinessFieldFilterNVX);
         exit(UserSetup.BusinessFieldFilterNVX);
     end;
 
@@ -554,5 +561,5 @@ codeunit 50026 "AppMgtNVX"
         DimVisible8: Boolean;
         DimVisible9: Boolean;
         DimVisible10: Boolean;
-        EmptyFilterTxt: Label '''''';
+        EmptyFilterTxt: Label '''';
 }
