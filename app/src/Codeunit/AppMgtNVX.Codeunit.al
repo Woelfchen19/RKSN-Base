@@ -336,7 +336,6 @@ codeunit 50026 "AppMgtNVX"
 
     procedure SetActiveAndStateCustomerBusinessLines(CustomerNo: code[20]; _UserID: Text)
     var
-        UserSetup: Record "User Setup";
         CustomerBusinessField: Record CustomerBusinessFieldNVX;
         DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX;
         IsHandled: Boolean;
@@ -460,22 +459,52 @@ codeunit 50026 "AppMgtNVX"
     end;
 
     procedure ShowCustBusinessFieldFactBox(_UserID: Text): Boolean
-    var
-        UserSetup: Record "User Setup";
     begin
         if not UserSetup.Get(_UserID) then
             exit(false)
         else
-            if not (UserSetup.PBSetupNVX or
-                UserSetup.RDSetupNVX or
-                UserSetup.RHSetupNVX or
-                UserSetup.EASetupNVX or
-                UserSetup.SOSetupNVX or
-                UserSetup.EVSetupNVX)
-            then
+            if not (UserSetup.PBSetupNVX or UserSetup.RDSetupNVX or UserSetup.RHSetupNVX or UserSetup.EASetupNVX or UserSetup.SOSetupNVX or UserSetup.EVSetupNVX) then
                 exit(false);
 
         exit(true);
+    end;
+
+    procedure CreateBusinessFieldFilter(var Rec: Record "User Setup")
+    begin
+        CreateBusinessFieldFilter(Rec, false);
+    end;
+
+    procedure CreateBusinessFieldFilter(var Rec: Record "User Setup"; InclusiveEmptyEntries: Boolean)
+    var
+        DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX;
+        TextBuilder: TextBuilder;
+    begin
+        if not (Rec.PBSetupNVX or Rec.RDSetupNVX or Rec.RHSetupNVX or Rec.EASetupNVX or Rec.SOSetupNVX or Rec.EVSetupNVX) then
+            exit;
+
+        if Rec.PBSetupNVX then
+            TextBuilder.Append(Format(DimShortcutBusinessField::PB) + '|');
+        if Rec.RDSetupNVX then
+            TextBuilder.Append(Format(DimShortcutBusinessField::RD) + '|');
+        if Rec.RHSetupNVX then
+            TextBuilder.Append(Format(DimShortcutBusinessField::RH) + '|');
+        if Rec.EASetupNVX then
+            TextBuilder.Append(Format(DimShortcutBusinessField::EA) + '|');
+        if Rec.SOSetupNVX then
+            TextBuilder.Append(Format(DimShortcutBusinessField::SO) + '|');
+        if Rec.EVSetupNVX then
+            TextBuilder.Append(Format(DimShortcutBusinessField::EV) + '|');
+        if InclusiveEmptyEntries and AllowEmptyFilterinPages() then
+            TextBuilder.Append(EmptyFilterTxt)
+        else
+            TextBuilder.Remove(StrLen(TextBuilder.ToText()), 1);
+
+        Rec.BusinessFieldFilterNVX := (CopyStr(TextBuilder.ToText(), 1, TextBuilder.Capacity(20)));
+    end;
+
+    procedure GetBusinessFieldFilterNVX(_UserID: Text): Code[20];
+    begin
+        exit(UserSetup.BusinessFieldFilterNVX);
     end;
 
     procedure GetActiveCustBusinessFieldFilter(CustomerNo: Code[20]; var CustomerBusinessField: Record CustomerBusinessFieldNVX): Boolean
@@ -486,6 +515,22 @@ codeunit 50026 "AppMgtNVX"
         CustomerBusinessField.SetRange(Active, true);
     end;
 
+    procedure GetActivateBusinessFilterInPages(): Boolean
+    begin
+        exit(SetupReminderExtension.Get() and SetupReminderExtension.ActivateBusinessFilterInPages);
+    end;
+
+    procedure AllowEmptyFilterinPages(): Boolean
+    begin
+        exit(SetupReminderExtension.Get() and SetupReminderExtension.AllowEmptyfilter);
+    end;
+
+    procedure OpenIBANWebSite()
+    begin
+        SetupReminderExtension.Get();
+        Hyperlink(SetupReminderExtension.WebSiteIBAN);
+    end;
+
     [IntegrationEvent(false, false)]
     local procedure OnBeforeGetGetBusinessLines(var SetupBusinessField: record CustomerBusinessFieldNVX; var IsHandled: Boolean);
     begin
@@ -493,7 +538,9 @@ codeunit 50026 "AppMgtNVX"
 
     var
         GLSetup: Record "General Ledger Setup";
+        UserSetup: Record "User Setup";
         SetupPropertyForFields: Record SetupPropertyForFieldsNVX;
+        SetupReminderExtension: Record SetupReminderExtensionNVX;
         DimMgt: codeunit DimensionManagement;
         DimensionVisible: array[10] of Boolean;
         DimensionEditable: array[10] of Boolean;
@@ -507,4 +554,5 @@ codeunit 50026 "AppMgtNVX"
         DimVisible8: Boolean;
         DimVisible9: Boolean;
         DimVisible10: Boolean;
+        EmptyFilterTxt: Label '''''';
 }

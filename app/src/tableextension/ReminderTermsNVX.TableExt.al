@@ -1,4 +1,4 @@
-tableextension 50013 ReminderTermsNVX extends "Reminder Terms"
+tableextension 50013 "ReminderTermsNVX" extends "Reminder Terms"
 {
     fields
     {

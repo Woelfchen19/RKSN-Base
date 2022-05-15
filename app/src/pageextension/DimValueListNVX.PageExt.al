@@ -1,4 +1,4 @@
-pageextension 50004 DimValueListNVX extends "Dimension Value List"
+pageextension 50004 "DimValueListNVX" extends "Dimension Value List"
 {
     Editable = false;
 
@@ -6,7 +6,7 @@ pageextension 50004 DimValueListNVX extends "Dimension Value List"
     {
         addlast(Control1)
         {
-            field(VATPostingTypeNVX; DimValueNVX."VAT Posting Type")
+            field(VATPostingTypeNVX; Rec.VATPostingTypeNVX)
             {
                 ApplicationArea = All;
                 Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
@@ -14,14 +14,14 @@ pageextension 50004 DimValueListNVX extends "Dimension Value List"
                 TableRelation = VATPostingTypeNVX.Code;
                 Visible = PostingTypeVisible;
             }
-            field(VATPostingTypeDescNVX; DimValueNVX."VAT Posting Type Desc")
+            field(VATPostingTypeDescNVX; Rec.VATPostingTypeDescNVX)
             {
                 ApplicationArea = All;
                 Caption = 'VAT Posting Type Description', comment = 'DEA="USt.-Buchungsart Beschreibung"';
                 Editable = false;
                 Visible = PostingTypeVisible;
             }
-            field(DimValueNVXShortcutDimension1CodeNVX; DimValueNVX."Shortcut Dimension 1 Code")
+            field(DimValueNVXShortcutDimension1CodeNVX; Rec.ShortcutDimension1CodeNVX)
             {
                 ApplicationArea = All;
                 Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
@@ -30,7 +30,7 @@ pageextension 50004 DimValueListNVX extends "Dimension Value List"
                 TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
                 Visible = IsOE;
             }
-            field(DimValueNVXShortcutDimension2CodeNVX; DimValueNVX."Shortcut Dimension 2 Code")
+            field(DimValueNVXShortcutDimension2CodeNVX; Rec.ShortcutDimension2CodeNVX)
             {
                 ApplicationArea = All;
                 Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
@@ -58,15 +58,6 @@ pageextension 50004 DimValueListNVX extends "Dimension Value List"
         }
     }
 
-    trigger OnAfterGetRecord();
-    begin
-        if (not PostingTypeVisible) and (not IsOE) then
-            exit;
-        DimValueNVX.GetDefinition(Rec."Dimension Code", Rec.Code);
-        if PostingTypeVisible then
-            DimValueNVX.CalcFields("VAT Posting Type Desc");
-    end;
-
     trigger OnOpenPage();
     begin
         GLSetup.GetRecordOnce();
@@ -77,7 +68,6 @@ pageextension 50004 DimValueListNVX extends "Dimension Value List"
     end;
 
     var
-        DimValueNVX: Record DimValueNVX;
         GLSetup: Record "General Ledger Setup";
         AssosiatedVisible: Boolean;
         DimValueNVXShortcutDimension5CodeVisible: Boolean;

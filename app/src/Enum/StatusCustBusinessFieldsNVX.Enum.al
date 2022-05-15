@@ -1,4 +1,4 @@
-enum 50004 StatusCustBusinessFieldsNVX
+enum 50004 "StatusCustBusinessFieldsNVX"
 {
     Extensible = true;
 

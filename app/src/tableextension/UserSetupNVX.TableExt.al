@@ -16,31 +16,61 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
         {
             Caption = 'PB-setup', comment = 'DEA="PB-setup"';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                CreateBusinessFieldFilterNVX();
+            end;
         }
         field(50011; RDSetupNVX; Boolean)
         {
             Caption = 'RD-setup', comment = 'DEA="RD-setup"';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                CreateBusinessFieldFilterNVX();
+            end;
         }
         field(50012; RHSetupNVX; Boolean)
         {
             Caption = 'RH-setup', comment = 'DEA="RH-setup"';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                CreateBusinessFieldFilterNVX();
+            end;
         }
         field(50013; EASetupNVX; Boolean)
         {
             Caption = 'EA-setup', comment = 'DEA="EA-setup"';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                CreateBusinessFieldFilterNVX();
+            end;
         }
         field(50014; SOSetupNVX; Boolean)
         {
             Caption = 'SO-setup', comment = 'DEA="SO-setup"';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                CreateBusinessFieldFilterNVX();
+            end;
         }
         field(50015; EVSetupNVX; Boolean)
         {
             Caption = 'EV-setup', comment = 'DEA="EV-setup"';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                CreateBusinessFieldFilterNVX();
+            end;
         }
         field(50016; ReminderRunAuthorizedNVX; Boolean)
         {
@@ -63,5 +93,16 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
         {
             Caption = 'All Collected Accounts', comment = 'DEA="Alle Sammelkto"';
         }
+        field(50021; BusinessFieldFilterNVX; Code[20])
+        {
+            Caption = 'BusinessField Filter', comment = 'DEA="Geschäftsfeld Filter"';
+        }
     }
+
+    procedure CreateBusinessFieldFilterNVX()
+    var
+        AppMgt: Codeunit AppMgtNVX;
+    begin
+        AppMgt.CreateBusinessFieldFilter(Rec, true);
+    end;
 }

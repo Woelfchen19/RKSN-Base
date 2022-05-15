@@ -1,4 +1,4 @@
-page 50031 CustBusinessFieldFactBoxNVX
+page 50031 "CustBusinessFieldFactBoxNVX"
 {
     Caption = 'Businessfields FactBox', comment = 'DEA="Geschäftsfelder FactBox"';
 

@@ -248,36 +248,6 @@
           <note from="Developer" annotates="general" priority="2">DEA="Status"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field State - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1555680109 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Code"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table DimValueNVX - Field Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1555680109 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Dimensionscode"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table DimValueNVX - Field Dimension Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1555680109 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table DimValueNVX - Field Shortcut Dimension 1 Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1555680109 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 2 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 2"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table DimValueNVX - Field Shortcut Dimension 2 Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1555680109 - Field 1364463381 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Posting Type</source>
-          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table DimValueNVX - Field VAT Posting Type - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1555680109 - Field 605891830 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Posting Type Description</source>
-          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart Beschreibung"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table DimValueNVX - Field VAT Posting Type Desc - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 3618441594 - Field 2777694911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation %</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilung %"</note>
@@ -307,11 +277,6 @@
           <source>Shortcut Dimension 3 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table DimVATAllocNVX - Field Shortcut Dimension 3 Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3618441594 - Field 781257514 - Method 2126772001 - NamedType 1292485932" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The VAT Posting Type of this line differs from the Dimension Value Setup. Please check the Setup if applicable.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Die implementierte USt.-Buchungsart wurde dem Dimensionswert SPARTE unterschiedlich zugeordnet. Überprüfen Sie gegebenenfalls bitte in der Dimensionseinrichtung SPARTE die zugeordnete USt.-Buchungsart."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table DimVATAllocNVX - Field Shortcut Dimension 3 Code - Method OnValidate - NamedType PstTypeInfoMsg</note>
         </trans-unit>
         <trans-unit id="Table 3618441594 - Field 2483745328 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 3 Name</source>
@@ -9073,6 +9038,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SetupPropertyForFieldsNVX - Field Object Type - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Table 2206586188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Setup Reminder Extension</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Erweiterung Mahnung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2206586188 - Field 115300620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Active Filter BusinessFields for Pages</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Filter Geschäftsfelder für Pages aktivieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field ActivateBusinessFilterInPages - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2206586188 - Field 1035365880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>use also empty filter</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Leeren Filter berücksichten"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field AllowEmptyfilter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2206586188 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Primärschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2206586188 - Field 22707081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Website IBAN</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Webseite IBAN"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field WebSiteIBAN - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3911360504 - Field 2434839038 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase VAT as Expense</source>
           <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand"</note>
@@ -9102,6 +9092,11 @@
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table VATPostingTypeNVX - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1250765185 - NamedType 3655678631" size-unit="char" translate="yes" xml:space="preserve">
+          <source>''</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - NamedType EmptyFilterTxt</note>
         </trans-unit>
         <trans-unit id="Codeunit 1787021016 - Method 2999721956 - NamedType 645313898" size-unit="char" translate="yes" xml:space="preserve">
           <source>This receipt has already been invoiced. Undo Receipt can be applied only to posted, but not invoiced receipts.</source>
@@ -9262,6 +9257,11 @@
           <source>Only Entry Type "Positive Adjmt.", "Negative Adjmt" and "Transfer" are allowed!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Nur die Postenarten Zugang, Abgang, Umlagerung sind erlaubt!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table83HookNVX - Method OnAfterValidateEntryType - NamedType EntryTypeErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2054808362 - NamedType 972383771" size-unit="char" translate="yes" xml:space="preserve">
+          <source>https://www.smart-rechner.de/iban_pruefen/rechner.php</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit UpgradeMgtNVX - NamedType WebSiteUriIBANTxt</note>
         </trans-unit>
         <trans-unit id="Page 3992821448 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Card</source>
@@ -10837,6 +10837,16 @@
           <source>Specifies the value of the Object Type field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SetupPropertyForFieldsNVX - Control Object Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1444865904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Setup Reminder Extension</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Erweiterung Mahnung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SetupReminderExtensionCardNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1444865904 - Control 1035365880 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the use also empty filter field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Leeren Filter berücksichten"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SetupReminderExtensionCardNVX - Control AllowEmptyfilter - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2664610773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Posting Types</source>
@@ -12648,6 +12658,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob die Lagerbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control AllowItemProdPstGrpChangeNVX - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 255734992 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the BusinessField Filter field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfeld Filter"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control BusinessFieldFilterNVX - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 4239059649 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies the value of the EDIT BusinessField CustLedgerEntry field.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Änderung Code Dim.Geschäftsfeld erlaubt"</note>
@@ -12863,10 +12878,30 @@
           <note from="Developer" annotates="general" priority="2">DEA="zugehörig"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension DimensionValueNVX - Field AssociatedNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 4108639813 - Field 2228815520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension DimensionValueNVX - Field ShortcutDimension1CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4108639813 - Field 207137745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
+          <source>Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension DimensionValueNVX - Field ShortcutDimension2CodeNVX - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 4108639813 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Shortcut Dimension 5 Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension DimensionValueNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4108639813 - Field 3973687038 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
+          <source>VAT Posting Type Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart Beschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension DimensionValueNVX - Field VATPostingTypeDescNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4108639813 - Field 2664610773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
+          <source>VAT Posting Type</source>
+          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension DimensionValueNVX - Field VATPostingTypeNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 607882803 - Field 478110000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
           <source>Shortcut Dimension 10 Code</source>
@@ -13052,6 +13087,11 @@
           <source>Allow Item Prod.Post.Group Change</source>
           <note from="Developer" annotates="general" priority="2">DEA="Änderung Prod.Bu.Grp. Artikelkarte"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field AllowItemProdPstGrpChangeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 255734992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>BusinessField Filter</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfeld Filter"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field BusinessFieldFilterNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1224611290 - Field 4239059649 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>EDIT BusinessField CustLedgerEntry</source>

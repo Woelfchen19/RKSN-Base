@@ -31,7 +31,7 @@ pageextension 50022 "SInvoiceNVX" extends "Sales Invoice"
                 Editable = PageEditable;
                 trigger OnValidate()
                 var
-                    DimValueNVX: Record DimValueNVX;
+                    DimensionValue: Record "Dimension Value";
                     Item: Record Item;
                     ConfirmUpdateQst: Label 'Do you want to update Sales %1 and %2 in Sales Line with the values defined in %3?', comment = 'DEA="Möchten Sie Verkauf-%1 und %2 mit den Daten aus %3 aktualisieren?"';
                 begin
@@ -42,7 +42,7 @@ pageextension 50022 "SInvoiceNVX" extends "Sales Invoice"
                     if Item.Get(SalesLine."No.") then;
                     if (not Item."Inventory Value Zero") then begin
                         GLSetup.GetRecordOnce();
-                        DimValueNVX.Get(GLSetup."Shortcut Dimension 6 Code", ShortcutDims[6]);
+                        DimensionValue.Get(GLSetup."Shortcut Dimension 6 Code", ShortcutDims[6]);
                         Rec.Modify();
                         SalesLine.Reset();
                         SalesLine.SetRange("Document Type", "Document Type");
@@ -53,9 +53,9 @@ pageextension 50022 "SInvoiceNVX" extends "Sales Invoice"
                                 exit;
                             SalesLineNVX.Reset();
                             repeat
-                                SalesLine.Validate("Shortcut Dimension 2 Code", DimValueNVX."Shortcut Dimension 2 Code");
+                                SalesLine.Validate("Shortcut Dimension 2 Code", DimensionValue.ShortcutDimension2CodeNVX);
                                 SalesLineNVX.Get(SalesLine."Document Type", SalesLine."Document No.", SalesLine."Line No.");
-                                SalesLineNVX."Shortcut Dimension 1 Code" := DimValueNVX."Shortcut Dimension 1 Code";
+                                SalesLineNVX."Shortcut Dimension 1 Code" := DimensionValue.ShortcutDimension1CodeNVX;
                                 SalesLine.Modify();
                                 SalesLineNVX.Modify();
                             until SalesLine.Next() = 0;

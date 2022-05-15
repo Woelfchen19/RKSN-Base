@@ -70,6 +70,16 @@ pageextension 50047 "UserSetupNVX" extends "User Setup"
                 ToolTip = 'Specifies the value of the All Collected Accounts field.', Comment = 'DEA="Alle Sammelkto"';
                 ApplicationArea = All;
             }
+            field(BusinessFieldFilterNVX; Rec.BusinessFieldFilterNVX)
+            {
+                ToolTip = 'Specifies the value of the BusinessField Filter field.', Comment = 'DEA="Geschäftsfeld Filter"';
+                ApplicationArea = All;
+            }
         }
     }
+
+    trigger OnAfterGetRecord()
+    begin
+        Rec.CreateBusinessFieldFilterNVX();
+    end;
 }

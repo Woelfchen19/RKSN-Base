@@ -5,11 +5,13 @@ codeunit 50024 "UpgradeMgtNVX"
     trigger OnUpgradePerDatabase()
     begin
         InsertSetupPropertyForField();
+        InsertSetupReminderExtension();
     end;
 
     trigger OnUpgradePerCompany()
     begin
         InitializeDimensionCustomer();
+        SetAssociatedCustLedgerEntryNVX();
     end;
 
     local procedure InitializeDimensionCustomer()
@@ -54,6 +56,36 @@ codeunit 50024 "UpgradeMgtNVX"
         end;
     end;
 
+    local procedure InsertSetupReminderExtension()
+    var
+        SetupReminderExtension: Record SetupReminderExtensionNVX;
+    begin
+        if not SetupReminderExtension.Get() then begin
+            SetupReminderExtension.Init();
+            SetupReminderExtension.ActivateBusinessFilterInPages := true;
+            SetupReminderExtension.WebSiteIBAN := Copystr(WebSiteUriIBANTxt, 1, 50);
+            SetupReminderExtension.Insert();
+        end;
+    end;
+
+    local procedure SetAssociatedCustLedgerEntryNVX()
+    var
+        GLSetup: Record "General Ledger Setup";
+        DimensionValue: Record "Dimension Value";
+        CustLedgerEntry: Record "Cust. Ledger Entry";
+    begin
+        GLSetup.Get();
+
+        CustLedgerEntry.SetRange(AssociatedNVX, '');
+        if CustLedgerEntry.FindSet() then
+            repeat
+                if DimensionValue.Get(GLSetup."Global Dimension 2 Code", CustLedgerEntry."Global Dimension 2 Code") then begin
+                    CustLedgerEntry.AssociatedNVX := Dimensionvalue.AssociatedNVX;
+                    CustLedgerEntry.Modify();
+                end;
+            until CustLedgerEntry.Next() = 0;
+    end;
+
     local procedure Initialize()
     begin
         GetGLSetup();
@@ -85,4 +117,5 @@ codeunit 50024 "UpgradeMgtNVX"
     var
         PageList: List of [integer];
         GLSetupShortcutDimCode: array[10] of Code[20];
+        WebSiteUriIBANTxt: Label 'https://www.smart-rechner.de/iban_pruefen/rechner.php';
 }

@@ -1,4 +1,4 @@
-enum 50003 DimShortcutBusinessFieldNVX
+enum 50003 "DimShortcutBusinessFieldNVX"
 {
     Extensible = true;
     value(1; PB)

@@ -1,4 +1,4 @@
-pageextension 50062 ReminderTermsNVX extends "Reminder Terms"
+pageextension 50062 "ReminderTermsNVX" extends "Reminder Terms"
 {
     layout
     {

@@ -36,10 +36,11 @@ pageextension 50020 "SalesCrMemoNVX" extends "Sales Credit Memo"
                 Caption = 'Shortcut Dimension 6 Code', comment = 'DEA="Shortcutdimensionscode 6"';
                 CaptionClass = '1,2,6';
                 TableRelation = "Dimension Value".Code where("Global Dimension No." = const(6));
+
                 trigger OnValidate()
                 var
-                    DimValueNVX: Record DimValueNVX;
                     Item: Record Item;
+                    DimensionValue: Record "Dimension Value";
                     ConfirmUpdateQst: Label 'Do you want to update Sales %1 and %2 in Sales Line with the values defined in %3?', comment = 'DEA="Möchten Sie Verkauf-%1 und %2 mit den Daten aus %3 aktualisieren?"';
                 begin
                     DimMgt.ValidateShortcutDimValues(6, ShortcutDims[6], Rec."Dimension Set ID");
@@ -47,10 +48,12 @@ pageextension 50020 "SalesCrMemoNVX" extends "Sales Credit Memo"
                     if ShortcutDims[6] = '' then
                         exit;
                     if Item.Get(SalesLine."No.") then;
-                    if (not Item."Inventory Value Zero") then begin
+                    if not Item."Inventory Value Zero" then begin
                         GLSetup.GetRecordOnce();
-                        DimValueNVX.Get(GLSetup."Shortcut Dimension 6 Code", ShortcutDims[6]);
+                        DimensionValue.Get(GLSetup."Shortcut Dimension 6 Code", ShortcutDims[6]);
+
                         Rec.Modify();
+
                         SalesLine.Reset();
                         SalesLine.SetRange("Document Type", "Document Type");
                         SalesLine.SetRange("Document No.", "No.");
@@ -58,13 +61,16 @@ pageextension 50020 "SalesCrMemoNVX" extends "Sales Credit Memo"
                         if SalesLine.FindSet() then begin
                             if not Confirm(ConfirmUpdateQst, false, GLSetup."Shortcut Dimension 1 Code", GLSetup."Shortcut Dimension 2 Code", GLSetup."Shortcut Dimension 6 Code") then
                                 exit;
+
                             SalesLineNVX.Reset();
                             repeat
-                                SalesLine.Validate("Shortcut Dimension 2 Code", DimValueNVX."Shortcut Dimension 2 Code");
+                                SalesLine.Validate("Shortcut Dimension 2 Code", DimensionValue.ShortcutDimension2CodeNVX);
                                 SalesLineNVX.Get(SalesLine."Document Type", SalesLine."Document No.", SalesLine."Line No.");
-                                SalesLineNVX."Shortcut Dimension 1 Code" := DimValueNVX."Shortcut Dimension 1 Code";
+                                SalesLineNVX."Shortcut Dimension 1 Code" := DimensionValue.ShortcutDimension1CodeNVX;
+
                                 SalesLine.Modify();
                                 SalesLineNVX.Modify();
+
                             until SalesLine.Next() = 0;
 
                         end;

@@ -1,4 +1,4 @@
-page 50032 CustBusinessFieldCardNVX
+page 50032 "CustBusinessFieldCardNVX"
 {
     Caption = 'Customer Card BusinessField', comment = 'DEA="Debitorenkarte Geschäftsfeld"';
     DeleteAllowed = false;

@@ -42,20 +42,6 @@ table 50007 "DimVATAllocNVX"
             Caption = 'Shortcut Dimension 3 Code', comment = 'DEA="Shortcutdimensionscode 3"';
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
             CaptionClass = '1,2,3';
-            trigger OnValidate();
-            var
-                DimValueNVX: Record DimValueNVX;
-                GLSetup: Record "General Ledger Setup";
-                PstTypeInfoMsg: Label 'The VAT Posting Type of this line differs from the Dimension Value Setup. Please check the Setup if applicable.',
-                comment = 'DEA="Die implementierte USt.-Buchungsart wurde dem Dimensionswert SPARTE unterschiedlich zugeordnet. Überprüfen Sie gegebenenfalls bitte in der Dimensionseinrichtung SPARTE die zugeordnete USt.-Buchungsart."';
-            begin
-                GLSetup.Get();
-                if not DimValueNVX.Get(GLSetup."Shortcut Dimension 3 Code", "Shortcut Dimension 3 Code") then
-                    DimValueNVX.Init();
-
-                if (DimValueNVX."VAT Posting Type" <> '') and (DimValueNVX."VAT Posting Type" <> "VAT Posting Type") then
-                    Message(PstTypeInfoMsg);
-            end;
         }
         field(11; "Shortcut Dimension 3 Name"; Text[50])
         {

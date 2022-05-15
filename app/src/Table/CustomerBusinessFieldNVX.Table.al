@@ -1,4 +1,4 @@
-table 50041 CustomerBusinessFieldNVX
+table 50041 "CustomerBusinessFieldNVX"
 {
     Caption = 'Customer Businessfield (Dim 5)', comment = 'DEA="Debitor Geschäftsfeld (Dim 5)"';
     DataCaptionFields = "Customer No.";
@@ -42,7 +42,7 @@ table 50041 CustomerBusinessFieldNVX
             CaptionClass = '1,2,5';
             DataClassification = CustomerContent;
         }
-        field(11; "Dimension5Name"; Text[50])
+        field(11; Dimension5Name; Text[50])
         {
             CalcFormula = lookup("Dimension Value".Name where("Global Dimension No." = const(5), Code = field("Shortcut Dimension 5 Code")));
             Caption = 'Shortcut Dimension 5 Name', comment = 'DEA="Name"';
