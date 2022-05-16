@@ -10478,6 +10478,21 @@
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountLedgerEntriesNVX - Control Allocation CodeNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3448260168 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1638686336">
+          <source>Preview dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CashReceiptJournalNVX - Action PreviewDimDistributionNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3448260168 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1638686336">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CashReceiptJournalNVX - Control Allocation CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3448260168 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3448260168">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CashReceiptJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+        </trans-unit>
         <trans-unit id="PageExtension 586387857 - Action 3878433627 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3105459369">
           <source>Classification</source>
           <note from="Developer" annotates="general" priority="2">DEA="Gliederungsgruppen"</note>
@@ -10772,16 +10787,6 @@
           <source>No. of Classifications</source>
           <note from="Developer" annotates="general" priority="2">DEA="Anzahl Gliederungsgruppen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLAccountListNVX - Control No. of Classifications NVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 4094469093 - Control 2474047554 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 909755016">
-          <source>Specifies the value of the Shortcut Dimension 3 Code field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntriesPreviewNVX - Control ShortcutDimension3CodeNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 4094469093 - Control 2474047554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 909755016">
-          <source>Shortcut Dimension 3 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntriesPreviewNVX - Control ShortcutDimension3CodeNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 2474047554 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Specifies the value of the Shortcut Dimension 3 Code field.</source>
@@ -11098,6 +11103,21 @@
           <note from="Developer" annotates="general" priority="2">DEA="Diese Einrichtung ist nur solange änderbar als es zum betreffenden Artikel noch keine Bewegungsposten gibt"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemCardNVX - Control Deactivate Inventory Gen. Bus. Posting GroupNVX - Method OnValidate - NamedType ItemEntryNotEmptyErr</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3481180437 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3196174509">
+          <source>Preview dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PaymentJournalNVX - Action PreviewDimDistributionNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3481180437 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3196174509">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PaymentJournalNVX - Control Allocation CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3481180437 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3481180437">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PaymentJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1589426501 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4042331808">
           <source>Preview dimensional distribution</source>
           <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
@@ -11347,6 +11367,21 @@
           <source>VAT Posting Type</source>
           <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PstdSInvoiceSubNVX - Control VAT Posting TypeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1137484366 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3580867622">
+          <source>Preview dimensional distribution</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PurchaseJournalNVX - Action PreviewDimDistributionNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1137484366 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3580867622">
+          <source>Allocation Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PurchaseJournalNVX - Control Allocation CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1137484366 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1137484366">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PurchaseJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
         </trans-unit>
         <trans-unit id="PageExtension 1200957402 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
           <source>Preview dimensional distribution</source>

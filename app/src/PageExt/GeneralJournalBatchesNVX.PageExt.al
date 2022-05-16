@@ -10,7 +10,8 @@ pageextension 50034 GeneralJournalBatchesNVX extends "General Journal Batches"
                 ApplicationArea = All;
                 trigger OnValidate();
                 begin
-                    SetComplementaryFields();
+                    If Rec.Name <> '' then
+                        SetComplementaryFields();
                 end;
             }
         }
