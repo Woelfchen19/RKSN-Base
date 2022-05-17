@@ -10565,7 +10565,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 566041477 - Control 2132930775 - Method 2126772001 - NamedType 43121249" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 566041477">
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Do you want to overwrite the Profitcenter?</source>
-          <note from="Developer" annotates="general" priority="2">DEA=Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Wollen Sie das Profitcenter mit dem Wert aus dem Verteilungscode überschreiben?"</note>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Wollen Sie das Profitcenter mit dem Wert aus dem Verteilungscode überschreiben?"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FACardNVX - Control Allocation CodeNVX - Method OnValidate - NamedType OverwriteDim2Qst</note>
         </trans-unit>
         <trans-unit id="PageExtension 566041477 - Control 2132930775 - Method 2126772001 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 566041477">

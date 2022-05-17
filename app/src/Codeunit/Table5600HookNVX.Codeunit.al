@@ -17,4 +17,12 @@ codeunit 50019 Table5600HookNVX
                 Error(WrongDimErr);
         end;
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Fixed Asset", 'OnAfterInsertEvent', '', false, false)]
+    local procedure InsertRecordInDefinitionTable(var Rec: Record "Fixed Asset")
+    var
+        FixedAssetNVX: Record FixedAssetNVX;
+    begin
+        FixedAssetNVX.GetDefinition(Rec."No.");
+    end;
 }

@@ -25,7 +25,7 @@ pageextension 50028 FACardNVX extends "Fixed Asset Card"
                     DimMgt.SaveDefaultDim(Database::"Fixed Asset", Rec."No.", 3, ShortcutDimCode3);
                 end;
             }
-            field("Allocation CodeNVX"; FixedAssetNVX."Allocation Code")
+            field("Allocation CodeNVX"; AllocationCodeVar)
             {
                 ApplicationArea = All;
                 Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
@@ -35,16 +35,19 @@ pageextension 50028 FACardNVX extends "Fixed Asset Card"
                 var
                     AllocationCode: Record AllocationCodeNVX;
                     OverwriteDim2Qst: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Do you want to overwrite the Profitcenter?',
-                        comment = 'DEA=Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Wollen Sie das Profitcenter mit dem Wert aus dem Verteilungscode überschreiben?"';
+                        comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Wollen Sie das Profitcenter mit dem Wert aus dem Verteilungscode überschreiben?"';
                     WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup!',
                         comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Überprüfen Sie bitte das Setup."';
                 begin
-                    if FixedAssetNVX."Allocation Code" = '' then begin
+                    FixedAssetNVX.GetDefinition(Rec."No.");
+
+                    if AllocationCodeVar = '' then begin
+                        FixedAssetNVX."Allocation Code" := '';
                         FixedAssetNVX.Modify();
                         exit;
                     end;
 
-                    AllocationCode.Get(FixedAssetNVX."Allocation Code");
+                    AllocationCode.Get(AllocationCodeVar);
 
                     if Rec."Global Dimension 2 Code" = '' then begin
                         Rec."Global Dimension 2 Code" := AllocationCode."Shortcut Dimension 2 Code";
@@ -58,6 +61,7 @@ pageextension 50028 FACardNVX extends "Fixed Asset Card"
                                 Rec.Modify(true);
                             end;
 
+                    FixedAssetNVX."Allocation Code" := AllocationCodeVar;
                     FixedAssetNVX.Modify();
                 end;
             }
@@ -68,6 +72,13 @@ pageextension 50028 FACardNVX extends "Fixed Asset Card"
         FixedAssetNVX: Record FixedAssetNVX;
         PageEditable: Boolean;
         ShortcutDimCode3: Code[20];
+        AllocationCodeVar: Code[10];
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        PageEditable := CurrPage.Editable;
+        ClearGlobalVariables();
+    end;
 
     trigger OnAfterGetRecord();
     var
@@ -97,5 +108,17 @@ pageextension 50028 FACardNVX extends "Fixed Asset Card"
         Rec.TestField("Global Dimension 2 Code");
 
         exit(true);
+    end;
+
+    trigger OnDeleteRecord(): Boolean
+    begin
+        ClearGlobalVariables();
+        exit(true);
+    end;
+
+    local procedure ClearGlobalVariables()
+    begin
+        Clear(FixedAssetNVX);
+        Clear(ShortcutDimCode3);
     end;
 }
