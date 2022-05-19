@@ -69,10 +69,12 @@ pageextension 50028 FACardNVX extends "Fixed Asset Card"
     }
 
     var
+
         FixedAssetNVX: Record FixedAssetNVX;
+        GLSetup: Record "General Ledger Setup";
         PageEditable: Boolean;
-        ShortcutDimCode3: Code[20];
         AllocationCodeVar: Code[10];
+        ShortcutDimCode3: Code[20];
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
@@ -86,16 +88,8 @@ pageextension 50028 FACardNVX extends "Fixed Asset Card"
         GLSetup: Record "General Ledger Setup";
     begin
         FixedAssetNVX.GetDefinition(Rec."No.");
+        SetGlobalVariables();
         PageEditable := CurrPage.Editable;
-
-        GLSetup.Get();
-        DefaultDim.SetRange("Table ID", Database::"Fixed Asset");
-        DefaultDim.SetRange("No.", Rec."No.");
-        DefaultDim.SetRange("Dimension Code", GLSetup."Shortcut Dimension 3 Code");
-        if DefaultDim.FindFirst() then
-            ShortcutDimCode3 := DefaultDim."Dimension Value Code"
-        else
-            Clear(ShortcutDimCode3);
     end;
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean;
@@ -120,5 +114,21 @@ pageextension 50028 FACardNVX extends "Fixed Asset Card"
     begin
         Clear(FixedAssetNVX);
         Clear(ShortcutDimCode3);
+    end;
+
+    local procedure SetGlobalVariables()
+    var
+        DefaultDim: Record "Default Dimension";
+    begin
+        GLSetup.GetRecordOnce();
+        DefaultDim.SetRange("Table ID", Database::"Fixed Asset");
+        DefaultDim.SetRange("No.", Rec."No.");
+        DefaultDim.SetRange("Dimension Code", GLSetup."Shortcut Dimension 3 Code");
+        if DefaultDim.FindFirst() then
+            ShortcutDimCode3 := DefaultDim."Dimension Value Code"
+        else
+            Clear(ShortcutDimCode3);
+
+        AllocationCodeVar := FixedAssetNVX."Allocation Code";
     end;
 }
