@@ -12,6 +12,11 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
             Caption = 'Allow Item Invt.Post.Group Change', comment = 'DEA="Änderung Lager.Bu.Grp. Artikelkarte"';
             DataClassification = CustomerContent;
         }
+        field(50002; AllowSetupReminderNVX; Boolean)
+        {
+            Caption = 'Allow Reminder Setup', comment = 'DEA="Zugriff Erweiterung Mahnung erlauben"';
+            DataClassification = CustomerContent;
+        }
         field(50010; PBSetupNVX; Boolean)
         {
             Caption = 'PB-setup', comment = 'DEA="PB-setup"';
@@ -81,19 +86,15 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
         {
             Caption = 'EDIT BusinessField CustLedgerEntry', comment = 'DEA="EDIT Geschäftsfeld Debitorenposten"';
         }
-        field(50018; ChangeCodeDimBusinessFieldNVX; Boolean)
-        {
-            Caption = 'EDIT BusinessField CustLedgerEntry', comment = 'DEA="Änderung Code Dim.Geschäftsfeld erlaubt"';
-        }
-        field(50019; SetupDynamicFieldsNVX; Boolean)
+        field(50018; SetupDynamicFieldsNVX; Boolean)
         {
             Caption = 'Setup dynamic Fields', comment = 'DEA="setup dynamische Felder erlaubt"';
         }
-        field(50020; AllCollectedAccountsNVX; Boolean)
+        field(50019; AllCollectedAccountsNVX; Boolean)
         {
             Caption = 'All Collected Accounts', comment = 'DEA="Alle Sammelkto"';
         }
-        field(50021; BusinessFieldFilterNVX; Code[20])
+        field(50020; BusinessFieldFilterNVX; Code[20])
         {
             Caption = 'BusinessField Filter', comment = 'DEA="Geschäftsfeld Filter"';
         }
@@ -101,8 +102,11 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
 
     procedure CreateBusinessFieldFilterNVX()
     var
+        SetupReminderExtension: record SetupReminderExtensionNVX;
         AppMgt: Codeunit AppMgtNVX;
+        InclusiveEmptyEntries: Boolean;
     begin
-        AppMgt.CreateBusinessFieldFilter(Rec, true);
+        InclusiveEmptyEntries := SetupReminderExtension.Get() and SetupReminderExtension.AllowEmptyfilter;
+        AppMgt.CreateBusinessFieldFilter(Rec, InclusiveEmptyEntries);
     end;
 }

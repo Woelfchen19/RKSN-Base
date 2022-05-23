@@ -2,7 +2,7 @@ tableextension 50001 "GLAccountNVX" extends "G/L Account"
 {
     fields
     {
-        field(50001; "Hidden NVX"; Boolean)
+        field(50001; HiddenNVX; Boolean)
         {
             DataClassification = CustomerContent;
             Caption = 'Hidden', comment = 'DEA="Sachkonto ausblenden"';
@@ -19,12 +19,18 @@ tableextension 50001 "GLAccountNVX" extends "G/L Account"
                     Error(Balance_Err);
             end;
         }
-        field(50002; "No. of Classifications NVX"; Integer)
+        field(50002; NoOfClassificationsNVX; Integer)
         {
             Editable = false;
             Caption = 'No. of Classifications', comment = 'DEA="Anzahl Gliederungsgruppen"';
             FieldClass = FlowField;
             CalcFormula = count("NCB Classification G/L Acc." where("G/L Account No." = field("No.")));
+        }
+        field(50003; ReorgDimCollectedAccountNVX; Code[20])
+        {
+            Caption = 'Reorganize Dimension collected Account', comment = 'DEA="Umbelast.Dim.Sammelkto"';
+            DataClassification = CustomerContent;
+            TableRelation = "G/L Account";
         }
     }
 }

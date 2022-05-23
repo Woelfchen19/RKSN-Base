@@ -4,7 +4,7 @@ pageextension 50029 "FixedAssetGLJournalNVX" extends "Fixed Asset G/L Journal"
     {
         addlast(Control1)
         {
-            field(AllocationCodeNVX; Rec.AllocationCodeNVX)
+            field(AllocCodeNVX; Rec.AllocCodeNVX)
             {
                 ApplicationArea = All;
                 Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
@@ -21,9 +21,9 @@ pageextension 50029 "FixedAssetGLJournalNVX" extends "Fixed Asset G/L Journal"
                 begin
 
                     if Rec."Line No." > 0 then
-                        if Rec.AllocationCodeNVX <> '' then
+                        if Rec.AllocCodeNVX <> '' then
                             if Rec."Shortcut Dimension 2 Code" = '' then begin
-                                AllocationCode.Get(Rec.AllocationCodeNVX);
+                                AllocationCode.Get(Rec.AllocCodeNVX);
                                 Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
                                 if Rec."Line No." > 0 then begin
                                     AppMgt.InsertDimValue(AllocationCode);
@@ -31,16 +31,16 @@ pageextension 50029 "FixedAssetGLJournalNVX" extends "Fixed Asset G/L Journal"
                                     Rec.Modify();
                                 end;
                             end else begin
-                                AllocationCode.Get(Rec.AllocationCodeNVX);
+                                AllocationCode.Get(Rec.AllocCodeNVX);
                                 if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                                     Error(WrongDimErr);
                             end;
                     if (Rec."Account Type" = Rec."Account Type"::"Fixed Asset") and (Rec."Account No." <> '') then
-                        if FixedAssetNVX.Get(Rec."Account No.") and (FixedAssetNVX."Allocation Code" <> Rec.AllocationCodeNVX) then
+                        if FixedAssetNVX.Get(Rec."Account No.") and (FixedAssetNVX."Allocation Code" <> Rec.AllocCodeNVX) then
                             Error(WrongDim2Err);
 
                     if (Rec."Bal. Account Type" = Rec."Bal. Account Type"::"Fixed Asset") and (Rec."Bal. Account No." <> '') then
-                        if FixedAssetNVX.Get(Rec."Bal. Account No.") and (FixedAssetNVX."Allocation Code" <> Rec.AllocationCodeNVX) then
+                        if FixedAssetNVX.Get(Rec."Bal. Account No.") and (FixedAssetNVX."Allocation Code" <> Rec.AllocCodeNVX) then
                             Error(WrongDim2Err);
                 end;
             }

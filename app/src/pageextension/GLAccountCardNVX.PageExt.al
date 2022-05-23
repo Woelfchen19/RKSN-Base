@@ -24,7 +24,7 @@ pageextension 50037 "GLAccountCardNVX" extends "G/L Account Card"
         }
         addafter(Blocked)
         {
-            field("Hidden NVX"; "Hidden NVX")
+            field("Hidden NVX"; HiddenNVX)
             {
                 ApplicationArea = All;
             }
@@ -62,7 +62,7 @@ pageextension 50037 "GLAccountCardNVX" extends "G/L Account Card"
                     GLAccountNVX.Modify();
                 end;
             }
-            field("No. of Classifications NVX"; Rec."No. of Classifications NVX")
+            field("No. of Classifications NVX"; Rec.NoOfClassificationsNVX)
             {
                 ApplicationArea = All;
                 Caption = 'No. of Classifications', comment = 'DEA="Anzahl Gliederungsgruppen"';

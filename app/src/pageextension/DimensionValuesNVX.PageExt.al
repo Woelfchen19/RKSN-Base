@@ -11,13 +11,13 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
                 TableRelation = VATPostingTypeNVX.Code;
                 Visible = PostingTypeVisible;
             }
-            field(VATPostingTypeDescNVX; Rec.VATPostingTypeDescNVX)
-            {
-                ApplicationArea = All;
-                Caption = 'VAT Posting Type Description', comment = 'DEA="USt.-Buchungsart Beschreibung"';
-                Editable = false;
-                Visible = PostingTypeVisible;
-            }
+            // field(VATPostingTypeDescNVX; Rec.VATPostingTypeDescNVX)
+            // {
+            //     ApplicationArea = All;
+            //     Caption = 'VAT Posting Type Description', comment = 'DEA="USt.-Buchungsart Beschreibung"';
+            //     Editable = false;
+            //     Visible = PostingTypeVisible;
+            // }
             field(DimValueNVXShortcutDimension1CodeNVX; Rec.ShortcutDimension1CodeNVX)
             {
                 ApplicationArea = All;
@@ -44,7 +44,20 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5));
                 Visible = DimValueNVXShortcutDimension5CodeVisible;
+            }
+            field(ReOrganizeAccountNVX; Rec.ReOrganizeAccountNVX)
+            {
+                ToolTip = 'Specifies the value of the ReorganizeAccount field.', Comment = 'DEA="Umbelastung Sachkto"';
+                ApplicationArea = All;
+                Visible = ReOrganizeAccountVisible;
+            }
+            field(DischargeAccountNVX; Rec.DischargeAccountNVX)
+            {
+                ToolTip = 'Specifies the value of the Discharge Account field.', Comment = 'DEA="Entlastung Sachkto"';
+                ApplicationArea = All;
+                Visible = DischargeAccountVisible;
             }
         }
     }
@@ -70,7 +83,11 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
         GLSetup.GetRecordOnce();
         PostingTypeVisible := GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 3 Code";
         IsOE := GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 6 Code";
+
         DimValueNVXShortcutDimension5CodeVisible := GetFilter("Dimension Code") = GlSetup.ShortcutDimension9CodeNVX;
+        ReOrganizeAccountVisible := GetFilter("Dimension Code") = GlSetup.ShortcutDimension9CodeNVX;
+        DischargeAccountVisible := GetFilter("Dimension Code") = GlSetup.ShortcutDimension9CodeNVX;
+
         AssosiatedVisible := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 2 Code";
         AssosiatedDepartment := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 5 Code";
     end;
@@ -82,4 +99,6 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
         DimValueNVXShortcutDimension5CodeVisible: Boolean;
         IsOE: Boolean;
         PostingTypeVisible: Boolean;
+        ReOrganizeAccountVisible: Boolean;
+        DischargeAccountVisible: Boolean;
 }

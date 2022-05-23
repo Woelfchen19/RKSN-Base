@@ -4,7 +4,7 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
     {
         addlast(Control1)
         {
-            field(AllocationCodeNVX; Rec.AllocationCodeNVX)
+            field(AllocationCodeNVX; Rec.AllocCodeNVX)
             {
                 ApplicationArea = All;
                 Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
@@ -17,9 +17,9 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
                 begin
                     if Rec."Line No." > 0 then
-                        if Rec.AllocationCodeNVX <> '' then
+                        if Rec.AllocCodeNVX <> '' then
                             if Rec."Shortcut Dimension 2 Code" = '' then begin
-                                AllocationCode.Get(Rec.AllocationCodeNVX);
+                                AllocationCode.Get(Rec.AllocCodeNVX);
                                 Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
                                 if Rec."Line No." > 0 then begin
                                     AppMgt.InsertDimValue(AllocationCode);
@@ -27,7 +27,7 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
                                     Rec.Modify();
                                 end;
                             end else begin
-                                AllocationCode.Get(Rec.AllocationCodeNVX);
+                                AllocationCode.Get(Rec.AllocCodeNVX);
                                 if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                                     Error(WrongDimErr);
                             end;

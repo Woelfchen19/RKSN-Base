@@ -15,8 +15,8 @@ codeunit 50021 "Table81HookNVX"
             ((Rec."Bal. Account Type" in [Rec."Bal. Account Type"::"Fixed Asset", Rec."Bal. Account Type"::"G/L Account"]) and
             (Rec."Bal. Account No." <> ''))
         then begin
-            if Rec.AllocationCodeNVX <> '' then begin
-                AllocationCode.Get(Rec.AllocationCodeNVX);
+            if Rec.AllocCodeNVX <> '' then begin
+                AllocationCode.Get(Rec.AllocCodeNVX);
                 if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                     Error(WrongDimErr);
             end;

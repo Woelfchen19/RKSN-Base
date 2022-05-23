@@ -1,90 +1,106 @@
 codeunit 50026 "AppMgtNVX"
 {
-    procedure SetDimensionsVisibility(
-        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
-        PageID: integer;
-        DimVisible: array[10] of Boolean;
-        DimEditable: array[10] of Boolean)
-    begin
-        SetFieldsPropertyVisibleEditableBySetup(ObjectType, PageID, DimVisible, DimEditable);
-    end;
 
-    procedure SetFieldsPropertyVisibleEditableBySetup(PageID: integer)
-    begin
-        SetFieldsPropertyVisibleEditableBySetup(8, PageID);
-    end;
-
-    procedure SetFieldsPropertyVisibleEditableBySetup(
-        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
-        PageID: integer
-        )
     var
-        DimVisible: array[10] of Boolean;
-        DimEditable: array[10] of Boolean;
+        GLSetup: Record "General Ledger Setup";
+        SetupPropertyForFields: Record SetupPropertyForFieldsNVX;
+        SetupReminderExtension: Record SetupReminderExtensionNVX;
+        UserSetup: Record "User Setup";
+        DimMgt: codeunit DimensionManagement;
+        DimensionEditable: array[10] of Boolean;
+        DimensionVisible: array[10] of Boolean;
+        DimVisible1: Boolean;
+        DimVisible2: Boolean;
+        DimVisible3: Boolean;
+        DimVisible4: Boolean;
+        DimVisible5: Boolean;
+        DimVisible6: Boolean;
+        DimVisible7: Boolean;
+        DimVisible8: Boolean;
+        DimVisible9: Boolean;
+        DimVisible10: Boolean;
+        GLSetupShortcutDimCode: array[10] of Code[20];
+        PipeTok: Label '|';
+        ShortcutDimension9CodeTxt: Label 'SAMMELKto';
+        ShortcutDimension10CodeTxt: Label 'VERTEILUNG';
+        PageList: List of [integer];
+
+    procedure AllowEmptyFilterinPages(): Boolean
     begin
-        SetFieldsPropertyVisibleEditableBySetup(ObjectType, PageID, DimVisible, DimEditable);
+        exit(SetupReminderExtension.Get() and SetupReminderExtension.AllowEmptyfilter);
     end;
 
-    procedure SetFieldsPropertyVisibleEditableBySetup(
-        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
-        PageID: integer;
-        DimVisible: array[10] of Boolean;
-        DimEditable: array[10] of Boolean)
+    procedure BlockDimValue(AllocationCode: Code[10])
     var
-        i: integer;
+        Dimvalue: Record "Dimension Value";
     begin
         GLSetup.Get();
+        if Dimvalue.Get(Glsetup.ShortcutDimension10CodeNVX, AllocationCode) then begin
+            Dimvalue.Blocked := true;
+            Dimvalue.Modify(true);
+        end;
+    end;
 
-        DimMgt.UseShortcutDims(
-          DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10);
+    procedure CreateBusinessFieldFilter(var Rec: Record "User Setup")
+    begin
+        CreateBusinessFieldFilter(Rec, false);
+    end;
 
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 1 Code") then begin
-            Dimvisible[1] := DimVisible1 and SetupPropertyForFields.IsVisible;
-            DimEditable[1] := SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 2 Code") then begin
-            Dimvisible[2] := DimVisible2 and SetupPropertyForFields.IsVisible;
-            DimEditable[2] := SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 3 Code") then begin
-            Dimvisible[3] := DimVisible3 and SetupPropertyForFields.IsVisible;
-            DimEditable[3] := SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 4 Code") then begin
-            Dimvisible[4] := DimVisible4 and SetupPropertyForFields.IsVisible;
-            DimEditable[4] := SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 5 Code") then begin
-            Dimvisible[5] := DimVisible5 and SetupPropertyForFields.IsVisible;
-            DimEditable[5] := SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 6 Code") then begin
-            Dimvisible[6] := DimVisible6 and SetupPropertyForFields.IsVisible;
-            DimEditable[6] := SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 7 Code") then begin
-            Dimvisible[7] := DimVisible7 and SetupPropertyForFields.IsVisible;
-            DimEditable[7] := SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 8 Code") then begin
-            Dimvisible[8] := DimVisible8 and SetupPropertyForFields.IsVisible;
-            DimEditable[8] := SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup.ShortcutDimension9CodeNVX) then begin
-            Dimvisible[9] := DimVisible9 and SetupPropertyForFields.IsVisible;
-            DimEditable[9] := SetupPropertyForFields.IsEditable;
-        end;
-        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup.ShortcutDimension10CodeNVX) then begin
-            Dimvisible[10] := DimVisible10 and SetupPropertyForFields.IsVisible;
-            DimEditable[10] := SetupPropertyForFields.IsEditable;
+    procedure CreateBusinessFieldFilter(var Rec: Record "User Setup"; InclusiveEmptyEntries: Boolean): Boolean
+    var
+        c: char;
+        DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX;
+        TextBuilder: TextBuilder;
+    begin
+        c := 39;
+
+        if not (Rec.PBSetupNVX or Rec.RDSetupNVX or Rec.RHSetupNVX or Rec.EASetupNVX or Rec.SOSetupNVX or Rec.EVSetupNVX) then begin
+            Rec.BusinessFieldFilterNVX := format(c) + format(c);
+            exit(false);
         end;
 
-        for i := 1 to 10 do begin
-            DimensionEditable[i] := DimEditable[i];
-            DimensionVisible[i] := DimVisible[i];
-        end;
+        if Rec.PBSetupNVX then
+            TextBuilder.Append(Format(DimShortcutBusinessField::PB) + PipeTok);
+        if Rec.RDSetupNVX then
+            TextBuilder.Append(Format(DimShortcutBusinessField::RD) + PipeTok);
+        if Rec.RHSetupNVX then
+            TextBuilder.Append(Format(DimShortcutBusinessField::RH) + PipeTok);
+        if Rec.EASetupNVX then
+            TextBuilder.Append(Format(DimShortcutBusinessField::EA) + PipeTok);
+        if Rec.SOSetupNVX then
+            TextBuilder.Append(Format(DimShortcutBusinessField::SO) + PipeTok);
+        if Rec.EVSetupNVX then
+            TextBuilder.Append(Format(DimShortcutBusinessField::EV) + PipeTok);
+        if InclusiveEmptyEntries then
+            TextBuilder.Append(format(c) + Format(c))
+        else
+            TextBuilder.Remove(StrLen(TextBuilder.ToText()), 1);
 
-        Clear(DimMgt);
+        Rec.BusinessFieldFilterNVX :=
+            CopyStr(TextBuilder.ToText(), 1, TextBuilder.Capacity(20));
+
+        Rec.Modify();
+
+        exit(true);
+    end;
+
+    procedure GetActivateBusinessFilterInPages(): Boolean
+    begin
+        exit(SetupReminderExtension.Get() and SetupReminderExtension.ActivateBusinessFilterInPages);
+    end;
+
+    procedure GetActiveCustBusinessFieldFilter(CustomerNo: Code[20]; var CustomerBusinessField: Record CustomerBusinessFieldNVX): Boolean
+    begin
+        CustomerBusinessField.Reset();
+        CustomerBusinessField.SetRange("Customer No.", CustomerNo);
+        CustomerBusinessField.SetRange("Dimension Value Type", CustomerBusinessField."Dimension Value Type"::Standard);
+        CustomerBusinessField.SetRange(Active, true);
+    end;
+
+    procedure GetBusinessFieldFilterNVX(_UserID: Text): Code[20];
+    begin
+        UserSetup.Get(_UserID);
+        exit(UserSetup.BusinessFieldFilterNVX);
     end;
 
     procedure GetFieldsPropertyVisibleEditableBySetup(
@@ -115,6 +131,82 @@ codeunit 50026 "AppMgtNVX"
         Dimension10Editable := DimensionEditable[10];
     end;
 
+    /// <summary>
+    /// ToDo
+    /// </summary>
+    procedure GetPermissionUserSetup()
+    begin
+
+    end;
+
+    procedure HasValue(FieldRef: FieldRef): Boolean
+    var
+        FieldRec: Record Field;
+        HasValueBoolean: Boolean;
+        D: Date;
+        Dec: Decimal;
+        Int: Integer;
+        T: Time;
+    begin
+        Evaluate(FieldRec.Type, Format(FieldRef.Type));
+
+        case FieldRec.Type of
+            FieldRec.Type::Boolean:
+                HasValueBoolean := FieldRef.Value;
+            FieldRec.Type::Option:
+                HasValueBoolean := true;
+            FieldRec.Type::Integer:
+                begin
+                    Int := FieldRef.Value;
+                    HasValueBoolean := Int <> 0;
+                end;
+            FieldRec.Type::Decimal:
+                begin
+                    Dec := FieldRef.Value;
+                    HasValueBoolean := Dec <> 0;
+                end;
+            FieldRec.Type::Date:
+                begin
+                    D := FieldRef.Value;
+                    HasValueBoolean := D <> 0D;
+                end;
+            FieldRec.Type::Time:
+                begin
+                    T := FieldRef.Value;
+                    HasValueBoolean := T <> 0T;
+                end;
+            FieldRec.Type::BLOB:
+                HasValueBoolean := false;
+            else
+                HasValueBoolean := Format(FieldRef.Value) <> '';
+        end;
+
+        exit(HasValueBoolean);
+    end;
+
+    procedure Initialize()
+    begin
+        GetGLSetup();
+
+        PageList.AddRange(
+            20, 25, 29, 38, 39, 40, 41, 42, 43, 44, 46, 47, 54, 55, 62, 95, 96, 97, 98,
+            131, 132, 133, 135, 137, 139, 141, 142, 143, 144, 171, 176, 232, 251, 253, 254, 255, 256, 380, 508, 510, 536, 537,
+            573, 574, 752, 755, 901, 921, 931, 941, 5160, 5163, 5165, 5168, 5628, 5629, 5741, 5744, 5746, 5802, 5877, 5885,
+            5934, 5936, 5956, 5973, 5979, 6621, 6624, 6628, 6631, 6641, 6645, 9300, 9301, 9302, 9305
+        );
+    end;
+
+    procedure InitializeDimensionCustomer()
+    var
+        Customer: Record Customer;
+    begin
+        if Customer.FindSet() then
+            repeat
+                InsertPKShortCutdimension(Customer);
+                InsertPKDefaultDim(Customer);
+            until customer.Next() = 0;
+    end;
+
     procedure InsertDimValue(AllocationCode: Record AllocationCodeNVX)
     var
         Dimvalue: Record "Dimension Value";
@@ -129,15 +221,76 @@ codeunit 50026 "AppMgtNVX"
         end;
     end;
 
-    procedure BlockDimValue(AllocationCode: Code[10])
+
+    procedure InsertPKDefaultDim(Customer: Record Customer)
     var
-        Dimvalue: Record "Dimension Value";
+        DefaultDimension: Record "Default Dimension";
     begin
         GLSetup.Get();
-        if Dimvalue.Get(Glsetup.ShortcutDimension10CodeNVX, AllocationCode) then begin
-            Dimvalue.Blocked := true;
-            Dimvalue.Modify(true);
+        DefaultDimension.SetRange("Table ID", DATABASE::Customer);
+        DefaultDimension.SetRange("No.", Customer."No.");
+        DefaultDimension.SetRange("Dimension Code", GLSetup."Shortcut Dimension 7 Code");
+        IF DefaultDimension.IsEmpty THEN begin
+            DefaultDimension.Init();
+            DefaultDimension."Table ID" := DATABASE::Customer;
+            DefaultDimension."No." := Customer."No.";
+            DefaultDimension."Dimension Code" := GLSetup."Shortcut Dimension 7 Code";
+            DefaultDimension."Dimension Value Code" := Customer."No.";
+            DefaultDimension."Value Posting" := DefaultDimension."Value Posting"::"Same Code";
+            DefaultDimension.Insert();
         end;
+    end;
+
+    procedure InsertPKShortCutdimension(Customer: Record Customer)
+    var
+        DimensionValue: Record "Dimension Value";
+    begin
+        Glsetup.GetRecordOnce();
+
+        IF NOT DimensionValue.Get(GLSetup."Shortcut Dimension 7 Code", Customer."No.") then begin
+            DimensionValue.Init();
+            DimensionValue."Dimension Code" := GLSetup."Shortcut Dimension 7 Code";
+            DimensionValue.Code := Customer."No.";
+            DimensionValue.Name := CopyStr(Customer.Name, 1, 50);
+            DimensionValue.Insert(true);
+        END else
+            ModifyPKShortCutdimension(Customer);
+    end;
+
+    procedure InsertSetupPropertyForField()
+    var
+        Dimension: Record Dimension;
+        index: Integer;
+        PageID: Integer;
+        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
+    begin
+        if not SetupPropertyForFields.IsEmpty() then
+            exit;
+
+        Initialize();
+
+        foreach PageID in Pagelist do begin
+            if Dimension.FindSet() then
+                repeat
+                    SetupPropertyForFields.Init();
+                    SetupPropertyForFields."Object ID" := PageID;
+                    SetupPropertyForFields.Dimension := Dimension.Code;
+                    SetupPropertyForFields.Insert();
+                until Dimension.Next() = 0;
+            for index := 1 to ArrayLen(GLSetupShortcutDimCode) do begin
+                SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetupShortcutDimCode[index]);
+                SetupPropertyForFields.IsVisible := true;
+                SetupPropertyForFields.Modify();
+            end;
+        end;
+    end;
+
+    procedure IsNormalField(FieldRef: FieldRef): Boolean
+    begin
+        if Format(FieldRef.Class) = 'Normal' then
+            exit(true);
+
+        exit(false);
     end;
 
     procedure ModifyDimensionSetEntry(var GenJnlLine: Record "Gen. Journal Line"; AllocationCode: Code[20])
@@ -188,53 +341,6 @@ codeunit 50026 "AppMgtNVX"
         SalesLine.ValidateShortcutDimCode(10, AllocationCode);
     end;
 
-    procedure InsertPKShortCutdimension(Customer: Record Customer)
-    var
-        DimensionValue: Record "Dimension Value";
-    begin
-        Glsetup.Get();
-        IF NOT DimensionValue.Get(GLSetup."Shortcut Dimension 7 Code", Customer."No.") then begin
-            DimensionValue.Init();
-            DimensionValue."Dimension Code" := GLSetup."Shortcut Dimension 7 Code";
-            DimensionValue.Code := Customer."No.";
-            DimensionValue.Name := CopyStr(Customer.Name, 1, 50);
-            DimensionValue.Insert(true);
-        END else
-            ModifyPKShortCutdimension(Customer);
-    end;
-
-    local procedure ModifyPKShortCutdimension(Customer: Record Customer)
-    var
-        DimensionValue: Record "Dimension Value";
-    begin
-        Glsetup.Get();
-        IF DimensionValue.Get(GLSetup."Shortcut Dimension 7 Code", Customer."No.") then
-            if DimensionValue.Name <> Customer.Name then begin
-                DimensionValue.Name := CopyStr(Customer.Name, 1, 50);
-                DimensionValue.Modify();
-            END;
-    end;
-
-
-    procedure InsertPKDefaultDim(Customer: Record Customer)
-    var
-        DefaultDimension: Record "Default Dimension";
-    begin
-        GLSetup.Get();
-        DefaultDimension.SetRange("Table ID", DATABASE::Customer);
-        DefaultDimension.SetRange("No.", Customer."No.");
-        DefaultDimension.SetRange("Dimension Code", GLSetup."Shortcut Dimension 7 Code");
-        IF DefaultDimension.IsEmpty THEN begin
-            DefaultDimension.Init();
-            DefaultDimension."Table ID" := DATABASE::Customer;
-            DefaultDimension."No." := Customer."No.";
-            DefaultDimension."Dimension Code" := GLSetup."Shortcut Dimension 7 Code";
-            DefaultDimension."Dimension Value Code" := Customer."No.";
-            DefaultDimension."Value Posting" := DefaultDimension."Value Posting"::"Same Code";
-            DefaultDimension.Insert();
-        end;
-    end;
-
     procedure OnLookupByBusinessFieldDimension(BusinessFieldDimension: Code[20]; GlobalDimensionNo: integer): Code[20]
     var
         DimensionValue: Record "Dimension Value";
@@ -252,93 +358,17 @@ codeunit 50026 "AppMgtNVX"
             exit(DimensionValue.Code);
     end;
 
-    procedure ShowPagePaymentTerms(Token: Code[20]): Code[10]
-    var
-        PaymentTerms: Record "Payment Terms";
-        PaymentTermsPage: Page "Payment Terms";
+    procedure OpenIBANWebSite()
     begin
-        PaymentTerms.Reset();
-        PaymentTerms.FilterGroup(2);
-        PaymentTerms.SetFilter(Code, '%1', Token + '*');
-        PaymentTerms.FilterGroup(0);
-        PaymentTerms.FindSet();
-
-        PaymentTermsPage.SetTableView(PaymentTerms);
-        PaymentTermsPage.Editable(false);
-        PaymentTermsPage.LookupMode(true);
-
-        if PaymentTermsPage.RunModal() = Action::LookupOK then
-            PaymentTermsPage.GetRecord(PaymentTerms);
-
-        exit(PaymentTerms.Code)
-    end;
-
-    procedure ShowPagePaymentMethods(Token: Code[20]): Code[10]
-    var
-        PaymentMethod: Record "Payment Method";
-        PaymentMethodPage: Page "Payment Methods";
-    begin
-        PaymentMethod.Reset();
-        PaymentMethod.FilterGroup(2);
-        PaymentMethod.SetFilter(Code, '%1', Token + '*');
-        PaymentMethod.FilterGroup(0);
-        PaymentMethod.FindSet();
-
-        PaymentMethodPage.SetTableView(PaymentMethod);
-        PaymentMethodPage.Editable(false);
-        PaymentMethodPage.LookupMode(true);
-
-        if PaymentMethodPage.RunModal() = Action::LookupOK then
-            PaymentMethodPage.GetRecord(PaymentMethod);
-
-        exit(PaymentMethod.Code)
-    end;
-
-    procedure ShowPageReminderTerms(ShortCutDimension5: Code[20]): Code[10]
-    var
-        ReminderTerms: Record "Reminder Terms";
-        ReminderTermsPage: Page "Reminder Terms";
-    begin
-        ReminderTerms.Reset();
-        ReminderTerms.FilterGroup(2);
-        ReminderTerms.SetRange(ShortcutDimension5CodeNVX, ShortCutDimension5);
-        ReminderTerms.FilterGroup(0);
-
-        ReminderTermsPage.SetTableView(ReminderTerms);
-        ReminderTermsPage.Editable(false);
-        ReminderTermsPage.LookupMode(true);
-
-        if ReminderTermsPage.RunModal() = Action::LookupOK then
-            ReminderTermsPage.GetRecord(ReminderTerms);
-
-        exit(ReminderTerms.Code)
-    end;
-
-    procedure ShowPageCustomerBankAccount(CodeFilter: Text): Code[20]
-    var
-        CustomerBankAccount: Record "Customer Bank Account";
-        CustomerBankAccountPage: Page "Customer Bank Account List";
-    begin
-        CustomerBankAccount.Reset();
-        CustomerBankAccount.FilterGroup(2);
-        CustomerBankAccount.SetFilter(Code, CodeFilter);
-        CustomerBankAccount.FilterGroup(0);
-
-        CustomerBankAccountPage.SetTableView(CustomerBankAccount);
-        CustomerBankAccountPage.Editable(false);
-        CustomerBankAccountPage.LookupMode(true);
-
-        if CustomerBankAccountPage.RunModal() = Action::LookupOK then
-            CustomerBankAccountPage.GetRecord(CustomerBankAccount);
-
-        exit(CustomerBankAccount.Code)
+        SetupReminderExtension.Get();
+        Hyperlink(SetupReminderExtension.WebSiteIBAN);
     end;
 
     procedure SetActiveAndStateCustomerBusinessLines(CustomerNo: code[20]; _UserID: Text)
     var
         CustomerBusinessField: Record CustomerBusinessFieldNVX;
-        DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX;
         IsHandled: Boolean;
+        DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX;
         Counter: Integer;
     begin
         OnBeforeGetGetBusinessLines(CustomerBusinessField, IsHandled);
@@ -405,57 +435,91 @@ codeunit 50026 "AppMgtNVX"
             until CustomerBusinessField.Next() = 0;
     end;
 
-    procedure HasValue(FieldRef: FieldRef): Boolean
-    var
-        FieldRec: Record Field;
-        HasValueBoolean: Boolean;
-        Int: Integer;
-        Dec: Decimal;
-        D: Date;
-        T: Time;
+    procedure SetDimensionsVisibility(
+        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
+        PageID: integer;
+        DimVisible: array[10] of Boolean;
+        DimEditable: array[10] of Boolean)
     begin
-        Evaluate(FieldRec.Type, Format(FieldRef.Type));
-
-        case FieldRec.Type of
-            FieldRec.Type::Boolean:
-                HasValueBoolean := FieldRef.Value;
-            FieldRec.Type::Option:
-                HasValueBoolean := true;
-            FieldRec.Type::Integer:
-                begin
-                    Int := FieldRef.Value;
-                    HasValueBoolean := Int <> 0;
-                end;
-            FieldRec.Type::Decimal:
-                begin
-                    Dec := FieldRef.Value;
-                    HasValueBoolean := Dec <> 0;
-                end;
-            FieldRec.Type::Date:
-                begin
-                    D := FieldRef.Value;
-                    HasValueBoolean := D <> 0D;
-                end;
-            FieldRec.Type::Time:
-                begin
-                    T := FieldRef.Value;
-                    HasValueBoolean := T <> 0T;
-                end;
-            FieldRec.Type::BLOB:
-                HasValueBoolean := false;
-            else
-                HasValueBoolean := Format(FieldRef.Value) <> '';
-        end;
-
-        exit(HasValueBoolean);
+        SetFieldsPropertyVisibleEditableBySetup(ObjectType, PageID, DimVisible, DimEditable);
     end;
 
-    procedure IsNormalField(FieldRef: FieldRef): Boolean
+    procedure SetFieldsPropertyVisibleEditableBySetup(PageID: integer)
     begin
-        if Format(FieldRef.Class) = 'Normal' then
-            exit(true);
+        SetFieldsPropertyVisibleEditableBySetup(8, PageID);
+    end;
 
-        exit(false);
+    procedure SetFieldsPropertyVisibleEditableBySetup(
+        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
+        PageID: integer
+        )
+    var
+        DimEditable: array[10] of Boolean;
+        DimVisible: array[10] of Boolean;
+    begin
+        SetFieldsPropertyVisibleEditableBySetup(ObjectType, PageID, DimVisible, DimEditable);
+    end;
+
+    procedure SetFieldsPropertyVisibleEditableBySetup(
+        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
+        PageID: integer;
+        DimVisible: array[10] of Boolean;
+        DimEditable: array[10] of Boolean)
+    var
+        i: integer;
+    begin
+        GLSetup.Get();
+
+        DimMgt.UseShortcutDims(
+          DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10);
+
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 1 Code") then begin
+            Dimvisible[1] := DimVisible1 and SetupPropertyForFields.IsVisible;
+            DimEditable[1] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 2 Code") then begin
+            Dimvisible[2] := DimVisible2 and SetupPropertyForFields.IsVisible;
+            DimEditable[2] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 3 Code") then begin
+            Dimvisible[3] := DimVisible3 and SetupPropertyForFields.IsVisible;
+            DimEditable[3] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 4 Code") then begin
+            Dimvisible[4] := DimVisible4 and SetupPropertyForFields.IsVisible;
+            DimEditable[4] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 5 Code") then begin
+            Dimvisible[5] := DimVisible5 and SetupPropertyForFields.IsVisible;
+            DimEditable[5] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 6 Code") then begin
+            Dimvisible[6] := DimVisible6 and SetupPropertyForFields.IsVisible;
+            DimEditable[6] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 7 Code") then begin
+            Dimvisible[7] := DimVisible7 and SetupPropertyForFields.IsVisible;
+            DimEditable[7] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup."Shortcut Dimension 8 Code") then begin
+            Dimvisible[8] := DimVisible8 and SetupPropertyForFields.IsVisible;
+            DimEditable[8] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup.ShortcutDimension9CodeNVX) then begin
+            Dimvisible[9] := DimVisible9 and SetupPropertyForFields.IsVisible;
+            DimEditable[9] := SetupPropertyForFields.IsEditable;
+        end;
+        if SetupPropertyForFields.Get(ObjectType::Page, PageID, GLSetup.ShortcutDimension10CodeNVX) then begin
+            Dimvisible[10] := DimVisible10 and SetupPropertyForFields.IsVisible;
+            DimEditable[10] := SetupPropertyForFields.IsEditable;
+        end;
+
+        for i := 1 to 10 do begin
+            DimensionEditable[i] := DimEditable[i];
+            DimensionVisible[i] := DimVisible[i];
+        end;
+
+        Clear(DimMgt);
     end;
 
     procedure ShowCustBusinessFieldFactBox(_UserID: Text): Boolean
@@ -469,97 +533,134 @@ codeunit 50026 "AppMgtNVX"
         exit(true);
     end;
 
-    procedure CreateBusinessFieldFilter(var Rec: Record "User Setup")
-    begin
-        CreateBusinessFieldFilter(Rec, false);
-    end;
-
-    procedure CreateBusinessFieldFilter(var Rec: Record "User Setup"; InclusiveEmptyEntries: Boolean)
+    procedure ShowPageCustomerBankAccount(CodeFilter: Text): Code[20]
     var
-        DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX;
-        TextBuilder: TextBuilder;
+        CustomerBankAccount: Record "Customer Bank Account";
+        CustomerBankAccountPage: Page "Customer Bank Account List";
     begin
-        if not (Rec.PBSetupNVX or Rec.RDSetupNVX or Rec.RHSetupNVX or Rec.EASetupNVX or Rec.SOSetupNVX or Rec.EVSetupNVX) then
-            exit;
+        CustomerBankAccount.Reset();
+        CustomerBankAccount.FilterGroup(2);
+        CustomerBankAccount.SetFilter(Code, CodeFilter);
+        CustomerBankAccount.FilterGroup(0);
 
-        if Rec.PBSetupNVX then
-            TextBuilder.Append(Format(DimShortcutBusinessField::PB) + '|');
-        if Rec.RDSetupNVX then
-            TextBuilder.Append(Format(DimShortcutBusinessField::RD) + '|');
-        if Rec.RHSetupNVX then
-            TextBuilder.Append(Format(DimShortcutBusinessField::RH) + '|');
-        if Rec.EASetupNVX then
-            TextBuilder.Append(Format(DimShortcutBusinessField::EA) + '|');
-        if Rec.SOSetupNVX then
-            TextBuilder.Append(Format(DimShortcutBusinessField::SO) + '|');
-        if Rec.EVSetupNVX then
-            TextBuilder.Append(Format(DimShortcutBusinessField::EV) + '|');
-        if InclusiveEmptyEntries then
-            TextBuilder.Append(EmptyFilterTxt)
-        else
-            TextBuilder.Remove(StrLen(TextBuilder.ToText()), 1);
+        CustomerBankAccountPage.SetTableView(CustomerBankAccount);
+        CustomerBankAccountPage.Editable(false);
+        CustomerBankAccountPage.LookupMode(true);
 
-        Rec.BusinessFieldFilterNVX :=
-            CopyStr(TextBuilder.ToText(), 1, TextBuilder.Capacity(20));
+        if CustomerBankAccountPage.RunModal() = Action::LookupOK then
+            CustomerBankAccountPage.GetRecord(CustomerBankAccount);
 
-        Message(TextBuilder.ToText());
-
-        Rec.Modify();
+        exit(CustomerBankAccount.Code)
     end;
 
-    procedure GetBusinessFieldFilterNVX(_UserID: Text): Code[20];
+    procedure ShowPagePaymentMethods(Token: Code[20]): Code[10]
+    var
+        PaymentMethod: Record "Payment Method";
+        PaymentMethodPage: Page "Payment Methods";
     begin
-        UserSetup.Get(_UserID);
-        Message(UserSetup.BusinessFieldFilterNVX);
-        exit(UserSetup.BusinessFieldFilterNVX);
+        PaymentMethod.Reset();
+        PaymentMethod.FilterGroup(2);
+        PaymentMethod.SetFilter(Code, '%1', Token + '*');
+        PaymentMethod.FilterGroup(0);
+        PaymentMethod.FindSet();
+
+        PaymentMethodPage.SetTableView(PaymentMethod);
+        PaymentMethodPage.Editable(false);
+        PaymentMethodPage.LookupMode(true);
+
+        if PaymentMethodPage.RunModal() = Action::LookupOK then
+            PaymentMethodPage.GetRecord(PaymentMethod);
+
+        exit(PaymentMethod.Code)
     end;
 
-    procedure GetActiveCustBusinessFieldFilter(CustomerNo: Code[20]; var CustomerBusinessField: Record CustomerBusinessFieldNVX): Boolean
+    procedure ShowPagePaymentTerms(Token: Code[20]): Code[10]
+    var
+        PaymentTerms: Record "Payment Terms";
+        PaymentTermsPage: Page "Payment Terms";
     begin
-        CustomerBusinessField.Reset();
-        CustomerBusinessField.SetRange("Customer No.", CustomerNo);
-        CustomerBusinessField.SetRange("Dimension Value Type", CustomerBusinessField."Dimension Value Type"::Standard);
-        CustomerBusinessField.SetRange(Active, true);
+        PaymentTerms.Reset();
+        PaymentTerms.FilterGroup(2);
+        PaymentTerms.SetFilter(Code, '%1', Token + '*');
+        PaymentTerms.FilterGroup(0);
+        PaymentTerms.FindSet();
+
+        PaymentTermsPage.SetTableView(PaymentTerms);
+        PaymentTermsPage.Editable(false);
+        PaymentTermsPage.LookupMode(true);
+
+        if PaymentTermsPage.RunModal() = Action::LookupOK then
+            PaymentTermsPage.GetRecord(PaymentTerms);
+
+        exit(PaymentTerms.Code)
     end;
 
-    procedure GetActivateBusinessFilterInPages(): Boolean
+    procedure ShowPageReminderTerms(ShortCutDimension5: Code[20]): Code[10]
+    var
+        ReminderTerms: Record "Reminder Terms";
+        ReminderTermsPage: Page "Reminder Terms";
     begin
-        exit(SetupReminderExtension.Get() and SetupReminderExtension.ActivateBusinessFilterInPages);
+        ReminderTerms.Reset();
+        ReminderTerms.FilterGroup(2);
+        ReminderTerms.SetRange(ShortcutDimension5CodeNVX, ShortCutDimension5);
+        ReminderTerms.FilterGroup(0);
+
+        ReminderTermsPage.SetTableView(ReminderTerms);
+        ReminderTermsPage.Editable(false);
+        ReminderTermsPage.LookupMode(true);
+
+        if ReminderTermsPage.RunModal() = Action::LookupOK then
+            ReminderTermsPage.GetRecord(ReminderTerms);
+
+        exit(ReminderTerms.Code)
     end;
 
-    procedure AllowEmptyFilterinPages(): Boolean
+    procedure ValidateShortcutDimCode(FieldNumber: Integer; VAR ShortcutDimCode: Code[20]; var CustLedgerEntry: Record "Cust. Ledger Entry")
     begin
-        exit(SetupReminderExtension.Get() and SetupReminderExtension.AllowEmptyfilter);
+        DimMgt.ValidateShortcutDimValues(FieldNumber, ShortcutDimCode, CustLedgerEntry."Dimension Set ID");
+        CustLedgerEntry.Modify();
+
+        OnAfterValidateShortcutDimCode(CustLedgerEntry, ShortcutDimCode);
     end;
 
-    procedure OpenIBANWebSite()
+    local procedure GetGLSetup()
     begin
-        SetupReminderExtension.Get();
-        Hyperlink(SetupReminderExtension.WebSiteIBAN);
+        GLSetup.GetRecordOnce();
+
+        GLSetupShortcutDimCode[2] := GLSetup."Shortcut Dimension 2 Code";
+        GLSetupShortcutDimCode[3] := GLSetup."Shortcut Dimension 3 Code";
+        GLSetupShortcutDimCode[4] := GLSetup."Shortcut Dimension 4 Code";
+        GLSetupShortcutDimCode[5] := GLSetup."Shortcut Dimension 5 Code";
+        GLSetupShortcutDimCode[6] := GLSetup."Shortcut Dimension 6 Code";
+        GLSetupShortcutDimCode[7] := GLSetup."Shortcut Dimension 7 Code";
+        GLSetupShortcutDimCode[8] := GLSetup."Shortcut Dimension 8 Code";
+        if GLSetup.ShortcutDimension9CodeNVX = '' then
+            GLSetup.ShortcutDimension9CodeNVX := ShortcutDimension9CodeTxt;
+        if GLSetup.ShortcutDimension10CodeNVX = '' then
+            GLSetup.ShortcutDimension10CodeNVX := ShortcutDimension10CodeTxt;
+        GLSetupShortcutDimCode[9] := GLSetup.ShortcutDimension9CodeNVX;
+        GLSetupShortcutDimCode[10] := GLSetup.ShortcutDimension10CodeNVX;
+    end;
+
+    local procedure ModifyPKShortCutdimension(Customer: Record Customer)
+    var
+        DimensionValue: Record "Dimension Value";
+    begin
+        Glsetup.Get();
+        IF DimensionValue.Get(GLSetup."Shortcut Dimension 7 Code", Customer."No.") then
+            if DimensionValue.Name <> Customer.Name then begin
+                DimensionValue.Name := CopyStr(Customer.Name, 1, 50);
+                DimensionValue.Modify();
+            END;
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterValidateShortcutDimCode(var CustLedgerEntry: Record "Cust. Ledger Entry"; VAR ShortcutDimCode: Code[20])
+    begin
     end;
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeGetGetBusinessLines(var SetupBusinessField: record CustomerBusinessFieldNVX; var IsHandled: Boolean);
     begin
     end;
-
-    var
-        GLSetup: Record "General Ledger Setup";
-        UserSetup: Record "User Setup";
-        SetupPropertyForFields: Record SetupPropertyForFieldsNVX;
-        SetupReminderExtension: Record SetupReminderExtensionNVX;
-        DimMgt: codeunit DimensionManagement;
-        DimensionVisible: array[10] of Boolean;
-        DimensionEditable: array[10] of Boolean;
-        DimVisible1: Boolean;
-        DimVisible2: Boolean;
-        DimVisible3: Boolean;
-        DimVisible4: Boolean;
-        DimVisible5: Boolean;
-        DimVisible6: Boolean;
-        DimVisible7: Boolean;
-        DimVisible8: Boolean;
-        DimVisible9: Boolean;
-        DimVisible10: Boolean;
-        EmptyFilterTxt: Label '''';
 }

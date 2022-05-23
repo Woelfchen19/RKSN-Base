@@ -1,7 +1,6 @@
 pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
 {
     PromotedActionCategories = 'New,Process,Report,Line,Entry,Navigate,Sort', comment = 'DEA="Neu,Prozess,Bericht,Zeile,Posten,Navigieren,Sortieren"';
-
     layout
     {
         modify("Global Dimension 2 Code")
@@ -29,8 +28,9 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
             field(ShortcutDimension5CodeNVX; Rec.ShortcutDimension5CodeNVX)
             {
                 ApplicationArea = All;
-                Editable = false;
+                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                 ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
+                Editable = DimEditable5;
                 Visible = DimVisible5;
             }
             field(ShortcutDimension6CodeNVX; Rec.ShortcutDimension6CodeNVX)
@@ -57,9 +57,9 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
             field(ShortcutDimension9CodeNVX; Rec.ShortcutDimension9CodeNVX)
             {
                 ApplicationArea = All;
-                Editable = false;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 9 Code field.';
                 Visible = DimVisible9;
+                Editable = DimEditable9;
             }
             field(ShortcutDimension10CodeNVX; Rec.ShortcutDimension10CodeNVX)
             {
@@ -171,16 +171,26 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
 
     trigger OnOpenPage()
     begin
+        UserSetup.Get(UserId);
+
         AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Customer Ledger Entries", DimVisible, DimEditable);
+
         AppMgt.GetFieldsPropertyVisibleEditableBySetup(
             DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
                 DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
-        if AppMgt.GetActivateBusinessFilterInPages() then
+
+        DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
+        DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
+
+        if AppMgt.GetActivateBusinessFilterInPages() then begin
+            Rec.FilterGroup(2);
             Rec.SetFilter(ShortcutDimension5CodeNVX, AppMgt.GetBusinessFieldFilterNVX(UserId));
-        Message(rec.getfilters);
+            Rec.FilterGroup(0);
+        end;
     end;
 
     var
+        UserSetup: Record "User Setup";
         AppMgt: Codeunit AppMgtNVX;
         DimEditable: array[10] of Boolean;
         DimEditable1: Boolean;

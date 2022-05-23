@@ -4,7 +4,7 @@ pageextension 50059 "PurchaseJournalNVX" extends "Purchase Journal"
     {
         addlast(Control1)
         {
-            field(AllocationCodeNVX; Rec.AllocationCodeNVX)
+            field(AllocCodeNVX; Rec.AllocCodeNVX)
             {
                 ToolTip = 'Specifies the value of the Allocation Code field.', Comment = 'DEA="Verteilungscode"';
                 ApplicationArea = All;
@@ -17,9 +17,9 @@ pageextension 50059 "PurchaseJournalNVX" extends "Purchase Journal"
                     WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
                 begin
-                    if Rec.AllocationCodeNVX <> '' then
+                    if Rec.AllocCodeNVX <> '' then
                         if Rec."Shortcut Dimension 2 Code" = '' then begin
-                            AllocationCode.Get(Rec.AllocationCodeNVX);
+                            AllocationCode.Get(Rec.AllocCodeNVX);
                             Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
                             if Rec."Line No." > 0 then begin
                                 AppMgt.InsertDimValue(AllocationCode);
@@ -27,7 +27,7 @@ pageextension 50059 "PurchaseJournalNVX" extends "Purchase Journal"
                                 Rec.Modify();
                             end;
                         end else begin
-                            AllocationCode.Get(Rec.AllocationCodeNVX);
+                            AllocationCode.Get(Rec.AllocCodeNVX);
                             if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                                 Error(WrongDimErr);
                         end;

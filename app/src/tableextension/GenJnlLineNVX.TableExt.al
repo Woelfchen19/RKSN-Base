@@ -13,7 +13,7 @@ tableextension 50014 "GenJnlLineNVX" extends "Gen. Journal Line"
                 Rec.ValidateShortcutDimCode(10, ShortcutDimension10CodeNVX);
             end;
         }
-        field(50001; AllocationCodeNVX; Code[10])
+        field(50001; AllocCodeNVX; Code[10])
         {
             Caption = 'Allocation Code', comment = 'DEA="Verteilungscode"';
             DataClassification = CustomerContent;
@@ -42,6 +42,11 @@ tableextension 50014 "GenJnlLineNVX" extends "Gen. Journal Line"
         {
             Caption = 'IsRetrospectPosting', comment = 'DEA="Ist eine Retrobuchung"';
             DataClassification = CustomerContent;
+        }
+        field(50007; ApplyDocumentNoNVX; Boolean)
+        {
+            Caption = 'Apply Document No.', comment = 'DEA="„Ausziff.Beleg“"';
+            DataClassification = ToBeClassified;
         }
     }
     procedure SetBusinessFieldNVX()

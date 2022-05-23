@@ -2,8 +2,6 @@ table 50044 "SetupPropertyForFieldsNVX"
 {
     Caption = 'Setup Property for Fields', comment = 'DEA="Einrichtung Eigenschaften Felder"';
     DataClassification = SystemMetadata;
-    DataPerCompany = false;
-
     fields
     {
         field(1; "Object Type"; Option)

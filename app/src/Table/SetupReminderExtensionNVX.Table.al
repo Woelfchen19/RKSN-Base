@@ -25,6 +25,22 @@ table 50006 "SetupReminderExtensionNVX"
             Caption = 'Website IBAN', comment = 'DEA="Webseite IBAN"';
             DataClassification = CustomerContent;
         }
+        field(5; AllowChangeLogEntryDim; Boolean)
+        {
+            Caption = 'Allow Change LogEntryDimension', comment = 'DEA="Änderung der Tabelle Änderungsprotokollposten Dimensionen"';
+            DataClassification = CustomerContent;
+        }
+        field(7; "Test User ID"; Code[50])
+        {
+            Caption = 'Test User ID', comment = 'DEA="Testbenutzer"';
+            DataClassification = EndUserIdentifiableInformation;
+            TableRelation = "User Setup";
+        }
+        field(8; AcitveChangeLogEntryDim; Boolean)
+        {
+            Caption = 'Activate ChangeLogEntry Dimension', comment = 'DEA="Änderungsprotokol Dimension aktivieren"';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

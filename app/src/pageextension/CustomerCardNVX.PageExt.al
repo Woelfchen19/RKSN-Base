@@ -15,7 +15,10 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
                     Rec.Validate("Gen. Bus. Posting Group", NewGBPG);
             end;
         }
-
+        modify("Customer Posting Group")
+        {
+            Editable = false;
+        }
         addbefore(Control149)
         {
             part(Dimension5ValuesNVX; CustBusinessFieldFactBoxNVX)
@@ -30,11 +33,6 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
     begin
         Initialize(UserID);
     end;
-
-    // trigger OnAfterGetCurrRecord()
-    // begin
-    //     CurrPage.Dimension5ValuesNVX.Page.SetCustomerNo(Rec."No.");
-    // end;
 
     local procedure Initialize(_UserID: Text)
     var

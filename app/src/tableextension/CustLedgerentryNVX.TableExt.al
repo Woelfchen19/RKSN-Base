@@ -28,7 +28,6 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
         {
             CaptionClass = '1,2,5';
             Caption = 'Shortcut Dimension 5 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
 
             trigger OnValidate()
             begin
@@ -110,6 +109,27 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
         GLSetup.Get();
         DimensionValue.Get(GLSetup."Global Dimension 2 Code", Rec."Global Dimension 2 Code");
         Rec.AssociatedNVX := Dimensionvalue.AssociatedNVX;
+    end;
+
+    procedure SetAssociatedNVX(Upgrade: Boolean)
+    var
+        GLSetup: Record "General Ledger Setup";
+        DimensionValue: Record "Dimension Value";
+        CustLedgerEntry: Record "Cust. Ledger Entry";
+    begin
+        if not Upgrade then
+            exit;
+
+        GLSetup.Get();
+
+        if CustLedgerEntry.FindSet() then
+            repeat
+                if ("Global Dimension 2 Code" <> '') and (Rec.AssociatedNVX = '') then begin
+                    DimensionValue.Get(GLSetup."Global Dimension 2 Code", Rec."Global Dimension 2 Code");
+                    CustLedgerEntry.AssociatedNVX := Dimensionvalue.AssociatedNVX;
+                    CustLedgerEntry.Modify();
+                end;
+            until CustLedgerEntry.Next() = 0;
     end;
 
     procedure CopyShortCutDimensionsFromDimensionValuesNVX()

@@ -55,20 +55,15 @@ pageextension 50047 "UserSetupNVX" extends "User Setup"
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the EDIT BusinessField CustLedgerEntry field.', Comment = 'DEA="EDIT Geschäftsfeld Debitorenposten"';
             }
-            field(ChangeCodeDimBusinessFieldNVX; Rec.ChangeCodeDimBusinessFieldNVX)
+            field(AllCollectedAccountsNVX; Rec.AllCollectedAccountsNVX)
             {
+                ToolTip = 'Specifies the value of the All Collected Accounts field.', Comment = 'DEA="Alle Sammelkto"';
                 ApplicationArea = All;
-                ToolTip = 'Specifies the value of the EDIT BusinessField CustLedgerEntry field.', Comment = 'DEA="Änderung Code Dim.Geschäftsfeld erlaubt"';
             }
             field(SetupDynamicFieldsNVX; Rec.SetupDynamicFieldsNVX)
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Setup dynamic Fields field.', Comment = 'DEA="setup dynamische Felder erlaubt"';
-            }
-            field(AllCollectedAccountsNVX; Rec.AllCollectedAccountsNVX)
-            {
-                ToolTip = 'Specifies the value of the All Collected Accounts field.', Comment = 'DEA="Alle Sammelkto"';
-                ApplicationArea = All;
             }
             field(BusinessFieldFilterNVX; Rec.BusinessFieldFilterNVX)
             {
