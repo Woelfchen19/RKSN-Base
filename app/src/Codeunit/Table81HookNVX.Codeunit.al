@@ -106,9 +106,13 @@ codeunit 50021 Table81HookNVX
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Account Type', false, false)]
     local procedure RecurringJournalCheckAccountType(var Rec: Record "Gen. Journal Line")
     var
+        GenJournalTemplate: Record "Gen. Journal Template";
         GenJournalBatchNVX: Record GenJournalBatchNVX;
     begin      
         IF not (Rec."Account Type" in [Rec."Account Type"::Vendor, Rec."Account Type"::Customer, Rec."Account Type"::"Bank Account", Rec."Account Type"::"G/L Account"]) then begin
+            GenJournalTemplate.Get(Rec."Journal Template Name");
+            If not GenJournalTemplate.Recurring then
+                exit;
             GenJournalBatchNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name");
             GenJournalBatchNVX.TestField("No Dim Distribution");
         end;
