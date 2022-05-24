@@ -102,4 +102,15 @@ codeunit 50021 Table81HookNVX
                     Error(WrongDim2Err);
         end;
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Account Type', false, false)]
+    local procedure RecurringJournalCheckAccountType(var Rec: Record "Gen. Journal Line")
+    var
+        GenJournalBatchNVX: Record GenJournalBatchNVX;
+    begin      
+        IF not (Rec."Account Type" in [Rec."Account Type"::Vendor, Rec."Account Type"::Customer, Rec."Account Type"::"Bank Account", Rec."Account Type"::"G/L Account"]) then begin
+            GenJournalBatchNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name");
+            GenJournalBatchNVX.TestField("No Dim Distribution");
+        end;
+    end;
 }
