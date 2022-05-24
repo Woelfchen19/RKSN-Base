@@ -12411,6 +12411,18 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FAJournalNVX - Control Allocation CodeNVX - Method OnValidate - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
+        <trans-unit id="PageExtension 3944373180 - Control 2474047554 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 377345500">
+          <source>Specifies the value of the Shortcut Dimension 3 Code field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeigt den Shortcutdimensionscode 3 an."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FALedgerEntriesNVX - Control ShortcutDimension3CodeNVX - Property ToolTip</note>
+          <target>Zeigt den Shortcutdimensionscode 3 an.</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 3944373180 - Control 2474047554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 377345500">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FALedgerEntriesNVX - Control ShortcutDimension3CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
         <trans-unit id="PageExtension 3944373180 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 377345500">
           <source>Allocation Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>

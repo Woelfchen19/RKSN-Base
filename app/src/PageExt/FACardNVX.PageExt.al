@@ -83,9 +83,6 @@ pageextension 50028 FACardNVX extends "Fixed Asset Card"
     end;
 
     trigger OnAfterGetRecord();
-    var
-        DefaultDim: Record "Default Dimension";
-        GLSetup: Record "General Ledger Setup";
     begin
         FixedAssetNVX.GetDefinition(Rec."No.");
         SetGlobalVariables();
