@@ -35,11 +35,12 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
             }
             field(AssociatedNVX; Rec.AssociatedNVX)
             {
-                Caption = 'Assosiated', comment = 'DEA="zugehörig"';
                 ApplicationArea = All;
+                Caption = 'Assosiated', comment = 'DEA="zugehörig"';
             }
         }
     }
+
     actions
     {
         addlast(Processing)
@@ -50,8 +51,8 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
                 Caption = 'Preview dimensional distribution', comment = 'DEA="Vorschau dimensionaler Verteilungsprozess"';
                 Image = PreviewChecks;
                 Promoted = true;
-                PromotedIsBig = true;
                 PromotedCategory = Process;
+                PromotedIsBig = true;
                 trigger OnAction();
                 var
                     DistrGenJnlLine: Record DistrGenJnlLineNVX;
@@ -67,6 +68,40 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
             }
         }
     }
+
+    trigger OnOpenPage()
+    begin
+        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"General Journal", DimVisible, DimEditable);
+        AppMgt.GetFieldsPropertyVisibleEditableBySetup(
+            DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
+                DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
+    end;
+
+    var
+        AppMgt: Codeunit AppMgtNVX;
+        DimEditable: array[10] of Boolean;
+        DimEditable1: Boolean;
+        DimEditable2: Boolean;
+        DimEditable3: Boolean;
+        DimEditable4: Boolean;
+        DimEditable5: Boolean;
+        DimEditable6: Boolean;
+        DimEditable7: Boolean;
+        DimEditable8: Boolean;
+        DimEditable9: Boolean;
+        DimEditable10: Boolean;
+        DimVisible: array[10] of Boolean;
+        DimVisible1: Boolean;
+        DimVisible2: Boolean;
+        DimVisible3: Boolean;
+        DimVisible4: Boolean;
+        DimVisible5: Boolean;
+        DimVisible6: Boolean;
+        DimVisible7: Boolean;
+        DimVisible8: Boolean;
+        DimVisible9: Boolean;
+        DimVisible10: Boolean;
+        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query",System;
 
     [IntegrationEvent(false, false)]
     local procedure OnPreviewDimDistributionNVX(var GenJnlLine: Record "Gen. Journal Line")

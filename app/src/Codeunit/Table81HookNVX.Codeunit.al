@@ -28,9 +28,9 @@ codeunit 50021 "Table81HookNVX"
             if (Rec."Bal. Account Type" = Rec."Bal. Account Type"::"Fixed Asset") and (Rec."Bal. Account No." <> '') then
                 if FixedAsset.Get(Rec."Bal. Account No.") and (FixedAsset."Global Dimension 2 Code" <> Rec."Shortcut Dimension 2 Code") then
                     Error(WrongDim2Err);
-
-            Rec.SetAssociatedNVX();
         end;
+
+        Rec.SetAssociatedNVX();
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Account No.', false, false)]
@@ -58,14 +58,21 @@ codeunit 50021 "Table81HookNVX"
         GenJournalBatch.Get(Rec."Journal Template Name", Rec."Journal Batch Name");
         if GenJournalBatch.ShortcutDimension5CodeNVX <> '' then
             Rec.ValidateShortcutDimCode(5, GenJournalBatch.ShortcutDimension5CodeNVX);
+        Rec.SetAssociatedNVX();
     end;
 
+    /// <summary>
+    /// ToDo
+    /// if DimensionValue.Get(GLSetup."Shortcut Dimension 5 Code", 'EA') then
+    /// </summary>
+    /// <param name="Rec"></param>
+    /// <param name="RunTrigger"></param>
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterInsertEvent', '', false, false)]
     local procedure InsertAllocationCodeInAccompaniedTable(var Rec: Record "Gen. Journal Line"; RunTrigger: Boolean)
     var
         AllocationCode: Record AllocationCodeNVX;
         FixedAssetNVX: Record FixedAssetNVX;
-        GenJournalBatch: record GenJournalBatchNVX;
+        GenJournalBatch: Record GenJournalBatchNVX;
         WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
     begin
@@ -84,11 +91,20 @@ codeunit 50021 "Table81HookNVX"
                 end else
                     if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                         Error(WrongDimErr);
-
-                GenJournalBatch.Get(Rec."Journal Template Name", Rec."Journal Batch Name");
-                if GenJournalBatch.ShortcutDimension5CodeNVX <> '' then
-                    Rec.ValidateShortcutDimCode(5, GenJournalBatch.ShortcutDimension5CodeNVX);
             end;
+
+        //One Function
+        GenJournalBatch.Get(Rec."Journal Template Name", Rec."Journal Batch Name");
+        if GenJournalBatch.ShortcutDimension5CodeNVX <> '' then
+            Rec.ValidateShortcutDimCode(5, GenJournalBatch.ShortcutDimension5CodeNVX);
+
+        Rec.SetAssociatedNVX();
+
+        GLSetup.Get();
+        if DimensionValue.Get(GLSetup."Shortcut Dimension 5 Code", 'EA') then begin
+            AssosiatedDepartment.Get('EA', Rec."Shortcut Dimension 1 Code");
+            Rec.ValidateShortcutDimCode(1, AssosiatedDepartment."Shortcut Dimension 1 Code");
+        end;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Shortcut Dimension 1 Code', false, false)]
@@ -99,4 +115,9 @@ codeunit 50021 "Table81HookNVX"
         if Rec.AssociatedNVX = '' then
             Rec.SetAssociatedNVX();
     end;
+
+    var
+        GLSetup: Record "General Ledger Setup";
+        DimensionValue: Record "Dimension Value";
+        AssosiatedDepartment: Record AssosiatedDepartmentNVX;
 }

@@ -39,6 +39,7 @@ tableextension 50012 "DimensionValueNVX" extends "Dimension Value"
         {
             Caption = 'Assosiated', comment = 'DEA="zugehörig"';
             DataClassification = CustomerContent;
+            TableRelation = SetupAssociatedNVX;
         }
         field(50006; ReOrganizeAccountNVX; Code[20])
         {

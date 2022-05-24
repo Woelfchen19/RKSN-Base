@@ -6,7 +6,7 @@ page 50030 "AssosiatedDepartmentListNVX"
     PageType = List;
     SourceTable = AssosiatedDepartmentNVX;
     UsageCategory = Lists;
-
+    ShowFilter = false;
     layout
     {
         area(content)

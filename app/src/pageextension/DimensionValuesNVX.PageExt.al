@@ -1,3 +1,6 @@
+/// <summary>
+/// ToDo -> Field VAT Posting Type throws an error
+/// </summary>
 pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
 {
     layout
@@ -92,6 +95,26 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
         AssosiatedDepartment := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 5 Code";
     end;
 
+    trigger OnAfterGetRecord()
+    begin
+        AssosiatedDepartment := Rec."Dimension Value Type" = Rec."Dimension Value Type"::Standard;
+    end;
+
+    trigger OnQueryClosePage(CloseAction: Action): Boolean
+    var
+        DimensionValue: Record "Dimension Value";
+    begin
+        if AssosiatedVisible then begin
+            DimensionValue.Copy(Rec);
+            DimensionValue.SetRange("Dimension Value Type", DimensionValue."Dimension Value Type"::Standard);
+            DimensionValue.SetRange(AssociatedNVX, '');
+            if not DimensionValue.IsEmpty then
+                Error(AssociationErrorMsg);
+
+            exit(true);
+        end;
+    end;
+
     var
         GLSetup: Record "General Ledger Setup";
         AssosiatedDepartment: Boolean;
@@ -101,4 +124,5 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
         PostingTypeVisible: Boolean;
         ReOrganizeAccountVisible: Boolean;
         DischargeAccountVisible: Boolean;
+        AssociationErrorMsg: Label 'You must assign to all Profitcentern the field associated!', comment = 'DEA="Sie müssen zu allen ProfitCentern im Feld zugehörig eine Zuordnung vornehmen!"';
 }

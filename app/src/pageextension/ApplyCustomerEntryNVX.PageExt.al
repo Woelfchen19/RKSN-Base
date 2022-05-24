@@ -73,6 +73,12 @@ pageextension 50053 "ApplyCustomerEntryNVX" extends "Apply Customer Entries"
                 ToolTip = 'Specifies the value of the Shortcut Dimension 10 Code field.';
                 Visible = DimVisible10;
             }
+            field(AssociatedNVX; Rec.AssociatedNVX)
+            {
+                ToolTip = 'Specifies the value of the Associated field.';
+                ApplicationArea = All;
+                Editable = false;
+            }
         }
     }
     actions

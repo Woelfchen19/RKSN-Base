@@ -27,6 +27,7 @@ tableextension 50014 "GenJnlLineNVX" extends "Gen. Journal Line"
         {
             Caption = 'Assosiated', comment = 'DEA="Zugehörig"';
             DataClassification = CustomerContent;
+            TableRelation = SetupAssociatedNVX;
         }
         field(50004; DoNotSplitNVX; Boolean)
         {
@@ -47,6 +48,13 @@ tableextension 50014 "GenJnlLineNVX" extends "Gen. Journal Line"
         {
             Caption = 'Apply Document No.', comment = 'DEA="„Ausziff.Beleg“"';
             DataClassification = ToBeClassified;
+        }
+    }
+
+    keys
+    {
+        key(Key20; AssociatedNVX)
+        {
         }
     }
     procedure SetBusinessFieldNVX()

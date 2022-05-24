@@ -9128,6 +9128,21 @@
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SalesLineNVX - Field Shortcut Dimension 3 Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2755834441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Setup Associated</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Zugehörigkeit"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupAssociatedNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2755834441 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Code"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupAssociatedNVX - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2755834441 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupAssociatedNVX - Field Description - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1664901462 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Setup Property for Fields</source>
           <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Eigenschaften Felder"</note>
@@ -11118,6 +11133,21 @@
           <note from="Developer" annotates="general" priority="2">DEA="Betrag NETTO"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SalesLineArchiveSummaryNVX - Control VAT Base Amount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2755834441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Setup Associated</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Zugehörigkeit"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SetupAssociatedNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2755834441 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Code field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Code"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SetupAssociatedNVX - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2755834441 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SetupAssociatedNVX - Control Description - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1664901462 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Setup Properties from Fields (visible,editable)</source>
           <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Eigenschaften der Felder (visible,editable)"</note>
@@ -11568,6 +11598,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Belegnr|Buchungsdatum"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ApplyCustomerEntryNVX - Action SortbyPostingDateDocumentNoNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3750720216 - Control 4275227508 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 515652382">
+          <source>Specifies the value of the Associated field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ApplyCustomerEntryNVX - Control AssociatedNVX - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3750720216 - Control 478110000 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 515652382">
           <source>Specifies the value of the Shortcut Dimension 10 Code field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -11802,6 +11837,11 @@
           <source>Specifies the value of the Shortcut Dimension 9 Code field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension DetailedCustLedgEntriesNVX - Control ShortcutDimension9CodeNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1966097956 - NamedType 3781092260" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1966097956">
+          <source>You must assign to all Profitcentern the field associated!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sie müssen zu allen ProfitCentern im Feld zugehörig eine Zuordnung vornehmen!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - NamedType AssociationErrorMsg</note>
         </trans-unit>
         <trans-unit id="PageExtension 1966097956 - Action 645689000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
           <source>Assosiated Department</source>
