@@ -30,13 +30,19 @@ table 50006 "SetupReminderExtensionNVX"
             Caption = 'Allow Change LogEntryDimension', comment = 'DEA="Änderung der Tabelle Änderungsprotokollposten Dimensionen"';
             DataClassification = CustomerContent;
         }
+
+        field(8; "Test User Activate"; Boolean)
+        {
+            Caption = 'Test User Activate', comment = 'DEA="Testbenutzer aktiviert"';
+            DataClassification = CustomerContent;
+        }
         field(7; "Test User ID"; Code[50])
         {
             Caption = 'Test User ID', comment = 'DEA="Testbenutzer"';
             DataClassification = EndUserIdentifiableInformation;
             TableRelation = "User Setup";
         }
-        field(8; AcitveChangeLogEntryDim; Boolean)
+        field(9; AcitveChangeLogEntryDim; Boolean)
         {
             Caption = 'Activate ChangeLogEntry Dimension', comment = 'DEA="Änderungsprotokol Dimension aktivieren"';
             DataClassification = CustomerContent;

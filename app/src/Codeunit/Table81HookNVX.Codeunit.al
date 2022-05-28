@@ -73,6 +73,7 @@ codeunit 50021 "Table81HookNVX"
         AllocationCode: Record AllocationCodeNVX;
         FixedAssetNVX: Record FixedAssetNVX;
         GenJournalBatch: Record GenJournalBatchNVX;
+        ShortcutDimCode: Array[10] of Code[20];
         WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
     begin
@@ -101,10 +102,11 @@ codeunit 50021 "Table81HookNVX"
         Rec.SetAssociatedNVX();
 
         GLSetup.Get();
-        if DimensionValue.Get(GLSetup."Shortcut Dimension 5 Code", 'EA') then begin
-            AssosiatedDepartment.Get('EA', Rec."Shortcut Dimension 1 Code");
+
+        DimMgt.GetShortcutDimensions(Rec."Dimension Set ID", ShortcutDimCode);
+        AssosiatedDepartment.SetRange("Shortcut Dimension 5 Code", ShortcutDimCode[5]);
+        if AssosiatedDepartment.FindFirst() then
             Rec.ValidateShortcutDimCode(1, AssosiatedDepartment."Shortcut Dimension 1 Code");
-        end;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Shortcut Dimension 1 Code', false, false)]
@@ -118,6 +120,6 @@ codeunit 50021 "Table81HookNVX"
 
     var
         GLSetup: Record "General Ledger Setup";
-        DimensionValue: Record "Dimension Value";
         AssosiatedDepartment: Record AssosiatedDepartmentNVX;
+        DimMgt: Codeunit DimensionManagement;
 }

@@ -172,8 +172,36 @@ pageextension 50053 "ApplyCustomerEntryNVX" extends "Apply Customer Entries"
             }
         }
     }
+    trigger OnOpenPage()
     var
-        /*
+        BusinessFieldFilter: Code[20];
+    begin
+        AppMgt.GetUserSetup(UserSetup, true);
+
+        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Apply Customer Entries", DimVisible, DimEditable);
+
+        AppMgt.GetFieldsPropertyVisibleEditableBySetup(
+            DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
+                DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
+
+        DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
+        DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
+
+        if AppMgt.GetActivateBusinessFilterInPages() then begin
+            BusinessFieldFilter := AppMgt.GetBusinessFieldFilterNVX();
+            Rec.FilterGroup(2);
+            if BusinessFieldFilter = '' then
+                Rec.SetFilter("Entry No.", '%1', -1)
+            else
+                Rec.SetFilter(ShortcutDimension5CodeNVX, AppMgt.GetBusinessFieldFilterNVX());
+            Rec.FilterGroup(0);
+        end;
+    end;
+
+    var
+        UserSetup: Record "User Setup";
+        AppMgt: Codeunit AppMgtNVX;
+        DimEditable: array[10] of Boolean;
         DimEditable1: Boolean;
         DimEditable2: Boolean;
         DimEditable3: Boolean;
@@ -184,7 +212,7 @@ pageextension 50053 "ApplyCustomerEntryNVX" extends "Apply Customer Entries"
         DimEditable8: Boolean;
         DimEditable9: Boolean;
         DimEditable10: Boolean;
-        */
+        DimVisible: array[10] of Boolean;
         DimVisible1: Boolean;
         DimVisible2: Boolean;
         DimVisible3: Boolean;
@@ -195,49 +223,5 @@ pageextension 50053 "ApplyCustomerEntryNVX" extends "Apply Customer Entries"
         DimVisible8: Boolean;
         DimVisible9: Boolean;
         DimVisible10: Boolean;
-
-    trigger OnOpenPage()
-    begin
-        SetDimensionsVisibility();
-    end;
-
-    local procedure SetDimensionsVisibility()
-    var
-        DimensionManagement: Codeunit DimensionManagement;
-    begin
-        DimVisible1 := false;
-        DimVisible2 := false;
-        DimVisible3 := false;
-        DimVisible4 := false;
-        DimVisible5 := false;
-        DimVisible6 := false;
-        DimVisible7 := false;
-        DimVisible8 := false;
-        DimVisible9 := false;
-        DimVisible10 := false;
-
-        DimensionManagement.UseShortcutDims(
-          DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10);
-
-        DimVisible1 := false;
-        DimVisible3 := false;
-        DimVisible7 := false;
-        DimVisible8 := false;
-        DimVisible10 := false;
-
-        /*
-        DimEditable1 := false;
-        DimEditable2 := false;
-        DimEditable3 := false;
-        DimEditable4 := false;
-        DimEditable5 := false;
-        DimEditable6 := false;
-        DimEditable7 := false;
-        DimEditable8 := false;
-        DimEditable9 := false;
-        DimEditable10 := false;
-        */
-
-        Clear(DimensionManagement);
-    end;
+        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query",System;
 }

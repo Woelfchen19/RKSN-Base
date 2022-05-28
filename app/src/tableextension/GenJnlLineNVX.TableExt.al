@@ -44,10 +44,50 @@ tableextension 50014 "GenJnlLineNVX" extends "Gen. Journal Line"
             Caption = 'IsRetrospectPosting', comment = 'DEA="Ist eine Retrobuchung"';
             DataClassification = CustomerContent;
         }
-        field(50007; ApplyDocumentNoNVX; Boolean)
+
+        //ToDo
+        /// <summary>
+        /// Use New Function CheckPermission in OnValidate trigger 
+        /// </summary>
+        field(50007; ApplyDocumentNoNVX; Code[20])
         {
-            Caption = 'Apply Document No.', comment = 'DEA="„Ausziff.Beleg“"';
+            Caption = 'Apply Document No.', comment = 'DEA="Ausziff.Beleg"';
             DataClassification = ToBeClassified;
+            TableRelation = "Cust. Ledger Entry";
+            ValidateTableRelation = false;
+
+            trigger OnValidate()
+            var
+                UserSetup: Record "User Setup";
+                CustLedgerEntry: Record "Cust. Ledger Entry";
+                CustomerLedgerEntries: Page "Customer Ledger Entries";
+                DocumentNo: Code[20];
+                NotAllowedErr: Label 'You have no permission for this Ledger entry!',
+                    comment = 'DEA="Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!"';
+            begin
+                //CheckPermission();
+                //Assignfields
+                if Rec.ApplyDocumentNoNVX <> '' then begin
+                    UserSetup.Get(UserId);
+                    CustLedgerEntry.SetCurrentKey("Document No.");
+                    CustLedgerEntry.SetRange("Document No.", Rec.ApplyDocumentNoNVX);
+                    CustomerLedgerEntries.LookupMode(true);
+                    CustomerLedgerEntries.SetTableView(CustLedgerEntry);
+                    if CustomerLedgerEntries.RunModal() = action::LookupOK then begin
+                        CustomerLedgerEntries.GetRecord(CustLedgerEntry);
+                        DocumentNo := CustLedgerEntry."Document No.";
+                        CustLedgerEntry.Reset();
+                        CustLedgerEntry.SetCurrentKey("Document No.");
+                        CustLedgerEntry.SetRange("Document No.", DocumentNo);
+                        CustLedgerEntry.SetFilter(ShortcutDimension5CodeNVX, UserSetup.BusinessFieldFilterNVX);
+                        if CustLedgerEntry.IsEmpty then
+                            Error(NotAllowedErr);
+
+                        Rec."Account Type" := Rec."Account Type"::Customer;
+                        Rec."Account No." := CustLedgerEntry."Customer No.";
+                    end;
+                end;
+            end;
         }
     }
 
@@ -57,6 +97,12 @@ tableextension 50014 "GenJnlLineNVX" extends "Gen. Journal Line"
         {
         }
     }
+
+    // local procedure CheckPermission()
+    // begin
+
+    // end;
+
     procedure SetBusinessFieldNVX()
     var
         AssosiatedDepartment: Record AssosiatedDepartmentNVX;

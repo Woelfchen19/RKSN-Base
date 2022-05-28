@@ -38,6 +38,11 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
                 ApplicationArea = All;
                 Caption = 'Assosiated', comment = 'DEA="zugehörig"';
             }
+            field(ApplyDocumentNoNVX; Rec.ApplyDocumentNoNVX)
+            {
+                ToolTip = 'Specifies the value of the Apply Document No. field.', Comment = 'DEA="Ausziff.Beleg"';
+                ApplicationArea = All;
+            }
         }
     }
 

@@ -11,33 +11,40 @@ page 50034 SetupReminderExtensionCardNVX
         {
             group(General)
             {
-                field(WebSiteIBAN; Rec.WebSiteIBAN)
+                field(AcitveChangeLogEntryDim; Rec.AcitveChangeLogEntryDim)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Activate ChangeLogEntry Dimension field.', Comment = 'DEA="Änderungsprotokol Dimension aktivieren"';
                 }
                 field(ActivateBusinessFilterInPages; Rec.ActivateBusinessFilterInPages)
                 {
                     ApplicationArea = All;
-                }
-                field(AllowEmptyfilter; Rec.AllowEmptyfilter)
-                {
-                    ToolTip = 'Specifies the value of the use also empty filter field.', Comment = 'DEA="Leeren Filter berücksichten"';
-                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Active Filter BusinessFields for Pages field.', Comment = 'DEA="Filter Geschäftsfelder für Pages aktivieren"';
                 }
                 field(AllowChangeLogEntryDim; Rec.AllowChangeLogEntryDim)
                 {
-                    ToolTip = 'Specifies the value of the Allow Change LogEntryDimension field.', Comment = 'DEA="Änderung der Tabelle Änderungsprotokollposten Dimensionen"';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Allow Change LogEntryDimension field.', Comment = 'DEA="Änderung der Tabelle Änderungsprotokollposten Dimensionen"';
+                }
+                field(AllowEmptyfilter; Rec.AllowEmptyfilter)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the use also empty filter field.', Comment = 'DEA="Leeren Filter berücksichten"';
+                }
+                field("Test User Activate"; Rec."Test User Activate")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Test User Activate field.', Comment = 'DEA="Testbenutzer aktiviert"';
                 }
                 field("Test User ID"; Rec."Test User ID")
                 {
+                    ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Test User ID field.', Comment = 'DEA="Testbenutzer"';
-                    ApplicationArea = All;
                 }
-                field(AcitveChangeLogEntryDim; Rec.AcitveChangeLogEntryDim)
+                field(WebSiteIBAN; Rec.WebSiteIBAN)
                 {
-                    ToolTip = 'Specifies the value of the Activate ChangeLogEntry Dimension field.', Comment = 'DEA="Änderungsprotokol Dimension aktivieren"';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Website IBAN field.', Comment = 'DEA="Webseite IBAN"';
                 }
             }
         }
@@ -48,8 +55,8 @@ page 50034 SetupReminderExtensionCardNVX
         {
             Action(InsertSetupPropertyForField)
             {
-                Caption = 'Setup PropertyForField insert', comment = 'DEA="Einrichtung Eigenschaften der Felder befüllen"';
                 ApplicationArea = All;
+                Caption = 'Setup PropertyForField insert', comment = 'DEA="Einrichtung Eigenschaften der Felder befüllen"';
                 Image = Setup;
 
                 trigger OnAction()

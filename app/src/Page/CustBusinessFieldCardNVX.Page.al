@@ -80,13 +80,22 @@ page 50032 "CustBusinessFieldCardNVX"
                         end;
                     }
                 }
+                group(Reminder)
+                {
+                    Caption = 'Reminder', comment = 'DEA="Mahnwesen"';
+                    field("Allowed Setup dynamic fields"; Rec."Allowed Setup dynamic fields")
+                    {
+                        ToolTip = 'Specifies the value of the Allowed Setup dynamic Fields field.', Comment = 'DEA="setup dynamische Felder erlaubt"';
+                        ApplicationArea = All;
+                    }
+                }
             }
         }
     }
 
     trigger OnClosePage()
     begin
-        AppMgt.SetActiveAndStateCustomerBusinessLines("Customer No.", UserID);
+        AppMgt.SetActiveAndStateCustomerBusinessLines("Customer No.");
     end;
 
     var

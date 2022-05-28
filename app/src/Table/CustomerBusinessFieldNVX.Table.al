@@ -86,6 +86,11 @@ table 50041 "CustomerBusinessFieldNVX"
             Caption = 'Preferred Bank Account Code', comment = 'DEA="Bevorzugter Bankkontocode"';
             TableRelation = "Customer Bank Account".Code WHERE("Customer No." = FIELD("Customer No."));
         }
+        field(30; "Allowed Setup dynamic fields"; Boolean)
+        {
+            Caption = 'Allowed Setup dynamic Fields', comment = 'DEA="setup dynamische Felder erlaubt"';
+            DataClassification = CustomerContent;
+        }
         field(40; Active; Boolean)
         {
             Caption = 'Active', comment = 'DEA="Aktiv"';
@@ -122,16 +127,16 @@ table 50041 "CustomerBusinessFieldNVX"
         "Last Modified By User" := Format(UserId);
     end;
 
-    procedure InsertSetupBusinessField(CustomerNo: Code[20]; _UserID: Text)
+    procedure InsertSetupBusinessField(CustomerNo: Code[20])
     var
         UserSetup: Record "User Setup";
         CustomerBusinessField: Record CustomerBusinessFieldNVX;
         DimensionValue: Record "Dimension Value";
         GLSetup: Record "General Ledger Setup";
+        AppMgt: Codeunit AppMgtNVX;
         DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX;
     begin
-        if not UserSetup.Get(_UserID) then
-            exit;
+        AppMgt.GetUserSetup(UserSetup, true);
 
         GLSetup.Get();
         DimensionValue.Reset();

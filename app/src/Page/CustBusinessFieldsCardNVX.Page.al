@@ -512,7 +512,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
     trigger OnOpenPage()
     begin
-        Initialize(UserId);
+        Initialize();
         AssignBusinessFields(false);
     end;
 
@@ -643,30 +643,30 @@ page 50033 "CustBusinessFieldsCardNVX"
             until DimensionValue.Next() = 0;
     end;
 
-    local procedure Initialize(_UserID: Text)
+    local procedure Initialize()
     begin
-        if UserSetup.Get(_UserID) then begin
-            PBSetupVisible := UserSetup.PBSetupNVX;
-            RDSetupVisible := Usersetup.RDSetupNVX;
-            RHSetupVisible := Usersetup.RHSetupNVX;
-            EASetupVisible := Usersetup.EASetupNVX;
-            SOSetupVisible := Usersetup.SOSetupNVX;
-            EVSetupVisible := UserSetup.EVSetupNVX;
+        AppMgt.GetUserSetup(UserSetup, true);
 
-            if Rec."customer No." <> '' then begin
-                SetupBusinessField.Reset();
-                SetupBusinessField.SetRange("Customer No.", Rec."Customer No.");
-                if SetupBusinessField.IsEmpty() then
-                    SetupBusinessField.InsertSetupBusinessField(Rec."Customer No.", _UserID);
-                AppMgt.SetActiveAndStateCustomerBusinessLines(Rec."Customer No.", _UserID);
-            end;
+        PBSetupVisible := UserSetup.PBSetupNVX;
+        RDSetupVisible := Usersetup.RDSetupNVX;
+        RHSetupVisible := Usersetup.RHSetupNVX;
+        EASetupVisible := Usersetup.EASetupNVX;
+        SOSetupVisible := Usersetup.SOSetupNVX;
+        EVSetupVisible := UserSetup.EVSetupNVX;
+
+        if Rec."customer No." <> '' then begin
+            SetupBusinessField.Reset();
+            SetupBusinessField.SetRange("Customer No.", Rec."Customer No.");
+            if SetupBusinessField.IsEmpty() then
+                SetupBusinessField.InsertSetupBusinessField(Rec."Customer No.");
+            AppMgt.SetActiveAndStateCustomerBusinessLines(Rec."Customer No.");
         end;
     end;
 
     local procedure ModifySetupBusinessField()
     begin
         AssignBusinessFields(true);
-        AppMgt.SetActiveAndStateCustomerBusinessLines("Customer No.", UserID);
+        AppMgt.SetActiveAndStateCustomerBusinessLines("Customer No.");
     end;
 
     var

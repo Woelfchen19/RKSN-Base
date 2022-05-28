@@ -55,7 +55,8 @@ codeunit 50026 "AppMgtNVX"
         c := 39;
 
         if not (Rec.PBSetupNVX or Rec.RDSetupNVX or Rec.RHSetupNVX or Rec.EASetupNVX or Rec.SOSetupNVX or Rec.EVSetupNVX) then begin
-            Rec.BusinessFieldFilterNVX := format(c) + format(c);
+            if AllowEmptyFilterinPages() then
+                Rec.BusinessFieldFilterNVX := format(c) + format(c);
             exit(false);
         end;
 
@@ -97,9 +98,9 @@ codeunit 50026 "AppMgtNVX"
         CustomerBusinessField.SetRange(Active, true);
     end;
 
-    procedure GetBusinessFieldFilterNVX(_UserID: Text): Code[20];
+    procedure GetBusinessFieldFilterNVX(): Code[20];
     begin
-        UserSetup.Get(_UserID);
+        GetUserSetup(UserSetup, true);
         exit(UserSetup.BusinessFieldFilterNVX);
     end;
 
@@ -364,7 +365,7 @@ codeunit 50026 "AppMgtNVX"
         Hyperlink(SetupReminderExtension.WebSiteIBAN);
     end;
 
-    procedure SetActiveAndStateCustomerBusinessLines(CustomerNo: code[20]; _UserID: Text)
+    procedure SetActiveAndStateCustomerBusinessLines(CustomerNo: code[20])
     var
         CustomerBusinessField: Record CustomerBusinessFieldNVX;
         IsHandled: Boolean;
@@ -375,8 +376,7 @@ codeunit 50026 "AppMgtNVX"
         if IsHandled then
             exit;
 
-        if not UserSetup.Get(_UserId) then
-            exit;
+        GetUserSetup(UserSetup, true);
 
         CustomerBusinessField.SetRange("Customer No.", CustomerNo);
         CustomerBusinessField.SetRange("Dimension Value Type", CustomerBusinessField."Dimension Value Type"::Standard);
@@ -522,15 +522,30 @@ codeunit 50026 "AppMgtNVX"
         Clear(DimMgt);
     end;
 
-    procedure ShowCustBusinessFieldFactBox(_UserID: Text): Boolean
+    procedure GetUserSetup(var UserSetup2: Record "User Setup")
     begin
-        if not UserSetup.Get(_UserID) then
+        GetUserSetup(UserSetup2, false);
+    end;
+
+    procedure GetUserSetup(var UserSetup2: Record "User Setup"; UseTestUser: Boolean)
+    begin
+        if UseTestUser then begin
+            if SetupReminderExtension.Get() then
+                if SetupReminderExtension."Test User Activate" and (SetupReminderExtension."Test User ID" <> '') then
+                    UserSetup2.Get(SetupReminderExtension."Test User ID")
+                else
+                    UserSetup2.Get(UserId);
+        end else
+            UserSetup2.Get(UserId);
+    end;
+
+    procedure ShowCustBusinessFieldFactBox(): Boolean
+    begin
+        GetUserSetup(UserSetup, true);
+        if not (UserSetup.PBSetupNVX or UserSetup.RDSetupNVX or UserSetup.RHSetupNVX or UserSetup.EASetupNVX or UserSetup.SOSetupNVX or UserSetup.EVSetupNVX) then
             exit(false)
         else
-            if not (UserSetup.PBSetupNVX or UserSetup.RDSetupNVX or UserSetup.RHSetupNVX or UserSetup.EASetupNVX or UserSetup.SOSetupNVX or UserSetup.EVSetupNVX) then
-                exit(false);
-
-        exit(true);
+            exit(true);
     end;
 
     procedure ShowPageCustomerBankAccount(CodeFilter: Text): Code[20]

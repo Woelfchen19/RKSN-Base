@@ -31,21 +31,21 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
 
     trigger OnOpenPage()
     begin
-        Initialize(UserID);
+        Initialize();
     end;
 
-    local procedure Initialize(_UserID: Text)
+    local procedure Initialize()
     var
         AppMgt: Codeunit AppMgtNVX;
     begin
-        if UserSetup.Get(_UserId) then
-            if Rec."No." <> '' then begin
-                CustomerBusinessField.Reset();
-                CustomerBusinessField.SetRange("Customer No.", Rec."No.");
-                if CustomerBusinessField.IsEmpty() then
-                    CustomerBusinessField.InsertSetupBusinessField(Rec."No.", _UserID);
-                AppMgt.SetActiveAndStateCustomerBusinessLines(Rec."No.", _UserID);
-            end;
+        AppMgt.GetUserSetup(UserSetup, true);
+        if Rec."No." <> '' then begin
+            CustomerBusinessField.Reset();
+            CustomerBusinessField.SetRange("Customer No.", Rec."No.");
+            if CustomerBusinessField.IsEmpty() then
+                CustomerBusinessField.InsertSetupBusinessField(Rec."No.");
+            AppMgt.SetActiveAndStateCustomerBusinessLines(Rec."No.");
+        end;
     end;
 
     var
