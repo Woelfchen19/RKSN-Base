@@ -11,7 +11,7 @@ page 50034 SetupReminderExtensionCardNVX
         {
             group(General)
             {
-                field(AcitveChangeLogEntryDim; Rec.AcitveChangeLogEntryDim)
+                field(AcitveChangeLogEntryDim; Rec.ActiveChangeLogEntryDim)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Activate ChangeLogEntry Dimension field.', Comment = 'DEA="Änderungsprotokol Dimension aktivieren"';
@@ -20,11 +20,6 @@ page 50034 SetupReminderExtensionCardNVX
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Active Filter BusinessFields for Pages field.', Comment = 'DEA="Filter Geschäftsfelder für Pages aktivieren"';
-                }
-                field(AllowChangeLogEntryDim; Rec.AllowChangeLogEntryDim)
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Allow Change LogEntryDimension field.', Comment = 'DEA="Änderung der Tabelle Änderungsprotokollposten Dimensionen"';
                 }
                 field(AllowEmptyfilter; Rec.AllowEmptyfilter)
                 {

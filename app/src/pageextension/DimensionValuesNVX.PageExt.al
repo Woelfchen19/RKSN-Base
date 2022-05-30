@@ -97,7 +97,8 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
 
     trigger OnAfterGetRecord()
     begin
-        AssosiatedDepartment := Rec."Dimension Value Type" = Rec."Dimension Value Type"::Standard;
+        if (GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 5 Code") then
+            AssosiatedDepartment := Rec."Dimension Value Type" = Rec."Dimension Value Type"::Standard;
     end;
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean

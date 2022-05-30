@@ -17,7 +17,7 @@ codeunit 50030 "ChangeLogMgtDimensionNVX"
         if not ChangeLogSetupRead then begin
             if SetupReminderExtension.Get() then begin
                 ChangeLogSetupRead := true;
-                exit(SetupReminderExtension.AcitveChangeLogEntryDim);
+                exit(SetupReminderExtension.ActiveChangeLogEntryDim);
             end;
         end else
             exit(false);
@@ -114,7 +114,7 @@ codeunit 50030 "ChangeLogMgtDimensionNVX"
             xFldRef := xRecRef.FieldIndex(i);
             if IsNormalField(FldRef) then
                 if Format(FldRef.Value) <> Format(xFldRef.Value) then
-                    if SetupReminderExtension.AcitveChangeLogEntryDim then
+                    if SetupReminderExtension.ActiveChangeLogEntryDim then
                         InsertLogEntry(FldRef, xFldRef, RecRef, 1, IsReadable);
         end;
     end;

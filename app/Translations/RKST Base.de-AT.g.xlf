@@ -10676,23 +10676,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Property Caption</note>
           <target>Einrichtung Erweiterung Mahnung</target>
         </trans-unit>
-        <trans-unit id="Table 2206586188 - Field 2178414558 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Activate ChangeLogEntry Dimension</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Änderungsprotokol Dimension aktivieren"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field AcitveChangeLogEntryDim - Property Caption</note>
-          <target>Änderungsprotokol Dimension aktivieren</target>
-        </trans-unit>
         <trans-unit id="Table 2206586188 - Field 115300620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Active Filter BusinessFields for Pages</source>
           <note from="Developer" annotates="general" priority="2">DEA="Filter Geschäftsfelder für Pages aktivieren"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field ActivateBusinessFilterInPages - Property Caption</note>
           <target>Filter Geschäftsfelder für Pages aktivieren</target>
         </trans-unit>
-        <trans-unit id="Table 2206586188 - Field 3074656713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Allow Change LogEntryDimension</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Änderung der Tabelle Änderungsprotokollposten Dimensionen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field AllowChangeLogEntryDim - Property Caption</note>
-          <target>Änderung der Tabelle Änderungsprotokollposten Dimensionen</target>
+        <trans-unit id="Table 2206586188 - Field 2555466774 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Activate ChangeLogEntry Dimension</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Änderungsprotokol Dimension aktivieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field ActiveChangeLogEntryDim - Property Caption</note>
+          <target>Änderungsprotokol Dimension aktivieren</target>
         </trans-unit>
         <trans-unit id="Table 2206586188 - Field 1035365880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>use also empty filter</source>
@@ -10772,6 +10766,18 @@
           <source>SAMMELKto</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - NamedType ShortcutDimension9CodeTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1301608615 - Method 2104807177 - NamedType 2957784316" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You have no permission for this Ledger entry!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ReminderManagementNVX - Method GetPermissionErrorLbl - NamedType NotAllowedErr</note>
+          <target>Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 1301608615 - Method 4229302529 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ReminderManagementNVX - Method GetWrongDimensionLbl - NamedType WrongDimErr</note>
+          <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
         <trans-unit id="Codeunit 1787021016 - Method 2999721956 - NamedType 645313898" size-unit="char" translate="yes" xml:space="preserve">
           <source>This receipt has already been invoiced. Undo Receipt can be applied only to posted, but not invoiced receipts.</source>
@@ -13059,12 +13065,6 @@
           <note from="Developer" annotates="general" priority="2">DEA="Filter Geschäftsfelder für Pages aktivieren"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SetupReminderExtensionCardNVX - Control ActivateBusinessFilterInPages - Property ToolTip</note>
           <target>Filter Geschäftsfelder für Pages aktivieren</target>
-        </trans-unit>
-        <trans-unit id="Page 1444865904 - Control 3074656713 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Allow Change LogEntryDimension field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Änderung der Tabelle Änderungsprotokollposten Dimensionen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SetupReminderExtensionCardNVX - Control AllowChangeLogEntryDim - Property ToolTip</note>
-          <target>Änderung der Tabelle Änderungsprotokollposten Dimensionen</target>
         </trans-unit>
         <trans-unit id="Page 1444865904 - Control 1035365880 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the use also empty filter field.</source>
@@ -15487,6 +15487,24 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenerLedgerSetupNVX - Field ShortcutDimension9CodeNVX - Property Caption</note>
           <target>ShortcutDimensioncode 9</target>
         </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Method 71837522 - NamedType 1240112260" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 623263038">
+          <source>Documentno. not found!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Belegnummer nicht gefunden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Method ValidateCustLedgerEntryFilter - NamedType DocumentNoNotFoundErr</note>
+          <target>Belegnummer nicht gefunden!</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Method 71837522 - NamedType 2957784316" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 623263038">
+          <source>You have no permission for this Ledger entry!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Method ValidateCustLedgerEntryFilter - NamedType NotAllowedErr</note>
+          <target>Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 3419627077 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Allocation %</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Verteilung %"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field AllocationPercentNVX - Property Caption</note>
+          <target>Verteilung %</target>
+        </trans-unit>
         <trans-unit id="TableExtension 623263038 - Field 826245092 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Allocation Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
@@ -15498,12 +15516,6 @@
           <note from="Developer" annotates="general" priority="2">DEA="Ausziff.Beleg"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field ApplyDocumentNoNVX - Property Caption</note>
           <target>Ausziff.Beleg</target>
-        </trans-unit>
-        <trans-unit id="TableExtension 623263038 - Field 726646062 - Method 2126772001 - NamedType 2957784316" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 623263038">
-          <source>You have no permission for this Ledger entry!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field ApplyDocumentNoNVX - Method OnValidate - NamedType NotAllowedErr</note>
-          <target>Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!</target>
         </trans-unit>
         <trans-unit id="TableExtension 623263038 - Field 4275227508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Assosiated</source>
@@ -15523,17 +15535,95 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field FixedGBPGNVX - Property Caption</note>
           <target>FixedGBPG</target>
         </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 2033620410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Gen. Bus. Posting Group Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsbuchungsgruppe Beschreibung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field GenBusPostingGroupDescNVX - Property Caption</note>
+          <target>Geschäftsbuchungsgruppe Beschreibung</target>
+        </trans-unit>
         <trans-unit id="TableExtension 623263038 - Field 735363887 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>IsRetrospectPosting</source>
           <note from="Developer" annotates="general" priority="2">DEA="Ist eine Retrobuchung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field IsRetrospectPostingNVX - Property Caption</note>
           <target>Ist eine Retrobuchung</target>
         </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 2863454965 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Sales Restrospect Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="NACHGELAGERT Modul Verkauf"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field SalesRetrospectEntryNVX - Property Caption</note>
+          <target>NACHGELAGERT Modul Verkauf</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 788719755 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Sales Source Entry</source>
+          <note from="Developer" annotates="general" priority="2">DEA="QUELLPOSTEN Modul Verkauf"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field SalesSourceEntryNVX - Property Caption</note>
+          <target>QUELLPOSTEN Modul Verkauf</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 3601071727 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Sales Transaction No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="VERKAUF Transaktionsnummer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field SalesTransactionNoNVX - Property Caption</note>
+          <target>VERKAUF Transaktionsnummer</target>
+        </trans-unit>
         <trans-unit id="TableExtension 623263038 - Field 478110000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Shortcut Dimension 10 Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="ShortcutDimensionscode 10"</note>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 10"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field ShortcutDimension10CodeNVX - Property Caption</note>
-          <target>ShortcutDimensionscode 10</target>
+          <target>Shortcutdimensionscode 10</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 911052570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Shortcut Dimension 1 Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionsname 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field ShortcutDimension1NameNVX - Property Caption</note>
+          <target>Shortcutdimensionsname 1</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 2474047554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field ShortcutDimension3CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 3</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 1017265779 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Shortcut Dimension 4 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 4"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field ShortcutDimension4CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 4</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 5"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 5</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 3919586709 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Shortcut Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 6"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field ShortcutDimension6CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 6</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 2141403142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Shortcut Dimension 7 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 7"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field ShortcutDimension7CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 7</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 2024997319 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Shortcut Dimension 8 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 8"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field ShortcutDimension8CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 8</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 689540952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Shortcut Dimension 9 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 9"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field ShortcutDimension9CodeNVX - Property Caption</note>
+          <target>Shortcutdimensionscode 9</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 623263038 - Field 973865456 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Start Date</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Startdatum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Field StartDateNVX - Property Caption</note>
+          <target>Startdatum</target>
         </trans-unit>
         <trans-unit id="TableExtension 623263038 - Field 2664610773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>VAT Posting Type</source>

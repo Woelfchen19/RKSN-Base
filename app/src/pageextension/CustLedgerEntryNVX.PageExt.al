@@ -190,7 +190,7 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
             if BusinessFieldFilter = '' then
                 Rec.SetFilter("Entry No.", '%1', -1)
             else
-                Rec.SetFilter(ShortcutDimension5CodeNVX, AppMgt.GetBusinessFieldFilterNVX());
+                Rec.SetFilter(ShortcutDimension5CodeNVX, BusinessFieldFilter);
             Rec.FilterGroup(0);
         end;
     end;

@@ -4,6 +4,16 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
     {
         addlast(Control1)
         {
+            field(AssociatedNVX; Rec.AssociatedNVX)
+            {
+                ApplicationArea = All;
+                Caption = 'Assosiated', comment = 'DEA="zugehörig"';
+            }
+            field(ApplyDocumentNoNVX; Rec.ApplyDocumentNoNVX)
+            {
+                ToolTip = 'Specifies the value of the Apply Document No. field.', Comment = 'DEA="Ausziff.Beleg"';
+                ApplicationArea = All;
+            }
             field(AllocationCodeNVX; Rec.AllocCodeNVX)
             {
                 ApplicationArea = All;
@@ -32,16 +42,6 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
                                     Error(WrongDimErr);
                             end;
                 end;
-            }
-            field(AssociatedNVX; Rec.AssociatedNVX)
-            {
-                ApplicationArea = All;
-                Caption = 'Assosiated', comment = 'DEA="zugehörig"';
-            }
-            field(ApplyDocumentNoNVX; Rec.ApplyDocumentNoNVX)
-            {
-                ToolTip = 'Specifies the value of the Apply Document No. field.', Comment = 'DEA="Ausziff.Beleg"';
-                ApplicationArea = All;
             }
         }
     }

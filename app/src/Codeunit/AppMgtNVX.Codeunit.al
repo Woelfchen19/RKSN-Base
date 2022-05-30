@@ -630,6 +630,24 @@ codeunit 50026 "AppMgtNVX"
         exit(ReminderTerms.Code)
     end;
 
+    procedure SetAssociatedNVX(var GenJournalLine: Record "Gen. Journal Line")
+    var
+        DimensionValue: Record "Dimension Value";
+    begin
+        if GenJournalLine."Shortcut Dimension 2 Code" = '' then
+            exit;
+        if GenJournalLine."Line No." = 0 then
+            exit;
+
+        GLSetup.GetRecordOnce();
+
+        DimensionValue.Get(GLSetup."Global Dimension 2 Code", GenJournalLine."Shortcut Dimension 2 Code");
+        if Dimensionvalue.AssociatedNVX <> '' then begin
+            GenJournalLine.AssociatedNVX := Dimensionvalue.AssociatedNVX;
+            GenJournalLine.Modify();
+        end;
+    end;
+
     procedure ValidateShortcutDimCode(FieldNumber: Integer; VAR ShortcutDimCode: Code[20]; var CustLedgerEntry: Record "Cust. Ledger Entry")
     begin
         DimMgt.ValidateShortcutDimValues(FieldNumber, ShortcutDimCode, CustLedgerEntry."Dimension Set ID");

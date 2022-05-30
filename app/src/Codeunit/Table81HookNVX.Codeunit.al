@@ -1,5 +1,10 @@
 codeunit 50021 "Table81HookNVX"
 {
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateShortcutDimCode', '', true, true)]
+    local procedure OnAfterValidateShortcutDimCode(var GenJournalLine: Record "Gen. Journal Line"; FieldNumber: Integer; var ShortcutDimCode: Code[20])
+    begin
+        AppMgt.SetAssociatedNVX(GenJournalLine);
+    end;
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Shortcut Dimension 2 Code', false, false)]
     local procedure CheckAllocationCodeDim(var Rec: Record "Gen. Journal Line")
@@ -29,8 +34,6 @@ codeunit 50021 "Table81HookNVX"
                 if FixedAsset.Get(Rec."Bal. Account No.") and (FixedAsset."Global Dimension 2 Code" <> Rec."Shortcut Dimension 2 Code") then
                     Error(WrongDim2Err);
         end;
-
-        Rec.SetAssociatedNVX();
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Account No.', false, false)]
@@ -58,7 +61,8 @@ codeunit 50021 "Table81HookNVX"
         GenJournalBatch.Get(Rec."Journal Template Name", Rec."Journal Batch Name");
         if GenJournalBatch.ShortcutDimension5CodeNVX <> '' then
             Rec.ValidateShortcutDimCode(5, GenJournalBatch.ShortcutDimension5CodeNVX);
-        Rec.SetAssociatedNVX();
+
+        AppMgt.SetAssociatedNVX(Rec);
     end;
 
     /// <summary>
@@ -99,9 +103,8 @@ codeunit 50021 "Table81HookNVX"
         if GenJournalBatch.ShortcutDimension5CodeNVX <> '' then
             Rec.ValidateShortcutDimCode(5, GenJournalBatch.ShortcutDimension5CodeNVX);
 
-        Rec.SetAssociatedNVX();
-
-        GLSetup.Get();
+        AppMgt.SetAssociatedNVX(Rec);
+        GLSetup.GetRecordOnce();
 
         DimMgt.GetShortcutDimensions(Rec."Dimension Set ID", ShortcutDimCode);
         AssosiatedDepartment.SetRange("Shortcut Dimension 5 Code", ShortcutDimCode[5]);
@@ -113,13 +116,12 @@ codeunit 50021 "Table81HookNVX"
     local procedure OnAfterValidateShortcutDimension1CodeEvent(var Rec: Record "Gen. Journal Line")
     begin
         Rec.SetBusinessFieldNVX();
-
-        if Rec.AssociatedNVX = '' then
-            Rec.SetAssociatedNVX();
+        AppMgt.SetAssociatedNVX(Rec);
     end;
 
     var
         GLSetup: Record "General Ledger Setup";
         AssosiatedDepartment: Record AssosiatedDepartmentNVX;
         DimMgt: Codeunit DimensionManagement;
+        AppMgt: Codeunit AppMgtNVX;
 }

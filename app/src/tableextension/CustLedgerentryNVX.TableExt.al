@@ -90,12 +90,24 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
                 DimensionManagement.ValidateShortcutDimValues(10, ShortcutDimension10CodeNVX, "Dimension Set ID");
             end;
         }
-        field(50010; AssociatedNVX; Code[20])
+        field(50008; ShortcutDimension2CodeNVX; Code[20])
+        {
+            CaptionClass = '1,2,2';
+            Caption = 'Shortcut Dimension 2 Code';
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(10), Blocked = CONST(false));
+
+            trigger OnValidate()
+            begin
+                DimensionManagement.ValidateShortcutDimValues(10, ShortcutDimension10CodeNVX, "Dimension Set ID");
+            end;
+        }
+        field(50009; AssociatedNVX; Code[10])
         {
             Caption = 'Assosiated', comment = 'DEA="Zugehörig"';
-            FieldClass = FlowField;
+            TableRelation = SetupAssociatedNVX;
             Editable = false;
-            CalcFormula = Lookup("Dimension value".Code WHERE(Code = FIELD("Global Dimension 2 Code")));
+            FieldClass = FlowField;
+            CalcFormula = lookup("Dimension Value".AssociatedNVX where("Global Dimension No." = const(2), Code = field(ShortcutDimension2CodeNVX)));
         }
     }
 
