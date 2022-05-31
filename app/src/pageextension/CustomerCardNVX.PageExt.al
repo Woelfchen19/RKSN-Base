@@ -25,6 +25,7 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
             {
                 ApplicationArea = Basic, Suite;
                 SubPageLink = "Customer No." = Field("No.");
+                Visible = ShowCustBusinessFieldFactBox;
             }
         }
     }
@@ -39,6 +40,9 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
         AppMgt: Codeunit AppMgtNVX;
     begin
         AppMgt.GetUserSetup(UserSetup, true);
+
+        ShowCustBusinessFieldFactBox := AppMgt.ShowCustBusinessFieldFactBox();
+
         if Rec."No." <> '' then begin
             CustomerBusinessField.Reset();
             CustomerBusinessField.SetRange("Customer No.", Rec."No.");
@@ -51,4 +55,5 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
     var
         CustomerBusinessField: Record CustomerBusinessFieldNVX;
         UserSetup: Record "User Setup";
+        ShowCustBusinessFieldFactBox: Boolean;
 }

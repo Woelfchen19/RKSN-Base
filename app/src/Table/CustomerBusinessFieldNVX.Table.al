@@ -3,6 +3,8 @@ table 50041 "CustomerBusinessFieldNVX"
     Caption = 'Customer Businessfield (Dim 5)', comment = 'DEA="Debitor Geschäftsfeld (Dim 5)"';
     DataCaptionFields = "Customer No.";
     DataClassification = CustomerContent;
+    DrillDownPageId = CustBusinessFieldListNVX;
+    LookupPageId = CustBusinessFieldListNVX;
 
     fields
     {
@@ -129,10 +131,10 @@ table 50041 "CustomerBusinessFieldNVX"
 
     procedure InsertSetupBusinessField(CustomerNo: Code[20])
     var
-        UserSetup: Record "User Setup";
         CustomerBusinessField: Record CustomerBusinessFieldNVX;
         DimensionValue: Record "Dimension Value";
         GLSetup: Record "General Ledger Setup";
+        UserSetup: Record "User Setup";
         AppMgt: Codeunit AppMgtNVX;
         DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX;
     begin
@@ -164,9 +166,9 @@ table 50041 "CustomerBusinessFieldNVX"
         AppMgt: Codeunit AppMgtNVX;
         RecRef: RecordRef;
         StatusCustBusinessField: Enum StatusCustBusinessFieldsNVX;
-        TotalCounter: integer;
         Counter: integer;
         i: Integer;
+        TotalCounter: integer;
     begin
         if DimShortcutBusinessField = DimShortcutBusinessField::All then
             exit(StatusCustBusinessField::EMPTY);

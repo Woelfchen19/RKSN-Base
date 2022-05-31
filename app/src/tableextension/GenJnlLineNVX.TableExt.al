@@ -36,7 +36,7 @@ tableextension 50014 "GenJnlLineNVX" extends "Gen. Journal Line"
             TableRelation = SetupAssociatedNVX;
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = lookup("Dimension Value".AssociatedNVX where("Global Dimension No." = const(2), Code = field("Shortcut Dimension 1 Code")));
+            CalcFormula = lookup("Dimension Value".AssociatedNVX where("Global Dimension No." = const(2), Code = field("Shortcut Dimension 2 Code")));
         }
         field(50006; ShortcutDimension3CodeNVX; Code[20])
         {

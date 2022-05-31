@@ -1,11 +1,5 @@
 codeunit 50021 "Table81HookNVX"
 {
-    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateShortcutDimCode', '', true, true)]
-    local procedure OnAfterValidateShortcutDimCode(var GenJournalLine: Record "Gen. Journal Line"; FieldNumber: Integer; var ShortcutDimCode: Code[20])
-    begin
-        AppMgt.SetAssociatedNVX(GenJournalLine);
-    end;
-
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Shortcut Dimension 2 Code', false, false)]
     local procedure CheckAllocationCodeDim(var Rec: Record "Gen. Journal Line")
     var
@@ -61,16 +55,8 @@ codeunit 50021 "Table81HookNVX"
         GenJournalBatch.Get(Rec."Journal Template Name", Rec."Journal Batch Name");
         if GenJournalBatch.ShortcutDimension5CodeNVX <> '' then
             Rec.ValidateShortcutDimCode(5, GenJournalBatch.ShortcutDimension5CodeNVX);
-
-        AppMgt.SetAssociatedNVX(Rec);
     end;
 
-    /// <summary>
-    /// ToDo
-    /// if DimensionValue.Get(GLSetup."Shortcut Dimension 5 Code", 'EA') then
-    /// </summary>
-    /// <param name="Rec"></param>
-    /// <param name="RunTrigger"></param>
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterInsertEvent', '', false, false)]
     local procedure InsertAllocationCodeInAccompaniedTable(var Rec: Record "Gen. Journal Line"; RunTrigger: Boolean)
     var
@@ -103,7 +89,6 @@ codeunit 50021 "Table81HookNVX"
         if GenJournalBatch.ShortcutDimension5CodeNVX <> '' then
             Rec.ValidateShortcutDimCode(5, GenJournalBatch.ShortcutDimension5CodeNVX);
 
-        AppMgt.SetAssociatedNVX(Rec);
         GLSetup.GetRecordOnce();
 
         DimMgt.GetShortcutDimensions(Rec."Dimension Set ID", ShortcutDimCode);
@@ -116,12 +101,10 @@ codeunit 50021 "Table81HookNVX"
     local procedure OnAfterValidateShortcutDimension1CodeEvent(var Rec: Record "Gen. Journal Line")
     begin
         Rec.SetBusinessFieldNVX();
-        AppMgt.SetAssociatedNVX(Rec);
     end;
 
     var
         GLSetup: Record "General Ledger Setup";
         AssosiatedDepartment: Record AssosiatedDepartmentNVX;
         DimMgt: Codeunit DimensionManagement;
-        AppMgt: Codeunit AppMgtNVX;
 }

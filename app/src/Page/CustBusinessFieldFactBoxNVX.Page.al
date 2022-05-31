@@ -55,6 +55,13 @@ page 50031 "CustBusinessFieldFactBoxNVX"
             }
         }
     }
+
+    trigger OnOpenPage()
+    begin
+        AppMgt.GetUserSetup(UserSetup, true);
+        Rec.SetFilter("Shortcut Dimension 5 Code", UserSetup.BusinessFieldFilterNVX);
+    end;
+
     trigger OnAfterGetRecord()
     var
     begin
@@ -62,5 +69,7 @@ page 50031 "CustBusinessFieldFactBoxNVX"
     end;
 
     var
+        UserSetup: Record "User Setup";
+        AppMgt: Codeunit AppMgtNVX;
         StyleTxt: Text;
 }

@@ -20,10 +20,33 @@ codeunit 50026 "AppMgtNVX"
         DimVisible9: Boolean;
         DimVisible10: Boolean;
         GLSetupShortcutDimCode: array[10] of Code[20];
+        NotAllowdBusinessFieldsForUserErr: Label 'You are not authorized to create a business area!\Please contact your Systemadministrator', comment = 'DEA="Sie haben keine Berechtigung, um ein Geschäftsfeld anzulegen!\Bitte kontaktieren Sie Ihren Systemadministrator."';
         PipeTok: Label '|';
         ShortcutDimension9CodeTxt: Label 'SAMMELKto';
         ShortcutDimension10CodeTxt: Label 'VERTEILUNG';
         PageList: List of [integer];
+
+    procedure AllowdBusinessFieldsForUser(BusinessFilter: Code[20]; BusinessFieldValue: Code[20]): Boolean
+    var
+        RegEx: Codeunit DotNet_Regex;
+    begin
+        if BusinessFieldValue = '' then
+            exit(false);
+
+        Regex.Regex(BusinessFilter);
+
+        if RegEx.IsMatch(BusinessFieldValue) then
+            exit(true);
+
+        Error(NotAllowdBusinessFieldsForUserErr);
+    end;
+
+    procedure AllowdBusinessFieldsForUser()
+    begin
+        if not UserHasNoBusinessField() then
+            Error(NotAllowdBusinessFieldsForUserErr);
+    end;
+
 
     procedure AllowEmptyFilterinPages(): Boolean
     begin
@@ -78,7 +101,8 @@ codeunit 50026 "AppMgtNVX"
             TextBuilder.Remove(StrLen(TextBuilder.ToText()), 1);
 
         Rec.BusinessFieldFilterNVX :=
-            CopyStr(TextBuilder.ToText(), 1, TextBuilder.Capacity(20));
+            CopyStr(
+                TextBuilder.ToText(), 1, TextBuilder.Capacity(MaxStrLen(Rec.BusinessFieldFilterNVX)));
 
         Rec.Modify();
 
@@ -140,6 +164,23 @@ codeunit 50026 "AppMgtNVX"
 
     end;
 
+    procedure GetUserSetup(var UserSetup2: Record "User Setup")
+    begin
+        GetUserSetup(UserSetup2, false);
+    end;
+
+    procedure GetUserSetup(var UserSetup2: Record "User Setup"; UseTestUser: Boolean)
+    begin
+        if UseTestUser then begin
+            if SetupReminderExtension.Get() then
+                if SetupReminderExtension."Test User Activate" and (SetupReminderExtension."Test User ID" <> '') then
+                    UserSetup2.Get(SetupReminderExtension."Test User ID")
+                else
+                    UserSetup2.Get(UserId);
+        end else
+            UserSetup2.Get(UserId);
+    end;
+
     procedure HasValue(FieldRef: FieldRef): Boolean
     var
         FieldRec: Record Field;
@@ -190,10 +231,10 @@ codeunit 50026 "AppMgtNVX"
         GetGLSetup();
 
         PageList.AddRange(
-            20, 25, 29, 38, 39, 40, 41, 42, 43, 44, 46, 47, 54, 55, 62, 95, 96, 97, 98,
-            131, 132, 133, 135, 137, 139, 141, 142, 143, 144, 171, 176, 232, 251, 253, 254, 255, 256, 380, 508, 510, 536, 537,
-            573, 574, 752, 755, 901, 921, 931, 941, 5160, 5163, 5165, 5168, 5628, 5629, 5741, 5744, 5746, 5802, 5877, 5885,
-            5934, 5936, 5956, 5973, 5979, 6621, 6624, 6628, 6631, 6641, 6645, 9300, 9301, 9302, 9305
+            20, 25, 29, 38, 39, 40, 41, 42, 43, 44, 46, 47, 54, 55, 62, 95, 96, 97, 98, 131, 132, 133, 135, 137, 139, 141, 142, 143, 144,
+            171, 176, 232, 251, 253, 254, 255, 256, 380, 508, 510, 516, 517, 518, 519, 536, 537, 573, 574, 752, 755, 901, 921, 931, 941, 5160,
+            5163, 5165, 5168, 5628, 5629, 5741, 5744, 5746, 5802, 5877, 5885, 5934, 5936, 5956, 5973, 5979, 6621, 6624, 6628, 6631, 6641, 6645,
+            9300, 9301, 9302, 9305
         );
     end;
 
@@ -252,7 +293,7 @@ codeunit 50026 "AppMgtNVX"
             DimensionValue.Init();
             DimensionValue."Dimension Code" := GLSetup."Shortcut Dimension 7 Code";
             DimensionValue.Code := Customer."No.";
-            DimensionValue.Name := CopyStr(Customer.Name, 1, 50);
+            DimensionValue.Name := CopyStr(Customer.Name, 1, MaxStrLen(DimensionValue.Name));
             DimensionValue.Insert(true);
         END else
             ModifyPKShortCutdimension(Customer);
@@ -263,10 +304,12 @@ codeunit 50026 "AppMgtNVX"
         Dimension: Record Dimension;
         index: Integer;
         PageID: Integer;
+        ConfirmDeleteMsg: Label 'Do you realy want to delete data from the Setuptable and insert new?', comment = 'DEA="Wollen Sie wirklich die Einrichtungstabelle löschen und neu befüllen? "';
         ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
     begin
         if not SetupPropertyForFields.IsEmpty() then
-            exit;
+            if Confirm(ConfirmDeleteMsg, true) then
+                SetupPropertyForFields.DeleteAll();
 
         Initialize();
 
@@ -522,30 +565,9 @@ codeunit 50026 "AppMgtNVX"
         Clear(DimMgt);
     end;
 
-    procedure GetUserSetup(var UserSetup2: Record "User Setup")
-    begin
-        GetUserSetup(UserSetup2, false);
-    end;
-
-    procedure GetUserSetup(var UserSetup2: Record "User Setup"; UseTestUser: Boolean)
-    begin
-        if UseTestUser then begin
-            if SetupReminderExtension.Get() then
-                if SetupReminderExtension."Test User Activate" and (SetupReminderExtension."Test User ID" <> '') then
-                    UserSetup2.Get(SetupReminderExtension."Test User ID")
-                else
-                    UserSetup2.Get(UserId);
-        end else
-            UserSetup2.Get(UserId);
-    end;
-
     procedure ShowCustBusinessFieldFactBox(): Boolean
     begin
-        GetUserSetup(UserSetup, true);
-        if not (UserSetup.PBSetupNVX or UserSetup.RDSetupNVX or UserSetup.RHSetupNVX or UserSetup.EASetupNVX or UserSetup.SOSetupNVX or UserSetup.EVSetupNVX) then
-            exit(false)
-        else
-            exit(true);
+        exit(UserHasNoBusinessField());
     end;
 
     procedure ShowPageCustomerBankAccount(CodeFilter: Text): Code[20]
@@ -630,24 +652,6 @@ codeunit 50026 "AppMgtNVX"
         exit(ReminderTerms.Code)
     end;
 
-    procedure SetAssociatedNVX(var GenJournalLine: Record "Gen. Journal Line")
-    var
-        DimensionValue: Record "Dimension Value";
-    begin
-        if GenJournalLine."Shortcut Dimension 2 Code" = '' then
-            exit;
-        if GenJournalLine."Line No." = 0 then
-            exit;
-
-        GLSetup.GetRecordOnce();
-
-        DimensionValue.Get(GLSetup."Global Dimension 2 Code", GenJournalLine."Shortcut Dimension 2 Code");
-        if Dimensionvalue.AssociatedNVX <> '' then begin
-            GenJournalLine.AssociatedNVX := Dimensionvalue.AssociatedNVX;
-            GenJournalLine.Modify();
-        end;
-    end;
-
     procedure ValidateShortcutDimCode(FieldNumber: Integer; VAR ShortcutDimCode: Code[20]; var CustLedgerEntry: Record "Cust. Ledger Entry")
     begin
         DimMgt.ValidateShortcutDimValues(FieldNumber, ShortcutDimCode, CustLedgerEntry."Dimension Set ID");
@@ -660,6 +664,7 @@ codeunit 50026 "AppMgtNVX"
     begin
         GLSetup.GetRecordOnce();
 
+        GLSetupShortcutDimCode[1] := GLSetup."Shortcut Dimension 1 Code";
         GLSetupShortcutDimCode[2] := GLSetup."Shortcut Dimension 2 Code";
         GLSetupShortcutDimCode[3] := GLSetup."Shortcut Dimension 3 Code";
         GLSetupShortcutDimCode[4] := GLSetup."Shortcut Dimension 4 Code";
@@ -679,12 +684,22 @@ codeunit 50026 "AppMgtNVX"
     var
         DimensionValue: Record "Dimension Value";
     begin
-        Glsetup.Get();
+        GetGLSetup();
+
         IF DimensionValue.Get(GLSetup."Shortcut Dimension 7 Code", Customer."No.") then
             if DimensionValue.Name <> Customer.Name then begin
-                DimensionValue.Name := CopyStr(Customer.Name, 1, 50);
+                DimensionValue.Name := CopyStr(Customer.Name, 1, MaxStrLen(DimensionValue.Name));
                 DimensionValue.Modify();
             END;
+    end;
+
+    local procedure UserHasNoBusinessField(): Boolean
+    begin
+        GetUserSetup(UserSetup, true);
+        if not (UserSetup.PBSetupNVX or UserSetup.RDSetupNVX or UserSetup.RHSetupNVX or UserSetup.EASetupNVX or UserSetup.SOSetupNVX or UserSetup.EVSetupNVX) then
+            exit(false)
+        else
+            exit(true);
     end;
 
     [IntegrationEvent(false, false)]

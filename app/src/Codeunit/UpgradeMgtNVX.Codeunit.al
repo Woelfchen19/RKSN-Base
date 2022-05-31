@@ -10,7 +10,6 @@ codeunit 50024 "UpgradeMgtNVX"
     begin
         InsertSetupPropertyForField();
         InitializeDimensionCustomer();
-        SetAssociatedCustLedgerEntry();
         InsertSetupReminderExtension();
     end;
 
@@ -38,12 +37,5 @@ codeunit 50024 "UpgradeMgtNVX"
             SetupReminderExtension.WebSiteIBAN := Copystr(WebSiteUriIBANTxt, 1, 50);
             SetupReminderExtension.Insert();
         end;
-    end;
-
-    local procedure SetAssociatedCustLedgerEntry()
-    var
-        CustLedgerEntry: Record "Cust. Ledger Entry";
-    begin
-        CustLedgerEntry.SetAssociatedNVX(true);
     end;
 }

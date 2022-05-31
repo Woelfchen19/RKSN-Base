@@ -146,7 +146,7 @@ codeunit 50012 "Table27HookNVX"
         GLSetup.Get();
 
         if DimensionValue.Get(GLSetup."Shortcut Dimension 8 Code", Rec."No.") then begin
-            DimensionValue.Name := CopyStr(Rec.Description, 1, 50);
+            DimensionValue.Name := CopyStr(Rec.Description, 1, MaxStrLen(DimensionValue.Name));
             DimensionValue.Modify(true);
         end;
     end;

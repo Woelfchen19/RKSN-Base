@@ -9258,6 +9258,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table VATPostingTypeNVX - Field Description - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1250765185 - NamedType 98460164" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You are not authorized to create a business area!\Please contact your Systemadministrator</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sie haben keine Berechtigung, um ein Geschäftsfeld anzulegen!\Bitte kontaktieren Sie Ihren Systemadministrator."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - NamedType NotAllowdBusinessFieldsForUserErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1250765185 - NamedType 2809324504" size-unit="char" translate="yes" xml:space="preserve">
           <source>|</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -9272,6 +9277,11 @@
           <source>SAMMELKto</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - NamedType ShortcutDimension9CodeTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1250765185 - Method 4116255554 - NamedType 3728855534" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you realy want to delete data from the Setuptable and insert new?</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Wollen Sie wirklich die Einrichtungstabelle löschen und neu befüllen? "</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - Method InsertSetupPropertyForField - NamedType ConfirmDeleteMsg</note>
         </trans-unit>
         <trans-unit id="Codeunit 1301608615 - Method 2104807177 - NamedType 2957784316" size-unit="char" translate="yes" xml:space="preserve">
           <source>You have no permission for this Ledger entry!</source>
@@ -13182,11 +13192,6 @@
           <source>Shortcut Dimension 10 Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgerentryNVX - Field ShortcutDimension10CodeNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 3933977732 - Field 207137745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
-          <source>Shortcut Dimension 2 Code</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CustLedgerentryNVX - Field ShortcutDimension2CodeNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3933977732 - Field 2474047554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
           <source>Shortcut Dimension 3 Code</source>

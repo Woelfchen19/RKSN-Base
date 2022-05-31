@@ -1,22 +1,5 @@
 codeunit 50014 "AppEventHookNVX"
 {
-
-    local procedure SetDimensionsVisibility(
-        PageID: Integer;
-         var Dimension1Visible: Boolean; var Dimension2Visible: Boolean; var Dimension3Visible: Boolean; var Dimension4Visible: Boolean; var Dimension5Visible: Boolean; var Dimension6Visible: Boolean; var Dimension7Visible: Boolean; var Dimension8Visible: Boolean;
-         var Dimension9Visible: Boolean; var Dimension10Visible: Boolean; var Dimension1Editable: Boolean; var Dimension2Editable: Boolean; var Dimension3Editable: Boolean;
-         var Dimension4Editable: Boolean; var Dimension5Editable: Boolean; var Dimension6Editable: Boolean; var Dimension7Editable: Boolean; var Dimension8Editable: Boolean; var Dimension9Editable: Boolean; var Dimension10Editable: Boolean)
-    var
-        AppMgt: Codeunit AppMgtNVX;
-    begin
-        AppMgt.SetFieldsPropertyVisibleEditableBySetup(PageID);
-
-        AppMgt.GetFieldsPropertyVisibleEditableBySetup(Dimension1Visible, Dimension2Visible, Dimension3Visible, Dimension4Visible, Dimension5Visible,
-            Dimension6Visible, Dimension7Visible, Dimension8Visible, Dimension9Visible, Dimension10Visible,
-            Dimension1Editable, Dimension2Editable, Dimension3Editable, Dimension4Editable, Dimension5Editable,
-            Dimension6Editable, Dimension7Editable, Dimension8Editable, Dimension9Editable, Dimension10Editable);
-    end;
-
     [EventSubscriber(ObjectType::Page, Page::"Cash Receipt Journal", 'OnAfterSetDimensionsVisibility', '', true, true)]
     local procedure OnAfterSetDimensionsVisibilityCashReceiptJournal(var Dimension1Visible: Boolean; var Dimension2Visible: Boolean; var Dimension3Visible: Boolean;
         var Dimension4Visible: Boolean; var Dimension5Visible: Boolean; var Dimension6Visible: Boolean; var Dimension7Visible: Boolean; var Dimension8Visible: Boolean;
@@ -84,11 +67,74 @@ codeunit 50014 "AppEventHookNVX"
         var Dimension9Visible: Boolean; var Dimension10Visible: Boolean; var Dimension1Editable: Boolean; var Dimension2Editable: Boolean; var Dimension3Editable: Boolean;
         var Dimension4Editable: Boolean; var Dimension5Editable: Boolean; var Dimension6Editable: Boolean; var Dimension7Editable: Boolean; var Dimension8Editable: Boolean; var Dimension9Editable: Boolean; var Dimension10Editable: Boolean
    )
-
     begin
         SetDimensionsVisibility(Page::"Payment Journal", Dimension1Visible, Dimension2Visible, Dimension3Visible, Dimension4Visible, Dimension5Visible,
             Dimension6Visible, Dimension7Visible, Dimension8Visible, Dimension9Visible, Dimension10Visible, Dimension1Editable, Dimension2Editable, Dimension3Editable,
                 Dimension4Editable, Dimension5Editable, Dimension6Editable, Dimension7Editable, Dimension8Editable, Dimension9Editable, Dimension10Editable)
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Sales Lines", 'OnAfterSetDimensionsVisibility', '', true, true)]
+    local procedure OnAfterSetDimensionsVisibilitySalesLines(var Dimension1Visible: Boolean; var Dimension2Visible: Boolean; var Dimension3Visible: Boolean;
+         var Dimension4Visible: Boolean; var Dimension5Visible: Boolean; var Dimension6Visible: Boolean; var Dimension7Visible: Boolean; var Dimension8Visible: Boolean;
+         var Dimension9Visible: Boolean; var Dimension10Visible: Boolean; var Dimension1Editable: Boolean; var Dimension2Editable: Boolean; var Dimension3Editable: Boolean;
+         var Dimension4Editable: Boolean; var Dimension5Editable: Boolean; var Dimension6Editable: Boolean; var Dimension7Editable: Boolean; var Dimension8Editable: Boolean; var Dimension9Editable: Boolean; var Dimension10Editable: Boolean
+    )
+    begin
+        SetDimensionsVisibility(Page::"Payment Journal", Dimension1Visible, Dimension2Visible, Dimension3Visible, Dimension4Visible, Dimension5Visible,
+            Dimension6Visible, Dimension7Visible, Dimension8Visible, Dimension9Visible, Dimension10Visible, Dimension1Editable, Dimension2Editable, Dimension3Editable,
+                Dimension4Editable, Dimension5Editable, Dimension6Editable, Dimension7Editable, Dimension8Editable, Dimension9Editable, Dimension10Editable)
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Requisition Lines", 'OnAfterSetDimensionsVisibility', '', true, true)]
+    local procedure OnAfterSetDimensionsVisibilityRequisitionLines(var Dimension1Visible: Boolean; var Dimension2Visible: Boolean; var Dimension3Visible: Boolean;
+         var Dimension4Visible: Boolean; var Dimension5Visible: Boolean; var Dimension6Visible: Boolean; var Dimension7Visible: Boolean; var Dimension8Visible: Boolean;
+         var Dimension9Visible: Boolean; var Dimension10Visible: Boolean; var Dimension1Editable: Boolean; var Dimension2Editable: Boolean; var Dimension3Editable: Boolean;
+         var Dimension4Editable: Boolean; var Dimension5Editable: Boolean; var Dimension6Editable: Boolean; var Dimension7Editable: Boolean; var Dimension8Editable: Boolean; var Dimension9Editable: Boolean; var Dimension10Editable: Boolean
+    )
+    begin
+        SetDimensionsVisibility(Page::"Payment Journal", Dimension1Visible, Dimension2Visible, Dimension3Visible, Dimension4Visible, Dimension5Visible,
+            Dimension6Visible, Dimension7Visible, Dimension8Visible, Dimension9Visible, Dimension10Visible, Dimension1Editable, Dimension2Editable, Dimension3Editable,
+                Dimension4Editable, Dimension5Editable, Dimension6Editable, Dimension7Editable, Dimension8Editable, Dimension9Editable, Dimension10Editable)
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Purchase Lines", 'OnAfterSetDimensionsVisibility', '', true, true)]
+    local procedure OnAfterSetDimensionsVisibilityPurchaseLines(var Dimension1Visible: Boolean; var Dimension2Visible: Boolean; var Dimension3Visible: Boolean;
+         var Dimension4Visible: Boolean; var Dimension5Visible: Boolean; var Dimension6Visible: Boolean; var Dimension7Visible: Boolean; var Dimension8Visible: Boolean;
+         var Dimension9Visible: Boolean; var Dimension10Visible: Boolean; var Dimension1Editable: Boolean; var Dimension2Editable: Boolean; var Dimension3Editable: Boolean;
+         var Dimension4Editable: Boolean; var Dimension5Editable: Boolean; var Dimension6Editable: Boolean; var Dimension7Editable: Boolean; var Dimension8Editable: Boolean; var Dimension9Editable: Boolean; var Dimension10Editable: Boolean
+    )
+    begin
+        SetDimensionsVisibility(Page::"Payment Journal", Dimension1Visible, Dimension2Visible, Dimension3Visible, Dimension4Visible, Dimension5Visible,
+            Dimension6Visible, Dimension7Visible, Dimension8Visible, Dimension9Visible, Dimension10Visible, Dimension1Editable, Dimension2Editable, Dimension3Editable,
+                Dimension4Editable, Dimension5Editable, Dimension6Editable, Dimension7Editable, Dimension8Editable, Dimension9Editable, Dimension10Editable)
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Item Journal Lines", 'OnAfterSetDimensionsVisibility', '', true, true)]
+    local procedure OnAfterSetDimensionsVisibilityItemJournalLines(var Dimension1Visible: Boolean; var Dimension2Visible: Boolean; var Dimension3Visible: Boolean;
+         var Dimension4Visible: Boolean; var Dimension5Visible: Boolean; var Dimension6Visible: Boolean; var Dimension7Visible: Boolean; var Dimension8Visible: Boolean;
+         var Dimension9Visible: Boolean; var Dimension10Visible: Boolean; var Dimension1Editable: Boolean; var Dimension2Editable: Boolean; var Dimension3Editable: Boolean;
+         var Dimension4Editable: Boolean; var Dimension5Editable: Boolean; var Dimension6Editable: Boolean; var Dimension7Editable: Boolean; var Dimension8Editable: Boolean; var Dimension9Editable: Boolean; var Dimension10Editable: Boolean
+    )
+    begin
+        SetDimensionsVisibility(Page::"Payment Journal", Dimension1Visible, Dimension2Visible, Dimension3Visible, Dimension4Visible, Dimension5Visible,
+            Dimension6Visible, Dimension7Visible, Dimension8Visible, Dimension9Visible, Dimension10Visible, Dimension1Editable, Dimension2Editable, Dimension3Editable,
+                Dimension4Editable, Dimension5Editable, Dimension6Editable, Dimension7Editable, Dimension8Editable, Dimension9Editable, Dimension10Editable)
+    end;
+
+    local procedure SetDimensionsVisibility(
+        PageID: Integer;
+         var Dimension1Visible: Boolean; var Dimension2Visible: Boolean; var Dimension3Visible: Boolean; var Dimension4Visible: Boolean; var Dimension5Visible: Boolean; var Dimension6Visible: Boolean; var Dimension7Visible: Boolean; var Dimension8Visible: Boolean;
+         var Dimension9Visible: Boolean; var Dimension10Visible: Boolean; var Dimension1Editable: Boolean; var Dimension2Editable: Boolean; var Dimension3Editable: Boolean;
+         var Dimension4Editable: Boolean; var Dimension5Editable: Boolean; var Dimension6Editable: Boolean; var Dimension7Editable: Boolean; var Dimension8Editable: Boolean; var Dimension9Editable: Boolean; var Dimension10Editable: Boolean)
+    var
+        AppMgt: Codeunit AppMgtNVX;
+    begin
+        AppMgt.SetFieldsPropertyVisibleEditableBySetup(PageID);
+
+        AppMgt.GetFieldsPropertyVisibleEditableBySetup(Dimension1Visible, Dimension2Visible, Dimension3Visible, Dimension4Visible, Dimension5Visible,
+            Dimension6Visible, Dimension7Visible, Dimension8Visible, Dimension9Visible, Dimension10Visible,
+            Dimension1Editable, Dimension2Editable, Dimension3Editable, Dimension4Editable, Dimension5Editable,
+            Dimension6Editable, Dimension7Editable, Dimension8Editable, Dimension9Editable, Dimension10Editable);
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Cust. Ledger Entry", 'OnBeforeModifyEvent', '', true, true)]

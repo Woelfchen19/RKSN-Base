@@ -36,7 +36,8 @@ codeunit 50030 "ChangeLogMgtDimensionNVX"
         ChangeLogEntryDimension."Date and Time" := CurrentDateTime;
         ChangeLogEntryDimension.Time := DT2Time(ChangeLogEntryDimension."Date and Time");
 
-        ChangeLogEntryDimension."User ID" := CopyStr(UserId, 1, 50);
+        ChangeLogEntryDimension."User ID" :=
+            CopyStr(UserId, 1, MaxStrLen(ChangeLogEntryDimension."User ID"));
 
         ChangeLogEntryDimension."Table No." := RecRef.Number;
         ChangeLogEntryDimension."Field No." := FldRef.Number;

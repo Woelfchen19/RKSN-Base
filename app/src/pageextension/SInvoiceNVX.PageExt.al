@@ -19,6 +19,46 @@ pageextension 50022 "SInvoiceNVX" extends "Sales Invoice"
                         Rec.Validate("Gen. Bus. Posting Group", NewGBPG);
                 end;
             }
+
+            field(ShortCutDimension5CodeNVX; ShortcutDims[5])
+            {
+                ApplicationArea = All;
+                CaptionClass = '1,2,5';
+
+                trigger OnLookup(var Text: Text): Boolean
+                var
+                    DimensionValue: Record "Dimension Value";
+                    UserSetup: Record "User Setup";
+                    AppMgt: Codeunit AppMgtNVX;
+                    DimensionValueList: Page "Dimension Value List";
+                begin
+                    AppMgt.GetUserSetup(UserSetup, true);
+                    AppMgt.AllowdBusinessFieldsForUser();
+                    DimensionValue.FilterGroup(2);
+                    DimensionValue.SetRange("Global Dimension No.", 5);
+                    DimensionValue.SetFilter(Code, UserSetup.BusinessFieldFilterNVX);
+                    DimensionValue.FilterGroup(0);
+                    DimensionValueList.LookupMode(true);
+                    DimensionValueList.SetTableView(DimensionValue);
+                    if DimensionValueList.RunModal() = action::LookupOK then begin
+                        DimensionValueList.GetRecord(DimensionValue);
+                        ShortcutDims[5] := DimensionValue.Code;
+                        DimMgt.ValidateShortcutDimValues(5, DimensionValue.Code, Rec."Dimension Set ID");
+                    end;
+                end;
+
+                trigger OnValidate()
+                var
+                    UserSetup: Record "User Setup";
+                    AppMgt: Codeunit AppMgtNVX;
+                begin
+                    AppMgt.GetUserSetup(UserSetup, true);
+                    AppMgt.AllowdBusinessFieldsForUser();
+                    AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, ShortcutDims[5]);
+
+                    DimMgt.ValidateShortcutDimValues(5, ShortcutDims[5], Rec."Dimension Set ID");
+                end;
+            }
         }
         addafter("Shortcut Dimension 2 Code")
         {
@@ -121,6 +161,7 @@ pageextension 50022 "SInvoiceNVX" extends "Sales Invoice"
 
     trigger OnAfterGetRecord();
     begin
+        DimMgt.GetShortcutDimensions(Rec."Dimension Set ID", ShortcutDims);
         PageEditable := CurrPage.Editable;
     end;
 
