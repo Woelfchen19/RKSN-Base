@@ -31,6 +31,8 @@ pageextension 50022 "SInvoiceNVX" extends "Sales Invoice"
                     UserSetup: Record "User Setup";
                     AppMgt: Codeunit AppMgtNVX;
                     DimensionValueList: Page "Dimension Value List";
+                    NewParentDimSetID: Integer;
+                    OldParentDimSetID: Integer;
                 begin
                     AppMgt.GetUserSetup(UserSetup, true);
                     AppMgt.AllowdBusinessFieldsForUser();
@@ -44,6 +46,10 @@ pageextension 50022 "SInvoiceNVX" extends "Sales Invoice"
                         DimensionValueList.GetRecord(DimensionValue);
                         ShortcutDims[5] := DimensionValue.Code;
                         DimMgt.ValidateShortcutDimValues(5, DimensionValue.Code, Rec."Dimension Set ID");
+                        OldParentDimSetID := Rec."Dimension Set ID";
+                        DimMgt.ValidateShortcutDimValues(5, DimensionValue.Code, Rec."Dimension Set ID");
+                        NewParentDimSetID := Rec."Dimension Set ID";
+                        Rec.UpdateAllLineDim(NewParentDimSetID, OldParentDimSetID);
                     end;
                 end;
 
@@ -51,12 +57,17 @@ pageextension 50022 "SInvoiceNVX" extends "Sales Invoice"
                 var
                     UserSetup: Record "User Setup";
                     AppMgt: Codeunit AppMgtNVX;
+                    NewParentDimSetID: Integer;
+                    OldParentDimSetID: Integer;
                 begin
                     AppMgt.GetUserSetup(UserSetup, true);
                     AppMgt.AllowdBusinessFieldsForUser();
-                    AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, ShortcutDims[5]);
+                    AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, ShortcutDims[5], true);
 
+                    OldParentDimSetID := Rec."Dimension Set ID";
                     DimMgt.ValidateShortcutDimValues(5, ShortcutDims[5], Rec."Dimension Set ID");
+                    NewParentDimSetID := Rec."Dimension Set ID";
+                    Rec.UpdateAllLineDim(NewParentDimSetID, OldParentDimSetID);
                 end;
             }
         }

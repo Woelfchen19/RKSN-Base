@@ -26,7 +26,7 @@ codeunit 50026 "AppMgtNVX"
         ShortcutDimension10CodeTxt: Label 'VERTEILUNG';
         PageList: List of [integer];
 
-    procedure AllowdBusinessFieldsForUser(BusinessFilter: Code[20]; BusinessFieldValue: Code[20]): Boolean
+    procedure AllowdBusinessFieldsForUser(BusinessFilter: Code[20]; BusinessFieldValue: Code[20]; ShowError: Boolean): Boolean
     var
         RegEx: Codeunit DotNet_Regex;
     begin
@@ -38,7 +38,10 @@ codeunit 50026 "AppMgtNVX"
         if RegEx.IsMatch(BusinessFieldValue) then
             exit(true);
 
-        Error(NotAllowdBusinessFieldsForUserErr);
+        if ShowError then
+            Error(NotAllowdBusinessFieldsForUserErr);
+
+        exit(false);
     end;
 
     procedure AllowdBusinessFieldsForUser()

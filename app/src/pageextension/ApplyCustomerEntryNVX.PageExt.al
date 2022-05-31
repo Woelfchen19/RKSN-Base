@@ -188,6 +188,8 @@ pageextension 50053 "ApplyCustomerEntryNVX" extends "Apply Customer Entries"
         DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
 
         if AppMgt.GetActivateBusinessFilterInPages() then begin
+            //ToDo
+            //AppMgt has new Functions to check allowed
             BusinessFieldFilter := AppMgt.GetBusinessFieldFilterNVX();
             Rec.FilterGroup(2);
             if BusinessFieldFilter = '' then

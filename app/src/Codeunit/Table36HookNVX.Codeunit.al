@@ -75,4 +75,27 @@ codeunit 50015 "Table36HookNVX"
                 end;
         end;
     end;
+
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterSetApplyToFilters', '', true, true)]
+    local procedure OnAfterSetApplyToFilters(var CustLedgerEntry: Record "Cust. Ledger Entry"; SalesHeader: Record "Sales Header")
+    var
+        UserSetup: Record "User Setup";
+        AppMgt: Codeunit AppMgtNVX;
+        DimMgt: Codeunit DimensionManagement;
+        ShortcutDimCode: ARRAY[10] OF Code[20];
+    begin
+        AppMgt.GetUserSetup(UserSetup, true);
+        AppMgt.AllowdBusinessFieldsForUser();
+        DimMgt.GetShortcutDimensions(SalesHeader."Dimension Set ID", ShortcutDimCode);
+        AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, ShortcutDimCode[5], false);
+        if AppMgt.GetActivateBusinessFilterInPages() then begin
+            CustLedgerEntry.SetRange(ShortcutDimension5CodeNVX, ShortcutDimCode[5]);
+            CustLedgerEntry.FilterGroup(2);
+            //ToDo
+            //CustLedgerEntry.SetRange(AssociatedNVX, GenJournalLine.AssociatedNVX);
+            CustLedgerEntry.SetRange(ShortcutDimension5CodeNVX, UserSetup.BusinessFieldFilterNVX);
+            CustLedgerEntry.FilterGroup(0);
+        end;
+    end;
 }
