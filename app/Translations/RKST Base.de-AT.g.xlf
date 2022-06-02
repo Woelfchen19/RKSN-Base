@@ -10587,6 +10587,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table81HookNVX - Method InsertAllocationCodeInAccompaniedTable - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
+        <trans-unit id="Codeunit 2689053120 - Method 2566195153 - NamedType 2918896561" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The selected Account Type is not allowed.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Die angegebene Kontoart ist nicht zulässig."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table81HookNVX - Method RecurringJournalCheckAccountType - NamedType WrongAccountTypeErr</note>
+          <target>Die angegebene Kontoart ist nicht zulässig.</target>
+        </trans-unit>
         <trans-unit id="Codeunit 4200806882 - Method 1565414135 - NamedType 2478128905" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item has inventory value. Dimension have to match the setup.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Der erfasste Artikel ist lagerbewertet eingerichtet. Die Angaben zu Kostenstelle und Sparte müssen dem setup der Lager Einrichtung entsprechen!"</note>

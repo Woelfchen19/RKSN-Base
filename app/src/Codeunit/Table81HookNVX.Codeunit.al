@@ -108,13 +108,17 @@ codeunit 50021 Table81HookNVX
     var
         GenJournalTemplate: Record "Gen. Journal Template";
         GenJournalBatchNVX: Record GenJournalBatchNVX;
+        WrongAccountTypeErr: Label 'The selected Account Type is not allowed.', comment = 'DEA="Die angegebene Kontoart ist nicht zulässig."';
     begin      
         IF not (Rec."Account Type" in [Rec."Account Type"::Vendor, Rec."Account Type"::Customer, Rec."Account Type"::"Bank Account", Rec."Account Type"::"G/L Account"]) then begin
             GenJournalTemplate.Get(Rec."Journal Template Name");
             If not GenJournalTemplate.Recurring then
                 exit;
             GenJournalBatchNVX.GetDefinition(Rec."Journal Template Name", Rec."Journal Batch Name");
-            GenJournalBatchNVX.TestField("No Dim Distribution");
+            if GenJournalBatchNVX."No Dim Distribution" then
+                exit; //every Account Type is allowed if the dimensional distribution is deactivated
+
+            Error(WrongAccountTypeErr);
         end;
     end;
 }
