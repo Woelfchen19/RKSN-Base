@@ -6,6 +6,7 @@ codeunit 50026 "AppMgtNVX"
         SetupPropertyForFields: Record SetupPropertyForFieldsNVX;
         SetupReminderExtension: Record SetupReminderExtensionNVX;
         UserSetup: Record "User Setup";
+        AppMgt: Codeunit AppMgtNVX;
         DimMgt: codeunit DimensionManagement;
         DimensionEditable: array[10] of Boolean;
         DimensionVisible: array[10] of Boolean;
@@ -20,6 +21,8 @@ codeunit 50026 "AppMgtNVX"
         DimVisible9: Boolean;
         DimVisible10: Boolean;
         GLSetupShortcutDimCode: array[10] of Code[20];
+        NewParentDimSetID: Integer;
+        OldParentDimSetID: Integer;
         NotAllowdBusinessFieldsForUserErr: Label 'You are not authorized to create a business area!\Please contact your Systemadministrator', comment = 'DEA="Sie haben keine Berechtigung, um ein Geschäftsfeld anzulegen!\Bitte kontaktieren Sie Ihren Systemadministrator."';
         PipeTok: Label '|';
         ShortcutDimension9CodeTxt: Label 'SAMMELKto';
@@ -165,6 +168,18 @@ codeunit 50026 "AppMgtNVX"
     procedure GetPermissionUserSetup()
     begin
 
+    end;
+
+    procedure GetShortcutDimension5OnAssignmentDepartment(ShortcutDimension1Code: Code[20]): Code[20]
+    var
+        AssignmentDepartment: Record AssignmentDepartmentNVX;
+    begin
+        if ShortcutDimension1Code = '' then
+            exit;
+
+        AssignmentDepartment.SetRange("Shortcut Dimension 1 Code", ShortcutDimension1Code);
+        if AssignmentDepartment.FindFirst() then
+            exit(AssignmentDepartment."Shortcut Dimension 5 Code");
     end;
 
     procedure GetUserSetup(var UserSetup2: Record "User Setup")
@@ -403,6 +418,42 @@ codeunit 50026 "AppMgtNVX"
 
         if PAGE.RUNMODAL(PAGE::"Dimension Value List", DimensionValue) = Action::LookupOK then
             exit(DimensionValue.Code);
+    end;
+
+    procedure OnLookupShortcutDimension5Code(var Rec: Record "Sales Header")
+    var
+        DimensionValue: Record "Dimension Value";
+        DimensionValueList: Page "Dimension Value List";
+    begin
+        AppMgt.GetUserSetup(UserSetup, true);
+        AppMgt.AllowdBusinessFieldsForUser();
+        DimensionValue.FilterGroup(2);
+        DimensionValue.SetRange("Global Dimension No.", 5);
+        DimensionValue.SetFilter(Code, UserSetup.BusinessFieldFilterNVX);
+        DimensionValue.FilterGroup(0);
+        DimensionValueList.LookupMode(true);
+        DimensionValueList.SetTableView(DimensionValue);
+        if DimensionValueList.RunModal() = action::LookupOK then begin
+            DimensionValueList.GetRecord(DimensionValue);
+            Rec.ShortcutDimension5CodeNVX := DimensionValue.Code;
+            DimMgt.ValidateShortcutDimValues(5, DimensionValue.Code, Rec."Dimension Set ID");
+            OldParentDimSetID := Rec."Dimension Set ID";
+            DimMgt.ValidateShortcutDimValues(5, DimensionValue.Code, Rec."Dimension Set ID");
+            NewParentDimSetID := Rec."Dimension Set ID";
+            Rec.UpdateAllLineDim(NewParentDimSetID, OldParentDimSetID);
+        end;
+    end;
+
+    procedure OnValidateShortcutDimension(var Rec: Record "Sales Header")
+    begin
+        AppMgt.GetUserSetup(UserSetup, true);
+        AppMgt.AllowdBusinessFieldsForUser();
+        AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, Rec.ShortcutDimension5CodeNVX, true);
+
+        OldParentDimSetID := Rec."Dimension Set ID";
+        DimMgt.ValidateShortcutDimValues(5, Rec.ShortcutDimension5CodeNVX, Rec."Dimension Set ID");
+        NewParentDimSetID := Rec."Dimension Set ID";
+        Rec.UpdateAllLineDim(NewParentDimSetID, OldParentDimSetID);
     end;
 
     procedure OpenIBANWebSite()

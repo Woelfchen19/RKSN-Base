@@ -30,7 +30,7 @@ tableextension 50004 "SalesLineNVX" extends "Sales Line"
 
     procedure SetBusinessFieldNVX()
     var
-        AssosiatedDepartment: Record AssosiatedDepartmentNVX;
+        AssosiatedDepartment: Record AssignmentDepartmentNVX;
     begin
         AssosiatedDepartment.Reset();
         AssosiatedDepartment.SetRange("Shortcut Dimension 1 Code", Rec."Shortcut Dimension 1 Code");

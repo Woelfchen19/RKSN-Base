@@ -57,6 +57,9 @@ codeunit 50016 "Table37HookNVX"
         if Item."Inventory Value Zero" then
             DimMgt.ValidateShortcutDimValues(3, SalesLineNVX."Shortcut Dimension 3 Code", Rec."Dimension Set ID");
 
+        // if SalesHeaderNVX."Shortcut Dimension 5 Code" <> '' then
+        //     SalesLineNVX."Shortcut Dimension 5 Code" := SalesHeaderNVX."Shortcut Dimension 5 Code";
+
         if (not Item."Inventory Value Zero") and (SalesHeader."Sell-to Customer No." = InvSetupNVX."Composition Customer") then begin
             if (SalesLineNVX."Shortcut Dimension 3 Code" = '') then
                 SalesLineNVX."Allocation Code" := SalesHeaderNVX."Allocation Code";
@@ -78,6 +81,7 @@ codeunit 50016 "Table37HookNVX"
         SalesLineNVX: Record SalesLineNVX;
         DimensionValue: Record "Dimension Value";
         DimMgt: Codeunit DimensionManagement;
+    // AppMgt: Codeunit AppMgtNVX;
     begin
         if Rec.IsTemporary or (Rec."Document Type" <> Rec."Document Type"::Order) or (Rec.Type <> Rec.Type::Item) or (Rec."Line No." = 0) then
             exit;
@@ -96,6 +100,7 @@ codeunit 50016 "Table37HookNVX"
             DimensionValue.Get(GLSetup."Shortcut Dimension 6 Code", DimSetEntry."Dimension Value Code");
             Rec.Validate("Shortcut Dimension 2 Code", DimensionValue.ShortcutDimension2CodeNVX);
             SalesLineNVX."Shortcut Dimension 1 Code" := DimensionValue.ShortcutDimension1CodeNVX;
+            // SalesLineNVX."Shortcut Dimension 5 Code" := AppMgt.GetShortcutDimension5OnAssignmentDepartment(Rec."Shortcut Dimension 1 Code");
             if Item."Inventory Value Zero" then
                 Rec.Validate("Shortcut Dimension 1 Code", DimensionValue.ShortcutDimension1CodeNVX);
         end;

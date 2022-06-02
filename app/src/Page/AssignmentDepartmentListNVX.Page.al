@@ -1,12 +1,15 @@
-page 50030 "AssosiatedDepartmentListNVX"
+page 50030 "AssignmentDepartmentListNVX"
 {
 
     ApplicationArea = All;
-    Caption = 'Assosiated Department Card', comment = 'DEA="Zugehörig KST Karte"';
+    Caption = 'Assignment Department List', comment = 'DEA="Zuordnung KST Übersicht"';
     PageType = List;
-    SourceTable = AssosiatedDepartmentNVX;
+    SourceTable = AssignmentDepartmentNVX;
     UsageCategory = Lists;
     ShowFilter = false;
+    Editable = false;
+    CardPageId = AssignmentDepartmentCardNVX;
+
     layout
     {
         area(content)
@@ -17,7 +20,6 @@ page 50030 "AssosiatedDepartmentListNVX"
                 {
                     ApplicationArea = All;
                     Editable = false;
-                    Enabled = false;
                 }
                 field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
                 {

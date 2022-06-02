@@ -176,7 +176,7 @@ tableextension 50014 "GenJnlLineNVX" extends "Gen. Journal Line"
     }
     procedure SetBusinessFieldNVX()
     var
-        AssosiatedDepartment: Record AssosiatedDepartmentNVX;
+        AssosiatedDepartment: Record AssignmentDepartmentNVX;
     begin
         AssosiatedDepartment.Reset();
         AssosiatedDepartment.SetRange("Shortcut Dimension 1 Code", Rec."Shortcut Dimension 1 Code");

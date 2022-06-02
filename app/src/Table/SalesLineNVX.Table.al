@@ -37,6 +37,12 @@ table 50040 "SalesLineNVX"
             // CaptionClass = '1339,3'; = Purchase + Dim Name            
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
         }
+        // field(23; "Shortcut Dimension 5 Code"; Code[20])
+        // {
+        //     DataClassification = CustomerContent;
+        //     Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Geschäftsfeld"';
+        //     TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5));
+        // }
         field(30; "Cust. Unit Price"; Decimal)
         {
             DataClassification = ToBeClassified;

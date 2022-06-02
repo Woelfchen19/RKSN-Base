@@ -44,14 +44,20 @@ tableextension 50012 "DimensionValueNVX" extends "Dimension Value"
         field(50006; ReOrganizeAccountNVX; Code[20])
         {
             Caption = 'ReorganizeAccount', comment = 'DEA="Umbelastung Sachkto"';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "G/L Account";
         }
         field(50007; DischargeAccountNVX; Code[20])
         {
             Caption = 'Discharge Account', comment = 'DEA="Entlastung Sachkto"';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "G/L Account";
+        }
+        field(50010; AssignedToBusinessFieldNVX; Boolean)
+        {
+            Caption = 'Assigned to Businessfield', comment = 'DEA="Zugeordnet zu Geschäftsfeld"';
+            DataClassification = CustomerContent;
+            Editable = false;
         }
     }
 }

@@ -90,8 +90,16 @@ page 50062 "CustBusinessFieldListNVX"
             }
         }
     }
+    trigger OnOpenPage()
+    var
+        UserSetup: Record "User Setup";
+        AppMgt: Codeunit AppMgtNVX;
+    begin
+        AppMgt.GetUserSetup(UserSetup, true);
+        AppMgt.AllowdBusinessFieldsForUser();
 
-    actions
-    {
-    }
+        Rec.FilterGroup(2);
+        Rec.SetRange("Shortcut Dimension 5 Code", UserSetup.BusinessFieldFilterNVX);
+        Rec.FilterGroup(0);
+    end;
 }

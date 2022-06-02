@@ -47,6 +47,8 @@ codeunit 50015 "Table36HookNVX"
     var
         InvSetupNVX: Record InvSetupNVX;
         SalesHeaderNVX: Record SalesHeaderNVX;
+        AppMgt: Codeunit AppMgtNVX;
+        OldDimSetID: integer;
     begin
         if Rec.IsTemporary or not RunTrigger then
             exit;
@@ -56,6 +58,12 @@ codeunit 50015 "Table36HookNVX"
             SalesHeaderNVX."Comp Gen. Bus. Pst Grp WES" := InvSetupNVX."Comp Gen. Bus. Pst Grp WES";
             SalesHeaderNVX.Modify();
         end;
+
+        OldDimSetID := Rec."Dimension Set ID";
+        Rec.ShortcutDimension5CodeNVX := AppMgt.GetShortcutDimension5OnAssignmentDepartment(Rec."Shortcut Dimension 1 Code");
+        Rec.ValidateShortcutDimCode(5, Rec.ShortcutDimension5CodeNVX);
+        if OldDimSetID <> Rec."Dimension Set ID" then
+            Rec.Modify();
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Sell-to Customer No.', false, false)]
@@ -75,7 +83,6 @@ codeunit 50015 "Table36HookNVX"
                 end;
         end;
     end;
-
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterSetApplyToFilters', '', true, true)]
     local procedure OnAfterSetApplyToFilters(var CustLedgerEntry: Record "Cust. Ledger Entry"; SalesHeader: Record "Sales Header")

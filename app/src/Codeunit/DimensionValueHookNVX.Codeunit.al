@@ -13,6 +13,24 @@ codeunit 50025 "DimensionValueHookNVX"
         Rec."Global Dimension No." := GetGlobalDimensionNo(Rec."Dimension Code");
     end;
 
+
+    [EventSubscriber(ObjectType::Page, Page::"Dimension Value List", 'OnOpenPageEvent', '', true, true)]
+    local procedure OnOpenPageEvent(var Rec: Record "Dimension Value")
+    var
+        UserSetup: Record "User Setup";
+        AppMgt: Codeunit AppMgtNVX;
+    begin
+        AppMgt.GetUserSetup(UserSetup, true);
+        AppMgt.AllowdBusinessFieldsForUser();
+
+        //ToDo
+        if Rec."Global Dimension No." = 9 then begin
+            Rec.FilterGroup(2);
+            Rec.SetFilter(Code, UserSetup.BusinessFieldFilterNVX);
+            Rec.FilterGroup(0);
+        end;
+    end;
+
     local procedure GetGlobalDimensionNo(DimensionCode: Code[20]): Integer
     var
         GeneralLedgerSetup: Record "General Ledger Setup";

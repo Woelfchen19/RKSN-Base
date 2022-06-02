@@ -47,7 +47,7 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
-                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5));
+                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5), "Dimension Value Type" = const(Standard));
                 Visible = DimValueNVXShortcutDimension5CodeVisible;
             }
             field(ReOrganizeAccountNVX; Rec.ReOrganizeAccountNVX)
@@ -62,6 +62,12 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
                 ApplicationArea = All;
                 Visible = DischargeAccountVisible;
             }
+            field(AssignedNVX; Rec.AssignedToBusinessFieldNVX)
+            {
+                ToolTip = 'Specifies the value of the Assigned field.', Comment = 'DEA="Zugeordnet"';
+                ApplicationArea = All;
+                Visible = AssignedVisible;
+            }
         }
     }
 
@@ -69,14 +75,15 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
     {
         addlast("F&unctions")
         {
-            action(AssosiatedDepartmentNVX)
+            action(AssignmentDepartmentNVX)
             {
                 ApplicationArea = All;
-                Caption = 'Assosiated Department', comment = 'DEA="KST zuordnen"';
-                Image = Administration;
-                RunObject = Page AssosiatedDepartmentListNVX;
+                Caption = 'Assignment Department', comment = 'DEA="KST zuordnen"';
+                Image = Apply;
+                RunObject = Page AssignmentDepartmentListNVX;
                 RunPageLink = "Shortcut Dimension 5 Code" = FIELD(Code);
                 Visible = AssosiatedDepartment;
+                Promoted = true;
             }
         }
     }
@@ -93,6 +100,7 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
 
         AssosiatedVisible := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 2 Code";
         AssosiatedDepartment := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 5 Code";
+        AssignedVisible := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 1 Code";
     end;
 
     trigger OnAfterGetRecord()
@@ -120,6 +128,7 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
         GLSetup: Record "General Ledger Setup";
         AssosiatedDepartment: Boolean;
         AssosiatedVisible: Boolean;
+        AssignedVisible: Boolean;
         DimValueNVXShortcutDimension5CodeVisible: Boolean;
         IsOE: Boolean;
         PostingTypeVisible: Boolean;

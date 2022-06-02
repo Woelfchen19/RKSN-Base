@@ -29,6 +29,12 @@ table 50036 "SalesHeaderNVX"
             Caption = 'Composition Section', comment = 'DEA="Abfassung Sparte"';
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3));
         }
+        // field(23; "Shortcut Dimension 5 Code"; Code[20])
+        // {
+        //     DataClassification = CustomerContent;
+        //     Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Geschäftsfeld"';
+        //     TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5));
+        // }
         field(25; "Comp Gen. Bus. Pst Grp WES"; Code[20])
         {
             DataClassification = CustomerContent;

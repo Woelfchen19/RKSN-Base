@@ -105,6 +105,6 @@ codeunit 50021 "Table81HookNVX"
 
     var
         GLSetup: Record "General Ledger Setup";
-        AssosiatedDepartment: Record AssosiatedDepartmentNVX;
+        AssosiatedDepartment: Record AssignmentDepartmentNVX;
         DimMgt: Codeunit DimensionManagement;
 }

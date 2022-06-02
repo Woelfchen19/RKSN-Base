@@ -19,6 +19,25 @@ pageextension 50026 "SQuoteNVX" extends "Sales Quote"
                         Rec.Validate("Gen. Bus. Posting Group", NewGBPG);
                 end;
             }
+            field(ShortCutDimension5CodeNVX; Rec.ShortcutDimension5CodeNVX)
+            {
+                ApplicationArea = All;
+                CaptionClass = '1,2,5';
+
+                trigger OnLookup(var Text: Text): Boolean
+                var
+                    AppMgt: Codeunit AppMgtNVX;
+                begin
+                    AppMgt.OnLookupShortcutDimension5Code(Rec);
+                end;
+
+                trigger OnValidate()
+                var
+                    AppMgt: Codeunit AppMgtNVX;
+                begin
+                    AppMgt.OnValidateShortcutDimension(Rec);
+                end;
+            }
         }
         addafter("Shortcut Dimension 2 Code")
         {
@@ -120,6 +139,7 @@ pageextension 50026 "SQuoteNVX" extends "Sales Quote"
 
     trigger OnAfterGetRecord();
     begin
+        DimMgt.GetShortcutDimensions(Rec."Dimension Set ID", ShortcutDims);
         PageEditable := CurrPage.Editable;
     end;
 

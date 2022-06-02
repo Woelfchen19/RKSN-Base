@@ -19,53 +19,23 @@ pageextension 50024 "SalesOrderNVX" extends "Sales Order"
                         Rec.Validate("Gen. Bus. Posting Group", NewGBPG);
                 end;
             }
-            field(ShortCutDimension5CodeNVX; ShortcutDims[5])
+            field(ShortCutDimension5CodeNVX; Rec.ShortcutDimension5CodeNVX)
             {
                 ApplicationArea = All;
                 CaptionClass = '1,2,5';
 
                 trigger OnLookup(var Text: Text): Boolean
                 var
-                    DimensionValue: Record "Dimension Value";
-                    UserSetup: Record "User Setup";
                     AppMgt: Codeunit AppMgtNVX;
-                    DimensionValueList: Page "Dimension Value List";
-                    NewParentDimSetID: Integer;
-                    OldParentDimSetID: Integer;
                 begin
-                    AppMgt.GetUserSetup(UserSetup, true);
-                    AppMgt.AllowdBusinessFieldsForUser();
-                    DimensionValue.FilterGroup(2);
-                    DimensionValue.SetRange("Global Dimension No.", 5);
-                    DimensionValue.SetFilter(Code, UserSetup.BusinessFieldFilterNVX);
-                    DimensionValue.FilterGroup(0);
-                    DimensionValueList.LookupMode(true);
-                    DimensionValueList.SetTableView(DimensionValue);
-                    if DimensionValueList.RunModal() = action::LookupOK then begin
-                        DimensionValueList.GetRecord(DimensionValue);
-                        ShortcutDims[5] := DimensionValue.Code;
-                        OldParentDimSetID := Rec."Dimension Set ID";
-                        DimMgt.ValidateShortcutDimValues(5, DimensionValue.Code, Rec."Dimension Set ID");
-                        NewParentDimSetID := Rec."Dimension Set ID";
-                        Rec.UpdateAllLineDim(NewParentDimSetID, OldParentDimSetID);
-                    end;
+                    AppMgt.OnLookupShortcutDimension5Code(Rec);
                 end;
 
                 trigger OnValidate()
                 var
-                    UserSetup: Record "User Setup";
                     AppMgt: Codeunit AppMgtNVX;
-                    NewParentDimSetID: Integer;
-                    OldParentDimSetID: Integer;
                 begin
-                    AppMgt.GetUserSetup(UserSetup, true);
-                    AppMgt.AllowdBusinessFieldsForUser();
-                    AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, ShortcutDims[5], true);
-
-                    OldParentDimSetID := Rec."Dimension Set ID";
-                    DimMgt.ValidateShortcutDimValues(5, ShortcutDims[5], Rec."Dimension Set ID");
-                    NewParentDimSetID := Rec."Dimension Set ID";
-                    Rec.UpdateAllLineDim(NewParentDimSetID, OldParentDimSetID);
+                    AppMgt.OnValidateShortcutDimension(Rec);
                 end;
             }
         }
@@ -108,7 +78,6 @@ pageextension 50024 "SalesOrderNVX" extends "Sales Order"
                                         SalesLineNVX.Modify()
                                     end;
                                 until SalesLineNVX.Next() = 0;
-
                             end;
                 end;
             }
@@ -287,7 +256,6 @@ pageextension 50024 "SalesOrderNVX" extends "Sales Order"
         Item: Record Item;
         SalesHeaderNVX: Record SalesHeaderNVX;
         SalesLine: Record "Sales Line";
-
         SalesLineNVX: Record SalesLineNVX;
         DimMgt: Codeunit DimensionManagement;
         CompFieldsEditable: Boolean;
@@ -309,9 +277,10 @@ pageextension 50024 "SalesOrderNVX" extends "Sales Order"
             SalesHeaderNVX."Document Type" := "Document Type";
             SalesHeaderNVX."No." := "No.";
             SalesHeaderNVX.Insert();
-            Clear(CompShortcutDimension3);
-            Clear(AllocationCodeVar);
-            Clear(CompGenBusPstGrpWES);
+
+            CompShortcutDimension3 := '';
+            AllocationCodeVar := '';
+            CompGenBusPstGrpWES := '';
         end else begin
             CompShortcutDimension3 := SalesHeaderNVX."Shortcut Dimension 3 Code";
             AllocationCodeVar := SalesHeaderNVX."Allocation Code";
@@ -323,9 +292,10 @@ pageextension 50024 "SalesOrderNVX" extends "Sales Order"
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        Clear(CompShortcutDimension3);
-        Clear(AllocationCodeVar);
-        Clear(CompGenBusPstGrpWES);
+        CompShortcutDimension3 := '';
+        AllocationCodeVar := '';
+        CompGenBusPstGrpWES := '';
+
         SalesHeaderNVX.Init();
     end;
 

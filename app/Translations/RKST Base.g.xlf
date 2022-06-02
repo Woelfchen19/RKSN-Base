@@ -113,20 +113,20 @@
           <note from="Developer" annotates="general" priority="2">DEA="Zuständigkeitseinheitencode"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table AllocCodeRespCenterNVX - Field Resp. Center - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 645689000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Assosiated Department</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Zugehörig KST"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table AssosiatedDepartmentNVX - Property Caption</note>
+        <trans-unit id="Table 898155089 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Assignment Department</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zuordnung KST"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AssignmentDepartmentNVX - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 645689000 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 898155089 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table AssosiatedDepartmentNVX - Field Shortcut Dimension 1 Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AssignmentDepartmentNVX - Field Shortcut Dimension 1 Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 645689000 - Field 405681708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 898155089 - Field 405681708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 5 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 5"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table AssosiatedDepartmentNVX - Field Shortcut Dimension 5 Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AssignmentDepartmentNVX - Field Shortcut Dimension 5 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3870134522 - Field 1152423399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Code</source>
@@ -9503,10 +9503,30 @@
           <note from="Developer" annotates="general" priority="2">DEA="Zuständigkeitseinheiten einfügen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page AllocCodeRespCenterNVX - Action InsertRespCenter - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2398574114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Assosiated Department Card</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Zugehörig KST Karte"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page AssosiatedDepartmentListNVX - Property Caption</note>
+        <trans-unit id="Page 3499288429 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Assignment Department Card</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zuordnung KST Karte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AssignmentDepartmentCardNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3499288429 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgemein"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AssignmentDepartmentCardNVX - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3499288429 - Control 1577567912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 1 Code field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AssignmentDepartmentCardNVX - Control Shortcut Dimension 1 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3499288429 - Control 405681708 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 5 Code field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 5"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AssignmentDepartmentCardNVX - Control Shortcut Dimension 5 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1454579111 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Assignment Department List</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zuordnung KST Übersicht"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AssignmentDepartmentListNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1061052414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Change Log Entry Dimension</source>
@@ -11888,10 +11908,15 @@
           <note from="Developer" annotates="general" priority="2">DEA="Sie müssen zu allen ProfitCentern im Feld zugehörig eine Zuordnung vornehmen!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - NamedType AssociationErrorMsg</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1966097956 - Action 645689000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
-          <source>Assosiated Department</source>
+        <trans-unit id="PageExtension 1966097956 - Action 898155089 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
+          <source>Assignment Department</source>
           <note from="Developer" annotates="general" priority="2">DEA="KST zuordnen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Action AssosiatedDepartmentNVX - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Action AssignmentDepartmentNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1966097956 - Control 1880097148 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
+          <source>Specifies the value of the Assigned field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zugeordnet"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Control AssignedNVX - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1966097956 - Control 4275227508 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
           <source>Specifies the value of the Assosiated field.</source>
@@ -13273,6 +13298,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension DetailedCustLedgEntryNVX - Field ShortcutDimension9CodeNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 4108639813 - Field 2844562041 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
+          <source>Assigned to Businessfield</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zugeordnet zu Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension DimensionValueNVX - Field AssignedToBusinessFieldNVX - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 4108639813 - Field 4275227508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Assosiated</source>
           <note from="Developer" annotates="general" priority="2">DEA="zugehörig"</note>
@@ -13567,6 +13597,11 @@
           <source>Reminder Term - Businessfield</source>
           <note from="Developer" annotates="general" priority="2">DEA="Mahncode Geschäftsfeld"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ReminderTermsNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1733794865 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensioncode 5"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SalesHeaderNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3976302498 - Change 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source> ,G/L Account,Item</source>
