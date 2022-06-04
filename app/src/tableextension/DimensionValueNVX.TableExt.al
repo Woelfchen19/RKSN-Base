@@ -2,7 +2,8 @@ tableextension 50012 "DimensionValueNVX" extends "Dimension Value"
 {
     fields
     {
-        field(50000; ShortcutDimension1CodeNVX; Code[20])
+        field(50000; ShortcutDimension1CodeNVX;
+        Code[20])
         {
             Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
             CaptionClass = '1,2,1';
@@ -18,20 +19,30 @@ tableextension 50012 "DimensionValueNVX" extends "Dimension Value"
         }
         field(50002; ShortcutDimension5CodeNVX; Code[20])
         {
-            Caption = 'Shortcut Dimension 5 Code';
+            Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimensioncode 5"';
+            ;
             CaptionClass = '1,2,5';
             DataClassification = CustomerContent;
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5), "Dimension Value Type" = const(Standard), Blocked = const(false));
+
+            trigger OnValidate()
+            begin
+                AppMgt.OnValidateShortcutDimension(Rec);
+            end;
+
+            trigger OnLookup()
+            begin
+                Rec.ShortcutDimension5CodeNVX := AppMgt.OnLookupShortcutDimension5Code();
+            end;
         }
         field(50003; VATPostingTypeNVX; Code[10])
         {
-            Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
+            Caption = 'VAT Posting Type Description', comment = 'DEA="USt.-Buchungsart Beschreibung"';
             DataClassification = CustomerContent;
-            TableRelation = VATPostingTypeNVX.Code;
         }
         field(50004; VATPostingTypeDescNVX; Text[50])
         {
             CalcFormula = lookup(VATPostingTypeNVX.Description where(Code = field(VATPostingTypeDescNVX)));
-            Caption = 'VAT Posting Type Description', comment = 'DEA="USt.-Buchungsart Beschreibung"';
             Editable = false;
             FieldClass = FlowField;
         }
@@ -60,4 +71,7 @@ tableextension 50012 "DimensionValueNVX" extends "Dimension Value"
             Editable = false;
         }
     }
+
+    var
+        AppMgt: Codeunit AppMgtNVX;
 }

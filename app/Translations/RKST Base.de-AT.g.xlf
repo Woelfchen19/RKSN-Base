@@ -11066,6 +11066,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page AssignmentDepartmentCardNVX - Control Shortcut Dimension 5 Code - Property ToolTip</note>
           <target>Shortcutdimensionscode 5</target>
         </trans-unit>
+        <trans-unit id="Page 3852072950 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Assignment Department</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zuordnung KST"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AssignmentDepartmentFactBoxNVX - Property Caption</note>
+          <target>Zuordnung KST</target>
+        </trans-unit>
         <trans-unit id="Page 1454579111 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Assignment Department List</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zuordnung KST Übersicht"</note>
@@ -13856,6 +13862,17 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension DetailedCustLedgEntriesNVX - Control ShortcutDimension9CodeNVX - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 395637661 - Action 1966097956 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2173385693">
+          <source>View or edit the dimension values for the current dimension.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionsNVX - Action DimensionValuesNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 395637661 - Action 1966097956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2173385693">
+          <source>Dimension &amp;Values</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dimensionswerte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionsNVX - Action DimensionValuesNVX - Property Caption</note>
+          <target>Dimensionswerte</target>
+        </trans-unit>
         <trans-unit id="PageExtension 1966097956 - NamedType 3781092260" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1966097956">
           <source>You must assign to all Profitcentern the field associated!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Sie müssen zu allen ProfitCentern im Feld zugehörig eine Zuordnung vornehmen!"</note>
@@ -13914,6 +13931,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Control VATPostingTypeNVX - Property Caption</note>
           <target>USt.-Buchungsart</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1966097956 - Control 2113128517 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
+          <source>Assignment Department</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zuordnung KST"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Control AssignmentDepartmentFBNVX - Property Caption</note>
+          <target>Zuordnung KST</target>
         </trans-unit>
         <trans-unit id="PageExtension 3944373180 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 377345500">
           <source>Allocation Code</source>
@@ -15812,6 +15835,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Mahncode Geschäftsfeld"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ReminderTermsNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
           <target>Mahncode Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1733794865 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensioncode 5"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SalesHeaderNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
+          <target>Shortcutdimensioncode 5</target>
         </trans-unit>
         <trans-unit id="TableExtension 3976302498 - Change 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source> ,G/L Account,Item</source>

@@ -50,6 +50,13 @@ table 50006 "SetupReminderExtensionNVX"
             Clustered = true;
         }
     }
+    procedure GetRecordOnce()
+    begin
+        if RecordHasBeenRead then
+            exit;
+        Get();
+        RecordHasBeenRead := true;
+    end;
 
     procedure RefreshUserSetup()
     var
@@ -61,4 +68,7 @@ table 50006 "SetupReminderExtensionNVX"
                 AppMgt.CreateBusinessFieldFilter(UserSetup, Rec.AllowEmptyfilter);
             until UserSetup.Next() = 0;
     end;
+
+    var
+        RecordHasBeenRead: Boolean;
 }

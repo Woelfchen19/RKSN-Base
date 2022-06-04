@@ -10,32 +10,27 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
             field(VATPostingTypeNVX; Rec.VATPostingTypeNVX)
             {
                 ApplicationArea = All;
-                Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
-                TableRelation = VATPostingTypeNVX.Code;
                 Visible = PostingTypeVisible;
+                ToolTip = 'Specifies the value of the VAT Posting Type field.', Comment = 'DEA="USt.-Buchungsart"';
             }
             // field(VATPostingTypeDescNVX; Rec.VATPostingTypeDescNVX)
             // {
             //     ApplicationArea = All;
-            //     Caption = 'VAT Posting Type Description', comment = 'DEA="USt.-Buchungsart Beschreibung"';
-            //     Editable = false;
             //     Visible = PostingTypeVisible;
+            //     ToolTip = 'Specifies the value of the VATPostingTypeDesc field.', comment = 'DEA="Ust.-Buchungsartbeschreibung"';
+            //     ;
             // }
             field(DimValueNVXShortcutDimension1CodeNVX; Rec.ShortcutDimension1CodeNVX)
             {
                 ApplicationArea = All;
-                Caption = 'Shortcut Dimension 1 Code', comment = 'DEA="Shortcutdimensionscode 1"';
-                CaptionClass = '1,2,1';
-                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
                 Visible = IsOE;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 1 Code field.', Comment = 'DEA="Shortcutdimensionscode 1"';
             }
             field(DimValueNVXShortcutDimension2CodeNVX; Rec.ShortcutDimension2CodeNVX)
             {
                 ApplicationArea = All;
-                Caption = 'Shortcut Dimension 2 Code', comment = 'DEA="Shortcutdimensionscode 2"';
-                CaptionClass = '1,2,2';
-                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
                 Visible = IsOE;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 2 Code field.', Comment = 'DEA="Shortcutdimensionscode 2"';
             }
             field(AssociatedNVX; Rec.AssociatedNVX)
             {
@@ -47,30 +42,38 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
-                TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5), "Dimension Value Type" = const(Standard));
                 Visible = DimValueNVXShortcutDimension5CodeVisible;
             }
             field(ReOrganizeAccountNVX; Rec.ReOrganizeAccountNVX)
             {
-                ToolTip = 'Specifies the value of the ReorganizeAccount field.', Comment = 'DEA="Umbelastung Sachkto"';
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the ReorganizeAccount field.', Comment = 'DEA="Umbelastung Sachkto"';
                 Visible = ReOrganizeAccountVisible;
             }
             field(DischargeAccountNVX; Rec.DischargeAccountNVX)
             {
-                ToolTip = 'Specifies the value of the Discharge Account field.', Comment = 'DEA="Entlastung Sachkto"';
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Discharge Account field.', Comment = 'DEA="Entlastung Sachkto"';
                 Visible = DischargeAccountVisible;
             }
             field(AssignedNVX; Rec.AssignedToBusinessFieldNVX)
             {
-                ToolTip = 'Specifies the value of the Assigned field.', Comment = 'DEA="Zugeordnet"';
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Assigned field.', Comment = 'DEA="Zugeordnet"';
                 Visible = AssignedVisible;
             }
         }
+        addbefore(Control1900383207)
+        {
+            part(AssignmentDepartmentFBNVX; AssignmentDepartmentFactBoxNVX)
+            {
+                ApplicationArea = All;
+                Caption = 'Assignment Department', comment = 'DEA="Zuordnung KST"';
+                SubPageLink = "Shortcut Dimension 5 Code" = field(Code);
+                Visible = AssignmentDepartmentFBNVXVisible;
+            }
+        }
     }
-
     actions
     {
         addlast("F&unctions")
@@ -80,31 +83,20 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
                 ApplicationArea = All;
                 Caption = 'Assignment Department', comment = 'DEA="KST zuordnen"';
                 Image = Apply;
+                Promoted = true;
+                PromotedOnly = true;
                 RunObject = Page AssignmentDepartmentListNVX;
                 RunPageLink = "Shortcut Dimension 5 Code" = FIELD(Code);
                 Visible = AssosiatedDepartment;
-                Promoted = true;
+                ToolTip = 'Executes the Assignment Department action.';
             }
         }
     }
 
-    trigger OnOpenPage();
-    begin
-        GLSetup.GetRecordOnce();
-        PostingTypeVisible := GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 3 Code";
-        IsOE := GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 6 Code";
-
-        DimValueNVXShortcutDimension5CodeVisible := GetFilter("Dimension Code") = GlSetup.ShortcutDimension9CodeNVX;
-        ReOrganizeAccountVisible := GetFilter("Dimension Code") = GlSetup.ShortcutDimension9CodeNVX;
-        DischargeAccountVisible := GetFilter("Dimension Code") = GlSetup.ShortcutDimension9CodeNVX;
-
-        AssosiatedVisible := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 2 Code";
-        AssosiatedDepartment := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 5 Code";
-        AssignedVisible := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 1 Code";
-    end;
-
     trigger OnAfterGetRecord()
     begin
+        SetFieldsVisible();
+
         if (GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 5 Code") then
             AssosiatedDepartment := Rec."Dimension Value Type" = Rec."Dimension Value Type"::Standard;
     end;
@@ -124,15 +116,32 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
         end;
     end;
 
+    local procedure SetFieldsVisible()
+    begin
+        GLSetup.GetRecordOnce();
+        PostingTypeVisible := GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 3 Code";
+        IsOE := GetFilter("Dimension Code") = GLSetup."Shortcut Dimension 6 Code";
+
+        DimValueNVXShortcutDimension5CodeVisible := "Dimension Code" = GlSetup.ShortcutDimension9CodeNVX;
+        ReOrganizeAccountVisible := GetFilter("Dimension Code") = GlSetup.ShortcutDimension9CodeNVX;
+        DischargeAccountVisible := GetFilter("Dimension Code") = GlSetup.ShortcutDimension9CodeNVX;
+
+        AssignedVisible := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 1 Code";
+        AssosiatedVisible := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 2 Code";
+        AssosiatedDepartment := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 5 Code";
+        AssignmentDepartmentFBNVXVisible := GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 5 Code";
+    end;
+
     var
         GLSetup: Record "General Ledger Setup";
+        AssignedVisible: Boolean;
+        AssignmentDepartmentFBNVXVisible: Boolean;
         AssosiatedDepartment: Boolean;
         AssosiatedVisible: Boolean;
-        AssignedVisible: Boolean;
         DimValueNVXShortcutDimension5CodeVisible: Boolean;
+        DischargeAccountVisible: Boolean;
         IsOE: Boolean;
         PostingTypeVisible: Boolean;
         ReOrganizeAccountVisible: Boolean;
-        DischargeAccountVisible: Boolean;
         AssociationErrorMsg: Label 'You must assign to all Profitcentern the field associated!', comment = 'DEA="Sie müssen zu allen ProfitCentern im Feld zugehörig eine Zuordnung vornehmen!"';
 }

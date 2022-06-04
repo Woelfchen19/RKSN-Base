@@ -2,17 +2,23 @@ tableextension 50013 "ReminderTermsNVX" extends "Reminder Terms"
 {
     fields
     {
-        field(50000; ShortcutDimension5CodeNVX; Code[20])
+        field(50000; "ShortcutDimension5CodeNVX"; Code[20])
         {
-            Caption = 'Reminder Term - Businessfield', comment = 'DEA="Mahncode Geschäftsfeld"';
             DataClassification = CustomerContent;
+            Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimensioncode 5"';
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5), Blocked = const(false));
+
+            trigger OnValidate()
+            begin
+                AppMgt.OnValidateShortcutDimension(Rec);
+            end;
 
             trigger OnLookup()
-            var
-                AppMgt: Codeunit AppMgtNVX;
             begin
-                ShortcutDimension5CodeNVX := AppMgt.OnLookupByBusinessFieldDimension(ShortcutDimension5CodeNVX, 5);
+                Rec.ShortcutDimension5CodeNVX := AppMgt.OnLookupShortcutDimension5Code();
             end;
         }
     }
+    var
+        AppMgt: Codeunit AppMgtNVX;
 }

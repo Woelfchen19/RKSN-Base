@@ -6,7 +6,23 @@ tableextension 50015 "SalesHeaderNVX" extends "Sales Header"
         {
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimensioncode 5"';
-            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5), Blocked = const(false));
+
+            trigger OnLookup()
+            var
+                DimensionShortcutDimension5Code: Code[20];
+            begin
+                DimensionShortcutDimension5Code := AppMgt.OnLookupShortcutDimension5Code();
+                AppMgt.OnAfterLookupshortcutDimension5Code(Rec, xRec, DimensionShortcutDimension5Code);
+            end;
+
+            trigger OnValidate()
+            var
+                AppMgt: Codeunit AppMgtNVX;
+            begin
+                AppMgt.OnValidateShortcutDimension(Rec);
+            end;
         }
     }
+    var
+        AppMgt: Codeunit AppMgtNVX;
 }
