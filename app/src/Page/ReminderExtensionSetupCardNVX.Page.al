@@ -1,8 +1,8 @@
-page 50034 SetupReminderExtensionCardNVX
+page 50034 ReminderExtensionSetupCardNVX
 {
     Caption = 'Setup Reminder Extension', comment = 'DEA="Einrichtung Erweiterung Mahnung"';
     PageType = Card;
-    SourceTable = SetupReminderExtensionNVX;
+    SourceTable = "ReminderExtensionSetupNVX";
     UsageCategory = Administration;
 
     layout
@@ -11,15 +11,15 @@ page 50034 SetupReminderExtensionCardNVX
         {
             group(General)
             {
+                field(ActivateReminderExtension; Rec.ActivateReminderExtension)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Activate Reminderextension field.', Comment = 'DEA="Modul Mahnwesen neu aktivieren"';
+                }
                 field(AcitveChangeLogEntryDim; Rec.ActiveChangeLogEntryDim)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Activate ChangeLogEntry Dimension field.', Comment = 'DEA="Änderungsprotokol Dimension aktivieren"';
-                }
-                field(ActivateBusinessFilterInPages; Rec.ActivateBusinessFilterInPages)
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Active Filter BusinessFields for Pages field.', Comment = 'DEA="Filter Geschäftsfelder für Pages aktivieren"';
                 }
                 field(AllowEmptyfilter; Rec.AllowEmptyfilter)
                 {
@@ -48,17 +48,17 @@ page 50034 SetupReminderExtensionCardNVX
     {
         area(Processing)
         {
-            Action(InsertSetupPropertyForField)
+            Action(Initialize)
             {
                 ApplicationArea = All;
-                Caption = 'Setup PropertyForField insert', comment = 'DEA="Einrichtung Eigenschaften der Felder befüllen"';
+                Caption = 'Ininzialize', comment = 'DEA="Inizialisieren"';
                 Image = Setup;
 
                 trigger OnAction()
                 var
                     AppMgt: Codeunit AppMgtNVX;
                 begin
-                    AppMgt.InsertSetupPropertyForField();
+                    AppMgt.InitializeReminderExtensionSetup();
                 end;
             }
         }

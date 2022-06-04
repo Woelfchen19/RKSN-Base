@@ -106,7 +106,7 @@ codeunit 50015 "Table36HookNVX"
         AppMgt.AllowdBusinessFieldsForUser();
         DimMgt.GetShortcutDimensions(SalesHeader."Dimension Set ID", ShortcutDimCode);
         AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, ShortcutDimCode[5], false);
-        if AppMgt.GetActivateBusinessFilterInPages() then begin
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
             CustLedgerEntry.SetRange(ShortcutDimension5CodeNVX, ShortcutDimCode[5]);
             CustLedgerEntry.FilterGroup(2);
             //ToDo

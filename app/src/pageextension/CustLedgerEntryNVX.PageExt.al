@@ -171,7 +171,7 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
 
     trigger OnOpenPage()
     var
-        BusinessFieldFilter: Code[20];
+        BusinessFieldFilter: Code[40];
     begin
         AppMgt.GetUserSetup(UserSetup, true);
 
@@ -184,7 +184,7 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
         DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
         DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
 
-        if AppMgt.GetActivateBusinessFilterInPages() then begin
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
             BusinessFieldFilter := AppMgt.GetBusinessFieldFilterNVX();
             Rec.FilterGroup(2);
             if BusinessFieldFilter = '' then

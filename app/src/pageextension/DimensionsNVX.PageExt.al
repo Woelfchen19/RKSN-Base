@@ -49,6 +49,6 @@ pageextension 50004 "DimensionsNVX" extends Dimensions
 
     var
         GLSetup: Record "General Ledger Setup";
-        SetupReminderExtension: Record SetupReminderExtensionNVX;
+        SetupReminderExtension: Record "ReminderExtensionSetupNVX";
         StandardPageDimensionValuesVisible: Boolean;
 }

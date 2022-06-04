@@ -94,19 +94,55 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
         {
             Caption = 'All Collected Accounts', comment = 'DEA="Alle Sammelkto"';
         }
-        field(50020; BusinessFieldFilterNVX; Code[20])
+        field(50020; BusinessFieldFilterNVX; Code[40])
         {
             Caption = 'BusinessField Filter', comment = 'DEA="Geschäftsfeld Filter"';
         }
     }
 
+    procedure GetRecordOnceNVX()
+    begin
+        ReminderExtensionSetup.GetRecordOnce();
+        if not ReminderExtensionSetup.IsReminderExtensionActivated() then
+            exit;
+
+        if RecordHasBeenRead then
+            exit;
+        Get();
+        RecordHasBeenRead := true;
+    end;
+
+    /// <summary>
+    /// ToDo
+    /// </summary>
+    /// <param name="WithTestUser"></param>
+    // procedure GetRecordOnce(WithTestUser: Boolean)
+    // begin
+    //     ReminderExtensionSetup.GetRecordOnce();
+    //     if not ReminderExtensionSetup.IsReminderExtensionActivated() then
+    //         exit;
+
+    //     if not WithTestUser then
+    //         GetRecordOnce()
+    //     else
+    //         AppMgt.GetUserSetup(Rec,true);
+    //         if RecordHasBeenRead then
+    //             exit;
+    //     Get();
+    //     RecordHasBeenRead := true;
+    // end;
+
     procedure CreateBusinessFieldFilterNVX()
     var
-        SetupReminderExtension: record SetupReminderExtensionNVX;
-        AppMgt: Codeunit AppMgtNVX;
+        SetupReminderExtension: record "ReminderExtensionSetupNVX";
         InclusiveEmptyEntries: Boolean;
     begin
         InclusiveEmptyEntries := SetupReminderExtension.Get() and SetupReminderExtension.AllowEmptyfilter;
         AppMgt.CreateBusinessFieldFilter(Rec, InclusiveEmptyEntries);
     end;
+
+    var
+        ReminderExtensionSetup: Record ReminderExtensionSetupNVX;
+        AppMgt: Codeunit AppMgtNVX;
+        RecordHasBeenRead: Boolean;
 }

@@ -21,6 +21,5 @@ enum 50003 "DimShortcutBusinessFieldNVX"
     }
     Value(7; All)
     {
-        caption = 'Show all', comment = 'DEA="Alle anzeigen"';
     }
 }

@@ -1,6 +1,6 @@
-table 50006 "SetupReminderExtensionNVX"
+table 50006 "ReminderExtensionSetupNVX"
 {
-    Caption = 'Setup Reminder Extension', comment = 'DEA="Einrichtung Erweiterung Mahnung"';
+    Caption = 'Reminder Extension Setup', comment = 'DEA="Erweiterung Mahnung Einrichtung"';
     DataClassification = CustomerContent;
 
     fields
@@ -10,9 +10,9 @@ table 50006 "SetupReminderExtensionNVX"
             Caption = 'Primary Key', comment = 'DEA="Primärschlüssel"';
             DataClassification = CustomerContent;
         }
-        field(2; ActivateBusinessFilterInPages; Boolean)
+        field(2; ActivateReminderExtension; Boolean)
         {
-            Caption = 'Active Filter BusinessFields for Pages', comment = 'DEA="Filter Geschäftsfelder für Pages aktivieren"';
+            Caption = 'Activate Module Reminderextension', comment = 'DEA="Modul Mahnwesen Erweiterung aktivieren"';
             DataClassification = CustomerContent;
         }
         field(3; AllowEmptyfilter; Boolean)
@@ -54,7 +54,7 @@ table 50006 "SetupReminderExtensionNVX"
     begin
         if RecordHasBeenRead then
             exit;
-        Get();
+        Rec.Get();
         RecordHasBeenRead := true;
     end;
 
@@ -67,6 +67,16 @@ table 50006 "SetupReminderExtensionNVX"
             repeat
                 AppMgt.CreateBusinessFieldFilter(UserSetup, Rec.AllowEmptyfilter);
             until UserSetup.Next() = 0;
+    end;
+
+    procedure TestUserActivate(): Boolean
+    begin
+        exit(Rec."Test User Activate")
+    end;
+
+    procedure IsReminderExtensionActivated(): Boolean
+    begin
+        exit(Rec.ActivateReminderExtension);
     end;
 
     var

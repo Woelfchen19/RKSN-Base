@@ -8,7 +8,7 @@ codeunit 50030 "ChangeLogMgtDimensionNVX"
     end;
 
     var
-        SetupReminderExtension: Record SetupReminderExtensionNVX;
+        SetupReminderExtension: Record "ReminderExtensionSetupNVX";
         ChangeLogSetupRead: Boolean;
 
 

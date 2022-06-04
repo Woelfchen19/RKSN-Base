@@ -88,16 +88,6 @@ table 50041 "CustomerBusinessFieldNVX"
             Caption = 'Preferred Bank Account Code', comment = 'DEA="Bevorzugter Bankkontocode"';
             TableRelation = "Customer Bank Account".Code WHERE("Customer No." = FIELD("Customer No."));
         }
-        field(30; "Allowed Setup dynamic fields"; Boolean)
-        {
-            Caption = 'Allowed Setup dynamic Fields', comment = 'DEA="setup dynamische Felder erlaubt"';
-            DataClassification = CustomerContent;
-        }
-        field(40; Active; Boolean)
-        {
-            Caption = 'Active', comment = 'DEA="Aktiv"';
-            DataClassification = CustomerContent;
-        }
         field(41; Sort; integer)
         {
             Caption = 'Sort', comment = 'DEA="Sortierung"';
@@ -129,7 +119,7 @@ table 50041 "CustomerBusinessFieldNVX"
         "Last Modified By User" := Format(UserId);
     end;
 
-    procedure InsertSetupBusinessField(CustomerNo: Code[20])
+    procedure InsertSetupBusinessField(CustomerNo: Code[20]; OnlyAll: Boolean)
     var
         CustomerBusinessField: Record CustomerBusinessFieldNVX;
         DimensionValue: Record "Dimension Value";
@@ -139,24 +129,24 @@ table 50041 "CustomerBusinessFieldNVX"
         DimShortcutBusinessField: Enum DimShortcutBusinessFieldNVX;
     begin
         AppMgt.GetUserSetup(UserSetup, true);
-
-        GLSetup.Get();
+        GLSetup.GetRecordOnce();
         DimensionValue.Reset();
         DimensionValue.SetRange("Dimension Code", GLSetup."Shortcut Dimension 5 Code");
         if DimensionValue.FindSet() then begin
-            repeat
-                CustomerBusinessField.Init();
-                CustomerBusinessField."Customer No." := CustomerNo;
-                CustomerBusinessField."Shortcut Dimension 5 Code" := DimensionValue.Code;
-                CustomerBusinessField."Dimension Value Type" := DimensionValue."Dimension Value Type";
-                CustomerBusinessField.Insert(true);
-            until DimensionValue.Next() = 0;
+            if not OnlyAll then
+                repeat
+                    CustomerBusinessField.Init();
+                    CustomerBusinessField."Customer No." := CustomerNo;
+                    CustomerBusinessField."Shortcut Dimension 5 Code" := DimensionValue.Code;
+                    CustomerBusinessField."Dimension Value Type" := DimensionValue."Dimension Value Type";
+                    if CustomerBusinessField.Insert(true) then;
+                until DimensionValue.Next() = 0;
 
             CustomerBusinessField.Init();
             CustomerBusinessField."Customer No." := CustomerNo;
             CustomerBusinessField."Shortcut Dimension 5 Code" := Format(DimShortcutBusinessField::All);
             CustomerBusinessField."Dimension Value Type" := DimensionValue."Dimension Value Type"::Standard;
-            CustomerBusinessField.Insert(true);
+            if CustomerBusinessField.Insert(true) then;
         end;
     end;
 
@@ -170,12 +160,8 @@ table 50041 "CustomerBusinessFieldNVX"
         i: Integer;
         TotalCounter: integer;
     begin
-        if DimShortcutBusinessField = DimShortcutBusinessField::All then
-            exit(StatusCustBusinessField::EMPTY);
-
         CustomerBusinessField.Reset();
         CustomerBusinessField.SetRange("Customer No.", CustomerNo);
-        CustomerBusinessField.SetRange(Active, true);
         CustomerBusinessField.SetRange("Shortcut Dimension 5 Code", Format(DimShortcutBusinessField));
         if CustomerBusinessField.FindSet() then
             repeat
@@ -190,7 +176,6 @@ table 50041 "CustomerBusinessFieldNVX"
 
         if Counter = TotalCounter then
             Exit(StatusCustBusinessField::EE);
-
         if Counter = 0 then
             exit(StatusCustBusinessField::NE)
         else
@@ -200,8 +185,6 @@ table 50041 "CustomerBusinessFieldNVX"
     procedure SetStyle(): Text
     begin
         case Rec.State of
-            StatusCustBusinessFieldsNVX::EMPTY:
-                exit('Standard');
             StatusCustBusinessFieldsNVX::EE:
                 exit('Favorable');
             StatusCustBusinessFieldsNVX::NE:

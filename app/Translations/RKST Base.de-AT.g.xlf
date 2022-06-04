@@ -8219,6 +8219,54 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table PurchLineArchiveNVX - Field Work Center No. - Property Caption</note>
           <target>Arbeitsplatzgruppennr.</target>
         </trans-unit>
+        <trans-unit id="Table 2917893612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reminder Extension Setup</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Erweiterung Mahnung Einrichtung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderExtensionSetupNVX - Property Caption</note>
+          <target>Erweiterung Mahnung Einrichtung</target>
+        </trans-unit>
+        <trans-unit id="Table 2917893612 - Field 2382118458 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Activate Module Reminderextension</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Modul Mahnwesen Erweiterung aktivieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderExtensionSetupNVX - Field ActivateReminderExtension - Property Caption</note>
+          <target>Modul Mahnwesen Erweiterung aktivieren</target>
+        </trans-unit>
+        <trans-unit id="Table 2917893612 - Field 2555466774 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Activate ChangeLogEntry Dimension</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Änderungsprotokol Dimension aktivieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderExtensionSetupNVX - Field ActiveChangeLogEntryDim - Property Caption</note>
+          <target>Änderungsprotokol Dimension aktivieren</target>
+        </trans-unit>
+        <trans-unit id="Table 2917893612 - Field 1035365880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>use also empty filter</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Leeren Filter berücksichten"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderExtensionSetupNVX - Field AllowEmptyfilter - Property Caption</note>
+          <target>Leeren Filter berücksichten</target>
+        </trans-unit>
+        <trans-unit id="Table 2917893612 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Primärschlüssel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderExtensionSetupNVX - Field Primary Key - Property Caption</note>
+          <target>Primärschlüssel</target>
+        </trans-unit>
+        <trans-unit id="Table 2917893612 - Field 4257336338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test User Activate</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Testbenutzer aktiviert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderExtensionSetupNVX - Field Test User Activate - Property Caption</note>
+          <target>Testbenutzer aktiviert</target>
+        </trans-unit>
+        <trans-unit id="Table 2917893612 - Field 3559530710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test User ID</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Testbenutzer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderExtensionSetupNVX - Field Test User ID - Property Caption</note>
+          <target>Testbenutzer</target>
+        </trans-unit>
+        <trans-unit id="Table 2917893612 - Field 22707081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Website IBAN</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Webseite IBAN"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderExtensionSetupNVX - Field WebSiteIBAN - Property Caption</note>
+          <target>Webseite IBAN</target>
+        </trans-unit>
         <trans-unit id="Table 1119121856 - Field 2269940222 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Composition Gen. Bus. Posting Group WES</source>
           <note from="Developer" annotates="general" priority="2">DEA="Abfassung Steuerschlüssel WES"</note>
@@ -10670,54 +10718,6 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SetupPropertyForFieldsNVX - Field Object Type - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="Table 2206586188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Setup Reminder Extension</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Erweiterung Mahnung"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Property Caption</note>
-          <target>Einrichtung Erweiterung Mahnung</target>
-        </trans-unit>
-        <trans-unit id="Table 2206586188 - Field 115300620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Active Filter BusinessFields for Pages</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Filter Geschäftsfelder für Pages aktivieren"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field ActivateBusinessFilterInPages - Property Caption</note>
-          <target>Filter Geschäftsfelder für Pages aktivieren</target>
-        </trans-unit>
-        <trans-unit id="Table 2206586188 - Field 2555466774 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Activate ChangeLogEntry Dimension</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Änderungsprotokol Dimension aktivieren"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field ActiveChangeLogEntryDim - Property Caption</note>
-          <target>Änderungsprotokol Dimension aktivieren</target>
-        </trans-unit>
-        <trans-unit id="Table 2206586188 - Field 1035365880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>use also empty filter</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Leeren Filter berücksichten"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field AllowEmptyfilter - Property Caption</note>
-          <target>Leeren Filter berücksichten</target>
-        </trans-unit>
-        <trans-unit id="Table 2206586188 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Primary Key</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Primärschlüssel"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field Primary Key - Property Caption</note>
-          <target>Primärschlüssel</target>
-        </trans-unit>
-        <trans-unit id="Table 2206586188 - Field 4257336338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Test User Activate</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Testbenutzer aktiviert"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field Test User Activate - Property Caption</note>
-          <target>Testbenutzer aktiviert</target>
-        </trans-unit>
-        <trans-unit id="Table 2206586188 - Field 3559530710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Test User ID</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Testbenutzer"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field Test User ID - Property Caption</note>
-          <target>Testbenutzer</target>
-        </trans-unit>
-        <trans-unit id="Table 2206586188 - Field 22707081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Website IBAN</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Webseite IBAN"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table SetupReminderExtensionNVX - Field WebSiteIBAN - Property Caption</note>
-          <target>Webseite IBAN</target>
-        </trans-unit>
         <trans-unit id="Table 3911360504 - Field 2434839038 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase VAT as Expense</source>
           <note from="Developer" annotates="general" priority="2">DEA="VST als Aufwand"</note>
@@ -11282,10 +11282,10 @@
           <target>setup dynamische Felder erlaubt</target>
         </trans-unit>
         <trans-unit id="Page 4040994964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Businessfields FactBox</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfelder FactBox"</note>
+          <source>Activ Businessfields</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Aktive Geschäftsfelder"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldFactBoxNVX - Property Caption</note>
-          <target>Geschäftsfelder FactBox</target>
+          <target>Aktive Geschäftsfelder</target>
         </trans-unit>
         <trans-unit id="Page 4040994964 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Customer No. field.</source>
@@ -12865,6 +12865,54 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page PurchLineArchiveSummaryNVX - Control VAT Base Amount - Property Caption</note>
           <target>Betrag NETTO</target>
         </trans-unit>
+        <trans-unit id="Page 2074387792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Setup Reminder Extension</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Erweiterung Mahnung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderExtensionSetupCardNVX - Property Caption</note>
+          <target>Einrichtung Erweiterung Mahnung</target>
+        </trans-unit>
+        <trans-unit id="Page 2074387792 - Control 2178414558 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Activate ChangeLogEntry Dimension field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Änderungsprotokol Dimension aktivieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderExtensionSetupCardNVX - Control AcitveChangeLogEntryDim - Property ToolTip</note>
+          <target>Änderungsprotokol Dimension aktivieren</target>
+        </trans-unit>
+        <trans-unit id="Page 2074387792 - Control 2382118458 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Activate Reminderextension field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Modul Mahnwesen neu aktivieren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderExtensionSetupCardNVX - Control ActivateReminderExtension - Property ToolTip</note>
+          <target>Modul Mahnwesen neu aktivieren</target>
+        </trans-unit>
+        <trans-unit id="Page 2074387792 - Control 1035365880 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the use also empty filter field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Leeren Filter berücksichten"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderExtensionSetupCardNVX - Control AllowEmptyfilter - Property ToolTip</note>
+          <target>Leeren Filter berücksichten</target>
+        </trans-unit>
+        <trans-unit id="Page 2074387792 - Control 4257336338 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Test User Activate field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Testbenutzer aktiviert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderExtensionSetupCardNVX - Control Test User Activate - Property ToolTip</note>
+          <target>Testbenutzer aktiviert</target>
+        </trans-unit>
+        <trans-unit id="Page 2074387792 - Control 3559530710 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Test User ID field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Testbenutzer"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderExtensionSetupCardNVX - Control Test User ID - Property ToolTip</note>
+          <target>Testbenutzer</target>
+        </trans-unit>
+        <trans-unit id="Page 2074387792 - Control 22707081 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Website IBAN field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Webseite IBAN"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderExtensionSetupCardNVX - Control WebSiteIBAN - Property ToolTip</note>
+          <target>Webseite IBAN</target>
+        </trans-unit>
+        <trans-unit id="Page 2074387792 - Action 4116255554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Setup PropertyForField insert</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Eigenschaften der Felder befüllen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderExtensionSetupCardNVX - Action InsertSetupPropertyForField - Property Caption</note>
+          <target>Einrichtung Eigenschaften der Felder befüllen</target>
+        </trans-unit>
         <trans-unit id="Page 86170340 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales Line Archive Origin</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verkaufszeilenarchiv Ursprung"</note>
@@ -13089,54 +13137,6 @@
           <source>Specifies the value of the Object Type field.</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SetupPropertyForFieldsNVX - Control Object Type - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1444865904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Setup Reminder Extension</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Erweiterung Mahnung"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SetupReminderExtensionCardNVX - Property Caption</note>
-          <target>Einrichtung Erweiterung Mahnung</target>
-        </trans-unit>
-        <trans-unit id="Page 1444865904 - Control 2178414558 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Activate ChangeLogEntry Dimension field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Änderungsprotokol Dimension aktivieren"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SetupReminderExtensionCardNVX - Control AcitveChangeLogEntryDim - Property ToolTip</note>
-          <target>Änderungsprotokol Dimension aktivieren</target>
-        </trans-unit>
-        <trans-unit id="Page 1444865904 - Control 115300620 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Active Filter BusinessFields for Pages field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Filter Geschäftsfelder für Pages aktivieren"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SetupReminderExtensionCardNVX - Control ActivateBusinessFilterInPages - Property ToolTip</note>
-          <target>Filter Geschäftsfelder für Pages aktivieren</target>
-        </trans-unit>
-        <trans-unit id="Page 1444865904 - Control 1035365880 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the use also empty filter field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Leeren Filter berücksichten"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SetupReminderExtensionCardNVX - Control AllowEmptyfilter - Property ToolTip</note>
-          <target>Leeren Filter berücksichten</target>
-        </trans-unit>
-        <trans-unit id="Page 1444865904 - Control 4257336338 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Test User Activate field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Testbenutzer aktiviert"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SetupReminderExtensionCardNVX - Control Test User Activate - Property ToolTip</note>
-          <target>Testbenutzer aktiviert</target>
-        </trans-unit>
-        <trans-unit id="Page 1444865904 - Control 3559530710 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Test User ID field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Testbenutzer"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SetupReminderExtensionCardNVX - Control Test User ID - Property ToolTip</note>
-          <target>Testbenutzer</target>
-        </trans-unit>
-        <trans-unit id="Page 1444865904 - Control 22707081 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Website IBAN field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Webseite IBAN"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SetupReminderExtensionCardNVX - Control WebSiteIBAN - Property ToolTip</note>
-          <target>Webseite IBAN</target>
-        </trans-unit>
-        <trans-unit id="Page 1444865904 - Action 4116255554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Setup PropertyForField insert</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Eigenschaften der Felder befüllen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SetupReminderExtensionCardNVX - Action InsertSetupPropertyForField - Property Caption</note>
-          <target>Einrichtung Eigenschaften der Felder befüllen</target>
         </trans-unit>
         <trans-unit id="Page 2664610773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Posting Types</source>
@@ -13879,6 +13879,11 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - NamedType AssociationErrorMsg</note>
           <target>Sie müssen zu allen ProfitCentern im Feld zugehörig eine Zuordnung vornehmen!</target>
         </trans-unit>
+        <trans-unit id="PageExtension 1966097956 - Action 898155089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
+          <source>Executes the Assignment Department action.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Action AssignmentDepartmentNVX - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1966097956 - Action 898155089 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
           <source>Assignment Department</source>
           <note from="Developer" annotates="general" priority="2">DEA="KST zuordnen"</note>
@@ -13897,16 +13902,16 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Control AssociatedNVX - Property ToolTip</note>
           <target>zugehörig</target>
         </trans-unit>
-        <trans-unit id="PageExtension 1966097956 - Control 916429153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
-          <source>Shortcut Dimension 1 Code</source>
+        <trans-unit id="PageExtension 1966097956 - Control 916429153 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
+          <source>Specifies the value of the Shortcut Dimension 1 Code field.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Control DimValueNVXShortcutDimension1CodeNVX - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Control DimValueNVXShortcutDimension1CodeNVX - Property ToolTip</note>
           <target>Shortcutdimensionscode 1</target>
         </trans-unit>
-        <trans-unit id="PageExtension 1966097956 - Control 1070676144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
-          <source>Shortcut Dimension 2 Code</source>
+        <trans-unit id="PageExtension 1966097956 - Control 1070676144 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
+          <source>Specifies the value of the Shortcut Dimension 2 Code field.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 2"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Control DimValueNVXShortcutDimension2CodeNVX - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Control DimValueNVXShortcutDimension2CodeNVX - Property ToolTip</note>
           <target>Shortcutdimensionscode 2</target>
         </trans-unit>
         <trans-unit id="PageExtension 1966097956 - Control 4141631159 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
@@ -13926,10 +13931,10 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Control ShortcutDimension5CodeNVX - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1966097956 - Control 2664610773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
-          <source>VAT Posting Type</source>
+        <trans-unit id="PageExtension 1966097956 - Control 2664610773 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
+          <source>Specifies the value of the VAT Posting Type field.</source>
           <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Control VATPostingTypeNVX - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Control VATPostingTypeNVX - Property ToolTip</note>
           <target>USt.-Buchungsart</target>
         </trans-unit>
         <trans-unit id="PageExtension 1966097956 - Control 2113128517 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
@@ -15531,20 +15536,20 @@
         </trans-unit>
         <trans-unit id="TableExtension 4108639813 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Shortcut Dimension 5 Code</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensioncode 5"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension DimensionValueNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
+          <target>Shortcutdimensioncode 5</target>
         </trans-unit>
         <trans-unit id="TableExtension 4108639813 - Field 3973687038 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
-          <source>VAT Posting Type Description</source>
-          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart Beschreibung"</note>
+          <source>VATPostingTypeDescNVX</source>
+          <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension DimensionValueNVX - Field VATPostingTypeDescNVX - Property Caption</note>
-          <target>USt.-Buchungsart Beschreibung</target>
         </trans-unit>
         <trans-unit id="TableExtension 4108639813 - Field 2664610773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
-          <source>VAT Posting Type</source>
-          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart"</note>
+          <source>VAT Posting Type Description</source>
+          <note from="Developer" annotates="general" priority="2">DEA="USt.-Buchungsart Beschreibung"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension DimensionValueNVX - Field VATPostingTypeNVX - Property Caption</note>
-          <target>USt.-Buchungsart</target>
+          <target>USt.-Buchungsart Beschreibung</target>
         </trans-unit>
         <trans-unit id="TableExtension 607882803 - Field 478110000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
           <source>Shortcut Dimension 10 Code</source>
@@ -15831,10 +15836,10 @@
           <target> ,Sachkonto,Artikel</target>
         </trans-unit>
         <trans-unit id="TableExtension 4048524165 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3280694829">
-          <source>Reminder Term - Businessfield</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Mahncode Geschäftsfeld"</note>
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensioncode 5"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ReminderTermsNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
-          <target>Mahncode Geschäftsfeld</target>
+          <target>Shortcutdimensioncode 5</target>
         </trans-unit>
         <trans-unit id="TableExtension 1733794865 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
           <source>Shortcut Dimension 5 Code</source>
@@ -16076,12 +16081,6 @@
           <note from="Developer" annotates="general" priority="2">DEA="erfolgreich eingerichtet"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum StatusCustBusinessFieldsNVX - EnumValue EE - Property Caption</note>
           <target>erfolgreich eingerichtet</target>
-        </trans-unit>
-        <trans-unit id="Enum 4141580686 - EnumValue 3938122455 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source/>
-          <note from="Developer" annotates="general" priority="2">DEA=""</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum StatusCustBusinessFieldsNVX - EnumValue EMPTY - Property Caption</note>
-          <target/>
         </trans-unit>
         <trans-unit id="Enum 4141580686 - EnumValue 2486547637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>not configurated</source>

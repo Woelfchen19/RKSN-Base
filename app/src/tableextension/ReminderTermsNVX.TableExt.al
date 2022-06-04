@@ -7,6 +7,7 @@ tableextension 50013 "ReminderTermsNVX" extends "Reminder Terms"
             DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimensioncode 5"';
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5), Blocked = const(false));
+            CaptionClass = '1,2,5';
 
             trigger OnValidate()
             begin

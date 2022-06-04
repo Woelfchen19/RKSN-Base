@@ -3,7 +3,7 @@ codeunit 50026 "AppMgtNVX"
     var
         GLSetup: Record "General Ledger Setup";
         SetupPropertyForFields: Record SetupPropertyForFieldsNVX;
-        SetupReminderExtension: Record SetupReminderExtensionNVX;
+        ReminderExtensionSetup: Record "ReminderExtensionSetupNVX";
         UserSetup: Record "User Setup";
         AppMgt: Codeunit AppMgtNVX;
         DimMgt: codeunit DimensionManagement;
@@ -28,7 +28,14 @@ codeunit 50026 "AppMgtNVX"
         ShortcutDimension10CodeTxt: Label 'VERTEILUNG';
         PageList: List of [integer];
 
-    procedure AllowdBusinessFieldsForUser(BusinessFilter: Code[20]; BusinessFieldValue: Code[20]; ShowError: Boolean): Boolean
+    procedure InitializeReminderExtensionSetup()
+    var
+        UpgradeMgt: Codeunit UpgradeMgtNVX;
+    begin
+        UpgradeMgt.Upgrade();
+    end;
+
+    procedure AllowdBusinessFieldsForUser(BusinessFilter: Code[40]; BusinessFieldValue: Code[20]; ShowError: Boolean): Boolean
     var
         RegEx: Codeunit DotNet_Regex;
     begin
@@ -48,14 +55,15 @@ codeunit 50026 "AppMgtNVX"
 
     procedure AllowdBusinessFieldsForUser()
     begin
-        if not UserHasNoBusinessField() then
+        if UserHasNoBusinessField() then
             Error(NotAllowdBusinessFieldsForUserErr);
     end;
 
 
     procedure AllowEmptyFilterinPages(): Boolean
     begin
-        exit(SetupReminderExtension.Get() and SetupReminderExtension.AllowEmptyfilter);
+
+        exit(ReminderExtensionSetup.Get() and ReminderExtensionSetup.AllowEmptyfilter);
     end;
 
     procedure BlockDimValue(AllocationCode: Code[10])
@@ -100,6 +108,9 @@ codeunit 50026 "AppMgtNVX"
             TextBuilder.Append(Format(DimShortcutBusinessField::SO) + PipeTok);
         if Rec.EVSetupNVX then
             TextBuilder.Append(Format(DimShortcutBusinessField::EV) + PipeTok);
+
+        TextBuilder.Append(Format(DimShortcutBusinessField::All) + PipeTok);
+
         if InclusiveEmptyEntries then
             TextBuilder.Append(format(c) + Format(c))
         else
@@ -114,9 +125,10 @@ codeunit 50026 "AppMgtNVX"
         exit(true);
     end;
 
-    procedure GetActivateBusinessFilterInPages(): Boolean
+    procedure GetActivatedReminderExtensionSetup(): Boolean
     begin
-        exit(SetupReminderExtension.Get() and SetupReminderExtension.ActivateBusinessFilterInPages);
+        ReminderExtensionSetup.GetRecordOnce();
+        exit(ReminderExtensionSetup.ActivateReminderExtension);
     end;
 
     procedure GetActiveCustBusinessFieldFilter(CustomerNo: Code[20]; var CustomerBusinessField: Record CustomerBusinessFieldNVX): Boolean
@@ -124,13 +136,28 @@ codeunit 50026 "AppMgtNVX"
         CustomerBusinessField.Reset();
         CustomerBusinessField.SetRange("Customer No.", CustomerNo);
         CustomerBusinessField.SetRange("Dimension Value Type", CustomerBusinessField."Dimension Value Type"::Standard);
-        CustomerBusinessField.SetRange(Active, true);
     end;
 
-    procedure GetBusinessFieldFilterNVX(): Code[20];
+    procedure GetBusinessFieldFilterNVX(): Code[40];
     begin
         GetUserSetup(UserSetup, true);
         exit(UserSetup.BusinessFieldFilterNVX);
+    end;
+
+    procedure InsertSetupBusinessFieldsForCustomer()
+    begin
+        InsertSetupBusinessField(false);
+    end;
+
+    procedure InsertSetupBusinessField(OnlyAll: Boolean)
+    var
+        Customer: Record Customer;
+        CustomerBusinessField: Record CustomerBusinessFieldNVX;
+    begin
+        if Customer.Findset() then
+            repeat
+                CustomerBusinessField.InsertSetupBusinessField(Customer."No.", OnlyAll);
+            until Customer.Next() = 0;
     end;
 
     procedure GetFieldsPropertyVisibleEditableBySetup(
@@ -189,9 +216,9 @@ codeunit 50026 "AppMgtNVX"
     procedure GetUserSetup(var UserSetup2: Record "User Setup"; UseTestUser: Boolean)
     begin
         if UseTestUser then begin
-            if SetupReminderExtension.Get() then
-                if SetupReminderExtension."Test User Activate" and (SetupReminderExtension."Test User ID" <> '') then
-                    UserSetup2.Get(SetupReminderExtension."Test User ID")
+            if ReminderExtensionSetup.Get() then
+                if ReminderExtensionSetup."Test User Activate" and (ReminderExtensionSetup."Test User ID" <> '') then
+                    UserSetup2.Get(ReminderExtensionSetup."Test User ID")
                 else
                     UserSetup2.Get(UserId);
         end else
@@ -243,7 +270,7 @@ codeunit 50026 "AppMgtNVX"
         exit(HasValueBoolean);
     end;
 
-    procedure Initialize()
+    procedure InitializePages()
     begin
         GetGLSetup();
 
@@ -328,7 +355,7 @@ codeunit 50026 "AppMgtNVX"
             if Confirm(ConfirmDeleteMsg, true) then
                 SetupPropertyForFields.DeleteAll();
 
-        Initialize();
+        InitializePages();
 
         foreach PageID in Pagelist do begin
             if Dimension.FindSet() then
@@ -486,8 +513,8 @@ codeunit 50026 "AppMgtNVX"
 
     procedure OpenIBANWebSite()
     begin
-        SetupReminderExtension.Get();
-        Hyperlink(SetupReminderExtension.WebSiteIBAN);
+        ReminderExtensionSetup.GetRecordOnce();
+        Hyperlink(ReminderExtensionSetup.WebSiteIBAN);
     end;
 
     procedure SetActiveAndStateCustomerBusinessLines(CustomerNo: code[20])
@@ -511,49 +538,42 @@ codeunit 50026 "AppMgtNVX"
                     Format(DimShortcutBusinessField::PB):
                         if UserSetup.PBSetupNVX then begin
                             CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::PB);
-                            CustomerBusinessField.Active := true;
                             CustomerBusinessField.Modify();
                             counter += 1;
                         end;
                     Format(DimShortcutBusinessField::RD):
                         if UserSetup.RDSetupNVX then begin
                             CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::RD);
-                            CustomerBusinessField.Active := true;
                             CustomerBusinessField.Modify();
                             counter += 1;
                         end;
                     Format(DimShortcutBusinessField::RH):
                         if UserSetup.RHSetupNVX then begin
                             CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::RH);
-                            CustomerBusinessField.Active := true;
                             CustomerBusinessField.Modify();
                             counter += 1;
                         end;
                     Format(DimShortcutBusinessField::EA):
                         if UserSetup.EASetupNVX then begin
                             CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::EA);
-                            CustomerBusinessField.Active := true;
                             CustomerBusinessField.Modify();
                             counter += 1;
                         end;
                     Format(DimShortcutBusinessField::SO):
                         if UserSetup.SOSetupNVX then begin
                             CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::SO);
-                            CustomerBusinessField.Active := true;
                             CustomerBusinessField.Modify();
                             counter += 1;
                         end;
                     Format(DimShortcutBusinessField::EV):
                         if UserSetup.EVSetupNVX then begin
                             CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::EV);
-                            CustomerBusinessField.Active := true;
                             CustomerBusinessField.Modify();
                             counter += 1;
                         end;
                     Format(DimShortcutBusinessField::All):
                         if counter > 1 then begin
                             CustomerBusinessField.State := CustomerBusinessField.SetStatusSetup(CustomerNo, DimShortcutBusinessField::All);
-                            CustomerBusinessField.Active := true;
                             CustomerBusinessField.Modify();
                         end;
                 end
@@ -649,7 +669,7 @@ codeunit 50026 "AppMgtNVX"
 
     procedure ShowCustBusinessFieldFactBox(): Boolean
     begin
-        exit(UserHasNoBusinessField());
+        exit(not UserHasNoBusinessField());
     end;
 
     procedure ShowPageCustomerBankAccount(CodeFilter: Text): Code[20]
@@ -799,9 +819,9 @@ codeunit 50026 "AppMgtNVX"
     begin
         GetUserSetup(UserSetup, true);
         if not (UserSetup.PBSetupNVX or UserSetup.RDSetupNVX or UserSetup.RHSetupNVX or UserSetup.EASetupNVX or UserSetup.SOSetupNVX or UserSetup.EVSetupNVX) then
-            exit(false)
+            exit(true)
         else
-            exit(true);
+            exit(false);
     end;
 
     [IntegrationEvent(false, false)]

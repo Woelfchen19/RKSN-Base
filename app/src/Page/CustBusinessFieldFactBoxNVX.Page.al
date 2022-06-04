@@ -1,12 +1,11 @@
 page 50031 "CustBusinessFieldFactBoxNVX"
 {
-    Caption = 'Businessfields FactBox', comment = 'DEA="Geschäftsfelder FactBox"';
+    Caption = 'Activ Businessfields', comment = 'DEA="Aktive Geschäftsfelder"';
 
     Editable = false;
     PageType = ListPart;
     SourceTable = CustomerBusinessFieldNVX;
-    SourceTableView = SORTING(sort) WHERE(Active = const(true));
-
+    SourceTableView = SORTING(sort);
     layout
     {
         area(content)
@@ -48,9 +47,10 @@ page 50031 "CustBusinessFieldFactBoxNVX"
                 }
                 field(StatusCustBusinessFields; Rec.State)
                 {
+                    ApplicationArea = All;
                     Caption = 'State', comment = 'DEA="Status"';
                     StyleExpr = StyleTxt;
-                    ApplicationArea = All;
+                    Visible = false;
                 }
             }
         }

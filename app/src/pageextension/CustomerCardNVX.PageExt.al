@@ -46,8 +46,7 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
         if Rec."No." <> '' then begin
             CustomerBusinessField.Reset();
             CustomerBusinessField.SetRange("Customer No.", Rec."No.");
-            if CustomerBusinessField.IsEmpty() then
-                CustomerBusinessField.InsertSetupBusinessField(Rec."No.");
+            CustomerBusinessField.InsertSetupBusinessField(Rec."No.", true);
             AppMgt.SetActiveAndStateCustomerBusinessLines(Rec."No.");
         end;
     end;

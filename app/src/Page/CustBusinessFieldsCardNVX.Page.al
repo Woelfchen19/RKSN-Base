@@ -532,113 +532,107 @@ page 50033 "CustBusinessFieldsCardNVX"
                 if SetupBusinessField.Get(Rec."Customer No.", DimensionValue.Code) then
                     case SetupBusinessField.Sort of
                         1:
-                            if SetupBusinessField.Active then
-                                if OnClosePage then begin
-                                    SetupBusinessField."Shortcut Dimension 5 Code" := PBShortcutDimension5Code;
-                                    SetupBusinessField."Shortcut Dimension 9 Code" := PBShortcutDimension9Code;
-                                    SetupBusinessField."Reminder Terms Code" := PBReminderTermsCode;
-                                    SetupBusinessField."Payment Terms Code" := PBPaymentTermsCode;
-                                    SetupBusinessField."Payment Method Code" := PBPaymentMethodCode;
-                                    SetupBusinessField."Preferred BankAccount Code" := PBPreferredBankAccountCode;
-                                    SetupBusinessField.Modify();
-                                end else begin
-                                    PBShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
-                                    PBShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
-                                    PBReminderTermsCode := SetupBusinessField."Reminder Terms Code";
-                                    PBPaymentTermsCode := SetupBusinessField."Payment Terms Code";
-                                    PBPaymentMethodCode := SetupBusinessField."Payment Method Code";
-                                    PBPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
-                                end;
+                            if OnClosePage then begin
+                                SetupBusinessField."Shortcut Dimension 5 Code" := PBShortcutDimension5Code;
+                                SetupBusinessField."Shortcut Dimension 9 Code" := PBShortcutDimension9Code;
+                                SetupBusinessField."Reminder Terms Code" := PBReminderTermsCode;
+                                SetupBusinessField."Payment Terms Code" := PBPaymentTermsCode;
+                                SetupBusinessField."Payment Method Code" := PBPaymentMethodCode;
+                                SetupBusinessField."Preferred BankAccount Code" := PBPreferredBankAccountCode;
+                                SetupBusinessField.Modify();
+                            end else begin
+                                PBShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
+                                PBShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
+                                PBReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                                PBPaymentTermsCode := SetupBusinessField."Payment Terms Code";
+                                PBPaymentMethodCode := SetupBusinessField."Payment Method Code";
+                                PBPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
+                            end;
                         2:
-                            if SetupBusinessField.Active then
-                                if OnClosePage then begin
-                                    SetupBusinessField."Shortcut Dimension 5 Code" := RDShortcutDimension5Code;
-                                    SetupBusinessField."Shortcut Dimension 9 Code" := RDShortcutDimension9Code;
-                                    SetupBusinessField."Reminder Terms Code" := RDReminderTermsCode;
-                                    SetupBusinessField."Payment Terms Code" := RDPaymentTermsCode;
-                                    SetupBusinessField."Payment Method Code" := RDPaymentMethodCode;
-                                    SetupBusinessField."Preferred BankAccount Code" := RDPreferredBankAccountCode;
-                                    SetupBusinessField.Modify();
-                                end else begin
-                                    RDShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
-                                    RDShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
-                                    RDReminderTermsCode := SetupBusinessField."Reminder Terms Code";
-                                    RDPaymentTermsCode := SetupBusinessField."Payment Terms Code";
-                                    RDPaymentMethodCode := SetupBusinessField."Payment Method Code";
-                                    RDPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
-                                end;
+                            if OnClosePage then begin
+                                SetupBusinessField."Shortcut Dimension 5 Code" := RDShortcutDimension5Code;
+                                SetupBusinessField."Shortcut Dimension 9 Code" := RDShortcutDimension9Code;
+                                SetupBusinessField."Reminder Terms Code" := RDReminderTermsCode;
+                                SetupBusinessField."Payment Terms Code" := RDPaymentTermsCode;
+                                SetupBusinessField."Payment Method Code" := RDPaymentMethodCode;
+                                SetupBusinessField."Preferred BankAccount Code" := RDPreferredBankAccountCode;
+                                SetupBusinessField.Modify();
+                            end else begin
+                                RDShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
+                                RDShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
+                                RDReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                                RDPaymentTermsCode := SetupBusinessField."Payment Terms Code";
+                                RDPaymentMethodCode := SetupBusinessField."Payment Method Code";
+                                RDPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
+                            end;
                         3:
-                            if SetupBusinessField.Active then
-                                if OnClosePage then begin
-                                    SetupBusinessField."Shortcut Dimension 5 Code" := RHShortcutDimension5Code;
-                                    SetupBusinessField."Shortcut Dimension 9 Code" := RHShortcutDimension9Code;
-                                    SetupBusinessField."Reminder Terms Code" := RHReminderTermsCode;
-                                    SetupBusinessField."Payment Terms Code" := RHPaymentTermsCode;
-                                    SetupBusinessField."Payment Method Code" := RHPaymentMethodCode;
-                                    SetupBusinessField."Preferred BankAccount Code" := RHPreferredBankAccountCode;
-                                    SetupBusinessField.Modify();
-                                end else begin
-                                    RHShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
-                                    RHShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
-                                    RHReminderTermsCode := SetupBusinessField."Reminder Terms Code";
-                                    RHPaymentTermsCode := SetupBusinessField."Payment Terms Code";
-                                    RHPaymentMethodCode := SetupBusinessField."Payment Method Code";
-                                    RHPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
-                                end;
+                            if OnClosePage then begin
+                                SetupBusinessField."Shortcut Dimension 5 Code" := RHShortcutDimension5Code;
+                                SetupBusinessField."Shortcut Dimension 9 Code" := RHShortcutDimension9Code;
+                                SetupBusinessField."Reminder Terms Code" := RHReminderTermsCode;
+                                SetupBusinessField."Payment Terms Code" := RHPaymentTermsCode;
+                                SetupBusinessField."Payment Method Code" := RHPaymentMethodCode;
+                                SetupBusinessField."Preferred BankAccount Code" := RHPreferredBankAccountCode;
+                                SetupBusinessField.Modify();
+                            end else begin
+                                RHShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
+                                RHShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
+                                RHReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                                RHPaymentTermsCode := SetupBusinessField."Payment Terms Code";
+                                RHPaymentMethodCode := SetupBusinessField."Payment Method Code";
+                                RHPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
+                            end;
                         4:
-                            if SetupBusinessField.Active then
-                                if OnClosePage then begin
-                                    SetupBusinessField."Shortcut Dimension 5 Code" := EAShortcutDimension5Code;
-                                    SetupBusinessField."Shortcut Dimension 9 Code" := EAShortcutDimension9Code;
-                                    SetupBusinessField."Reminder Terms Code" := EAReminderTermsCode;
-                                    SetupBusinessField."Payment Terms Code" := EAPaymentTermsCode;
-                                    SetupBusinessField."Payment Method Code" := EAPaymentMethodCode;
-                                    SetupBusinessField."Preferred BankAccount Code" := EAPreferredBankAccountCode;
-                                    SetupBusinessField.Modify();
-                                end else begin
-                                    EAShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
-                                    EAShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
-                                    EAReminderTermsCode := SetupBusinessField."Reminder Terms Code";
-                                    EAPaymentTermsCode := SetupBusinessField."Payment Terms Code";
-                                    EAPaymentMethodCode := SetupBusinessField."Payment Method Code";
-                                    EAPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
-                                end;
+                            if OnClosePage then begin
+                                SetupBusinessField."Shortcut Dimension 5 Code" := EAShortcutDimension5Code;
+                                SetupBusinessField."Shortcut Dimension 9 Code" := EAShortcutDimension9Code;
+                                SetupBusinessField."Reminder Terms Code" := EAReminderTermsCode;
+                                SetupBusinessField."Payment Terms Code" := EAPaymentTermsCode;
+                                SetupBusinessField."Payment Method Code" := EAPaymentMethodCode;
+                                SetupBusinessField."Preferred BankAccount Code" := EAPreferredBankAccountCode;
+                                SetupBusinessField.Modify();
+                            end else begin
+                                EAShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
+                                EAShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
+                                EAReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                                EAPaymentTermsCode := SetupBusinessField."Payment Terms Code";
+                                EAPaymentMethodCode := SetupBusinessField."Payment Method Code";
+                                EAPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
+                            end;
                         5:
-                            if SetupBusinessField.Active then
-                                if OnClosePage then begin
-                                    SetupBusinessField."Shortcut Dimension 5 Code" := SOShortcutDimension5Code;
-                                    SetupBusinessField."Shortcut Dimension 9 Code" := SOShortcutDimension9Code;
-                                    SetupBusinessField."Reminder Terms Code" := SOReminderTermsCode;
-                                    SetupBusinessField."Payment Terms Code" := SOPaymentTermsCode;
-                                    SetupBusinessField."Payment Method Code" := SOPaymentMethodCode;
-                                    SetupBusinessField."Preferred BankAccount Code" := SOPreferredBankAccountCode;
-                                    SetupBusinessField.Modify();
-                                end else begin
-                                    SOShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
-                                    SOShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
-                                    SOReminderTermsCode := SetupBusinessField."Reminder Terms Code";
-                                    SOPaymentTermsCode := SetupBusinessField."Payment Terms Code";
-                                    SOPaymentMethodCode := SetupBusinessField."Payment Method Code";
-                                    SOPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
-                                end;
+                            if OnClosePage then begin
+                                SetupBusinessField."Shortcut Dimension 5 Code" := SOShortcutDimension5Code;
+                                SetupBusinessField."Shortcut Dimension 9 Code" := SOShortcutDimension9Code;
+                                SetupBusinessField."Reminder Terms Code" := SOReminderTermsCode;
+                                SetupBusinessField."Payment Terms Code" := SOPaymentTermsCode;
+                                SetupBusinessField."Payment Method Code" := SOPaymentMethodCode;
+                                SetupBusinessField."Preferred BankAccount Code" := SOPreferredBankAccountCode;
+                                SetupBusinessField.Modify();
+                            end else begin
+                                SOShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
+                                SOShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
+                                SOReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                                SOPaymentTermsCode := SetupBusinessField."Payment Terms Code";
+                                SOPaymentMethodCode := SetupBusinessField."Payment Method Code";
+                                SOPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
+                            end;
                         6:
-                            if SetupBusinessField.Active then
-                                if OnClosePage then begin
-                                    SetupBusinessField."Shortcut Dimension 5 Code" := EVShortcutDimension5Code;
-                                    SetupBusinessField."Shortcut Dimension 9 Code" := EVShortcutDimension9Code;
-                                    SetupBusinessField."Reminder Terms Code" := EVReminderTermsCode;
-                                    SetupBusinessField."Payment Terms Code" := EVPaymentTermsCode;
-                                    SetupBusinessField."Payment Method Code" := EVPaymentMethodCode;
-                                    SetupBusinessField."Preferred BankAccount Code" := EVPreferredBankAccountCode;
-                                    SetupBusinessField.Modify();
-                                end else begin
-                                    EVShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
-                                    EVShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
-                                    EVReminderTermsCode := SetupBusinessField."Reminder Terms Code";
-                                    EVPaymentTermsCode := SetupBusinessField."Payment Terms Code";
-                                    EVPaymentMethodCode := SetupBusinessField."Payment Method Code";
-                                    EVPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
-                                end;
+                            if OnClosePage then begin
+                                SetupBusinessField."Shortcut Dimension 5 Code" := EVShortcutDimension5Code;
+                                SetupBusinessField."Shortcut Dimension 9 Code" := EVShortcutDimension9Code;
+                                SetupBusinessField."Reminder Terms Code" := EVReminderTermsCode;
+                                SetupBusinessField."Payment Terms Code" := EVPaymentTermsCode;
+                                SetupBusinessField."Payment Method Code" := EVPaymentMethodCode;
+                                SetupBusinessField."Preferred BankAccount Code" := EVPreferredBankAccountCode;
+                                SetupBusinessField.Modify();
+                            end else begin
+                                EVShortcutDimension5Code := SetupBusinessField."Shortcut Dimension 5 Code";
+                                EVShortcutDimension9Code := SetupBusinessField."Shortcut Dimension 9 Code";
+                                EVReminderTermsCode := SetupBusinessField."Reminder Terms Code";
+                                EVPaymentTermsCode := SetupBusinessField."Payment Terms Code";
+                                EVPaymentMethodCode := SetupBusinessField."Payment Method Code";
+                                EVPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
+                            end;
                     end;
             until DimensionValue.Next() = 0;
     end;
@@ -658,7 +652,7 @@ page 50033 "CustBusinessFieldsCardNVX"
             SetupBusinessField.Reset();
             SetupBusinessField.SetRange("Customer No.", Rec."Customer No.");
             if SetupBusinessField.IsEmpty() then
-                SetupBusinessField.InsertSetupBusinessField(Rec."Customer No.");
+                SetupBusinessField.InsertSetupBusinessField(Rec."Customer No.", true);
             AppMgt.SetActiveAndStateCustomerBusinessLines(Rec."Customer No.");
         end;
     end;

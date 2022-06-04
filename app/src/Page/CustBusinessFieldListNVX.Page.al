@@ -12,11 +12,6 @@ page 50062 "CustBusinessFieldListNVX"
         {
             repeater(Controls1)
             {
-                field(Active; Rec.Active)
-                {
-                    ToolTip = 'Specifies the value of the Active field.', Comment = 'DEA="Aktiv"';
-                    ApplicationArea = All;
-                }
                 field("Creation Date"; Rec."Creation Date")
                 {
                     ToolTip = 'Specifies the value of the Creation Date field.', Comment = 'DEA="Errichtungsdatum"';

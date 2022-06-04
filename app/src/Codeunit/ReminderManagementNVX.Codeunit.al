@@ -8,7 +8,7 @@ codeunit 50031 "ReminderManagementNVX"
         SetupChangeLogRead := false;
     end;
 
-    procedure GetSetupReminderExtension(var SetupReminderExtension: Record SetupReminderExtensionNVX)
+    procedure GetSetupReminderExtension(var SetupReminderExtension: Record "ReminderExtensionSetupNVX")
     begin
         if not SetupReminderExtensionRead then
             SetupReminderExtension.Get();
@@ -17,7 +17,7 @@ codeunit 50031 "ReminderManagementNVX"
 
     procedure GetActiveChangeLogEntryDim(): Boolean
     var
-        SetupReminderExtension: Record SetupReminderExtensionNVX;
+        SetupReminderExtension: Record "ReminderExtensionSetupNVX";
     begin
         if not SetupChangeLogRead then begin
             GetSetupReminderExtension(SetupReminderExtension);

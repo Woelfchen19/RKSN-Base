@@ -5,7 +5,7 @@ codeunit 50029 "ApplyCustomerEntriesHookNVX"
     var
         AppMgt: Codeunit AppMgtNVX;
     begin
-        if AppMgt.GetActivateBusinessFilterInPages() then begin
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
             CustLedgerEntry.FilterGroup(2);
             CustLedgerEntry.SetRange(AssociatedNVX, GenJournalLine.AssociatedNVX);
             CustLedgerEntry.FilterGroup(0);
