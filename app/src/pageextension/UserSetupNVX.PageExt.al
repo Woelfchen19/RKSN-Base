@@ -65,6 +65,11 @@ pageextension 50047 "UserSetupNVX" extends "User Setup"
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Setup dynamic Fields field.', Comment = 'DEA="setup dynamische Felder erlaubt"';
             }
+            field(AllowedDimension5CodeNVX; Rec.AllowedDimension5CodeChangeNVX)
+            {
+                ToolTip = 'Specifies the value of the Allowed modify Business Field field.', Comment = 'DEA=""Änderung Code Dim.Geschäftsfeld erlaubt"';
+                ApplicationArea = All;
+            }
             field(BusinessFieldFilterNVX; Rec.BusinessFieldFilterNVX)
             {
                 ToolTip = 'Specifies the value of the BusinessField Filter field.', Comment = 'DEA="Geschäftsfeld Filter"';

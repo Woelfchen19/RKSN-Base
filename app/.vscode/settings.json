@@ -12,5 +12,8 @@
     ],
     "al.ruleSetPath": ".vscode\\ruleset.json",
     "workbench.editor.showTabs": true,
-    "al.browser": "Edge"
+    "al.browser": "Chrome",
+    "editor.codeActionsOnSave": {
+    
+    }
 }

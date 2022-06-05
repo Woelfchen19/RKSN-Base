@@ -17,6 +17,11 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
             Caption = 'Allow Reminder Setup', comment = 'DEA="Zugriff Erweiterung Mahnung erlauben"';
             DataClassification = CustomerContent;
         }
+        field(50003; AllowedDimension5CodeChangeNVX; Boolean)
+        {
+            Caption = 'Allowed modify Business Field', comment = 'DEA=""Änderung Code Dim.Geschäftsfeld erlaubt"';
+            DataClassification = CustomerContent;
+        }
         field(50010; PBSetupNVX; Boolean)
         {
             Caption = 'PB-setup', comment = 'DEA="PB-setup"';

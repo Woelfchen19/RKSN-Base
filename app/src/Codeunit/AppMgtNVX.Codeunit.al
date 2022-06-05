@@ -2,8 +2,8 @@ codeunit 50026 "AppMgtNVX"
 {
     var
         GLSetup: Record "General Ledger Setup";
-        SetupPropertyForFields: Record SetupPropertyForFieldsNVX;
         ReminderExtensionSetup: Record "ReminderExtensionSetupNVX";
+        SetupPropertyForFields: Record SetupPropertyForFieldsNVX;
         UserSetup: Record "User Setup";
         AppMgt: Codeunit AppMgtNVX;
         DimMgt: codeunit DimensionManagement;
@@ -22,18 +22,12 @@ codeunit 50026 "AppMgtNVX"
         GLSetupShortcutDimCode: array[10] of Code[20];
         NewParentDimSetID: Integer;
         OldParentDimSetID: Integer;
-        NotAllowdBusinessFieldsForUserErr: Label 'You are not authorized to create a business area!\Please contact your Systemadministrator', comment = 'DEA="Sie haben keine Berechtigung, um ein Geschäftsfeld anzulegen!\Bitte kontaktieren Sie Ihren Systemadministrator."';
+        NotAllowdBusinessFieldForUserErr: Label 'You are not authorized to choice the business area %1! Please contact your Systemadministrator', comment = 'DEA="Sie haben keine Berechtigung, das Geschäftsfeld %1 auszuwählen! Bitte kontaktieren Sie Ihren Systemadministrator."', Locked = true;
+        NotAllowdBusinessFieldsForUserErr: Label 'You are not authorized to choice business areas %1! Please contact your Systemadministrator', comment = 'DEA="Sie haben keine Berechtigung, Geschäftsfelder auszuwählen! Bitte kontaktieren Sie Ihren Systemadministrator."', Locked = true;
         PipeTok: Label '|';
         ShortcutDimension9CodeTxt: Label 'SAMMELKto';
         ShortcutDimension10CodeTxt: Label 'VERTEILUNG';
         PageList: List of [integer];
-
-    procedure InitializeReminderExtensionSetup()
-    var
-        UpgradeMgt: Codeunit UpgradeMgtNVX;
-    begin
-        UpgradeMgt.Upgrade();
-    end;
 
     procedure AllowdBusinessFieldsForUser(BusinessFilter: Code[40]; BusinessFieldValue: Code[20]; ShowError: Boolean): Boolean
     var
@@ -48,7 +42,7 @@ codeunit 50026 "AppMgtNVX"
             exit(true);
 
         if ShowError then
-            Error(NotAllowdBusinessFieldsForUserErr);
+            Error(NotAllowdBusinessFieldForUserErr, BusinessFieldValue);
 
         exit(false);
     end;
@@ -142,22 +136,6 @@ codeunit 50026 "AppMgtNVX"
     begin
         GetUserSetup(UserSetup, true);
         exit(UserSetup.BusinessFieldFilterNVX);
-    end;
-
-    procedure InsertSetupBusinessFieldsForCustomer()
-    begin
-        InsertSetupBusinessField(false);
-    end;
-
-    procedure InsertSetupBusinessField(OnlyAll: Boolean)
-    var
-        Customer: Record Customer;
-        CustomerBusinessField: Record CustomerBusinessFieldNVX;
-    begin
-        if Customer.Findset() then
-            repeat
-                CustomerBusinessField.InsertSetupBusinessField(Customer."No.", OnlyAll);
-            until Customer.Next() = 0;
     end;
 
     procedure GetFieldsPropertyVisibleEditableBySetup(
@@ -270,18 +248,6 @@ codeunit 50026 "AppMgtNVX"
         exit(HasValueBoolean);
     end;
 
-    procedure InitializePages()
-    begin
-        GetGLSetup();
-
-        PageList.AddRange(
-            20, 25, 29, 38, 39, 40, 41, 42, 43, 44, 46, 47, 54, 55, 62, 95, 96, 97, 98, 131, 132, 133, 135, 137, 139, 141, 142, 143, 144,
-            171, 176, 232, 251, 253, 254, 255, 256, 380, 508, 510, 516, 517, 518, 519, 536, 537, 573, 574, 752, 755, 901, 921, 931, 941, 5160,
-            5163, 5165, 5168, 5628, 5629, 5741, 5744, 5746, 5802, 5877, 5885, 5934, 5936, 5956, 5973, 5979, 6621, 6624, 6628, 6631, 6641, 6645,
-            9300, 9301, 9302, 9305
-        );
-    end;
-
     procedure InitializeDimensionCustomer()
     var
         Customer: Record Customer;
@@ -291,6 +257,27 @@ codeunit 50026 "AppMgtNVX"
                 InsertPKShortCutdimension(Customer);
                 InsertPKDefaultDim(Customer);
             until customer.Next() = 0;
+    end;
+
+    procedure InitializePages()
+    begin
+        GetGLSetup();
+
+        PageList.AddRange(
+            20, 25, 29, 38, 39, 40, 41, 42, 43, 44, 46, 47, 54, 55, 62, 95, 96, 97, 98, 131, 132, 133, 135, 137, 139, 141, 142, 143, 144,
+            171, 176, 232, 251, 253, 254, 255, 256, 380, 434, 436, 438, 440, 480, 508, 510, 516, 517, 518, 519, 536, 537, 573, 574, 752, 755, 901,
+            921, 931, 941, 5160, 5163, 5165, 5168, 5628, 5629, 5741, 5744, 5746, 5802, 5877, 5885, 5934, 5936, 5956, 5973, 5979, 6621, 6624,
+            6628, 6631, 6641, 6645, 9300, 9301, 9302, 9305
+        );
+    end;
+
+    procedure InitializeReminderExtensionSetup()
+    var
+        UpgradeMgt: Codeunit UpgradeMgtNVX;
+        ReadyMsg: Label 'Initialize finished', comment = 'DEA="Initialisierung abgeschlossen"';
+    begin
+        UpgradeMgt.Upgrade();
+        Message(ReadyMsg);
     end;
 
     procedure InsertDimValue(AllocationCode: Record AllocationCodeNVX)
@@ -343,6 +330,22 @@ codeunit 50026 "AppMgtNVX"
             ModifyPKShortCutdimension(Customer);
     end;
 
+    procedure InsertSetupBusinessField(OnlyAll: Boolean)
+    var
+        Customer: Record Customer;
+        CustomerBusinessField: Record CustomerBusinessFieldNVX;
+    begin
+        if Customer.Findset() then
+            repeat
+                CustomerBusinessField.InsertSetupBusinessField(Customer."No.", OnlyAll);
+            until Customer.Next() = 0;
+    end;
+
+    procedure InsertSetupBusinessFieldsForCustomer()
+    begin
+        InsertSetupBusinessField(false);
+    end;
+
     procedure InsertSetupPropertyForField()
     var
         Dimension: Record Dimension;
@@ -379,6 +382,25 @@ codeunit 50026 "AppMgtNVX"
             exit(true);
 
         exit(false);
+    end;
+
+    procedure ModifyDimension5SetEntry(var SalesHeader: Record "Sales Header"; var ShortcutDimension5Code: Code[20])
+    VAR
+        TempDimSetEntry: Record "Dimension Set Entry" temporary;
+    begin
+        GLSetup.Get();
+        DimMgt.GetDimensionSet(TempDimSetEntry, SalesHeader."Dimension Set ID");
+
+        TempDimSetEntry.Reset();
+        TempDimSetEntry.DeleteAll();
+
+        TempDimSetEntry.Init();
+        TempDimSetEntry.Validate("Dimension Code", GLSetup."Shortcut Dimension 5 Code");
+        TempDimSetEntry.Validate("Dimension Value Code", ShortcutDimension5Code);
+        TempDimSetEntry.Insert();
+
+        SalesHeader."Dimension Set ID" := DimMgt.GetDimensionSetID(TempDimSetEntry);
+        SalesHeader.ValidateShortcutDimCode(5, ShortcutDimension5Code);
     end;
 
     procedure ModifyDimensionSetEntry(var GenJnlLine: Record "Gen. Journal Line"; AllocationCode: Code[20])
@@ -429,23 +451,27 @@ codeunit 50026 "AppMgtNVX"
         SalesLine.ValidateShortcutDimCode(10, AllocationCode);
     end;
 
-    procedure ModifyDimension5SetEntry(var SalesHeader: Record "Sales Header"; var ShortcutDimension5Code: Code[20])
-    VAR
-        TempDimSetEntry: Record "Dimension Set Entry" temporary;
+    procedure OnAfterLookupshortcutDimension5Code(var Rec: Record "Sales Header"; xRec: Record "Sales Header"; DimensionShortcutDimension5Code: Code[20])
     begin
-        GLSetup.Get();
-        DimMgt.GetDimensionSet(TempDimSetEntry, SalesHeader."Dimension Set ID");
+        OldParentDimSetID := xRec."Dimension Set ID";
+        Rec.ShortcutDimension5CodeNVX := DimensionShortcutDimension5Code;
+        DimMgt.ValidateShortcutDimValues(5, Rec.ShortcutDimension5CodeNVX, Rec."Dimension Set ID");
+        if OldParentDimSetID <> Rec."Dimension Set ID" then
+            Rec.UpdateAllLineDim(OldParentDimSetID, Rec."Dimension Set ID");
+    end;
 
-        TempDimSetEntry.Reset();
-        TempDimSetEntry.DeleteAll();
+    procedure OnAfterLookupshortcutDimension5Code(var Rec: Record "Reminder Header"; xRec: Record "Reminder Header"; DimensionShortcutDimension5Code: Code[20])
+    begin
+        OldParentDimSetID := xRec."Dimension Set ID";
+        DimMgt.ValidateShortcutDimValues(5, DimensionShortcutDimension5Code, Rec."Dimension Set ID");
+    end;
 
-        TempDimSetEntry.Init();
-        TempDimSetEntry.Validate("Dimension Code", GLSetup."Shortcut Dimension 5 Code");
-        TempDimSetEntry.Validate("Dimension Value Code", ShortcutDimension5Code);
-        TempDimSetEntry.Insert();
+    procedure OnAfterLookupshortcutDimension5Code(var Rec: Record "Reminder Terms")
+    begin
+    end;
 
-        SalesHeader."Dimension Set ID" := DimMgt.GetDimensionSetID(TempDimSetEntry);
-        SalesHeader.ValidateShortcutDimCode(5, ShortcutDimension5Code);
+    procedure OnAfterLookupshortcutDimension5Code(var Rec: Record "Dimension Value")
+    begin
     end;
 
     procedure OnLookupByBusinessFieldDimension(BusinessFieldDimension: Code[20]; GlobalDimensionNo: integer): Code[20]
@@ -465,11 +491,39 @@ codeunit 50026 "AppMgtNVX"
             exit(DimensionValue.Code);
     end;
 
+    procedure OnLookupShortcutDimension5Code(): Code[20]
+    var
+        DimensionValue: Record "Dimension Value";
+        DimensionValues: Page "Dimension Values";
+    begin
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
+            AppMgt.GetUserSetup(UserSetup, true);
+            AppMgt.AllowdBusinessFieldsForUser();
+            DimensionValue.FilterGroup(2);
+            DimensionValue.SetRange("Global Dimension No.", 5);
+            DimensionValue.SetFilter(Code, UserSetup.BusinessFieldFilterNVX);
+            DimensionValue.SetRange(Blocked, false);
+            DimensionValue.FilterGroup(0);
+            DimensionValues.LookupMode(true);
+            DimensionValues.SetTableView(DimensionValue);
+            DimensionValues.Editable(UserSetup.AllowedDimension5CodeChangeNVX);
+            if DimensionValues.RunModal() = Action::LookupOK then begin
+                DimensionValues.GetRecord(DimensionValue);
+                exit(DimensionValue.Code);
+            end;
+        end;
+    end;
+
     procedure OnValidateShortcutDimension(var DimensionValue: Record "Dimension Value")
     begin
         AppMgt.GetUserSetup(UserSetup, true);
         AppMgt.AllowdBusinessFieldsForUser();
-        AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, DimensionValue.ShortcutDimension5CodeNVX, true);
+        case DimensionValue."Global Dimension No." of
+            5:
+                AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, DimensionValue.Code, true);
+            9:
+                AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, DimensionValue.ShortcutDimension5CodeNVX, true);
+        end;
     end;
 
     procedure OnValidateShortcutDimension(var Rec: Record "Sales Header")
@@ -484,32 +538,23 @@ codeunit 50026 "AppMgtNVX"
         Rec.UpdateAllLineDim(NewParentDimSetID, OldParentDimSetID);
     end;
 
+    procedure OnValidateShortcutDimension(var Rec: Record "Reminder Header"; ShortcutDimension5Code: Code[20])
+    begin
+        AppMgt.GetUserSetup(UserSetup, true);
+        AppMgt.AllowdBusinessFieldsForUser();
+        AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, ShortcutDimension5Code, true);
+
+        OldParentDimSetID := Rec."Dimension Set ID";
+        DimMgt.ValidateShortcutDimValues(5, ShortcutDimension5Code, Rec."Dimension Set ID");
+        NewParentDimSetID := Rec."Dimension Set ID";
+    end;
+
     procedure OnValidateShortcutDimension(var Rec: Record "Reminder Terms");
     begin
         AppMgt.GetUserSetup(UserSetup, true);
         AppMgt.AllowdBusinessFieldsForUser();
         AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, Rec.ShortcutDimension5CodeNVX, true);
     end;
-
-    procedure OnAfterLookupshortcutDimension5Code(var Rec: Record "Sales Header"; xRec: Record "Sales Header"; DimensionShortcutDimension5Code: Code[20])
-    begin
-        OldParentDimSetID := xRec."Dimension Set ID";
-        Rec.ShortcutDimension5CodeNVX := DimensionShortcutDimension5Code;
-        DimMgt.ValidateShortcutDimValues(5, Rec.ShortcutDimension5CodeNVX, Rec."Dimension Set ID");
-        // Rec.Modify();
-
-        if OldParentDimSetID <> Rec."Dimension Set ID" then
-            Rec.UpdateAllLineDim(OldParentDimSetID, Rec."Dimension Set ID");
-    end;
-
-    procedure OnAfterLookupshortcutDimension5Code(var Rec: Record "Reminder Terms")
-    begin
-    end;
-
-    procedure OnAfterLookupshortcutDimension5Code(var Rec: Record "Dimension Value")
-    begin
-    end;
-
 
     procedure OpenIBANWebSite()
     begin
@@ -613,7 +658,10 @@ codeunit 50026 "AppMgtNVX"
     var
         i: integer;
     begin
-        GLSetup.Get();
+        if not GetActivatedReminderExtensionSetup() then
+            exit;
+
+        GLSetup.GetRecordOnce();
 
         DimMgt.UseShortcutDims(
           DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10);
@@ -793,26 +841,6 @@ codeunit 50026 "AppMgtNVX"
                 DimensionValue.Name := CopyStr(Customer.Name, 1, MaxStrLen(DimensionValue.Name));
                 DimensionValue.Modify();
             END;
-    end;
-
-    procedure OnLookupShortcutDimension5Code(): Code[20]
-    var
-        DimensionValue: Record "Dimension Value";
-        DimensionValueList: Page "Dimension Value List";
-    begin
-        AppMgt.GetUserSetup(UserSetup, true);
-        AppMgt.AllowdBusinessFieldsForUser();
-        DimensionValue.FilterGroup(2);
-        DimensionValue.SetRange("Global Dimension No.", 5);
-        DimensionValue.SetFilter(Code, UserSetup.BusinessFieldFilterNVX);
-        DimensionValue.SetRange(Blocked, false);
-        DimensionValue.FilterGroup(0);
-        DimensionValueList.LookupMode(true);
-        DimensionValueList.SetTableView(DimensionValue);
-        if DimensionValueList.RunModal() = Action::LookupOK then begin
-            DimensionValueList.GetRecord(DimensionValue);
-            exit(DimensionValue.Code);
-        end;
     end;
 
     local procedure UserHasNoBusinessField(): Boolean

@@ -1,6 +1,3 @@
-/// <summary>
-/// ToDo -> Field VAT Posting Type throws an error
-/// </summary>
 pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
 {
     layout
@@ -13,13 +10,13 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
                 Visible = PostingTypeVisible;
                 ToolTip = 'Specifies the value of the VAT Posting Type field.', Comment = 'DEA="USt.-Buchungsart"';
             }
-            // field(VATPostingTypeDescNVX; Rec.VATPostingTypeDescNVX)
-            // {
-            //     ApplicationArea = All;
-            //     Visible = PostingTypeVisible;
-            //     ToolTip = 'Specifies the value of the VATPostingTypeDesc field.', comment = 'DEA="Ust.-Buchungsartbeschreibung"';
-            //     ;
-            // }
+            field(VATPostingTypeDescNVX; Rec.VATPostingTypeDescNVX)
+            {
+                ApplicationArea = All;
+                Visible = PostingTypeVisible;
+                ToolTip = 'Specifies the value of the VATPostingTypeDesc field.', comment = 'DEA="Ust.-Buchungsartbeschreibung"';
+                ;
+            }
             field(DimValueNVXShortcutDimension1CodeNVX; Rec.ShortcutDimension1CodeNVX)
             {
                 ApplicationArea = All;
@@ -93,12 +90,19 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
         }
     }
 
+    trigger OnOpenPage()
+    begin
+        AppMgt.GetUserSetup(UserSetup, true);
+    end;
+
     trigger OnAfterGetRecord()
     begin
         SetFieldsVisible();
 
-        if (GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 5 Code") then
+        if (GetFilter("Dimension Code") = GlSetup."Shortcut Dimension 5 Code") then begin
             AssosiatedDepartment := Rec."Dimension Value Type" = Rec."Dimension Value Type"::Standard;
+            CurrPage.Editable := UserSetup.AllowedDimension5CodeChangeNVX;
+        end;
     end;
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
@@ -134,6 +138,8 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
 
     var
         GLSetup: Record "General Ledger Setup";
+        UserSetup: Record "User Setup";
+        AppMgt: Codeunit AppMgtNVX;
         AssignedVisible: Boolean;
         AssignmentDepartmentFBNVXVisible: Boolean;
         AssosiatedDepartment: Boolean;
@@ -143,5 +149,5 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
         IsOE: Boolean;
         PostingTypeVisible: Boolean;
         ReOrganizeAccountVisible: Boolean;
-        AssociationErrorMsg: Label 'You must assign to all Profitcentern the field associated!', comment = 'DEA="Sie müssen zu allen ProfitCentern im Feld zugehörig eine Zuordnung vornehmen!"';
+        AssociationErrorMsg: Label 'You must assign to all Profitcenter the field associated!', comment = 'DEA="Sie müssen zu allen ProfitCenter im Feld zugehörig eine Zuordnung vornehmen!"';
 }

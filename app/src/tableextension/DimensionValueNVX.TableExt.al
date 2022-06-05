@@ -20,10 +20,10 @@ tableextension 50012 "DimensionValueNVX" extends "Dimension Value"
         field(50002; ShortcutDimension5CodeNVX; Code[20])
         {
             Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimensioncode 5"';
-            ;
             CaptionClass = '1,2,5';
             DataClassification = CustomerContent;
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5), "Dimension Value Type" = const(Standard), Blocked = const(false));
+            ;
 
             trigger OnValidate()
             begin
@@ -37,12 +37,14 @@ tableextension 50012 "DimensionValueNVX" extends "Dimension Value"
         }
         field(50003; VATPostingTypeNVX; Code[10])
         {
-            Caption = 'VAT Posting Type Description', comment = 'DEA="USt.-Buchungsart Beschreibung"';
+            Caption = 'VAT Posting Type', comment = 'DEA="USt.-Buchungsart"';
             DataClassification = CustomerContent;
+            TableRelation = VATPostingTypeNVX.Code;
         }
         field(50004; VATPostingTypeDescNVX; Text[50])
         {
-            CalcFormula = lookup(VATPostingTypeNVX.Description where(Code = field(VATPostingTypeDescNVX)));
+            CalcFormula = lookup(VATPostingTypeNVX.Description where(Code = field(VATPostingTypeNVX)));
+            Caption = 'VAT Posting Type Description', comment = 'DEA="USt.-Buchungsart Beschreibung"';
             Editable = false;
             FieldClass = FlowField;
         }

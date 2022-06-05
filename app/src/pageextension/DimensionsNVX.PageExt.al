@@ -22,33 +22,32 @@ pageextension 50004 "DimensionsNVX" extends Dimensions
 
                 trigger OnAction()
                 var
-                    DimensionValue: Record "Dimension Value";
-                    UserSetup: Record "User Setup";
+                    // DimensionValue: Record "Dimension Value";
+                    // UserSetup: Record "User Setup";
                     AppMgt: Codeunit AppMgtNVX;
                 begin
-                    GLSetup.GetRecordOnce();
-                    AppMgt.AllowdBusinessFieldsForUser();
-                    AppMgt.GetUserSetup(UserSetup, true);
-                    DimensionValue.FilterGroup(2);
-                    DimensionValue.SetRange("Dimension Code", GLSetup.ShortcutDimension9CodeNVX);
-                    DimensionValue.SetFilter(ShortcutDimension5CodeNVX, AppMgt.GetBusinessFieldFilterNVX());
-                    DimensionValue.FilterGroup(0);
-                    Page.Run(Page::"Dimension Values", DimensionValue);
+                    AppMgt.OnLookupShortcutDimension5Code();
+                    // GLSetup.GetRecordOnce();
+                    // AppMgt.AllowdBusinessFieldsForUser();
+                    // AppMgt.GetUserSetup(UserSetup, true);
+                    // DimensionValue.FilterGroup(2);
+                    // DimensionValue.SetRange("Dimension Code", GLSetup.ShortcutDimension9CodeNVX);
+                    // DimensionValue.SetFilter(ShortcutDimension5CodeNVX, AppMgt.GetBusinessFieldFilterNVX());
+                    // DimensionValue.FilterGroup(0);
+                    // Page.Run(Page::"Dimension Values", DimensionValue);
                 end;
             }
         }
     }
 
     trigger OnAfterGetCurrRecord()
+    var
+        GLSetup: Record "General Ledger Setup";
     begin
         GLSetup.GetRecordOnce();
-        SetupReminderExtension.GetRecordOnce();
-
-        StandardPageDimensionValuesVisible := Rec.Code <> GlSetup.ShortcutDimension9CodeNVX;
+        StandardPageDimensionValuesVisible := Rec.Code <> GlSetup."Shortcut Dimension 5 Code";
     end;
 
     var
-        GLSetup: Record "General Ledger Setup";
-        SetupReminderExtension: Record "ReminderExtensionSetupNVX";
         StandardPageDimensionValuesVisible: Boolean;
 }

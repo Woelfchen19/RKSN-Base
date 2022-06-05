@@ -51,7 +51,7 @@ page 50034 ReminderExtensionSetupCardNVX
             Action(Initialize)
             {
                 ApplicationArea = All;
-                Caption = 'Ininzialize', comment = 'DEA="Inizialisieren"';
+                Caption = 'Initialize', comment = 'DEA="Initialisieren"';
                 Image = Setup;
 
                 trigger OnAction()

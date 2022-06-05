@@ -16,6 +16,7 @@ codeunit 50024 "UpgradeMgtNVX"
         WebSiteUriIBANTxt: Label 'https://www.smart-rechner.de/iban_pruefen/rechner.php';
 
     procedure Upgrade()
+
     begin
         InsertSetupPropertyForField();
         InitializeDimensionCustomer();
