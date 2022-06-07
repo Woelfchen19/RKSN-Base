@@ -65,6 +65,11 @@ pageextension 50047 "UserSetupNVX" extends "User Setup"
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Setup dynamic Fields field.', Comment = 'DEA="setup dynamische Felder erlaubt"';
             }
+            field(AllowedModifyIssuedReminderNVX; Rec.AllowedModifyIssuedReminderNVX)
+            {
+                ToolTip = 'Specifies the value of the Allowed modify Issued Reminder field.', Comment = 'DEA="Änderungen registrierte Mahnungen zulassen"';
+                ApplicationArea = All;
+            }
             field(AllowedDimension5CodeNVX; Rec.AllowedDimension5CodeChangeNVX)
             {
                 ToolTip = 'Specifies the value of the Allowed modify Business Field field.', Comment = 'DEA=""Änderung Code Dim.Geschäftsfeld erlaubt"';

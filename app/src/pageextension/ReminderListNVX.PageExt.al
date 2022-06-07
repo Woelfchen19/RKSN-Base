@@ -2,8 +2,52 @@ pageextension 50064 "ReminderListNVX" extends "Reminder List"
 {
     layout
     {
-    }
+        modify("Shortcut Dimension 1 Code")
+        {
+            Editable = DimEditable1;
+            Visible = DimVisible1;
+        }
+        modify("Shortcut Dimension 2 Code")
+        {
+            Editable = DimEditable2;
+            Visible = DimVisible2;
+        }
+        addafter("Shortcut Dimension 2 Code")
+        {
+            field(Shortcutdimension5CodeNVX; ShortcutDims[5])
+            {
+                ApplicationArea = All;
+                CaptionClass = '1,2,5';
+                Editable = DimEditable5;
+                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5));
+                Visible = DimVisible5;
 
+                trigger OnValidate()
+                begin
+                    AppMgt.OnValidateShortcutDimension(Rec, ShortcutDims[5]);
+                end;
+
+                trigger OnLookup(var Text: Text): Boolean
+                begin
+                    AppMgt.OnLookupShortcutDimension5Code(ShortcutDims[5]);
+                    AppMgt.OnAfterLookupshortcutDimension5Code(Rec, xRec, ShortcutDims[5]);
+                end;
+            }
+            field(Shortcutdimension7CodeNVX; ShortcutDims[7])
+            {
+                ApplicationArea = All;
+                CaptionClass = '1,2,7';
+                Editable = DimEditable7;
+                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(7));
+                Visible = DimVisible7;
+
+                trigger OnValidate()
+                begin
+                    DimMgt.ValidateShortcutDimValues(7, ShortcutDims[7], Rec."Dimension Set ID");
+                end;
+            }
+        }
+    }
     var
         AppMgt: Codeunit AppMgtNVX;
         DimMgt: Codeunit DimensionManagement;

@@ -19,7 +19,12 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
         }
         field(50003; AllowedDimension5CodeChangeNVX; Boolean)
         {
-            Caption = 'Allowed modify Business Field', comment = 'DEA=""Änderung Code Dim.Geschäftsfeld erlaubt"';
+            Caption = 'Allowed modify Businessfield', comment = 'DEA="Änderung Code Dim.Geschäftsfeld erlaubt"';
+            DataClassification = CustomerContent;
+        }
+        field(50004; AllowedModifyIssuedReminderNVX; Boolean)
+        {
+            Caption = 'Allowed modify Issued Reminder', comment = 'DEA="Änderungen registrierte Mahnungen zulassen"';
             DataClassification = CustomerContent;
         }
         field(50010; PBSetupNVX; Boolean)

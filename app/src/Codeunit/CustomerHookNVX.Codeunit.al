@@ -8,6 +8,6 @@ codeunit 50023 "CustomerHookNVX"
     begin
         Appmgt.InsertPKShortCutdimension(Rec);
         AppMgt.InsertPKDefaultDim(Rec);
+        AppMgt.SetCustomerPostingGroup(Rec);
     end;
-
 }

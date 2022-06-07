@@ -4,15 +4,13 @@ tableextension 50015 "SalesHeaderNVX" extends "Sales Header"
     {
         field(50000; "ShortcutDimension5CodeNVX"; Code[20])
         {
-            DataClassification = CustomerContent;
             Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimensioncode 5"';
+            DataClassification = CustomerContent;
 
             trigger OnLookup()
-            var
-                DimensionShortcutDimension5Code: Code[20];
             begin
-                DimensionShortcutDimension5Code := AppMgt.OnLookupShortcutDimension5Code();
-                AppMgt.OnAfterLookupshortcutDimension5Code(Rec, xRec, DimensionShortcutDimension5Code);
+                if AppMgt.OnLookupShortcutDimension5Code(Rec.ShortcutDimension5CodeNVX) then
+                    AppMgt.OnAfterLookupshortcutDimension5Code(Rec, xRec, Rec.ShortcutDimension5CodeNVX);
             end;
 
             trigger OnValidate()

@@ -28,11 +28,9 @@ pageextension 50063 "ReminderNVX" extends Reminder
                 end;
 
                 trigger OnLookup(var Text: Text): Boolean
-                var
-                    DimensionShortcutDimension5Code: Code[20];
                 begin
-                    DimensionShortcutDimension5Code := AppMgt.OnLookupShortcutDimension5Code();
-                    AppMgt.OnAfterLookupshortcutDimension5Code(Rec, xRec, DimensionShortcutDimension5Code);
+                    if AppMgt.OnLookupShortcutDimension5Code(ShortcutDims[5]) then
+                        AppMgt.OnAfterLookupshortcutDimension5Code(Rec, xRec, ShortcutDims[5]);
                 end;
             }
             field(Shortcutdimension7CodeNVX; ShortcutDims[7])
@@ -51,10 +49,27 @@ pageextension 50063 "ReminderNVX" extends Reminder
         }
     }
 
+    actions
+    {
+        addafter(Statistics)
+        {
+            action(IssuedReminderEditNVX)
+            {
+                Caption = 'Issued Reminder editable', comment = 'DEA="Registrierte Mahnung bearbeiten"';
+                ApplicationArea = All;
+                Visible = IssuedReminderEditVisible;
+                Image = EditReminder;
+                RunObject = page IssuedReminderEditNVX;
+                RunPageLink = "No." = FIELD("No.");
+            }
+        }
+    }
+
     var
         AppMgt: Codeunit AppMgtNVX;
         DimMgt: Codeunit DimensionManagement;
         DimEditable: array[10] of Boolean;
+        IssuedReminderEditVisible: Boolean;
         DimEditable1: Boolean;
         DimEditable2: Boolean;
         DimEditable3: Boolean;

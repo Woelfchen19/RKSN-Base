@@ -35,4 +35,14 @@ codeunit 50007 "GenJnlPostLineHookNVX"
         VATEntry.CopyShortCutDimensionsFromDimensionValuesNVX();
     end;
 
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnCustPostApplyCustLedgEntryOnBeforeCheckPostingGroup', '', true, true)]
+    local procedure OnCustPostApplyCustLedgEntryOnBeforeCheckPostingGroup(var GenJournalLine: Record "Gen. Journal Line"; var Customer: Record "Customer")
+    var
+        CustomerBusinessField: Record CustomerBusinessFieldNVX;
+    begin
+        if CustomerBusinessField.Get(Customer."No.", GenJournalLine.ShortcutDimension5CodeNVX) then
+            GenJournalLine."Posting Group" := CustomerBusinessField."Shortcut Dimension 5 Code";
+    end;
+
 }

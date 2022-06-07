@@ -16,7 +16,7 @@ tableextension 50013 "ReminderTermsNVX" extends "Reminder Terms"
 
             trigger OnLookup()
             begin
-                Rec.ShortcutDimension5CodeNVX := AppMgt.OnLookupShortcutDimension5Code();
+                AppMgt.OnLookupShortcutDimension5Code(Rec.ShortcutDimension5CodeNVX);
             end;
         }
     }

@@ -151,7 +151,7 @@ pageextension 50026 "SQuoteNVX" extends "Sales Quote"
 
     trigger OnOpenPage()
     begin
-        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Sales Credit Memo", DimVisible, DimEditable);
+        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Sales Quote", DimVisible, DimEditable);
         AppMgt.GetFieldsPropertyVisibleEditableBySetup(
             DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
                 DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);

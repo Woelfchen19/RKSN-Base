@@ -119,7 +119,7 @@ table 50041 "CustomerBusinessFieldNVX"
         "Last Modified By User" := Format(UserId);
     end;
 
-    procedure InsertSetupBusinessField(CustomerNo: Code[20]; OnlyAll: Boolean)
+    procedure InsertSetupBusinessField(CustomerNo: Code[20])
     var
         CustomerBusinessField: Record CustomerBusinessFieldNVX;
         DimensionValue: Record "Dimension Value";
@@ -133,14 +133,13 @@ table 50041 "CustomerBusinessFieldNVX"
         DimensionValue.Reset();
         DimensionValue.SetRange("Dimension Code", GLSetup."Shortcut Dimension 5 Code");
         if DimensionValue.FindSet() then begin
-            if not OnlyAll then
-                repeat
-                    CustomerBusinessField.Init();
-                    CustomerBusinessField."Customer No." := CustomerNo;
-                    CustomerBusinessField."Shortcut Dimension 5 Code" := DimensionValue.Code;
-                    CustomerBusinessField."Dimension Value Type" := DimensionValue."Dimension Value Type";
-                    if CustomerBusinessField.Insert(true) then;
-                until DimensionValue.Next() = 0;
+            repeat
+                CustomerBusinessField.Init();
+                CustomerBusinessField."Customer No." := CustomerNo;
+                CustomerBusinessField."Shortcut Dimension 5 Code" := DimensionValue.Code;
+                CustomerBusinessField."Dimension Value Type" := DimensionValue."Dimension Value Type";
+                if CustomerBusinessField.Insert(true) then;
+            until DimensionValue.Next() = 0;
 
             CustomerBusinessField.Init();
             CustomerBusinessField."Customer No." := CustomerNo;
@@ -216,4 +215,49 @@ table 50041 "CustomerBusinessFieldNVX"
                 sort := 7;
         end
     end;
+
+    // procedure ShowPageCustomerBankAccount(Fielddnumber: integer; DimShortcutBusinessField: enum DimShortcutBusinessFieldNVX; CodeFilter: Code[20]; var ReturnValue: Code[20])
+    // var
+    //     CustomerBusinessField: Record CustomerBusinessFieldNVX;
+    //     AppMgt: Codeunit AppMgtNVX;
+    // begin
+    //     case DimShortcutBusinessField of
+    //         DimShortcutBusinessField::PB:
+    //             case Fielddnumber of
+    //                 CustomerBusinessField.FieldNo("Preferred BankAccount Code"):
+    //                     AppMgt.ShowPageCustomerBankAccount(
+    //                         StrSubstNo(TokenPreferredBankAccountCodeTok, CodeFilter), ReturnValue);
+    //                 CustomerBusinessField.FieldNo("Payment Method Code"):
+    //                     AppMgt.ShowPagePaymentMethods(
+    //                         StrSubstNo(TokenPaymentMethodTok, CodeFilter), ReturnValue);
+    //                 CustomerBusinessField.FieldNo("Payment Terms Code"):
+    //                     AppMgt.ShowPagePaymentTerms(
+    //                         StrSubstNo(TokenPaymentMethodTok, CodeFilter), ReturnValue);
+    //                 CustomerBusinessField.FieldNo("Reminder Terms Code"):
+    //                     AppMgt.ShowPageReminderTerms(CodeFilter, ReturnValue);
+    //             end;
+    //     AppMgt.ShowPageCustomerBankAccount(
+    //         StrSubstNo(TokenPreferredBankAccountCodeTok, PBShortcutDimension5Code), PBPreferredBankAccountCode);
+    // DimShortcutBusinessField::RD:
+    //     AppMgt.ShowPageCustomerBankAccount(
+    //         StrSubstNo(TokenPreferredBankAccountCodeTok, RDShortcutDimension5Code), RDPreferredBankAccountCode);
+    // DimShortcutBusinessField::RH:
+    //     AppMgt.ShowPageCustomerBankAccount(
+    //         StrSubstNo(TokenPreferredBankAccountCodeTok, RHShortcutDimension5Code), RHPreferredBankAccountCode);
+    // DimShortcutBusinessField::SO:
+    //     AppMgt.ShowPageCustomerBankAccount(
+    //         StrSubstNo(TokenPreferredBankAccountCodeTok, SOShortcutDimension5Code), SOPreferredBankAccountCode);
+    // DimShortcutBusinessField::EA:
+    //     AppMgt.ShowPageCustomerBankAccount(
+    //         StrSubstNo(TokenPreferredBankAccountCodeTok, EAShortcutDimension5Code), EAPreferredBankAccountCode);
+    // DimShortcutBusinessField::EV:
+    //     AppMgt.ShowPageCustomerBankAccount(
+    //         StrSubstNo(TokenPreferredBankAccountCodeTok, EVShortcutDimension5Code), EVPreferredBankAccountCode);
+    // end;
+    // end;
+
+    // var
+    //     TokenPaymentMethodTok: Label 'K', comment = 'DEA="K"', Locked = true;
+    //     TokenPaymentTermsTok: Label 'K', comment = 'DEA="K"', Locked = true;
+    //     TokenPreferredBankAccountCodeTok: Label '*%1*', comment = 'DEA="*%1*"', Locked = true;
 }

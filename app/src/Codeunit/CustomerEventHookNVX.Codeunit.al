@@ -5,6 +5,6 @@ codeunit 50032 "CustomerEventHookNVX"
     var
         CustomerBusinessField: Record CustomerBusinessFieldNVX;
     begin
-        CustomerBusinessField.InsertSetupBusinessField(Rec."No.", false);
+        CustomerBusinessField.InsertSetupBusinessField(Rec."No.");
     end;
 }

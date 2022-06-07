@@ -47,7 +47,7 @@ page 50032 "CustBusinessFieldCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            Rec."Reminder Terms Code" := AppMgt.ShowPageReminderTerms(Rec."Shortcut Dimension 5 Code");
+                            AppMgt.ShowPageReminderTerms(Rec."Shortcut Dimension 5 Code", Rec."Reminder Terms Code");
                         end;
                     }
                     field("Payment Terms Code"; Rec."Payment Terms Code")
@@ -56,7 +56,7 @@ page 50032 "CustBusinessFieldCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            Rec."Payment Terms Code" := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
+                            AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok, Rec."Payment Terms Code");
                         end;
                     }
                     field("Payment Method Code"; Rec."Payment Method Code")
@@ -65,7 +65,7 @@ page 50032 "CustBusinessFieldCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            Rec."Payment Method Code" := AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok);
+                            AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok, Rec."Payment Method Code");
                         end;
                     }
                     field("Preferred BankAccount Code"; Rec."Preferred BankAccount Code")
@@ -74,9 +74,8 @@ page 50032 "CustBusinessFieldCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            Rec."Preferred BankAccount Code" :=
-                                AppMgt.ShowPageCustomerBankAccount(
-                                    StrSubstNo(TokenPreferredBankAccountCodeTok, "Shortcut Dimension 5 Code"));
+                            AppMgt.ShowPageCustomerBankAccount(
+                                StrSubstNo(TokenPreferredBankAccountCodeTok, Rec."Shortcut Dimension 5 Code"), Rec."Preferred BankAccount Code");
                         end;
                     }
                 }

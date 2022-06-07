@@ -1,4 +1,4 @@
-codeunit 50005 "Codeunit80HookNVX"
+codeunit 50005 SalesPostHookNVX
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforeTestGBPG', '', false, false)]
     local procedure SkipGBPGTestfield(var IsHandled: Boolean)

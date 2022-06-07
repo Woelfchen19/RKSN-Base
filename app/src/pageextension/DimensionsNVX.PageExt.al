@@ -22,19 +22,9 @@ pageextension 50004 "DimensionsNVX" extends Dimensions
 
                 trigger OnAction()
                 var
-                    // DimensionValue: Record "Dimension Value";
-                    // UserSetup: Record "User Setup";
                     AppMgt: Codeunit AppMgtNVX;
                 begin
-                    AppMgt.OnLookupShortcutDimension5Code();
-                    // GLSetup.GetRecordOnce();
-                    // AppMgt.AllowdBusinessFieldsForUser();
-                    // AppMgt.GetUserSetup(UserSetup, true);
-                    // DimensionValue.FilterGroup(2);
-                    // DimensionValue.SetRange("Dimension Code", GLSetup.ShortcutDimension9CodeNVX);
-                    // DimensionValue.SetFilter(ShortcutDimension5CodeNVX, AppMgt.GetBusinessFieldFilterNVX());
-                    // DimensionValue.FilterGroup(0);
-                    // Page.Run(Page::"Dimension Values", DimensionValue);
+                    AppMgt.OnLookupShortcutDimension5Code(Rec.Code);
                 end;
             }
         }

@@ -32,7 +32,7 @@ tableextension 50012 "DimensionValueNVX" extends "Dimension Value"
 
             trigger OnLookup()
             begin
-                Rec.ShortcutDimension5CodeNVX := AppMgt.OnLookupShortcutDimension5Code();
+                AppMgt.OnLookupShortcutDimension5Code(ShortcutDimension5CodeNVX);
             end;
         }
         field(50003; VATPostingTypeNVX; Code[10])

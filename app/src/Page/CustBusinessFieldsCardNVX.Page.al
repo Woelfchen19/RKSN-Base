@@ -2,10 +2,11 @@ page 50033 "CustBusinessFieldsCardNVX"
 {
 
     Caption = 'Customer Business Fields', comment = 'DEA="Debitoren Geschäftsfelder"';
+    DataCaptionFields = "Customer No.";
+    DeleteAllowed = false;
+    InsertAllowed = false;
     PageType = Card;
     SourceTable = CustomerBusinessFieldNVX;
-    DataCaptionFields = "Customer No.";
-
     layout
     {
         area(content)
@@ -50,7 +51,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            PBReminderTermsCode := AppMgt.ShowPageReminderTerms(PBShortcutDimension5Code);
+                            AppMgt.ShowPageReminderTerms(PBShortcutDimension5Code, PBReminderTermsCode);
                         end;
                     }
                     field(PBPaymentTermsCodeNVX; PBPaymentTermsCode)
@@ -62,7 +63,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            PBPaymentTermsCode := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
+                            AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok, PBPaymentTermsCode);
                         end;
                     }
                     field(PBPaymentMethodCodeNVX; PBPaymentMethodCode)
@@ -74,7 +75,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            PBPaymentMethodCode := AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok);
+                            AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok, PBPaymentMethodCode);
                         end;
                     }
                     field(PBPreferredBankAccountCodeNVX; PBPreferredBankAccountCode)
@@ -86,9 +87,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            PBPreferredBankAccountCode :=
-                                AppMgt.ShowPageCustomerBankAccount(
-                                    StrSubstNo(TokenPreferredBankAccountCodeTok, PBShortcutDimension5Code));
+                            ShowPageCustomerBankAccount(DimShortcutBusinessField::PB);
                         end;
                     }
                 }
@@ -132,7 +131,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            RDReminderTermsCode := AppMgt.ShowPageReminderTerms(RDShortcutDimension5Code);
+                            AppMgt.ShowPageReminderTerms(RDShortcutDimension5Code, RDReminderTermsCode);
                         end;
                     }
                     field(RDPaymentTermsCodeNVX; RDPaymentTermsCode)
@@ -144,7 +143,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            RDPaymentTermsCode := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
+                            AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok, RDPaymentTermsCode);
                         end;
                     }
                     field(RDPaymentMethodCodeNVX; RDPaymentMethodCode)
@@ -156,7 +155,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            RDPaymentMethodCode := AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok);
+                            AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok, RDPaymentMethodCode);
                         end;
                     }
                     field(RDPreferredBankAccountCodeNVX; RDPreferredBankAccountCode)
@@ -164,13 +163,11 @@ page 50033 "CustBusinessFieldsCardNVX"
                         ApplicationArea = All;
                         Caption = 'Preferred Bank Account Code', comment = 'DEA="Bevorzugter Bankkkontocode"';
                         TableRelation = "Customer Bank Account";
-                        ToolTip = '', comment = 'DEA=""';
+                        ToolTip = 'Prevered Bankacccount Code', comment = 'DEA="Bevorzugter Bankkontocode"';
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            RDPreferredBankAccountCode :=
-                                AppMgt.ShowPageCustomerBankAccount(
-                                    StrSubstNo(TokenPreferredBankAccountCodeTok, RDShortcutDimension5Code));
+                            ShowPageCustomerBankAccount(DimShortcutBusinessField::RD);
                         end;
                     }
                 }
@@ -214,7 +211,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            RHReminderTermsCode := AppMgt.ShowPageReminderTerms(RHShortcutDimension5Code);
+                            AppMgt.ShowPageReminderTerms(RHShortcutDimension5Code, RHReminderTermsCode);
                         end;
                     }
                     field(RHPaymentTermsCodeNVX; RHPaymentTermsCode)
@@ -226,7 +223,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            RHPaymentTermsCode := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
+                            AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok, RHPaymentTermsCode);
                         end;
                     }
                     field(RHPaymentMethodCodeNVX; RHPaymentMethodCode)
@@ -238,7 +235,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            RHPaymentMethodCode := AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok);
+                            AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok, RHPaymentMethodCode);
                         end;
                     }
                     field(RHPreferredBankAccountCodeNVX; RHPreferredBankAccountCode)
@@ -250,9 +247,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            RHPreferredBankAccountCode :=
-                                AppMgt.ShowPageCustomerBankAccount(
-                                    StrSubstNo(TokenPreferredBankAccountCodeTok, RHShortcutDimension5Code));
+                            ShowPageCustomerBankAccount(DimShortcutBusinessField::RH);
                         end;
                     }
                 }
@@ -297,7 +292,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            EAReminderTermsCode := AppMgt.ShowPageReminderTerms(EAShortcutDimension5Code);
+                            AppMgt.ShowPageReminderTerms(EAShortcutDimension5Code, EAReminderTermsCode);
                         end;
                     }
                     field(EAPaymentTermsCodeNVX; EAPaymentTermsCode)
@@ -309,7 +304,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            EAPaymentTermsCode := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
+                            AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok, EAPaymentTermsCode);
                         end;
                     }
                     field(EAPaymentMethodCodeNVX; EAPaymentMethodCode)
@@ -321,7 +316,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            EAPaymentMethodCode := AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok);
+                            AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok, EAPaymentMethodCode);
                         end;
                     }
                     field(EAPreferredBankAccountCodeNVX; EAPreferredBankAccountCode)
@@ -333,9 +328,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            EAPreferredBankAccountCode :=
-                                AppMgt.ShowPageCustomerBankAccount(
-                                    StrSubstNo(TokenPreferredBankAccountCodeTok, EAShortcutDimension5Code));
+                            ShowPageCustomerBankAccount(DimShortcutBusinessField::EA);
                         end;
                     }
                 }
@@ -380,7 +373,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            SOReminderTermsCode := AppMgt.ShowPageReminderTerms(SOShortcutDimension5Code);
+                            AppMgt.ShowPageReminderTerms(SOShortcutDimension5Code, SOReminderTermsCode);
                         end;
                     }
                     field(SOPaymentTermsCodeNVX; SOPaymentTermsCode)
@@ -392,7 +385,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            SOPaymentTermsCode := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
+                            AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok, SOPaymentTermsCode);
                         end;
                     }
                     field(SOPaymentMethodCodeNVX; SOPaymentMethodCode)
@@ -404,7 +397,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            SOPaymentMethodCode := AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok);
+                            AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok, SOPaymentMethodCode);
                         end;
                     }
                     field(SOPreferredBankAccountCodeNVX; SOPreferredBankAccountCode)
@@ -416,9 +409,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            SOPreferredBankAccountCode :=
-                                AppMgt.ShowPageCustomerBankAccount(
-                                    StrSubstNo(TokenPreferredBankAccountCodeTok, SOShortcutDimension5Code));
+                            ShowPageCustomerBankAccount(DimShortcutBusinessField::SO);
                         end;
                     }
                 }
@@ -464,7 +455,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            EVReminderTermsCode := AppMgt.ShowPageReminderTerms(EVShortcutDimension5Code);
+                            AppMgt.ShowPageReminderTerms(EVShortcutDimension5Code, EVReminderTermsCode);
                         end;
                     }
                     field(EVPaymentTermsCodeNVX; EVPaymentTermsCode)
@@ -476,7 +467,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            EVPaymentTermsCode := AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok);
+                            AppMgt.ShowPagePaymentTerms(TokenPaymentTermsTok, EVPaymentTermsCode);
                         end;
                     }
                     field(EVPaymentMethodCodeNVX; EVPaymentMethodCode)
@@ -488,7 +479,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            EVPaymentMethodCode := AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok);
+                            AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok, EVPaymentMethodCode);
                         end;
                     }
                     field(EVPreferredBankAccountCodeNVX; EVPreferredBankAccountCode)
@@ -500,9 +491,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            EVPreferredBankAccountCode :=
-                                AppMgt.ShowPageCustomerBankAccount(
-                                    StrSubstNo(TokenPreferredBankAccountCodeTok, EVShortcutDimension5Code));
+                            ShowPageCustomerBankAccount(DimShortcutBusinessField::EV);
                         end;
                     }
                 }
@@ -519,6 +508,96 @@ page 50033 "CustBusinessFieldsCardNVX"
     trigger OnClosePage()
     begin
         ModifySetupBusinessField();
+    end;
+
+    var
+        SetupBusinessField: Record CustomerBusinessFieldNVX;
+        DimensionValue: Record "Dimension Value";
+        GLSetup: Record "General Ledger Setup";
+        UserSetup: Record "User Setup";
+        AppMgt: Codeunit AppMgtNVX;
+
+        EASetupVisible: Boolean;
+        EVSetupVisible: Boolean;
+        PBSetupVisible: Boolean;
+        RDSetupVisible: Boolean;
+        RHSetupVisible: Boolean;
+        SOSetupVisible: Boolean;
+        EAPaymentMethodCode: Code[10];
+        EAPaymentTermsCode: Code[10];
+        EAReminderTermsCode: Code[10];
+        EVPaymentMethodCode: Code[10];
+        EVPaymentTermsCode: Code[10];
+        EVReminderTermsCode: Code[10];
+
+        PBPaymentMethodCode: Code[10];
+
+        PBPaymentTermsCode: Code[10];
+
+        PBReminderTermsCode: Code[10];
+        RDPaymentMethodCode: Code[10];
+        RDPaymentTermsCode: Code[10];
+        RDReminderTermsCode: Code[10];
+        RHPaymentMethodCode: Code[10];
+        RHPaymentTermsCode: Code[10];
+        RHReminderTermsCode: Code[10];
+        SOPaymentMethodCode: Code[10];
+        SOPaymentTermsCode: Code[10];
+        SOReminderTermsCode: Code[10];
+        EAPreferredBankAccountCode: Code[20];
+        EAShortcutDimension5Code: Code[20];
+        EAShortcutDimension9Code: Code[20];
+        EVPreferredBankAccountCode: Code[20];
+        EVShortcutDimension5Code: Code[20];
+        EVShortcutDimension9Code: Code[20];
+
+        PBPreferredBankAccountCode: Code[20];
+        PBShortcutDimension5Code: Code[20];
+
+        PBShortcutDimension9Code: Code[20];
+        RDPreferredBankAccountCode: Code[20];
+
+        RDShortcutDimension5Code: Code[20];
+        RDShortcutDimension9Code: Code[20];
+        RHPreferredBankAccountCode: Code[20];
+        RHShortcutDimension5Code: Code[20];
+        RHShortcutDimension9Code: Code[20];
+        SOPreferredBankAccountCode: Code[20];
+        SOShortcutDimension5Code: Code[20];
+        SOShortcutDimension9Code: Code[20];
+        DimShortcutBusinessField: enum DimShortcutBusinessFieldNVX;
+        TokenPaymentMethodTok: Label 'K', comment = 'DEA="K"', Locked = true;
+
+        TokenPaymentTermsTok: Label 'K', comment = 'DEA="K"', Locked = true;
+        TokenPreferredBankAccountCodeTok: Label '*%1*', comment = 'DEA="*%1*"', Locked = true;
+
+    procedure ShowPageCustomerBankAccount(DimShortcutBusinessField: enum DimShortcutBusinessFieldNVX)
+    begin
+        case DimShortcutBusinessField of
+            DimShortcutBusinessField::PB:
+                AppMgt.ShowPageCustomerBankAccount(
+                    StrSubstNo(TokenPreferredBankAccountCodeTok, PBShortcutDimension5Code), PBPreferredBankAccountCode);
+            DimShortcutBusinessField::RD:
+                AppMgt.ShowPageCustomerBankAccount(
+                    StrSubstNo(TokenPreferredBankAccountCodeTok, RDShortcutDimension5Code), RDPreferredBankAccountCode);
+            DimShortcutBusinessField::RH:
+                AppMgt.ShowPageCustomerBankAccount(
+                    StrSubstNo(TokenPreferredBankAccountCodeTok, RHShortcutDimension5Code), RHPreferredBankAccountCode);
+            DimShortcutBusinessField::SO:
+                AppMgt.ShowPageCustomerBankAccount(
+                    StrSubstNo(TokenPreferredBankAccountCodeTok, SOShortcutDimension5Code), SOPreferredBankAccountCode);
+            DimShortcutBusinessField::EA:
+                AppMgt.ShowPageCustomerBankAccount(
+                    StrSubstNo(TokenPreferredBankAccountCodeTok, EAShortcutDimension5Code), EAPreferredBankAccountCode);
+            DimShortcutBusinessField::EV:
+                AppMgt.ShowPageCustomerBankAccount(
+                    StrSubstNo(TokenPreferredBankAccountCodeTok, EVShortcutDimension5Code), EVPreferredBankAccountCode);
+        end;
+    end;
+
+    procedure ShowPageReminderTerms()
+    begin
+
     end;
 
     local procedure AssignBusinessFields(OnClosePage: Boolean)
@@ -652,7 +731,7 @@ page 50033 "CustBusinessFieldsCardNVX"
             SetupBusinessField.Reset();
             SetupBusinessField.SetRange("Customer No.", Rec."Customer No.");
             if SetupBusinessField.IsEmpty() then
-                SetupBusinessField.InsertSetupBusinessField(Rec."Customer No.", true);
+                SetupBusinessField.InsertSetupBusinessField(Rec."Customer No.");
             AppMgt.SetActiveAndStateCustomerBusinessLines(Rec."Customer No.");
         end;
     end;
@@ -662,65 +741,5 @@ page 50033 "CustBusinessFieldsCardNVX"
         AssignBusinessFields(true);
         AppMgt.SetActiveAndStateCustomerBusinessLines("Customer No.");
     end;
-
-    var
-        DimensionValue: Record "Dimension Value";
-        SetupBusinessField: Record CustomerBusinessFieldNVX;
-        UserSetup: Record "User Setup";
-        GLSetup: Record "General Ledger Setup";
-        AppMgt: Codeunit AppMgtNVX;
-        PBShortcutDimension5Code: Code[20];
-
-        RDShortcutDimension5Code: Code[20];
-        RHShortcutDimension5Code: Code[20];
-        EAShortcutDimension5Code: Code[20];
-        SOShortcutDimension5Code: Code[20];
-        EVShortcutDimension5Code: Code[20];
-
-        PBShortcutDimension9Code: Code[20];
-        RDShortcutDimension9Code: Code[20];
-        RHShortcutDimension9Code: Code[20];
-        EAShortcutDimension9Code: Code[20];
-        SOShortcutDimension9Code: Code[20];
-        EVShortcutDimension9Code: Code[20];
-
-        PBReminderTermsCode: Code[10];
-        RDReminderTermsCode: Code[10];
-        RHReminderTermsCode: Code[10];
-        EAReminderTermsCode: Code[10];
-        SOReminderTermsCode: Code[10];
-        EVReminderTermsCode: Code[10];
-
-        PBPaymentTermsCode: Code[10];
-        RDPaymentTermsCode: Code[10];
-        RHPaymentTermsCode: Code[10];
-        EAPaymentTermsCode: Code[10];
-        SOPaymentTermsCode: Code[10];
-        EVPaymentTermsCode: Code[10];
-
-        PBPaymentMethodCode: Code[10];
-        RDPaymentMethodCode: Code[10];
-        RHPaymentMethodCode: Code[10];
-        EAPaymentMethodCode: Code[10];
-        SOPaymentMethodCode: Code[10];
-        EVPaymentMethodCode: Code[10];
-
-        PBPreferredBankAccountCode: Code[20];
-        RDPreferredBankAccountCode: Code[20];
-        RHPreferredBankAccountCode: Code[20];
-        EAPreferredBankAccountCode: Code[20];
-        SOPreferredBankAccountCode: Code[20];
-        EVPreferredBankAccountCode: Code[20];
-
-        EASetupVisible: Boolean;
-        EVSetupVisible: Boolean;
-        PBSetupVisible: Boolean;
-        RDSetupVisible: Boolean;
-        RHSetupVisible: Boolean;
-        SOSetupVisible: Boolean;
-
-        TokenPaymentTermsTok: Label 'K', comment = 'DEA="K"', Locked = true;
-        TokenPaymentMethodTok: Label 'K', comment = 'DEA="K"', Locked = true;
-        TokenPreferredBankAccountCodeTok: Label '*%1*', comment = 'DEA="*%1*"', Locked = true;
 
 }

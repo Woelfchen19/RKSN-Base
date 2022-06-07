@@ -40,8 +40,15 @@ pageextension 50018 "PstdSInvoiceNVX" extends "Posted Sales Invoice"
                 Editable = false;
             }
         }
+        addbefore(IncomingDocAttachFactBox)
+        {
+            part(DimensionSetEntriesFactBoxNVX; "Dimension Set Entries FactBox")
+            {
+                ApplicationArea = Basic, Suite;
+                SubPageLink = "Dimension Set ID" = FIELD("Dimension Set ID");
+            }
+        }
     }
-
     var
         SalesInvoiceHeaderNVX: Record SalesInvoiceHeaderNVX;
 

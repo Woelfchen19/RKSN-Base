@@ -5,7 +5,8 @@ page 50062 "CustBusinessFieldListNVX"
     SourceTable = CustomerBusinessFieldNVX;
     UsageCategory = Administration;
     DelayedInsert = true;
-
+    Editable = false;
+    CardPageId = CustBusinessFieldsCardNVX;
     layout
     {
         area(Content)
@@ -90,11 +91,13 @@ page 50062 "CustBusinessFieldListNVX"
         UserSetup: Record "User Setup";
         AppMgt: Codeunit AppMgtNVX;
     begin
-        AppMgt.GetUserSetup(UserSetup, true);
-        AppMgt.AllowdBusinessFieldsForUser();
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
+            AppMgt.GetUserSetup(UserSetup, true);
+            AppMgt.AllowdBusinessFieldsForUser();
 
-        Rec.FilterGroup(2);
-        Rec.SetRange("Shortcut Dimension 5 Code", UserSetup.BusinessFieldFilterNVX);
-        Rec.FilterGroup(0);
+            Rec.FilterGroup(2);
+            Rec.SetFilter("Shortcut Dimension 5 Code", UserSetup.BusinessFieldFilterNVX);
+            Rec.FilterGroup(0);
+        end;
     end;
 }
