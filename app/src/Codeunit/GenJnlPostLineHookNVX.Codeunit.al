@@ -10,13 +10,22 @@ codeunit 50007 "GenJnlPostLineHookNVX"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterCustLedgEntryInsert', '', true, true)]
     local procedure OnAfterCustLedgEntryInsert(var CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
     begin
-        CustLedgerEntry.CopyShortCutDimensionsFromDimensionValuesNVX();
+        //CustLedgerEntry.CopyShortCutDimensionsFromDimensionValuesNVX();
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeCustLedgEntryInsert', '', true, true)]
     local procedure OnBeforeInsertCustLedgEntry(var CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    var
+        AppMgt: Codeunit AppMgtNVX;
     begin
-        CustLedgerEntry.SetAssociatedNVX();
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
+            CustLedgerEntry.CopyShortCutDimensionsFromDimensionValuesNVX();
+            CustLedgerEntry.SetAssociatedNVX();
+            // AppMgt.GetPaymentMethodCodeCustomer(
+            //     CustLedgerEntry."Customer No.",
+            //         CustLedgerEntry.ShortcutDimension5CodeNVX,
+            //             CustLedgerEntry."Payment Method Code");
+        end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertDtldCustLedgEntry', '', true, true)]
@@ -24,7 +33,6 @@ codeunit 50007 "GenJnlPostLineHookNVX"
     begin
         DtldCustLedgEntry.DimensionSetIDNVX := GenJournalLine."Dimension Set ID";
         DtldCustLedgEntry.CopyShortCutDimensionsFromDimensionValuesNVX();
-
     end;
 
 

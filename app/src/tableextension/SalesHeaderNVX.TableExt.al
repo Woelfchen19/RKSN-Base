@@ -10,7 +10,7 @@ tableextension 50015 "SalesHeaderNVX" extends "Sales Header"
             trigger OnLookup()
             begin
                 if AppMgt.OnLookupShortcutDimension5Code(Rec.ShortcutDimension5CodeNVX) then
-                    AppMgt.OnAfterLookupshortcutDimension5Code(Rec, xRec, Rec.ShortcutDimension5CodeNVX);
+                    AppMgt.OnAfterLookupshortcutDimension5Code(Rec);
             end;
 
             trigger OnValidate()

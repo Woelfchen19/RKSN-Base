@@ -9,7 +9,7 @@ tableextension 50006 "VATEntryNVX" extends "VAT Entry"
             Editable = false;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
-        field(50001; GlobalDimension5CodeNVX; Code[20])
+        field(50001; ShortcutDimension5CodeNVX; Code[20])
         {
             Caption = 'Global Dimension 5 Code';
             CaptionClass = '1,2,5';
@@ -37,7 +37,7 @@ tableextension 50006 "VATEntryNVX" extends "VAT Entry"
     begin
         GetShortcutDimensionsNVX(DimensionSetIDNVX, ShortcutDimCode);
         GlobalDimension2CodeNVX := ShortcutDimCode[2];
-        GlobalDimension5CodeNVX := ShortcutDimCode[5];
+        ShortcutDimension5CodeNVX := ShortcutDimCode[5];
     end;
 
     procedure GetShortcutDimensionsNVX(DimSetID: Integer; VAR ShortcutDimCode: ARRAY[10] OF Code[20])

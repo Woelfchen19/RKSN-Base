@@ -293,6 +293,16 @@
           <note from="Developer" annotates="general" priority="2">DEA="Debitor Geschäftsfeld (Dim 5)"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 764101286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Balance BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Debitorensaldo Geschäftsfeld""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field BalanceBusinessField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 1606370654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BankAccount Customer BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankkonto Debitor Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field BankAccountCustBusinessField - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1911021804 - Field 207956542 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Created By User</source>
           <note from="Developer" annotates="general" priority="2">DEA="Erstellt von Benutzer"</note>
@@ -302,6 +312,11 @@
           <source>Creation Date</source>
           <note from="Developer" annotates="general" priority="2">DEA="Errichtungsdatum"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Creation Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 2210284121 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Currency Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1911021804 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer No.</source>
@@ -323,6 +338,16 @@
           <note from="Developer" annotates="general" priority="2">DEA="Name"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Dimension5Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 1861213814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 1 Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Global Dimension 1 Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 588326355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 2 Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Global Dimension 2 Filter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1911021804 - Field 2151862291 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Last Modified By User</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zuletzt geändert von Benutzer"</note>
@@ -335,12 +360,12 @@
         </trans-unit>
         <trans-unit id="Table 1911021804 - Field 3855271124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Method Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Zahlungsformcode"</note>
+          <note from="Developer" annotates="general" priority="2">DEA="Zahlungsform Geschäftsfeld"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Payment Method Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1911021804 - Field 966740350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Terms Code</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Zlg.-Bedingungscode"</note>
+          <note from="Developer" annotates="general" priority="2">DEA="Zlg.Bedigung Geschäftsfeld"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Payment Terms Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1911021804 - Field 4022108433 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -9283,6 +9308,31 @@
           <note from="Developer" annotates="general" priority="2">DEA="Wollen Sie wirklich die Einrichtungstabelle löschen und neu befüllen? "</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - Method InsertSetupPropertyForField - NamedType ConfirmDeleteMsg</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1640292380 - Method 4034257309 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit GenJournalLineHookNVX - Method CheckAllocationCodeDim - NamedType WrongDim2Err</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1640292380 - Method 4034257309 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit GenJournalLineHookNVX - Method CheckAllocationCodeDim - NamedType WrongDimErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1640292380 - Method 950186398 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugeordneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit GenJournalLineHookNVX - Method InsertAllocationCode - NamedType WrongDimErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1640292380 - Method 2096719793 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit GenJournalLineHookNVX - Method InsertAllocationCodeInAccompaniedTable - NamedType WrongDimErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2732553539 - Method 1487222207 - NamedType 4220959294" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You are not allowed to use this Product Posting Group in this context. It belongs to the Datawarehouse</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Es ist nicht möglich, diese Produktbuchungsgruppe zuzuordnen, da diese zum Datawarehouse gehört!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit GLAccountHookNVX - Method CheckInventoryValueZero - NamedType WrongPrdPstGrpErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1301608615 - Method 2104807177 - NamedType 2957784316" size-unit="char" translate="yes" xml:space="preserve">
           <source>You have no permission for this Ledger entry!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!"</note>
@@ -9312,11 +9362,6 @@
           <source>This shipment has already been reversed</source>
           <note from="Developer" annotates="general" priority="2">DEA="Diese Lieferung wurde bereits storniert."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckSalesShipment - NamedType AlreadyReversedErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2241308083 - Method 1487222207 - NamedType 4220959294" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You are not allowed to use this Product Posting Group in this context. It belongs to the Datawarehouse</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Es ist nicht möglich, diese Produktbuchungsgruppe zuzuordnen, da diese zum Datawarehouse gehört!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table15HookNVX - Method CheckInventoryValueZero - NamedType WrongPrdPstGrpErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 2614021276 - Method 3561337113 - NamedType 3687080399" size-unit="char" translate="yes" xml:space="preserve">
           <source>There are Ledger Entries for this Item and you are missing the necessary user rights to change the inventory posting group.</source>
@@ -9417,26 +9462,6 @@
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5621HookNVX - Method InsertAllocationCodeInAccompaniedTable - NamedType WrongDimErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2689053120 - Method 4034257309 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table81HookNVX - Method CheckAllocationCodeDim - NamedType WrongDim2Err</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2689053120 - Method 4034257309 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table81HookNVX - Method CheckAllocationCodeDim - NamedType WrongDimErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2689053120 - Method 950186398 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugeordneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table81HookNVX - Method InsertAllocationCode - NamedType WrongDimErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2689053120 - Method 2096719793 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table81HookNVX - Method InsertAllocationCodeInAccompaniedTable - NamedType WrongDimErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 4200806882 - Method 1565414135 - NamedType 2478128905" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item has inventory value. Dimension have to match the setup.</source>
@@ -9713,10 +9738,55 @@
           <note from="Developer" annotates="general" priority="2">DEA=""</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Shortcut Dimension 9 Code - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2112578491 - Control 3779331977 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Info User</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Benutzerinformationen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control InfoUser - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2112578491 - Control 207956542 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Created By User field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Created By User - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2112578491 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Creation Date field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Creation Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2112578491 - Control 2151862291 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Last Modified By User field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Last Modified By User - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2112578491 - Control 2626717425 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Last Modified Date field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Last Modified Date - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2112578491 - Control 3346365350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Management</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zahlungsmanagement"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Payment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2112578491 - Control 764101286 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Balance BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA=""Debitorensaldo Geschäftsfeld""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control BalanceBusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2112578491 - Control 1606370654 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the BankAccount Customer BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankkonto Debitor Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control BankAccountCustBusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2112578491 - Action 2160814374 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show the Customer Balance Review</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Führt den Bericht RKST Debitor Saldenrückblick aus"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Action RKSTBalanceReview - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2112578491 - Action 2160814374 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RKST Balance Review</source>
+          <note from="Developer" annotates="general" priority="2">DEA="RKST Debitor Saldenrückblick"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Action RKSTBalanceReview - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4040994964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Activ Businessfields</source>
@@ -13523,10 +13593,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VatEntriesNVX - Control GlobalDimension2CodeNVX - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2830905203 - Control 2219498941 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
+        <trans-unit id="PageExtension 2830905203 - Control 1875382756 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
           <source>Specifies the value of the Global Dimension 2 Code field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VatEntriesNVX - Control GlobalDimension5CodeNVX - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VatEntriesNVX - Control ShortcutDimension5CodeNVX - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1685173316 - Control 3251619654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 434101636">
           <source>Purchase VAT as Expense</source>
@@ -14083,10 +14153,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATEntryNVX - Field GlobalDimension2CodeNVX - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2146477609 - Field 2219498941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
+        <trans-unit id="TableExtension 2146477609 - Field 1875382756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
           <source>Global Dimension 5 Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATEntryNVX - Field GlobalDimension5CodeNVX - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VATEntryNVX - Field ShortcutDimension5CodeNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 3877659762 - EnumValue 3263198591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Blanket Order</source>

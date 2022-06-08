@@ -28,7 +28,6 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
             field(ShortcutDimension5CodeNVX; Rec.ShortcutDimension5CodeNVX)
             {
                 ApplicationArea = All;
-                TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5), Blocked = CONST(false));
                 ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
                 Editable = DimEditable5;
                 Visible = DimVisible5;

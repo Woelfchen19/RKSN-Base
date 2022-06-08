@@ -24,11 +24,11 @@ codeunit 50025 "DimensionValueHookNVX"
         AppMgt.AllowdBusinessFieldsForUser();
 
         //ToDo
-        if Rec."Global Dimension No." = 9 then begin
-            Rec.FilterGroup(2);
-            Rec.SetFilter(Code, UserSetup.BusinessFieldFilterNVX);
-            Rec.FilterGroup(0);
-        end;
+        // if Rec."Global Dimension No." = 9 then begin
+        //     Rec.FilterGroup(2);
+        //     Rec.SetFilter(Code, UserSetup.BusinessFieldFilterNVX);
+        //     Rec.FilterGroup(0);
+        // end;
     end;
 
     local procedure GetGlobalDimensionNo(DimensionCode: Code[20]): Integer

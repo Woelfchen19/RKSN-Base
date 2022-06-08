@@ -76,13 +76,22 @@ pageextension 50058 "ValueEntriesNVX" extends "Value Entries"
 
     trigger OnOpenPage()
     begin
+        AppMgt.GetUserSetup(UserSetup, true);
+        AppMgt.AllowdBusinessFieldsForUser();
+
         AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Value Entries", DimVisible, DimEditable);
         AppMgt.GetFieldsPropertyVisibleEditableBySetup(
             DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
                 DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
+
+        Rec.FilterGroup(2);
+        Rec.SetFilter(ShortcutDimension5CodeNVX, UserSetup.BusinessFieldFilterNVX);
+        Rec.FilterGroup(0);
+
     end;
 
     var
+        UserSetup: Record "User Setup";
         AppMgt: Codeunit AppMgtNVX;
         DimEditable: array[10] of Boolean;
         DimEditable1: Boolean;

@@ -164,14 +164,34 @@ pageextension 50054 "DetailedCustLedgEntriesNVX" extends "Detailed Cust. Ledg. E
     }
 
     trigger OnOpenPage()
+    var
+        BusinessFieldFilter: Code[40];
     begin
-        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Detailed Cust. Ledg. Entries", DimVisible, DimEditable);
+        AppMgt.GetUserSetup(UserSetup, true);
+
+        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Customer Ledger Entries", DimVisible, DimEditable);
+
         AppMgt.GetFieldsPropertyVisibleEditableBySetup(
             DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
                 DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
+
+        DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
+        DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
+
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
+            BusinessFieldFilter := AppMgt.GetBusinessFieldFilterNVX();
+            Rec.FilterGroup(2);
+            if BusinessFieldFilter = '' then
+                Rec.SetFilter("Entry No.", '%1', -1)
+            else
+                Rec.SetFilter(ShortcutDimension5CodeNVX, BusinessFieldFilter);
+            Rec.FilterGroup(0);
+        end;
     end;
 
     var
+
+        UserSetup: Record "User Setup";
         AppMgt: Codeunit AppMgtNVX;
         DimEditable: array[10] of Boolean;
         DimEditable1: Boolean;

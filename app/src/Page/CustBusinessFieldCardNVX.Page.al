@@ -38,6 +38,30 @@ page 50032 "CustBusinessFieldCardNVX"
                         end;
                     }
                 }
+                group(InfoUser)
+                {
+                    Caption = 'Info User', comment = 'DEA="Benutzerinformationen"';
+                    field("Created By User"; Rec."Created By User")
+                    {
+                        ToolTip = 'Specifies the value of the Created By User field.';
+                        ApplicationArea = All;
+                    }
+                    field("Creation Date"; Rec."Creation Date")
+                    {
+                        ToolTip = 'Specifies the value of the Creation Date field.';
+                        ApplicationArea = All;
+                    }
+                    field("Last Modified By User"; Rec."Last Modified By User")
+                    {
+                        ToolTip = 'Specifies the value of the Last Modified By User field.';
+                        ApplicationArea = All;
+                    }
+                    field("Last Modified Date"; Rec."Last Modified Date")
+                    {
+                        ToolTip = 'Specifies the value of the Last Modified Date field.';
+                        ApplicationArea = All;
+                    }
+                }
                 group(Payment)
                 {
                     Caption = 'Payment Management', comment = 'DEA="Zahlungsmanagement"';
@@ -68,6 +92,19 @@ page 50032 "CustBusinessFieldCardNVX"
                             AppMgt.ShowPagePaymentMethods(TokenPaymentMethodTok, Rec."Payment Method Code");
                         end;
                     }
+                    field(BankAccountCustBusinessField; Rec.BankAccountCustBusinessField)
+                    {
+                        ToolTip = 'Specifies the value of the BankAccount Customer BusinessField field.', Comment = 'DEA="Bankkonto Debitor Geschäftsfeld"';
+                        ApplicationArea = All;
+
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            AppMgt.ShowPageCustomerBankAccount(
+                                Rec."Customer No.",
+                                    StrSubstNo(TokenPreferredBankAccountCodeTok, Rec."Shortcut Dimension 5 Code"),
+                                        Rec.BankAccountCustBusinessField);
+                        end;
+                    }
                     field("Preferred BankAccount Code"; Rec."Preferred BankAccount Code")
                     {
                         ApplicationArea = All;
@@ -75,13 +112,38 @@ page 50032 "CustBusinessFieldCardNVX"
                         trigger OnLookup(var Text: Text): Boolean
                         begin
                             AppMgt.ShowPageCustomerBankAccount(
-                                StrSubstNo(TokenPreferredBankAccountCodeTok, Rec."Shortcut Dimension 5 Code"), Rec."Preferred BankAccount Code");
+                                Rec."Customer No.",
+                                    StrSubstNo(TokenPreferredBankAccountCodeTok, Rec."Shortcut Dimension 5 Code"),
+                                        Rec."Preferred BankAccount Code");
                         end;
+                    }
+                    field(BalanceBusinessField; Rec.BalanceBusinessField)
+                    {
+                        ToolTip = 'Specifies the value of the Balance BusinessField field.', Comment = 'DEA=""Debitorensaldo Geschäftsfeld""';
+                        ApplicationArea = All;
                     }
                 }
                 group(Reminder)
                 {
                 }
+            }
+        }
+    }
+
+    actions
+    {
+        area(Reporting)
+        {
+            action(RKSTBalanceReview)
+            {
+                Caption = 'RKST Balance Review', comment = 'DEA=RKST Debitor Saldenrückblick';
+                ApplicationArea = All;
+                Promoted = true;
+                Image = Report;
+                PromotedCategory = Report;
+                PromotedOnly = true;
+                RunObject = Report "Detail Trial Balance";
+                ToolTip = 'Show the Customer Balance Review', comment = 'DEA="Führt den Bericht RKST Debitor Saldenrückblick aus"';
             }
         }
     }

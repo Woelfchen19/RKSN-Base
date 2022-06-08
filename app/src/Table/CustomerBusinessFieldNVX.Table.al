@@ -18,25 +18,46 @@ table 50041 "CustomerBusinessFieldNVX"
             Caption = 'State', comment = 'DEA="Status"';
             DataClassification = CustomerContent;
         }
+        field(3; "BankAccountCustBusinessField"; Code[20])
+        {
+            Caption = 'BankAccount Customer BusinessField', comment = 'DEA="Bankkonto Debitor Geschäftsfeld"';
+            TableRelation = "Customer Bank Account";
+        }
+        field(4; BalanceBusinessField; Decimal)
+        {
+            AutoFormatType = 1;
+            CalcFormula = Sum("Detailed Cust. Ledg. Entry".Amount WHERE("Customer No." = FIELD("Customer No."),
+                                                                         "Initial Entry Global Dim. 1" = FIELD("Global Dimension 1 Filter"),
+                                                                         "Initial Entry Global Dim. 2" = FIELD("Global Dimension 2 Filter"),
+                                                                         "Currency Code" = FIELD("Currency Filter"),
+                                                                         ShortcutDimension5CodeNVX = field("Shortcut Dimension 5 Code")));
+            Caption = 'Balance BusinessField', comment = 'DEA="Debitorensaldo Geschäftsfeld"';
+            Editable = false;
+            FieldClass = FlowField;
+        }
         field(5; "Creation Date"; DateTime)
         {
             Caption = 'Creation Date', comment = 'DEA="Errichtungsdatum"';
+            Editable = false;
         }
         field(6; "Created By User"; Code[50])
         {
             Caption = 'Created By User', comment = 'DEA="Erstellt von Benutzer"';
             DataClassification = EndUserIdentifiableInformation;
             TableRelation = User."User Name";
+            Editable = false;
         }
         field(7; "Last Modified Date"; DateTime)
         {
             Caption = 'Last Modified Date', comment = 'DEA="Datum der letzten Änderung"';
+            Editable = false;
         }
         field(8; "Last Modified By User"; Code[50])
         {
             Caption = 'Last Modified By User', comment = 'DEA="Zuletzt geändert von Benutzer"';
             DataClassification = EndUserIdentifiableInformation;
             TableRelation = User."User Name";
+            Editable = false;
         }
         field(10; "Shortcut Dimension 5 Code"; Code[20])
         {
@@ -57,7 +78,26 @@ table 50041 "CustomerBusinessFieldNVX"
             OptionCaption = 'Standard,Heading,Total,Begin-Total,End-Total';
             OptionMembers = Standard,Heading,Total,"Begin-Total","End-Total";
         }
-
+        field(13; "Global Dimension 1 Filter"; Code[20])
+        {
+            Caption = 'Global Dimension 1 Filter';
+            CaptionClass = '1,3,1';
+            FieldClass = FlowFilter;
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
+        }
+        field(14; "Global Dimension 2 Filter"; Code[20])
+        {
+            Caption = 'Global Dimension 2 Filter';
+            CaptionClass = '1,3,2';
+            FieldClass = FlowFilter;
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+        }
+        field(15; "Currency Filter"; Code[10])
+        {
+            Caption = 'Currency Filter';
+            FieldClass = FlowFilter;
+            TableRelation = Currency;
+        }
         field(20; "Shortcut Dimension 9 Code"; Code[20])
         {
             Caption = 'Shortcut Dimension 9 Code';
@@ -73,13 +113,13 @@ table 50041 "CustomerBusinessFieldNVX"
         }
         field(22; "Payment Terms Code"; Code[10])
         {
-            Caption = 'Payment Terms Code', comment = 'DEA="Zlg.-Bedingungscode"';
+            Caption = 'Payment Terms Code', comment = 'DEA="Zlg.Bedigung Geschäftsfeld"';
             DataClassification = CustomerContent;
             TableRelation = "Payment Terms";
         }
         field(23; "Payment Method Code"; Code[10])
         {
-            Caption = 'Payment Method Code', comment = 'DEA="Zahlungsformcode"';
+            Caption = 'Payment Method Code', comment = 'DEA="Zahlungsform Geschäftsfeld"';
             DataClassification = CustomerContent;
             TableRelation = "Payment Method";
         }

@@ -1,4 +1,4 @@
-codeunit 50021 "Table81HookNVX"
+codeunit 50021 GenJournalLineHookNVX
 {
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Shortcut Dimension 2 Code', false, false)]
     local procedure CheckAllocationCodeDim(var Rec: Record "Gen. Journal Line")
@@ -95,6 +95,24 @@ codeunit 50021 "Table81HookNVX"
         AssosiatedDepartment.SetRange("Shortcut Dimension 5 Code", ShortcutDimCode[5]);
         if AssosiatedDepartment.FindFirst() then
             Rec.ValidateShortcutDimCode(1, AssosiatedDepartment."Shortcut Dimension 1 Code");
+    end;
+
+
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterCopyGenJnlLineFromSalesHeaderPayment', '', true, true)]
+    local procedure OnAfterCopyGenJnlLineFromSalesHeaderPayment(SalesHeader: Record "Sales Header"; var GenJournalLine: Record "Gen. Journal Line")
+    var
+        PaymentTerms: Record "Payment Terms";
+        PaymentMethod: Record "Payment Method";
+        AppMgt: Codeunit AppMgtNVX;
+    begin
+        AppMgt.GetPaymentTermsCode(SalesHeader."Sell-to Customer No.", SalesHeader.ShortcutDimension5CodeNVX, GenJournalLine."Payment Terms Code");
+        AppMgt.GetPaymentMethodCodeCustomer(SalesHeader."Sell-to Customer No.", SalesHeader.ShortcutDimension5CodeNVX, GenJournalLine."Payment Method Code");
+        if PaymentTerms.Get(GenJournalLine."Payment Terms Code") then begin
+            GenJournalLine."Due Date" := CalcDate(PaymentTerms."Due Date Calculation", SalesHeader."Document Date");
+            GenJournalLine."Pmt. Discount Date" := CalcDate(PaymentTerms."Discount Date Calculation", SalesHeader."Document Date");
+        end;
+        if PaymentMethod.Get(GenJournalLine."Payment Method Code") then
+            GenJournalLine.Validate("Payment Discount %", PaymentTerms."Discount %");
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Shortcut Dimension 1 Code', false, false)]

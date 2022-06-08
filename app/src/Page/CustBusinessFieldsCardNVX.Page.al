@@ -576,21 +576,23 @@ page 50033 "CustBusinessFieldsCardNVX"
         case DimShortcutBusinessField of
             DimShortcutBusinessField::PB:
                 AppMgt.ShowPageCustomerBankAccount(
-                    StrSubstNo(TokenPreferredBankAccountCodeTok, PBShortcutDimension5Code), PBPreferredBankAccountCode);
+                    Rec."Customer No.",
+                        StrSubstNo(TokenPreferredBankAccountCodeTok, PBShortcutDimension5Code),
+                            PBPreferredBankAccountCode);
             DimShortcutBusinessField::RD:
-                AppMgt.ShowPageCustomerBankAccount(
+                AppMgt.ShowPageCustomerBankAccount(Rec."Customer No.",
                     StrSubstNo(TokenPreferredBankAccountCodeTok, RDShortcutDimension5Code), RDPreferredBankAccountCode);
             DimShortcutBusinessField::RH:
-                AppMgt.ShowPageCustomerBankAccount(
+                AppMgt.ShowPageCustomerBankAccount(Rec."Customer No.",
                     StrSubstNo(TokenPreferredBankAccountCodeTok, RHShortcutDimension5Code), RHPreferredBankAccountCode);
             DimShortcutBusinessField::SO:
-                AppMgt.ShowPageCustomerBankAccount(
+                AppMgt.ShowPageCustomerBankAccount(Rec."Customer No.",
                     StrSubstNo(TokenPreferredBankAccountCodeTok, SOShortcutDimension5Code), SOPreferredBankAccountCode);
             DimShortcutBusinessField::EA:
-                AppMgt.ShowPageCustomerBankAccount(
+                AppMgt.ShowPageCustomerBankAccount(Rec."Customer No.",
                     StrSubstNo(TokenPreferredBankAccountCodeTok, EAShortcutDimension5Code), EAPreferredBankAccountCode);
             DimShortcutBusinessField::EV:
-                AppMgt.ShowPageCustomerBankAccount(
+                AppMgt.ShowPageCustomerBankAccount(Rec."Customer No.",
                     StrSubstNo(TokenPreferredBankAccountCodeTok, EVShortcutDimension5Code), EVPreferredBankAccountCode);
         end;
     end;
