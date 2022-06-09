@@ -69,7 +69,6 @@ table 50041 "CustomerBusinessFieldNVX"
             Caption = 'Shortcut Dimension 9 Code', comment = 'DEA="Shortcutdimension 9 Code"';
             CaptionClass = '1,2,9';
             DataClassification = CustomerContent;
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
         }
         field(11; ShortcutdimensionCode5Name; Text[50])
         {
@@ -80,8 +79,10 @@ table 50041 "CustomerBusinessFieldNVX"
         }
         field(12; ShortcutdimensionCode9Name; Text[50])
         {
+            CalcFormula = lookup("Dimension Value".Name where("Global Dimension No." = const(9), Code = field("Shortcut Dimension 9 Code")));
             Caption = 'Shortcutdimension 9 Name', comment = 'DEA="Shortcutdimension 9 Name"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(13; "Dimension Value Type"; Option)
         {
@@ -111,10 +112,10 @@ table 50041 "CustomerBusinessFieldNVX"
         }
         field(17; Customername; Text[100])
         {
-            Caption = 'Customername', comment = 'DEA="Debitorname"';
-            FieldClass = FlowField;
             CalcFormula = lookup(Customer.Name where("No." = Field("Customer No.")));
+            Caption = 'Customername', comment = 'DEA="Debitorname"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(21; "Reminder Terms Code"; Code[10])
         {

@@ -9743,10 +9743,10 @@
           <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfeld"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control BusinessFields - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 1307142958 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2112578491 - Control 2380178257 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Shortcut Dimension 5 Name field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Dimension5Name - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control ShortcutdimensionCode5Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2112578491 - Control 3779331977 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Info User</source>

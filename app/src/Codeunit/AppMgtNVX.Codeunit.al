@@ -498,9 +498,10 @@ codeunit 50026 "AppMgtNVX"
     begin
     end;
 
-    procedure OnLookupByBusinessFieldDimension(BusinessFieldDimension: Code[20]; GlobalDimensionNo: integer): Code[20]
+    procedure OnLookupByBusinessField9Dimension(BusinessFieldDimension: Code[20]; GlobalDimensionNo: integer; var DimensionValueCode: Code[20]): Boolean
     var
         DimensionValue: Record "Dimension Value";
+        DimensionValues: Page "Dimension Values";
     begin
         DimensionValue.Reset();
         DimensionValue.FilterGroup(2);
@@ -511,8 +512,14 @@ codeunit 50026 "AppMgtNVX"
             DimensionValue.SetRange("Dimension Value Type", DimensionValue."Dimension Value Type"::Standard);
         DimensionValue.FilterGroup(0);
 
-        if PAGE.RUNMODAL(PAGE::"Dimension Value List", DimensionValue) = Action::LookupOK then
-            exit(DimensionValue.Code);
+        DimensionValues.SetTableView(DimensionValue);
+        DimensionValues.LookupMode(true);
+        if DimensionValues.RunModal() = Action::LookupOK then begin
+            DimensionValues.GetRecord(DimensionValue);
+            DimensionValueCode := DimensionValue.Code;
+            exit(true);
+        end else
+            exit(false);
     end;
 
     procedure OnLookupShortcutDimension5Code(var DimensionValueCode: Code[20]): Boolean

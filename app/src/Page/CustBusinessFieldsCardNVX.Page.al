@@ -35,7 +35,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            PBShortcutDimension9Code := AppMgt.OnLookupByBusinessFieldDimension(PBShortcutDimension5Code, 9);
+                            AppMgt.OnLookupByBusinessField9Dimension(PBShortcutDimension5Code, 9, PBShortcutDimension9Code);
                         end;
                     }
                 }
@@ -115,7 +115,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            RDShortcutDimension9Code := AppMgt.OnLookupByBusinessFieldDimension(RDShortcutDimension5Code, 9);
+                            AppMgt.OnLookupByBusinessField9Dimension(RDShortcutDimension5Code, 9, RDShortcutDimension9Code);
                         end;
                     }
                 }
@@ -195,7 +195,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            RHShortcutDimension9Code := AppMgt.OnLookupByBusinessFieldDimension(RHShortcutDimension5Code, 9);
+                            AppMgt.OnLookupByBusinessField9Dimension(RHShortcutDimension5Code, 9, RHShortcutDimension9Code);
                         end;
                     }
                 }
@@ -276,7 +276,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            EAShortcutDimension9Code := AppMgt.OnLookupByBusinessFieldDimension(EAShortcutDimension5Code, 9);
+                            AppMgt.OnLookupByBusinessField9Dimension(EAShortcutDimension5Code, 9, EAShortcutDimension9Code);
                         end;
                     }
                 }
@@ -357,7 +357,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            SOShortcutDimension9Code := AppMgt.OnLookupByBusinessFieldDimension(SOShortcutDimension5Code, 9);
+                            AppMgt.OnLookupByBusinessField9Dimension(SOShortcutDimension5Code, 9, SOShortcutDimension9Code);
                         end;
                     }
                 }
@@ -438,8 +438,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            EVShortcutDimension9Code :=
-                                AppMgt.OnLookupByBusinessFieldDimension(EVShortcutDimension5Code, 9);
+                            AppMgt.OnLookupByBusinessField9Dimension(EVShortcutDimension5Code, 9, EVShortcutDimension9Code);
                         end;
                     }
                 }

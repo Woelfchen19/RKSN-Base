@@ -15,7 +15,7 @@ page 50032 "CustBusinessFieldCardNVX"
                 group(BusinessFields)
                 {
                     Caption = 'Business Field', comment = 'DEA="Geschäftsfeld"';
-                    field(Dimension5Name; Rec.ShortcutdimensionCode5Name)
+                    field(ShortcutdimensionCode5Name; Rec.ShortcutdimensionCode5Name)
                     {
                         ToolTip = 'Specifies the value of the Shortcut Dimension 5 Name field.';
                         ApplicationArea = All;
@@ -35,16 +35,6 @@ page 50032 "CustBusinessFieldCardNVX"
                         ShowCaption = false;
                         ToolTip = 'Specifies the value of the Shortcut Dimension 9 Name field.', Comment = 'DEA="Name"';
                         ApplicationArea = All;
-
-                        trigger OnValidate()
-                        begin
-                            UpdateShortcutdimensionCode9Description();
-                        end;
-
-                        trigger OnLookup(var Text: Text): Boolean
-                        begin
-                            UpdateShortcutdimensionCode9Description();
-                        end;
                     }
                     field("Shortcut Dimension 9 Code"; Rec."Shortcut Dimension 9 Code")
                     {
@@ -53,7 +43,8 @@ page 50032 "CustBusinessFieldCardNVX"
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
-                            Rec."Shortcut Dimension 9 Code" := AppMgt.OnLookupByBusinessFieldDimension(Rec."Shortcut Dimension 5 Code", 9);
+                            AppMgt.OnLookupByBusinessField9Dimension(
+                                Rec."Shortcut Dimension 5 Code", 9, Rec."Shortcut Dimension 9 Code");
                         end;
                     }
                 }
@@ -170,29 +161,13 @@ page 50032 "CustBusinessFieldCardNVX"
         }
     }
 
-    trigger OnAfterGetCurrRecord()
+    trigger OnOpenPage()
     begin
-        UpdateShortcutdimensionCode9Description();
-    end;
-
-    trigger OnClosePage()
-    begin
-        AppMgt.SetActiveAndStateCustomerBusinessLines("Customer No.");
-    end;
-
-    local procedure UpdateShortcutdimensionCode9Description()
-    begin
-        if Rec."Shortcut Dimension 9 Code" = '' then
-            exit;
-
         GLSetup.GetRecordOnce();
-        DimensionValue.Get(GLSetup.ShortcutDimension9CodeNVX, Rec."Shortcut Dimension 9 Code");
-        Rec.ShortcutdimensionCode9Name := DimensionValue.Name;
     end;
 
     var
         GLSetup: Record "General Ledger Setup";
-        DimensionValue: Record "Dimension Value";
         AppMgt: Codeunit AppMgtNVX;
         TokenPaymentTermsTok: Label 'K', comment = 'DEA="K"', Locked = true;
         TokenPaymentMethodTok: Label 'K', comment = 'DEA="K"', Locked = true;
