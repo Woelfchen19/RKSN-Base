@@ -43,7 +43,7 @@ page 50062 "CustBusinessFieldListNVX"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
                 }
-                field(Dimension5Name; Rec.Dimension5Name)
+                field(Dimension5Name; Rec.ShortcutdimensionCode5Name)
                 {
                     ToolTip = 'Specifies the value of the Shortcut Dimension 5 Name field.';
                     ApplicationArea = All;

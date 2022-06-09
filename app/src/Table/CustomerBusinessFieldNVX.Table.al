@@ -1,11 +1,10 @@
 table 50041 "CustomerBusinessFieldNVX"
 {
     Caption = 'Customer Businessfield (Dim 5)', comment = 'DEA="Debitor Geschäftsfeld (Dim 5)"';
-    DataCaptionFields = "Customer No.";
+    DataCaptionFields = "Customer No.", Customername;
     DataClassification = CustomerContent;
     DrillDownPageId = CustBusinessFieldListNVX;
     LookupPageId = CustBusinessFieldListNVX;
-
     fields
     {
         field(1; "Customer No."; Code[20])
@@ -18,7 +17,7 @@ table 50041 "CustomerBusinessFieldNVX"
             Caption = 'State', comment = 'DEA="Status"';
             DataClassification = CustomerContent;
         }
-        field(3; "BankAccountCustBusinessField"; Code[20])
+        field(3; BankAccountCustBusinessField; Code[20])
         {
             Caption = 'BankAccount Customer BusinessField', comment = 'DEA="Bankkonto Debitor Geschäftsfeld"';
             TableRelation = "Customer Bank Account";
@@ -44,8 +43,8 @@ table 50041 "CustomerBusinessFieldNVX"
         {
             Caption = 'Created By User', comment = 'DEA="Erstellt von Benutzer"';
             DataClassification = EndUserIdentifiableInformation;
-            TableRelation = User."User Name";
             Editable = false;
+            TableRelation = User."User Name";
         }
         field(7; "Last Modified Date"; DateTime)
         {
@@ -56,54 +55,66 @@ table 50041 "CustomerBusinessFieldNVX"
         {
             Caption = 'Last Modified By User', comment = 'DEA="Zuletzt geändert von Benutzer"';
             DataClassification = EndUserIdentifiableInformation;
-            TableRelation = User."User Name";
             Editable = false;
+            TableRelation = User."User Name";
         }
-        field(10; "Shortcut Dimension 5 Code"; Code[20])
+        field(9; "Shortcut Dimension 5 Code"; Code[20])
         {
-            Caption = 'Shortcut Dimension 5 Code';
+            Caption = 'Shortcut Dimension 5 Code', comment = 'DEA="Shortcutdimension 5 Code"';
             CaptionClass = '1,2,5';
             DataClassification = CustomerContent;
         }
-        field(11; Dimension5Name; Text[50])
+        field(10; "Shortcut Dimension 9 Code"; Code[20])
+        {
+            Caption = 'Shortcut Dimension 9 Code', comment = 'DEA="Shortcutdimension 9 Code"';
+            CaptionClass = '1,2,9';
+            DataClassification = CustomerContent;
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
+        }
+        field(11; ShortcutdimensionCode5Name; Text[50])
         {
             CalcFormula = lookup("Dimension Value".Name where("Global Dimension No." = const(5), Code = field("Shortcut Dimension 5 Code")));
-            Caption = 'Shortcut Dimension 5 Name', comment = 'DEA="Name"';
+            Caption = 'Shortcutdimension 5 Name', comment = 'DEA="Shortcutdimension 5 Name"';
             Editable = false;
             FieldClass = FlowField;
         }
-        field(12; "Dimension Value Type"; Option)
+        field(12; ShortcutdimensionCode9Name; Text[50])
+        {
+            Caption = 'Shortcutdimension 9 Name', comment = 'DEA="Shortcutdimension 9 Name"';
+            Editable = false;
+        }
+        field(13; "Dimension Value Type"; Option)
         {
             Caption = 'Dimension Value Type';
             OptionCaption = 'Standard,Heading,Total,Begin-Total,End-Total';
             OptionMembers = Standard,Heading,Total,"Begin-Total","End-Total";
         }
-        field(13; "Global Dimension 1 Filter"; Code[20])
+        field(14; "Global Dimension 1 Filter"; Code[20])
         {
             Caption = 'Global Dimension 1 Filter';
             CaptionClass = '1,3,1';
             FieldClass = FlowFilter;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
-        field(14; "Global Dimension 2 Filter"; Code[20])
+        field(15; "Global Dimension 2 Filter"; Code[20])
         {
             Caption = 'Global Dimension 2 Filter';
             CaptionClass = '1,3,2';
             FieldClass = FlowFilter;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
-        field(15; "Currency Filter"; Code[10])
+        field(16; "Currency Filter"; Code[10])
         {
             Caption = 'Currency Filter';
             FieldClass = FlowFilter;
             TableRelation = Currency;
         }
-        field(20; "Shortcut Dimension 9 Code"; Code[20])
+        field(17; Customername; Text[100])
         {
-            Caption = 'Shortcut Dimension 9 Code';
-            CaptionClass = '1,2,9';
-            DataClassification = CustomerContent;
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(9), Blocked = CONST(false));
+            Caption = 'Customername', comment = 'DEA="Debitorname"';
+            FieldClass = FlowField;
+            CalcFormula = lookup(Customer.Name where("No." = Field("Customer No.")));
+            Editable = false;
         }
         field(21; "Reminder Terms Code"; Code[10])
         {
@@ -255,49 +266,4 @@ table 50041 "CustomerBusinessFieldNVX"
                 sort := 7;
         end
     end;
-
-    // procedure ShowPageCustomerBankAccount(Fielddnumber: integer; DimShortcutBusinessField: enum DimShortcutBusinessFieldNVX; CodeFilter: Code[20]; var ReturnValue: Code[20])
-    // var
-    //     CustomerBusinessField: Record CustomerBusinessFieldNVX;
-    //     AppMgt: Codeunit AppMgtNVX;
-    // begin
-    //     case DimShortcutBusinessField of
-    //         DimShortcutBusinessField::PB:
-    //             case Fielddnumber of
-    //                 CustomerBusinessField.FieldNo("Preferred BankAccount Code"):
-    //                     AppMgt.ShowPageCustomerBankAccount(
-    //                         StrSubstNo(TokenPreferredBankAccountCodeTok, CodeFilter), ReturnValue);
-    //                 CustomerBusinessField.FieldNo("Payment Method Code"):
-    //                     AppMgt.ShowPagePaymentMethods(
-    //                         StrSubstNo(TokenPaymentMethodTok, CodeFilter), ReturnValue);
-    //                 CustomerBusinessField.FieldNo("Payment Terms Code"):
-    //                     AppMgt.ShowPagePaymentTerms(
-    //                         StrSubstNo(TokenPaymentMethodTok, CodeFilter), ReturnValue);
-    //                 CustomerBusinessField.FieldNo("Reminder Terms Code"):
-    //                     AppMgt.ShowPageReminderTerms(CodeFilter, ReturnValue);
-    //             end;
-    //     AppMgt.ShowPageCustomerBankAccount(
-    //         StrSubstNo(TokenPreferredBankAccountCodeTok, PBShortcutDimension5Code), PBPreferredBankAccountCode);
-    // DimShortcutBusinessField::RD:
-    //     AppMgt.ShowPageCustomerBankAccount(
-    //         StrSubstNo(TokenPreferredBankAccountCodeTok, RDShortcutDimension5Code), RDPreferredBankAccountCode);
-    // DimShortcutBusinessField::RH:
-    //     AppMgt.ShowPageCustomerBankAccount(
-    //         StrSubstNo(TokenPreferredBankAccountCodeTok, RHShortcutDimension5Code), RHPreferredBankAccountCode);
-    // DimShortcutBusinessField::SO:
-    //     AppMgt.ShowPageCustomerBankAccount(
-    //         StrSubstNo(TokenPreferredBankAccountCodeTok, SOShortcutDimension5Code), SOPreferredBankAccountCode);
-    // DimShortcutBusinessField::EA:
-    //     AppMgt.ShowPageCustomerBankAccount(
-    //         StrSubstNo(TokenPreferredBankAccountCodeTok, EAShortcutDimension5Code), EAPreferredBankAccountCode);
-    // DimShortcutBusinessField::EV:
-    //     AppMgt.ShowPageCustomerBankAccount(
-    //         StrSubstNo(TokenPreferredBankAccountCodeTok, EVShortcutDimension5Code), EVPreferredBankAccountCode);
-    // end;
-    // end;
-
-    // var
-    //     TokenPaymentMethodTok: Label 'K', comment = 'DEA="K"', Locked = true;
-    //     TokenPaymentTermsTok: Label 'K', comment = 'DEA="K"', Locked = true;
-    //     TokenPreferredBankAccountCodeTok: Label '*%1*', comment = 'DEA="*%1*"', Locked = true;
 }

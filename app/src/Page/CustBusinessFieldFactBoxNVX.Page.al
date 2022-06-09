@@ -39,7 +39,7 @@ page 50031 "CustBusinessFieldFactBoxNVX"
                             Page.RunModal(PAGE::CustBusinessFieldCardNVX, CustomerBusinessField);
                     end;
                 }
-                field(Dimension5Name; Rec.Dimension5Name)
+                field(Dimension5Name; Rec.ShortcutdimensionCode5Name)
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleTxt;

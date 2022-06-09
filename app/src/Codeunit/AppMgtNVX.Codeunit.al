@@ -886,7 +886,7 @@ codeunit 50026 "AppMgtNVX"
         OnAfterValidateShortcutDimCode(CustLedgerEntry, ShortcutDimCode);
     end;
 
-    local procedure GetGLSetup()
+    procedure GetGLSetup()
     begin
         if not RecordHasBeenRead then begin
             GLSetup.GetRecordOnce();

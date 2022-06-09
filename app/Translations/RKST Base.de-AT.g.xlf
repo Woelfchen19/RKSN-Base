@@ -323,9 +323,9 @@
         </trans-unit>
         <trans-unit id="Table 1911021804 - Field 764101286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Balance BusinessField</source>
-          <note from="Developer" annotates="general" priority="2">DEA=""Debitorensaldo Geschäftsfeld""</note>
+          <note from="Developer" annotates="general" priority="2">DEA="Debitorensaldo Geschäftsfeld"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field BalanceBusinessField - Property Caption</note>
-          <target>"Debitorensaldo Geschäftsfeld"</target>
+          <target>Debitorensaldo Geschäftsfeld</target>
         </trans-unit>
         <trans-unit id="Table 1911021804 - Field 1606370654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BankAccount Customer BusinessField</source>
@@ -356,6 +356,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Customer No. - Property Caption</note>
           <target>Debitornr.</target>
         </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 1326303013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customername</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Debitorname"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Customername - Property Caption</note>
+          <target>Debitorname</target>
+        </trans-unit>
         <trans-unit id="Table 1911021804 - Field 2284510981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dimension Value Type</source>
           <note from="Developer" annotates="general" priority="2"/>
@@ -365,12 +371,6 @@
           <source>Standard,Heading,Total,Begin-Total,End-Total</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Dimension Value Type - Property OptionCaption</note>
-        </trans-unit>
-        <trans-unit id="Table 1911021804 - Field 1307142958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 5 Name</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Name"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Dimension5Name - Property Caption</note>
-          <target>Name</target>
         </trans-unit>
         <trans-unit id="Table 1911021804 - Field 1861213814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Global Dimension 1 Filter</source>
@@ -420,13 +420,27 @@
         </trans-unit>
         <trans-unit id="Table 1911021804 - Field 405681708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 5 Code</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimension 5 Code"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Shortcut Dimension 5 Code - Property Caption</note>
+          <target>Shortcutdimension 5 Code</target>
         </trans-unit>
         <trans-unit id="Table 1911021804 - Field 2475792064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 9 Code</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimension 9 Code"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field Shortcut Dimension 9 Code - Property Caption</note>
+          <target>Shortcutdimension 9 Code</target>
+        </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 2380178257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcutdimension 5 Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimension 5 Name"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field ShortcutdimensionCode5Name - Property Caption</note>
+          <target>Shortcutdimension 5 Name</target>
+        </trans-unit>
+        <trans-unit id="Table 1911021804 - Field 4002559053 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcutdimension 9 Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimension 9 Name"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field ShortcutdimensionCode9Name - Property Caption</note>
+          <target>Shortcutdimension 9 Name</target>
         </trans-unit>
         <trans-unit id="Table 1911021804 - Field 3007069574 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sort</source>
@@ -11279,10 +11293,15 @@
           <target>Allgemein</target>
         </trans-unit>
         <trans-unit id="Page 2112578491 - Control 2667032929 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Business Fields</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfelder"</note>
+          <source>Business Field</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfeld"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control BusinessFields - Property Caption</note>
-          <target>Geschäftsfelder</target>
+          <target>Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 2112578491 - Control 1307142958 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 5 Name field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Dimension5Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2112578491 - Control 3779331977 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Info User</source>
@@ -11310,29 +11329,29 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Last Modified Date - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 2475792064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source/>
-          <note from="Developer" annotates="general" priority="2">DEA=""</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Shortcut Dimension 9 Code - Property ToolTip</note>
-          <target/>
-        </trans-unit>
         <trans-unit id="Page 2112578491 - Control 3346365350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Management</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zahlungsmanagement"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Payment - Property Caption</note>
           <target>Zahlungsmanagement</target>
         </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 764101286 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Balance BusinessField field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA=""Debitorensaldo Geschäftsfeld""</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control BalanceBusinessField - Property ToolTip</note>
-          <target>"Debitorensaldo Geschäftsfeld"</target>
+        <trans-unit id="Page 2112578491 - Control 1151010992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAMMELKto</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sammelkonto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control ShortcutDimension9Code - Property Caption</note>
+          <target>Sammelkonto</target>
         </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 1606370654 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the BankAccount Customer BusinessField field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Bankkonto Debitor Geschäftsfeld"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control BankAccountCustBusinessField - Property ToolTip</note>
-          <target>Bankkonto Debitor Geschäftsfeld</target>
+        <trans-unit id="Page 2112578491 - Control 2475792064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Shortcut Dimension 9 Code - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="Page 2112578491 - Control 4002559053 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 9 Name field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Name"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control ShortcutdimensionCode9Name - Property ToolTip</note>
+          <target>Name</target>
         </trans-unit>
         <trans-unit id="Page 2112578491 - Action 2160814374 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show the Customer Balance Review</source>
@@ -11342,9 +11361,9 @@
         </trans-unit>
         <trans-unit id="Page 2112578491 - Action 2160814374 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>RKST Balance Review</source>
-          <note from="Developer" annotates="general" priority="2">DEA=""RKST Debitor Saldenrückblick"</note>
+          <note from="Developer" annotates="general" priority="2">DEA=RKST Debitor Saldenrückblick</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Action RKSTBalanceReview - Property Caption</note>
-          <target>"RKST Debitor Saldenrückblick</target>
+          <target>RKST Debitor Saldenrückblick</target>
         </trans-unit>
         <trans-unit id="Page 4040994964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Activ Businessfields</source>

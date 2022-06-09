@@ -5,7 +5,6 @@ page 50032 "CustBusinessFieldCardNVX"
     InsertAllowed = false;
     PageType = Card;
     SourceTable = CustomerBusinessFieldNVX;
-
     layout
     {
         area(content)
@@ -15,21 +14,41 @@ page 50032 "CustBusinessFieldCardNVX"
                 Caption = 'General', comment = 'DEA="Allgemein"';
                 group(BusinessFields)
                 {
-                    Caption = 'Business Fields', comment = 'DEA="Geschäftsfelder"';
-                    field("Customer No."; Rec."Customer No.")
+                    Caption = 'Business Field', comment = 'DEA="Geschäftsfeld"';
+                    field(Dimension5Name; Rec.ShortcutdimensionCode5Name)
                     {
+                        ToolTip = 'Specifies the value of the Shortcut Dimension 5 Name field.';
                         ApplicationArea = All;
-                        Enabled = false;
+                        ShowCaption = false;
                     }
                     field("Shortcut Dimension 5 Code"; Rec."Shortcut Dimension 5 Code")
                     {
                         ApplicationArea = All;
-                        Enabled = false;
+                        Visible = false;
+                    }
+                }
+                group(ShortcutDimension9Code)
+                {
+                    Caption = 'SAMMELKto', comment = 'DEA="Sammelkonto"';
+                    field(ShortcutdimensionCode9Name; Rec.ShortcutdimensionCode9Name)
+                    {
+                        ShowCaption = false;
+                        ToolTip = 'Specifies the value of the Shortcut Dimension 9 Name field.', Comment = 'DEA="Name"';
+                        ApplicationArea = All;
+
+                        trigger OnValidate()
+                        begin
+                            UpdateShortcutdimensionCode9Description();
+                        end;
+
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            UpdateShortcutdimensionCode9Description();
+                        end;
                     }
                     field("Shortcut Dimension 9 Code"; Rec."Shortcut Dimension 9 Code")
                     {
                         ApplicationArea = All;
-                        CaptionClass = '1,2,9';
                         ToolTip = '', comment = 'DEA=""';
 
                         trigger OnLookup(var Text: Text): Boolean
@@ -41,25 +60,30 @@ page 50032 "CustBusinessFieldCardNVX"
                 group(InfoUser)
                 {
                     Caption = 'Info User', comment = 'DEA="Benutzerinformationen"';
+
                     field("Created By User"; Rec."Created By User")
                     {
                         ToolTip = 'Specifies the value of the Created By User field.';
                         ApplicationArea = All;
+                        Importance = Additional;
                     }
                     field("Creation Date"; Rec."Creation Date")
                     {
                         ToolTip = 'Specifies the value of the Creation Date field.';
                         ApplicationArea = All;
+                        Importance = Additional;
                     }
                     field("Last Modified By User"; Rec."Last Modified By User")
                     {
                         ToolTip = 'Specifies the value of the Last Modified By User field.';
                         ApplicationArea = All;
+                        Importance = Additional;
                     }
                     field("Last Modified Date"; Rec."Last Modified Date")
                     {
                         ToolTip = 'Specifies the value of the Last Modified Date field.';
                         ApplicationArea = All;
+                        Importance = Additional;
                     }
                 }
                 group(Payment)
@@ -94,7 +118,6 @@ page 50032 "CustBusinessFieldCardNVX"
                     }
                     field(BankAccountCustBusinessField; Rec.BankAccountCustBusinessField)
                     {
-                        ToolTip = 'Specifies the value of the BankAccount Customer BusinessField field.', Comment = 'DEA="Bankkonto Debitor Geschäftsfeld"';
                         ApplicationArea = All;
 
                         trigger OnLookup(var Text: Text): Boolean
@@ -119,7 +142,6 @@ page 50032 "CustBusinessFieldCardNVX"
                     }
                     field(BalanceBusinessField; Rec.BalanceBusinessField)
                     {
-                        ToolTip = 'Specifies the value of the Balance BusinessField field.', Comment = 'DEA=""Debitorensaldo Geschäftsfeld""';
                         ApplicationArea = All;
                     }
                 }
@@ -148,12 +170,29 @@ page 50032 "CustBusinessFieldCardNVX"
         }
     }
 
+    trigger OnAfterGetCurrRecord()
+    begin
+        UpdateShortcutdimensionCode9Description();
+    end;
+
     trigger OnClosePage()
     begin
         AppMgt.SetActiveAndStateCustomerBusinessLines("Customer No.");
     end;
 
+    local procedure UpdateShortcutdimensionCode9Description()
+    begin
+        if Rec."Shortcut Dimension 9 Code" = '' then
+            exit;
+
+        GLSetup.GetRecordOnce();
+        DimensionValue.Get(GLSetup.ShortcutDimension9CodeNVX, Rec."Shortcut Dimension 9 Code");
+        Rec.ShortcutdimensionCode9Name := DimensionValue.Name;
+    end;
+
     var
+        GLSetup: Record "General Ledger Setup";
+        DimensionValue: Record "Dimension Value";
         AppMgt: Codeunit AppMgtNVX;
         TokenPaymentTermsTok: Label 'K', comment = 'DEA="K"', Locked = true;
         TokenPaymentMethodTok: Label 'K', comment = 'DEA="K"', Locked = true;
