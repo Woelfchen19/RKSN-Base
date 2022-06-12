@@ -1,4 +1,4 @@
-codeunit 50019 "Table5600HookNVX"
+codeunit 50019 FixedAssetHookNVX
 {
     [EventSubscriber(ObjectType::Table, Database::"Fixed Asset", 'OnAfterValidateEvent', 'Global Dimension 2 Code', false, false)]
     local procedure CheckAllocationCodeDimension(var Rec: Record "Fixed Asset"; var xRec: Record "Fixed Asset")

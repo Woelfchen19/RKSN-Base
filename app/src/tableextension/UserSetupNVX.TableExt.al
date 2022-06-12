@@ -27,6 +27,11 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
             Caption = 'Allowed modify Issued Reminder', comment = 'DEA="Änderungen registrierte Mahnungen zulassen"';
             DataClassification = CustomerContent;
         }
+        field(50005; ReminderExtenionsAdminNVX; Boolean)
+        {
+            Caption = 'Admin Reminder Extension', comment = 'DEA="Admin Mahnwesen erweitert"';
+            DataClassification = CustomerContent;
+        }
         field(50010; PBSetupNVX; Boolean)
         {
             Caption = 'PB-setup', comment = 'DEA="PB-setup"';

@@ -25,21 +25,25 @@ table 50006 "ReminderExtensionSetupNVX"
             Caption = 'Website IBAN', comment = 'DEA="Webseite IBAN"';
             DataClassification = CustomerContent;
         }
-        field(8; "Test User Activate"; Boolean)
-        {
-            Caption = 'Test User Activate', comment = 'DEA="Testbenutzer aktiviert"';
-            DataClassification = CustomerContent;
-        }
         field(7; "Test User ID"; Code[50])
         {
             Caption = 'Test User ID', comment = 'DEA="Testbenutzer"';
             DataClassification = EndUserIdentifiableInformation;
             TableRelation = "User Setup";
         }
+        field(8; "Test User Activate"; Boolean)
+        {
+            Caption = 'Test User Activate', comment = 'DEA="Testbenutzer aktiviert"';
+            DataClassification = CustomerContent;
+        }
         field(9; ActiveChangeLogEntryDim; Boolean)
         {
             Caption = 'Activate ChangeLogEntry Dimension', comment = 'DEA="Änderungsprotokol Dimension aktivieren"';
             DataClassification = CustomerContent;
+        }
+        field(10; Administrator; Boolean)
+        {
+            Caption = 'Administrator', comment = 'DEA="Administrator"';
         }
     }
 
@@ -50,12 +54,21 @@ table 50006 "ReminderExtensionSetupNVX"
             Clustered = true;
         }
     }
+
+    var
+        RecordHasBeenRead: Boolean;
+
     procedure GetRecordOnce()
     begin
         if RecordHasBeenRead then
             exit;
         Rec.Get();
         RecordHasBeenRead := true;
+    end;
+
+    procedure IsReminderExtensionActivated(): Boolean
+    begin
+        exit(Rec.ActivateReminderExtension);
     end;
 
     procedure RefreshUserSetup()
@@ -73,12 +86,4 @@ table 50006 "ReminderExtensionSetupNVX"
     begin
         exit(Rec."Test User Activate")
     end;
-
-    procedure IsReminderExtensionActivated(): Boolean
-    begin
-        exit(Rec.ActivateReminderExtension);
-    end;
-
-    var
-        RecordHasBeenRead: Boolean;
 }

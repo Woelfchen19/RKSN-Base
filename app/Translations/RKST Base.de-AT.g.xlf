@@ -165,6 +165,53 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table BankAccountLedgerEntryNVX - Field Entry No. - Property Caption</note>
           <target>Lfd Nr.</target>
         </trans-unit>
+        <trans-unit id="Table 829449313 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank Account</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BankAccountNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 829449313 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nr."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BankAccountNVX - Field No. - Property Caption</note>
+          <target>Nr.</target>
+        </trans-unit>
+        <trans-unit id="Table 829449313 - Field 1475661449 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bankinfo Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BankAccountNVX - Field ReminderBankInfo1 - Property Caption</note>
+          <target>Bankinformation Mahnwesen</target>
+        </trans-unit>
+        <trans-unit id="Table 829449313 - Field 837964832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bankinfo Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BankAccountNVX - Field ReminderBankInfo2 - Property Caption</note>
+          <target>Bankinformation Mahnwesen</target>
+        </trans-unit>
+        <trans-unit id="Table 829449313 - Field 200268215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bankinfo Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BankAccountNVX - Field ReminderBankInfo3 - Property Caption</note>
+          <target>Bankinformation Mahnwesen</target>
+        </trans-unit>
+        <trans-unit id="Table 829449313 - Field 369177238 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bankinfo Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BankAccountNVX - Field ReminderBankInfo4 - Property Caption</note>
+          <target>Bankinformation Mahnwesen</target>
+        </trans-unit>
+        <trans-unit id="Table 829449313 - Field 4026447917 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bankinfo Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BankAccountNVX - Field ReminderBankInfo5 - Property Caption</note>
+          <target>Bankinformation Mahnwesen</target>
+        </trans-unit>
+        <trans-unit id="Table 829449313 - Field 3388751300 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bankinfo Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BankAccountNVX - Field ReminderBankInfo6 - Property Caption</note>
+          <target>Bankinformation Mahnwesen</target>
+        </trans-unit>
         <trans-unit id="Table 1676099715 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2">DEA="Beschreibung"</note>
@@ -8248,6 +8295,156 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table PurchLineArchiveNVX - Field Work Center No. - Property Caption</note>
           <target>Arbeitsplatzgruppennr.</target>
         </trans-unit>
+        <trans-unit id="Table 646234586 - Field 1091775435 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Activ</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Aktiv"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field Activ - Property Caption</note>
+          <target>Aktiv</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 3645130493 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reminder Address Businessfield</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field Address1BusinessField - Property Caption</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 2268271948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reminder Address Businessfield</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field Address2BusinessField - Property Caption</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 2552271483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reminder Address Businessfield</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field Address3BusinessField - Property Caption</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 148103050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reminder Address Businessfield</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field Address4BusinessField - Property Caption</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 3125983225 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reminder Address Businessfield</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field Address5BusinessField - Property Caption</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 118952520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reminder Address Businessfield</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field Address6BusinessField - Property Caption</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 3242409597 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reminder City Businessfield</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnort Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field CityBusinessField - Property Caption</note>
+          <target>Mahnort Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 2108834049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 02 BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field GeneralInfo0003BusinessField - Property Caption</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 3495415811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 02 BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field GeneralInfo0005BusinessField - Property Caption</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 1797445366 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 02 BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field GeneralInfo0006BusinessField - Property Caption</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 3032813031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 02 BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field GeneralInfo001BusinessField - Property Caption</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 1264359034 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 02 BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field GeneralInfo002BusinessField - Property Caption</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 1387543766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 02 BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field GeneralInfo0042BusinessField - Property Caption</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 1269209519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 01 BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field GeneralInfo01BusinessField - Property Caption</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 3469966306 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 01 BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field GeneralInfo02BusinessField - Property Caption</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 628881777 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 01 BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field GeneralInfo03BusinessField - Property Caption</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 151596068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 01 BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field GeneralInfo04BusinessField - Property Caption</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 3140741811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 01 BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field GeneralInfo05BusinessField - Property Caption</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 228656870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 01 BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field GeneralInfo06BusinessField - Property Caption</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 4031904874 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reminder Assosiated</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnung zugehörig"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field Reminder Associated - Property Caption</note>
+          <target>Mahnung zugehörig</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 3933069220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ReminderSetup Extension</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnung Erweiterung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field ReminderSetupExtension - Property Caption</note>
+          <target>Mahnung Erweiterung</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 3366002171 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RKST Bankaccount</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Angabe RKST Bankkonto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field RKST Bankaccount - Property Caption</note>
+          <target>Angabe RKST Bankkonto</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim.2: ProfitCenter"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field Shortcut Dimension 2 Code - Property Caption</note>
+          <target>Dim.2: ProfitCenter</target>
+        </trans-unit>
+        <trans-unit id="Table 646234586 - Field 2096817791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Name</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim.2: ProfitCenter"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderControlSetupNVX - Field Shortcut Dimension 2 Name - Property Caption</note>
+          <target>Dim.2: ProfitCenter</target>
+        </trans-unit>
         <trans-unit id="Table 2917893612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reminder Extension Setup</source>
           <note from="Developer" annotates="general" priority="2">DEA="Erweiterung Mahnung Einrichtung"</note>
@@ -8265,6 +8462,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Änderungsprotokol Dimension aktivieren"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ReminderExtensionSetupNVX - Field ActiveChangeLogEntryDim - Property Caption</note>
           <target>Änderungsprotokol Dimension aktivieren</target>
+        </trans-unit>
+        <trans-unit id="Table 2917893612 - Field 1077820653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Administrator</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Administrator"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ReminderExtensionSetupNVX - Field Administrator - Property Caption</note>
+          <target>Administrator</target>
         </trans-unit>
         <trans-unit id="Table 2917893612 - Field 1035365880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>use also empty filter</source>
@@ -11298,10 +11501,10 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control BusinessFields - Property Caption</note>
           <target>Geschäftsfeld</target>
         </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 1307142958 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2112578491 - Control 2380178257 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Shortcut Dimension 5 Name field.</source>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Dimension5Name - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control ShortcutdimensionCode5Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2112578491 - Control 3779331977 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Info User</source>
@@ -13223,6 +13426,460 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page PurchLineArchiveSummaryNVX - Control VAT Base Amount - Property Caption</note>
           <target>Betrag NETTO</target>
         </trans-unit>
+        <trans-unit id="Page 625002495 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ReminderControlSetupList</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuerung Mahnungen GESCHÄFTSFELD Übersicht"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Property Caption</note>
+          <target>Steuerung Mahnungen GESCHÄFTSFELD Übersicht</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 1091775435 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Activ field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control Activ - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 3645130493 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control Address1BusinessField - Property ToolTip</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 2268271948 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control Address2BusinessField - Property ToolTip</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 2552271483 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control Address3BusinessField - Property ToolTip</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 148103050 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control Address4BusinessField - Property ToolTip</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 3125983225 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control Address5BusinessField - Property ToolTip</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 118952520 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control Address6BusinessField - Property ToolTip</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 3242409597 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder City Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnort Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control CityBusinessField - Property ToolTip</note>
+          <target>Mahnort Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 2108834049 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control GeneralInfo0003BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 3495415811 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control GeneralInfo0005BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 1797445366 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control GeneralInfo0006BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 3032813031 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control GeneralInfo001BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 1264359034 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control GeneralInfo002BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 1387543766 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control GeneralInfo0042BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 1269209519 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control GeneralInfo01BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 3469966306 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control GeneralInfo02BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 628881777 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control GeneralInfo03BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 151596068 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control GeneralInfo04BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 3140741811 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control GeneralInfo05BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 228656870 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control GeneralInfo06BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 4031904874 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Assosiated field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnung zugehörig"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control Reminder Associated - Property ToolTip</note>
+          <target>Mahnung zugehörig</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 3933069220 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the ReminderSetup Extension field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnung Erweiterung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control ReminderSetupExtension - Property ToolTip</note>
+          <target>Mahnung Erweiterung</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 3366002171 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the RKST Bankaccount field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Angabe RKST Bankkonto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control RKST Bankaccount - Property ToolTip</note>
+          <target>Angabe RKST Bankkonto</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 1003760969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 2 Code field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim.2: ProfitCenter"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control Shortcut Dimension 2 Code - Property ToolTip</note>
+          <target>Dim.2: ProfitCenter</target>
+        </trans-unit>
+        <trans-unit id="Page 625002495 - Control 2096817791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 2 Name field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim.2: ProfitCenter"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Control Shortcut Dimension 2 Name - Property ToolTip</note>
+          <target>Dim.2: ProfitCenter</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ReminderControlSetupList</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuerung Mahnungen PROFITCENTER Übersicht"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Property Caption</note>
+          <target>Steuerung Mahnungen PROFITCENTER Übersicht</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 1091775435 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Activ field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control Activ - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 3645130493 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control Address1BusinessField - Property ToolTip</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 2268271948 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control Address2BusinessField - Property ToolTip</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 2552271483 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control Address3BusinessField - Property ToolTip</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 148103050 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control Address4BusinessField - Property ToolTip</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 3125983225 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control Address5BusinessField - Property ToolTip</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 118952520 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control Address6BusinessField - Property ToolTip</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 3242409597 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder City Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnort Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control CityBusinessField - Property ToolTip</note>
+          <target>Mahnort Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 2108834049 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control GeneralInfo0003BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 3495415811 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control GeneralInfo0005BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 1797445366 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control GeneralInfo0006BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 3032813031 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control GeneralInfo001BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 1264359034 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control GeneralInfo002BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 1387543766 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control GeneralInfo0042BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 1269209519 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control GeneralInfo01BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 3469966306 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control GeneralInfo02BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 628881777 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control GeneralInfo03BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 151596068 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control GeneralInfo04BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 3140741811 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control GeneralInfo05BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 228656870 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control GeneralInfo06BusinessField - Property ToolTip</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 3933069220 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the ReminderSetup Extension field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnung Erweiterung"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control ReminderSetupExtension - Property ToolTip</note>
+          <target>Mahnung Erweiterung</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 3366002171 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the RKST Bankaccount field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Angabe RKST Bankkonto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control RKST Bankaccount - Property ToolTip</note>
+          <target>Angabe RKST Bankkonto</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 1003760969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 2 Code field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim.2: ProfitCenter"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control Shortcut Dimension 2 Code - Property ToolTip</note>
+          <target>Dim.2: ProfitCenter</target>
+        </trans-unit>
+        <trans-unit id="Page 3881562964 - Control 2096817791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 2 Name field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Dim.2: ProfitCenter"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Control Shortcut Dimension 2 Name - Property ToolTip</note>
+          <target>Dim.2: ProfitCenter</target>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ReminderControlSetupCard</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuerung Mahnungen Karte"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Property Caption</note>
+          <target>Steuerung Mahnungen Karte</target>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 3168444338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reminder Address Businessfield</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnadresse Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control Address - Property Caption</note>
+          <target>Mahnadresse Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 3645130493 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control Address1BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 2268271948 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control Address2BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 2552271483 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control Address3BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 148103050 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control Address4BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 3125983225 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control Address5BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 118952520 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Address Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control Address6BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 3242409597 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder City Businessfield field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control CityBusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgemein"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control General - Property Caption</note>
+          <target>Allgemein</target>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 1091775435 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Activ field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control Activ - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 4031904874 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Assosiated field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control Reminder Associated - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 3366002171 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the RKST Bankaccount field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control RKST Bankaccount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 1003760969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 2 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control Shortcut Dimension 2 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 2096817791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 2 Name field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control Shortcut Dimension 2 Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 2136131739 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 01 businessfield</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 01 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo01 - Property Caption</note>
+          <target>Allgem. Info 01 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 1269209519 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo01BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 3469966306 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo02BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 628881777 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo03BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 151596068 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo04BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 3140741811 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo05BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 228656870 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 01 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo06BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 4049221590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Info 02 businessfield</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgem. Info 02 Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo02 - Property Caption</note>
+          <target>Allgem. Info 02 Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 2108834049 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo0003BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 3495415811 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo0005BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 1797445366 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo0006BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 3032813031 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo001BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 1264359034 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo002BusinessField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1191581894 - Control 1387543766 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the General Info 02 BusinessField field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlSetupCardNVX - Control GeneralInfo0042BusinessField - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2074387792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Setup Reminder Extension</source>
           <note from="Developer" annotates="general" priority="2">DEA="Einrichtung Erweiterung Mahnung"</note>
@@ -13240,6 +13897,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Modul Mahnwesen neu aktivieren"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ReminderExtensionSetupCardNVX - Control ActivateReminderExtension - Property ToolTip</note>
           <target>Modul Mahnwesen neu aktivieren</target>
+        </trans-unit>
+        <trans-unit id="Page 2074387792 - Control 1077820653 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Be carefully. Only Admin must be change values for setup.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Achtung! Nur Administratoren dürfen Änderungen in der Tabelle vornehmen!</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ReminderExtensionSetupCardNVX - Control Administrator - Property ToolTip</note>
+          <target>"Achtung! Nur Administratoren dürfen Änderungen in der Tabelle vornehmen!</target>
         </trans-unit>
         <trans-unit id="Page 2074387792 - Control 1035365880 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the use also empty filter field.</source>
@@ -14003,6 +14666,48 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ApplyCustomerEntryNVX - Control ShortcutDimension9CodeNVX - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 997133341 - Control 3425560216 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
+          <source>Reminder Bankinformation</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Angaben Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountCardNVX - Control ReminderBankInformationNVX - Property Caption</note>
+          <target>Angaben Bankinformation Mahnwesen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 997133341 - Control 4283715484 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
+          <source>Bankinfo Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountCardNVX - Control BankAccountReminderBankInfo1NVX - Property Caption</note>
+          <target>Bankinformation Mahnwesen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 997133341 - Control 2627816829 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
+          <source>Bankinfo Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountCardNVX - Control BankAccountReminderBankInfo2NVX - Property Caption</note>
+          <target>Bankinformation Mahnwesen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 997133341 - Control 1968836126 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
+          <source>Bankinfo Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountCardNVX - Control BankAccountReminderBankInfo3NVX - Property Caption</note>
+          <target>Bankinformation Mahnwesen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 997133341 - Control 329322039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
+          <source>Bankinfo Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountCardNVX - Control BankAccountReminderBankInfo4NVX - Property Caption</note>
+          <target>Bankinformation Mahnwesen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 997133341 - Control 391498584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
+          <source>Bankinfo Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountCardNVX - Control BankAccountReminderBankInfo5NVX - Property Caption</note>
+          <target>Bankinformation Mahnwesen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 997133341 - Control 2267833273 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
+          <source>Bankinfo Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Bankinformation Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountCardNVX - Control BankAccountReminderBankInfo6NVX - Property Caption</note>
+          <target>Bankinformation Mahnwesen</target>
+        </trans-unit>
         <trans-unit id="PageExtension 2935462756 - Control 2132930775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2591587468">
           <source>Allocation Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
@@ -14247,6 +14952,18 @@
           <note from="Developer" annotates="general" priority="2">DEA="KST zuordnen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Action AssignmentDepartmentNVX - Property Caption</note>
           <target>KST zuordnen</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1966097956 - Action 828278970 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
+          <source>Assosiated</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zugehörig"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Action ReminderAssosiatedNVX - Property Caption</note>
+          <target>Zugehörig</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1966097956 - Action 3485603321 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
+          <source>Reminder Fields</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Felder Mahnbeleg"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - Action ReminderFieldsNVX - Property Caption</note>
+          <target>Felder Mahnbeleg</target>
         </trans-unit>
         <trans-unit id="PageExtension 1966097956 - Control 1880097148 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
           <source>Specifies the value of the Assigned field.</source>
@@ -15717,6 +16434,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control RDSetupNVX - Property ToolTip</note>
           <target>RD-setup</target>
         </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 1468990632 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the Admin Reminder Extension field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Admin Mahnwesen erweitert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control ReminderExtenionsAdministratorNVX - Property ToolTip</note>
+          <target>Admin Mahnwesen erweitert</target>
+        </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 2663599612 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies the value of the Reminder Run authorized field.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Mahnlauf berechtigt"</note>
@@ -16331,6 +17054,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="RD-setup"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field RDSetupNVX - Property Caption</note>
           <target>RD-setup</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 1802118196 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Admin Reminder Extension</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Admin Mahnwesen erweitert"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field ReminderExtenionsAdminNVX - Property Caption</note>
+          <target>Admin Mahnwesen erweitert</target>
         </trans-unit>
         <trans-unit id="TableExtension 1224611290 - Field 2663599612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Reminder Run authorized</source>

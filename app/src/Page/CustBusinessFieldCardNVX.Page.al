@@ -48,35 +48,6 @@ page 50032 "CustBusinessFieldCardNVX"
                         end;
                     }
                 }
-                group(InfoUser)
-                {
-                    Caption = 'Info User', comment = 'DEA="Benutzerinformationen"';
-
-                    field("Created By User"; Rec."Created By User")
-                    {
-                        ToolTip = 'Specifies the value of the Created By User field.';
-                        ApplicationArea = All;
-                        Importance = Additional;
-                    }
-                    field("Creation Date"; Rec."Creation Date")
-                    {
-                        ToolTip = 'Specifies the value of the Creation Date field.';
-                        ApplicationArea = All;
-                        Importance = Additional;
-                    }
-                    field("Last Modified By User"; Rec."Last Modified By User")
-                    {
-                        ToolTip = 'Specifies the value of the Last Modified By User field.';
-                        ApplicationArea = All;
-                        Importance = Additional;
-                    }
-                    field("Last Modified Date"; Rec."Last Modified Date")
-                    {
-                        ToolTip = 'Specifies the value of the Last Modified Date field.';
-                        ApplicationArea = All;
-                        Importance = Additional;
-                    }
-                }
                 group(Payment)
                 {
                     Caption = 'Payment Management', comment = 'DEA="Zahlungsmanagement"';
@@ -134,6 +105,36 @@ page 50032 "CustBusinessFieldCardNVX"
                     field(BalanceBusinessField; Rec.BalanceBusinessField)
                     {
                         ApplicationArea = All;
+                    }
+                }
+                group(InfoUser)
+
+                {
+                    Caption = 'Info User', comment = 'DEA="Benutzerinformationen"';
+
+                    field("Created By User"; Rec."Created By User")
+                    {
+                        ToolTip = 'Specifies the value of the Created By User field.';
+                        ApplicationArea = All;
+                        Importance = Additional;
+                    }
+                    field("Creation Date"; Rec."Creation Date")
+                    {
+                        ToolTip = 'Specifies the value of the Creation Date field.';
+                        ApplicationArea = All;
+                        Importance = Additional;
+                    }
+                    field("Last Modified By User"; Rec."Last Modified By User")
+                    {
+                        ToolTip = 'Specifies the value of the Last Modified By User field.';
+                        ApplicationArea = All;
+                        Importance = Additional;
+                    }
+                    field("Last Modified Date"; Rec."Last Modified Date")
+                    {
+                        ToolTip = 'Specifies the value of the Last Modified Date field.';
+                        ApplicationArea = All;
+                        Importance = Additional;
                     }
                 }
                 group(Reminder)

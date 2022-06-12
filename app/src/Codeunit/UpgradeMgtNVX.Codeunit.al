@@ -22,6 +22,7 @@ codeunit 50024 "UpgradeMgtNVX"
         InitializeDimensionCustomer();
         InsertSetupReminderExtension();
         InsertSetupBusinessFieldsForCustomer();
+        InsertReminderControlSetup();
     end;
 
     local procedure InitializeDimensionCustomer()
@@ -49,5 +50,19 @@ codeunit 50024 "UpgradeMgtNVX"
     local procedure InsertSetupBusinessFieldsForCustomer()
     begin
         AppMgt.InsertSetupBusinessFieldsForCustomer();
+    end;
+
+    local procedure InsertReminderControlSetup()
+    var
+        ReminderControlSetup: Record ReminderControlSetupNVX;
+    begin
+        if ReminderControlSetup.IsEmpty() then begin
+            ReminderControlSetup.Init();
+            ReminderControlSetup.ReminderSetupExtension := ReminderControlSetup.ReminderSetupExtension::BusinessField;
+            ReminderControlSetup.Insert();
+            ReminderControlSetup.Init();
+            ReminderControlSetup.ReminderSetupExtension := ReminderControlSetup.ReminderSetupExtension::PC;
+            ReminderControlSetup.Insert();
+        end;
     end;
 }

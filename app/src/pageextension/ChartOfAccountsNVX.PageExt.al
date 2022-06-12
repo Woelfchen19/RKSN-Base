@@ -27,7 +27,7 @@ pageextension 50001 "ChartOfAccountsNVX" extends "Chart of Accounts"
                     GLAccountNVX.Modify();
                 end;
             }
-            field("No. of Classifications NVX"; rec.NoOfClassificationsNVX)
+            field("No. of Classifications NVX"; Rec.NoOfClassificationsNVX)
             {
                 ApplicationArea = All;
                 Caption = 'No. of Classifications', comment = 'DEA="Anzahl Gliederungsgruppen"';

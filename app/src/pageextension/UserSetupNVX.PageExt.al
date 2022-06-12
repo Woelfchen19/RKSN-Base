@@ -80,6 +80,11 @@ pageextension 50047 "UserSetupNVX" extends "User Setup"
                 ToolTip = 'Specifies the value of the BusinessField Filter field.', Comment = 'DEA="Geschäftsfeld Filter"';
                 ApplicationArea = All;
             }
+            field(ReminderExtenionsAdministratorNVX; Rec.ReminderExtenionsAdminNVX)
+            {
+                ToolTip = 'Specifies the value of the Admin Reminder Extension field.', Comment = 'DEA="Admin Mahnwesen erweitert"';
+                ApplicationArea = All;
+            }
         }
     }
 

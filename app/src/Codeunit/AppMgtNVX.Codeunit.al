@@ -548,6 +548,15 @@ codeunit 50026 "AppMgtNVX"
             exit(false);
     end;
 
+    procedure SetCustLedgEntryAssociatedFilter(var CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    begin
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
+            CustLedgerEntry.FilterGroup(2);
+            CustLedgerEntry.SetRange(AssociatedNVX, GenJournalLine.AssociatedNVX);
+            CustLedgerEntry.FilterGroup(0);
+        end;
+    end;
+
     procedure OnValidateShortcutDimension(var DimensionValue: Record "Dimension Value")
     begin
         AppMgt.GetUserSetup(UserSetup, true);

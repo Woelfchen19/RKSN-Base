@@ -1,4 +1,4 @@
-codeunit 50012 "Table27HookNVX"
+codeunit 50012 ItemHookNVX
 {
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterValidateEvent', 'Gen. Prod. Posting Group', false, false)]
     local procedure SetInventoryValueZero(var Rec: Record Item)

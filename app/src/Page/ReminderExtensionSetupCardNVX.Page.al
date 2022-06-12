@@ -4,7 +4,6 @@ page 50034 ReminderExtensionSetupCardNVX
     PageType = Card;
     SourceTable = "ReminderExtensionSetupNVX";
     UsageCategory = Administration;
-
     layout
     {
         area(content)
@@ -15,6 +14,11 @@ page 50034 ReminderExtensionSetupCardNVX
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Activate Reminderextension field.', Comment = 'DEA="Modul Mahnwesen neu aktivieren"';
+                }
+                field(Administrator; Rec.Administrator)
+                {
+                    ToolTip = 'Be carefully. Only Admin must be change values for setup.', Comment = 'DEA="Achtung! Nur Administratoren dürfen Änderungen in der Tabelle vornehmen!';
+                    ApplicationArea = All;
                 }
                 field(AcitveChangeLogEntryDim; Rec.ActiveChangeLogEntryDim)
                 {
