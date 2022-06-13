@@ -32,6 +32,14 @@ tableextension 50011 "UserSetupNVX" extends "User Setup"
             Caption = 'Admin Reminder Extension', comment = 'DEA="Admin Mahnwesen erweitert"';
             DataClassification = CustomerContent;
         }
+        field(50006; EditCustomerPostingGroupNVX; Boolean)
+        {
+            Caption = 'Edit Customer Posting Group', comment = 'DEA="EDIT Sammelkonto.Debitoren"';
+        }
+        field(50007; EditVendorPostingGroupNVX; Boolean)
+        {
+            Caption = 'Edit Vendor Posting Group', comment = 'DEA="EDIT Sammelkonto.Kreditoren"';
+        }
         field(50010; PBSetupNVX; Boolean)
         {
             Caption = 'PB-setup', comment = 'DEA="PB-setup"';

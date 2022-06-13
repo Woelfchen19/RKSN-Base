@@ -2,7 +2,7 @@ table 50048 "SetupAssociatedNVX"
 {
     Caption = 'Setup Associated', comment = 'DEA="Einrichtung Zugehörigkeit"';
     DataClassification = ToBeClassified;
-
+    LookupPageId = SetupAssociatedNVX;
     fields
     {
         field(1; "Code"; Code[10])
@@ -16,7 +16,6 @@ table 50048 "SetupAssociatedNVX"
             DataClassification = CustomerContent;
         }
     }
-
     keys
     {
         key(Key1; Code)

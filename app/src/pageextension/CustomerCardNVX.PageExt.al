@@ -17,7 +17,7 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
         }
         modify("Customer Posting Group")
         {
-            Editable = false;
+            Editable = CustomerPostingGroupEditable;
         }
         addbefore(Control149)
         {
@@ -35,12 +35,15 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
         Initialize();
     end;
 
+    trigger OnAfterGetCurrRecord()
+    begin
+        CustomerPostingGroupEditable := SetCustomerPostingGroupEditable();
+    end;
+
     local procedure Initialize()
     var
-        AppMgt: Codeunit AppMgtNVX;
+        CustomerBusinessField: Record CustomerBusinessFieldNVX;
     begin
-        AppMgt.GetUserSetup(UserSetup, true);
-
         ShowCustBusinessFieldFactBox := AppMgt.ShowCustBusinessFieldFactBox();
 
         if Rec."No." <> '' then begin
@@ -51,8 +54,23 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
         end;
     end;
 
+    local procedure SetCustomerPostingGroupEditable(): Boolean
     var
-        CustomerBusinessField: Record CustomerBusinessFieldNVX;
         UserSetup: Record "User Setup";
+        CustLedgerEntry: Record "Cust. Ledger Entry";
+    begin
+        AppMgt.GetUserSetup(UserSetup, true);
+
+        CustLedgerEntry.SetCurrentKey("Customer No.");
+        CustLedgerEntry.SetRange("Customer No.", Rec."No.");
+        if CustLedgerEntry.IsEmpty then
+            exit(true)
+        else
+            exit(UserSetup.EditCustomerPostingGroupNVX);
+    end;
+
+    var
+        AppMgt: Codeunit AppMgtNVX;
         ShowCustBusinessFieldFactBox: Boolean;
+        CustomerPostingGroupEditable: Boolean;
 }

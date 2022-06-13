@@ -548,11 +548,33 @@ codeunit 50026 "AppMgtNVX"
             exit(false);
     end;
 
-    procedure SetCustLedgEntryAssociatedFilter(var CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    //ToDo
+    procedure SetCustLedgEntryFilter(var CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    begin
+        // if AppMgt.GetActivatedReminderExtensionSetup() then begin
+        // CustLedgerEntry.FilterGroup(2);
+        // CustLedgerEntry.SetRange(AssociatedNVX, GenJournalLine.AssociatedNVX);
+        // CustLedgerEntry.FilterGroup(0);
+        // end;
+    end;
+
+    procedure SetCustLedgEntryFilter(var CustLedgerEntry: Record "Cust. Ledger Entry")
+    var
+        DimensionValue: Record "Dimension Value";
     begin
         if AppMgt.GetActivatedReminderExtensionSetup() then begin
+            GLSetup.GetRecordOnce();
+
+            AppMgt.GetUserSetup(UserSetup, true);
+            AppMgt.AllowdBusinessFieldsForUser();
+            DimMgt.GetShortcutDimensions(CustLedgerEntry."Dimension Set ID", GLSetupShortcutDimCode);
+            AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, GLSetupShortcutDimCode[5], false);
+            DimensionValue.Get(GLSetup."Global Dimension 2 Code", GLSetupShortcutDimCode[2]);
+            DimensionValue.TestField(AssociatedNVX);
+
             CustLedgerEntry.FilterGroup(2);
-            CustLedgerEntry.SetRange(AssociatedNVX, GenJournalLine.AssociatedNVX);
+            CustLedgerEntry.SetRange("Global Dimension 2 Code", DimensionValue.AssociatedNVX);
+            CustLedgerEntry.SetFilter(ShortcutDimension5CodeNVX, GLSetupShortcutDimCode[5]);
             CustLedgerEntry.FilterGroup(0);
         end;
     end;
@@ -955,8 +977,8 @@ codeunit 50026 "AppMgtNVX"
         if not GetActivatedReminderExtensionSetup() then
             exit;
 
+        SalesReceivablesSetup.Get();
         Rec.Validate("Customer Posting Group", SalesReceivablesSetup."Customer Posting Group");
-        Rec.Modify();
     end;
 
     //ToDo

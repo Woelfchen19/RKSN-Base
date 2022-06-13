@@ -50,10 +50,30 @@ pageextension 50047 "UserSetupNVX" extends "User Setup"
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Reminder Run authorized field.', Comment = 'DEA="Mahnlauf berechtigt"';
             }
+            field(AllowSetupReminderNVX; Rec.AllowSetupReminderNVX)
+            {
+                ToolTip = 'Specifies the value of the Allow Reminder Setup field.', Comment = 'DEA="Zugriff Erweiterung Mahnung erlauben"';
+                ApplicationArea = All;
+            }
+            field(AllowedDimension5CodeChangeNVX; Rec.AllowedDimension5CodeChangeNVX)
+            {
+                ToolTip = 'Specifies the value of the Allowed modify Business Field field.';
+                ApplicationArea = All;
+            }
             field(EditBusFieldCustLedgerEntryNVX; Rec.EditBusFieldCustLedgerEntryNVX)
             {
+                ToolTip = 'Specifies the value of the EDIT BusinessField CustLedgerEntry field.';
                 ApplicationArea = All;
-                ToolTip = 'Specifies the value of the EDIT BusinessField CustLedgerEntry field.', Comment = 'DEA="EDIT Geschäftsfeld Debitorenposten"';
+            }
+            field(EditCustomerPostingGroupNVX; Rec.EditCustomerPostingGroupNVX)
+            {
+                ToolTip = 'Specifies the value of the Edit Customer Posting Group field.', Comment = 'DEA="EDIT Sammelkonto.Debitoren"';
+                ApplicationArea = All;
+            }
+            field(EditVendorPostingGroupNVX; Rec.EditVendorPostingGroupNVX)
+            {
+                ToolTip = 'Specifies the value of the Edit Vendor Posting Group field.', Comment = 'DEA="EDIT Sammelkonto.Kreditoren"';
+                ApplicationArea = All;
             }
             field(AllCollectedAccountsNVX; Rec.AllCollectedAccountsNVX)
             {

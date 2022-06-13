@@ -138,7 +138,9 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
             DimensionValue.SetRange("Dimension Value Type", DimensionValue."Dimension Value Type"::Standard);
             DimensionValue.SetRange(AssociatedNVX, '');
             if not DimensionValue.IsEmpty then
-                Error(AssociationErrorMsg);
+                Error(AssociationErrorMsg,
+                    DimensionValue.FieldCaption("Dimension Value Type"),
+                        DimensionValue."Dimension Value Type"::Standard);
 
             exit(true);
         end;
@@ -157,7 +159,7 @@ pageextension 50005 "DimensionValuesNVX" extends "Dimension Values"
         IsOE: Boolean;
         PostingTypeVisible: Boolean;
         ReOrganizeAccountVisible: Boolean;
-        AssociationErrorMsg: Label 'You must assign to all Profitcenter the field associated!', comment = 'DEA="Sie müssen zu allen ProfitCenter im Feld zugehörig eine Zuordnung vornehmen!"';
+        AssociationErrorMsg: Label 'You must assign to all Profitcenter with %1 %2 the field associated!', comment = 'DEA="Sie müssen zu allen ProfitCenter mit der %1 %2 im Feld zugehörig eine Zuordnung vornehmen!"';
 
     local procedure SetFieldsVisible()
     begin

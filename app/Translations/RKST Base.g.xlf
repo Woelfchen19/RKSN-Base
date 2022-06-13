@@ -9488,6 +9488,31 @@
           <note from="Developer" annotates="general" priority="2">DEA="Wollen Sie wirklich die Einrichtungstabelle löschen und neu befüllen? "</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - Method InsertSetupPropertyForField - NamedType ConfirmDeleteMsg</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2689473549 - Method 4034257309 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FAJournalLineHookNVX - Method CheckAllocationCodeDim - NamedType WrongDim2Err</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2689473549 - Method 4034257309 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FAJournalLineHookNVX - Method CheckAllocationCodeDim - NamedType WrongDimErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2689473549 - Method 950186398 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugeordneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FAJournalLineHookNVX - Method InsertAllocationCode - NamedType WrongDimErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2689473549 - Method 2096719793 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FAJournalLineHookNVX - Method InsertAllocationCodeInAccompaniedTable - NamedType WrongDimErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3408970239 - Method 3579618997 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Überprüfen Sie bitte das Setup."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FixedAssetHookNVX - Method CheckAllocationCodeDimension - NamedType WrongDimErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1640292380 - Method 4034257309 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
@@ -9513,6 +9538,71 @@
           <note from="Developer" annotates="general" priority="2">DEA="Es ist nicht möglich, diese Produktbuchungsgruppe zuzuordnen, da diese zum Datawarehouse gehört!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit GLAccountHookNVX - Method CheckInventoryValueZero - NamedType WrongPrdPstGrpErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 216319570 - Method 3561337113 - NamedType 3687080399" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are Ledger Entries for this Item and you are missing the necessary user rights to change the inventory posting group.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Es gibt zum Artikel bereits gebuchte Posten! Sie haben keine Rechte, um nachträglich die zugeordnete Lagerbuchungsgruppe zu ändern."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ItemHookNVX - Method CheckforItemLedgerEntries - NamedType NoUserRightErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 216319570 - Method 3461186517 - NamedType 1602948993" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., </source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ItemHookNVX - Method CheckItemDim - NamedType InvValueErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 216319570 - Method 3461186517 - NamedType 1496169471" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ItemHookNVX - Method CheckItemDim - NamedType InvValueZeroErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 216319570 - Method 2764824227 - NamedType 559118403" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This Product Posting Group is blocked for use on Items!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Es ist nicht möglich, diese Produktbuchungsgruppe zuzuordnen, da diese nicht zum Datawarehouse gehört!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ItemHookNVX - Method SetInventoryValueZero - NamedType NoItemErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 216319570 - Method 2764824227 - NamedType 3687080399" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are Ledger Entries for this Item and you are missing the necessary user rights to change the product posting group.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Es gibt zum Artikel bereits gebuchte Posten! Sie haben keine Rechte, um nachträglich die zugeordnete Produktbuchungsgruppe zu ändern."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ItemHookNVX - Method SetInventoryValueZero - NamedType NoUserRightErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 83200555 - Method 1565414135 - NamedType 2478128905" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item has inventory value. Dimension have to match the setup.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der erfasste Artikel ist lagerbewertet eingerichtet. Die Angaben zu Kostenstelle und Sparte müssen dem setup der Lager Einrichtung entsprechen!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ItemJournalLineHookNVX - Method CheckDimensions - NamedType WrongDimInventoryValueErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 83200555 - Method 1565414135 - NamedType 3709997511" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für lagerbewertete Artikel nicht zugeordnet werden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ItemJournalLineHookNVX - Method CheckDimensions - NamedType WrongDimInventoryValueZeroErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 83200555 - Method 916722513 - NamedType 3629795635" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only Entry Type "Positive Adjmt.", "Negative Adjmt" and "Transfer" are allowed!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Nur die Postenarten Zugang, Abgang, Umlagerung sind erlaubt!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ItemJournalLineHookNVX - Method OnAfterValidateEntryType - NamedType EntryTypeErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1239806585 - Method 3783485856 - NamedType 2012558403" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You have insufficient quantity of Item %1 on inventory.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sie haben keine ausreichende Menge des Artikels %1 auf Lager."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ItemLedgerEntryHookNVX - Method VerifyOnInventory - NamedType IsNotOnInventoryErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3186846938 - Method 2562927728 - NamedType 353338979" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Business Posting Group can not be changed. Check Item Master Data where required.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Steuerschlüssel kann nicht geändert werden. Überprüfen Sie gegebenenfalls die Stammdaten des Artikels!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit PurchaseLineHookNVX - Method CheckFixedPurchaseGenBusPostingGroup - NamedType WrongGenBusPostingGroupErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3186846938 - Method 1662205653 - NamedType 1602948993" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., </source>
+          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit PurchaseLineHookNVX - Method CheckForInventorySetupDimensions - NamedType InvValueErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3186846938 - Method 2663101026 - NamedType 3960831401" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Partial shipments are not allowed.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Teillieferungen sind bei nicht lagerbewerteten Artikeln im Modul Einkauf nicht zulässig."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit PurchaseLineHookNVX - Method CheckForPartialShipment - NamedType NoPartialShipmentErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3186846938 - Method 1826875482 - NamedType 707631556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type %1 is not allowed,</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Art %1 ist nicht erlaubt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit PurchaseLineHookNVX - Method CheckType - NamedType TypeNotAllowedErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1301608615 - Method 2104807177 - NamedType 2957784316" size-unit="char" translate="yes" xml:space="preserve">
           <source>You have no permission for this Ledger entry!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!"</note>
@@ -9522,6 +9612,31 @@
           <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ReminderManagementNVX - Method GetWrongDimensionLbl - NamedType WrongDimErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 945920104 - Method 4084253282 - NamedType 4090211762" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory Setup field Composition Customer must be filled</source>
+          <note from="Developer" annotates="general" priority="2">DEA="In der Lager Einrichtung fehlt im Feld "Abfassung Debitor" die Zuordnung. Sie können deshalb keinen neuen Auftrag generieren!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SalesHeaderHookNVX - Method SetCustomer - NamedType MissingSetupErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2838774023 - Method 2663101026 - NamedType 3960831401" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Partial shipments are not allowed.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Teillieferungen sind im Modul Verkauf nicht zulässig."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SalesLineHookNVX - Method CheckForPartialShipment - NamedType NoPartialShipmentErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2838774023 - Method 1826875482 - NamedType 707631556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type %1 is not allowed,</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Art %1 ist nicht erlaubt."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SalesLineHookNVX - Method CheckType - NamedType TypeNotAllowedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2838774023 - Method 1826875482 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only the types 'Item' or 'Comment' are allowed.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SalesLineHookNVX - Method CheckType - NamedType WrongTypeErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2838774023 - Method 1617669554 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only the types 'Item' or 'Comment' are allowed.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SalesLineHookNVX - Method CompositionSetValuesOnAfterInsertSalesLine - NamedType WrongTypeErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1787021016 - Method 2999721956 - NamedType 645313898" size-unit="char" translate="yes" xml:space="preserve">
           <source>This receipt has already been invoiced. Undo Receipt can be applied only to posted, but not invoiced receipts.</source>
@@ -9542,121 +9657,6 @@
           <source>This shipment has already been reversed</source>
           <note from="Developer" annotates="general" priority="2">DEA="Diese Lieferung wurde bereits storniert."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit SkipTypeChecksNVX - Method SkipTypeCheckSalesShipment - NamedType AlreadyReversedErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2614021276 - Method 3561337113 - NamedType 3687080399" size-unit="char" translate="yes" xml:space="preserve">
-          <source>There are Ledger Entries for this Item and you are missing the necessary user rights to change the inventory posting group.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Es gibt zum Artikel bereits gebuchte Posten! Sie haben keine Rechte, um nachträglich die zugeordnete Lagerbuchungsgruppe zu ändern."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table27HookNVX - Method CheckforItemLedgerEntries - NamedType NoUserRightErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2614021276 - Method 3461186517 - NamedType 1602948993" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., </source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table27HookNVX - Method CheckItemDim - NamedType InvValueErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2614021276 - Method 3461186517 - NamedType 1496169471" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für nicht lagerbewertete Artikel nicht zugeordnet werden!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table27HookNVX - Method CheckItemDim - NamedType InvValueZeroErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2614021276 - Method 2764824227 - NamedType 559118403" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This Product Posting Group is blocked for use on Items!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Es ist nicht möglich, diese Produktbuchungsgruppe zuzuordnen, da diese nicht zum Datawarehouse gehört!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table27HookNVX - Method SetInventoryValueZero - NamedType NoItemErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2614021276 - Method 2764824227 - NamedType 3687080399" size-unit="char" translate="yes" xml:space="preserve">
-          <source>There are Ledger Entries for this Item and you are missing the necessary user rights to change the product posting group.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Es gibt zum Artikel bereits gebuchte Posten! Sie haben keine Rechte, um nachträglich die zugeordnete Produktbuchungsgruppe zu ändern."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table27HookNVX - Method SetInventoryValueZero - NamedType NoUserRightErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3107638064 - Method 3783485856 - NamedType 2012558403" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You have insufficient quantity of Item %1 on inventory.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Sie haben keine ausreichende Menge des Artikels %1 auf Lager."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table32HookNVX - Method VerifyOnInventory - NamedType IsNotOnInventoryErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3451440628 - Method 4084253282 - NamedType 4090211762" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Inventory Setup field Composition Customer must be filled</source>
-          <note from="Developer" annotates="general" priority="2">DEA="In der Lager Einrichtung fehlt im Feld "Abfassung Debitor" die Zuordnung. Sie können deshalb keinen neuen Auftrag generieren!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table36HookNVX - Method SetCustomer - NamedType MissingSetupErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 4009923459 - Method 2663101026 - NamedType 3960831401" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Partial shipments are not allowed.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Teillieferungen sind im Modul Verkauf nicht zulässig."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckForPartialShipment - NamedType NoPartialShipmentErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 4009923459 - Method 1826875482 - NamedType 707631556" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Type %1 is not allowed,</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Art %1 ist nicht erlaubt."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckType - NamedType TypeNotAllowedErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 4009923459 - Method 1826875482 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Only the types 'Item' or 'Comment' are allowed.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CheckType - NamedType WrongTypeErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 4009923459 - Method 1617669554 - NamedType 3089784978" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Only the types 'Item' or 'Comment' are allowed.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table37HookNVX - Method CompositionSetValuesOnAfterInsertSalesLine - NamedType WrongTypeErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 754220121 - Method 2562927728 - NamedType 353338979" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Gen. Business Posting Group can not be changed. Check Item Master Data where required.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Steuerschlüssel kann nicht geändert werden. Überprüfen Sie gegebenenfalls die Stammdaten des Artikels!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table39HookNVX - Method CheckFixedPurchaseGenBusPostingGroup - NamedType WrongGenBusPostingGroupErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 754220121 - Method 1662205653 - NamedType 1602948993" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This item has inventory value. Cost Center and Section are obligatory. Only values set up in the inventory setup are allowed for items with inventory value., </source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist lagerbewertet eingerichtet. Das Setup zu Kostenstelle und Sparte muss der Lager-Einrichtung entsprechen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table39HookNVX - Method CheckForInventorySetupDimensions - NamedType InvValueErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 754220121 - Method 2663101026 - NamedType 3960831401" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Partial shipments are not allowed.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Teillieferungen sind bei nicht lagerbewerteten Artikeln im Modul Einkauf nicht zulässig."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table39HookNVX - Method CheckForPartialShipment - NamedType NoPartialShipmentErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 754220121 - Method 1826875482 - NamedType 707631556" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Type %1 is not allowed,</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Art %1 ist nicht erlaubt."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table39HookNVX - Method CheckType - NamedType TypeNotAllowedErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3690295394 - Method 3579618997 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter in den Stammdaten der Anlagenkarte! Überprüfen Sie bitte das Setup."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5600HookNVX - Method CheckAllocationCodeDimension - NamedType WrongDimErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1054837503 - Method 4034257309 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5621HookNVX - Method CheckAllocationCodeDim - NamedType WrongDim2Err</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1054837503 - Method 4034257309 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5621HookNVX - Method CheckAllocationCodeDim - NamedType WrongDimErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1054837503 - Method 950186398 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugeordneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5621HookNVX - Method InsertAllocationCode - NamedType WrongDimErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1054837503 - Method 2096719793 - NamedType 1252526162" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table5621HookNVX - Method InsertAllocationCodeInAccompaniedTable - NamedType WrongDimErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 4200806882 - Method 1565414135 - NamedType 2478128905" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item has inventory value. Dimension have to match the setup.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der erfasste Artikel ist lagerbewertet eingerichtet. Die Angaben zu Kostenstelle und Sparte müssen dem setup der Lager Einrichtung entsprechen!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table83HookNVX - Method CheckDimensions - NamedType WrongDimInventoryValueErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 4200806882 - Method 1565414135 - NamedType 3709997511" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This item has no inventory value. Cost Center and Section are obligatory. Values set up in the inventory setup are not allowed for items without inventory value.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Der Artikel ist nicht lagerbewertet eingerichtet. Das setup zu Kostenstelle und Sparte ist pflichtig. Darüber hinaus dürfen die Dimensionswerte aus der Lager-Einrichtung für lagerbewertete Artikel nicht zugeordnet werden!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table83HookNVX - Method CheckDimensions - NamedType WrongDimInventoryValueZeroErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 4200806882 - Method 916722513 - NamedType 3629795635" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Only Entry Type "Positive Adjmt.", "Negative Adjmt" and "Transfer" are allowed!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Nur die Postenarten Zugang, Abgang, Umlagerung sind erlaubt!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Table83HookNVX - Method OnAfterValidateEntryType - NamedType EntryTypeErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 2054808362 - NamedType 972383771" size-unit="char" translate="yes" xml:space="preserve">
           <source>https://www.smart-rechner.de/iban_pruefen/rechner.php</source>
@@ -12879,8 +12879,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionsNVX - Action DimensionValuesNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1966097956 - NamedType 3781092260" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1966097956">
-          <source>You must assign to all Profitcenter the field associated!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Sie müssen zu allen ProfitCenter im Feld zugehörig eine Zuordnung vornehmen!"</note>
+          <source>You must assign to all Profitcenter with %1 %2 the field associated!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sie müssen zu allen ProfitCenter mit der %1 %2 im Feld zugehörig eine Zuordnung vornehmen!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension DimensionValuesNVX - NamedType AssociationErrorMsg</note>
         </trans-unit>
         <trans-unit id="PageExtension 1966097956 - Action 898155089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 339962132">
@@ -14103,6 +14103,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Alle Sammelkto"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control AllCollectedAccountsNVX - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 2418064962 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the Allowed modify Business Field field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control AllowedDimension5CodeChangeNVX - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 4042796060 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies the value of the Allowed modify Business Field field.</source>
           <note from="Developer" annotates="general" priority="2">DEA=""Änderung Code Dim.Geschäftsfeld erlaubt"</note>
@@ -14123,6 +14128,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Gibt an, ob die Lagerbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control AllowItemProdPstGrpChangeNVX - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 2926968348 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the Allow Reminder Setup field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zugriff Erweiterung Mahnung erlauben"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control AllowSetupReminderNVX - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 255734992 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies the value of the BusinessField Filter field.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfeld Filter"</note>
@@ -14135,8 +14145,18 @@
         </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 1815520046 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies the value of the EDIT BusinessField CustLedgerEntry field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="EDIT Geschäftsfeld Debitorenposten"</note>
+          <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control EditBusFieldCustLedgerEntryNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 2224269249 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the Edit Customer Posting Group field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EDIT Sammelkonto.Debitoren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control EditCustomerPostingGroupNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 4105223465 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the Edit Vendor Posting Group field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EDIT Sammelkonto.Kreditoren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control EditVendorPostingGroupNVX - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 2851920608 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies the value of the EV-setup field.</source>
@@ -14692,6 +14712,16 @@
           <source>EDIT BusinessField CustLedgerEntry</source>
           <note from="Developer" annotates="general" priority="2">DEA="EDIT Geschäftsfeld Debitorenposten"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field EditBusFieldCustLedgerEntryNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 2224269249 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Edit Customer Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EDIT Sammelkonto.Debitoren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field EditCustomerPostingGroupNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 4105223465 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Edit Vendor Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EDIT Sammelkonto.Kreditoren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field EditVendorPostingGroupNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1224611290 - Field 2851920608 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>EV-setup</source>

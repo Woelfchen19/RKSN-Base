@@ -148,7 +148,6 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
         ShortcutDimension8CodeNVX := ShortcutDimCode[8];
         ShortcutDimension9CodeNVX := ShortcutDimCode[9];
         ShortcutDimension10CodeNVX := ShortcutDimCode[10];
-        // Modify();
     end;
 
     procedure GetShortcutDimensionsNVX(DimSetID: Integer; VAR ShortcutDimCode: ARRAY[10] OF Code[20])
@@ -191,7 +190,6 @@ tableextension 50005 "CustLedgerentryNVX" extends "Cust. Ledger Entry"
                 end;
         end;
     end;
-
 
     var
         DimensionManagement: Codeunit DimensionManagement;

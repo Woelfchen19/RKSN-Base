@@ -108,7 +108,6 @@ page 50032 "CustBusinessFieldCardNVX"
                     }
                 }
                 group(InfoUser)
-
                 {
                     Caption = 'Info User', comment = 'DEA="Benutzerinformationen"';
 
