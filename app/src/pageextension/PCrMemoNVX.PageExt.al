@@ -1,6 +1,5 @@
 pageextension 50006 "PCrMemoNVX" extends "Purchase Credit Memo"
 {
-    
     layout
     {
         addafter("Buy-from Vendor Name")
@@ -38,7 +37,6 @@ pageextension 50006 "PCrMemoNVX" extends "Purchase Credit Memo"
             end;
         }
     }
-
     actions
     {
         addlast(Processing)

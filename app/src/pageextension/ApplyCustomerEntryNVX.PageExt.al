@@ -178,8 +178,7 @@ pageextension 50053 "ApplyCustomerEntryNVX" extends "Apply Customer Entries"
         if not AppMgt.GetActivatedReminderExtensionSetup() then
             exit;
 
-        AppMgt.SetCustLedgEntryFilter(Rec);
-
+        AppMgt.GetUserSetup(UserSetup, true);
         AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Apply Customer Entries", DimVisible, DimEditable);
         AppMgt.GetFieldsPropertyVisibleEditableBySetup(
             DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,

@@ -169,29 +169,19 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
     }
 
     trigger OnOpenPage()
-    var
-        BusinessFieldFilter: Code[40];
     begin
+        if not AppMgt.GetActivatedReminderExtensionSetup() then
+            exit;
+
         AppMgt.GetUserSetup(UserSetup, true);
-
+        AppMgt.SetCustLedgEntryFilter(Rec, false);
         AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Customer Ledger Entries", DimVisible, DimEditable);
-
         AppMgt.GetFieldsPropertyVisibleEditableBySetup(
             DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
                 DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
 
         DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
         DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
-
-        if AppMgt.GetActivatedReminderExtensionSetup() then begin
-            BusinessFieldFilter := AppMgt.GetBusinessFieldFilterNVX();
-            Rec.FilterGroup(2);
-            if BusinessFieldFilter = '' then
-                Rec.SetFilter("Entry No.", '%1', -1)
-            else
-                Rec.SetFilter(ShortcutDimension5CodeNVX, BusinessFieldFilter);
-            Rec.FilterGroup(0);
-        end;
     end;
 
     var

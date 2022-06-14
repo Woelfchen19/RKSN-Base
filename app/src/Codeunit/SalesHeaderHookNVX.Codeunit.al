@@ -60,7 +60,7 @@ codeunit 50015 SalesHeaderHookNVX
         end;
 
         OldDimSetID := Rec."Dimension Set ID";
-        Rec.ShortcutDimension5CodeNVX := AppMgt.GetShortcutDimension5OnAssignmentDepartment(Rec."Shortcut Dimension 1 Code");
+        Rec.ShortcutDimension5CodeNVX := AppMgt.GetShortcutDimension5FromAssignmentDepartment(Rec."Shortcut Dimension 1 Code");
         Rec.ValidateShortcutDimCode(5, Rec.ShortcutDimension5CodeNVX);
         if OldDimSetID <> Rec."Dimension Set ID" then
             Rec.Modify();
@@ -74,6 +74,7 @@ codeunit 50015 SalesHeaderHookNVX
     begin
         if Rec.IsTemporary then
             exit;
+
         if Rec."Document Type" = Rec."Document Type"::Order then begin
             InvSetupNVX.Get();
             if Rec."Sell-to Customer No." <> InvSetupNVX."Composition Customer" then
@@ -94,12 +95,11 @@ codeunit 50015 SalesHeaderHookNVX
         IsHandled := SalesLine.IsEmpty;
     end;
 
-    //ToDo
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterSetApplyToFilters', '', true, true)]
     local procedure OnAfterSetApplyToFilters(var CustLedgerEntry: Record "Cust. Ledger Entry"; SalesHeader: Record "Sales Header")
     var
         AppMgt: Codeunit AppMgtNVX;
     begin
-        // AppMgt.SetCustLedgEntryFilter(CustLedgerEntry);
+        AppMgt.SetCustLedgEntryFilter(CustLedgerEntry, SalesHeader."Dimension Set ID", true);
     end;
 }

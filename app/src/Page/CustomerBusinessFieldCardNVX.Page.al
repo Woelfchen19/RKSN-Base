@@ -1,4 +1,4 @@
-page 50032 "CustBusinessFieldCardNVX"
+page 50032 "CustomerBusinessFieldCardNVX"
 {
     Caption = 'Customer Card BusinessField', comment = 'DEA="Debitorenkarte Geschäftsfeld"';
     DeleteAllowed = false;
@@ -38,6 +38,7 @@ page 50032 "CustBusinessFieldCardNVX"
                     }
                     field("Shortcut Dimension 9 Code"; Rec."Shortcut Dimension 9 Code")
                     {
+                        ShowMandatory = true;
                         ApplicationArea = All;
                         ToolTip = '', comment = 'DEA=""';
 

@@ -1,14 +1,13 @@
 page 50038 "ReminderControlBusFieldListNVX"
 {
     ApplicationArea = All;
-    Caption = 'ReminderControlSetupList', comment = 'DEA="Steuerung Mahnungen GESCHÄFTSFELD Übersicht"';
+    Caption = 'Reminder Control BUSINESSFIELD', comment = 'DEA="Steuerung Mahnungen GESCHÄFTSFELD"';
     PageType = List;
     SourceTable = ReminderControlSetupNVX;
     UsageCategory = Administration;
     CardPageId = ReminderControlSetupCardNVX;
     Editable = false;
     SourceTableView = WHERE(ReminderSetupExtension = filter(BusinessField));
-
     layout
     {
         area(content)

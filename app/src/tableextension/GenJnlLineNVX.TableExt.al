@@ -176,12 +176,12 @@ tableextension 50014 "GenJnlLineNVX" extends "Gen. Journal Line"
     }
     procedure SetBusinessFieldNVX()
     var
-        AssosiatedDepartment: Record AssignmentDepartmentNVX;
+        AssignmentDepartment: Record AssignmentDepartmentNVX;
     begin
-        AssosiatedDepartment.Reset();
-        AssosiatedDepartment.SetRange("Shortcut Dimension 1 Code", Rec."Shortcut Dimension 1 Code");
-        if AssosiatedDepartment.FindFirst() then
-            Rec.ValidateShortcutDimCode(5, AssosiatedDepartment."Shortcut Dimension 5 Code");
+        AssignmentDepartment.Reset();
+        AssignmentDepartment.SetRange("Shortcut Dimension 1 Code", Rec."Shortcut Dimension 1 Code");
+        if AssignmentDepartment.FindFirst() then
+            Rec.ValidateShortcutDimCode(5, AssignmentDepartment."Shortcut Dimension 5 Code");
     end;
 
     local procedure ValidateCustLedgerEntryFilter(var CustLedgerEntry: Record "Cust. Ledger Entry")

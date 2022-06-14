@@ -1,6 +1,6 @@
 codeunit 50007 "GenJnlPostLineHookNVX"
 {
-
+    //ToDo check OnAfter
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertGlobalGLEntry', '', true, true)]
     local procedure OnBeforeInsertGlobalGLEntry(var GlobalGLEntry: Record "G/L Entry"; GenJournalLine: Record "Gen. Journal Line")
     begin
@@ -8,12 +8,6 @@ codeunit 50007 "GenJnlPostLineHookNVX"
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterCustLedgEntryInsert', '', true, true)]
-    local procedure OnAfterCustLedgEntryInsert(var CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
-    begin
-        //CustLedgerEntry.CopyShortCutDimensionsFromDimensionValuesNVX();
-    end;
-
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeCustLedgEntryInsert', '', true, true)]
     local procedure OnBeforeInsertCustLedgEntry(var CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
     var
         AppMgt: Codeunit AppMgtNVX;
@@ -21,28 +15,25 @@ codeunit 50007 "GenJnlPostLineHookNVX"
         if AppMgt.GetActivatedReminderExtensionSetup() then begin
             CustLedgerEntry.CopyShortCutDimensionsFromDimensionValuesNVX();
             CustLedgerEntry.SetAssociatedNVX();
-            // AppMgt.GetPaymentMethodCodeCustomer(
-            //     CustLedgerEntry."Customer No.",
-            //         CustLedgerEntry.ShortcutDimension5CodeNVX,
-            //             CustLedgerEntry."Payment Method Code");
+            CustLedgerEntry.Modify();
         end;
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertDtldCustLedgEntry', '', true, true)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertDtldCustLedgEntry', '', true, true)]
     local procedure OnBeforeInsertDtldCustLedgEntry(var DtldCustLedgEntry: Record "Detailed Cust. Ledg. Entry"; GenJournalLine: Record "Gen. Journal Line"; DtldCVLedgEntryBuffer: Record "Detailed CV Ledg. Entry Buffer")
     begin
         DtldCustLedgEntry.DimensionSetIDNVX := GenJournalLine."Dimension Set ID";
         DtldCustLedgEntry.CopyShortCutDimensionsFromDimensionValuesNVX();
+        DtldCustLedgEntry.Modify();
     end;
 
-
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertVATEntry', '', true, true)]
-    local procedure OnBeforeInsertVATEntry(var VATEntry: Record "VAT Entry"; GenJournalLine: Record "Gen. Journal Line")
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertVATEntry', '', true, true)]
+    local procedure OnAfterInsertVATEntry(GenJnlLine: Record "Gen. Journal Line"; VATEntry: Record "VAT Entry"; GLEntryNo: Integer; var NextEntryNo: Integer)
     begin
-        VATEntry.DimensionSetIDNVX := GenJournalLine."Dimension Set ID";
+        VATEntry.DimensionSetIDNVX := GenJnlLine."Dimension Set ID";
         VATEntry.CopyShortCutDimensionsFromDimensionValuesNVX();
+        VATEntry.Modify();
     end;
-
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnCustPostApplyCustLedgEntryOnBeforeCheckPostingGroup', '', true, true)]
     local procedure OnCustPostApplyCustLedgEntryOnBeforeCheckPostingGroup(var GenJournalLine: Record "Gen. Journal Line"; var Customer: Record "Customer")

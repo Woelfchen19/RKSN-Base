@@ -104,6 +104,31 @@ pageextension 50020 "SalesCrMemoNVX" extends "Sales Credit Memo"
 
     actions
     {
+        modify(ApplyEntries)
+        {
+            Visible = false;
+        }
+        addafter(ApplyEntries)
+        {
+            action(ApplyEntriesNVX)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Apply Entries', comment = 'DEA="Posten ausgleichen"';
+                ;
+                Ellipsis = true;
+                Enabled = "No." <> '';
+                Image = ApplyEntries;
+                Promoted = true;
+                PromotedCategory = Category7;
+                ShortCutKey = 'Shift+F11';
+                ToolTip = 'Select one or more ledger entries that you want to apply this record to so that the related posted documents are closed as paid or refunded.';
+
+                trigger OnAction()
+                begin
+                    CODEUNIT.Run(CODEUNIT::SalesHeaderApplyNVX, Rec);
+                end;
+            }
+        }
         addlast(Processing)
         {
             action(PreviewDimDistributionNVX)

@@ -43,7 +43,7 @@ table 50000 "AllocationCodeNVX"
 
     trigger OnInsert()
     begin
-        AppMgt.InsertDimValue(Rec);
+        AppMgt.InsertAllocationDimValue(Rec);
     end;
 
     trigger OnDelete();

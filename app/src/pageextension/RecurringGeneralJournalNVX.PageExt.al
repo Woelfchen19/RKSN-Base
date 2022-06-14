@@ -22,7 +22,7 @@ pageextension 50044 "RecurringGeneralJournalNVX" extends "Recurring General Jour
                             AllocationCode.Get(Rec.AllocCodeNVX);
                             Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
                             if Rec."Line No." > 0 then begin
-                                AppMgt.InsertDimValue(AllocationCode);
+                                AppMgt.InsertAllocationDimValue(AllocationCode);
                                 AppMgt.ModifyDimensionSetEntry(Rec, AllocationCode.Code);
                                 Rec.Modify();
                             end;

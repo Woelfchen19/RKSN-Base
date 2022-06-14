@@ -11077,6 +11077,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit GenJournalLineHookNVX - Method InsertAllocationCodeInAccompaniedTable - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
         </trans-unit>
+        <trans-unit id="Codeunit 1640292380 - Method 2096719793 - NamedType 3185158089" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Length is not ok!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Länge des Feldes nicht OK!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit GenJournalLineHookNVX - Method InsertAllocationCodeInAccompaniedTable - NamedType WrongDim10Err</note>
+          <target>Länge des Feldes nicht OK!</target>
+        </trans-unit>
         <trans-unit id="Codeunit 2732553539 - Method 1487222207 - NamedType 4220959294" size-unit="char" translate="yes" xml:space="preserve">
           <source>You are not allowed to use this Product Posting Group in this context. It belongs to the Datawarehouse</source>
           <note from="Developer" annotates="general" priority="2">DEA="Es ist nicht möglich, diese Produktbuchungsgruppe zuzuordnen, da diese zum Datawarehouse gehört!"</note>
@@ -11203,6 +11209,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit SalesLineHookNVX - Method CompositionSetValuesOnAfterInsertSalesLine - NamedType WrongTypeErr</note>
           <target>In einer Abfassung können sie nur Art 'Artikel' oder 'leer' wählen</target>
         </trans-unit>
+        <trans-unit id="Codeunit 3622692021 - Method 3240997455 - NamedType 3644142597" size-unit="char" translate="yes" xml:space="preserve">
+          <source>User %1 has no permission für this Businessfield! Please contact your Systemadministrator.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Benutzer %1 hat keine Berechtigung für dieses Geschäftsfeld! Bitte wenden Sie sich an Ihren Systemadministrator."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SalesPostHookNVX - Method OnAfterCheckMandatoryFields - NamedType UserSetupErr</note>
+          <target>Benutzer %1 hat keine Berechtigung für dieses Geschäftsfeld! Bitte wenden Sie sich an Ihren Systemadministrator.</target>
+        </trans-unit>
         <trans-unit id="Codeunit 1787021016 - Method 2999721956 - NamedType 645313898" size-unit="char" translate="yes" xml:space="preserve">
           <source>This receipt has already been invoiced. Undo Receipt can be applied only to posted, but not invoiced receipts.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Dieser Wareneingang wurde bereits fakturiert. 'Wareneingang stornieren' kann nur auf gebuchte, aber nicht auf fakturierte Wareneingänge angewendet werden."</note>
@@ -11317,10 +11329,10 @@
           <target>Zuordnung KST</target>
         </trans-unit>
         <trans-unit id="Page 1454579111 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Assignment Department List</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Zuordnung KST Übersicht"</note>
+          <source>Assignment Departments</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zuordnung KST"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page AssignmentDepartmentListNVX - Property Caption</note>
-          <target>Zuordnung KST Übersicht</target>
+          <target>Zuordnung KST</target>
         </trans-unit>
         <trans-unit id="Page 1061052414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Change Log Entry Dimension</source>
@@ -11482,91 +11494,6 @@
           <source>Setup</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page ChangeLogEntriesListNVX - Action Setup - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Customer Card BusinessField</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Debitorenkarte Geschäftsfeld"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Property Caption</note>
-          <target>Debitorenkarte Geschäftsfeld</target>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Allgemein"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control General - Property Caption</note>
-          <target>Allgemein</target>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 2667032929 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Business Field</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfeld"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control BusinessFields - Property Caption</note>
-          <target>Geschäftsfeld</target>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 2380178257 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Shortcut Dimension 5 Name field.</source>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control ShortcutdimensionCode5Name - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 3779331977 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Info User</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Benutzerinformationen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control InfoUser - Property Caption</note>
-          <target>Benutzerinformationen</target>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 207956542 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Created By User field.</source>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Created By User - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Creation Date field.</source>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Creation Date - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 2151862291 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Last Modified By User field.</source>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Last Modified By User - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 2626717425 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Last Modified Date field.</source>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Last Modified Date - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 3346365350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Payment Management</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Zahlungsmanagement"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Payment - Property Caption</note>
-          <target>Zahlungsmanagement</target>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 1151010992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>SAMMELKto</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Sammelkonto"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control ShortcutDimension9Code - Property Caption</note>
-          <target>Sammelkonto</target>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 2475792064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source/>
-          <note from="Developer" annotates="general" priority="2">DEA=""</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control Shortcut Dimension 9 Code - Property ToolTip</note>
-          <target/>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Control 4002559053 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Shortcut Dimension 9 Name field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Name"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Control ShortcutdimensionCode9Name - Property ToolTip</note>
-          <target>Name</target>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Action 2160814374 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Show the Customer Balance Review</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Führt den Bericht RKST Debitor Saldenrückblick aus"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Action RKSTBalanceReview - Property ToolTip</note>
-          <target>Führt den Bericht RKST Debitor Saldenrückblick aus</target>
-        </trans-unit>
-        <trans-unit id="Page 2112578491 - Action 2160814374 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>RKST Balance Review</source>
-          <note from="Developer" annotates="general" priority="2">DEA=RKST Debitor Saldenrückblick</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldCardNVX - Action RKSTBalanceReview - Property Caption</note>
-          <target>RKST Debitor Saldenrückblick</target>
         </trans-unit>
         <trans-unit id="Page 4040994964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Activ Businessfields</source>
@@ -12149,6 +12076,91 @@
           <note from="Developer" annotates="general" priority="2">DEA="Mahnungsmethodencode"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustBusinessFieldsCardNVX - Control SOReminderTermsCodeNVX - Property Caption</note>
           <target>Mahnungsmethodencode</target>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Card BusinessField</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Debitorenkarte Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Property Caption</note>
+          <target>Debitorenkarte Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Allgemein"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Control General - Property Caption</note>
+          <target>Allgemein</target>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Control 2667032929 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Business Field</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfeld"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Control BusinessFields - Property Caption</note>
+          <target>Geschäftsfeld</target>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Control 2380178257 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 5 Name field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Control ShortcutdimensionCode5Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Control 3779331977 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Info User</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Benutzerinformationen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Control InfoUser - Property Caption</note>
+          <target>Benutzerinformationen</target>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Control 207956542 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Created By User field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Control Created By User - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Creation Date field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Control Creation Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Control 2151862291 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Last Modified By User field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Control Last Modified By User - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Control 2626717425 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Last Modified Date field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Control Last Modified Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Control 3346365350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Management</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zahlungsmanagement"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Control Payment - Property Caption</note>
+          <target>Zahlungsmanagement</target>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Control 1151010992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAMMELKto</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sammelkonto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Control ShortcutDimension9Code - Property Caption</note>
+          <target>Sammelkonto</target>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Control 2475792064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Control Shortcut Dimension 9 Code - Property ToolTip</note>
+          <target/>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Control 4002559053 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 9 Name field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Name"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Control ShortcutdimensionCode9Name - Property ToolTip</note>
+          <target>Name</target>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Action 2160814374 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show the Customer Balance Review</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Führt den Bericht RKST Debitor Saldenrückblick aus"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Action RKSTBalanceReview - Property ToolTip</note>
+          <target>Führt den Bericht RKST Debitor Saldenrückblick aus</target>
+        </trans-unit>
+        <trans-unit id="Page 3757138000 - Action 2160814374 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RKST Balance Review</source>
+          <note from="Developer" annotates="general" priority="2">DEA=RKST Debitor Saldenrückblick</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CustomerBusinessFieldCardNVX - Action RKSTBalanceReview - Property Caption</note>
+          <target>RKST Debitor Saldenrückblick</target>
         </trans-unit>
         <trans-unit id="Page 3618441594 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dim. / VAT Allocation</source>
@@ -13427,10 +13439,10 @@
           <target>Betrag NETTO</target>
         </trans-unit>
         <trans-unit id="Page 625002495 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ReminderControlSetupList</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Steuerung Mahnungen GESCHÄFTSFELD Übersicht"</note>
+          <source>Reminder Control BUSINESSFIELD</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuerung Mahnungen GESCHÄFTSFELD"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlBusFieldListNVX - Property Caption</note>
-          <target>Steuerung Mahnungen GESCHÄFTSFELD Übersicht</target>
+          <target>Steuerung Mahnungen GESCHÄFTSFELD</target>
         </trans-unit>
         <trans-unit id="Page 625002495 - Control 1091775435 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Activ field.</source>
@@ -13582,10 +13594,10 @@
           <target>Dim.2: ProfitCenter</target>
         </trans-unit>
         <trans-unit id="Page 3881562964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ReminderControlSetupList</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Steuerung Mahnungen PROFITCENTER Übersicht"</note>
+          <source>Reminder Control PROFITCENTER</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Steuerung Mahnungen PROFITCENTER"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ReminderControlPCListNVX - Property Caption</note>
-          <target>Steuerung Mahnungen PROFITCENTER Übersicht</target>
+          <target>Steuerung Mahnungen PROFITCENTER</target>
         </trans-unit>
         <trans-unit id="Page 3881562964 - Control 1091775435 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Activ field.</source>
@@ -14158,6 +14170,112 @@
           <source>Specifies the value of the Object Type field.</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SetupPropertyForFieldsNVX - Control Object Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 87408810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source/>
+          <note from="Developer" annotates="general" priority="2">DEA="Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control Reminder - Property Caption</note>
+          <target>Mahnwesen</target>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 2423544376 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the All Collected Accounts field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control AllCollectedAccountsNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 2418064962 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Allowed modify Business Field field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control AllowedDimension5CodeChangeNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 4066391197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Allowed modify Issued Reminder field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control AllowedModifyIssuedReminderNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 639668495 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Allow Item Invt.Post.Group Change field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control AllowItemInvtPstGrpChangeNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 2604956699 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if the user is allowed to change the Inventory Posting Group on items although entries are existing</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control AllowItemProdPstGrpChangeNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 2926968348 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Allow Reminder Setup field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control AllowSetupReminderNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 255734992 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the BusinessField Filter field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control BusinessFieldFilterNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 3628519213 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the EA-setup field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control EASetupNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 1815520046 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the EDIT BusinessField CustLedgerEntry field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control EditBusFieldCustLedgerEntryNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 2224269249 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Edit Customer Posting Group field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control EditCustomerPostingGroupNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 4105223465 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Edit Vendor Posting Group field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control EditVendorPostingGroupNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 2851920608 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the EV-setup field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control EVSetupNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 3209937647 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the PB-setup field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control PBSetupNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 3674141283 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the RD-setup field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control RDSetupNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 1802118196 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Admin Reminder Extension field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control ReminderExtenionsAdminNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 2663599612 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reminder Run authorized field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control ReminderRunAuthorizedNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 2071610583 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the RH-setup field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control RHSetupNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 3127604373 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Setup dynamic Fields field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control SetupDynamicFieldsNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 1518406549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the SO-setup field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control SOSetupNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2463493318 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the User ID field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Control User ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2664610773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Posting Types</source>
@@ -16374,6 +16492,11 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control AllCollectedAccountsNVX - Property ToolTip</note>
           <target>Alle Sammelkto</target>
         </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 2418064962 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the Allowed modify Business Field field.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control AllowedDimension5CodeChangeNVX - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 4042796060 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies the value of the Allowed modify Business Field field.</source>
           <note from="Developer" annotates="general" priority="2">DEA=""Änderung Code Dim.Geschäftsfeld erlaubt"</note>
@@ -16398,6 +16521,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control AllowItemProdPstGrpChangeNVX - Property ToolTip</note>
           <target>Gibt an, ob die Lagerbuchungsgruppe am Artikel geändert werden darf obwohl bereits Artikelposten existieren</target>
         </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 2926968348 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the Allow Reminder Setup field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zugriff Erweiterung Mahnung erlauben"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control AllowSetupReminderNVX - Property ToolTip</note>
+          <target>Zugriff Erweiterung Mahnung erlauben</target>
+        </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 255734992 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies the value of the BusinessField Filter field.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Geschäftsfeld Filter"</note>
@@ -16412,9 +16541,20 @@
         </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 1815520046 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies the value of the EDIT BusinessField CustLedgerEntry field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="EDIT Geschäftsfeld Debitorenposten"</note>
+          <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control EditBusFieldCustLedgerEntryNVX - Property ToolTip</note>
-          <target>EDIT Geschäftsfeld Debitorenposten</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 2224269249 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the Edit Customer Posting Group field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EDIT Sammelkonto.Debitoren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control EditCustomerPostingGroupNVX - Property ToolTip</note>
+          <target>EDIT Sammelkonto.Debitoren</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1224611290 - Control 4105223465 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the Edit Vendor Posting Group field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EDIT Sammelkonto.Kreditoren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension UserSetupNVX - Control EditVendorPostingGroupNVX - Property ToolTip</note>
+          <target>EDIT Sammelkonto.Kreditoren</target>
         </trans-unit>
         <trans-unit id="PageExtension 1224611290 - Control 2851920608 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
           <source>Specifies the value of the EV-setup field.</source>
@@ -17036,6 +17176,18 @@
           <note from="Developer" annotates="general" priority="2">DEA="EDIT Geschäftsfeld Debitorenposten"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field EditBusFieldCustLedgerEntryNVX - Property Caption</note>
           <target>EDIT Geschäftsfeld Debitorenposten</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 2224269249 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Edit Customer Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EDIT Sammelkonto.Debitoren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field EditCustomerPostingGroupNVX - Property Caption</note>
+          <target>EDIT Sammelkonto.Debitoren</target>
+        </trans-unit>
+        <trans-unit id="TableExtension 1224611290 - Field 4105223465 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Edit Vendor Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">DEA="EDIT Sammelkonto.Kreditoren"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension UserSetupNVX - Field EditVendorPostingGroupNVX - Property Caption</note>
+          <target>EDIT Sammelkonto.Kreditoren</target>
         </trans-unit>
         <trans-unit id="TableExtension 1224611290 - Field 2851920608 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>EV-setup</source>

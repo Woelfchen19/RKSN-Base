@@ -23,6 +23,7 @@ page 50031 "CustBusinessFieldFactBoxNVX"
                 field("Shortcut Dimension 5 Code"; Rec."Shortcut Dimension 5 Code")
                 {
                     ApplicationArea = All;
+                    ShowCaption = false;
                     StyleExpr = StyleTxt;
                     ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
 
@@ -36,12 +37,13 @@ page 50031 "CustBusinessFieldFactBoxNVX"
                             CustomerBusinessField.SetRange("Customer No.", Rec."Customer No.");
                             Page.RunModal(PAGE::CustBusinessFieldsCardNVX, CustomerBusinessField);
                         end else
-                            Page.RunModal(PAGE::CustBusinessFieldCardNVX, CustomerBusinessField);
+                            Page.RunModal(PAGE::"CustomerBusinessFieldCardNVX", CustomerBusinessField);
                     end;
                 }
                 field(Dimension5Name; Rec.ShortcutdimensionCode5Name)
                 {
                     ApplicationArea = All;
+                    ShowCaption = false;
                     StyleExpr = StyleTxt;
                     ToolTip = 'Specifies the value of the Shortcut Dimension 5 Name field.', Comment = 'DEA="Name"';
                 }

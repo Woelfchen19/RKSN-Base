@@ -1,15 +1,13 @@
 page 50030 "AssignmentDepartmentListNVX"
 {
-
     ApplicationArea = All;
-    Caption = 'Assignment Department List', comment = 'DEA="Zuordnung KST Übersicht"';
-    PageType = List;
-    SourceTable = AssignmentDepartmentNVX;
-    UsageCategory = Lists;
-    ShowFilter = false;
-    Editable = false;
+    Caption = 'Assignment Departments', comment = 'DEA="Zuordnung KST"';
     CardPageId = AssignmentDepartmentCardNVX;
-
+    Editable = false;
+    PageType = List;
+    ShowFilter = false;
+    SourceTable = AssignmentDepartmentNVX;
+    UsageCategory = Administration;
     layout
     {
         area(content)

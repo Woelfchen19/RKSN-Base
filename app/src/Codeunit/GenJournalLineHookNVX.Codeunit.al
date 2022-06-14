@@ -35,7 +35,6 @@ codeunit 50021 GenJournalLineHookNVX
     var
         AllocationCode: Record AllocationCodeNVX;
         FixedAssetNVX: Record FixedAssetNVX;
-        GenJournalBatch: record GenJournalBatchNVX;
         WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugeordneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
     begin
@@ -51,10 +50,6 @@ codeunit 50021 GenJournalLineHookNVX
                     if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
                         Error(WrongDimErr);
         end;
-
-        GenJournalBatch.Get(Rec."Journal Template Name", Rec."Journal Batch Name");
-        if GenJournalBatch.ShortcutDimension5CodeNVX <> '' then
-            Rec.ValidateShortcutDimCode(5, GenJournalBatch.ShortcutDimension5CodeNVX);
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterInsertEvent', '', false, false)]
@@ -62,10 +57,13 @@ codeunit 50021 GenJournalLineHookNVX
     var
         AllocationCode: Record AllocationCodeNVX;
         FixedAssetNVX: Record FixedAssetNVX;
-        GenJournalBatch: Record GenJournalBatchNVX;
+        AppMgt: Codeunit AppMgtNVX;
+        DimMgt: Codeunit DimensionManagement;
         ShortcutDimCode: Array[10] of Code[20];
+        OldDimensionSetID: Integer;
         WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
+        WrongDim10Err: Label 'Length is not ok!', comment = 'DEA="Länge des Feldes nicht OK!"';
     begin
         if not RunTrigger then
             exit;
@@ -84,29 +82,32 @@ codeunit 50021 GenJournalLineHookNVX
                         Error(WrongDimErr);
             end;
 
-        //One Function
-        GenJournalBatch.Get(Rec."Journal Template Name", Rec."Journal Batch Name");
-        if GenJournalBatch.ShortcutDimension5CodeNVX <> '' then
-            Rec.ValidateShortcutDimCode(5, GenJournalBatch.ShortcutDimension5CodeNVX);
+        if not AppMgt.GetActivatedReminderExtensionSetup() then
+            exit;
 
-        GLSetup.GetRecordOnce();
+        OldDimensionSetID := Rec."Dimension Set ID";
+        AppMgt.ValidateShortcutDimCodes(Rec);
+        if OldDimensionSetID <> Rec."Dimension Set ID" then begin
+            //ToDo
+            //Change the lenght Field "Primary Key" Table Alloc
+            if StrLen(Rec.ShortcutDimension10CodeNVX) > 10 then
+                Error(WrongDim10Err);
 
-        DimMgt.GetShortcutDimensions(Rec."Dimension Set ID", ShortcutDimCode);
-        AssosiatedDepartment.SetRange("Shortcut Dimension 5 Code", ShortcutDimCode[5]);
-        if AssosiatedDepartment.FindFirst() then
-            Rec.ValidateShortcutDimCode(1, AssosiatedDepartment."Shortcut Dimension 1 Code");
+            DimMgt.GetShortcutDimensions(Rec."Dimension Set ID", ShortcutDimCode);
+            Rec.AllocCodeNVX := ShortcutDimCode[10];
+            Rec.Modify();
+        end;
     end;
-
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterCopyGenJnlLineFromSalesHeaderPayment', '', true, true)]
     local procedure OnAfterCopyGenJnlLineFromSalesHeaderPayment(SalesHeader: Record "Sales Header"; var GenJournalLine: Record "Gen. Journal Line")
     var
-        PaymentTerms: Record "Payment Terms";
         PaymentMethod: Record "Payment Method";
+        PaymentTerms: Record "Payment Terms";
         AppMgt: Codeunit AppMgtNVX;
     begin
-        AppMgt.GetPaymentTermsCode(SalesHeader."Sell-to Customer No.", SalesHeader.ShortcutDimension5CodeNVX, GenJournalLine."Payment Terms Code");
-        AppMgt.GetPaymentMethodCodeCustomer(SalesHeader."Sell-to Customer No.", SalesHeader.ShortcutDimension5CodeNVX, GenJournalLine."Payment Method Code");
+        AppMgt.GetPaymentTermsCode(SalesHeader."Bill-to Customer No.", SalesHeader.ShortcutDimension5CodeNVX, GenJournalLine."Payment Terms Code");
+        AppMgt.GetPaymentMethodCodeCustomer(SalesHeader."Bill-to Customer No.", SalesHeader.ShortcutDimension5CodeNVX, GenJournalLine."Payment Method Code");
         if PaymentTerms.Get(GenJournalLine."Payment Terms Code") then begin
             GenJournalLine."Due Date" := CalcDate(PaymentTerms."Due Date Calculation", SalesHeader."Document Date");
             GenJournalLine."Pmt. Discount Date" := CalcDate(PaymentTerms."Discount Date Calculation", SalesHeader."Document Date");
@@ -120,9 +121,4 @@ codeunit 50021 GenJournalLineHookNVX
     begin
         Rec.SetBusinessFieldNVX();
     end;
-
-    var
-        GLSetup: Record "General Ledger Setup";
-        AssosiatedDepartment: Record AssignmentDepartmentNVX;
-        DimMgt: Codeunit DimensionManagement;
 }

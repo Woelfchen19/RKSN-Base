@@ -154,7 +154,7 @@ pageextension 50009 "PurchaseInvoiceSubformNVX" extends "Purch. Invoice Subform"
                             AllocationCode.Get(AllocationCodeVar);
                             Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
                             if Rec."Line No." > 0 then begin
-                                AppMgt.InsertDimValue(AllocationCode);
+                                AppMgt.InsertAllocationDimValue(AllocationCode);
                                 AppMgt.ModifyDimensionSetEntry(Rec, AllocationCode.Code);
                                 Rec.Modify();
                             end;

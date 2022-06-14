@@ -1,14 +1,13 @@
 page 50050 "ReminderControlPCListNVX"
 {
     ApplicationArea = All;
-    Caption = 'ReminderControlSetupList', comment = 'DEA="Steuerung Mahnungen PROFITCENTER Übersicht"';
+    Caption = 'Reminder Control PROFITCENTER', comment = 'DEA="Steuerung Mahnungen PROFITCENTER"';
     PageType = List;
     SourceTable = ReminderControlSetupNVX;
     UsageCategory = Administration;
     CardPageId = ReminderControlSetupCardNVX;
     Editable = false;
     SourceTableView = WHERE(ReminderSetupExtension = filter(PC));
-
     layout
     {
         area(content)

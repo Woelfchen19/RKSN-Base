@@ -197,7 +197,7 @@ codeunit 50026 "AppMgtNVX"
 
     end;
 
-    procedure GetShortcutDimension5OnAssignmentDepartment(ShortcutDimension1Code: Code[20]): Code[20]
+    procedure GetShortcutDimension5FromAssignmentDepartment(ShortcutDimension1Code: Code[20]): Code[20]
     var
         AssignmentDepartment: Record AssignmentDepartmentNVX;
     begin
@@ -306,7 +306,7 @@ codeunit 50026 "AppMgtNVX"
         Message(ReadyMsg);
     end;
 
-    procedure InsertDimValue(AllocationCode: Record AllocationCodeNVX)
+    procedure InsertAllocationDimValue(AllocationCode: Record AllocationCodeNVX)
     var
         Dimvalue: Record "Dimension Value";
     begin
@@ -410,6 +410,37 @@ codeunit 50026 "AppMgtNVX"
         exit(false);
     end;
 
+    procedure ValidateShortcutDimCodes(var Rec: Record "Gen. Journal Line")
+    var
+        GenJournalBatch: Record GenJournalBatchNVX;
+        AllocationCode: Record AllocationCodeNVX;
+        AssignmentDepartment: Record AssignmentDepartmentNVX;
+        ShortcutDimCode: Array[10] of Code[20];
+    begin
+        GLSetup.GetRecordOnce();
+
+        DimMgt.GetShortcutDimensions(Rec."Dimension Set ID", ShortcutDimCode);
+
+        if GenJournalBatch.Get(Rec."Journal Template Name", Rec."Journal Batch Name") then
+            if GenJournalBatch.ShortcutDimension5CodeNVX <> '' then begin
+                ShortcutDimCode[5] := GenJournalBatch.ShortcutDimension5CodeNVX;
+                Rec.ValidateShortcutDimCode(5, ShortcutDimCode[5]);
+            end;
+
+        AssignmentDepartment.Reset();
+        AssignmentDepartment.SetRange("Shortcut Dimension 5 Code", ShortcutDimCode[5]);
+        if AssignmentDepartment.FindFirst() then begin
+            ShortcutDimCode[1] := AssignmentDepartment."Shortcut Dimension 1 Code";
+            Rec.ValidateShortcutDimCode(1, ShortcutDimCode[1]);
+        end;
+
+        AllocationCode.SetRange("Shortcut Dimension 2 Code", ShortcutDimCode[2]);
+        if AllocationCode.FindFirst() then begin
+            ShortcutDimCode[10] := AllocationCode.Code;
+            Rec.ValidateShortcutDimCode(10, ShortcutDimCode[10]);
+        end;
+    end;
+
     procedure ModifyDimension5SetEntry(var SalesHeader: Record "Sales Header"; var ShortcutDimension5Code: Code[20])
     VAR
         TempDimSetEntry: Record "Dimension Set Entry" temporary;
@@ -431,18 +462,7 @@ codeunit 50026 "AppMgtNVX"
 
     //ToDo
     procedure ModifyDimensionSetEntry(var GenJnlLine: Record "Gen. Journal Line"; AllocationCode: Code[20])
-    // VAR
-    //     TempDimSetEntry: Record "Dimension Set Entry" temporary;
     begin
-        // GLSetup.Get();
-        // DimMgt.GetDimensionSet(TempDimSetEntry, GenJnlLine."Dimension Set ID");
-
-        // TempDimSetEntry.Init();
-        // TempDimSetEntry.Validate("Dimension Code", GLSetup.ShortcutDimension10CodeNVX);
-        // TempDimSetEntry.Validate("Dimension Value Code", AllocationCode);
-        // if TempDimSetEntry.Insert() then;
-
-        // GenJnlLine."Dimension Set ID" := DimMgt.GetDimensionSetID(TempDimSetEntry);
         OldParentDimSetID := GenJnlLine."Dimension Set ID";
         GenJnlLine.ValidateShortcutDimCode(10, AllocationCode);
     end;
@@ -548,34 +568,96 @@ codeunit 50026 "AppMgtNVX"
             exit(false);
     end;
 
-    //ToDo
-    procedure SetCustLedgEntryFilter(var CustLedgerEntry: Record "Cust. Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    procedure SetCustLedgEntryFilter(var CustLedgerEntry: Record "Cust. Ledger Entry"; WithAssociated: Boolean)
     begin
-        // if AppMgt.GetActivatedReminderExtensionSetup() then begin
-        // CustLedgerEntry.FilterGroup(2);
-        // CustLedgerEntry.SetRange(AssociatedNVX, GenJournalLine.AssociatedNVX);
-        // CustLedgerEntry.FilterGroup(0);
-        // end;
+        SetCustLedgEntryFilter(CustLedgerEntry, CustLedgerEntry."Dimension Set ID", true);
     end;
 
-    procedure SetCustLedgEntryFilter(var CustLedgerEntry: Record "Cust. Ledger Entry")
+    procedure SetCustLedgEntryFilter(var CustLedgerEntry: Record "Cust. Ledger Entry"; DimensionSetID: Integer; WithAssociated: Boolean)
     var
         DimensionValue: Record "Dimension Value";
+        BusinessFieldFilter: Code[40];
     begin
         if AppMgt.GetActivatedReminderExtensionSetup() then begin
             GLSetup.GetRecordOnce();
 
             AppMgt.GetUserSetup(UserSetup, true);
             AppMgt.AllowdBusinessFieldsForUser();
-            DimMgt.GetShortcutDimensions(CustLedgerEntry."Dimension Set ID", GLSetupShortcutDimCode);
+            DimMgt.GetShortcutDimensions(DimensionSetID, GLSetupShortcutDimCode);
             AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, GLSetupShortcutDimCode[5], false);
-            DimensionValue.Get(GLSetup."Global Dimension 2 Code", GLSetupShortcutDimCode[2]);
-            DimensionValue.TestField(AssociatedNVX);
+
+            if GLSetupShortcutDimCode[5] <> '' then
+                BusinessFieldFilter := GLSetupShortcutDimCode[5]
+            else
+                BusinessFieldFilter := UserSetup.BusinessFieldFilterNVX;
+            CustLedgerEntry.SetFilter(ShortcutDimension5CodeNVX, BusinessFieldFilter);
 
             CustLedgerEntry.FilterGroup(2);
-            CustLedgerEntry.SetRange("Global Dimension 2 Code", DimensionValue.AssociatedNVX);
-            CustLedgerEntry.SetFilter(ShortcutDimension5CodeNVX, GLSetupShortcutDimCode[5]);
+            CustLedgerEntry.SetFilter(ShortcutDimension5CodeNVX, UserSetup.BusinessFieldFilterNVX);
+            if WithAssociated then begin
+                DimensionValue.Get(GLSetup."Global Dimension 2 Code", GLSetupShortcutDimCode[2]);
+                DimensionValue.TestField(AssociatedNVX);
+                CustLedgerEntry.SetFilter(AssociatedNVX, DimensionValue.AssociatedNVX);
+            end;
             CustLedgerEntry.FilterGroup(0);
+        end;
+    end;
+
+    procedure SetCustLedgEntryFilter(GenJnlLine: Record "Gen. Journal Line"; var CustLedgerEntry: Record "Cust. Ledger Entry"; WithAssociated: Boolean)
+    var
+        BusinessFieldFilter: Code[40];
+    begin
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
+            GLSetup.GetRecordOnce();
+
+            AppMgt.GetUserSetup(UserSetup, true);
+            AppMgt.AllowdBusinessFieldsForUser();
+            DimMgt.GetShortcutDimensions(GenJnlLine."Dimension Set ID", GLSetupShortcutDimCode);
+            AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, GLSetupShortcutDimCode[5], false);
+
+            CustLedgerEntry.FilterGroup(2);
+
+            CustLedgerEntry.SetCurrentKey("Customer No.", ShortcutDimension5CodeNVX, AssociatedNVX);
+            if GenJnlLine."Account Type" = GenJnlLine."Account Type"::Customer then
+                CustLedgerEntry.SetFilter("Customer No.", GenJnlLine."Account No.");
+            if GenJnlLine."Bal. Account Type" = GenJnlLine."Bal. Account Type"::Customer then
+                CustLedgerEntry.SetFilter("Customer No.", GenJnlLine."Bal. Account No.");
+            if GLSetupShortcutDimCode[5] <> '' then
+                BusinessFieldFilter := GLSetupShortcutDimCode[5]
+            else
+                BusinessFieldFilter := UserSetup.BusinessFieldFilterNVX;
+            CustLedgerEntry.SetFilter(ShortcutDimension5CodeNVX, BusinessFieldFilter);
+            if WithAssociated then
+                CustLedgerEntry.SetFilter(AssociatedNVX, GenJnlLine.AssociatedNVX);
+
+            CustLedgerEntry.FilterGroup(0);
+        end;
+    end;
+
+    procedure SetDetailedCustLedgEntryFilter(var DetailedCustLedgerEntry: Record "Detailed Cust. Ledg. Entry")
+    var
+        BusinessFieldFilter: Code[40];
+    begin
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
+            GLSetup.GetRecordOnce();
+
+            AppMgt.GetUserSetup(UserSetup, true);
+            AppMgt.AllowdBusinessFieldsForUser();
+            DimMgt.GetShortcutDimensions(DetailedCustLedgerEntry.DimensionSetIDNVX, GLSetupShortcutDimCode);
+            AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, GLSetupShortcutDimCode[5], false);
+
+            DetailedCustLedgerEntry.FilterGroup(2);
+
+            DetailedCustLedgerEntry.SetCurrentKey("Customer No.", ShortcutDimension5CodeNVX);
+            DetailedCustLedgerEntry.SetRange("Customer No.", DetailedCustLedgerEntry."Customer No.");
+
+            if GLSetupShortcutDimCode[5] <> '' then
+                BusinessFieldFilter := GLSetupShortcutDimCode[5]
+            else
+                BusinessFieldFilter := UserSetup.BusinessFieldFilterNVX;
+            DetailedCustLedgerEntry.SetFilter(ShortcutDimension5CodeNVX, BusinessFieldFilter);
+
+            DetailedCustLedgerEntry.FilterGroup(0);
         end;
     end;
 
@@ -593,6 +675,7 @@ codeunit 50026 "AppMgtNVX"
 
     procedure OnValidateShortcutDimension(var Rec: Record "Sales Header")
     var
+        // AssignmentDepartment: Record AssignmentDepartmentNVX;
         ShortcutDimension9CodeNVX: Code[20];
     begin
         GetGLSetup();
@@ -603,8 +686,14 @@ codeunit 50026 "AppMgtNVX"
 
         OldParentDimSetID := Rec."Dimension Set ID";
         DimMgt.ValidateShortcutDimValues(5, Rec.ShortcutDimension5CodeNVX, Rec."Dimension Set ID");
-        ShortcutDimension9CodeNVX := GetCustomerBusinessDimension9(Rec."Sell-to Customer No.", Rec.ShortcutDimension5CodeNVX);
+        ShortcutDimension9CodeNVX := GetCustomerBusinessDimension9(Rec."Bill-to Customer No.", Rec.ShortcutDimension5CodeNVX);
         DimMgt.ValidateShortcutDimValues(9, ShortcutDimension9CodeNVX, Rec."Dimension Set ID");
+        //ToDo
+        // AssignmentDepartment.Reset();
+        // AssignmentDepartment.SetRange("Shortcut Dimension 1 Code", Rec."Shortcut Dimension 1 Code");
+        // if AssignmentDepartment.FindFirst() then
+        //     Rec.ValidateShortcutDimCode(5, AssignmentDepartment."Shortcut Dimension 5 Code");
+
         if (OldParentDimSetID <> Rec."Dimension Set ID") and Rec.SalesLinesExist() then
             Rec.UpdateAllLineDim(Rec."Dimension Set ID", OldParentDimSetID);
     end;
@@ -708,9 +797,7 @@ codeunit 50026 "AppMgtNVX"
     end;
 
     procedure SetFieldsPropertyVisibleEditableBySetup(
-        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System";
-        PageID: integer
-        )
+        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query","System"; PageID: integer)
     var
         DimEditable: array[10] of Boolean;
         DimVisible: array[10] of Boolean;
