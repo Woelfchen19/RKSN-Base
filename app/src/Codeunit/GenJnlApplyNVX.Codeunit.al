@@ -5,6 +5,6 @@ codeunit 50029 "GenJnlApplyNVX"
     var
         AppMgt: Codeunit AppMgtNVX;
     begin
-        AppMgt.SetCustLedgEntryFilter(GenJournalLine, CustLedgerEntry, false);
+        AppMgt.SetCustLedgEntryFilter(CustLedgerEntry, GenJournalLine."Dimension Set ID", true);
     end;
 }

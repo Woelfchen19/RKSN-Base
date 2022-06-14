@@ -174,6 +174,7 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
             exit;
 
         AppMgt.GetUserSetup(UserSetup, true);
+        //ToDo ?? from GenJnlLine its a problem
         AppMgt.SetCustLedgEntryFilter(Rec, false);
         AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Customer Ledger Entries", DimVisible, DimEditable);
         AppMgt.GetFieldsPropertyVisibleEditableBySetup(

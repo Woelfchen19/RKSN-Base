@@ -603,37 +603,6 @@ codeunit 50026 "AppMgtNVX"
         end;
     end;
 
-    procedure SetCustLedgEntryFilter(GenJnlLine: Record "Gen. Journal Line"; var CustLedgerEntry: Record "Cust. Ledger Entry"; WithAssociated: Boolean)
-    var
-        BusinessFieldFilter: Code[40];
-    begin
-        if AppMgt.GetActivatedReminderExtensionSetup() then begin
-            GLSetup.GetRecordOnce();
-
-            AppMgt.GetUserSetup(UserSetup, true);
-            AppMgt.AllowdBusinessFieldsForUser();
-            DimMgt.GetShortcutDimensions(GenJnlLine."Dimension Set ID", GLSetupShortcutDimCode);
-            AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, GLSetupShortcutDimCode[5], false);
-
-            CustLedgerEntry.FilterGroup(2);
-
-            CustLedgerEntry.SetCurrentKey("Customer No.", ShortcutDimension5CodeNVX, AssociatedNVX);
-            if GenJnlLine."Account Type" = GenJnlLine."Account Type"::Customer then
-                CustLedgerEntry.SetFilter("Customer No.", GenJnlLine."Account No.");
-            if GenJnlLine."Bal. Account Type" = GenJnlLine."Bal. Account Type"::Customer then
-                CustLedgerEntry.SetFilter("Customer No.", GenJnlLine."Bal. Account No.");
-            if GLSetupShortcutDimCode[5] <> '' then
-                BusinessFieldFilter := GLSetupShortcutDimCode[5]
-            else
-                BusinessFieldFilter := UserSetup.BusinessFieldFilterNVX;
-            CustLedgerEntry.SetFilter(ShortcutDimension5CodeNVX, BusinessFieldFilter);
-            if WithAssociated then
-                CustLedgerEntry.SetFilter(AssociatedNVX, GenJnlLine.AssociatedNVX);
-
-            CustLedgerEntry.FilterGroup(0);
-        end;
-    end;
-
     procedure SetDetailedCustLedgEntryFilter(var DetailedCustLedgerEntry: Record "Detailed Cust. Ledg. Entry")
     var
         BusinessFieldFilter: Code[40];
@@ -671,6 +640,73 @@ codeunit 50026 "AppMgtNVX"
             9:
                 AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, DimensionValue.ShortcutDimension5CodeNVX, true);
         end;
+    end;
+
+    procedure ValidateCustLedgerEntryFilter(GenJnlLine: Record "Gen. Journal Line"; var CustLedgerEntry: Record "Cust. Ledger Entry")
+    var
+        DocumentNoNotFoundErr: Label 'Documentno. not found!', comment = 'DEA="Belegnummer nicht gefunden!"';
+        NotAllowedErr: Label 'You have no permission for this Ledger entry!', comment = 'DEA="Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!"';
+    begin
+        AppMgt.GetUserSetup(UserSetup, true);
+        CustLedgerEntry.SetCurrentKey("Document No.");
+        CustLedgerEntry.SetRange("Document No.", GenJnlLine.ApplyDocumentNoNVX);
+        if CustLedgerEntry.IsEmpty then
+            Error(DocumentNoNotFoundErr);
+        CustLedgerEntry.SetFilter(ShortcutDimension5CodeNVX, UserSetup.BusinessFieldFilterNVX);
+        if CustLedgerEntry.IsEmpty then
+            Error(NotAllowedErr);
+    end;
+
+    procedure OnValidateApplyDocumentNo(var Rec: Record "Gen. Journal Line")
+    var
+        CustLedgerEntry: Record "Cust. Ledger Entry";
+        VendorLedgerEntry: Record "Vendor Ledger Entry";
+        CustomerLedgerEntries: Page "Customer Ledger Entries";
+        VendorLedgerEntries: page "Vendor Ledger Entries";
+    begin
+        if Rec.ApplyDocumentNoNVX <> '' then begin
+            Rec.Testfield("Posting Date");
+            Rec.TestField("Document Type");
+
+            ValidateVendortLedgerEntryFilter(VendorLedgerEntry, Rec.ApplyDocumentNoNVX);
+            if VendorLedgerEntry."Vendor No." <> '' then begin
+                VendorLedgerEntries.LookupMode(true);
+                VendorLedgerEntries.SetTableView(VendorLedgerEntry);
+                if VendorLedgerEntries.RunModal() = action::LookupOK then begin
+                    VendorLedgerEntries.GetRecord(CustLedgerEntry);
+                    Rec.Validate("Account Type", Rec."Account Type"::Vendor);
+                    Rec.Validate("Account No.", VendorLedgerEntry."Vendor No.");
+                end;
+            end else begin
+                ValidateCustLedgerEntryFilter(Rec, CustLedgerEntry);
+                CustomerLedgerEntries.LookupMode(true);
+                CustomerLedgerEntries.SetTableView(CustLedgerEntry);
+                if CustomerLedgerEntries.RunModal() = action::LookupOK then begin
+                    CustomerLedgerEntries.GetRecord(CustLedgerEntry);
+                    Rec.Validate("Account Type", Rec."Account Type"::Customer);
+                    Rec.Validate("Account No.", CustLedgerEntry."Customer No.");
+                end;
+            end;
+            Rec.ApplyDocumentNoNVX := '';
+        end;
+    end;
+
+    procedure ValidateVendortLedgerEntryFilter(var VendorLedgerEntry: Record "Vendor Ledger Entry"; ExternalDocumentNo: Code[35]): Boolean
+    begin
+        VendorLedgerEntry.Reset();
+        VendorLedgerEntry.SetCurrentKey("External Document No.");
+        VendorLedgerEntry.SetRange("External Document No.", ExternalDocumentNo);
+        exit(VendorLedgerEntry.FindFirst());
+    end;
+
+    procedure SetBusinessFieldNVX(var Rec: Record "Gen. Journal Line")
+    var
+        AssignmentDepartment: Record AssignmentDepartmentNVX;
+    begin
+        AssignmentDepartment.Reset();
+        AssignmentDepartment.SetRange("Shortcut Dimension 1 Code", Rec."Shortcut Dimension 1 Code");
+        if AssignmentDepartment.FindFirst() then
+            Rec.ValidateShortcutDimCode(5, AssignmentDepartment."Shortcut Dimension 5 Code");
     end;
 
     procedure OnValidateShortcutDimension(var Rec: Record "Sales Header")

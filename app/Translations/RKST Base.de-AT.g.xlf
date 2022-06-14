@@ -11023,6 +11023,18 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - Method InsertSetupPropertyForField - NamedType ConfirmDeleteMsg</note>
           <target>Wollen Sie wirklich die Einrichtungstabelle löschen und neu befüllen? </target>
         </trans-unit>
+        <trans-unit id="Codeunit 1250765185 - Method 71837522 - NamedType 1240112260" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documentno. not found!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Belegnummer nicht gefunden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - Method ValidateCustLedgerEntryFilter - NamedType DocumentNoNotFoundErr</note>
+          <target>Belegnummer nicht gefunden!</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 1250765185 - Method 71837522 - NamedType 2957784316" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You have no permission for this Ledger entry!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - Method ValidateCustLedgerEntryFilter - NamedType NotAllowedErr</note>
+          <target>Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!</target>
+        </trans-unit>
         <trans-unit id="Codeunit 2689473549 - Method 4034257309 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
@@ -11178,6 +11190,12 @@
           <note from="Developer" annotates="general" priority="2">DEA="Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ReminderManagementNVX - Method GetWrongDimensionLbl - NamedType WrongDimErr</note>
           <target>Der Dimensionswert Profitcenter aus dem Setup des zugerodneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe.</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 2774722501 - NamedType 4204058380" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify %1 or %2.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sie müssen %1 oder %2 angeben!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SalesHeaderApplyNVX - NamedType Text000Err</note>
+          <target>Sie müssen %1 oder %2 angeben!</target>
         </trans-unit>
         <trans-unit id="Codeunit 945920104 - Method 4084253282 - NamedType 4090211762" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory Setup field Composition Customer must be filled</source>
@@ -14171,6 +14189,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SetupPropertyForFieldsNVX - Control Object Type - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2463493318 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>User Setup Reminder</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Benutzer Einrichtung Mahnwesen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page UserSetupCardNVX - Property Caption</note>
+          <target>Benutzer Einrichtung Mahnwesen</target>
+        </trans-unit>
         <trans-unit id="Page 2463493318 - Control 87408810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source/>
           <note from="Developer" annotates="general" priority="2">DEA="Mahnwesen"</note>
@@ -16188,6 +16212,17 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ReminderTermsNVX - Control ShortcutDimension5CodeNVX - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1390502541 - Action 2847479874 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1708100201">
+          <source>Select one or more ledger entries that you want to apply this record to so that the related posted documents are closed as paid or refunded.</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SalesCrMemoNVX - Action ApplyEntriesNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1390502541 - Action 2847479874 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1708100201">
+          <source>Apply Entries</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Posten ausgleichen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SalesCrMemoNVX - Action ApplyEntriesNVX - Property Caption</note>
+          <target>Posten ausgleichen</target>
+        </trans-unit>
         <trans-unit id="PageExtension 1390502541 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1708100201">
           <source>Preview dimensional distribution</source>
           <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
@@ -16832,18 +16867,6 @@
           <note from="Developer" annotates="general" priority="2">DEA="ShortcutDimensioncode 9"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenerLedgerSetupNVX - Field ShortcutDimension9CodeNVX - Property Caption</note>
           <target>ShortcutDimensioncode 9</target>
-        </trans-unit>
-        <trans-unit id="TableExtension 623263038 - Method 71837522 - NamedType 1240112260" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 623263038">
-          <source>Documentno. not found!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Belegnummer nicht gefunden!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Method ValidateCustLedgerEntryFilter - NamedType DocumentNoNotFoundErr</note>
-          <target>Belegnummer nicht gefunden!</target>
-        </trans-unit>
-        <trans-unit id="TableExtension 623263038 - Method 71837522 - NamedType 2957784316" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 623263038">
-          <source>You have no permission for this Ledger entry!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Method ValidateCustLedgerEntryFilter - NamedType NotAllowedErr</note>
-          <target>Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!</target>
         </trans-unit>
         <trans-unit id="TableExtension 623263038 - Field 3419627077 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Allocation %</source>

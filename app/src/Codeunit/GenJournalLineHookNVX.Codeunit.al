@@ -118,7 +118,9 @@ codeunit 50021 GenJournalLineHookNVX
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Shortcut Dimension 1 Code', false, false)]
     local procedure OnAfterValidateShortcutDimension1CodeEvent(var Rec: Record "Gen. Journal Line")
+    var
+        AppMgt: Codeunit AppMgtNVX;
     begin
-        Rec.SetBusinessFieldNVX();
+        AppMgt.SetBusinessFieldNVX(Rec);
     end;
 }

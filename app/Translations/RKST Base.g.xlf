@@ -9488,6 +9488,16 @@
           <note from="Developer" annotates="general" priority="2">DEA="Wollen Sie wirklich die Einrichtungstabelle löschen und neu befüllen? "</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - Method InsertSetupPropertyForField - NamedType ConfirmDeleteMsg</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1250765185 - Method 71837522 - NamedType 1240112260" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documentno. not found!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Belegnummer nicht gefunden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - Method ValidateCustLedgerEntryFilter - NamedType DocumentNoNotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1250765185 - Method 71837522 - NamedType 2957784316" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You have no permission for this Ledger entry!</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit AppMgtNVX - Method ValidateCustLedgerEntryFilter - NamedType NotAllowedErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 2689473549 - Method 4034257309 - NamedType 923926032" size-unit="char" translate="yes" xml:space="preserve">
           <source>Profitcenter and Allocation code must match the configuration in the specified Fixed Asset.</source>
           <note from="Developer" annotates="general" priority="2">DEA="Ihre Angaben zur Erfassungszeile sind zur Anlagenkarte, betreffend Profitcenter bzw. Verteilungscode, nicht identisch. Überprüfen Sie gegebenenfalls ihre Stammdaten!"</note>
@@ -14547,16 +14557,6 @@
           <source>Shortcut Dimension 9 Code</source>
           <note from="Developer" annotates="general" priority="2">DEA="ShortcutDimensioncode 9"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenerLedgerSetupNVX - Field ShortcutDimension9CodeNVX - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 623263038 - Method 71837522 - NamedType 1240112260" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 623263038">
-          <source>Documentno. not found!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Belegnummer nicht gefunden!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Method ValidateCustLedgerEntryFilter - NamedType DocumentNoNotFoundErr</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 623263038 - Method 71837522 - NamedType 2957784316" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 623263038">
-          <source>You have no permission for this Ledger entry!</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Sie sind zum gefundenen offenen Posten nicht berechtigt. Der offene Posten kann nicht angezeigt werden!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJnlLineNVX - Method ValidateCustLedgerEntryFilter - NamedType NotAllowedErr</note>
         </trans-unit>
         <trans-unit id="TableExtension 623263038 - Field 3419627077 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Allocation %</source>
