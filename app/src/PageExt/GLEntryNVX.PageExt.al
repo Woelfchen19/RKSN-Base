@@ -127,8 +127,8 @@ pageextension 50040 GLEntryNVX extends "General Ledger Entries"
             {
                 ApplicationArea = All;
                 Editable = false;
-                Caption = 'Fixed Asset Transaction No.', comment = 'DEA="ANLAGE Transaktionsnummer"';
-                ToolTip = 'Specifies the value of the Fixed Asset Transaction No. field.', Comment = 'DEA="ANLAGE Transaktionsnummer"';
+                Caption = 'Fixed Asset Transaction No.', comment = 'DEA="ANLAGE Lfd.Nr."';
+                ToolTip = 'Specifies the value of the Fixed Asset Transaction No. field.', Comment = 'DEA="ANLAGE Lfd.Nr."';
             }
             field("G/L Account as ExpenseNVX"; GLEntryNVX."G/L Account as Expense")
             {

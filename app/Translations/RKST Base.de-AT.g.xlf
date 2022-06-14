@@ -6173,9 +6173,9 @@
         </trans-unit>
         <trans-unit id="Table 2583571545 - Field 529590544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fixed Asset Transaction No.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="ANLAGE Transaktionsnummer"</note>
+          <note from="Developer" annotates="general" priority="2">DEA="ANLAGE Lfd.Nr."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table GLEntryNVX - Field FA Transaction No. - Property Caption</note>
-          <target>ANLAGE Transaktionsnummer</target>
+          <target>ANLAGE Lfd.Nr.</target>
         </trans-unit>
         <trans-unit id="Table 2583571545 - Field 2585388561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>G/L Account as Expense</source>
@@ -12689,15 +12689,15 @@
         </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 1199432760 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Specifies the value of the Fixed Asset Transaction No. field.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="ANLAGE Transaktionsnummer"</note>
+          <note from="Developer" annotates="general" priority="2">DEA="ANLAGE Lfd.Nr."</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control FA Transaction No.NVX - Property ToolTip</note>
-          <target>ANLAGE Transaktionsnummer</target>
+          <target>ANLAGE Lfd.Nr.</target>
         </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 1199432760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Fixed Asset Transaction No.</source>
-          <note from="Developer" annotates="general" priority="2">DEA="ANLAGE Transaktionsnummer"</note>
+          <note from="Developer" annotates="general" priority="2">DEA="ANLAGE Lfd.Nr."</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension GLEntryNVX - Control FA Transaction No.NVX - Property Caption</note>
-          <target>ANLAGE Transaktionsnummer</target>
+          <target>ANLAGE Lfd.Nr.</target>
         </trans-unit>
         <trans-unit id="PageExtension 2583571545 - Control 1142494321 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Specifies the value of the G/L Account as Expense field.</source>

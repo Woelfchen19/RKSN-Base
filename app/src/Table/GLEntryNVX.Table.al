@@ -64,7 +64,7 @@ table 50023 GLEntryNVX
         field(51; "FA Transaction No."; Integer)
         {
             DataClassification = CustomerContent;
-            Caption = 'Fixed Asset Transaction No.', comment = 'DEA="ANLAGE Transaktionsnummer"';
+            Caption = 'Fixed Asset Transaction No.', comment = 'DEA="ANLAGE Lfd.Nr."';
         }
         field(52; "G/L Account as Expense"; Code[20])
         {
