@@ -10483,6 +10483,16 @@
           <note from="Developer" annotates="general" priority="2">DEA="Verteilungscode"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountLedgerEntriesNVX - Control Allocation CodeNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2935462756 - Control 2474047554 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2591587468">
+          <source>Specifies the value of the Shortcut Dimension 3 Code field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Zeigt den Shortcutdimensionscode 3 an."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountLedgerEntriesNVX - Control ShortcutDimension3CodeNVX - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2935462756 - Control 2474047554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2591587468">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BankAccountLedgerEntriesNVX - Control ShortcutDimension3CodeNVX - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3448260168 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1638686336">
           <source>Preview dimensional distribution</source>
           <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
