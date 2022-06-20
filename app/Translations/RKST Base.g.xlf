@@ -13683,6 +13683,11 @@
           <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension POrderNVX - Action PreviewDimDistributionNVX - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2785303029 - Control 1009895940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3434938165">
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 5"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PostedSalesInvoicesNVX - Control ShortcutDimCode5NVX - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1374620614 - Control 1862511320 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1840709038">
           <source>Specifies the value of the Shortcut Dimension 10 Code field.</source>
           <note from="Developer" annotates="general" priority="2"></note>

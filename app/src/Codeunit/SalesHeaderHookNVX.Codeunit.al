@@ -2,8 +2,6 @@ codeunit 50015 SalesHeaderHookNVX
 {
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnBeforeDeleteEvent', '', false, false)]
     local procedure DeleteRecordInAccompaniedTable(Rec: Record "Sales Header")
-    var
-        SalesHeaderNVX: Record SalesHeaderNVX;
     begin
         if Rec.IsTemporary then
             exit;
@@ -13,8 +11,6 @@ codeunit 50015 SalesHeaderHookNVX
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterRenameEvent', '', false, false)]
     local procedure RenameRecordInAccompaniedTable(Rec: Record "Sales Header"; xRec: Record "Sales Header")
-    var
-        SalesHeaderNVX: Record SalesHeaderNVX;
     begin
         if Rec.IsTemporary then
             exit;
@@ -46,9 +42,9 @@ codeunit 50015 SalesHeaderHookNVX
     local procedure SetCompositionFields(var Rec: Record "Sales Header"; RunTrigger: Boolean)
     var
         InvSetupNVX: Record InvSetupNVX;
-        SalesHeaderNVX: Record SalesHeaderNVX;
-        AppMgt: Codeunit AppMgtNVX;
+        DimMgt: Codeunit DimensionManagement;
         OldDimSetID: integer;
+        ShortcutDimension9CodeNVX: Code[20];
     begin
         if Rec.IsTemporary or not RunTrigger then
             exit;
@@ -62,6 +58,8 @@ codeunit 50015 SalesHeaderHookNVX
         OldDimSetID := Rec."Dimension Set ID";
         Rec.ShortcutDimension5CodeNVX := AppMgt.GetShortcutDimension5FromAssignmentDepartment(Rec."Shortcut Dimension 1 Code");
         Rec.ValidateShortcutDimCode(5, Rec.ShortcutDimension5CodeNVX);
+        ShortcutDimension9CodeNVX := AppMgt.GetCustomerBusinessDimension9(Rec."Bill-to Customer No.", Rec.ShortcutDimension5CodeNVX);
+        DimMgt.ValidateShortcutDimValues(9, ShortcutDimension9CodeNVX, Rec."Dimension Set ID");
         if OldDimSetID <> Rec."Dimension Set ID" then
             Rec.Modify();
     end;
@@ -70,7 +68,6 @@ codeunit 50015 SalesHeaderHookNVX
     local procedure ClearCompositionFields(var Rec: Record "Sales Header")
     var
         InvSetupNVX: Record InvSetupNVX;
-        SalesHeaderNVX: Record SalesHeaderNVX;
     begin
         if Rec.IsTemporary then
             exit;
@@ -97,9 +94,17 @@ codeunit 50015 SalesHeaderHookNVX
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterSetApplyToFilters', '', true, true)]
     local procedure OnAfterSetApplyToFilters(var CustLedgerEntry: Record "Cust. Ledger Entry"; SalesHeader: Record "Sales Header")
-    var
-        AppMgt: Codeunit AppMgtNVX;
     begin
         AppMgt.SetCustLedgEntryFilter(CustLedgerEntry, SalesHeader."Dimension Set ID", true);
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterAppliesToDocNoOnLookup', '', true, true)]
+    local procedure OnAfterAppliesToDocNoOnLookup(var SalesHeader: Record "Sales Header"; CustLedgerEntry: Record "Cust. Ledger Entry")
+    begin
+        AppMgt.ChangeShortcutDimension5CodeSalesHeader(SalesHeader, CustLedgerEntry);
+    end;
+
+    var
+        SalesHeaderNVX: Record SalesHeaderNVX;
+        AppMgt: Codeunit AppMgtNVX;
 }

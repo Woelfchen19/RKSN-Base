@@ -134,21 +134,24 @@ page 50019 "PreviewPurchDimDistrNVX"
         DimVisible10 := false;
 
         UseShortcutDims(
-        DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10);
+            DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10);
     end;
 
-    local procedure UseShortcutDims(var DimVisible1: Boolean; var DimVisible2: Boolean; var DimVisible3: Boolean; var DimVisible4: Boolean; var DimVisible5: Boolean; var DimVisible6: Boolean; var DimVisible7: Boolean; var DimVisible8: Boolean; var DimVisible9: Boolean; var DimVisible10: Boolean);
+    local procedure UseShortcutDims(
+        var DimensionVisible1: Boolean; var DimensionVisible2: Boolean; var DimensionVisible3: Boolean; var DimensionVisible4: Boolean; var DimensionVisible5: Boolean;
+            var DimensionVisible6: Boolean; var DimensionVisible7: Boolean; var DimensionVisible8: Boolean; var DimensionVisible9: Boolean; var DimensionVisible10: Boolean);
     begin
-        GLSetup.Get();
-        DimVisible1 := GLSetup."Shortcut Dimension 1 Code" <> '';
-        DimVisible2 := GLSetup."Shortcut Dimension 2 Code" <> '';
-        DimVisible3 := GLSetup."Shortcut Dimension 3 Code" <> '';
-        DimVisible4 := GLSetup."Shortcut Dimension 4 Code" <> '';
-        DimVisible5 := GLSetup."Shortcut Dimension 5 Code" <> '';
-        DimVisible6 := GLSetup."Shortcut Dimension 6 Code" <> '';
-        DimVisible7 := GLSetup."Shortcut Dimension 7 Code" <> '';
-        DimVisible8 := GLSetup."Shortcut Dimension 8 Code" <> '';
-        DimVisible9 := GLSetup.ShortcutDimension9CodeNVX <> '';
-        DimVisible10 := GLSetup.ShortcutDimension10CodeNVX <> '';
+        GLSetup.GetRecordOnce();
+
+        DimensionVisible1 := GLSetup."Shortcut Dimension 1 Code" <> '';
+        DimensionVisible2 := GLSetup."Shortcut Dimension 2 Code" <> '';
+        DimensionVisible3 := GLSetup."Shortcut Dimension 3 Code" <> '';
+        DimensionVisible4 := GLSetup."Shortcut Dimension 4 Code" <> '';
+        DimensionVisible5 := GLSetup."Shortcut Dimension 5 Code" <> '';
+        DimensionVisible6 := GLSetup."Shortcut Dimension 6 Code" <> '';
+        DimensionVisible7 := GLSetup."Shortcut Dimension 7 Code" <> '';
+        DimensionVisible8 := GLSetup."Shortcut Dimension 8 Code" <> '';
+        DimensionVisible9 := GLSetup.ShortcutDimension9CodeNVX <> '';
+        DimensionVisible10 := GLSetup.ShortcutDimension10CodeNVX <> '';
     end;
 }

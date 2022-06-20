@@ -570,27 +570,27 @@ page 50033 "CustBusinessFieldsCardNVX"
         TokenPaymentTermsTok: Label 'K', comment = 'DEA="K"', Locked = true;
         TokenPreferredBankAccountCodeTok: Label '*%1*', comment = 'DEA="*%1*"', Locked = true;
 
-    procedure ShowPageCustomerBankAccount(DimShortcutBusinessField: enum DimShortcutBusinessFieldNVX)
+    procedure ShowPageCustomerBankAccount(DimShortcutBusinessField2: enum DimShortcutBusinessFieldNVX)
     begin
-        case DimShortcutBusinessField of
-            DimShortcutBusinessField::PB:
+        case DimShortcutBusinessField2 of
+            DimShortcutBusinessField2::PB:
                 AppMgt.ShowPageCustomerBankAccount(
                     Rec."Customer No.",
                         StrSubstNo(TokenPreferredBankAccountCodeTok, PBShortcutDimension5Code),
                             PBPreferredBankAccountCode);
-            DimShortcutBusinessField::RD:
+            DimShortcutBusinessField2::RD:
                 AppMgt.ShowPageCustomerBankAccount(Rec."Customer No.",
                     StrSubstNo(TokenPreferredBankAccountCodeTok, RDShortcutDimension5Code), RDPreferredBankAccountCode);
-            DimShortcutBusinessField::RH:
+            DimShortcutBusinessField2::RH:
                 AppMgt.ShowPageCustomerBankAccount(Rec."Customer No.",
                     StrSubstNo(TokenPreferredBankAccountCodeTok, RHShortcutDimension5Code), RHPreferredBankAccountCode);
-            DimShortcutBusinessField::SO:
+            DimShortcutBusinessField2::SO:
                 AppMgt.ShowPageCustomerBankAccount(Rec."Customer No.",
                     StrSubstNo(TokenPreferredBankAccountCodeTok, SOShortcutDimension5Code), SOPreferredBankAccountCode);
-            DimShortcutBusinessField::EA:
+            DimShortcutBusinessField2::EA:
                 AppMgt.ShowPageCustomerBankAccount(Rec."Customer No.",
                     StrSubstNo(TokenPreferredBankAccountCodeTok, EAShortcutDimension5Code), EAPreferredBankAccountCode);
-            DimShortcutBusinessField::EV:
+            DimShortcutBusinessField2::EV:
                 AppMgt.ShowPageCustomerBankAccount(Rec."Customer No.",
                     StrSubstNo(TokenPreferredBankAccountCodeTok, EVShortcutDimension5Code), EVPreferredBankAccountCode);
         end;
@@ -601,7 +601,7 @@ page 50033 "CustBusinessFieldsCardNVX"
 
     end;
 
-    local procedure AssignBusinessFields(OnClosePage: Boolean)
+    local procedure AssignBusinessFields(AfterClosePage: Boolean)
     begin
         GLSetup.Get();
         DimensionValue.Reset();
@@ -612,7 +612,7 @@ page 50033 "CustBusinessFieldsCardNVX"
                 if SetupBusinessField.Get(Rec."Customer No.", DimensionValue.Code) then
                     case SetupBusinessField.Sort of
                         1:
-                            if OnClosePage then begin
+                            if AfterClosePage then begin
                                 SetupBusinessField."Shortcut Dimension 5 Code" := PBShortcutDimension5Code;
                                 SetupBusinessField."Shortcut Dimension 9 Code" := PBShortcutDimension9Code;
                                 SetupBusinessField."Reminder Terms Code" := PBReminderTermsCode;
@@ -629,7 +629,7 @@ page 50033 "CustBusinessFieldsCardNVX"
                                 PBPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
                             end;
                         2:
-                            if OnClosePage then begin
+                            if AfterClosePage then begin
                                 SetupBusinessField."Shortcut Dimension 5 Code" := RDShortcutDimension5Code;
                                 SetupBusinessField."Shortcut Dimension 9 Code" := RDShortcutDimension9Code;
                                 SetupBusinessField."Reminder Terms Code" := RDReminderTermsCode;
@@ -646,7 +646,7 @@ page 50033 "CustBusinessFieldsCardNVX"
                                 RDPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
                             end;
                         3:
-                            if OnClosePage then begin
+                            if AfterClosePage then begin
                                 SetupBusinessField."Shortcut Dimension 5 Code" := RHShortcutDimension5Code;
                                 SetupBusinessField."Shortcut Dimension 9 Code" := RHShortcutDimension9Code;
                                 SetupBusinessField."Reminder Terms Code" := RHReminderTermsCode;
@@ -663,7 +663,7 @@ page 50033 "CustBusinessFieldsCardNVX"
                                 RHPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
                             end;
                         4:
-                            if OnClosePage then begin
+                            if AfterClosePage then begin
                                 SetupBusinessField."Shortcut Dimension 5 Code" := EAShortcutDimension5Code;
                                 SetupBusinessField."Shortcut Dimension 9 Code" := EAShortcutDimension9Code;
                                 SetupBusinessField."Reminder Terms Code" := EAReminderTermsCode;
@@ -680,7 +680,7 @@ page 50033 "CustBusinessFieldsCardNVX"
                                 EAPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
                             end;
                         5:
-                            if OnClosePage then begin
+                            if AfterClosePage then begin
                                 SetupBusinessField."Shortcut Dimension 5 Code" := SOShortcutDimension5Code;
                                 SetupBusinessField."Shortcut Dimension 9 Code" := SOShortcutDimension9Code;
                                 SetupBusinessField."Reminder Terms Code" := SOReminderTermsCode;
@@ -697,7 +697,7 @@ page 50033 "CustBusinessFieldsCardNVX"
                                 SOPreferredBankAccountCode := SetupBusinessField."Preferred BankAccount Code";
                             end;
                         6:
-                            if OnClosePage then begin
+                            if AfterClosePage then begin
                                 SetupBusinessField."Shortcut Dimension 5 Code" := EVShortcutDimension5Code;
                                 SetupBusinessField."Shortcut Dimension 9 Code" := EVShortcutDimension9Code;
                                 SetupBusinessField."Reminder Terms Code" := EVReminderTermsCode;

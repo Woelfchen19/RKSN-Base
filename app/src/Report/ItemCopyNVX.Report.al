@@ -391,15 +391,15 @@ report 50000 "ItemCopyNVX"
         exit(CopySuccessful);
     end;
 
-    local procedure SetTargetItemNo(NewItemNo: Code[20]; var TargetItemNo: Code[20]; var TargetNoSeries: Code[20]);
+    local procedure SetTargetItemNo(NewItemNo: Code[20]; var TargetItemNo2: Code[20]; var TargetNoSeries: Code[20]);
     begin
         if NewItemNo = '' then
             if NewNoSeries <> '' then begin
-                NoSeriesMgt.SetSeries(TargetItemNo);
+                NoSeriesMgt.SetSeries(TargetItemNo2);
                 TargetNoSeries := NewNoSeries;
             end else begin
                 ItemSetup.TestField("Item Nos.");
-                NoSeriesMgt.InitSeries(ItemSetup."Item Nos.", Item."No. Series", 0D, TargetItemNo, TargetNoSeries);
+                NoSeriesMgt.InitSeries(ItemSetup."Item Nos.", Item."No. Series", 0D, TargetItemNo2, TargetNoSeries);
             end
         else begin
             if InItem.Get(NewItemNo) then
@@ -407,7 +407,7 @@ report 50000 "ItemCopyNVX"
             if ItemSetup."Item Nos." <> '' then
                 NoSeriesMgt.TestManual(ItemSetup."Item Nos.");
 
-            TargetItemNo := NewItemNo;
+            TargetItemNo2 := NewItemNo;
             TargetNoSeries := '"';
         end
     end;

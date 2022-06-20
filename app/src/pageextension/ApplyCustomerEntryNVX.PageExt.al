@@ -175,17 +175,14 @@ pageextension 50053 "ApplyCustomerEntryNVX" extends "Apply Customer Entries"
 
     trigger OnOpenPage()
     begin
-        if not AppMgt.GetActivatedReminderExtensionSetup() then
-            exit;
-
-        AppMgt.GetUserSetup(UserSetup, true);
-        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Apply Customer Entries", DimVisible, DimEditable);
-        AppMgt.GetFieldsPropertyVisibleEditableBySetup(
-            DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
-                DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
-
-        DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
-        DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
+            AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Apply Customer Entries", DimVisible, DimEditable);
+            AppMgt.GetFieldsPropertyVisibleEditableBySetup(
+                DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
+                    DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
+            DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
+            DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
+        end;
     end;
 
     var

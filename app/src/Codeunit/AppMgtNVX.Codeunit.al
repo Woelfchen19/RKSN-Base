@@ -123,20 +123,56 @@ codeunit 50026 "AppMgtNVX"
         exit(true);
     end;
 
+    procedure ChangeShortcutDimension5CodeSalesHeader(var Rec: Record "Sales Header"; CustLedgerEntry: Record "Cust. Ledger Entry")
+    begin
+        Rec.ShortcutDimension5CodeNVX := CustLedgerEntry.ShortcutDimension5CodeNVX;
+        Rec.ValidateShortcutDimCode(5, Rec.ShortcutDimension5CodeNVX);
+    end;
+
+    procedure ChangeShortcutDimension5CodeGenJnlLine(var Rec: Record "Gen. Journal Line")
+    var
+        CustLedgerEntry: Record "Cust. Ledger Entry";
+    // GenJnlLine: Record "Gen. Journal Line";
+    begin
+        if Rec."Applies-to ID" = '' then
+            exit;
+
+        CustLedgerEntry.SetRange("Applies-to ID", Rec."Applies-to ID");
+        if CustLedgerEntry.FindFirst() then
+            if Rec.ShortcutDimension5CodeNVX <> CustLedgerEntry.ShortcutDimension5CodeNVX then begin
+                Rec.ShortcutDimension5CodeNVX := CustLedgerEntry.ShortcutDimension5CodeNVX;
+                Rec.ValidateShortcutDimCode(5, Rec.ShortcutDimension5CodeNVX);
+                Rec.Modify();
+            end;
+
+        //ToDo Call Wagi
+        // CustLedgerEntry.SetRange("Applies-to ID", Rec."Applies-to ID");
+        // if not CustLedgerEntry.FindSet() then
+        //     exit;
+
+        // GenJnlLine := Rec;
+        // repeat
+        //     GenJnlLine.ModifyAll(ShortcutDimension5CodeNVX, CustLedgerEntry.ShortcutDimension5CodeNVX);
+
+        //     .ShortcutDimension5CodeNVX := CustLedgerEntry.ShortcutDimension5CodeNVX;
+        //     Rec.ValidateShortcutDimCode(5, Rec.ShortcutDimension5CodeNVX);
+        // until CustLedgerEntry.Next() = 0;
+    end;
+
     procedure GetActivatedReminderExtensionSetup(): Boolean
     begin
         ReminderExtensionSetup.GetRecordOnce();
         exit(ReminderExtensionSetup.ActivateReminderExtension);
     end;
 
-    procedure GetActiveCustBusinessFieldFilter(CustomerNo: Code[20]; var CustomerBusinessField: Record CustomerBusinessFieldNVX): Boolean
+    procedure GetActiveCustBusinessFieldFilter(CustomerNo: Code[20]; var CustomerBusinessField2: Record CustomerBusinessFieldNVX): Boolean
     begin
         if not GetActivatedReminderExtensionSetup() then
             exit;
 
-        CustomerBusinessField.Reset();
-        CustomerBusinessField.SetRange("Customer No.", CustomerNo);
-        CustomerBusinessField.SetRange("Dimension Value Type", CustomerBusinessField."Dimension Value Type"::Standard);
+        CustomerBusinessField2.Reset();
+        CustomerBusinessField2.SetRange("Customer No.", CustomerNo);
+        CustomerBusinessField2.SetRange("Dimension Value Type", CustomerBusinessField."Dimension Value Type"::Standard);
     end;
 
     procedure GetBusinessFieldFilterNVX(): Code[40];
@@ -290,7 +326,7 @@ codeunit 50026 "AppMgtNVX"
         GetGLSetup();
 
         PageList.AddRange(
-            20, 25, 29, 38, 39, 40, 41, 42, 43, 44, 46, 47, 54, 55, 62, 95, 96, 97, 98, 131, 132, 133, 135, 137, 139, 141, 142, 143, 144,
+            20, 25, 29, 39, 40, 41, 42, 43, 44, 46, 47, 54, 55, 62, 95, 96, 97, 98, 131, 133, 135, 137, 139, 141, 143, 144,
             171, 176, 232, 251, 253, 254, 255, 256, 380, 434, 436, 438, 440, 480, 508, 510, 516, 517, 518, 519, 536, 537, 573, 574, 752, 755, 901,
             921, 931, 941, 5160, 5163, 5165, 5168, 5628, 5629, 5741, 5744, 5746, 5802, 5877, 5885, 5934, 5936, 5956, 5973, 5979, 6621, 6624,
             6628, 6631, 6641, 6645, 9300, 9301, 9302, 9305
@@ -600,6 +636,25 @@ codeunit 50026 "AppMgtNVX"
                 CustLedgerEntry.SetFilter(AssociatedNVX, DimensionValue.AssociatedNVX);
             end;
             CustLedgerEntry.FilterGroup(0);
+        end;
+    end;
+
+    procedure GetCustLedgEntryFilterForApply(var CustLedgerEntry: Record "Cust. Ledger Entry")
+    var
+        CustLedgerEntry2: Record "Cust. Ledger Entry";
+    begin
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
+            GLSetup.GetRecordOnce();
+
+            AppMgt.GetUserSetup(UserSetup, true);
+            AppMgt.AllowdBusinessFieldsForUser();
+            AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, CustLedgerEntry.ShortcutDimension5CodeNVX, false);
+
+            CustLedgerEntry2.SetCurrentKey("Customer No.", Open, "Global Dimension 2 Code", ShortcutDimension5CodeNVX);
+            CustLedgerEntry2.SetRange(Open, true);
+            CustLedgerEntry2.SetFilter(ShortcutDimension5CodeNVX, UserSetup.BusinessFieldFilterNVX);
+            CustLedgerEntry2.SetFilter(AssociatedNVX, CustLedgerEntry.AssociatedNVX);
+            CustLedgerEntry.CopyFilters(CustLedgerEntry2);
         end;
     end;
 

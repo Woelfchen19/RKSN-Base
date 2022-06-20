@@ -35,20 +35,38 @@ codeunit 50021 GenJournalLineHookNVX
     var
         AllocationCode: Record AllocationCodeNVX;
         FixedAssetNVX: Record FixedAssetNVX;
+        // AppMgt: Codeunit AppMgtNVX;
+        DimMgt: Codeunit DimensionManagement;
+        ShortcutDimCode: Array[10] of Code[20];
+        // ShortcutDimension9CodeNVX: Code[20];
         WrongDimErr: Label 'The Profitcenter differs from the assigned Allocation Code Profitcenter! Please check the setup or journal line!',
                     comment = 'DEA="Der Dimensionswert Profitcenter aus dem Setup des zugeordneten Verteilungscodes ist nicht identisch zum zugeordneten Profitcenter im Buchungsblatt! Überprüfen Sie bitte Ihre Angabe."';
     begin
-        if Rec."Account Type" = Rec."Account Type"::"Fixed Asset" then begin
-            if not FixedAssetNVX.Get(Rec."Account No.") then
-                exit;
+        DimMgt.GetShortcutDimensions(Rec."Dimension Set ID", ShortcutDimCode);
+        case Rec."Account Type" of
+            Rec."Account Type"::"Fixed Asset":
+                begin
+                    if not FixedAssetNVX.Get(Rec."Account No.") then
+                        exit;
 
-            if AllocationCode.Get(FixedAssetNVX."Allocation Code") then
-                if Rec."Shortcut Dimension 2 Code" = '' then begin
-                    Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
-                    if Rec.Modify() then;
-                end else
-                    if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
-                        Error(WrongDimErr);
+                    if AllocationCode.Get(FixedAssetNVX."Allocation Code") then
+                        if Rec."Shortcut Dimension 2 Code" = '' then begin
+                            Rec.Validate("Shortcut Dimension 2 Code", AllocationCode."Shortcut Dimension 2 Code");
+                            if Rec.Modify() then;
+                        end else
+                            if Rec."Shortcut Dimension 2 Code" <> AllocationCode."Shortcut Dimension 2 Code" then
+                                Error(WrongDimErr);
+                end;
+            Rec."Account Type"::Customer:
+                if ShortcutDimCode[5] <> '' then
+                    if Rec."Account No." <> '' then begin
+                        //ToDo ??
+                        ;
+                        ;
+                        // Rec.ShortcutDimension5CodeNVX := AppMgt.GetCustomerBusinessDimension9(Rec."Account No.", ShortcutDimCode[5]);
+                        // if Rec.ShortcutDimension5CodeNVX <> ShortcutDimCode[5] then
+                        //     DimMgt.ValidateShortcutDimValues(9, ShortcutDimension9CodeNVX, Rec."Dimension Set ID");
+                    end
         end;
     end;
 
@@ -122,5 +140,12 @@ codeunit 50021 GenJournalLineHookNVX
         AppMgt: Codeunit AppMgtNVX;
     begin
         AppMgt.SetBusinessFieldNVX(Rec);
+    end;
+
+
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Dimension Set ID', true, true)]
+    local procedure OnAfterValidateEvent_DimensionSetID(var Rec: Record "Gen. Journal Line"; var xRec: Record "Gen. Journal Line"; CurrFieldNo: Integer)
+    begin
+        Message(format(Rec."Dimension Set ID"));
     end;
 }

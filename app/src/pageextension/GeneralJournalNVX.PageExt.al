@@ -2,6 +2,48 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
 {
     layout
     {
+        //ToDo TESTING
+        // modify("Shortcut Dimension 1 Code")
+        // {
+        //     Visible = false;
+        // }
+        // modify("Shortcut Dimension 2 Code")
+        // {
+        //     Visible = false;
+        // }
+        // modify(ShortcutDimCode3)
+        // {
+        //     Visible = false;
+        // }
+        // modify(ShortcutDimCode4)
+        // {
+        //     Visible = false;
+        // }
+        // modify(ShortcutDimCode5)
+        // {
+        //     Visible = false;
+        // }
+        // modify(ShortcutDimCode6)
+        // {
+        //     Visible = false;
+        // }
+        // modify(ShortcutDimCode7)
+        // {
+        //     Visible = false;
+        // }
+        // modify(ShortcutDimCode8)
+        // {
+        //     Visible = false;
+        // }
+        // modify(ShortcutDimCode9)
+        // {
+        //     Visible = false;
+        // }
+        // modify(ShortcutDimCode10)
+        // {
+        //     Visible = false;
+        // }
+
         addlast(Control1)
         {
             field(AssociatedNVX; Rec.AssociatedNVX)

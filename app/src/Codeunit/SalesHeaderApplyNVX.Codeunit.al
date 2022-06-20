@@ -24,6 +24,8 @@ codeunit 50037 "SalesHeaderApplyNVX"
         ApplyCustEntries.SetTableView(CustLedgEntry);
         ApplyCustEntries.LookupMode(true);
         OK := ApplyCustEntries.RunModal() = ACTION::LookupOK;
+        if OK then
+            ApplyCustEntries.GetRecord(CustLedgEntry2);
         Clear(ApplyCustEntries);
         if not OK then
             exit;
@@ -41,8 +43,17 @@ codeunit 50037 "SalesHeaderApplyNVX"
         Modify();
     end;
 
+    procedure GetApplyCustLedgerEntries(var CustomerLedgerEntry: Record "Cust. Ledger Entry")
+    var
+        AppMgt: Codeunit AppMgtNVX;
+    begin
+        AppMgt.GetCustLedgEntryFilterForApply(CustLedgEntry2);
+        CustomerLedgerEntry.Copy(CustLedgEntry2);
+    end;
+
     var
         CustLedgEntry: Record "Cust. Ledger Entry";
+        CustLedgEntry2: Record "Cust. Ledger Entry";
         SalesHeader: Record "Sales Header";
         ApplyCustEntries: Page "Apply Customer Entries";
         OK: Boolean;
