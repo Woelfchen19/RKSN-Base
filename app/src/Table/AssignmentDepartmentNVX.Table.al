@@ -11,6 +11,7 @@ table 50047 AssignmentDepartmentNVX
             CaptionClass = '1,2,5';
             DataClassification = CustomerContent;
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5));
+            NotBlank = true;
         }
         field(2; "Shortcut Dimension 1 Code"; Code[20])
         {

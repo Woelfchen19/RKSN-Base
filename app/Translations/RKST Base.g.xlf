@@ -333,10 +333,10 @@
           <note from="Developer" annotates="general" priority="2">DEA="Debitor Geschäftsfeld (Dim 5)"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1911021804 - Field 764101286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 1911021804 - Field 1901322400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Balance BusinessField</source>
           <note from="Developer" annotates="general" priority="2">DEA="Debitorensaldo Geschäftsfeld"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field BalanceBusinessField - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CustomerBusinessFieldNVX - Field BalanceBusinessFieldLCY - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1911021804 - Field 1606370654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BankAccount Customer BusinessField</source>
@@ -9762,6 +9762,16 @@
           <source>Assignment Departments</source>
           <note from="Developer" annotates="general" priority="2">DEA="Zuordnung KST"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page AssignmentDepartmentListNVX - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1454579111 - Control 1577567912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 1 Code field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AssignmentDepartmentListNVX - Control Shortcut Dimension 1 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1454579111 - Control 405681708 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 5 Code field.</source>
+          <note from="Developer" annotates="general" priority="2">DEA="Shortcutdimensionscode 5"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AssignmentDepartmentListNVX - Control Shortcut Dimension 5 Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1061052414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Change Log Entry Dimension</source>

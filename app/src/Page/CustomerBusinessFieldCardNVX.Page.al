@@ -103,9 +103,16 @@ page 50032 "CustomerBusinessFieldCardNVX"
                                         Rec."Preferred BankAccount Code");
                         end;
                     }
-                    field(BalanceBusinessField; Rec.BalanceBusinessField)
+                    field(BalanceBusinessField; Rec.BalanceBusinessFieldLCY)
                     {
                         ApplicationArea = All;
+
+                        trigger OnDrillDown()
+                        var
+                            AppMgt: Codeunit AppMgtNVX;
+                        begin
+                            AppMgt.OpenCustomerLedgerEntries(false, Rec);
+                        end;
                     }
                 }
                 group(InfoUser)

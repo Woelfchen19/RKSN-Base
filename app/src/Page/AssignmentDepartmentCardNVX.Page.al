@@ -13,7 +13,6 @@ page 50039 "AssignmentDepartmentCardNVX"
                 field("Shortcut Dimension 5 Code"; Rec."Shortcut Dimension 5 Code")
                 {
                     ApplicationArea = All;
-                    Editable = false;
                     ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.', Comment = 'DEA="Shortcutdimensionscode 5"';
                 }
                 field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")

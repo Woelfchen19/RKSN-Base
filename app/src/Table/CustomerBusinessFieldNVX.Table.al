@@ -22,17 +22,18 @@ table 50041 "CustomerBusinessFieldNVX"
             Caption = 'BankAccount Customer BusinessField', comment = 'DEA="Bankkonto Debitor Geschäftsfeld"';
             TableRelation = "Customer Bank Account";
         }
-        field(4; BalanceBusinessField; Decimal)
+        field(4; BalanceBusinessFieldLCY; Decimal)
         {
             AutoFormatType = 1;
-            CalcFormula = Sum("Detailed Cust. Ledg. Entry".Amount WHERE("Customer No." = FIELD("Customer No."),
-                                                                         "Initial Entry Global Dim. 1" = FIELD("Global Dimension 1 Filter"),
-                                                                         "Initial Entry Global Dim. 2" = FIELD("Global Dimension 2 Filter"),
-                                                                         "Currency Code" = FIELD("Currency Filter"),
-                                                                         ShortcutDimension5CodeNVX = field("Shortcut Dimension 5 Code")));
+            // CalcFormula = Sum("Detailed Cust. Ledg. Entry"."Amount (LCY)" WHERE("Customer No." = field("Customer No."),
+            //                                                                      "Initial Entry Global Dim. 1" = field("Global Dimension 1 Filter"),
+            //                                                                      "Initial Entry Global Dim. 2" = field("Global Dimension 2 Filter"),
+            //                                                                      "Currency Code" = field("Currency Filter"),
+            //                                                                      ShortcutDimension5CodeNVX = field("Shortcut Dimension 5 Code")));
+            // CalcFormula = Sum("Detailed Cust. Ledg. Entry"."Amount (LCY)" WHERE("Customer No." = field("Customer No.")));
             Caption = 'Balance BusinessField', comment = 'DEA="Debitorensaldo Geschäftsfeld"';
             Editable = false;
-            FieldClass = FlowField;
+            // FieldClass = FlowField;
         }
         field(5; "Creation Date"; DateTime)
         {
