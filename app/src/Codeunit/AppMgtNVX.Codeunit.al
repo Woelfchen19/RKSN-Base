@@ -606,7 +606,7 @@ codeunit 50026 "AppMgtNVX"
 
     procedure SetCustLedgEntryFilter(var CustLedgerEntry: Record "Cust. Ledger Entry"; WithAssociated: Boolean)
     begin
-        SetCustLedgEntryFilter(CustLedgerEntry, CustLedgerEntry."Dimension Set ID", true);
+        SetCustLedgEntryFilter(CustLedgerEntry, CustLedgerEntry."Dimension Set ID", WithAssociated);
     end;
 
     procedure SetCustLedgEntryFilter(var CustLedgerEntry: Record "Cust. Ledger Entry"; DimensionSetID: Integer; WithAssociated: Boolean)
@@ -623,18 +623,19 @@ codeunit 50026 "AppMgtNVX"
             AppMgt.AllowdBusinessFieldsForUser(UserSetup.BusinessFieldFilterNVX, GLSetupShortcutDimCode[5], false);
 
             if GLSetupShortcutDimCode[5] <> '' then
-                BusinessFieldFilter := GLSetupShortcutDimCode[5]
-            else
-                BusinessFieldFilter := UserSetup.BusinessFieldFilterNVX;
+                BusinessFieldFilter := GLSetupShortcutDimCode[5];
+            // else
+            //     BusinessFieldFilter := UserSetup.BusinessFieldFilterNVX;
             CustLedgerEntry.SetFilter(ShortcutDimension5CodeNVX, BusinessFieldFilter);
 
             CustLedgerEntry.FilterGroup(2);
             CustLedgerEntry.SetFilter(ShortcutDimension5CodeNVX, UserSetup.BusinessFieldFilterNVX);
-            if WithAssociated then begin
-                DimensionValue.Get(GLSetup."Global Dimension 2 Code", GLSetupShortcutDimCode[2]);
-                DimensionValue.TestField(AssociatedNVX);
-                CustLedgerEntry.SetFilter(AssociatedNVX, DimensionValue.AssociatedNVX);
-            end;
+            if WithAssociated then
+                if GLSetupShortcutDimCode[2] <> '' then begin
+                    DimensionValue.Get(GLSetup."Global Dimension 2 Code", GLSetupShortcutDimCode[2]);
+                    DimensionValue.TestField(AssociatedNVX);
+                    CustLedgerEntry.SetFilter(AssociatedNVX, DimensionValue.AssociatedNVX);
+                end;
             CustLedgerEntry.FilterGroup(0);
         end;
     end;
@@ -685,11 +686,10 @@ codeunit 50026 "AppMgtNVX"
         end;
     end;
 
-    procedure OpenCustomerLedgerEntries(FilterOnDueEntries: Boolean; CustomerBusinessField2: Record CustomerBusinessFieldNVX)
+    procedure OpenCustomerLedgerEntries(Customer: Record Customer; FilterOnDueEntries: Boolean; CustomerBusinessField2: Record CustomerBusinessFieldNVX)
     var
         DetailedCustLedgEntry: Record "Detailed Cust. Ledg. Entry";
         CustLedgerEntry: Record "Cust. Ledger Entry";
-        Customer: Record Customer;
     begin
         DetailedCustLedgEntry.SetRange("Customer No.", Customer."No.");
         Customer.CopyFilter("Global Dimension 1 Filter", DetailedCustLedgEntry."Initial Entry Global Dim. 1");
@@ -698,14 +698,34 @@ codeunit 50026 "AppMgtNVX"
             Customer.CopyFilter("Date Filter", DetailedCustLedgEntry."Initial Entry Due Date");
             DetailedCustLedgEntry.SetFilter("Posting Date", '<=%1', Customer.GetRangeMax("Date Filter"));
         end;
-
         if CustomerBusinessField2."Shortcut Dimension 5 Code" <> '' then
             CustLedgerEntry.SetFilter(ShortcutDimension5CodeNVX, CustomerBusinessField2."Shortcut Dimension 5 Code");
-        if CustomerBusinessField2."Shortcut Dimension 9 Code" <> '' then
-            CustLedgerEntry.SetFilter(ShortcutDimension9CodeNVX, CustomerBusinessField2."Shortcut Dimension 9 Code");
-
         Customer.CopyFilter("Currency Filter", DetailedCustLedgEntry."Currency Code");
-        CustLedgerEntry.DrillDownOnEntries(DetailedCustLedgEntry);
+        DrillDownOnEntries(DetailedCustLedgEntry, CustomerBusinessField2."Shortcut Dimension 5 Code");
+    end;
+
+    procedure DrillDownOnEntries(VAR DtldCustLedgEntry: Record "Detailed Cust. Ledg. Entry"; ShortcutDimension5CodeNVX: Code[20])
+    var
+        CustLedgentry: Record "Cust. Ledger Entry";
+    begin
+        AppMgt.GetUserSetup(UserSetup, true);
+
+        CustLedgEntry.Reset();
+        DtldCustLedgEntry.CopyFilter("Currency Code", CustLedgEntry."Currency Code");
+        DtldCustLedgEntry.CopyFilter("Initial Entry Global Dim. 1", CustLedgEntry."Global Dimension 1 Code");
+        DtldCustLedgEntry.CopyFilter("Initial Entry Global Dim. 2", CustLedgEntry."Global Dimension 2 Code");
+        DtldCustLedgEntry.CopyFilter("Initial Entry Due Date", CustLedgEntry."Due Date");
+        CustLedgentry.FilterGroup(2);
+        CustLedgEntry.SetCurrentKey("Customer No.", "Posting Date");
+        CustLedgentry.SetRange("Customer No.", DtldCustLedgEntry.Getfilter("Customer No."));
+        CustLedgEntry.SetRange(Open, true);
+        CustLedgentry.FilterGroup(0);
+        if ShortcutDimension5CodeNVX <> '' then
+            CustLedgentry.SetFilter(ShortcutDimension5CodeNVX, ShortcutDimension5CodeNVX)
+        else
+            CustLedgentry.SetFilter(ShortcutDimension5CodeNVX, AppMgt.GetBusinessFieldFilterNVX());
+
+        PAGE.RUN(0, CustLedgEntry);
     end;
 
     procedure OnValidateShortcutDimension(var DimensionValue: Record "Dimension Value")

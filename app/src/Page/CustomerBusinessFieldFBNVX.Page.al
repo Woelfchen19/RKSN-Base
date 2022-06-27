@@ -1,4 +1,4 @@
-page 50031 "CustBusinessFieldFactBoxNVX"
+page 50031 CustomerBusinessFieldFBNVX
 {
     Caption = 'Activ Businessfields', comment = 'DEA="Aktive Geschäftsfelder"';
 
@@ -27,6 +27,24 @@ page 50031 "CustBusinessFieldFactBoxNVX"
                     StyleExpr = StyleTxt;
                     ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
 
+                    // trigger OnDrillDown()
+                    // var
+                    //     CustomerBusinessField: Record CustomerBusinessFieldNVX;
+                    //     CustomerBusinessFieldCard: Page CustomerBusinessFieldCardNVX;
+                    //     CustomerBusinessFieldsCard: page CustomerBusinessFieldsCardNVX;
+                    // begin
+                    //     CustomerBusinessField.Reset();
+                    //     CustomerBusinessField.SetRange("Customer No.", Rec."Customer No.");
+
+                    //     if Rec."Shortcut Dimension 5 Code" = UpperCase(Format(DimShortcutBusinessFieldNVX::All)) then begin
+                    //         CustomerBusinessFieldsCard.SetTableView(CustomerBusinessField);
+                    //         CustomerBusinessFieldsCard.RunModal();
+                    //     end else begin
+                    //         CustomerBusinessField.SetRange("Shortcut Dimension 5 Code", Rec."Shortcut Dimension 5 Code");
+                    //         CustomerBusinessFieldsCard.SetTableView(CustomerBusinessField);
+                    //         CustomerBusinessFieldCard.RunModal();
+                    //     end;
+                    // end;
                     trigger OnDrillDown()
                     var
                         CustomerBusinessField: Record CustomerBusinessFieldNVX;
@@ -35,7 +53,7 @@ page 50031 "CustBusinessFieldFactBoxNVX"
                         if Rec."Shortcut Dimension 5 Code" = UpperCase(Format(DimShortcutBusinessFieldNVX::All)) then begin
                             CustomerBusinessField.Reset();
                             CustomerBusinessField.SetRange("Customer No.", Rec."Customer No.");
-                            Page.RunModal(PAGE::CustBusinessFieldsCardNVX, CustomerBusinessField);
+                            Page.RunModal(PAGE::CustomerBusinessFieldsCardNVX, CustomerBusinessField);
                         end else
                             Page.RunModal(PAGE::"CustomerBusinessFieldCardNVX", CustomerBusinessField);
                     end;

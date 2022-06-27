@@ -21,7 +21,7 @@ pageextension 50002 "CustomerCardNVX" extends "Customer Card"
         }
         addbefore(Control149)
         {
-            part(Dimension5ValuesNVX; CustBusinessFieldFactBoxNVX)
+            part(Dimension5ValuesNVX; CustomerBusinessFieldFBNVX)
             {
                 ApplicationArea = Basic, Suite;
                 SubPageLink = "Customer No." = Field("No.");

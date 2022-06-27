@@ -1,4 +1,4 @@
-page 50043 "CustBusinessFieldListNVX"
+page 50043 CustomerBusinessFieldListNVX
 {
     Caption = 'Customer Business Field List', comment = 'DEA="Debitor Geschäftsfelder Übersicht"';
     PageType = List;
@@ -6,7 +6,7 @@ page 50043 "CustBusinessFieldListNVX"
     UsageCategory = Administration;
     DelayedInsert = true;
     Editable = false;
-    CardPageId = CustBusinessFieldsCardNVX;
+    CardPageId = CustomerBusinessFieldsCardNVX;
     layout
     {
         area(Content)

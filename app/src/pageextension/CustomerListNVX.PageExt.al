@@ -4,7 +4,7 @@ pageextension 50070 "CustomerListNVX" extends "Customer List"
     {
         addbefore("Power BI Report FactBox")
         {
-            part(Dimension5ValuesNVX; CustBusinessFieldFactBoxNVX)
+            part(Dimension5ValuesNVX; CustomerBusinessFieldFBNVX)
             {
                 ApplicationArea = Basic, Suite;
                 SubPageLink = "Customer No." = Field("No.");

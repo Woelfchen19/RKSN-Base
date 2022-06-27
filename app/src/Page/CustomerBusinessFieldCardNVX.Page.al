@@ -109,9 +109,11 @@ page 50032 "CustomerBusinessFieldCardNVX"
 
                         trigger OnDrillDown()
                         var
+                            Customer: Record Customer;
                             AppMgt: Codeunit AppMgtNVX;
                         begin
-                            AppMgt.OpenCustomerLedgerEntries(false, Rec);
+                            Customer.Get(Rec."Customer No.");
+                            AppMgt.OpenCustomerLedgerEntries(Customer, false, Rec);
                         end;
                     }
                 }

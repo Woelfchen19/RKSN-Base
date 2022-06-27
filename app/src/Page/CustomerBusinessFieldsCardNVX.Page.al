@@ -1,4 +1,4 @@
-page 50033 "CustBusinessFieldsCardNVX"
+page 50033 CustomerBusinessFieldsCardNVX
 {
 
     Caption = 'Customer Business Fields', comment = 'DEA="Debitoren Geschäftsfelder"';

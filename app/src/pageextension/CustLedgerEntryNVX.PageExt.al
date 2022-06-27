@@ -175,7 +175,6 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
 
         AppMgt.GetUserSetup(UserSetup, true);
         //ToDo ?? from GenJnlLine its a problem
-        AppMgt.SetCustLedgEntryFilter(Rec, false);
         AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Customer Ledger Entries", DimVisible, DimEditable);
         AppMgt.GetFieldsPropertyVisibleEditableBySetup(
             DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
@@ -183,6 +182,11 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
 
         DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
         DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
+    end;
+
+    trigger OnAfterGetRecord()
+    begin
+        AppMgt.SetCustLedgEntryFilter(Rec, false);
     end;
 
     var
