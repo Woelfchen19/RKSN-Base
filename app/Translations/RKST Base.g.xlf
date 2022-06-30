@@ -13638,16 +13638,6 @@
           <note from="Developer" annotates="general" priority="2">DEA="FixedGBPG"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PaymentJournalNVX - Control FixedGBPGNVX - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1589426501 - Action 2847479874 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4042331808">
-          <source>Select one or more ledger entries that you want to apply this record to so that the related posted documents are closed as paid or refunded.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoNVX - Action ApplyEntriesNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1589426501 - Action 2847479874 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4042331808">
-          <source>Apply Entries</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Posten ausgleichen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PCrMemoNVX - Action ApplyEntriesNVX - Property Caption</note>
-        </trans-unit>
         <trans-unit id="PageExtension 1589426501 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4042331808">
           <source>Preview dimensional distribution</source>
           <note from="Developer" annotates="general" priority="2">DEA="Vorschau dimensionaler Verteilungsprozess"</note>
@@ -14002,16 +13992,6 @@
           <source>Specifies the value of the Shortcut Dimension 5 Code field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ReminderTermsNVX - Control ShortcutDimension5CodeNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1390502541 - Action 2847479874 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1708100201">
-          <source>Select one or more ledger entries that you want to apply this record to so that the related posted documents are closed as paid or refunded.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SalesCrMemoNVX - Action ApplyEntriesNVX - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1390502541 - Action 2847479874 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1708100201">
-          <source>Apply Entries</source>
-          <note from="Developer" annotates="general" priority="2">DEA="Posten ausgleichen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SalesCrMemoNVX - Action ApplyEntriesNVX - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1390502541 - Action 2206490140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1708100201">
           <source>Preview dimensional distribution</source>

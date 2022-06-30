@@ -3,9 +3,14 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
     PromotedActionCategories = 'New,Process,Report,Line,Entry,Navigate,Sort', comment = 'DEA="Neu,Prozess,Bericht,Zeile,Posten,Navigieren,Sortieren"';
     layout
     {
+        modify("Global Dimension 1 Code")
+        {
+            Editable = DimEditable1;
+            Visible = DimVisible1;
+        }
         modify("Global Dimension 2 Code")
         {
-            Editable = false;
+            Editable = DimEditable2;
             Visible = DimVisible2;
         }
 
@@ -14,56 +19,56 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
             field(ShortcutDimension3CodeNVX; Rec.ShortcutDimension3CodeNVX)
             {
                 ApplicationArea = All;
-                Editable = false;
+                Editable = DimEditable3;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 3 Code field.';
                 Visible = DimVisible3;
             }
             field(ShortcutDimension4CodeNVX; Rec.ShortcutDimension4CodeNVX)
             {
                 ApplicationArea = All;
-                Editable = false;
+                Editable = DimEditable4;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 4 Code field.';
                 Visible = DimVisible4;
             }
             field(ShortcutDimension5CodeNVX; Rec.ShortcutDimension5CodeNVX)
             {
                 ApplicationArea = All;
-                ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
                 Editable = DimEditable5;
+                ToolTip = 'Specifies the value of the Shortcut Dimension 5 Code field.';
                 Visible = DimVisible5;
             }
             field(ShortcutDimension6CodeNVX; Rec.ShortcutDimension6CodeNVX)
             {
                 ApplicationArea = All;
-                Editable = false;
+                Editable = DimEditable6;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 6 Code field.';
                 Visible = DimVisible6;
             }
             field(ShortcutDimension7CodeNVX; Rec.ShortcutDimension7CodeNVX)
             {
                 ApplicationArea = All;
-                Editable = false;
+                Editable = DimEditable7;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 7 Code field.';
                 Visible = DimVisible7;
             }
             field(ShortcutDimension8CodeNVX; Rec.ShortcutDimension8CodeNVX)
             {
                 ApplicationArea = All;
-                Editable = false;
+                Editable = DimEditable8;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 8 Code field.';
                 Visible = DimVisible8;
             }
             field(ShortcutDimension9CodeNVX; Rec.ShortcutDimension9CodeNVX)
             {
                 ApplicationArea = All;
+                Editable = DimEditable9;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 9 Code field.';
                 Visible = DimVisible9;
-                Editable = DimEditable9;
             }
             field(ShortcutDimension10CodeNVX; Rec.ShortcutDimension10CodeNVX)
             {
                 ApplicationArea = All;
-                Editable = false;
+                Editable = DimEditable10;
                 ToolTip = 'Specifies the value of the Shortcut Dimension 10 Code field.';
                 Visible = DimVisible10;
             }
@@ -170,29 +175,25 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
 
     trigger OnOpenPage()
     begin
-        if not AppMgt.GetActivatedReminderExtensionSetup() then
-            exit;
+        if DimensionFieldMgt.GetFieldsPropertyVisibleEditableBySetup(
+            Page::"Customer Ledger Entries",
+                DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
+                    DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10)
+        then begin
+            DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
+            DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
 
-        AppMgt.GetUserSetup(UserSetup, true);
-        //ToDo ?? from GenJnlLine its a problem
-        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Customer Ledger Entries", DimVisible, DimEditable);
-        AppMgt.GetFieldsPropertyVisibleEditableBySetup(
-            DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
-                DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
-
-        DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
-        DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
-    end;
-
-    trigger OnAfterGetRecord()
-    begin
-        AppMgt.SetCustLedgEntryFilter(Rec, false);
+            AppMgt.GetUserSetup(UserSetup, true);
+            Rec.FilterGroup(2);
+            Rec.SetFilter(ShortcutDimension5CodeNVX, UserSetup.BusinessFieldFilterNVX);
+            Rec.FilterGroup(0);
+        end;
     end;
 
     var
         UserSetup: Record "User Setup";
         AppMgt: Codeunit AppMgtNVX;
-        DimEditable: array[10] of Boolean;
+        DimensionFieldMgt: Codeunit DimensionFieldManagementNVX;
         DimEditable1: Boolean;
         DimEditable2: Boolean;
         DimEditable3: Boolean;
@@ -203,7 +204,6 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
         DimEditable8: Boolean;
         DimEditable9: Boolean;
         DimEditable10: Boolean;
-        DimVisible: array[10] of Boolean;
         DimVisible1: Boolean;
         DimVisible2: Boolean;
         DimVisible3: Boolean;
@@ -214,5 +214,4 @@ pageextension 50051 "CustLedgerEntryNVX" extends "Customer Ledger Entries"
         DimVisible8: Boolean;
         DimVisible9: Boolean;
         DimVisible10: Boolean;
-        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query",System;
 }

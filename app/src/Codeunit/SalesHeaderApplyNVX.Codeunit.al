@@ -1,6 +1,14 @@
 codeunit 50037 "SalesHeaderApplyNVX"
 {
-    //ToDo
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales Header Apply", 'OnRunOnBeforeFilterCustLedgEntry', '', true, true)]
+    local procedure OnRunOnBeforeFilterCustLedgEntry(var CustLedgEntry: Record "Cust. Ledger Entry")
+    var
+        AppMgt: Codeunit AppMgtNVX;
+    begin
+        AppMgt.SetCustLedgEntryFilter(CustLedgEntry, true);
+    end;
+
+    //ToDo check the code above
     //OnRunOnBeforeFilterCustLedgEntry
     //OnRunOnBeforeFilterCustLedgEntryFindFirst    
     // var

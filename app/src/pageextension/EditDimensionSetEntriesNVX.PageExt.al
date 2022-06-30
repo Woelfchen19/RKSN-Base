@@ -1,9 +1,34 @@
+//ToDo
+
 pageextension 50067 "EditDimensionSetEntriesNVX" extends "Edit Dimension Set Entries"
 {
+    // trigger OnAfterGetRecord();
+    // begin
+    //     DimMgt.GetShortcutDimensions(Rec."Dimension Set ID", ShortcutDims);
+    // end;
+
+    trigger OnOpenPage()
+    begin
+        if DimensionFieldMgt.GetFieldsPropertyVisibleEditableBySetup(
+            Page::"Detailed Cust. Ledg. Entries",
+                DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
+                    DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10)
+        then begin
+            DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
+            DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
+
+            // AppMgt.GetUserSetup(UserSetup, true);
+            // Rec.FilterGroup(2);
+            // Rec.SetFilter(ShortcutDimension5CodeNVX, UserSetup.BusinessFieldFilterNVX);
+            // Rec.FilterGroup(0);
+        end;
+    end;
+
     var
-        AppMgt: Codeunit AppMgtNVX;
-        DimMgt: Codeunit DimensionManagement;
-        DimEditable: array[10] of Boolean;
+        UserSetup: Record "User Setup";
+        // AppMgt: Codeunit AppMgtNVX;
+        DimensionFieldMgt: Codeunit DimensionFieldManagementNVX;
+        // DimMgt: Codeunit DimensionManagement;
         DimEditable1: Boolean;
         DimEditable2: Boolean;
         DimEditable3: Boolean;
@@ -14,7 +39,6 @@ pageextension 50067 "EditDimensionSetEntriesNVX" extends "Edit Dimension Set Ent
         DimEditable8: Boolean;
         DimEditable9: Boolean;
         DimEditable10: Boolean;
-        DimVisible: array[10] of Boolean;
         DimVisible1: Boolean;
         DimVisible2: Boolean;
         DimVisible3: Boolean;
@@ -25,19 +49,4 @@ pageextension 50067 "EditDimensionSetEntriesNVX" extends "Edit Dimension Set Ent
         DimVisible8: Boolean;
         DimVisible9: Boolean;
         DimVisible10: Boolean;
-        ShortcutDims: array[10] of Code[20];
-        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query",System;
-
-    trigger OnOpenPage()
-    begin
-        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Dimension Set Entries", DimVisible, DimEditable);
-        AppMgt.GetFieldsPropertyVisibleEditableBySetup(
-            DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
-                DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
-    end;
-
-    trigger OnAfterGetRecord();
-    begin
-        DimMgt.GetShortcutDimensions(Rec."Dimension Set ID", ShortcutDims);
-    end;
 }

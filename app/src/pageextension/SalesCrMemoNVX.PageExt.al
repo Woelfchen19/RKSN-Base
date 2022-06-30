@@ -104,50 +104,50 @@ pageextension 50020 "SalesCrMemoNVX" extends "Sales Credit Memo"
 
     actions
     {
-        modify(ApplyEntries)
-        {
-            Visible = false;
-        }
-        addafter(ApplyEntries)
-        {
-            action(ApplyEntriesNVX)
-            {
-                ApplicationArea = Basic, Suite;
-                Caption = 'Apply Entries', comment = 'DEA="Posten ausgleichen"';
-                ;
-                Ellipsis = true;
-                Enabled = "No." <> '';
-                Image = ApplyEntries;
-                Promoted = true;
-                PromotedCategory = Category7;
-                ShortCutKey = 'Shift+F11';
-                ToolTip = 'Select one or more ledger entries that you want to apply this record to so that the related posted documents are closed as paid or refunded.';
+        // modify(ApplyEntries)
+        // {
+        //     Visible = false;
+        // }
+        // addafter(ApplyEntries)
+        // {
+        //     action(ApplyEntriesNVX)
+        //     {
+        //         ApplicationArea = Basic, Suite;
+        //         Caption = 'Apply Entries', comment = 'DEA="Posten ausgleichen"';
+        //         ;
+        //         Ellipsis = true;
+        //         Enabled = "No." <> '';
+        //         Image = ApplyEntries;
+        //         Promoted = true;
+        //         PromotedCategory = Category7;
+        //         ShortCutKey = 'Shift+F11';
+        //         ToolTip = 'Select one or more ledger entries that you want to apply this record to so that the related posted documents are closed as paid or refunded.';
 
-                trigger OnAction()
-                var
-                    CustLedgerEntry: Record "Cust. Ledger Entry";
-                    SalesHeaderApply: Codeunit SalesHeaderApplyNVX;
-                // i: Integer;
-                begin
-                    //SalesHeaderApply.Run(Rec);
-                    //ToDo
-                    //SalesHeaderApply.GetApplyCustLedgerEntries(CustLedgerEntry);
-                    AppMgt.ChangeShortcutDimension5CodeSalesHeader(Rec, CustLedgerEntry);
-                    // Rec.ShortcutDimension5CodeNVX := CustLedgerEntry.ShortcutDimension5CodeNVX;
-                    // Rec.ValidateShortcutDimCode(5, Rec.ShortcutDimension5CodeNVX);
+        //         trigger OnAction()
+        //         var
+        //             CustLedgerEntry: Record "Cust. Ledger Entry";
+        // SalesHeaderApply: Codeunit SalesHeaderApplyNVX;
+        // i: Integer;
+        // begin
+        //SalesHeaderApply.Run(Rec);
+        //ToDo
+        //SalesHeaderApply.GetApplyCustLedgerEntries(CustLedgerEntry);
+        // AppMgt.ChangeShortcutDimension5CodeSalesHeader(Rec, CustLedgerEntry);
+        // Rec.ShortcutDimension5CodeNVX := CustLedgerEntry.ShortcutDimension5CodeNVX;
+        // Rec.ValidateShortcutDimCode(5, Rec.ShortcutDimension5CodeNVX);
 
-                    //Message(CustLedgerEntry.GetFilters);
-                    // if CustLedgerEntry.FindFirst() then
-                    //Rec.ValidateShortcutDimCode(5, CustLedgerEntry.ShortcutDimension5CodeNVX);
-                    //     if Rec.ShortcutDimension5CodeNVX <> CustLedgerEntry.ShortcutDimension5CodeNVX then begin
-                    //         Rec.Validate(ShortcutDimension5CodeNVX, CustLedgerEntry.ShortcutDimension5CodeNVX);
-                    // Rec.Modify();
-                    // end;
-                    // AppMgt.OnValidateShortcutDimension(Rec);
-                    // Rec.Modify();
-                end;
-            }
-        }
+        //Message(CustLedgerEntry.GetFilters);
+        // if CustLedgerEntry.FindFirst() then
+        //Rec.ValidateShortcutDimCode(5, CustLedgerEntry.ShortcutDimension5CodeNVX);
+        //     if Rec.ShortcutDimension5CodeNVX <> CustLedgerEntry.ShortcutDimension5CodeNVX then begin
+        //         Rec.Validate(ShortcutDimension5CodeNVX, CustLedgerEntry.ShortcutDimension5CodeNVX);
+        // Rec.Modify();
+        // end;
+        // AppMgt.OnValidateShortcutDimension(Rec);
+        // Rec.Modify();
+        // end;
+        // }
+
         addlast(Processing)
         {
             action(PreviewDimDistributionNVX)

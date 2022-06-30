@@ -4,9 +4,14 @@ pageextension 50054 "DetailedCustLedgEntriesNVX" extends "Detailed Cust. Ledg. E
 
     layout
     {
+        modify("Initial Entry Global Dim. 1")
+        {
+            Editable = DimEditable1;
+            Visible = DimVisible1;
+        }
         modify("Initial Entry Global Dim. 2")
         {
-            Editable = false;
+            Editable = DimEditable2;
             Visible = DimVisible2;
         }
 
@@ -165,24 +170,25 @@ pageextension 50054 "DetailedCustLedgEntriesNVX" extends "Detailed Cust. Ledg. E
 
     trigger OnOpenPage()
     begin
-        if not AppMgt.GetActivatedReminderExtensionSetup() then
-            exit;
+        if DimensionFieldMgt.GetFieldsPropertyVisibleEditableBySetup(
+            Page::"Detailed Cust. Ledg. Entries",
+                DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
+                    DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10)
+        then begin
+            DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
+            DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
 
-        AppMgt.GetUserSetup(UserSetup, true);
-        AppMgt.SetDetailedCustLedgEntryFilter(Rec);
-        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Detailed Cust. Ledg. Entries", DimVisible, DimEditable);
-        AppMgt.GetFieldsPropertyVisibleEditableBySetup(
-            DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
-                DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
-
-        DimEditable5 := DimEditable5 and UserSetup.EditBusFieldCustLedgerEntryNVX;
-        DimEditable9 := DimEditable9 and UserSetup.AllCollectedAccountsNVX;
+            AppMgt.GetUserSetup(UserSetup, true);
+            Rec.FilterGroup(2);
+            Rec.SetFilter(ShortcutDimension5CodeNVX, UserSetup.BusinessFieldFilterNVX);
+            Rec.FilterGroup(0);
+        end;
     end;
 
     var
         UserSetup: Record "User Setup";
         AppMgt: Codeunit AppMgtNVX;
-        DimEditable: array[10] of Boolean;
+        DimensionFieldMgt: Codeunit DimensionFieldManagementNVX;
         DimEditable1: Boolean;
         DimEditable2: Boolean;
         DimEditable3: Boolean;
@@ -193,7 +199,6 @@ pageextension 50054 "DetailedCustLedgEntriesNVX" extends "Detailed Cust. Ledg. E
         DimEditable8: Boolean;
         DimEditable9: Boolean;
         DimEditable10: Boolean;
-        DimVisible: array[10] of Boolean;
         DimVisible1: Boolean;
         DimVisible2: Boolean;
         DimVisible3: Boolean;
@@ -204,5 +209,4 @@ pageextension 50054 "DetailedCustLedgEntriesNVX" extends "Detailed Cust. Ledg. E
         DimVisible8: Boolean;
         DimVisible9: Boolean;
         DimVisible10: Boolean;
-        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query",System;
 }

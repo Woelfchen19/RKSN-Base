@@ -2,48 +2,6 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
 {
     layout
     {
-        //ToDo TESTING
-        // modify("Shortcut Dimension 1 Code")
-        // {
-        //     Visible = false;
-        // }
-        // modify("Shortcut Dimension 2 Code")
-        // {
-        //     Visible = false;
-        // }
-        // modify(ShortcutDimCode3)
-        // {
-        //     Visible = false;
-        // }
-        // modify(ShortcutDimCode4)
-        // {
-        //     Visible = false;
-        // }
-        // modify(ShortcutDimCode5)
-        // {
-        //     Visible = false;
-        // }
-        // modify(ShortcutDimCode6)
-        // {
-        //     Visible = false;
-        // }
-        // modify(ShortcutDimCode7)
-        // {
-        //     Visible = false;
-        // }
-        // modify(ShortcutDimCode8)
-        // {
-        //     Visible = false;
-        // }
-        // modify(ShortcutDimCode9)
-        // {
-        //     Visible = false;
-        // }
-        // modify(ShortcutDimCode10)
-        // {
-        //     Visible = false;
-        // }
-
         addlast(Control1)
         {
             field(AssociatedNVX; Rec.AssociatedNVX)
@@ -118,15 +76,14 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
 
     trigger OnOpenPage()
     begin
-        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"General Journal", DimVisible, DimEditable);
-        AppMgt.GetFieldsPropertyVisibleEditableBySetup(
-            DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
-                DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
+        DimensionFieldManagement.GetFieldsPropertyVisibleEditableBySetup(
+            Page::"General Journal",
+                DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
+                    DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
     end;
 
     var
-        AppMgt: Codeunit AppMgtNVX;
-        DimEditable: array[10] of Boolean;
+        DimensionFieldManagement: Codeunit DimensionFieldManagementNVX;
         DimEditable1: Boolean;
         DimEditable2: Boolean;
         DimEditable3: Boolean;
@@ -137,7 +94,6 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
         DimEditable8: Boolean;
         DimEditable9: Boolean;
         DimEditable10: Boolean;
-        DimVisible: array[10] of Boolean;
         DimVisible1: Boolean;
         DimVisible2: Boolean;
         DimVisible3: Boolean;
@@ -148,7 +104,6 @@ pageextension 50035 "GeneralJournalNVX" extends "General Journal"
         DimVisible8: Boolean;
         DimVisible9: Boolean;
         DimVisible10: Boolean;
-        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query",System;
 
     [IntegrationEvent(false, false)]
     local procedure OnPreviewDimDistributionNVX(var GenJnlLine: Record "Gen. Journal Line")

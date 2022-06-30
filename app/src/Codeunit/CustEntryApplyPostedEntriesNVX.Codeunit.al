@@ -9,5 +9,12 @@ codeunit 50034 "CustEntryApplyPostedEntriesNVX"
         AppMgt: Codeunit AppMgtNVX;
     begin
         AppMgt.SetCustLedgEntryFilter(CustLedgerEntry, true);
+        // AppMgt.ChangeShortcutDimension5CodeSalesHeader(Rec, CustLedgerEntry);        
     end;
+
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"CustEntry-Apply Posted Entries", 'OnApplyApplyCustEntryFormEntryOnAfterCustLedgEntrySetFilters', 'ElementName', SkipOnMissingLicense, SkipOnMissingPermission)]
+    // local procedure MyProcedure()
+    // begin
+
+    // end;
 }

@@ -65,13 +65,14 @@ pageextension 50065 "IssuedReminderListNVX" extends "Issued Reminder List"
 
     trigger OnOpenPage()
     begin
-        AppMgt.SetFieldsPropertyVisibleEditableBySetup(ObjectType::Page, Page::"Issued Reminder List", DimVisible, DimEditable);
-        AppMgt.GetFieldsPropertyVisibleEditableBySetup(
-            DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
-                DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10);
-
-        AppMgt.GetUserSetup(UserSetup, true);
-        IssuedReminderEditVisible := UserSetup.AllowedModifyIssuedReminderNVX;
+        if DimensionFieldManagement.GetFieldsPropertyVisibleEditableBySetup(
+            Page::"Issued Reminder List",
+                DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8, DimVisible9, DimVisible10,
+                    DimEditable1, DimEditable2, DimEditable3, DimEditable4, DimEditable5, DimEditable6, DimEditable7, DimEditable8, DimEditable9, DimEditable10)
+        then begin
+            AppMgt.GetUserSetup(UserSetup, true);
+            IssuedReminderEditVisible := UserSetup.AllowedModifyIssuedReminderNVX;
+        end;
     end;
 
     trigger OnAfterGetRecord();
@@ -82,8 +83,8 @@ pageextension 50065 "IssuedReminderListNVX" extends "Issued Reminder List"
     var
         UserSetup: Record "User Setup";
         AppMgt: Codeunit AppMgtNVX;
+        DimensionFieldManagement: Codeunit DimensionFieldManagementNVX;
         DimMgt: Codeunit DimensionManagement;
-        DimEditable: array[10] of Boolean;
         DimEditable1: Boolean;
         DimEditable2: Boolean;
         DimEditable3: Boolean;
@@ -94,7 +95,6 @@ pageextension 50065 "IssuedReminderListNVX" extends "Issued Reminder List"
         DimEditable8: Boolean;
         DimEditable9: Boolean;
         DimEditable10: Boolean;
-        DimVisible: array[10] of Boolean;
         DimVisible1: Boolean;
         DimVisible2: Boolean;
         DimVisible3: Boolean;
@@ -107,5 +107,4 @@ pageextension 50065 "IssuedReminderListNVX" extends "Issued Reminder List"
         DimVisible10: Boolean;
         IssuedReminderEditVisible: Boolean;
         ShortcutDims: array[10] of Code[20];
-        ObjectType: Option "Table Data","Table",,"Report",,"Codeunit","XMLport",MenuSuite,"Page","Query",System;
 }

@@ -39,35 +39,35 @@ pageextension 50006 "PCrMemoNVX" extends "Purchase Credit Memo"
     }
     actions
     {
-        modify(ApplyEntries)
-        {
-            Visible = false;
-        }
-        addafter(ApplyEntries)
-        {
-            action(ApplyEntriesNVX)
-            {
-                ApplicationArea = Basic, Suite;
-                Caption = 'Apply Entries', comment = 'DEA="Posten ausgleichen"';
-                Ellipsis = true;
-                Enabled = "No." <> '';
-                Image = ApplyEntries;
-                Promoted = true;
-                PromotedCategory = Category7;
-                ShortCutKey = 'Shift+F11';
-                ToolTip = 'Select one or more ledger entries that you want to apply this record to so that the related posted documents are closed as paid or refunded.';
+        // modify(ApplyEntries)
+        // {
+        //     Visible = false;
+        // }
+        // addafter(ApplyEntries)
+        // {
+        //     action(ApplyEntriesNVX)
+        //     {
+        //         ApplicationArea = Basic, Suite;
+        //         Caption = 'Apply Entries', comment = 'DEA="Posten ausgleichen"';
+        //         Ellipsis = true;
+        //         Enabled = "No." <> '';
+        //         Image = ApplyEntries;
+        //         Promoted = true;
+        //         PromotedCategory = Category7;
+        //         ShortCutKey = 'Shift+F11';
+        //         ToolTip = 'Select one or more ledger entries that you want to apply this record to so that the related posted documents are closed as paid or refunded.';
 
-                trigger OnAction()
-                var
-                    PurchHeader: Record "Purchase Header";
-                    PurchaseHeaderApply: Codeunit PurchaseHeaderApplyNVX;
-                begin
-                    PurchHeader := Rec;
-                    //ToDo
-                    // PurchaseHeaderApply.Run(PurchHeader);
-                end;
-            }
-        }
+        //         trigger OnAction()
+        //         var
+        //             PurchHeader: Record "Purchase Header";
+        //             PurchaseHeaderApply: Codeunit PurchaseHeaderApplyNVX;
+        //         begin
+        //             PurchHeader := Rec;
+        //             //ToDo
+        //             // PurchaseHeaderApply.Run(PurchHeader);
+        //         end;
+        //     }
+        // }
 
         addlast(Processing)
         {
