@@ -604,6 +604,54 @@ codeunit 50026 "AppMgtNVX"
             exit(false);
     end;
 
+    procedure SetVendLedgEntryFilter(var VendLedgerEntry: Record "Vendor Ledger Entry"; WithAssociated: Boolean)
+    var
+        DimensionValue: Record "Dimension Value";
+        GlobalDimension2Code: Code[20];
+    begin
+        if not AppMgt.GetActivatedReminderExtensionSetup() then
+            exit;
+
+        GlobalDimension2Code := VendLedgerEntry."Global Dimension 2 Code";
+        if GlobalDimension2Code = '' then
+            exit;
+
+        GLSetup.GetRecordOnce();
+
+        DimensionValue.Get(GLSetup."Global Dimension 2 Code", VendLedgerEntry."Global Dimension 2 Code");
+        DimensionValue.TestField(AssociatedNVX);
+        VendLedgerEntry.FilterGroup(2);
+        VendLedgerEntry.Setrange("Global Dimension 2 Code", VendLedgerEntry."Global Dimension 2 Code");
+        if WithAssociated then
+            VendLedgerEntry.SetFilter(AssociatedNVX, DimensionValue.AssociatedNVX);
+        VendLedgerEntry.FilterGroup(0);
+    end;
+
+    procedure SetVendLedgEntryFilter(var VendLedgerEntry: Record "Vendor Ledger Entry"; PurchHeader: Record "Purchase Header")
+    begin
+        SetVendLedgEntryFilter(VendLedgerEntry, PurchHeader, false);
+    end;
+
+    procedure SetVendLedgEntryFilter(var VendLedgerEntry: Record "Vendor Ledger Entry"; PurchHeader: Record "Purchase Header"; WithAssociated: Boolean)
+    var
+        DimensionValue: Record "Dimension Value";
+        GlobalDimension2Code: Code[20];
+    begin
+        if not AppMgt.GetActivatedReminderExtensionSetup() then
+            exit;
+
+        GlobalDimension2Code := VendLedgerEntry."Global Dimension 2 Code";
+        if GlobalDimension2Code = '' then
+            exit;
+        DimensionValue.Get(GLSetup."Global Dimension 2 Code", PurchHeader."Shortcut Dimension 2 Code");
+        DimensionValue.TestField(AssociatedNVX);
+        VendLedgerEntry.FilterGroup(2);
+        VendLedgerEntry.Setrange("Global Dimension 2 Code", PurchHeader."Shortcut Dimension 2 Code");
+        if WithAssociated then
+            VendLedgerEntry.SetFilter(AssociatedNVX, DimensionValue.AssociatedNVX);
+        VendLedgerEntry.FilterGroup(0);
+    end;
+
     procedure SetCustLedgEntryFilter(var CustLedgerEntry: Record "Cust. Ledger Entry"; WithAssociated: Boolean)
     begin
         SetCustLedgEntryFilter(CustLedgerEntry, CustLedgerEntry."Dimension Set ID", WithAssociated);

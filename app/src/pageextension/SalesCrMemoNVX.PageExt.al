@@ -129,8 +129,9 @@ pageextension 50020 "SalesCrMemoNVX" extends "Sales Credit Memo"
                     SalesHeaderApply: Codeunit SalesHeaderApplyNVX;
                 // i: Integer;
                 begin
-                    SalesHeaderApply.Run(Rec);
-                    SalesHeaderApply.GetApplyCustLedgerEntries(CustLedgerEntry);
+                    //SalesHeaderApply.Run(Rec);
+                    //ToDo
+                    //SalesHeaderApply.GetApplyCustLedgerEntries(CustLedgerEntry);
                     AppMgt.ChangeShortcutDimension5CodeSalesHeader(Rec, CustLedgerEntry);
                     // Rec.ShortcutDimension5CodeNVX := CustLedgerEntry.ShortcutDimension5CodeNVX;
                     // Rec.ValidateShortcutDimCode(5, Rec.ShortcutDimension5CodeNVX);

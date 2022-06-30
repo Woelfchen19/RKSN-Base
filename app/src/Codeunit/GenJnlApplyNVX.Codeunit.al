@@ -6,6 +6,12 @@ codeunit 50029 "GenJnlApplyNVX"
         AppMgt.SetCustLedgEntryFilter(CustLedgerEntry, GenJournalLine."Dimension Set ID", true);
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Apply", 'OnSelectVendLedgEntryOnAfterSetFilters', '', true, true)]
+    local procedure OnSelectVendLedgEntryOnAfterSetFilters(var VendorLedgerEntry: Record "Vendor Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    begin
+        AppMgt.SetVendLedgEntryFilter(VendorLedgerEntry, true);
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Apply", 'OnAfterRun', '', true, true)]
     local procedure OnAfterRun(var GenJnlLine: Record "Gen. Journal Line")
     begin

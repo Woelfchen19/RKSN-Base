@@ -27,6 +27,17 @@ codeunit 50007 "GenJnlPostLineHookNVX"
         DtldCustLedgEntry.Modify();
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterVendLedgEntryInsert', '', true, true)]
+    local procedure OnBeforeInsertVendLedgEntry(var VendorLedgerEntry: Record "Vendor Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    var
+        AppMgt: Codeunit AppMgtNVX;
+    begin
+        if AppMgt.GetActivatedReminderExtensionSetup() then begin
+            VendorLedgerEntry.SetAssociatedNVX();
+            VendorLedgerEntry.Modify();
+        end;
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertVATEntry', '', true, true)]
     local procedure OnAfterInsertVATEntry(GenJnlLine: Record "Gen. Journal Line"; VATEntry: Record "VAT Entry"; GLEntryNo: Integer; var NextEntryNo: Integer)
     begin
